@@ -26,7 +26,6 @@ LUI.MPLobbyBase.AddArmoryButton = function(menu)
 	end)
 end
 
--- button stuff for configuring
 function IsEnabled(dvar)
 	local enabled = Engine.GetDvarBool(dvar)
 	if enabled then
@@ -64,7 +63,6 @@ function GoDirection(dvar, direction, callback)
 		new_value = value + 1
 	end
 
-	-- checking to make sure its < 0 or > max
 	if (new_value < 0) then
 		new_value = max
 	elseif (new_value > max) then
@@ -111,7 +109,6 @@ LUI.MenuBuilder.registerType("menu_stats", function(a1, a2)
 	local prestigevalue = prestige
 	local rankvalue = rank
 
-	-- save changes made
 	local save_changes = function()
 		Engine.SetPlayerDataEx(0, CoD.StatsGroup.Ranked, "prestige", tonumber(prestigevalue))
 
@@ -122,14 +119,12 @@ LUI.MenuBuilder.registerType("menu_stats", function(a1, a2)
 		Engine.SetPlayerDataEx(0, CoD.StatsGroup.Ranked, "experience", experience)
 	end
 
-	-- back callback
 	local back = function()
 		save_changes()
 		LUI.common_menus.Options.HideOptionsBackground()
 		LUI.FlowManager.RequestLeaveMenu(menu)
 	end
 
-	-- create buttons and create callbacks
 	CreateEditButton(menu, "ui_prestige_level", "@LUA_MENU_PRESTIGE", "@LUA_MENU_PRESTIGE_DESC", function(value)
 		prestigevalue = value
 	end)
