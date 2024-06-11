@@ -1,23 +1,23 @@
 [
     [
         "data/common_scripts/utility.gsc",
-        63626,
-        "0431A97EAF0DE45C0A3E155B7A65F80F242C981F"
+        60773,
+        "B9162C55E8C923D8EB8467607F78066C11F4F882"
     ],
     [
         "data/dw/entitlement_config_tu14.info",
-        6682,
-        "81B73871B3119E1CD143D152003B67DEEE7610AA"
+        6454,
+        "1607A11435E22FF2AAD0885DF6456A5C2A6F483B"
     ],
     [
         "data/dw/mm.cfg",
-        96,
-        "E867B0EE14490ED88F4F93A47F5E40F5514E1D6A"
+        95,
+        "C9FAC47D2D09F094D0E2FE7C9B945D39FC4898CD"
     ],
     [
         "data/dw/newsfeed.txt",
-        6317,
-        "488F4113CE050F8B602C58F170BA732BFB6B00DD"
+        6156,
+        "DD9AD580EC5012C8015002D280799661678E8430"
     ],
     [
         "data/dw/playlists_tu14.aggr",
@@ -26,48 +26,48 @@
     ],
     [
         "data/dw/social_tu14.cfg",
-        5062,
-        "DEAFD434D208325A92BB50E9EC358574E9F131FD"
+        4923,
+        "326A6FA897C86CCF7134B71F6CF53A4CD1D73433"
     ],
     [
         "data/maps/mp/alien/_drill.gsc",
-        54154,
-        "2F9784AE812ADA2CC38460FCE51EE9DF7FDDC294"
+        52427,
+        "E420B0AF107B76FDFA2098057E9B212C5B1364EB"
     ],
     [
         "data/maps/mp/gametypes/aliens.gsc",
-        72483,
-        "D64ABA8AF4BE78C306B67B74906BAEC907D995F5"
+        70312,
+        "C98F263A8EF8A356AE93105FCC703DFA73A2F829"
     ],
     [
         "data/maps/mp/gametypes/_damage.gsc",
-        112919,
-        "A42986AC6489E82F41666215B49D1E887A588C93"
+        109617,
+        "434B59333E6CDC69B2C8C16EB87D1ECE74C33C3A"
     ],
     [
         "data/maps/mp/gametypes/_gamelogic.gsc",
-        80683,
-        "DFCD8684B99FF63889812A65BB028F62C6DA36C3"
+        77913,
+        "AAC4F7F92297B39392AD1566D2A33E0AFB4D4B13"
     ],
     [
         "data/maps/mp/gametypes/_menus.gsc",
-        20898,
-        "84729AF60EC55E893463A8BBDD72A2F9F83A6606"
+        20171,
+        "E268E9662164E86304F5A8641EDBBF581ACE1BD5"
     ],
     [
         "data/maps/mp/gametypes/_playerlogic.gsc",
-        58360,
-        "E8093D63F00FCC0D821534AE03F39F8F92F24572"
+        56474,
+        "3B21DEE600F4451DB3FEB34BB6A6986C08474C50"
     ],
     [
         "data/maps/mp/mp_alien_beacon.gsc",
-        103671,
-        "285FEC6D0F430A1F1AD7078EEC421F1E10EFDD05"
+        100517,
+        "11A87DA2B3A731A6B6C0F2A79E16FB4F832F2F51"
     ],
     [
         "data/scripts/_team_balance.gsc",
-        579,
-        "DD425617044CFE704386DD9B2ABB2BD946F28ECA"
+        546,
+        "8AB1AC9BE271FB01DE76C953E7BA24E1D3039F11"
     ],
     [
         "data/sound/patch-3-music.flac",
@@ -76,52 +76,52 @@
     ],
     [
         "data/ui_scripts/end_game/__init__.lua",
-        6764,
-        "1514C89EE080214490FC9C5CDDABD6FF3C04F16A"
+        6536,
+        "1229873F29ADE5654BBDDB08031D196280F1B336"
     ],
     [
         "data/ui_scripts/main_menu/__init__.lua",
-        8132,
-        "F4FAACA38095B934CFC45D3435B10171361BAC28"
+        7882,
+        "5EC8BE27FF10317D63BC8835C11AEA3C19D3B853"
     ],
     [
         "data/ui_scripts/menu_xboxlive/__init__.lua",
-        10037,
-        "EC8D897A9301D62CD14D25F330E1C5E6EA5FD1EC"
+        9762,
+        "AD9A752BC73A5B00057061AE7AC51BAE281CFA7A"
     ],
     [
         "data/ui_scripts/mp_live_public_lobby/__init__.lua",
-        10345,
-        "88FB962CFB7773A4BDB328C64DFA62F649C79E29"
+        10040,
+        "5D2DDA5D3BB741E412DDF75A52821F38FE79AA8A"
     ],
     [
         "data/ui_scripts/server_filter/__init__.lua",
-        12283,
-        "257A057ED0AB764843E7FF3D7B448B17AF888C11"
+        11847,
+        "46C94AC75C9EABABA5F4E19F533BEE66742DAF9B"
     ],
     [
         "data/ui_scripts/server_list/__init__.lua",
-        18115,
-        "F02D4794021C625B4A1EE18AD801681C3C7D3B22"
+        17479,
+        "F283D677243AC8E85F55FF9BA20871497B0F62B8"
     ],
     [
         "data/ui_scripts/stats/__init__.lua",
-        4312,
-        "F0F27CBDF00273DA06553F30BAB5F5334BACD420"
+        4145,
+        "D9EC111559BADCE9F45C52D5DDD8C155BDBC1D33"
     ],
     [
         "data/ui_scripts/string_override/__init__.lua",
-        272,
-        "C873DC7B7D2F533F360C220521B4567B98EB89DD"
+        266,
+        "A552B90952D0E38CA49C062076B88BBC5B201DFE"
     ],
     [
         "data/ui_scripts/team_select/__init__.lua",
-        3728,
-        "3295B0226968F084D7EF58C5CFE3E46EDC6D6245"
+        3614,
+        "15BFFF7C5A9632D68544ACBDD07D8AE7B7B5149F"
     ],
     [
         "iw6x.exe",
-        6796288,
-        "5D73EDED6993A6AC2F1E4B20BC33342C58836252"
+        6795264,
+        "017733FF4D32255B00DFA39E0AA7077CE0996401"
     ]
 ]
