@@ -22,12 +22,12 @@
     [
         "data/dw/playlists_tu22.aggr",
         32928,
-        "20C78A907AD26865331C592227B9685F5B795064"
+        "0FDDD8EB297474CB6840ADF7708C27B0E91A8A73"
     ],
     [
         "data/dw/social_tu22.cfg",
-        7155,
-        "7BE870A532AFB3E469C521F040CF331A364C8676"
+        5010,
+        "AD730BBB5D12917B89447824FF827821A999FB28"
     ],
     [
         "data/dw/winStoreConfig_tu22.csv",
@@ -55,7 +55,12 @@
         "9B592C4BF0E7F81ED87EA7AB3C575F53F905641C"
     ],
     [
-        "data/scripts/_team_balance.gsc",
+        "data/scripts/mp/_patches.gsc",
+        908,
+        "CF64CBA490E38DC4835895874777633158E89E95"
+    ],
+    [
+        "data/scripts/mp/_team_balance.gsc",
         428,
         "38F8C0E3D530C58F1B46B91DF11D2D148792029E"
     ],
@@ -106,13 +111,13 @@
     ],
     [
         "data/ui_scripts/server_list/lobby.lua",
-        2667,
-        "584DDD29D17EC432DD1C1FE52DBC20AEB60D4E58"
+        3609,
+        "A51C711D3D3E64F66193C095839DB03C3F5E3162"
     ],
     [
         "data/ui_scripts/server_list/serverlist.lua",
-        2359,
-        "FE332012145B60F6C10321A7A19E02304567A9D3"
+        2134,
+        "B1BD3F6B9F34693631A22B1B4ED50C9561632776"
     ],
     [
         "data/ui_scripts/server_list/__init__.lua",
@@ -126,7 +131,7 @@
     ],
     [
         "s1x.exe",
-        7672320,
-        "49CE0F4BFCC60473DFCC12A47725AA30D4EFA5AF"
+        7690240,
+        "EE2B631B605521BC57B814DB4CAAB8EA0E0B80EB"
     ]
 ]
