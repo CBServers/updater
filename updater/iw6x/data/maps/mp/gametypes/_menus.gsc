@@ -312,7 +312,7 @@ showloadoutmenu()
 
 autoassign()
 {
-    if ( maps\mp\_utility::is_aliens() || level.gametype == "infect" )
+    if ( maps\mp\_utility::is_aliens() )
         thread setteam( "allies" );
     else if ( ( getdvarint( "squad_match" ) == 1 || getdvarint( "squad_vs_squad" ) == 1 || getdvarint( "squad_use_hosts_squad" ) == 1 ) && isdefined( self.bot_team ) )
         thread setteam( self.bot_team );
@@ -431,12 +431,6 @@ waitforclassselect()
 
     for (;;)
     {
-        if ( level.gametype == "infect" )
-        {
-            bypassclasschoice();
-            break;
-        }
-
         if ( maps\mp\_utility::allowclasschoice() || maps\mp\_utility::showfakeloadout() && !isai( self ) )
             self waittill( "luinotifyserver", var_0, var_1 );
         else

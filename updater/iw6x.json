@@ -1,10 +1,5 @@
 [
     [
-        "data/common_scripts/utility.gsc",
-        60773,
-        "B9162C55E8C923D8EB8467607F78066C11F4F882"
-    ],
-    [
         "data/dw/entitlement_config_tu14.info",
         6454,
         "1607A11435E22FF2AAD0885DF6456A5C2A6F483B"
@@ -51,8 +46,8 @@
     ],
     [
         "data/maps/mp/gametypes/_menus.gsc",
-        20171,
-        "E268E9662164E86304F5A8641EDBBF581ACE1BD5"
+        20026,
+        "39F6E35008417669B4F092C20A1D458040E97D5A"
     ],
     [
         "data/maps/mp/gametypes/_playerlogic.gsc",
@@ -65,7 +60,12 @@
         "11A87DA2B3A731A6B6C0F2A79E16FB4F832F2F51"
     ],
     [
-        "data/scripts/_team_balance.gsc",
+        "data/scripts/mp/_patches.gsc",
+        3790,
+        "8F6955ED953DC4D4C76114443053F1727D5E59AE"
+    ],
+    [
+        "data/scripts/mp/_team_balance.gsc",
         546,
         "8AB1AC9BE271FB01DE76C953E7BA24E1D3039F11"
     ],
@@ -80,9 +80,19 @@
         "1229873F29ADE5654BBDDB08031D196280F1B336"
     ],
     [
+        "data/ui_scripts/infect/__init__.lua",
+        18444,
+        "62843B84CB11AEC6521057F8D66E07871A6B1649"
+    ],
+    [
         "data/ui_scripts/main_menu/__init__.lua",
-        7882,
-        "5EC8BE27FF10317D63BC8835C11AEA3C19D3B853"
+        8391,
+        "FFD01C0DCD1CECCB33FB2B0394F7A929CB131361"
+    ],
+    [
+        "data/ui_scripts/menu_mods/__init__.lua",
+        3035,
+        "B8BCB5AD52F766924366356BB20C857F659D72A5"
     ],
     [
         "data/ui_scripts/menu_xboxlive/__init__.lua",
@@ -121,7 +131,7 @@
     ],
     [
         "iw6x.exe",
-        6795264,
-        "6499FCE71D2A85EAE04AD82372D9B8E1F3F77C7D"
+        6861824,
+        "6044E2032F06E1F532F2950E52365483ADCD81F9"
     ]
 ]

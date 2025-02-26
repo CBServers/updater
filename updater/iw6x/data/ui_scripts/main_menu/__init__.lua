@@ -40,6 +40,10 @@ local SquadsModeButtonAction = function( f4_arg1 , f4_arg0)
 	end
 end
 
+local ModsMenuButtonAction = function()
+	LUI.FlowManager.RequestAddMenu( nil, "mods_menu", false, controller, false )
+end
+
 local main_menu_options_feeder = function( f17_arg0 )
 	local f17_local0 = Engine.IsAliensMode()
 	local f17_local1 = SvS.IsSvS()
@@ -118,6 +122,20 @@ local main_menu_options_feeder = function( f17_arg0 )
 			button_action_func = LUI.mp_menus.MPMainMenu.optionsButtonAction,
 			desc_text = Engine.Localize( "@LUA_MENU_OPTIONS_DESC" ),
 			button_over_func = function ( f22_arg0, f22_arg1 )
+				PersistentBackground.SetToDefault()
+			end
+		}
+	}
+	f17_local6[#f17_local6 + 1] = {
+		type = "UIGenericButton",
+		id = "btn_MPMain_10",
+		disabled = f17_local3,
+		disabledFunc = Engine.DoWeNeedCompatibilityPacks,
+		properties = {
+			button_text = "MODS",
+			button_action_func = ModsMenuButtonAction,
+			desc_text = "Load Mods",
+			button_over_func = function ( f18_arg0, f18_arg1 )
 				PersistentBackground.SetToDefault()
 			end
 		}
