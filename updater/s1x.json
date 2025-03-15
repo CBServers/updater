@@ -85,9 +85,19 @@
         "897686020DFDB7CBD6395BCE68CE3DB68CA79760"
     ],
     [
+        "data/ui_scripts/lobby/menu_xboxlive.lua",
+        3609,
+        "A51C711D3D3E64F66193C095839DB03C3F5E3162"
+    ],
+    [
+        "data/ui_scripts/lobby/menu_xboxlive_lobby.lua",
+        2952,
+        "F1AA5B7EB8043C80DEB17A79859A9CE024B6A1B8"
+    ],
+    [
         "data/ui_scripts/lobby/__init__.lua",
-        2953,
-        "3A7344C5C6CBB392FA458AF9677DC81375D526C8"
+        128,
+        "0E78A2BCABB5BE7447EBA5F4EF85B19D106139C0"
     ],
     [
         "data/ui_scripts/patches/__init__.lua",
@@ -122,6 +132,6 @@
     [
         "s1x.exe",
         7712256,
-        "E9E56FAD3B97CB2D30A3D346C08FC8D45F469CE8"
+        "09AA33641765B0527F31C8BD1708AA167CC6211F"
     ]
 ]
