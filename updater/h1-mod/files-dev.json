@@ -6,148 +6,148 @@
     ],
     [
         "cdata/scripts/mp/classes.gsc",
-        638,
-        "E2953F5597510D39290D5AF59F0220567E86A367"
+        604,
+        "14B474E303228A2A9B7F628B98E333B6B34E6358"
     ],
     [
         "cdata/scripts/mp/team_balance.gsc",
-        2409,
-        "568984ADA6804EC2366295D18A8060A2CDAC6FFA"
+        2322,
+        "91E41A1D936E127C240DAE5E61981C07574BBFF3"
     ],
     [
         "cdata/scripts/mp_patches/custom_weapons.gsc",
-        9293,
-        "95374F34679DEAE84991B992867A818F98D7F339"
+        8910,
+        "50A3E1BB5AAF38129A6A75E0EE09982FAF15AA01"
     ],
     [
         "cdata/scripts/sp/battlechatter_patch.gsc",
-        9973,
-        "1BF2D3A0DCD0735733CFCAADD196F23D740A6773"
+        9732,
+        "9C6A9515DA480993A987025E015920A58E800B5F"
     ],
     [
         "cdata/ui_scripts/classes/__init__.lua",
-        312,
-        "368CDCCB4209ABDF7A4297A4428CC06D2C3CFB1B"
+        300,
+        "2F528435808924109F994FD43F2F5CE9019CDDD0"
     ],
     [
         "cdata/ui_scripts/custom_depot/depot_override.lua",
-        13330,
-        "193AC361D905C174677395D9B614E6DB25E27D1F"
+        12998,
+        "7575E29AB6FA15FDCFF47D16BF6C3A9DB61E5261"
     ],
     [
         "cdata/ui_scripts/custom_depot/mod_eula.lua",
-        462,
-        "E8049B6FFEE19838606250EBD5D44F5257CBBCF6"
+        449,
+        "35DAC9F8B5D81EF89264743BDE418E30481B423F"
     ],
     [
         "cdata/ui_scripts/custom_depot/scoreboard_override.lua",
-        2771,
-        "629FCEA409BACE44CC24A3103D9D19477D9C4065"
+        2702,
+        "85A408561AC71E37CED83CD8ED2FE43072829A5F"
     ],
     [
         "cdata/ui_scripts/custom_depot/__init__.lua",
-        4240,
-        "41F09A57C4EDB3A4BE90505D0E71CC0E739092A4"
+        4094,
+        "E9CC5D8326EFC484E7022643A7CA52E09ECFB245"
     ],
     [
         "cdata/ui_scripts/custom_weapons/__init__.lua",
-        690,
-        "CD3D84A019AC546676A679838A9B0E8BC005C53C"
+        664,
+        "8D00FCB72EE0C9DE836B7E24C41BCD97AFC76544"
     ],
     [
         "cdata/ui_scripts/discord/__init__.lua",
-        7609,
-        "897690B42A42EBCA1F778CEAD07B65254CA17634"
+        7319,
+        "B0951F2D3C90B8205CBCCFFEEA11C253DD9B2AEA"
     ],
     [
         "cdata/ui_scripts/hud_info/hud.lua",
-        4828,
-        "24CB5B2A9F65D8056631CE867A59AA63531C3CC7"
+        4635,
+        "0C38301C21A3F8051BB397FC9AB3CB78A715E658"
     ],
     [
         "cdata/ui_scripts/hud_info/settings.lua",
-        5627,
-        "89B7A9D80711450344787D8C37BCEF5217D78615"
+        5506,
+        "912BF9FDDB1E414154EC3CFFE3D22D6DD529D17A"
     ],
     [
         "cdata/ui_scripts/hud_info/__init__.lua",
-        89,
-        "7FDB50B844CAC11C19AA9AAF26B655B36C860D3B"
+        83,
+        "387CE9D28DE381FD4CC2D057578F1190664A67E5"
     ],
     [
         "cdata/ui_scripts/mods/download.lua",
-        862,
-        "F76182D36E8B832B107CCEBA910010F292240144"
+        838,
+        "AC0AE32B598C61F5056EE4A2F89F55B63AB5CE8E"
     ],
     [
         "cdata/ui_scripts/mods/loading.lua",
-        3577,
-        "3D3B47EAB7D08DA12A90ACC2DBD0C495C2B17CCB"
+        3462,
+        "B1A33B6A68A8F1A6241BC187AEA93388FDCBA489"
     ],
     [
         "cdata/ui_scripts/mods/__init__.lua",
-        83,
-        "BEB56D16CE4C0AE6D3D97F384091546B73F8AE96"
+        78,
+        "6009634E75A4C71AB77540E58CF365571EDC424E"
     ],
     [
         "cdata/ui_scripts/options/lookcontrols.lua",
-        2360,
-        "CA73BD1FC39566B18C5B6E5B47B97EE6179239BB"
+        2314,
+        "9D5A89EAFFA27E9E1B69ED5051D2A55A5C590E67"
     ],
     [
         "cdata/ui_scripts/options/pcaudio.lua",
-        5907,
-        "9312215F82AF1B2066CEB9914B857EB69CA55516"
+        5781,
+        "50D2B9C586DDC38C04B927DFD3A10791F67BE360"
     ],
     [
         "cdata/ui_scripts/options/__init__.lua",
-        622,
-        "BDD0CABA6E6E4B320EAD9BE3CE757805BC2986A2"
+        597,
+        "4EDCF32722B1B5C15A11EBBDB3636A7C87B13016"
     ],
     [
         "cdata/ui_scripts/patches/background_effects.lua",
-        396,
-        "EEBEFF57BA1EA110BD602CA4CA31A25CEDCA2B92"
+        385,
+        "38084743B3D8A384B751B11ABAD04B35EDE44E5E"
     ],
     [
         "cdata/ui_scripts/patches/disable_useless_things.lua",
-        498,
-        "A49F24DE92910F42C921C013D98D216E25588EA7"
+        479,
+        "BC87C65D9BDF829F9EA82F62132E339FFF2AE340"
     ],
     [
         "cdata/ui_scripts/patches/gamemodes.lua",
-        327,
-        "C7DA502AB76945E76586575DCA28278F1F31CB2F"
+        316,
+        "754709C146C12171FA56F3E64561C0560733EE34"
     ],
     [
         "cdata/ui_scripts/patches/language.lua",
-        4094,
-        "28B7EEB1787DC782613207F12879B406199EA278"
+        3971,
+        "C3A9794BDC488270656A3FFB6F7B914C5D146CC0"
     ],
     [
         "cdata/ui_scripts/patches/no_mode_switch.lua",
-        433,
-        "E985EF886B12A42F61642480ED3C72049766DA65"
+        420,
+        "7C6CBA35515F18CC17CD565AD6028ED7C27121C2"
     ],
     [
         "cdata/ui_scripts/patches/pausequit.lua",
-        996,
-        "1F43B2650FA24339265DD7FC9A0B349D1DBDE22C"
+        964,
+        "C880A0FD052B82906255C783E25B2442C8C45F49"
     ],
     [
         "cdata/ui_scripts/patches/scoreboard.lua",
-        935,
-        "D0BED40A7A6E2CBFCAA8349F8CB35AAE12D79429"
+        900,
+        "61FDF850CC3A75DEE8ACB78E87ED19B2791CB9F1"
     ],
     [
         "cdata/ui_scripts/patches/shader_dialog.lua",
-        1012,
-        "0C4D06695487352E94C24B81BD3BAE81BED10311"
+        987,
+        "EE48FEB17EFEEE1BEC21F767C2F038ECDA44DBDA"
     ],
     [
         "cdata/ui_scripts/patches/sp_unlockall.lua",
-        2579,
-        "EA1A0E46C8A2C9C144FA90AC35A7824437C1CF33"
+        2526,
+        "22A438846E263AA4484C0D43721FF07D1BFCE7A1"
     ],
     [
         "cdata/ui_scripts/patches/__init__.lua",
@@ -156,28 +156,28 @@
     ],
     [
         "cdata/ui_scripts/server_list/confirm.lua",
-        444,
-        "9FD06989DC08B8343AAFAD7F4A4E29E99441CC5F"
+        432,
+        "0CCA16219DB301A69565777EEE753B936025FAAB"
     ],
     [
         "cdata/ui_scripts/server_list/lobby.lua",
-        3516,
-        "C1918B31A38C84DC683F424247FE31DB941078A5"
+        3421,
+        "8AB2BE86B523998E768ED955A4458D4693ED3A00"
     ],
     [
         "cdata/ui_scripts/server_list/serverlist.lua",
-        7700,
-        "84C49522E83709E35FF5714CDFDA1E6031F0D4D7"
+        7444,
+        "6C110EBAC1015FDF0B805553CE3BC17756EB2ED2"
     ],
     [
         "cdata/ui_scripts/server_list/__init__.lua",
-        108,
-        "DCB77CBA2930E80B70201FFBF7D521C58B393A91"
+        101,
+        "C5EB1C72CF8DE78DCDF543C1F823ED6F7529337F"
     ],
     [
         "cdata/ui_scripts/stats/__init__.lua",
-        4749,
-        "A6A2FA5604943563D3D1705D2913898D145013A1"
+        4604,
+        "978C4C7AA47130FDC997A58C60703B61F66D57D4"
     ],
     [
         "cdata/zone/english/eng_h1_mod_common.ff",
@@ -261,7 +261,7 @@
     ],
     [
         "h1-mod.exe",
-        9957376,
-        "19ADEF99135F4822DCEB279C628B6D1260331174"
+        9946624,
+        "ECF271D3CB1333BA203814AFA7CA7A1E7AF00E72"
     ]
 ]
