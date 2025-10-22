@@ -2,7 +2,7 @@
     [
         "cb-launcher.exe",
         2010624,
-        "84AFBF14E83EE539C3DC40215B8D8E317A1F7E5F"
+        "8D90E9B71914B31D81FBA95E31D5B33D9D9F9D37"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -76,8 +76,8 @@
     ],
     [
         "data/launcher-ui/css/main.css",
-        38171,
-        "00CA24237DFA525761093EC5E1A5C6292AF00F30"
+        36321,
+        "AC1ADFB8CAD49A622670E837D3B408626E3A30C6"
     ],
     [
         "data/launcher-ui/img/boiii-hero.png",
@@ -146,42 +146,42 @@
     ],
     [
         "data/launcher-ui/js/command.js",
-        393,
-        "8BD3E3E17157BFAF99D65D8C5067EBC21EFBF321"
+        378,
+        "6954347AF4EA881987844A94E07B60F08AE4C8BD"
     ],
     [
         "data/launcher-ui/js/game-mode-popup.js",
-        8080,
-        "A0991BCD410C9A4638F9F6AF97969A58BBCFF41A"
+        7868,
+        "286E4688AB90614BE6BE76C8A850668EE6EDDC8A"
     ],
     [
         "data/launcher-ui/js/game-settings-popup.js",
-        12900,
-        "4AB04FC5BF154F7C11A9E1321E2DBB6160DED715"
+        12610,
+        "E4990B38E29C06F16D6A92F76A2F3916DDF4A2E4"
     ],
     [
         "data/launcher-ui/js/main.js",
-        31256,
-        "2542A4CBC67AE3C35673BCFEB7225067A586CE13"
+        30364,
+        "24F8C1E8E26EAF032143304D20F02E1561B04B38"
     ],
     [
         "data/launcher-ui/js/message-box.js",
-        1515,
-        "09B947BE81A7C0889A125A39D33D9E08F7517BF0"
+        1468,
+        "47FF9619A58EA085D4999C05C4597C6E65B58FC3"
     ],
     [
         "data/launcher-ui/js/setup-flow-popup.js",
-        22066,
-        "48A2079CF2091CF72B8E33E14E2B1D61D8D72717"
+        21552,
+        "59BE131DB67D92981890F776452AEB8DEB63FB75"
     ],
     [
         "data/launcher-ui/js/utils.js",
-        8281,
-        "177F01DB60BDC55057344469F93AED78924F130B"
+        8038,
+        "953D2ABCACF77E8A834152FBAAFA9CEF9FC86B73"
     ],
     [
         "data/launcher-ui/main.html",
-        12850,
-        "51B4CA3A5B301411CDE50D7D8FE1578EEED218E3"
+        12604,
+        "46ECC9A162CDD8D217B57F5C6F752173D97360EF"
     ]
 ]
