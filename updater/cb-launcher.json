@@ -2,7 +2,7 @@
     [
         "cb-launcher.exe",
         2019840,
-        "E151C3DC2509B5E4B40E38D84C142CC4BAA756D5"
+        "103C7202DA90FBD7C463BE764116C74FE244524E"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -156,8 +156,8 @@
     ],
     [
         "data/launcher-ui/js/game-settings-popup.js",
-        15029,
-        "ED29F675EEB94CE7DE862028D003D1C9F905D5EE"
+        15077,
+        "2C022604AB52EA536788FACE6F73066B8866FAE0"
     ],
     [
         "data/launcher-ui/js/main.js",
