@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        2038784,
-        "71158CF74C2904C2CE0EE41E8C504434C9233E79"
+        2103296,
+        "632DED09B046FF4B026FBDA8972A305424BC7F6F"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -76,8 +76,8 @@
     ],
     [
         "data/launcher-ui/css/main.css",
-        38538,
-        "6B43AE42149E7BE268980CFD0F97729428DFC854"
+        52665,
+        "12195221FAED277B0B7C9F8493FB6A15B12945D9"
     ],
     [
         "data/launcher-ui/img/boiii-hero.png",
@@ -150,19 +150,24 @@
         "6954347AF4EA881987844A94E07B60F08AE4C8BD"
     ],
     [
+        "data/launcher-ui/js/component-selection-popup.js",
+        18265,
+        "41F3CF99043489F7D4AD4491F8F5276CCEA6223A"
+    ],
+    [
         "data/launcher-ui/js/game-mode-popup.js",
-        11042,
-        "ED8735328262CBC7C1C1268A3DAD35332479C7F0"
+        6490,
+        "CF93F16C628A18D6393A0169319E5307D6FEE646"
     ],
     [
         "data/launcher-ui/js/game-settings-popup.js",
-        15065,
-        "85699E40EE0E73FBE4B3D618FCDD23D34ED8818F"
+        16055,
+        "FCEF2894E27AB50C30E42D2A53D6E4CB4256858C"
     ],
     [
         "data/launcher-ui/js/main.js",
-        44993,
-        "68B23A199CBEE94E2B0688130F06EF7BF4DCAE5C"
+        44085,
+        "E63B4B05753C96C7AE4D60938B5A783235B05F73"
     ],
     [
         "data/launcher-ui/js/message-box.js",
@@ -171,17 +176,17 @@
     ],
     [
         "data/launcher-ui/js/setup-flow-popup.js",
-        22295,
-        "BA2F9BDC62E37E1BD4FFC3FCD55E7225904F88E8"
+        24481,
+        "9456A7040E5D4D90F4EC7BEDB64EAF38AB4DC5F8"
     ],
     [
         "data/launcher-ui/js/utils.js",
-        8891,
-        "A8AEE3DB9621F35AD8E458DAE48B5250D6F10E7D"
+        13784,
+        "566BA75A6C344052DE77BDFA5188631CE32D9FF7"
     ],
     [
         "data/launcher-ui/main.html",
-        12604,
-        "46ECC9A162CDD8D217B57F5C6F752173D97360EF"
+        15354,
+        "91334979623F10B6196691BEF34E6B81719E7894"
     ]
 ]

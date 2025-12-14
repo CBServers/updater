@@ -170,7 +170,10 @@ class SetupFlowPopup {
 
             if (typeof window.executeCommand === 'function') {
                 // Check for existing install path
-                const existingPath = await window.executeCommand('get-property', gameConfig.installProperty);
+                const existingPath = await window.executeCommand('get-game-property', {
+                    game: this.currentGame,
+                    suffix: 'install'
+                });
 
                 if (existingPath && existingPath.trim() !== '') {
                     // Path already exists, use it directly
@@ -231,24 +234,25 @@ class SetupFlowPopup {
                         <button class="browse-button" id="install-browse-btn" type="button">Browse</button>
                     </div>
                 </div>
+                <div class="component-selection-section">
+                    <label>Select Components</label>
+                    <div class="components-list-compact" id="install-components-list">
+                        <div class="detection-loading">
+                            <div class="spinner"></div>
+                            <div class="loading-text">Loading components...</div>
+                        </div>
+                    </div>
+                </div>
                 <div class="install-download-info-section">
                     <label>Download Info</label>
                     <div class="install-info-section">
                         <div class="install-info-row">
-                            <span class="install-info-label">Game Size:</span>
+                            <span class="install-info-label">Projected Size:</span>
                             <span class="install-info-value loading" id="install-game-size">Loading...</span>
                         </div>
                         <div class="install-info-row">
                             <span class="install-info-label">Available Space:</span>
                             <span class="install-info-value loading" id="install-available-space">Loading...</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="install-note-section">
-                    <label>Note</label>
-                    <div class="install-info-section">
-                        <div class="install-note">
-                            Game installs DO NOT include Campaign or Zombies DLC due to large game size (Only Multiplayer and DLC is included).
                         </div>
                     </div>
                 </div>
@@ -314,7 +318,105 @@ class SetupFlowPopup {
             }
         });
 
-        // Function to update download info
+        // Component selection state
+        let components = {};
+        let componentSizes = {};
+        let selectedComponents = new Set();
+
+        // Function to load and render components
+        const loadComponents = async () => {
+            try {
+                if (typeof window.executeCommand === 'function') {
+                    const componentInfo = await window.executeCommand('get-game-component-info', {
+                        game: this.currentGame,
+                        detectExisting: false
+                    });
+
+                    if (componentInfo) {
+                        components = componentInfo.components || {};
+                        componentSizes = componentInfo.sizes || {};
+
+                        // Select only components with defaultEnabled: true
+                        selectedComponents = new Set();
+                        for (const [compId, compInfo] of Object.entries(components)) {
+                            if (compInfo.defaultEnabled === true) {
+                                selectedComponents.add(compId);
+                            }
+                        }
+
+                        renderComponents();
+                    }
+                }
+            } catch (error) {
+                console.error('Failed to load components:', error);
+            }
+        };
+
+        // Function to render components in the list
+        const renderComponents = () => {
+            const componentsList = installBackdrop.querySelector('#install-components-list');
+            componentsList.innerHTML = '';
+
+            for (const [compId, compInfo] of Object.entries(components)) {
+                const isSelected = selectedComponents.has(compId);
+                const isRequired = compInfo.required;
+                const size = componentSizes[compId] || 0;
+                const sizeGB = (size / (1024 * 1024 * 1024)).toFixed(2);
+
+                const componentEl = document.createElement('div');
+                componentEl.className = 'component-item';
+
+                componentEl.innerHTML = `
+                    <div class="component-checkbox">
+                        <input type="checkbox"
+                               id="install-comp-${compId}"
+                               ${isSelected ? 'checked' : ''}
+                               ${isRequired ? 'disabled' : ''}
+                               data-component="${compId}">
+                        <label for="install-comp-${compId}"></label>
+                    </div>
+                    <div class="component-info">
+                        <div class="component-header">
+                            <span class="component-name">
+                                ${compInfo.displayName}
+                                ${isRequired ? '<span class="component-badge required">Required</span>' : ''}
+                            </span>
+                            <span class="component-size">${sizeGB} GB</span>
+                        </div>
+                    </div>
+                `;
+
+                componentsList.appendChild(componentEl);
+
+                // Add change event listener
+                const checkbox = componentEl.querySelector('input[type="checkbox"]');
+                checkbox.addEventListener('change', () => {
+                    if (checkbox.checked) {
+                        selectedComponents.add(compId);
+                    } else {
+                        selectedComponents.delete(compId);
+                    }
+                    updateDownloadInfo(currentInstallPath);
+                });
+
+                // Make the entire component item clickable (unless it's required/disabled)
+                if (!isRequired) {
+                    componentEl.style.cursor = 'pointer';
+                    componentEl.addEventListener('click', (e) => {
+                        if (e.target === checkbox) {
+                            return;
+                        }
+                        checkbox.checked = !checkbox.checked;
+                        checkbox.dispatchEvent(new Event('change'));
+                    });
+                }
+            }
+        };
+
+        // Load components first
+        await loadComponents();
+
+        // Function to update download info based on selected components
         const updateDownloadInfo = async (path) => {
             const gameSizeEl = installBackdrop.querySelector('#install-game-size');
             const availableSpaceEl = installBackdrop.querySelector('#install-available-space');
@@ -327,42 +429,47 @@ class SetupFlowPopup {
             installBtn.disabled = true;
 
             try {
+                // Calculate projected size from selected components
+                let projectedSize = 0;
+                for (const compId of selectedComponents) {
+                    projectedSize += componentSizes[compId] || 0;
+                }
+
                 if (typeof window.executeCommand === 'function') {
-                    const downloadInfo = await window.executeCommand('get-game-download-info', {
-                        game: this.currentGame,
-                        path: path
-                    });
+                    // Get available space
+                    const spaceInfo = await window.executeCommand('get-available-space', { path: path });
+                    const availableSpace = spaceInfo?.availableSpace || 0;
 
-                    if (downloadInfo) {
-                        // Update game size
-                        gameSizeEl.textContent = this.formatBytes(downloadInfo.game_size);
-                        gameSizeEl.classList.remove('loading');
+                    // Update projected size
+                    gameSizeEl.textContent = GameUtils.formatBytes(projectedSize);
+                    gameSizeEl.classList.remove('loading');
 
-                        // Update available space
-                        availableSpaceEl.textContent = this.formatBytes(downloadInfo.available_space);
-                        availableSpaceEl.classList.remove('loading');
+                    // Update available space
+                    availableSpaceEl.textContent = GameUtils.formatBytes(availableSpace);
+                    availableSpaceEl.classList.remove('loading');
 
-                        // Check if there's enough space
-                        if (downloadInfo.available_space < downloadInfo.game_size) {
-                            availableSpaceEl.classList.add('error');
-                            installBtn.disabled = true;
+                    // Check if there's enough space
+                    if (availableSpace > 0 && availableSpace < projectedSize) {
+                        availableSpaceEl.classList.add('error');
+                        installBtn.disabled = true;
 
-                            // Show error message
-                            if (typeof window.showMessageBox === 'function') {
-                                window.showMessageBox("Insufficient Space",
-                                    `Not enough space available. You need ${this.formatBytes(downloadInfo.game_size)} but only have ${this.formatBytes(downloadInfo.available_space)} available.`, ["OK"]);
-                            }
-                        } else if (downloadInfo.available_space < downloadInfo.game_size * 1.1) {
-                            // Less than 10% overhead, show warning
-                            availableSpaceEl.classList.add('warning');
-                            installBtn.disabled = false;
-                        } else {
-                            installBtn.disabled = false;
+                        // Show error message
+                        if (typeof window.showMessageBox === 'function') {
+                            window.showMessageBox("Insufficient Space",
+                                `Not enough space available. You need ${GameUtils.formatBytes(projectedSize)} but only have ${GameUtils.formatBytes(availableSpace)} available.`, ["OK"]);
                         }
+                    } else if (availableSpace > 0 && availableSpace < projectedSize * 1.1) {
+                        // Less than 10% overhead, show warning
+                        availableSpaceEl.classList.add('warning');
+                        installBtn.disabled = false;
+                    } else {
+                        installBtn.disabled = false;
                     }
                 } else {
                     // Mock for development
                     console.log('Mock: Would get download info');
+                    gameSizeEl.textContent = GameUtils.formatBytes(projectedSize);
+                    gameSizeEl.classList.remove('loading');
                     installBtn.disabled = false;
                 }
             } catch (error) {
@@ -383,6 +490,13 @@ class SetupFlowPopup {
                 hideInstallPopup();
 
                 if (typeof window.executeCommand === 'function') {
+                    // Save selected components first
+                    const componentsArray = Array.from(selectedComponents);
+                    await window.executeCommand('set-game-components', {
+                        game: this.currentGame,
+                        components: componentsArray
+                    });
+
                     // Set the game path with existing_install = false
                     const pathSet = await window.executeCommand('set-game-path', {
                         game: this.currentGame,
@@ -417,7 +531,6 @@ class SetupFlowPopup {
     }
 
     async startGameDownload() {
-        // Get the game ID for the UI
         const gameId = this.getGameIdFromMapping(this.currentGame);
 
         if (!gameId) {
@@ -425,97 +538,23 @@ class SetupFlowPopup {
             return;
         }
 
-        // Show progress bar
-        const gameDisplayName = window.GameInstallationManager.getGameDisplayName(gameId);
-
-        let pollInterval;
-
-        const cancelDownload = () => {
-            if (pollInterval) {
-                clearInterval(pollInterval);
-                console.log('Download cancelled');
+        return GameUtils.trackCommandProgress({
+            gameId: gameId,
+            command: 'verify-game',
+            commandArgs: { game: this.currentGame },
+            initialMessage: `Downloading ${window.GameInstallationManager.getGameDisplayName(gameId)}...`,
+            completeMessage: 'Download complete!',
+            onComplete: () => {
+                // Trigger UI update to show PLAY buttons now that download is complete
+                this.triggerInstallationUpdate();
             }
-            // Call backend to cancel the update
-            window.executeCommand('cancel-update').then(() => {
-                console.log('Cancel command sent to backend');
-            }).catch(error => {
-                console.error('Failed to send cancel command:', error);
-            });
-        };
-
-        window.ProgressManager.show(gameId, `Downloading ${gameDisplayName}...`, cancelDownload);
-
-        // Start the download via verify-game command and wait for it to initialize
-        window.executeCommand('verify-game', { game: this.currentGame }).then(() => {
-            console.log('Download command handler completed, starting polling');
-
-            // Poll for progress updates - backend has now set is_active=true
-            pollInterval = setInterval(async () => {
-            try {
-                const result = await window.executeCommand('get-update-progress');
-
-                if (!result) {
-                    console.log('No progress data received');
-                    return;
-                }
-
-                if (!result.active) {
-                    console.log('Download no longer active - download complete');
-                    // Download complete
-                    clearInterval(pollInterval);
-                    window.ProgressManager.update(100, 'Download complete!');
-
-                    // Trigger UI update to show PLAY buttons now that download is complete
-                    this.triggerInstallationUpdate();
-
-                    setTimeout(() => {
-                        window.ProgressManager.hide();
-                    }, 1000);
-                    return;
-                }
-
-                // Update progress
-                console.log(`Updating progress: ${result.message}, ${result.progress}`);
-                window.ProgressManager.update(result.progress, result.message);
-            } catch (error) {
-                console.error('Error polling progress:', error);
-                clearInterval(pollInterval);
-                window.ProgressManager.hide();
-            }
-        }, 100); // Poll every 100ms
         }).catch(error => {
             console.error('Failed to start download:', error);
-            window.ProgressManager.hide();
         });
     }
 
     getGameIdFromMapping(gameMapping) {
-        // Reverse lookup: find UI game ID from backend game mapping
-        const gameIds = ['boiii', 'iw6x', 's1x', 'h1-mod', 'iw7-mod', 'hmw-mod'];
-
-        for (const gameId of gameIds) {
-            const mapping = GameUtils.getGameMapping(gameId);
-            if (mapping === gameMapping) {
-                return gameId;
-            }
-        }
-
-        return null;
-    }
-
-    formatBytes(bytes) {
-        if (bytes === 0) return '0 Bytes';
-
-        const k = 1024;
-        const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
-        const i = Math.floor(Math.log(bytes) / Math.log(k));
-
-        return Math.round(bytes / Math.pow(k, i) * 100) / 100 + ' ' + sizes[i];
-    }
-
-    getInstallProperty(game) {
-        const config = GameUtils.getGameConfig(game);
-        return config ? config.installProperty : null;
+        return GameUtils.getUIIdFromBackendId(gameMapping);
     }
 
     triggerInstallationUpdate() {
