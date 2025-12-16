@@ -2,6 +2,9 @@ main()
 {
 	replacefunc( maps\mp\_utility::getlastlivingplayer, ::getlastlivingplayer_stub );
 	replacefunc( maps\mp\gametypes\common_sd_sr::ononeleftevent, ::ononeleftevent_stub );
+
+	// gitea#5 workaround
+	replacefunc( maps\mp\gametypes\_killcam::killcamvalid, ::killcamvalid_stub );
 }
 
 getlastlivingplayer_stub( team )
@@ -35,4 +38,13 @@ ononeleftevent_stub( team )
 		return;
 
 	last_player thread maps\mp\gametypes\common_sd_sr::givelastonteamwarning();
+}
+
+killcamvalid_stub( victim, attacker, dokillcam )
+{
+	return dokillcam && level.killcam &&
+		!( isdefined( victim.cancelkillcam ) && victim.cancelkillcam ) &&
+		game[ "state" ] == "playing" && !victim maps\mp\_utility::isusingremote() &&
+		!level.showingfinalkillcam &&
+		!isai( victim ) && !isai( attacker );
 }

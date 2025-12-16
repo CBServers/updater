@@ -765,7 +765,7 @@ playerkilled_internal( var_0, var_1, var_2, var_3, var_4, var_5, var_6, var_7, v
     if ( var_4 != "MOD_SUICIDE" && !( !isdefined( var_1 ) || var_1.classname == "trigger_hurt" || var_1.classname == "worldspawn" || var_1 == var_2 ) )
         recordfinalkillcam( 5.0, var_2, var_1, var_30, var_31, var_32, var_5, var_12, var_8, var_4, "normal", var_33 );
 
-    if ( maps\mp\gametypes\_killcam::killcamvalid( var_2, var_24 ) )
+    if ( maps\mp\gametypes\_killcam::killcamvalid( var_2, var_1, var_24 ) )
     {
         var_35 = maps\mp\gametypes\_playerlogic::timeuntilspawn( 1 );
         var_36 = maps\mp\gametypes\_gamelogic::timeuntilroundend();
@@ -793,7 +793,7 @@ playerkilled_internal( var_0, var_1, var_2, var_3, var_4, var_5, var_6, var_7, v
 
         if ( isdefined( self.streamweapons ) && self.streamweapons.size > 0 )
         {
-            while ( maps\mp\gametypes\_killcam::killcamvalid( var_2, var_24 ) && isplayer( self ) && isplayer( var_1 ) && !self hasloadedcustomizationplayerview( var_1, self.streamweapons ) && gettime() < var_39 )
+            while ( maps\mp\gametypes\_killcam::killcamvalid( var_2, var_1, var_24 ) && isplayer( self ) && isplayer( var_1 ) && !self hasloadedcustomizationplayerview( var_1, self.streamweapons ) && gettime() < var_39 )
                 waitframe();
         }
 
@@ -804,7 +804,7 @@ playerkilled_internal( var_0, var_1, var_2, var_3, var_4, var_5, var_6, var_7, v
     self.respawntimerstarttime = gettime();
     var_41 = gettime() >= var_39;
 
-    if ( maps\mp\gametypes\_killcam::killcamvalid( var_2, var_24 ) && !var_41 )
+    if ( maps\mp\gametypes\_killcam::killcamvalid( var_2, var_1, var_24 ) && !var_41 )
     {
         var_42 = !( maps\mp\_utility::getgametypenumlives() && !var_2.pers["lives"] );
         var_35 = maps\mp\gametypes\_playerlogic::timeuntilspawn( 1 );
@@ -1229,20 +1229,23 @@ getkillcambuffertime()
     return 15;
 }
 
-finalkillcamvalid( var_0, var_1, var_2, var_3 )
+finalkillcamvalid( victim, attacker, timegameended, timerecorded )
 {
-    var_4 = isdefined( var_0 ) && isdefined( var_1 ) && !maps\mp\_utility::practiceroundgame();
+    valid = isdefined( victim ) && isdefined( attacker ) && !maps\mp\_utility::practiceroundgame() && !isai( attacker );
 
-    if ( var_4 )
+    if ( valid )
     {
-        var_5 = getkillcambuffertime();
-        var_6 = var_2 - var_3;
+        // if the killcam happened longer than killCamBufferTime seconds ago, don't show it
+        killcambuffertime = getkillcambuffertime();
+        killcamoffsettime = timegameended - timerecorded;
 
-        if ( var_6 <= var_5 )
-            return 1;
+        if ( killcamoffsettime <= killcambuffertime )
+        {
+            return true;
+        }
     }
 
-    return 0;
+    return false;
 }
 
 endfinalkillcam()
