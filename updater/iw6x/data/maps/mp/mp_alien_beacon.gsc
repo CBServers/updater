@@ -2505,7 +2505,7 @@ _death_trigger_monitor()
             var_7 = "none";
             var_8 = undefined;
             var_0 maps\mp\alien\_death::onplayerkilled( var_1, var_2, var_3, var_4, var_5, var_6, var_7, var_8 );
-            logprint( "!!PLAYER WAS KILLED BY TRIGGER!! : " + var_0.name + " killed by death trigger at: " + var_0.origin + "\\n" );
+            logprint( "!!PLAYER WAS KILLED BY TRIGGER!! : " + var_0.name + " killed by death trigger at: " + var_0.origin + "\n" );
         }
     }
 }

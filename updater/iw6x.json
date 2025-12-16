@@ -51,13 +51,13 @@
     ],
     [
         "data/maps/mp/gametypes/_playerlogic.gsc",
-        56474,
-        "3B21DEE600F4451DB3FEB34BB6A6986C08474C50"
+        56402,
+        "3AB1F05283332C61B0FBA72770DFA076D842114F"
     ],
     [
         "data/maps/mp/mp_alien_beacon.gsc",
-        100517,
-        "11A87DA2B3A731A6B6C0F2A79E16FB4F832F2F51"
+        100516,
+        "F175C68A48A9930101118390A33EFF4C8F2C3F2A"
     ],
     [
         "data/scripts/mp/_patches.gsc",
@@ -131,7 +131,7 @@
     ],
     [
         "iw6x.exe",
-        6884864,
-        "D202C874E5D531B89C84E1C512DB044F9D830302"
+        6862848,
+        "C68DC9DD1999EF742C48CA0DBEA6107476F2E6E4"
     ]
 ]

@@ -652,9 +652,6 @@ spawnplayer( var_0 )
 
     self setdepthoffield( 0, 0, 512, 512, 4, 0 );
 
-    if ( level.console )
-        self setclientdvar( "cg_fov", "65" );
-
     resetuidvarsonspawn();
 
     if ( isdefined( var_1 ) )
