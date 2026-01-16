@@ -11,13 +11,23 @@
     ],
     [
         "cdata/custom_scripts/mp/bots.gsc",
-        1436,
-        "27DA69D7BAA69E55346EF0CF9FA2EF2752356042"
+        14640,
+        "4F4A740C0EDDE204C2B5D184DDDF376705F5F785"
+    ],
+    [
+        "cdata/custom_scripts/mp/bots_loadout.gsc",
+        3865,
+        "5925FCF0CE75B7958644EEE2B69FF1EC60D024F9"
     ],
     [
         "cdata/custom_scripts/mp/ranked.gsc",
-        4228,
-        "0439D47C23F5556F613397FFF616691537ED1377"
+        6554,
+        "569A08AADB1ADC69EB7B4CFC0968FBC3671520BA"
+    ],
+    [
+        "cdata/mp/basemaps.arena",
+        10691,
+        "DD365D4D944B930B25527EADDE34AC83DE4F2989"
     ],
     [
         "cdata/sounddata/cp/cp_disco.json",
@@ -55,6 +65,11 @@
         "8AC10C7B91C87229EAE8CBC07E5B5CC55EE61E63"
     ],
     [
+        "cdata/sounddata/mp/mp_carnage2.json",
+        714442,
+        "ABB6A07F267EB50637594703B39D685BAE8A8100"
+    ],
+    [
         "cdata/sounddata/mp/mp_codphish.json",
         623605,
         "BF2540B08B24A13F9C425D27790AECAC85615573"
@@ -73,6 +88,11 @@
         "cdata/sounddata/mp/mp_divide.json",
         604456,
         "7A1E5E79F96B65A192AB74FFEC4686155B5C5E9C"
+    ],
+    [
+        "cdata/sounddata/mp/mp_dome_dusk.json",
+        712604,
+        "BC5DE935E3FE9CF5916C33422325AC09815F6211"
     ],
     [
         "cdata/sounddata/mp/mp_dome_iw.json",
@@ -150,6 +170,11 @@
         "253BFA9EB31F0B8A1605B2988696EEE868E10C90"
     ],
     [
+        "cdata/sounddata/mp/mp_permafrost2.json",
+        712684,
+        "C105982C8FD5D0074458AD28B081D17AE5681156"
+    ],
+    [
         "cdata/sounddata/mp/mp_pixel.json",
         618626,
         "D2BC35E00B81A34FAD25029F3B36F2697103456A"
@@ -175,6 +200,11 @@
         "5C9B8746E072FDACE80978AFC64E48AC64C08A96"
     ],
     [
+        "cdata/sounddata/mp/mp_renaissance2.json",
+        712009,
+        "FFD73CAD03B807044AFB8F18C6888F3CDDDE9851"
+    ],
+    [
         "cdata/sounddata/mp/mp_riot.json",
         606599,
         "A877984DDBA1B62C9896D627156CA65D9787C1AB"
@@ -190,14 +220,19 @@
         "C8D46B638B6F5A1BBFAD7048BE959EEBEE42205D"
     ],
     [
+        "cdata/sounddata/mp/mp_turista2.json",
+        715420,
+        "24993D53434FD467A0EFCB988BCECBBEDD029638"
+    ],
+    [
         "cdata/start.cfg",
         80,
         "65C65F132AFD40EFA57E24A678548EFF4BB4E82A"
     ],
     [
         "cdata/ui_scripts/Conditions/InFrontend.lua",
-        556,
-        "1A6A9EF482822B336AF3DA7F5FAC0A576BF46B35"
+        515,
+        "290EAD304A11DEBE6343E47D76CDE995D673DF68"
     ],
     [
         "cdata/ui_scripts/Conditions/InGame.lua",
@@ -211,8 +246,8 @@
     ],
     [
         "cdata/ui_scripts/debug/__init__.lua",
-        1318,
-        "EB464ECDA65DED8AC60B82CC1C5760065181600F"
+        3802,
+        "1A1D2A9756AA51CD23ADD8D24A05F42CAAD5A605"
     ],
     [
         "cdata/ui_scripts/EndGame/__init__.lua",
@@ -221,23 +256,28 @@
     ],
     [
         "cdata/ui_scripts/Lobby/GameSetupButtonsBots.lua",
-        12265,
-        "D02080C329328C3D2CE3FB596B5BA3E0E6E1840C"
+        12399,
+        "B4DEA0677B1628E72BD2981EF01891EB646A4470"
     ],
     [
         "cdata/ui_scripts/Lobby/GameSetupOptions.lua",
-        7010,
-        "7DC1146A5CFEC0B5F66D46A702A0675D084E2BC8"
+        7011,
+        "742285C15E84D8F72AB576E3FD55C2C675DBCCDA"
     ],
     [
         "cdata/ui_scripts/Lobby/LobbyMissionButtons.lua",
-        4122,
-        "9258FB8812A392E27DBED8352E566776E00ECC11"
+        4206,
+        "05A2C860E9BEA3DB4A75512A0E775D3F6ED92C84"
     ],
     [
         "cdata/ui_scripts/Lobby/__init__.lua",
-        1721,
-        "C5920AFCF81DF611B453A9884A705467A46DF5BD"
+        2304,
+        "B26B0E46ED6E7887081A3F4675A7BE132D2686A9"
+    ],
+    [
+        "cdata/ui_scripts/MainMenu/CampaignMenuButtons.lua",
+        7636,
+        "15B8ED60EAC706F8CAE9C093094F736BB99D7658"
     ],
     [
         "cdata/ui_scripts/MainMenu/CPMainMenu.lua",
@@ -245,19 +285,34 @@
         "299181671FB0B45BA9516711A7C25A55CBA9F3A2"
     ],
     [
-        "cdata/ui_scripts/MainMenu/CPMPMainMenuButtons.lua",
-        3827,
-        "BB882CDB441F7B4F17068E2E02FD86FA6CD25E7A"
+        "cdata/ui_scripts/MainMenu/CPMainMenuButtons.lua",
+        8193,
+        "395499029FFD1A4278166ADB15B17F05F138E775"
     ],
     [
         "cdata/ui_scripts/MainMenu/MissionButtons.lua",
-        2239,
-        "22A8CFA4156FF460DBCD57750153886BCBB836A0"
+        2171,
+        "7F3FEEA2D05105638D5707B5E7220CE96B3A727B"
+    ],
+    [
+        "cdata/ui_scripts/MainMenu/MPMainMenu.lua",
+        18772,
+        "45D423D375B221CCCEF970500E8A6E22BB4F90AD"
+    ],
+    [
+        "cdata/ui_scripts/MainMenu/MPMainMenuButtons.lua",
+        8441,
+        "36CB754B273DD72D4A69A22CD39F5C1184D99A6D"
     ],
     [
         "cdata/ui_scripts/MainMenu/__init__.lua",
-        124,
-        "F9AB8BE78A2881B824D49DB4DBE68F54A47F6D0A"
+        205,
+        "FCF12AF8AF708FFCBC0A96353ED58B8ADC081F2D"
+    ],
+    [
+        "cdata/ui_scripts/MissionTeams/__init__.lua",
+        3753,
+        "7AA6CB13942ABC6119AE96B6E62F536AEA8E05D2"
     ],
     [
         "cdata/ui_scripts/Mods/ModDownload.lua",
@@ -271,13 +326,23 @@
     ],
     [
         "cdata/ui_scripts/Mods/ModSelectMenu.lua",
-        11647,
-        "01E0DFEB84B7CDCB4450884B34A42A01D7A31293"
+        12088,
+        "159F123B1042C782D16F3E2355037183402DF0B0"
     ],
     [
         "cdata/ui_scripts/Mods/__init__.lua",
         123,
         "ADE157FF5AD6687C1ED78F567B9872D27B602C72"
+    ],
+    [
+        "cdata/ui_scripts/Patches/__init__.lua",
+        572,
+        "C286F1C70CCD7228A46B011CFFC5C98BB054C1D2"
+    ],
+    [
+        "cdata/ui_scripts/Stats/__init__.lua",
+        11083,
+        "F6DA9EAB3E85AA587F1A51FF4CE6197D33087784"
     ],
     [
         "cdata/ui_scripts/SystemLinkMenu/ServerBrowser.lua",
@@ -316,12 +381,12 @@
     ],
     [
         "cdata/zone/iw7mod_ui_mp.ff",
-        57024304,
-        "47D60EE9DC265B3A8742C1E98A5B581DABDCABE2"
+        61178504,
+        "1C86BF44980F681CC1AD9944ABB12C9506B124AA"
     ],
     [
         "iw7-mod.exe",
-        4513792,
-        "2B948FDBFA3E8DE1A02C9ABD8095AD7270AD4C2D"
+        4588032,
+        "6AAE7B70BAD2533C0CB6EA173B2CEF30800580A2"
     ]
 ]
