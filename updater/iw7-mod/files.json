@@ -385,8 +385,33 @@
         "1C86BF44980F681CC1AD9944ABB12C9506B124AA"
     ],
     [
+        "cdata/zone/mp_dome_dusk.ff",
+        149345492,
+        "B3C5AE9716EE911616D04A74DE551D867849B2AD"
+    ],
+    [
+        "cdata/zone/mp_dome_dusk.pak",
+        42752168,
+        "A1AE5E5F43DDE9DAFE6F0BA0B280ED6C42B0AF7E"
+    ],
+    [
+        "cdata/zone/mp_dome_dusk.sabl",
+        85465728,
+        "ECECF556FD2D7B9E5D177B5A2925EC9710A2098E"
+    ],
+    [
+        "cdata/zone/mp_dome_dusk.sabs",
+        30454528,
+        "79FFB6CD16D8751C4662194C2ADD14AEBFEBAC75"
+    ],
+    [
+        "cdata/zone/mp_dome_dusk_load.ff",
+        1631920,
+        "26C3EAFA66215B1BB34A4FED38E13EC92CCA8B70"
+    ],
+    [
         "iw7-mod.exe",
         4588032,
-        "6AAE7B70BAD2533C0CB6EA173B2CEF30800580A2"
+        "AE2C025F96DBBA5C5E2E6F9670D5C01E5EA9245E"
     ]
 ]
