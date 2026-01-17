@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        2103296,
-        "632DED09B046FF4B026FBDA8972A305424BC7F6F"
+        2105856,
+        "B0D29172061A340FDA0C35784E9C203BC5F19BD5"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -76,8 +76,8 @@
     ],
     [
         "data/launcher-ui/css/main.css",
-        52665,
-        "12195221FAED277B0B7C9F8493FB6A15B12945D9"
+        53457,
+        "96B114277025844AE9952B0C2BFE13A94225E5FE"
     ],
     [
         "data/launcher-ui/img/boiii-hero.png",
@@ -166,8 +166,8 @@
     ],
     [
         "data/launcher-ui/js/main.js",
-        44085,
-        "E63B4B05753C96C7AE4D60938B5A783235B05F73"
+        45855,
+        "865B621FCA37A45754001C0AE03DBDCB939E6551"
     ],
     [
         "data/launcher-ui/js/message-box.js",
@@ -186,7 +186,7 @@
     ],
     [
         "data/launcher-ui/main.html",
-        15354,
-        "91334979623F10B6196691BEF34E6B81719E7894"
+        22233,
+        "7A353771C62DE3DB49F24B8B7BC353FFB08F22B8"
     ]
 ]
