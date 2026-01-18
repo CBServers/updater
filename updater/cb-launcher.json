@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        2105856,
-        "B0D29172061A340FDA0C35784E9C203BC5F19BD5"
+        2110464,
+        "FEE01786AA759D4511778D78E75FF276DA3BB33F"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -161,8 +161,8 @@
     ],
     [
         "data/launcher-ui/js/game-settings-popup.js",
-        16055,
-        "FCEF2894E27AB50C30E42D2A53D6E4CB4256858C"
+        18770,
+        "7D1D399A3207476FC49A26805053118418E65914"
     ],
     [
         "data/launcher-ui/js/main.js",
@@ -186,7 +186,7 @@
     ],
     [
         "data/launcher-ui/main.html",
-        22233,
-        "7A353771C62DE3DB49F24B8B7BC353FFB08F22B8"
+        23954,
+        "3151081BC27CD27A2BE3583E0A3CB40C05F97DF6"
     ]
 ]
