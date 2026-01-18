@@ -1,8 +1,8 @@
 [
     [
         "cdata/custom_scripts/cp/patches.gsc",
-        642,
-        "33FC77745FF07900F25BC8F1BF2A7F0C7F4E40AA"
+        3243,
+        "A48C103E0D8F0DCD769F9C429EA427B19AE0E610"
     ],
     [
         "cdata/custom_scripts/cp_mp/inspect.gsc",
@@ -411,7 +411,7 @@
     ],
     [
         "iw7-mod.exe",
-        4589568,
-        "CAE255B81B46DCF156018C6D2FFFE2A84B70A7F0"
+        4577280,
+        "C5E1A2AC74C46D9F29C41A4110113B589D323BDF"
     ]
 ]
