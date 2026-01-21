@@ -21,8 +21,8 @@
     ],
     [
         "cdata/custom_scripts/mp/ranked.gsc",
-        6554,
-        "569A08AADB1ADC69EB7B4CFC0968FBC3671520BA"
+        6482,
+        "166C5261E54732AB2F1AFAE9FE61A86D8A359E74"
     ],
     [
         "cdata/mp/basemaps.arena",
@@ -381,8 +381,8 @@
     ],
     [
         "cdata/zone/iw7mod_ui_mp.ff",
-        61178504,
-        "1C86BF44980F681CC1AD9944ABB12C9506B124AA"
+        61177948,
+        "2D122DB8CFC48096EFFC4E4515C94CEC4448194B"
     ],
     [
         "cdata/zone/mp_dome_dusk.ff",
@@ -412,6 +412,6 @@
     [
         "iw7-mod.exe",
         4577280,
-        "C5E1A2AC74C46D9F29C41A4110113B589D323BDF"
+        "E99131601323958BB3B473F35406F9442F8AB477"
     ]
 ]
