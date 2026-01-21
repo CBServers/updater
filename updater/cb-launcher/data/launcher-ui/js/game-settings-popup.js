@@ -69,7 +69,7 @@ class GameSettingsPopup {
                     <h4>Advanced</h4>
                     <div class="setting-item">
                         <label for="launch-options-input">Launch Options:</label>
-                        <input type="text" id="launch-options-input" class="launch-options-input" placeholder="e.g., +set r_fullscreen 0 +devmap mp_nuketown_x" />
+                        <input type="text" id="launch-options-input" class="launch-options-input" />
                     </div>
                 </div>
 
@@ -376,7 +376,7 @@ class GameSettingsPopup {
     async handleReset() {
         if (typeof window.showMessageBox === 'function') {
             const result = await window.showMessageBox(
-                "⚠️ Reset Game Settings",
+                "Reset Game Settings",
                 `Are you sure you want to reset all settings for ${this.gameConfig.displayName}? This will clear the installation path and all game preferences.`,
                 ["Cancel", "Reset"]
             );
