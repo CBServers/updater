@@ -2,7 +2,7 @@
     [
         "cb-launcher.exe",
         2128896,
-        "60D0B6C587C6CC64E1D47A0AEABF51918C1B11A7"
+        "23D7EE487AC34927AF9F3C7951DE68AE91D64927"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -166,8 +166,8 @@
     ],
     [
         "data/launcher-ui/js/main.js",
-        50051,
-        "F4A6D4969F5188796BEAD32530AB1724A02B29A7"
+        50062,
+        "B07CE3752DDEB48BEAD07D8C74C1DCADBC68F08E"
     ],
     [
         "data/launcher-ui/js/message-box.js",
