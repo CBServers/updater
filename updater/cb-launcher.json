@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        2128896,
-        "23D7EE487AC34927AF9F3C7951DE68AE91D64927"
+        2164736,
+        "8F447F46D9FD67075DADE00DEE2F9C0C9DED3A10"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -76,8 +76,8 @@
     ],
     [
         "data/launcher-ui/css/main.css",
-        55102,
-        "DE38923BEB8E13AB322B0E19F735039439C3B8A2"
+        59519,
+        "4704FD06A21F787A926942FC3D7E385E3AD279C3"
     ],
     [
         "data/launcher-ui/img/boiii-hero.png",
@@ -106,13 +106,33 @@
     ],
     [
         "data/launcher-ui/img/hmw-mod-hero.png",
-        1105974,
-        "A14DFC390093B72EA2029160BBE4D843892119DF"
+        117097,
+        "B9099D9EC29959D44244C58594F472960FD274C4"
     ],
     [
         "data/launcher-ui/img/hmw-mod.png",
         54232,
         "ABB104DA60A5159B24D75115F64E2346BC144707"
+    ],
+    [
+        "data/launcher-ui/img/iw4x-hero.png",
+        562955,
+        "E1DD7399494CCD6FFA74E5F6338245DC27CF4692"
+    ],
+    [
+        "data/launcher-ui/img/iw4x.png",
+        6160,
+        "33435A739601E8747FB4892F9A50696A524BAE09"
+    ],
+    [
+        "data/launcher-ui/img/iw5-hero.png",
+        435684,
+        "425361ED1F40C4DAA721CA650A7D74DAA5B788C6"
+    ],
+    [
+        "data/launcher-ui/img/iw5.png",
+        5030,
+        "0688AD6A53F08AC2951D91BCF996588B11DC1A06"
     ],
     [
         "data/launcher-ui/img/iw6x-hero.png",
@@ -145,14 +165,24 @@
         "DEC164F9B43EA4CDD5A92256211011DA439F40FC"
     ],
     [
+        "data/launcher-ui/img/t6-hero.png",
+        4002875,
+        "47EDAB718F9B32ABE3573F0839E305210BA9F871"
+    ],
+    [
+        "data/launcher-ui/img/t6.png",
+        1740,
+        "47AEACC8354673B7E50244866DB4ACB45C761107"
+    ],
+    [
         "data/launcher-ui/js/command.js",
         378,
         "6954347AF4EA881987844A94E07B60F08AE4C8BD"
     ],
     [
         "data/launcher-ui/js/component-selection-popup.js",
-        18265,
-        "41F3CF99043489F7D4AD4491F8F5276CCEA6223A"
+        20560,
+        "C4C7DB45D5FEB5B4CBA779BA9F77D2F6243DE3A1"
     ],
     [
         "data/launcher-ui/js/game-mode-popup.js",
@@ -161,13 +191,13 @@
     ],
     [
         "data/launcher-ui/js/game-settings-popup.js",
-        18701,
-        "EBD747C2CC97FCA9B03C3076E310AF95857D0073"
+        18768,
+        "C3B0FF98493D9A47B74CE4EB1AD8A5679D6E9B33"
     ],
     [
         "data/launcher-ui/js/main.js",
-        50062,
-        "B07CE3752DDEB48BEAD07D8C74C1DCADBC68F08E"
+        49808,
+        "E9A4635E275AD838FF68C08BF6D8369872E56B9A"
     ],
     [
         "data/launcher-ui/js/message-box.js",
@@ -181,12 +211,12 @@
     ],
     [
         "data/launcher-ui/js/utils.js",
-        13784,
-        "566BA75A6C344052DE77BDFA5188631CE32D9FF7"
+        15036,
+        "B47E28839EF60515E7B04B5DCE69942764AFA460"
     ],
     [
         "data/launcher-ui/main.html",
-        24551,
-        "CA714213D3E8591BE179FF90D71D09AA669CACAF"
+        32386,
+        "CE8DC1CD76C345129156574B2E44006CA11EE0D0"
     ]
 ]

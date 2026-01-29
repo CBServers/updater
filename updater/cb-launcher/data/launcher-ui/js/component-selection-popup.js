@@ -53,8 +53,11 @@ class ComponentSelectionPopup {
                     </div>
                 </div>
                 <div class="popup-actions">
-                    <button class="btn-cancel">Cancel</button>
-                    <button class="btn-apply">Apply Changes</button>
+                    <button class="btn-uninstall">Uninstall</button>
+                    <div class="popup-actions-right">
+                        <button class="btn-cancel">Cancel</button>
+                        <button class="btn-apply">Apply Changes</button>
+                    </div>
                 </div>
             </div>
         `;
@@ -70,11 +73,13 @@ class ComponentSelectionPopup {
         const cancelBtn = this.popup.querySelector('.btn-cancel');
         const applyBtn = this.popup.querySelector('.btn-apply');
         const refreshBtn = this.popup.querySelector('.btn-refresh');
+        const uninstallBtn = this.popup.querySelector('.btn-uninstall');
 
         closeBtn.addEventListener('click', () => this.hide());
         cancelBtn.addEventListener('click', () => this.hide());
         applyBtn.addEventListener('click', () => this.applyChanges());
         refreshBtn.addEventListener('click', () => this.refreshDetection());
+        uninstallBtn.addEventListener('click', () => this.uninstallGame());
 
         this.backdrop.addEventListener('click', (e) => {
             if (e.target === this.backdrop) {
@@ -173,14 +178,19 @@ class ComponentSelectionPopup {
             this.availableSpace = spaceInfo?.availableSpace || 0;
         }
 
-        // Load currently selected components from properties
-        const selectedComponentsStr = await window.executeCommand('get-property', `${this.currentGame}-selected-components`);
+        // Start with empty selection - only check required and installed components
+        this.selectedComponents = new Set();
 
-        if (selectedComponentsStr) {
-            this.selectedComponents = new Set(selectedComponentsStr.split(','));
-        } else {
-            // Default to only installed components if none selected
-            this.selectedComponents = new Set(this.installedComponents);
+        // Select all installed components (they exist on disk)
+        for (const comp of this.installedComponents) {
+            this.selectedComponents.add(comp);
+        }
+
+        // Ensure all required components are always selected (e.g., base game)
+        for (const [compId, compInfo] of Object.entries(this.components)) {
+            if (compInfo.required) {
+                this.selectedComponents.add(compId);
+            }
         }
 
         // Save original selection for comparison later
@@ -393,7 +403,13 @@ class ComponentSelectionPopup {
             const hasChanges = !this.setsAreEqual(this.selectedComponents, this.originalSelectedComponents);
 
             if (!hasChanges) {
-                // No changes made, just close the popup
+                // Still save current selection to properties (ensures required components are persisted)
+                const componentsArray = Array.from(this.selectedComponents);
+                await window.executeCommand('set-game-components', {
+                    game: this.currentGame,
+                    components: componentsArray
+                });
+                // Close popup without starting verify
                 this.hide();
                 return;
             }
@@ -443,6 +459,48 @@ class ComponentSelectionPopup {
         } catch (error) {
             console.error('Failed to save component selection:', error);
             this.showError('Failed to save component selection. Please try again.');
+        }
+    }
+
+    async uninstallGame() {
+        if (typeof window.showMessageBox === 'function') {
+            const result = await window.showMessageBox(
+                "Confirm Uninstall",
+                `Are you sure you want to uninstall ${this.gameConfig.displayName}?\n\n` +
+                "This will permanently DELETE all game files.\n" +
+                "Your install path and preferences will be preserved.",
+                ["Cancel", "Uninstall"]
+            );
+
+            // User clicked Cancel (button index 0)
+            if (result === 0) {
+                return;
+            }
+        }
+
+        // Close popup
+        this.hide();
+
+        const gameId = GameUtils.getUIIdFromBackendId(this.currentGame);
+        const gameDisplayName = this.gameConfig.displayName;
+
+        // Execute uninstall command with progress tracking
+        try {
+            await GameUtils.trackCommandProgress({
+                gameId: gameId,
+                command: 'delete-game',
+                commandArgs: { game: this.currentGame },
+                initialMessage: `Uninstalling ${gameDisplayName}...`,
+                completeMessage: 'Uninstall complete!',
+                onComplete: () => {
+                    // Refresh game UI
+                    if (gameId && typeof refreshGameStatus === 'function') {
+                        refreshGameStatus(gameId);
+                    }
+                }
+            });
+        } catch (error) {
+            console.error('Failed to uninstall game:', error);
         }
     }
 

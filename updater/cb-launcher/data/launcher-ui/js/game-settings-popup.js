@@ -74,7 +74,7 @@ class GameSettingsPopup {
                 </div>
 
                 <div class="popup-actions">
-                    <button class="btn-reset">Reset Game Settings</button>
+                    <button class="btn-reset">Reset Settings</button>
                     <div style="flex: 1;"></div>
                     <button class="btn-cancel">Cancel</button>
                     <button class="btn-save">Save Settings</button>
@@ -278,12 +278,12 @@ class GameSettingsPopup {
     async handleBrowse() {
         if (typeof window.executeCommand === 'function') {
             try {
-                const folder = await window.executeCommand('browse-folder');
-                if (folder) {
-                    this.popup.querySelector('#game-path').value = folder;
+                const currentPath = this.popup.querySelector('#game-path').value;
+                if (currentPath && currentPath.trim() !== '') {
+                    await window.executeCommand('open-folder', { path: currentPath });
                 }
             } catch (error) {
-                console.error('Failed to browse for folder:', error);
+                console.error('Failed to open folder:', error);
             }
         }
     }
@@ -377,7 +377,7 @@ class GameSettingsPopup {
         if (typeof window.showMessageBox === 'function') {
             const result = await window.showMessageBox(
                 "Reset Game Settings",
-                `Are you sure you want to reset all settings for ${this.gameConfig.displayName}? This will clear the installation path and all game preferences.`,
+                `Are you sure you want to reset all settings for ${this.gameConfig.displayName}? This will clear the installation path and game preferences but WILL NOT delete game files.`,
                 ["Cancel", "Reset"]
             );
 

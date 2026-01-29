@@ -1,6 +1,24 @@
 // Shared utility functions for the CB Servers Launcher
 
 class GameUtils {
+    // Single source of truth for game ID mappings (UI ID -> backend ID)
+    static UI_TO_BACKEND_MAP = {
+        'iw4x': 'iw4x',
+        'iw5': 'iw5',
+        't6': 't6',
+        'boiii': 'bo3',
+        'iw6x': 'ghosts',
+        's1x': 'aw',
+        'h1-mod': 'mwr',
+        'iw7-mod': 'iw',
+        'hmw-mod': 'hmw'
+    };
+
+    // Generated reverse mapping (backend ID -> UI ID)
+    static BACKEND_TO_UI_MAP = Object.fromEntries(
+        Object.entries(GameUtils.UI_TO_BACKEND_MAP).map(([ui, backend]) => [backend, ui])
+    );
+
     /**
      * Get comprehensive game configuration
      * @param {string} game - The game identifier (backend ID like 'bo3', 'aw', etc.)
@@ -8,6 +26,39 @@ class GameUtils {
      */
     static getGameConfig(game) {
         const configs = {
+            'iw4x': {
+                displayName: 'Modern Warfare 2',
+                defaultInstallPath: 'mw2_game_files',
+                uiId: 'iw4x',
+                hasMultipleModes: true,
+                supportedModes: ['sp', 'mp'],
+                specialSettings: [],
+                codeName: 'IW4X/IW4-SP',
+                iconPath: './img/iw4x.png',
+                heroImagePath: './img/iw4x-hero.png'
+            },
+            't6': {
+                displayName: 'Black Ops 2',
+                defaultInstallPath: 'bo2_game_files',
+                uiId: 't6',
+                hasMultipleModes: false,
+                supportedModes: [],
+                specialSettings: [],
+                codeName: 'PLUTO T6',
+                iconPath: './img/t6.png',
+                heroImagePath: './img/t6-hero.png'
+            },
+            'iw5': {
+                displayName: 'Modern Warfare 3',
+                defaultInstallPath: 'mw3_game_files',
+                uiId: 'iw5',
+                hasMultipleModes: true,
+                supportedModes: ['sp', 'mp'],
+                specialSettings: [],
+                codeName: 'PLUTO IW5/IW5-MOD',
+                iconPath: './img/iw5.png',
+                heroImagePath: './img/iw5-hero.png'
+            },
             'bo3': {
                 displayName: 'Black Ops 3',
                 defaultInstallPath: 'bo3_game_files',
@@ -84,15 +135,7 @@ class GameUtils {
      * @returns {object} Complete game configuration object
      */
     static getGameConfigByUIId(uiId) {
-        const mapping = {
-            'boiii': 'bo3',
-            'iw6x': 'ghosts',
-            's1x': 'aw',
-            'h1-mod': 'mwr',
-            'iw7-mod': 'iw',
-            'hmw-mod': 'hmw'
-        };
-        const backendId = mapping[uiId] || uiId;
+        const backendId = this.UI_TO_BACKEND_MAP[uiId] || uiId;
         return this.getGameConfig(backendId);
     }
 
@@ -102,15 +145,7 @@ class GameUtils {
      * @returns {string} The backend game identifier
      */
     static getGameMapping(gameId) {
-        const mapping = {
-            'boiii': 'bo3',
-            'iw6x': 'ghosts',
-            's1x': 'aw',
-            'h1-mod': 'mwr',
-            'iw7-mod': 'iw',
-            'hmw-mod': 'hmw'
-        };
-        return mapping[gameId] || gameId;
+        return this.UI_TO_BACKEND_MAP[gameId] || gameId;
     }
 
     /**
@@ -119,15 +154,7 @@ class GameUtils {
      * @returns {string} The UI game identifier (boiii, iw6x, etc.)
      */
     static getUIIdFromBackendId(backendId) {
-        const reverseMapping = {
-            'bo3': 'boiii',
-            'ghosts': 'iw6x',
-            'aw': 's1x',
-            'mwr': 'h1-mod',
-            'iw': 'iw7-mod',
-            'hmw': 'hmw-mod'
-        };
-        return reverseMapping[backendId] || backendId;
+        return this.BACKEND_TO_UI_MAP[backendId] || backendId;
     }
 
     /**
@@ -181,7 +208,7 @@ class GameUtils {
      */
     static getAllGameImages() {
         const images = {};
-        const games = ['bo3', 'ghosts', 'aw', 'mwr', 'iw', 'hmw'];
+        const games = ['iw4x', 'iw5', 't6', 'bo3', 'ghosts', 'aw', 'mwr', 'iw', 'hmw'];
 
         games.forEach(game => {
             const config = this.getGameConfig(game);
@@ -221,7 +248,7 @@ class GameUtils {
      * @returns {array} Array of all game UI identifiers
      */
     static getAllGameIds() {
-        return ['boiii', 'iw6x', 's1x', 'h1-mod', 'iw7-mod', 'hmw-mod'];
+        return ['iw4x', 'iw5', 't6', 'boiii', 'iw6x', 's1x', 'h1-mod', 'iw7-mod', 'hmw-mod'];
     }
 
     /**
