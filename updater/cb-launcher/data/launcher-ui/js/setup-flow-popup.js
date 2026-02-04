@@ -172,7 +172,7 @@ class SetupFlowPopup {
                 // Check for existing install path
                 const existingPath = await window.executeCommand('get-game-property', {
                     game: this.currentGame,
-                    suffix: 'install'
+                    suffix: PROPERTY_KEYS.GAME.INSTALL
                 });
 
                 if (existingPath && existingPath.trim() !== '') {
@@ -541,7 +541,7 @@ class SetupFlowPopup {
         return GameUtils.trackCommandProgress({
             gameId: gameId,
             command: 'verify-game',
-            commandArgs: { game: this.currentGame },
+            commandArgs: { game: this.currentGame, delete_components: false },
             initialMessage: `Downloading ${window.GameInstallationManager.getGameDisplayName(gameId)}...`,
             completeMessage: 'Download complete!',
             onComplete: () => {

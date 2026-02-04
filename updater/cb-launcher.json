@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        2164736,
-        "8F447F46D9FD67075DADE00DEE2F9C0C9DED3A10"
+        2166272,
+        "A143237DBCDDD64DD140CF19FEFC5B4BB2D7FD81"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -181,23 +181,23 @@
     ],
     [
         "data/launcher-ui/js/component-selection-popup.js",
-        20560,
-        "C4C7DB45D5FEB5B4CBA779BA9F77D2F6243DE3A1"
+        20646,
+        "D0FE80FBFF53C70F8A65A7E6A206DC901D184BD9"
     ],
     [
         "data/launcher-ui/js/game-mode-popup.js",
-        6490,
-        "CF93F16C628A18D6393A0169319E5307D6FEE646"
+        6524,
+        "BEBA20EFE4C2D55557CE2369C338EE13661D3B93"
     ],
     [
         "data/launcher-ui/js/game-settings-popup.js",
-        18768,
-        "C3B0FF98493D9A47B74CE4EB1AD8A5679D6E9B33"
+        18938,
+        "63CF6A16ED20ABF385986EF8A3ABCA1D6F579FF4"
     ],
     [
         "data/launcher-ui/js/main.js",
-        49808,
-        "E9A4635E275AD838FF68C08BF6D8369872E56B9A"
+        51330,
+        "89D4BD2DDA28C5FA9419FE31600EDF2BB22D1701"
     ],
     [
         "data/launcher-ui/js/message-box.js",
@@ -206,17 +206,17 @@
     ],
     [
         "data/launcher-ui/js/setup-flow-popup.js",
-        24481,
-        "9456A7040E5D4D90F4EC7BEDB64EAF38AB4DC5F8"
+        24524,
+        "E7D94245A4B99C69BA579466FAB0F87324479918"
     ],
     [
         "data/launcher-ui/js/utils.js",
-        15036,
-        "B47E28839EF60515E7B04B5DCE69942764AFA460"
+        15788,
+        "7D3361EB7A2FE2BF3D4A32033553BAB60F1BCCE0"
     ],
     [
         "data/launcher-ui/main.html",
-        32386,
-        "CE8DC1CD76C345129156574B2E44006CA11EE0D0"
+        33006,
+        "4D82BA66EAF72409F791B999471BE4A37B7C2896"
     ]
 ]

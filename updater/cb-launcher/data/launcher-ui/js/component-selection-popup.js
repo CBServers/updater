@@ -170,7 +170,7 @@ class ComponentSelectionPopup {
         // Get install path and available space
         const installPath = await window.executeCommand('get-game-property', {
             game: this.currentGame,
-            suffix: 'install'
+            suffix: PROPERTY_KEYS.GAME.INSTALL
         });
         this.availableSpace = 0;
         if (installPath) {
@@ -450,10 +450,10 @@ class ComponentSelectionPopup {
             // Close popup
             this.hide();
 
-            // Auto-start verification
+            // Auto-start verification (pass willDeleteFiles to enable component deletion)
             const gameId = GameUtils.getUIIdFromBackendId(this.currentGame);
             if (gameId) {
-                verifyGame(gameId);
+                verifyGame(gameId, willDeleteFiles);
             }
 
         } catch (error) {
