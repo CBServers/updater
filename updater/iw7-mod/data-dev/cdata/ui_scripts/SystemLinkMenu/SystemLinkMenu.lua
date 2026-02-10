@@ -26,11 +26,6 @@ local function setupSystemLinkMenu(menu, controller, index)
 
     if isAliensMode then
         Engine.SetFrontEndSceneSection("zm_main", 1)
-        menu.MenuTitle.MenuBreadcrumbs:setText(ToUpperCase(Engine.Localize("LUA_MENU_BREADCRUMB_2_ITEMS", "IW7-Mod",
-            "ZOMBIES")), 0)
-    else
-        menu.MenuTitle.MenuBreadcrumbs:setText(ToUpperCase(Engine.Localize("LUA_MENU_BREADCRUMB_2_ITEMS", "IW7-Mod",
-            "MULTIPLAYER")), 0)
     end
 
     menu.addButtonHelperFunction = function(helperMenu, helperController)
@@ -157,14 +152,21 @@ MenuBuilder.m_types["SystemLinkMenu"] = function(menu, controller)
     self:playSound("menu_open")
 
     local MenuTitle = nil
-    MenuTitle = MenuBuilder.BuildRegisteredType("MenuTitle", {
-        controllerIndex = controllerIndex
-    })
+    if Engine.IsAliensMode() then
+        MenuTitle = MenuBuilder.BuildRegisteredType("CPMenuTitle", {
+            controllerIndex = controllerIndex
+        })
+    else
+        MenuTitle = MenuBuilder.BuildRegisteredType("MenuTitle", {
+            controllerIndex = controllerIndex
+        })
+        MenuTitle.MenuBreadcrumbs:setText(ToUpperCase(Engine.Localize("LUA_MENU_BREADCRUMB_2_ITEMS", "IW7-Mod",
+            "MULTIPLAYER")), 0)
+        MenuTitle.Icon:SetTop(_1080p * -28.5, 0)
+        MenuTitle.Icon:SetBottom(_1080p * 61.5, 0)
+    end
     MenuTitle.id = "MenuTitle"
     MenuTitle.MenuTitle:setText(ToUpperCase(Engine.Localize("SERVER BROWSER")), 0)
-    MenuTitle.MenuBreadcrumbs:setText(ToUpperCase(Engine.Localize("EXE_LOCAL_PLAY")), 0)
-    MenuTitle.Icon:SetTop(_1080p * -28.5, 0)
-    MenuTitle.Icon:SetBottom(_1080p * 61.5, 0)
     MenuTitle:SetAnchorsAndPosition(0, 1, 0, 1, _1080p * 96, _1080p * 1056, _1080p * 54, _1080p * 134)
     self:addElement(MenuTitle)
     self.MenuTitle = MenuTitle

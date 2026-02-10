@@ -22,41 +22,25 @@ local function GenericArrowButton(controllerIndex, id, title, desc)
 	return self
 end
 
-function popmenu_unlockstats()
-	return {
-		type = "generic_yesno_popup",
-		properties = {
-			message_text = "Do you want to unlock all stats, items and progression?",
-			popup_title = "Unlock Stats",
-			yes_text = "Yes, Unlock",
-			no_text = "No, Cancel",
-			yes_action = function()
-				Engine.Exec("unlockstats")
-				Engine.Exec("unlockstatsEE")
-                Engine.Exec("luiReload") --fixme
-			end
-		}
-	}
+function popmenu_unlockstats(arg0)
+	Engine.Exec("unlockstats")
+	Engine.Exec("unlockstatsEE")
+	Engine.SetDvarBool("director_cut", true)
+
+	arg0.SetRank:SetCurrentValue(#arg0.SetRank.labels)
+
+	if Engine.IsAliensMode() then
+		arg0.DirectorsCut:SetCurrentValue(1)
+	else
+		arg0.SetPrestige:SetCurrentValue(#arg0.SetPrestige.labels)
+	end
 end
 
 function popmenu_resetstats()
-	return {
-		type = "generic_yesno_popup",
-		properties = {
-			message_text = "Are you sure you want to reset all stats?",
-			popup_title = "Reset Stats",
-			yes_text = "Yes, Reset",
-			no_text = "No, Keep Stats",
-			yes_action = function()
-				Engine.Exec("freshStart")
-				Engine.Exec("confirmStatsReset")
-			end
-		}
-	}
+	Engine.SetDvarBool("director_cut", false)
+	Engine.Exec("freshStart")
+	Engine.Exec("confirmStatsReset")
 end
-
-MenuBuilder.registerDef("popmenu_unlockstats", popmenu_unlockstats)
-MenuBuilder.registerDef("popmenu_resetstats", popmenu_resetstats)
 
 MenuBuilder.registerType("StatsMenuButtons", function(menu, controller)
 	local self = LUI.UIVerticalNavigator.new({
@@ -113,9 +97,50 @@ MenuBuilder.registerType("StatsMenuButtons", function(menu, controller)
 	self.UnlockLoot = UnlockLoot
 	self:addElement(UnlockLoot)
 
+	local isAliens = Engine.IsAliensMode()
+
+	if isAliens then
+		local DirectorsCut = GenericArrowButton(
+			controllerIndex,
+			"DirectorsCut",
+			"Toggle Directors Cut",
+			"Whether the Directors Cut features and perks should be enabled or disabled."
+		)
+
+		LUI.AddUIArrowTextButtonLogic(DirectorsCut, controllerIndex, {
+			labels = labels,
+			wrapAround = true,
+			defaultValue = Engine.GetDvarBool("director_cut") and 1 or 2,
+			action = function(valueIndex)
+				Engine.SetDvarBool("director_cut", valueIndex == 1)
+			end
+		})
+
+		self.DirectorsCut = DirectorsCut
+		self:addElement(DirectorsCut)
+
+		local UnlimitedCards = GenericArrowButton(
+			controllerIndex,
+			"UnlimitedCards",
+			"Unlimited Fortune Cards",
+			"Whether Fortune Cards should be unlimited."
+		)
+
+		LUI.AddUIArrowTextButtonLogic(UnlimitedCards, controllerIndex, {
+			labels = labels,
+			wrapAround = true,
+			defaultValue = Engine.GetDvarBool("cg_unlimited_cards") and 1 or 2,
+			action = function(valueIndex)
+				Engine.SetDvarBool("cg_unlimited_cards", valueIndex == 1)
+			end
+		})
+
+		self.UnlimitedCards = UnlimitedCards
+		self:addElement(UnlimitedCards)
+	end
+
 	self:addSpacer(10)
 
-	local isAliens = Engine.IsAliensMode()
 	local prestigeTitle = isAliens and "Icon" or "Prestige"
 	local prestigeDesc = isAliens and "Edit icon." or "Edit prestige level."
 
@@ -127,13 +152,13 @@ MenuBuilder.registerType("StatsMenuButtons", function(menu, controller)
 	)
 
 	labels = {}
-	for i = 1, (isAliens and 49 or 31) do
+	for i = 1, (isAliens and 50 or 31) do
 		labels[i] = i - 1
 	end
 
-	--if isAliens then
-	--	labels[1] = "Default"
-	--end
+	if isAliens then
+		labels[1] = "Default"
+	end
 
 	LUI.AddUIArrowTextButtonLogic(SetPrestige, controllerIndex, {
 		labels = labels,
@@ -155,7 +180,7 @@ MenuBuilder.registerType("StatsMenuButtons", function(menu, controller)
 	SetPrestige:addEventHandler("button_action", function()
 		OSK.OpenScreenKeyboard(
 			controllerIndex,
-			"Edit Prestige",
+			"Edit " .. prestigeTitle,
 			"",
 			4,
 			false,
@@ -376,11 +401,25 @@ MenuBuilder.registerType("StatsMenu", function(menu, controller)
 	end)
 
     self.BindButton:addEventHandler("button_alt1", function(arg0, arg1)
-	LUI.FlowManager.RequestPopupMenu(self, "popmenu_unlockstats", true, controllerIndex, false)
+		LUI.FlowManager.RequestPopupMenu(self, "PopupYesNo", true, controllerIndex, false, {
+			message = "Do you want to unlock all stats, items and progression?",
+			title = "Unlock Stats",
+			yesLabel = "Yes, Unlock",
+			noLabel = "No, Cancel",
+			yesAction = function ()
+				popmenu_unlockstats(StatsMenuButtons)
+			end
+		})
     end)
-    
+
 	self.BindButton:addEventHandler("button_alt2", function(arg0, arg1)
-		LUI.FlowManager.RequestPopupMenu(self, "popmenu_resetstats", false, controllerIndex, false)
+		LUI.FlowManager.RequestPopupMenu(self, "PopupYesNo", false, controllerIndex, false, {
+			message = "Are you sure you want to reset all stats?",
+			title = "Reset Stats",
+			yesLabel = "Yes, Reset",
+			noLabel = "No, Keep Stats",
+			yesAction = popmenu_resetstats
+		})
 	end)
 
 	if not Engine.IsAliensMode() then

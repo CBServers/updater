@@ -230,6 +230,11 @@
         "65C65F132AFD40EFA57E24A678548EFF4BB4E82A"
     ],
     [
+        "cdata/ui_scripts/ClanTags/__init__.lua",
+        8045,
+        "3CFD289AD9A066A10880B19428CC374A9F0CF7DB"
+    ],
+    [
         "cdata/ui_scripts/Conditions/InFrontend.lua",
         515,
         "290EAD304A11DEBE6343E47D76CDE995D673DF68"
@@ -326,8 +331,8 @@
     ],
     [
         "cdata/ui_scripts/Mods/ModSelectMenu.lua",
-        12088,
-        "159F123B1042C782D16F3E2355037183402DF0B0"
+        12310,
+        "22E2AF231E94645BD1D0CDEBF2FB64DEB1F12EAD"
     ],
     [
         "cdata/ui_scripts/Mods/__init__.lua",
@@ -341,8 +346,8 @@
     ],
     [
         "cdata/ui_scripts/Stats/__init__.lua",
-        11083,
-        "F6DA9EAB3E85AA587F1A51FF4CE6197D33087784"
+        12149,
+        "4AD8E0E0EE06896799D416C88D2E0DA9F2733D0B"
     ],
     [
         "cdata/ui_scripts/SystemLinkMenu/ServerBrowser.lua",
@@ -361,8 +366,8 @@
     ],
     [
         "cdata/ui_scripts/SystemLinkMenu/SystemLinkMenu.lua",
-        12873,
-        "AA18157A4824A95ED20D66459F5122D45BED668C"
+        12822,
+        "CC3B21CCF5E475E9064DE6BC1FBAE9560AB2BBE5"
     ],
     [
         "cdata/ui_scripts/SystemLinkMenu/SystemLinkMenuButtons.lua",
@@ -411,7 +416,7 @@
     ],
     [
         "iw7-mod.exe",
-        4578816,
-        "51519B3BCD9702290FDF4F00524B6D4187D1377B"
+        4601856,
+        "A804CE37FB85B7BEF7CDD4FE79DA97194162B1C1"
     ]
 ]

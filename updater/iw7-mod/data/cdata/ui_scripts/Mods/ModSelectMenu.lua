@@ -174,14 +174,22 @@ function ModSelectMenu(arg0, controller)
     menuElement:addElement(buttonHelperBar)
     menuElement.ButtonHelperBar = buttonHelperBar
 
-    local menuTitle = MenuBuilder.BuildRegisteredType("MenuTitle", {
-        controllerIndex = controllerIndex
-    })
+    local menuTitle = nil
+
+    if Engine.IsAliensMode() then
+        menuTitle = MenuBuilder.BuildRegisteredType("CPMenuTitle", {
+            controllerIndex = controllerIndex
+        })
+    else
+        menuTitle = MenuBuilder.BuildRegisteredType("MenuTitle", {
+            controllerIndex = controllerIndex
+        })
+        menuTitle.MenuBreadcrumbs:setText(ToUpperCase(""), 0)
+        menuTitle.Icon:SetTop(_1080p * -28.5, 0)
+        menuTitle.Icon:SetBottom(_1080p * 61.5, 0)
+    end
     menuTitle.id = "MenuTitle"
     menuTitle.MenuTitle:setText(ToUpperCase(Engine.Localize("LUA_MENU_MODS")), 0)
-    menuTitle.MenuBreadcrumbs:setText(ToUpperCase(""), 0)
-    menuTitle.Icon:SetTop(_1080p * -28.5, 0)
-    menuTitle.Icon:SetBottom(_1080p * 61.5, 0)
     menuTitle:SetAnchorsAndPosition(0, 1, 0, 1, _1080p * 96, _1080p * 1056, _1080p * 54, _1080p * 134)
     menuElement:addElement(menuTitle)
     menuElement.MenuTitle = menuTitle
