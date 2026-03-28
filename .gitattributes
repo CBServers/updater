@@ -6,3 +6,5 @@ updater/iw7-mod/data-dev/cdata/zone/mp_dome_dusk.ff filter=lfs diff=lfs merge=lf
 updater/iw7-mod/data/cdata/zone/mp_dome_dusk.ff filter=lfs diff=lfs merge=lfs -text
 updater/cb-launcher/data/cef/release/libcef.dll filter=lfs diff=lfs merge=lfs -text
 updater/cb-launcher-dev/data/cef/release/libcef.dll filter=lfs diff=lfs merge=lfs -text
+updater/iw4x/iw4x/iw4x_03.iwd filter=lfs diff=lfs merge=lfs -text
+updater/iw4x/iw4x/iw4x_05.iwd filter=lfs diff=lfs merge=lfs -text
