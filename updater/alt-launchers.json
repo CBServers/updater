@@ -1,8 +1,8 @@
 [
     [
         "alterware-launcher.exe",
-        2760192,
-        "2FB9EDFE44BFD3874D36F9C6924B7BBFA8366238"
+        4353024,
+        "C7A08FFB429ECD2780846CC6903DC8FB35C2226E"
     ],
     [
         "iw4x-launcher.exe",
@@ -13,5 +13,8 @@
         "plutonium.exe",
         4863736,
         "8681469349254C5203A7F9A189833D22A14F5CD9"
-    ]
+    ],
+    {
+        "ManifestHash": "9D6A844E77C0F8A7240408EA86A8FD29E0D567B0765CCF2F29581A1BF7347475"
+    }
 ]
