@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        2173440,
-        "AF9AFAF6155E90151BDEAA608805F84E75A35032"
+        2177536,
+        "0DD4012AF313BF485DC7E7F28A875A913487F808"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -76,8 +76,8 @@
     ],
     [
         "data/launcher-ui/css/main.css",
-        59519,
-        "4704FD06A21F787A926942FC3D7E385E3AD279C3"
+        61239,
+        "D5AD8985CE341A735387FFDA2941ECE8935B4791"
     ],
     [
         "data/launcher-ui/img/boiii-hero.png",
@@ -165,6 +165,26 @@
         "DEC164F9B43EA4CDD5A92256211011DA439F40FC"
     ],
     [
+        "data/launcher-ui/img/t4-hero.png",
+        4712170,
+        "D464AD4E7E9BD262886054E0E8B64941608CA453"
+    ],
+    [
+        "data/launcher-ui/img/t4.png",
+        123696,
+        "74217E46C9F19AA6B77C969A26111CF77162B9BF"
+    ],
+    [
+        "data/launcher-ui/img/t5-hero.png",
+        1548770,
+        "35CB5126BC62BEF491C8E7BC38914142FD2E1C47"
+    ],
+    [
+        "data/launcher-ui/img/t5.png",
+        68849,
+        "855238F0481EB23B27428AB63C68195846FDBEEA"
+    ],
+    [
         "data/launcher-ui/img/t6-hero.png",
         4002875,
         "47EDAB718F9B32ABE3573F0839E305210BA9F871"
@@ -211,12 +231,12 @@
     ],
     [
         "data/launcher-ui/js/utils.js",
-        15788,
-        "7D3361EB7A2FE2BF3D4A32033553BAB60F1BCCE0"
+        16663,
+        "B62324A195E8D5E49EBE40EBA60124BA9F4060F2"
     ],
     [
         "data/launcher-ui/main.html",
-        33006,
-        "4D82BA66EAF72409F791B999471BE4A37B7C2896"
+        37307,
+        "4820F19D76220AF5457EB37258576FBD66EAC66B"
     ]
 ]
