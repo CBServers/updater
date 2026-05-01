@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        2177024,
-        "A2FD22E7AD6A3B00964BACA7FA6CD7FAD262AE0E"
+        2176512,
+        "2CBF088181D18F445B95BAA14F8B187BB8D2271B"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -238,63 +238,5 @@
         "data/launcher-ui/main.html",
         37307,
         "4820F19D76220AF5457EB37258576FBD66EAC66B"
-    ],
-    [
-        "manifest/aw.json",
-        499233,
-        "85C0F2C3F5E10FCCBBA9AC2FB3C5F73FE8D53FB5"
-    ],
-    [
-        "manifest/bo1.json",
-        63440,
-        "C030C6265F7D7EB3A9B6CCAA7964B503FD3E11F4"
-    ],
-    [
-        "manifest/bo2.json",
-        117975,
-        "9F20928C624BA1F47E6E5AD0C8838581E6CB8541"
-    ],
-    [
-        "manifest/bo3.json",
-        231306,
-        "1B41C39981061EAF769BBE9F15BF9F15AEE2037C"
-    ],
-    [
-        "manifest/ghosts.json",
-        196182,
-        "31AEDB81201D1EEC2D7AB3F5570EF5E146BFE702"
-    ],
-    [
-        "manifest/hmw.json",
-        21026,
-        "99F88149BF7DA152A8E2D909589A1AEB3AD6D82B"
-    ],
-    [
-        "manifest/iw.json",
-        290288,
-        "6184C14DB4C8BAE6AF7BD6EA9F5EC5A5B14CCA7B"
-    ],
-    [
-        "manifest/mw2.json",
-        65089,
-        "E85B2BB97BE4CBD794DDCA2EF8E9304937EB5ADC"
-    ],
-    [
-        "manifest/mw3.json",
-        82417,
-        "2A136BEFB75014725D1BC006B18FE7E39B65899E"
-    ],
-    [
-        "manifest/mwr.json",
-        1033956,
-        "C79B5A0D809306A9EA52D0D913AE0E0AD4FCBD13"
-    ],
-    [
-        "manifest/waw.json",
-        43446,
-        "7A6FCF01919B29123AE055A74F2B81F1AD366910"
-    ],
-    {
-        "ManifestHash": "C0B4ED4FBBDB77D486E6BF931E16D81CA5EB84C3B37E144653F1B164A85E61C0"
-    }
+    ]
 ]
