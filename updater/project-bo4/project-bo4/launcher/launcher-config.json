@@ -1,0 +1,13 @@
+{
+    "UpdateInfo": {
+        "LastPromptedVersion": "",
+        "LatestVersion": "release",
+        "AssetName": "hotfix.2.launcher.rar"
+    },
+    "audio": {
+        "volume": 5
+    },
+    "launcher": {
+        "closeLauncherOnPlay": true
+    }
+}
