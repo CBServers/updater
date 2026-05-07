@@ -26,28 +26,28 @@
     ],
     [
         "cdata/scripts/ending/achievements.gsc",
-        490,
-        "7B936113F26FD875F7FBCE0AD2CBE7BB2AE2BDBB"
+        511,
+        "0304412D3E6069CA8ACE0ABD538687B6E4DF1606"
     ],
     [
         "cdata/scripts/ending/credits.gsc",
-        1095,
-        "C4AD258262A79A7E6F8D6C21AE2694E975409019"
+        1126,
+        "808CFC6DBFBAEC7396295B4C5EFD3110B8A8BEC6"
     ],
     [
         "cdata/scripts/endmission.gsc",
-        5102,
-        "1029D34C9506CB7E073CE7539BDB07AA724E40F3"
+        5273,
+        "6B6762920DC4CD720818E95E7457DEE1B337C041"
     ],
     [
         "cdata/scripts/gulag/achievements.gsc",
-        679,
-        "B2E0D94CFC0F3D9CA4E70F4E7306E631B88F25F6"
+        703,
+        "2EA1B93634B23B7753783D1682AD9073B867E962"
     ],
     [
         "cdata/scripts/names.gsc",
-        3008,
-        "F2C513A929B006DC0D305B1C0998624FE6B5463A"
+        3137,
+        "2D624C8D7E9B3188AE448384357BA1E650BC0178"
     ],
     [
         "cdata/spanishna/sound/voiceovers/afcaves/afcaves_nkl_2_3_r.flac",
@@ -56,108 +56,108 @@
     ],
     [
         "cdata/ui_scripts/achievements/menu.lua",
-        10706,
-        "BFA151D2A613E97DC6DEC1BE7E74C9B7B8D146CD"
+        11078,
+        "67762F9C769097AF8D55A03EDB6F5C876D4E8B26"
     ],
     [
         "cdata/ui_scripts/achievements/toast.lua",
-        4996,
-        "2084AD253E5E742706BC6623B9A7F0EA678829E8"
+        5198,
+        "2DBCFA633B84D8D7F90B57855BCF6AEBC760E72A"
     ],
     [
         "cdata/ui_scripts/achievements/__init__.lua",
-        33,
-        "1F2C864CE0A74E1BAC538A6937F046B2C917FABE"
+        35,
+        "AD3ADEF1FEC3A600FA946B6CDB88DE73A5CE68D6"
     ],
     [
         "cdata/ui_scripts/branding/credits.lua",
-        7814,
-        "4C818346E915001A3B221CE5721292AC058E2694"
+        8113,
+        "847AC9192E0794DD575E85BC541B5BEA7ED1D067"
     ],
     [
         "cdata/ui_scripts/branding/victoryscreen.lua",
-        2156,
-        "C02923BFB0BCC651D65E4BC05A846FCA655097FF"
+        2241,
+        "B7AA968E75AE60466FA2F2CF2A1F120496FFE765"
     ],
     [
         "cdata/ui_scripts/branding/__init__.lua",
-        44,
-        "0DB8AD41C7FFDF812727F45C06A83F2EE8314CE5"
+        46,
+        "4760FB30E43C895413C832A9409C18DF9232B8A5"
     ],
     [
         "cdata/ui_scripts/buttons/__init__.lua",
-        845,
-        "E61C562DB75D9C55528BC1188CC1EE87BB1F7D8C"
+        876,
+        "DC1C3946DAD8FA680C7A3CB5437FAFB9F38AD867"
     ],
     [
         "cdata/ui_scripts/mods/loading.lua",
-        2362,
-        "67CAE3800245C89DFB1664D90F907BD3CDB30CCF"
+        2460,
+        "FD2A68A4B2724A86E62D3772108F073D0F09B852"
     ],
     [
         "cdata/ui_scripts/mods/__init__.lua",
-        19,
-        "0FA1A44A5782BE7CF371E3F9EE8B7CA820E996C4"
+        20,
+        "3A696A12BCD491D73DE713625048640B6A5E7102"
     ],
     [
         "cdata/ui_scripts/motd/featured.lua",
-        15963,
-        "D7BD2AC7C71913CCD6CB499C230ADDE50EAD296A"
+        16544,
+        "8A1A48C63671107FBF03E79FA5A93FC6E1AD066D"
     ],
     [
         "cdata/ui_scripts/motd/motd.lua",
-        2593,
-        "54B1A3A750DB146EFB356CFB1B8AEB8E5A1381C9"
+        2680,
+        "1DBB4694702216B8BF972109B31AF20077EA824B"
     ],
     [
         "cdata/ui_scripts/motd/__init__.lua",
-        36,
-        "706AB904CF95B2323ACB12ADB62D7D922A04AB77"
+        38,
+        "11C3DEF64382326C018934D280F509D312495F6D"
     ],
     [
         "cdata/ui_scripts/patches/pausequit.lua",
-        490,
-        "BEA3672943B053DC14F375B7ECB0C986345638C3"
+        508,
+        "4E446DFB7D1F62C07E9D7D25A838C634E4048BC2"
     ],
     [
         "cdata/ui_scripts/patches/unlockall.lua",
-        1433,
-        "9DBC1B8CE8A6D3A1EF1D424F7562BC57EB6EC1AE"
+        1466,
+        "E9BA9B0089BD54A09B9C809FF1F622386B41A201"
     ],
     [
         "cdata/ui_scripts/patches/__init__.lua",
-        42,
-        "F6A9CA3939F9762C8FCE337D5DB6F13BD647922B"
+        44,
+        "76FB4A5432832B48D6F69FDFD959B0011D870398"
     ],
     [
         "cdata/ui_scripts/settings/audio.lua",
-        6855,
-        "312751B6D3BC3C9DCEAF9B870525D43376E6ADC7"
+        7078,
+        "38C5446AC5435B942506E2B96DB08B8FD60B9D70"
     ],
     [
         "cdata/ui_scripts/settings/controls.lua",
-        3192,
-        "65EA2F9017D643A8D3D5EA66155098B036186810"
+        3270,
+        "F7B41542DD5FB9C34A8EE9D03D0A1696B958C03F"
     ],
     [
         "cdata/ui_scripts/settings/language.lua",
-        5807,
-        "AD5B03AF29784707787858B923AE928FD39BC8C7"
+        5979,
+        "06ABD339F2EDD26F295D2B9065956E105E9EAE55"
     ],
     [
         "cdata/ui_scripts/settings/settings.lua",
-        6613,
-        "B946E0722AE4DC0C3DB65BF94457F52446F77BE6"
+        6867,
+        "9B349E479B405E849C4A68C0AAE348D8854D0FFA"
     ],
     [
         "cdata/ui_scripts/settings/__init__.lua",
-        77,
-        "BACE8CFD20F6B0FE2C397A38143E86771ECF3347"
+        81,
+        "D084586FA6E2913F9BBF57100E40ACA4122AE5EA"
     ],
     [
         "cdata/ui_scripts/wordle/__init__.lua",
-        20519,
-        "A5A39BB8263668D2077FE813D048011F380D16E7"
+        21281,
+        "1937A511D2F7D0A608275D6C409F967D205E7A02"
     ],
     [
         "cdata/zone/arabic/ara_h2_mod_common.ff",
@@ -345,6 +345,6 @@
         "CD3B8CAF8A4A109EC0AD8B888B8E74E97965EE2A"
     ],
     {
-        "ManifestHash": "ECD389DB208890FCA4ADA773B483E29B52AA4E2E4F68086CF928C522BE5F8F32"
+        "ManifestHash": "B30E9A53D5D91D2711BEFC03FEB26017EE1B2572148B8135C52DEBD20C97E03F"
     }
 ]
