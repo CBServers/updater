@@ -1,12 +1,12 @@
 {
-    "ManifestHash": "92DC9E28F4C85F340CFD5D4A1DAC26495F4EBD4B7C390F5B0DD691E46123BA58",
+    "ManifestHash": "94F7BA90D9FF0AAF962BF3BAB2CD08224BA26E4AF9D1579A909E538E176623B5",
     "components": {
         "base": {
             "displayName": "HMW Files",
             "show": true,
             "required": true,
             "defaultEnabled": true,
-            "totalSize": 28138736740
+            "totalSize": 28341706808
         }
     },
     "files": [
@@ -800,6 +800,12 @@
             "hmw-usermaps/mp_underpass/mp_underpass_load.ff",
             837489,
             "35AA65DCFF496FE0",
+            "base"
+        ],
+        [
+            "raw/video/default.bik",
+            202970068,
+            "B4B2056ED30B0D9B",
             "base"
         ],
         [
