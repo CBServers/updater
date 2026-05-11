@@ -7,7 +7,7 @@
     [
         "Launch Project BO4.exe",
         106496,
-        "E16B0FF179601FE9A9D74987FDC69AA31022CC01"
+        "BEA6FCFFAEA39240A1E70F887EEC438CFA1AF6BB"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/maxrankdata_mp.csv",
@@ -275,9 +275,9 @@
         "BEA88C67E83317161D3103FB47C5F53F144718A8"
     ],
     [
-        "project-bo4/launcher/mp.zip",
-        1799793,
-        "5C02F5A1D8310CEACAF6F6FC9DD6397E358A16F9"
+        "project-bo4/launcher/mp/XInput9_1_0.dll",
+        3432960,
+        "6E3685B681E8A0B332976FFB86F96538D815C1E1"
     ],
     [
         "project-bo4/launcher/platforms/qwindows.dll",
@@ -316,13 +316,13 @@
     ],
     [
         "project-bo4/launcher/Shield_Launcher.exe",
-        358400,
-        "B58D591B03DA0919AB129C9F840EC0BE0A469F80"
+        355328,
+        "0B7C1FEA9D459849A5693DE24ADD240F1E2D7980"
     ],
     [
-        "project-bo4/launcher/solo.zip",
-        1877215,
-        "E3C9962AF65DBD0F4EA9FBD9156E9193A333978C"
+        "project-bo4/launcher/solo/XInput9_1_0.dll",
+        3608064,
+        "2FEA1E9C15C27A9577293132303E579B1EF5AF0E"
     ],
     [
         "project-bo4/launcher/Sounds/startup_sound.mp3",
@@ -375,6 +375,6 @@
         "35B18E028AEB6653A165F996D30CD04BB79517EF"
     ],
     {
-        "ManifestHash": "0512F5148F6F6E3CFE23DB557E5668452D76B866CC80DD0AAEE1358D8984EDF7"
+        "ManifestHash": "A10AEE0A495760ACB897BB472776870624C8983C62C65F1514CD2ECB9AD4338E"
     }
 ]
