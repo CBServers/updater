@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        2073600,
-        "5F45EE8E3A165BCB5B124F58B249E3D4469220AB"
+        2073088,
+        "379D452CE1EADC189AF668BE998011B957088576"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -316,8 +316,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        85014,
-        "617239AA7A114CE0F8B39BF7C1601B0974B7418B"
+        84842,
+        "1F2472641AA460398624E951A392DCF4F1397F93"
     ],
     [
         "data/launcher-ui/assets/js/core/utils.js",
@@ -435,6 +435,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "01DE5DCE1006B735916B434A15F32C4935288CB0E11FE659421102584ACFD8C6"
+        "ManifestHash": "D92BBEF52854433A64A63D8DF5FF9AA7F075137E532A32AAEB3D671D84CD1647"
     }
 ]
