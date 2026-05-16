@@ -696,6 +696,16 @@
         },
         {
             "type": "localizeentry",
+            "name": "shield/fovscale",
+            "value": "FOV Scaling"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/fovscale_desc",
+            "value": "Adjust the FOV scale, and viewmodel scale. (Requires Restart, Commands in Chat: /fov [scale], /gunx [scale], /guny [scale], /gunz [scale], Will make the gsc/csc checksum always red!)"
+        },
+        {
+            "type": "localizeentry",
             "name": "shield/fov_wrong",
             "value": "^1Invalid FOV scale"
         },
@@ -703,6 +713,16 @@
             "type": "localizeentry",
             "name": "shield/fov_set",
             "value": "^2FOV scale has been set!"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/gun_fov_wrong",
+            "value": "^1Invalid Gun scale"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/gun_fov_set",
+            "value": "^2Gun scale has been set!"
         },
         {
             "type": "localizeentry",

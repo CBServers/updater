@@ -7,7 +7,7 @@
     [
         "Launch Project BO4.exe",
         106496,
-        "0FFAE77DD1A7538F23DF03902C4EFB7362B7EF49"
+        "AC8887B64B3B1C87F713975CC604074DFCD8E882"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/maxrankdata_mp.csv",
@@ -41,18 +41,18 @@
     ],
     [
         "project-bo4/internals/T8ShieldSupport/FrontHelper.luac",
-        1487018,
-        "23AAD1966820D760D6369C278B98ED0AAE99AC9C"
+        1489410,
+        "7693E2D5482A7B2A5201F72DA7923D94D684B653"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/GameHelper.luac",
-        178543,
-        "22D0717E920BC5D64DF8B56FF451D33F1466B6B8"
+        180331,
+        "B97D25EBF5E654BB997058A1EF28B78EAF4D0FEE"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/metadata.json",
-        24814,
-        "AF94ED13E531CF9F4EDE691031FA5FC4F9A94721"
+        25548,
+        "BD4ECF0AC816B0B9D1486B087883937195EEBEF5"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/SupportCSC.csic",
@@ -276,8 +276,8 @@
     ],
     [
         "project-bo4/launcher/mp/XInput9_1_0.dll",
-        3432960,
-        "6E3685B681E8A0B332976FFB86F96538D815C1E1"
+        3428352,
+        "95876050606C7073C6CEB14589A31036CBF62F14"
     ],
     [
         "project-bo4/launcher/platforms/qwindows.dll",
@@ -317,12 +317,12 @@
     [
         "project-bo4/launcher/Shield_Launcher.exe",
         318976,
-        "2FB0453E0C6D8B5C45DEC8D7BA7CFB7F860FB0AB"
+        "C92B95070D97EA59CEE8A81D065B7F517D0ACDEC"
     ],
     [
         "project-bo4/launcher/solo/XInput9_1_0.dll",
-        3608064,
-        "2FEA1E9C15C27A9577293132303E579B1EF5AF0E"
+        3603456,
+        "F85FD136544C711C9FBBAB7DD908E0E18163AB74"
     ],
     [
         "project-bo4/launcher/Sounds/startup_sound.mp3",
@@ -375,6 +375,6 @@
         "35B18E028AEB6653A165F996D30CD04BB79517EF"
     ],
     {
-        "ManifestHash": "AC55D6DBF95672FFFF7A1DCA18A40746E536B4A4E95B70AFCE5D08222CE66AA6"
+        "ManifestHash": "1F5A4352F135CB025F6E608CD7FC4B9EF726DE28ABD9DF2A07FA306F56F3B12B"
     }
 ]
