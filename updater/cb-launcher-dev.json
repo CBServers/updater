@@ -2,7 +2,7 @@
     [
         "cb-launcher.exe",
         2073088,
-        "06E1B77C27DF071E566BB852BDD8B35908854ACE"
+        "395807F97AE50607DE7246C590F71A600B12E991"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -76,8 +76,8 @@
     ],
     [
         "data/launcher-ui/assets/css/main.css",
-        104240,
-        "071B6B15C2DBFB76258D3A568B88771623FEC0C5"
+        108069,
+        "376109C97629D881FE80B0E4C4B839A33B8CF426"
     ],
     [
         "data/launcher-ui/assets/img/brand/cb-hero.png",
@@ -301,13 +301,13 @@
     ],
     [
         "data/launcher-ui/assets/js/app/main.js",
-        75159,
-        "A7C3DAA916C269DE043876A2DF3C3EA85ECC5159"
+        76420,
+        "5801E7979DB0E8855C1327CA0968D23DCE14D59E"
     ],
     [
         "data/launcher-ui/assets/js/app/views.js",
-        39315,
-        "AFE8CE9D3E90B82A8237BF0DF5A162991EA832F9"
+        49078,
+        "0FD8B24A263B216D79507B6E95C2ECF8F381F695"
     ],
     [
         "data/launcher-ui/assets/js/core/command.js",
@@ -316,18 +316,18 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        84842,
-        "1F2472641AA460398624E951A392DCF4F1397F93"
+        85784,
+        "C35D764BC06ACC73524D14AA550D13A76CF6C616"
     ],
     [
         "data/launcher-ui/assets/js/core/utils.js",
-        34121,
-        "ECC5F58F0E0D42DD9B04D19AB2572F16A8C4B292"
+        34168,
+        "26198F6EA029F2CCFA7553EB9A4646B39F69B53C"
     ],
     [
         "data/launcher-ui/assets/js/popups/component-selection-popup.js",
-        27508,
-        "7AF5327B852D164EDAA6385EB932BE4F4E22D534"
+        26191,
+        "44999531C4F977421B6749CCB9C91D036138D30B"
     ],
     [
         "data/launcher-ui/assets/js/popups/custom-server-popup.js",
@@ -351,8 +351,8 @@
     ],
     [
         "data/launcher-ui/assets/js/ui/message-box.js",
-        1591,
-        "55E975E66AD0BB60C053A527B5EB05A59AE5F806"
+        1746,
+        "A9AAC97B230A3A028FFB46EFA410DEEF6B331D42"
     ],
     [
         "data/launcher-ui/assets/js/ui/toast.js",
@@ -361,8 +361,8 @@
     ],
     [
         "data/launcher-ui/main.html",
-        23857,
-        "9217489FED91FCE8881717F4F5E412C57922BED4"
+        24893,
+        "F07B118B8B6E61AD07BA30E6098DCF0BB68A4685"
     ],
     [
         "manifest/aw.json",
@@ -435,6 +435,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "E5EA17F8A57BBB20DF3622A8E472E47F416766F050CA312B8A9DC736EC8B2EDB"
+        "ManifestHash": "AEF0ACE6AE1CD4A430279374C97388BE9BDEA674539330568E5D3CE0F44A9AC8"
     }
 ]

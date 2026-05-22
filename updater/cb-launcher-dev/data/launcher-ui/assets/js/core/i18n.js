@@ -67,11 +67,17 @@
                 disabled: 'Disabled',
                 source: 'Source',
                 loading: 'Loading...',
-                error: 'Error'
+                error: 'Error',
+                pinToHome: 'Pin to home',
+                unpinFromHome: 'Unpin from home',
+                gameDetails: 'Game details'
             },
             home: {
                 installedClients: 'Ready to Play',
                 readyToPlay: 'Ready to Play',
+                pinnedTitle: 'Pinned',
+                heroPrev: 'Previous',
+                heroNext: 'Next',
                 notInstalled: 'Not Installed',
                 showInstalled: 'Show installed',
                 welcomeTitle: 'Welcome to CB Launcher',
@@ -90,6 +96,7 @@
                 filterHorizonMW: 'HorizonMW',
                 filterOthers: 'Others',
                 searchPlaceholder: 'Search clients...',
+                clearSearch: 'Clear search',
                 noMatches: 'No clients match this filter.'
             },
             support: {
@@ -141,7 +148,7 @@
                 hideConsole: 'Hide Console',
                 checkForUpdates: 'Check for Updates',
                 source: 'Source',
-                designBy: 'Design by <a href="https://github.com/Riiyua" target="_blank">Riyu</a> &amp; <a href="https://github.com/BradsTV" target="_blank">Brad</a>',
+                designBy: 'Design by <a href="https://github.com/Riyuachi" target="_blank">Riyu</a> &amp; <a href="https://github.com/BradsTV" target="_blank">Brad</a>',
                 versionLoading: 'Version: Loading...',
                 versionUnknown: 'Version: Unknown',
                 versionValue: 'Version: {{version}}',
@@ -465,11 +472,17 @@
                 disabled: 'Desactive',
                 source: 'Source',
                 loading: 'Chargement...',
-                error: 'Erreur'
+                error: 'Erreur',
+                pinToHome: "Epingler a l'accueil",
+                unpinFromHome: "Detacher de l'accueil",
+                gameDetails: 'Details du jeu'
             },
             home: {
                 installedClients: 'Pret a jouer',
                 readyToPlay: 'Pret a jouer',
+                pinnedTitle: 'Epingles',
+                heroPrev: 'Precedent',
+                heroNext: 'Suivant',
                 notInstalled: 'Non installes',
                 showInstalled: 'Voir les installes',
                 welcomeTitle: 'Bienvenue sur CB Launcher',
@@ -488,6 +501,7 @@
                 filterHorizonMW: 'HorizonMW',
                 filterOthers: 'Autres',
                 searchPlaceholder: 'Rechercher un client...',
+                clearSearch: 'Effacer la recherche',
                 noMatches: 'Aucun client ne correspond a ce filtre.'
             },
             support: {
@@ -539,7 +553,7 @@
                 hideConsole: 'Masquer la console',
                 checkForUpdates: 'Verifier les mises a jour',
                 source: 'Source',
-                designBy: 'Design par <a href="https://github.com/Riiyua" target="_blank">Riyu</a> &amp; <a href="https://github.com/BradsTV" target="_blank">Brad</a>',
+                designBy: 'Design par <a href="https://github.com/Riyuachi" target="_blank">Riyu</a> &amp; <a href="https://github.com/BradsTV" target="_blank">Brad</a>',
                 versionLoading: 'Version : Chargement...',
                 versionUnknown: 'Version : Inconnue',
                 versionValue: 'Version : {{version}}',
@@ -863,11 +877,17 @@
                 disabled: 'Desactivado',
                 source: 'Codigo fuente',
                 loading: 'Cargando...',
-                error: 'Error'
+                error: 'Error',
+                pinToHome: 'Anclar al inicio',
+                unpinFromHome: 'Desanclar del inicio',
+                gameDetails: 'Detalles del juego'
             },
             home: {
                 installedClients: 'Listos para jugar',
                 readyToPlay: 'Listo para jugar',
+                pinnedTitle: 'Anclados',
+                heroPrev: 'Anterior',
+                heroNext: 'Siguiente',
                 notInstalled: 'No instalado',
                 showInstalled: 'Mostrar instalados',
                 welcomeTitle: 'Bienvenido a CB Launcher',
@@ -886,6 +906,7 @@
                 filterHorizonMW: 'HorizonMW',
                 filterOthers: 'Otros',
                 searchPlaceholder: 'Buscar clientes...',
+                clearSearch: 'Borrar busqueda',
                 noMatches: 'Ningun cliente coincide con este filtro.'
             },
             support: {
@@ -937,7 +958,7 @@
                 hideConsole: 'Ocultar consola',
                 checkForUpdates: 'Buscar actualizaciones',
                 source: 'Codigo fuente',
-                designBy: 'Diseno por <a href="https://github.com/Riiyua" target="_blank">Riyu</a> &amp; <a href="https://github.com/BradsTV" target="_blank">Brad</a>',
+                designBy: 'Diseno por <a href="https://github.com/Riyuachi" target="_blank">Riyu</a> &amp; <a href="https://github.com/BradsTV" target="_blank">Brad</a>',
                 versionLoading: 'Version: Cargando...',
                 versionUnknown: 'Version: Desconocida',
                 versionValue: 'Version: {{version}}',
