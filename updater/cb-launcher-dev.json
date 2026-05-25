@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        2134016,
-        "322AE55F3CBAC772776D75E696A4E9265909968C"
+        2144256,
+        "BE95AD233A45D4EBC31DC82B9A29BBC4EEEFFDDD"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -76,8 +76,8 @@
     ],
     [
         "data/launcher-ui/assets/css/main.css",
-        112604,
-        "CB9FEDEACEDCABA266AA2B2DD214E9B3074A02C8"
+        113445,
+        "1C87799B26DAD5ADB7D0C18784F87C4E5BB1BF36"
     ],
     [
         "data/launcher-ui/assets/img/brand/cb-hero.png",
@@ -316,13 +316,13 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        87836,
-        "750BBB1F9FF24450852326BA3531BCD219DEFA58"
+        89459,
+        "565BEE6944727BD89D0972CBF3BCD8DD7CE038ED"
     ],
     [
         "data/launcher-ui/assets/js/core/utils.js",
-        34310,
-        "B5171E2DF2920D80334EA177B9CF5FAF08C8D45A"
+        38168,
+        "339ECC864DD11CE9EE7AB68190B75D44B36040A2"
     ],
     [
         "data/launcher-ui/assets/js/popups/component-selection-popup.js",
@@ -355,6 +355,11 @@
         "D2AA4B66419644E32D54D6CEF5A8ED670D95F0CD"
     ],
     [
+        "data/launcher-ui/assets/js/ui/launch-redist-modal.js",
+        3407,
+        "3B8351FDECCD7AEF969BA22CA83874DF35E0E805"
+    ],
+    [
         "data/launcher-ui/assets/js/ui/message-box.js",
         1746,
         "A9AAC97B230A3A028FFB46EFA410DEEF6B331D42"
@@ -366,8 +371,8 @@
     ],
     [
         "data/launcher-ui/main.html",
-        25587,
-        "297345FE1530D64C9A7FD120846286650593C24F"
+        25653,
+        "78A6F4D7AD2C2BD13D25A2A91E3B309679415EE3"
     ],
     [
         "manifest/aw.json",
@@ -440,6 +445,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "559FCC1F99D464815D203757435CEAA31CAE7A404E7132340EA6FE6D23A2535F"
+        "ManifestHash": "1D39E261657899968766A5B04C95567A4F5422A5673A0BB7752BDFAF5286E9B8"
     }
 ]
