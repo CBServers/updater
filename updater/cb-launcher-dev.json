@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        2164736,
-        "567313F04A8A280CD277455B3DE19E30DCEC005F"
+        2162176,
+        "E7C66075AAE8DF09FCE1382B4717D22552132052"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -76,8 +76,8 @@
     ],
     [
         "data/launcher-ui/assets/css/main.css",
-        115221,
-        "2049509EC33DDDEA576F5918895564F6CF732538"
+        115301,
+        "EE4EDD871FE515F7C5BCAC97330731F04EA7D2F6"
     ],
     [
         "data/launcher-ui/assets/img/brand/cb-hero.png",
@@ -301,8 +301,8 @@
     ],
     [
         "data/launcher-ui/assets/js/app/main.js",
-        82386,
-        "52D95CDBC6CF304262253EDB77C05DBDDAED9F11"
+        82650,
+        "95A2BB14D573E81C24C6E21BEC40290E2CD8CBA1"
     ],
     [
         "data/launcher-ui/assets/js/app/views.js",
@@ -450,6 +450,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "833513E7F2263CF8A57346F7E801743AB1ED5BE68344E214CFC163D22AC526C6"
+        "ManifestHash": "698F281F3519FC83D5C1A774D8D2B5E1A8ECC4F3A24703556022FD13FACE7067"
     }
 ]
