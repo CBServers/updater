@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        2073088,
-        "275D4150F70B922FAD88E1A90BC7DBD8109AFE2B"
+        2166784,
+        "DA72DBBD01E08E664DB433208B946903F065155F"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -76,8 +76,8 @@
     ],
     [
         "data/launcher-ui/assets/css/main.css",
-        102884,
-        "8AE7299DA7D3BE70067D47FD86E9AF61DE8EE447"
+        115301,
+        "EE4EDD871FE515F7C5BCAC97330731F04EA7D2F6"
     ],
     [
         "data/launcher-ui/assets/img/brand/cb-hero.png",
@@ -86,228 +86,223 @@
     ],
     [
         "data/launcher-ui/assets/img/games/bo4/capsule.jpg",
-        187162,
-        "97983EF196FB2C46B9EE814B3E0A3DDD6908DEE8"
+        94457,
+        "2DF3404234227D2A21EC2DE221D2F70493994FAB"
     ],
     [
         "data/launcher-ui/assets/img/games/bo4/hero.jpg",
-        1050440,
-        "6E658A5D7A470DACFE41BD681FB3FBD7F2A3D73D"
+        166627,
+        "D46A10A3D674E5F6C95AE85FA4A6C23AA5E7D4FA"
     ],
     [
         "data/launcher-ui/assets/img/games/bo4/logo.png",
-        78850,
-        "72D714E5F3DE68BA7B98C0CCCC0AE3BECE53FAF0"
+        16226,
+        "F4E8A6F0F212357F9A186AD68A1545A48D031F6A"
     ],
     [
         "data/launcher-ui/assets/img/games/boiii/capsule.jpg",
-        107949,
-        "C1A5EF8A07006328941CD26C60B2498AEB3AF6E3"
+        82157,
+        "B909743C97BB70FB5B0379D6816AEA932CFCF383"
     ],
     [
         "data/launcher-ui/assets/img/games/boiii/hero.jpg",
-        188596,
-        "CDD9F306A8A644A8E4B64F493ACDB6C36C7DB41B"
+        121414,
+        "C6E4060728215657AF800C844F381DF11AE52CBD"
     ],
     [
         "data/launcher-ui/assets/img/games/boiii/logo.png",
-        19125,
-        "491355EC811CF6C0497374F5FCA4D15EA5167F17"
+        4976,
+        "D87E4014F8BB4644880D4EDDB8ED80E6AD91F6D2"
     ],
     [
-        "data/launcher-ui/assets/img/games/cod4x/capsule.png",
-        706161,
-        "C066B6C08B47657EA51A6D7BCE184CBA31FA1F6A"
+        "data/launcher-ui/assets/img/games/cod4x/capsule.jpg",
+        84054,
+        "2B8D3266604555886641FB45454AA7E1C540C7DE"
     ],
     [
-        "data/launcher-ui/assets/img/games/cod4x/hero.png",
-        5159430,
-        "3CCF2DA379EE82D361AAD5A78876FA30DCE5DBAD"
+        "data/launcher-ui/assets/img/games/cod4x/hero.jpg",
+        135508,
+        "C705BA2333141F88AFFC4475145F312D563F1F97"
     ],
     [
         "data/launcher-ui/assets/img/games/cod4x/logo.png",
-        450507,
-        "A41D9B18DE37DB95785806F34A0E3016DECAC522"
+        69336,
+        "91E1F0E5D8E78729CA6CB86F698497C5A38B95D5"
     ],
     [
         "data/launcher-ui/assets/img/games/h1-mod/capsule.jpg",
-        384336,
-        "A2C1992368082519939582EA39FE83D20B29926A"
+        69567,
+        "9653CCA6CDE34732674766A7F0A73AC7FDFECDF2"
     ],
     [
-        "data/launcher-ui/assets/img/games/h1-mod/capsule.png",
-        487339,
-        "0207C12E69D019167E21D62F5CF2DE13342346B5"
-    ],
-    [
-        "data/launcher-ui/assets/img/games/h1-mod/hero.png",
-        1026572,
-        "C62489CA6C57F69511FAF97B21614E5E4EB208F8"
+        "data/launcher-ui/assets/img/games/h1-mod/hero.jpg",
+        141525,
+        "0487172436D34A2FCED52BAD3512D4BD4522B647"
     ],
     [
         "data/launcher-ui/assets/img/games/h1-mod/logo.png",
-        170775,
-        "72B32E89FD545057FECD5148C9FD5FDA2B926F68"
+        30294,
+        "B100C9758187BCBF34D733E5C13F45E17C474A31"
     ],
     [
-        "data/launcher-ui/assets/img/games/h2-mod/capsule.png",
-        684617,
-        "6CC299F53C3553F427E2C1E9C498D6A8BE2122B2"
+        "data/launcher-ui/assets/img/games/h2-mod/capsule.jpg",
+        101537,
+        "27E157D7A3417F8E4582C621A3BCC4DCA9E6A29E"
     ],
     [
         "data/launcher-ui/assets/img/games/h2-mod/hero.jpg",
-        716050,
-        "0F70D4F98FE1D2281A8CD13C144A40D54729FA28"
+        120075,
+        "32A4AD096A4F751DFFC44AAA7C610589AF99A517"
     ],
     [
         "data/launcher-ui/assets/img/games/h2-mod/logo.png",
-        2052956,
-        "5C1B0EE8E8DEA4448545F461E2B7D92BC849EF77"
+        26872,
+        "772B059EBC578E6A3079C0F01AD8B9EAFB3AC13B"
     ],
     [
-        "data/launcher-ui/assets/img/games/hmw-mod/capsule.png",
-        54232,
-        "ABB104DA60A5159B24D75115F64E2346BC144707"
+        "data/launcher-ui/assets/img/games/hmw-mod/capsule.jpg",
+        7402,
+        "9FA35952CD6ED22571F87F44E5D0FCFB02653661"
     ],
     [
-        "data/launcher-ui/assets/img/games/hmw-mod/hero.png",
-        117097,
-        "B9099D9EC29959D44244C58594F472960FD274C4"
+        "data/launcher-ui/assets/img/games/hmw-mod/hero.jpg",
+        19887,
+        "B284C9C0C3BA1B3F45BD33E9D07EFB09F88ABC3D"
     ],
     [
         "data/launcher-ui/assets/img/games/hmw-mod/logo.png",
-        43208,
-        "054F851CF71F89662EC30668135A123A6C70DFAD"
+        7390,
+        "9EF5B0A668F04BA326F351B4194E579C50D20AE1"
     ],
     [
         "data/launcher-ui/assets/img/games/iw4x/capsule.jpg",
-        158486,
-        "9F0C22631DF8CEB6E8079E586D36FC6482589035"
+        96323,
+        "1AB910901072462738DC73640C68489789E7D44E"
     ],
     [
         "data/launcher-ui/assets/img/games/iw4x/hero.jpg",
-        437129,
-        "5A9575AFD707FD8D726BAA09BE984BA2C2830C75"
+        82093,
+        "BC6E7CF05ECFDAC4BD132EAD14981E5840D32524"
     ],
     [
         "data/launcher-ui/assets/img/games/iw4x/logo.png",
-        345267,
-        "54B1E3BDC7E49C704D04A04CF89A3192FDE7FD05"
+        43830,
+        "02BAAE321AFA275924A972DB10490BDC6CDFAA92"
     ],
     [
         "data/launcher-ui/assets/img/games/iw5/capsule.jpg",
-        139838,
-        "5393DAC97384B369C83F4916A65D90593E734AE6"
+        110553,
+        "952592A0414CB95241851D6078AE2F85F6F87D8F"
     ],
     [
         "data/launcher-ui/assets/img/games/iw5/hero.jpg",
-        104083,
-        "44DEA8A678ABBABD84A7C1FA261B0626ACA96856"
+        87436,
+        "56FCEAFDD7EBF43AB096F1BEBC30167CA14A2AFC"
     ],
     [
         "data/launcher-ui/assets/img/games/iw5/logo.png",
-        117893,
-        "151931400B69ABFB7C879F20426D034991909BE2"
+        17141,
+        "904FDA85074945A2DAD633A5E7346D15FECFC3A0"
     ],
     [
         "data/launcher-ui/assets/img/games/iw6x/capsule.jpg",
-        226575,
-        "FBDD1E2D454C75F773F06C0CF8D308AB5DB6D589"
+        166611,
+        "5405E0D63B3609C538BEE86585930CCB5E3E8FAC"
     ],
     [
         "data/launcher-ui/assets/img/games/iw6x/hero.jpg",
-        1252884,
-        "FD7CE21B49006DFDC2C7D3F0AD12F9D97B98BD88"
+        166019,
+        "8A7DB265952116073380D4C430BDC8139B75BC7A"
     ],
     [
         "data/launcher-ui/assets/img/games/iw6x/logo.png",
-        55076,
-        "D1D84C596BFB457C486DCBCB3DADBC47D08C68CF"
+        16468,
+        "71BC118CFA57F8781F52E39D9D0986A8973A876E"
     ],
     [
         "data/launcher-ui/assets/img/games/iw7-mod/capsule.jpg",
-        183030,
-        "1453F1A1D8BDF1682452DDF53366219C9227B0DC"
+        137701,
+        "ACE15A8F2D03A5133FA2DA418F9693FC33248152"
     ],
     [
         "data/launcher-ui/assets/img/games/iw7-mod/hero.jpg",
-        990995,
-        "421D37E3CABEC2E64218A05AAC10F71FEA13ED7E"
+        168713,
+        "114A1D24221F024779120FFE41394A0374539D05"
     ],
     [
         "data/launcher-ui/assets/img/games/iw7-mod/logo.png",
-        39318,
-        "DFF1C3DAF7D3ECAE9F7A272AFC171FBCB7988D5D"
+        11749,
+        "B32C65E521173838784E870B80DEC0E5685055AE"
     ],
     [
         "data/launcher-ui/assets/img/games/s1x/capsule.jpg",
-        156660,
-        "6F7CCF4BA756F24A51D04932C07FDC5D8673DD1C"
+        108029,
+        "403043461C04BE95409A8CFB0672CD82D8676C5D"
     ],
     [
         "data/launcher-ui/assets/img/games/s1x/hero.jpg",
-        764969,
-        "D4D00B6B50B980BF877778E5622B54D062527830"
+        118461,
+        "67DCDA015930FB06C89F2B450D5FBC2EBCEBC61B"
     ],
     [
         "data/launcher-ui/assets/img/games/s1x/logo.png",
-        108952,
-        "28EB30A2277B62DC1E657A532BB6D014877F66C6"
+        23676,
+        "0CAF71E30834244CEB10561F8B3B9820D3238574"
     ],
     [
         "data/launcher-ui/assets/img/games/t4/capsule.jpg",
-        257298,
-        "00E79C0A136F17478416D83661C4BD79CD37F326"
+        166753,
+        "CCE9262C6053561EC3186FD8AF7FA83D14590A78"
     ],
     [
         "data/launcher-ui/assets/img/games/t4/hero.jpg",
-        915979,
-        "154E0E649E680EE32F992BF2802A6FFF478920BC"
+        157915,
+        "76AFEDB707098D4514B03EB30FC179989DEBE5AD"
     ],
     [
         "data/launcher-ui/assets/img/games/t4/logo.png",
-        798457,
-        "B076F112A8B777720BDBF3BF978B6CC7BB67A749"
+        147083,
+        "27D14E03858BACB312FA244465AE0C94D9406DA9"
     ],
     [
         "data/launcher-ui/assets/img/games/t5/capsule.jpg",
-        151786,
-        "344774CB8BA5AB407C40935C42D831F94B678DCE"
+        104665,
+        "A8D1119E9BE87CA52D30863995B7A573A116259D"
     ],
     [
         "data/launcher-ui/assets/img/games/t5/hero.jpg",
-        258409,
-        "CB09CE3BE319AB9287AFA739237BF12EC3C8AF9B"
+        165827,
+        "873B1F4685A01C507E93F357B09E91E8604C3950"
     ],
     [
         "data/launcher-ui/assets/img/games/t5/logo.png",
-        510433,
-        "610503B5850EF9B7C9B091943AF4133C67318BC0"
+        65858,
+        "0755798D3D76E292028ADD5162A0E82915240F64"
     ],
     [
         "data/launcher-ui/assets/img/games/t6/capsule.jpg",
-        83850,
-        "B40E660D6CCEAE6A6958C585CB119EF64B1F38C7"
+        67627,
+        "41D39D640CF12CE46993B8081798EDEF73B99DAC"
     ],
     [
         "data/launcher-ui/assets/img/games/t6/hero.jpg",
-        94740,
-        "F83DE8246FC2C5306CC9B0A289F8AB4FAC5A4007"
+        68078,
+        "ECC9BB1330D7AF3231E2A9C4CB6869F1E0630C6F"
     ],
     [
         "data/launcher-ui/assets/img/games/t6/logo.png",
-        52171,
-        "67D6B08002B0DFDA8AB257984786C9A82C71E883"
+        13143,
+        "37F07A1F468CC4160D7F8254E0F1F5022EAC075B"
     ],
     [
         "data/launcher-ui/assets/js/app/main.js",
-        75159,
-        "A7C3DAA916C269DE043876A2DF3C3EA85ECC5159"
+        82847,
+        "580A399DB523AB2B455C60E715C467620DE9159D"
     ],
     [
         "data/launcher-ui/assets/js/app/views.js",
-        34430,
-        "CE956FFB7B78CFB69BDE9DC0288F8FDEA8900DAE"
+        53288,
+        "50AFC98950468CEF9129C02E9E58E7057080DF4D"
     ],
     [
         "data/launcher-ui/assets/js/core/command.js",
@@ -316,18 +311,23 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        84842,
-        "1F2472641AA460398624E951A392DCF4F1397F93"
+        90805,
+        "03E5CB98B1F7485D35CDEECB6652EDE76E42A8C9"
+    ],
+    [
+        "data/launcher-ui/assets/js/core/player-counts.js",
+        2230,
+        "85CA2692EECC3E4BD6338ED6029EBEBD0315BDB6"
     ],
     [
         "data/launcher-ui/assets/js/core/utils.js",
-        34121,
-        "ECC5F58F0E0D42DD9B04D19AB2572F16A8C4B292"
+        36586,
+        "676730D42443FE914ADCA635F95AB97DFBB5CE91"
     ],
     [
         "data/launcher-ui/assets/js/popups/component-selection-popup.js",
-        27508,
-        "7AF5327B852D164EDAA6385EB932BE4F4E22D534"
+        26323,
+        "AC89EDB03B0A83F53BA39C221B3C16E235F8852C"
     ],
     [
         "data/launcher-ui/assets/js/popups/custom-server-popup.js",
@@ -336,8 +336,8 @@
     ],
     [
         "data/launcher-ui/assets/js/popups/game-mode-popup.js",
-        7132,
-        "90A0059EC5F1FFFC9E6AC7C6E8F2E5BF6F406726"
+        6989,
+        "4606C44ACAC3E80EF147EAAED39FED18CF0DFE05"
     ],
     [
         "data/launcher-ui/assets/js/popups/game-settings-popup.js",
@@ -345,14 +345,24 @@
         "F3FDB157C73B349A06294A32968A382EFEA2E4F0"
     ],
     [
+        "data/launcher-ui/assets/js/popups/redist-popup.js",
+        8083,
+        "268B7F4030DB2ED067F17EE6D7B1CD7B9EDD3ED6"
+    ],
+    [
         "data/launcher-ui/assets/js/popups/setup-flow-popup.js",
-        24248,
-        "D2AA4B66419644E32D54D6CEF5A8ED670D95F0CD"
+        7612,
+        "A4A0B97F6B10575BFB2BF143F6944E51D88F0275"
+    ],
+    [
+        "data/launcher-ui/assets/js/ui/launch-redist-modal.js",
+        3407,
+        "3B8351FDECCD7AEF969BA22CA83874DF35E0E805"
     ],
     [
         "data/launcher-ui/assets/js/ui/message-box.js",
-        1591,
-        "55E975E66AD0BB60C053A527B5EB05A59AE5F806"
+        1746,
+        "A9AAC97B230A3A028FFB46EFA410DEEF6B331D42"
     ],
     [
         "data/launcher-ui/assets/js/ui/toast.js",
@@ -361,8 +371,8 @@
     ],
     [
         "data/launcher-ui/main.html",
-        23857,
-        "9217489FED91FCE8881717F4F5E412C57922BED4"
+        25964,
+        "59DFD5B06217F5E8538DFC8951AE87A9B8C85D95"
     ],
     [
         "manifest/aw.json",
@@ -435,6 +445,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "B13D011682F74D94830F78430DE54C748343A8B95A1A818FDB1D41E19E9A6B52"
+        "ManifestHash": "54F4BAA4252A3EBBF7150FA7F6543E56ABD6749C5DDE5D1D09CB06CFDAA13F1F"
     }
 ]

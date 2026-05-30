@@ -6,6 +6,8 @@
             },
             window: {
                 minimize: 'Minimize',
+                maximize: 'Maximize',
+                restore: 'Restore',
                 close: 'Close'
             },
             brand: {
@@ -51,6 +53,11 @@
                 play: 'Play',
                 verify: 'Verify Files',
                 install: 'Install',
+                installing: 'Installing',
+                verifying: 'Verifying',
+                uninstalling: 'Uninstalling',
+                queued: 'Queued',
+                reinstall: 'Reinstall',
                 manage: 'Manage',
                 manageInstall: 'Manage Install',
                 setup: 'Setup',
@@ -67,16 +74,22 @@
                 disabled: 'Disabled',
                 source: 'Source',
                 loading: 'Loading...',
-                error: 'Error'
+                error: 'Error',
+                pinToHome: 'Pin to home',
+                unpinFromHome: 'Unpin from home',
+                gameDetails: 'Game details'
             },
             home: {
                 installedClients: 'Ready to Play',
                 readyToPlay: 'Ready to Play',
+                pinnedTitle: 'Pinned',
+                heroPrev: 'Previous',
+                heroNext: 'Next',
                 notInstalled: 'Not Installed',
                 showInstalled: 'Show installed',
                 welcomeTitle: 'Welcome to CB Launcher',
                 welcomeBody: 'Welcome to CB Servers Launcher! Your one-stop launcher for Call of Duty community clients. Install, update, and play supported clients all from one place. Head to the <strong>Library</strong> tab to browse every available client and start playing. Need a hand? Head over to the <strong>Support</strong> tab or check out our <a href="https://docs.cbservers.xyz/launcher" target="_blank">docs</a>.',
-                disclaimer: 'This launcher is not affiliated with or endorsed by IW4x, Plutonium, AlterWare, Aurora, or HorizonMW. Please do not contact the original client maintainers with support requests regarding this launcher.'
+                disclaimer: 'This launcher is not affiliated with or endorsed by IW4x, Plutonium, AlterWare, Aurora, HorizonMW, CoD4x Project, IW3SP-Mod, T6SP-Mod, or Project BO4. Please do not contact the original client maintainers with support requests regarding this launcher.'
             },
             library: {
                 title: 'Library',
@@ -90,6 +103,7 @@
                 filterHorizonMW: 'HorizonMW',
                 filterOthers: 'Others',
                 searchPlaceholder: 'Search clients...',
+                clearSearch: 'Clear search',
                 noMatches: 'No clients match this filter.'
             },
             support: {
@@ -98,13 +112,36 @@
                 communityTitle: 'Community support',
                 communityBody: 'Browse the FAQ for quick answers, or hop into the Discord — the fastest place to get help with launcher setup, client installs and server access.',
                 faq: 'FAQ',
-                discordServer: 'Discord Server',
+                discordServer: 'Discord',
+                reportBug: 'Report a bug',
+                openLogs: 'Open log folder',
                 redistTitle: 'Redistributables',
-                redistBody: 'Install the Visual C++ and DirectX runtimes needed by older Call of Duty clients. Tool created by <a href="https://chse.sh" target="_blank">Chase</a>.',
-                installRedist: 'Install Redistributables',
-                noteTitle: 'Important note',
-                noteBody: 'This launcher is not affiliated with IW4x, Plutonium, AlterWare, Aurora, or HorizonMW. Please use CB Servers support channels for this launcher and its forks.',
+                redistBody: 'Install the Visual C++ and DirectX runtimes needed by older Call of Duty clients.',
+                manageRedist: 'Manage Redistributables',
+                redistSummary: '{{installed}} of {{total}} installed',
+                installAllMissing: 'Install all missing',
+                redistAllInstalled: 'All installed',
+                reinstallAll: 'Reinstall All',
+                redistStatusInstalled: 'Installed',
+                redistStatusPending: 'Pending',
+                redistStatusDownloading: 'Downloading',
+                redistStatusInstalling: 'Installing',
+                redistStatusFailed: 'Failed',
+                popup: {
+                    title: 'Manage Redistributables',
+                    reinstallAllTitle: 'Reinstall all redistributables?',
+                    reinstallAllBody: 'This reinstalls all {{total}} redistributable packages, including ones already installed. You must click <strong>Yes</strong> on every Windows User Account Control (UAC) prompt that appears. There is one for each package. Continue?'
+                },
+                noteBody: 'This launcher is not affiliated with IW4x, Plutonium, AlterWare, Aurora, HorizonMW, CoD4x Project, IW3SP-Mod, T6SP-Mod, or Project BO4. Please use CB Servers support channels for this launcher and its forks.',
                 github: 'CB Servers GitHub'
+            },
+            installer: {
+                missingRedistTitle: 'Required components missing',
+                missingRedistBody: '{{gameName}} needs the following components installed:',
+                installAndLaunch: 'Install and launch',
+                installingComponents: 'Installing required components…',
+                installingNamed: 'Installing {{name}}…',
+                redistInstallFailed: 'Failed to install required components. Open the Support page and try the Manage redistributables option.'
             },
             settings: {
                 title: 'Settings',
@@ -141,7 +178,7 @@
                 hideConsole: 'Hide Console',
                 checkForUpdates: 'Check for Updates',
                 source: 'Source',
-                designBy: 'Design by <a href="https://github.com/Riiyua" target="_blank">Riyu</a> &amp; <a href="https://github.com/BradsTV" target="_blank">Brad</a>',
+                designBy: 'Design by <a href="https://github.com/Riyuachi" target="_blank">Riyu</a> &amp; <a href="https://github.com/BradsTV" target="_blank">Brad</a>',
                 versionLoading: 'Version: Loading...',
                 versionUnknown: 'Version: Unknown',
                 versionValue: 'Version: {{version}}',
@@ -178,19 +215,11 @@
                 modsScripts: 'Mods/Scripts',
                 credits: 'Credits',
                 note: 'Note',
-                noteBody: 'Do not contact original client maintainers for support requests related to this launcher. Use the CB Servers Discord instead.',
+                noteBody: 'This launcher is not affiliated with or endorsed by {{provider}}. Please do not contact the original client maintainers with support requests regarding this launcher, use our <a href="https://cbservers.xyz/discord" target="_blank">Discord</a> instead.',
                 verifySteamFiles: 'Verify Steam files',
                 client: 'Client',
                 provider: 'Provider',
                 customClient: 'Custom client'
-            },
-            componentLibrary: {
-                title: 'Component Library',
-                subtitle: 'Reusable UI states for buttons, cards, fields and badges.',
-                buttons: 'Buttons',
-                inputs: 'Inputs',
-                badges: 'Badges',
-                card: 'Card'
             },
             popup: {
                 gameMode: {
@@ -360,9 +389,9 @@
                     credits: 'Multiplayer is provided by the IW5 Client and developed by <a href="https://plutonium.pw/" target="_blank">Plutonium</a>.<br>Singleplayer is provided by the IW5-Mod Client and developed by <a href="https://alterware.dev/" target="_blank">AlterWare</a>.'
                 },
                 't6': {
-                    description: 'Call of Duty: Black Ops 2 enhanced with Plutonium T6 modifications. Experience multiplayer and zombies modes with improved stability and additional features.',
+                    description: 'Call of Duty: Black Ops 2 enhanced with Plutonium T6 and T6SP-Mod modifications. Experience the campaign, multiplayer, and zombies modes with improved stability and additional features.',
                     descriptionNote: 'Plutonium requires an account. You can create one at: <a href="https://forum.plutonium.pw/register" target="_blank">https://forum.plutonium.pw/register</a>.',
-                    credits: 'Multiplayer and Zombies are provided by the T6 Client and developed by <a href="https://plutonium.pw/" target="_blank">Plutonium</a>.'
+                    credits: 'Multiplayer and Zombies are provided by the T6 Client and developed by <a href="https://plutonium.pw/" target="_blank">Plutonium</a>.<br>Singleplayer is provided by the T6SP-Mod Client and developed by <a href="https://github.com/Rattpak" target="_blank">Rattpak</a>.'
                 },
                 'boiii': {
                     description: 'Call of Duty: Black Ops 3 enhanced with BOIII modifications. Experience the full campaign, multiplayer, and zombies modes with improved stability and additional features.',
@@ -386,7 +415,7 @@
                 },
                 'bo4': {
                     description: 'Black Ops 4 enhanced with Project BO4 Launcher. Includes online and offline modes for multiplayer and zombies, with improved stability and additional features.',
-                    credits: 'Online and offline play are provided by the <a href="https://github.com/NotNierPea/shield-launcher" target="_blank">Project BO4 Launcher</a> and developed by <a href="https://github.com/NotNierPea" target="_blank">NotNierPea</a>.'
+                    credits: 'Online and offline play are provided by the <a href="https://github.com/NotNierPea/shield-launcher" target="_blank">Project BO4 Launcher</a> and maintained by <a href="https://github.com/NotNierPea" target="_blank">NotNierPea</a>.'
                 },
                 'mw2r': {
                     description: 'Modern Warfare 2 Campaign Remastered with H2-Mod support. Run the remastered MW2 campaign with stability and quality-of-life patches.',
@@ -404,6 +433,8 @@
             },
             window: {
                 minimize: 'Reduire',
+                maximize: 'Agrandir',
+                restore: 'Restaurer',
                 close: 'Fermer'
             },
             brand: {
@@ -449,6 +480,11 @@
                 play: 'Jouer',
                 verify: 'Verifier les fichiers',
                 install: 'Installer',
+                installing: 'Installation...',
+                verifying: 'Verification...',
+                uninstalling: 'Desinstallation...',
+                queued: 'En file',
+                reinstall: 'Reinstaller',
                 manage: 'Gerer',
                 manageInstall: "Gerer l'installation",
                 setup: 'Configurer',
@@ -465,16 +501,22 @@
                 disabled: 'Desactive',
                 source: 'Source',
                 loading: 'Chargement...',
-                error: 'Erreur'
+                error: 'Erreur',
+                pinToHome: "Epingler a l'accueil",
+                unpinFromHome: "Detacher de l'accueil",
+                gameDetails: 'Details du jeu'
             },
             home: {
                 installedClients: 'Pret a jouer',
                 readyToPlay: 'Pret a jouer',
+                pinnedTitle: 'Epingles',
+                heroPrev: 'Precedent',
+                heroNext: 'Suivant',
                 notInstalled: 'Non installes',
                 showInstalled: 'Voir les installes',
                 welcomeTitle: 'Bienvenue sur CB Launcher',
                 welcomeBody: 'Bienvenue sur CB Servers Launcher&nbsp;! Votre launcher tout-en-un pour les clients communautaires Call of Duty. Installez, mettez a jour et jouez aux clients pris en charge depuis un seul endroit. Rendez-vous dans l\'onglet <strong>Bibliotheque</strong> pour parcourir tous les clients disponibles et commencer a jouer. Besoin d\'aide&nbsp;? Rendez-vous dans l\'onglet <strong>Support</strong> ou consultez notre <a href="https://docs.cbservers.xyz/launcher" target="_blank">documentation</a>.',
-                disclaimer: 'Ce launcher n\'est ni affilie ni approuve par IW4x, Plutonium, AlterWare, Aurora ou HorizonMW. Merci de ne pas contacter les developpeurs des clients d\'origine pour des questions concernant ce launcher.'
+                disclaimer: 'Ce launcher n\'est ni affilie ni approuve par IW4x, Plutonium, AlterWare, Aurora, HorizonMW, CoD4x Project, IW3SP-Mod, T6SP-Mod ou Project BO4. Merci de ne pas contacter les developpeurs des clients d\'origine pour des questions concernant ce launcher.'
             },
             library: {
                 title: 'Bibliotheque',
@@ -488,6 +530,7 @@
                 filterHorizonMW: 'HorizonMW',
                 filterOthers: 'Autres',
                 searchPlaceholder: 'Rechercher un client...',
+                clearSearch: 'Effacer la recherche',
                 noMatches: 'Aucun client ne correspond a ce filtre.'
             },
             support: {
@@ -496,13 +539,36 @@
                 communityTitle: 'Support communautaire',
                 communityBody: "Consultez la FAQ pour des reponses rapides, ou rejoignez le Discord — l'endroit le plus rapide pour obtenir de l'aide sur le launcher, l'installation des clients et l'acces aux serveurs.",
                 faq: 'FAQ',
-                discordServer: 'Serveur Discord',
+                discordServer: 'Discord',
+                reportBug: 'Signaler un bug',
+                openLogs: 'Ouvrir le dossier des logs',
                 redistTitle: 'Redistribuables',
-                redistBody: 'Installez les runtimes Visual C++ et DirectX requis par les anciens clients Call of Duty. Outil cree par <a href="https://chse.sh" target="_blank">Chase</a>.',
-                installRedist: 'Installer les redistribuables',
-                noteTitle: 'Note importante',
-                noteBody: "Ce launcher n'est pas affilie a IW4x, Plutonium, AlterWare, Aurora ou HorizonMW. Utilisez les canaux de support CB Servers pour ce launcher et ses forks.",
+                redistBody: 'Installez les runtimes Visual C++ et DirectX requis par les anciens clients Call of Duty.',
+                manageRedist: 'Gerer les redistribuables',
+                redistSummary: '{{installed}} sur {{total}} installes',
+                installAllMissing: 'Installer tous les manquants',
+                redistAllInstalled: 'Tous installes',
+                reinstallAll: 'Tout reinstaller',
+                redistStatusInstalled: 'Installe',
+                redistStatusPending: 'En attente',
+                redistStatusDownloading: 'Telechargement',
+                redistStatusInstalling: 'Installation',
+                redistStatusFailed: 'Echec',
+                popup: {
+                    title: 'Gerer les redistribuables',
+                    reinstallAllTitle: 'Reinstaller tous les redistribuables ?',
+                    reinstallAllBody: 'Cela reinstalle les {{total}} paquets redistribuables, y compris ceux deja installes. Vous devez cliquer sur <strong>Oui</strong> a chaque invite de controle de compte utilisateur (UAC) qui apparait. Il y en a une pour chaque paquet. Continuer ?'
+                },
+                noteBody: "Ce launcher n'est pas affilie a IW4x, Plutonium, AlterWare, Aurora, HorizonMW, CoD4x Project, IW3SP-Mod, T6SP-Mod ou Project BO4. Utilisez les canaux de support CB Servers pour ce launcher et ses forks.",
                 github: 'GitHub CB Servers'
+            },
+            installer: {
+                missingRedistTitle: 'Composants requis manquants',
+                missingRedistBody: '{{gameName}} a besoin des composants suivants :',
+                installAndLaunch: 'Installer et lancer',
+                installingComponents: 'Installation des composants requis…',
+                installingNamed: 'Installation de {{name}}…',
+                redistInstallFailed: 'Echec de l’installation des composants requis. Ouvrez la page Support et utilisez Gerer les redistribuables.'
             },
             settings: {
                 title: 'Parametres',
@@ -539,7 +605,7 @@
                 hideConsole: 'Masquer la console',
                 checkForUpdates: 'Verifier les mises a jour',
                 source: 'Source',
-                designBy: 'Design par <a href="https://github.com/Riiyua" target="_blank">Riyu</a> &amp; <a href="https://github.com/BradsTV" target="_blank">Brad</a>',
+                designBy: 'Design par <a href="https://github.com/Riyuachi" target="_blank">Riyu</a> &amp; <a href="https://github.com/BradsTV" target="_blank">Brad</a>',
                 versionLoading: 'Version : Chargement...',
                 versionUnknown: 'Version : Inconnue',
                 versionValue: 'Version : {{version}}',
@@ -576,19 +642,11 @@
                 modsScripts: 'Mods/Scripts',
                 credits: 'Credits',
                 note: 'Note',
-                noteBody: "Ne contactez pas les mainteneurs originaux du client pour des demandes de support liees a ce launcher. Utilisez plutot le Discord CB Servers.",
+                noteBody: "Ce launcher n'est ni affilie ni approuve par {{provider}}. Merci de ne pas contacter les developpeurs des clients d'origine pour des demandes de support concernant ce launcher, utilisez plutot notre <a href=\"https://cbservers.xyz/discord\" target=\"_blank\">Discord</a>.",
                 verifySteamFiles: 'Verifier les fichiers Steam',
                 client: 'Client',
                 provider: 'Fournisseur',
                 customClient: 'Client personnalise'
-            },
-            componentLibrary: {
-                title: 'Bibliotheque de composants',
-                subtitle: 'Etats reutilisables pour les boutons, cartes, champs et badges.',
-                buttons: 'Boutons',
-                inputs: 'Champs',
-                badges: 'Badges',
-                card: 'Carte'
             },
             popup: {
                 gameMode: {
@@ -758,9 +816,9 @@
                     credits: 'Le multijoueur est fourni par le client IW5 et developpe par <a href="https://plutonium.pw/" target="_blank">Plutonium</a>.<br>Le solo est fourni par le client IW5-Mod et developpe par <a href="https://alterware.dev/" target="_blank">AlterWare</a>.'
                 },
                 't6': {
-                    description: 'Call of Duty: Black Ops 2 ameliore avec les modifications de Plutonium T6. Profitez du multijoueur et des zombies avec une meilleure stabilite et des fonctionnalites supplementaires.',
+                    description: 'Call of Duty: Black Ops 2 ameliore avec les modifications de Plutonium T6 et T6SP-Mod. Profitez de la campagne, du multijoueur et des zombies avec une meilleure stabilite et des fonctionnalites supplementaires.',
                     descriptionNote: 'Plutonium necessite un compte. Vous pouvez en creer un sur : <a href="https://forum.plutonium.pw/register" target="_blank">https://forum.plutonium.pw/register</a>.',
-                    credits: 'Le multijoueur et les zombies sont fournis par le client T6 et developpes par <a href="https://plutonium.pw/" target="_blank">Plutonium</a>.'
+                    credits: 'Le multijoueur et les zombies sont fournis par le client T6 et developpes par <a href="https://plutonium.pw/" target="_blank">Plutonium</a>.<br>La campagne est fournie par le client T6SP-Mod et developpee par <a href="https://github.com/Rattpak" target="_blank">Rattpak</a>.'
                 },
                 'boiii': {
                     description: 'Call of Duty: Black Ops 3 ameliore avec les modifications BOIII. Profitez de la campagne complete, du multijoueur et des zombies avec une meilleure stabilite et des fonctionnalites supplementaires.',
@@ -802,6 +860,8 @@
             },
             window: {
                 minimize: 'Minimizar',
+                maximize: 'Maximizar',
+                restore: 'Restaurar',
                 close: 'Cerrar'
             },
             brand: {
@@ -847,6 +907,11 @@
                 play: 'Jugar',
                 verify: 'Verificar archivos',
                 install: 'Instalar',
+                installing: 'Instalando',
+                verifying: 'Verificando',
+                uninstalling: 'Desinstalando',
+                queued: 'En cola',
+                reinstall: 'Reinstalar',
                 manage: 'Gestionar',
                 manageInstall: 'Gestionar instalacion',
                 setup: 'Configurar',
@@ -863,16 +928,22 @@
                 disabled: 'Desactivado',
                 source: 'Codigo fuente',
                 loading: 'Cargando...',
-                error: 'Error'
+                error: 'Error',
+                pinToHome: 'Anclar al inicio',
+                unpinFromHome: 'Desanclar del inicio',
+                gameDetails: 'Detalles del juego'
             },
             home: {
                 installedClients: 'Listos para jugar',
                 readyToPlay: 'Listo para jugar',
+                pinnedTitle: 'Anclados',
+                heroPrev: 'Anterior',
+                heroNext: 'Siguiente',
                 notInstalled: 'No instalado',
                 showInstalled: 'Mostrar instalados',
                 welcomeTitle: 'Bienvenido a CB Launcher',
                 welcomeBody: 'Bienvenido a CB Servers Launcher! Tu launcher todo-en-uno para los clientes comunitarios de Call of Duty. Instala, actualiza y juega a los clientes compatibles desde un solo lugar. Ve a la pestana <strong>Biblioteca</strong> para explorar todos los clientes disponibles y empezar a jugar. Necesitas ayuda? Pasa por la pestana <strong>Soporte</strong> o consulta nuestra <a href="https://docs.cbservers.xyz/launcher" target="_blank">documentacion</a>.',
-                disclaimer: 'Este launcher no esta afiliado ni respaldado por IW4x, Plutonium, AlterWare, Aurora ni HorizonMW. Por favor, no contactes a los desarrolladores originales de los clientes con consultas de soporte sobre este launcher.'
+                disclaimer: 'Este launcher no esta afiliado ni respaldado por IW4x, Plutonium, AlterWare, Aurora, HorizonMW, CoD4x Project, IW3SP-Mod, T6SP-Mod ni Project BO4. Por favor, no contactes a los desarrolladores originales de los clientes con consultas de soporte sobre este launcher.'
             },
             library: {
                 title: 'Biblioteca',
@@ -886,6 +957,7 @@
                 filterHorizonMW: 'HorizonMW',
                 filterOthers: 'Otros',
                 searchPlaceholder: 'Buscar clientes...',
+                clearSearch: 'Borrar busqueda',
                 noMatches: 'Ningun cliente coincide con este filtro.'
             },
             support: {
@@ -894,13 +966,36 @@
                 communityTitle: 'Soporte comunitario',
                 communityBody: 'Consulta las preguntas frecuentes para respuestas rapidas, o entra al Discord: el lugar mas rapido para obtener ayuda con la configuracion del launcher, instalaciones de clientes y acceso a servidores.',
                 faq: 'Preguntas frecuentes',
-                discordServer: 'Servidor de Discord',
+                discordServer: 'Discord',
+                reportBug: 'Reportar un error',
+                openLogs: 'Abrir carpeta de registros',
                 redistTitle: 'Redistribuibles',
-                redistBody: 'Instala los runtimes de Visual C++ y DirectX necesarios para los clientes antiguos de Call of Duty. Herramienta creada por <a href="https://chse.sh" target="_blank">Chase</a>.',
-                installRedist: 'Instalar redistribuibles',
-                noteTitle: 'Nota importante',
-                noteBody: 'Este launcher no esta afiliado a IW4x, Plutonium, AlterWare, Aurora ni HorizonMW. Por favor, usa los canales de soporte de CB Servers para este launcher y sus forks.',
+                redistBody: 'Instala los runtimes de Visual C++ y DirectX necesarios para los clientes antiguos de Call of Duty.',
+                manageRedist: 'Administrar redistribuibles',
+                redistSummary: '{{installed}} de {{total}} instalados',
+                installAllMissing: 'Instalar todos los faltantes',
+                redistAllInstalled: 'Todos instalados',
+                reinstallAll: 'Reinstalar todo',
+                redistStatusInstalled: 'Instalado',
+                redistStatusPending: 'Pendiente',
+                redistStatusDownloading: 'Descargando',
+                redistStatusInstalling: 'Instalando',
+                redistStatusFailed: 'Fallo',
+                popup: {
+                    title: 'Administrar redistribuibles',
+                    reinstallAllTitle: '¿Reinstalar todos los redistribuibles?',
+                    reinstallAllBody: 'Esto reinstala los {{total}} paquetes redistribuibles, incluidos los ya instalados. Debes hacer clic en <strong>Si</strong> en cada ventana de Control de cuentas de usuario (UAC) que aparezca. Hay una por cada paquete. ¿Continuar?'
+                },
+                noteBody: 'Este launcher no esta afiliado a IW4x, Plutonium, AlterWare, Aurora, HorizonMW, CoD4x Project, IW3SP-Mod, T6SP-Mod ni Project BO4. Por favor, usa los canales de soporte de CB Servers para este launcher y sus forks.',
                 github: 'GitHub de CB Servers'
+            },
+            installer: {
+                missingRedistTitle: 'Faltan componentes requeridos',
+                missingRedistBody: '{{gameName}} necesita instalar los siguientes componentes:',
+                installAndLaunch: 'Instalar y ejecutar',
+                installingComponents: 'Instalando componentes requeridos…',
+                installingNamed: 'Instalando {{name}}…',
+                redistInstallFailed: 'Fallo al instalar los componentes requeridos. Abre la pagina de Soporte y usa Administrar redistribuibles.'
             },
             settings: {
                 title: 'Ajustes',
@@ -937,7 +1032,7 @@
                 hideConsole: 'Ocultar consola',
                 checkForUpdates: 'Buscar actualizaciones',
                 source: 'Codigo fuente',
-                designBy: 'Diseno por <a href="https://github.com/Riiyua" target="_blank">Riyu</a> &amp; <a href="https://github.com/BradsTV" target="_blank">Brad</a>',
+                designBy: 'Diseno por <a href="https://github.com/Riyuachi" target="_blank">Riyu</a> &amp; <a href="https://github.com/BradsTV" target="_blank">Brad</a>',
                 versionLoading: 'Version: Cargando...',
                 versionUnknown: 'Version: Desconocida',
                 versionValue: 'Version: {{version}}',
@@ -974,19 +1069,11 @@
                 modsScripts: 'Mods/Scripts',
                 credits: 'Creditos',
                 note: 'Nota',
-                noteBody: 'No contactes a los desarrolladores originales del cliente para consultas de soporte relacionadas con este launcher. Usa el Discord de CB Servers en su lugar.',
+                noteBody: 'Este launcher no esta afiliado ni respaldado por {{provider}}. Por favor, no contactes a los desarrolladores originales de los clientes con consultas de soporte sobre este launcher, usa nuestro <a href="https://cbservers.xyz/discord" target="_blank">Discord</a> en su lugar.',
                 verifySteamFiles: 'Verificar archivos de Steam',
                 client: 'Cliente',
                 provider: 'Proveedor',
                 customClient: 'Cliente personalizado'
-            },
-            componentLibrary: {
-                title: 'Biblioteca de componentes',
-                subtitle: 'Estados reutilizables para botones, tarjetas, campos y placas.',
-                buttons: 'Botones',
-                inputs: 'Campos',
-                badges: 'Placas',
-                card: 'Tarjeta'
             },
             popup: {
                 gameMode: {
@@ -1156,9 +1243,9 @@
                     credits: 'El multijugador lo proporciona el cliente IW5, desarrollado por <a href="https://plutonium.pw/" target="_blank">Plutonium</a>.<br>El modo un jugador lo proporciona el cliente IW5-Mod, desarrollado por <a href="https://alterware.dev/" target="_blank">AlterWare</a>.'
                 },
                 't6': {
-                    description: 'Call of Duty: Black Ops 2 mejorado con las modificaciones de Plutonium T6. Disfruta del multijugador y del modo zombis con mayor estabilidad y funciones adicionales.',
+                    description: 'Call of Duty: Black Ops 2 mejorado con las modificaciones de Plutonium T6 y T6SP-Mod. Disfruta de la campaña, el multijugador y el modo zombis con mayor estabilidad y funciones adicionales.',
                     descriptionNote: 'Plutonium requiere una cuenta. Puedes crear una en: <a href="https://forum.plutonium.pw/register" target="_blank">https://forum.plutonium.pw/register</a>.',
-                    credits: 'El multijugador y los zombis los proporciona el cliente T6, desarrollado por <a href="https://plutonium.pw/" target="_blank">Plutonium</a>.'
+                    credits: 'El multijugador y los zombis los proporciona el cliente T6, desarrollado por <a href="https://plutonium.pw/" target="_blank">Plutonium</a>.<br>La campaña la proporciona el cliente T6SP-Mod, desarrollado por <a href="https://github.com/Rattpak" target="_blank">Rattpak</a>.'
                 },
                 'boiii': {
                     description: 'Call of Duty: Black Ops 3 mejorado con las modificaciones BOIII. Disfruta de la campana completa, el multijugador y el modo zombis con mayor estabilidad y funciones adicionales.',
@@ -1194,13 +1281,6 @@
                 }
             }
         }
-    };
-
-    const installStateKeys = {
-        'Ready to play': 'status.readyToPlay',
-        'Update client': 'status.updateClient',
-        'Base game missing': 'status.baseGameMissing',
-        'Update available': 'status.updateAvailable'
     };
 
     let currentLanguage = 'en';
@@ -1241,11 +1321,6 @@
         return typeof value === 'string' ? value : fallback;
     }
 
-    function translateInstallStateLabel(label) {
-        const key = installStateKeys[label];
-        return key ? t(key) : label;
-    }
-
     function applyStaticTranslations() {
         document.title = t('app.title');
 
@@ -1276,7 +1351,6 @@
         setLanguage,
         getLanguage,
         getGameText,
-        translateInstallStateLabel,
         applyStaticTranslations
     };
 })();

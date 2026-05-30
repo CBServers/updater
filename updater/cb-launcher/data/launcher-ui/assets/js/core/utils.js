@@ -9,7 +9,8 @@ const PROPERTY_KEYS = {
         LANGUAGE: 'launcher-language',
         THEME: 'launcher-theme',
         GLOBAL_PLAYER_NAME: 'launcher-global-player-name',
-        CDN_CUSTOM_URL: 'launcher-cdn-custom-url'
+        CDN_CUSTOM_URL: 'launcher-cdn-custom-url',
+        PINNED_GAMES: 'launcher-pinned-games'
     },
     GAME: {
         INSTALL: 'install',
@@ -48,7 +49,7 @@ class GameUtils {
         Object.entries(GameUtils.UI_TO_BACKEND_MAP).map(([ui, backend]) => [backend, ui])
     );
 
-    static GAME_ORDER = ['cod4x', 't4', 'iw4x', 't5', 'iw5', 't6', 'boiii', 'iw6x', 's1x', 'h1-mod', 'iw7-mod', 'bo4', 'mw2r', 'hmw-mod'];
+    static GAME_ORDER = ['cod4x', 't4', 'iw4x', 't5', 'iw5', 't6', 'iw6x', 's1x', 'boiii', 'iw7-mod', 'h1-mod', 'bo4', 'mw2r', 'hmw-mod'];
 
     // Friendly aliases accepted by the -launch CLI arg (alias -> UI ID).
     // Covers common CoD names that don't already match a UI ID or backend key.
@@ -68,7 +69,7 @@ class GameUtils {
             defaultInstallPath: 'cod4_game_files',
             uiId: 'cod4x',
             client: 'COD4x / IW3SP-Mod',
-            provider: 'CoD4x / JerryALT',
+            provider: 'CoD4x Project / IW3SP-Mod',
             clientKey: 'others',
             hasMultipleModes: true,
             supportedModes: ['sp', 'mp'],
@@ -76,14 +77,13 @@ class GameUtils {
             specialSettings: [],
             codeName: 'COD4x / IW3SP-Mod',
             version: 'IW3',
-            installStateLabel: 'Ready to play',
             description: 'COD4: Modern Warfare with COD4x multiplayer and IW3SP-Mod for singleplayer. Built for classic MW1 sessions and modern client maintenance.',
             credits: 'Multiplayer is provided by CoD4x. Singleplayer is provided by IW3SP-Mod and developed by JerryALT.',
             accent: '#46D744',
             assetBase: './assets/img/games/cod4x',
-            iconPath: './assets/img/games/cod4x/capsule.png',
-            capsulePath: './assets/img/games/cod4x/capsule.png',
-            heroImagePath: './assets/img/games/cod4x/hero.png',
+            iconPath: './assets/img/games/cod4x/capsule.jpg',
+            capsulePath: './assets/img/games/cod4x/capsule.jpg',
+            heroImagePath: './assets/img/games/cod4x/hero.jpg',
             logoPath: './assets/img/games/cod4x/logo.png'
         },
         't4': {
@@ -100,7 +100,6 @@ class GameUtils {
             specialSettings: [],
             codeName: 'Plutonium T4',
             version: 'T4',
-            installStateLabel: 'Ready to play',
             description: 'World at War enhanced with Plutonium T4. Campaign, multiplayer and zombies stay close to the original game with modern stability patches.',
             credits: 'Campaign, Multiplayer, and Zombies are provided by the T4 client and developed by Plutonium.',
             accent: '#B94E14',
@@ -124,7 +123,6 @@ class GameUtils {
             specialSettings: [],
             codeName: 'Plutonium T5',
             version: 'T5',
-            installStateLabel: 'Ready to play',
             description: 'Black Ops enhanced with Plutonium T5. Campaign, multiplayer and zombies are grouped in one clean client flow.',
             credits: 'Campaign, Multiplayer, and Zombies are provided by the T5 client and developed by Plutonium.',
             accent: '#186AC6',
@@ -140,7 +138,7 @@ class GameUtils {
             defaultInstallPath: 'mw2_game_files',
             uiId: 'iw4x',
             client: 'IW4x / IW4-SP',
-            provider: 'IW4x / AlterWare',
+            provider: 'IW4x Project / AlterWare',
             clientKey: 'alterware',
             hasMultipleModes: true,
             supportedModes: ['sp', 'mp'],
@@ -148,7 +146,6 @@ class GameUtils {
             specialSettings: [],
             codeName: 'IW4x / IW4-SP',
             version: 'IW4',
-            installStateLabel: 'Ready to play',
             description: 'Modern Warfare 2 with IW4x multiplayer and IW4-SP support. Built for fast access to classic MW2 sessions and client maintenance.',
             credits: 'Multiplayer is provided by IW4x. Singleplayer is provided by IW4-SP and developed by AlterWare.',
             accent: '#FBC751',
@@ -172,7 +169,6 @@ class GameUtils {
             specialSettings: [],
             codeName: 'Plutonium IW5 / IW5-Mod',
             version: 'IW5',
-            installStateLabel: 'Ready to play',
             description: 'Modern Warfare 3 with Plutonium multiplayer and IW5-Mod singleplayer support. Pick a mode only when the client actually needs it.',
             credits: 'Multiplayer is provided by Plutonium. Singleplayer is provided by IW5-Mod and developed by AlterWare.',
             accent: '#09FF00',
@@ -187,19 +183,18 @@ class GameUtils {
             shortName: 'BO2',
             defaultInstallPath: 'bo2_game_files',
             uiId: 't6',
-            client: 'T6',
-            provider: 'Plutonium',
+            client: 'T6 / T6SP-Mod',
+            provider: 'Plutonium / T6SP-Mod',
             clientKey: 'plutonium',
-            hasMultipleModes: false,
-            supportedModes: [],
+            hasMultipleModes: true,
+            supportedModes: ['sp', 'mp', 'zm'],
             supportsName: false,
             specialSettings: [],
             codeName: 'Plutonium T6',
             version: 'T6',
-            installStateLabel: 'Ready to play',
             featured: true,
-            description: 'Black Ops 2 multiplayer and zombies through Plutonium T6, with client updates, verification and base-game linking handled from one detail view.',
-            credits: 'Multiplayer and Zombies are provided by the T6 client and developed by Plutonium.',
+            description: 'Black Ops 2 campaign, multiplayer and zombies through Plutonium T6 and T6SP-Mod, with client updates, verification and base-game linking handled from one detail view.',
+            credits: 'Multiplayer and Zombies are provided by the T6 client and developed by Plutonium. Singleplayer is provided by T6SP-Mod and developed by Rattpak.',
             accent: '#FE890A',
             assetBase: './assets/img/games/t6',
             iconPath: './assets/img/games/t6/capsule.jpg',
@@ -221,7 +216,6 @@ class GameUtils {
             specialSettings: ['skip-intro-cinematic'],
             codeName: 'BOIII',
             version: 'T7',
-            installStateLabel: 'Update available',
             description: 'Black Ops 3 with BOIII client support for campaign, multiplayer and zombies. Includes client-specific settings such as intro-skip behavior.',
             credits: 'BOIII is a CB Servers fork of the original BOIII/T7x client developed by momo5502 and AlterWare.',
             accent: '#F3751B',
@@ -245,7 +239,6 @@ class GameUtils {
             specialSettings: [],
             codeName: 'IW6x',
             version: 'IW6',
-            installStateLabel: 'Base game missing',
             description: 'Ghosts with IW6x support for campaign and multiplayer. The launcher keeps install setup and client updates in the same place.',
             credits: 'IW6x is a CB Servers fork of the original IW6x/iw6-mod client developed by AlterWare.',
             accent: '#3B718C',
@@ -269,7 +262,6 @@ class GameUtils {
             specialSettings: [],
             codeName: 'S1x',
             version: 'S1',
-            installStateLabel: 'Ready to play',
             description: 'Advanced Warfare through S1x, with campaign, multiplayer, zombies and survival mode choices presented only when relevant.',
             credits: 'S1x is a CB Servers fork of the original S1x/s1-mod client developed by AlterWare.',
             accent: '#F9D406',
@@ -293,14 +285,13 @@ class GameUtils {
             specialSettings: [],
             codeName: 'H1-Mod',
             version: 'H1',
-            installStateLabel: 'Ready to play',
             description: 'Modern Warfare Remastered with H1-Mod support. Campaign and multiplayer launch modes stay behind one focused client page.',
             credits: 'H1-Mod is a CB Servers fork of the original H1-Mod client developed by Aurora.',
             accent: '#46D744',
             assetBase: './assets/img/games/h1-mod',
-            iconPath: './assets/img/games/h1-mod/capsule.png',
-            capsulePath: './assets/img/games/h1-mod/capsule.png',
-            heroImagePath: './assets/img/games/h1-mod/hero.png',
+            iconPath: './assets/img/games/h1-mod/capsule.jpg',
+            capsulePath: './assets/img/games/h1-mod/capsule.jpg',
+            heroImagePath: './assets/img/games/h1-mod/hero.jpg',
             logoPath: './assets/img/games/h1-mod/logo.png'
         },
         'iw': {
@@ -317,7 +308,6 @@ class GameUtils {
             specialSettings: [],
             codeName: 'IW7-Mod',
             version: 'IW7',
-            installStateLabel: 'Ready to play',
             description: 'Infinite Warfare with IW7-Mod support for campaign, multiplayer and zombies. Secondary actions stay close to install maintenance.',
             credits: 'IW7-Mod is a CB Servers fork of the original IW7-Mod client developed by Aurora.',
             accent: '#FFFFFF',
@@ -333,7 +323,7 @@ class GameUtils {
             defaultInstallPath: 'bo4_game_files',
             uiId: 'bo4',
             client: 'Project BO4',
-            provider: 'NotNierPea',
+            provider: 'Project BO4',
             clientKey: 'others',
             hasMultipleModes: true,
             supportedModes: ['on', 'off'],
@@ -341,9 +331,8 @@ class GameUtils {
             specialSettings: [],
             codeName: 'Project BO4',
             version: 'T8',
-            installStateLabel: 'Ready to play',
             description: 'Black Ops 4 with Project BO4 Launcher. Includes online and offline modes for multiplayer and zombies.',
-            credits: 'Online and offline play are provided by Project BO4 Launcher, developed by NotNierPea.',
+            credits: 'Online and offline play are provided by Project BO4 Launcher, maintained by NotNierPea.',
             accent: '#FE890A',
             assetBase: './assets/img/games/bo4',
             iconPath: './assets/img/games/bo4/capsule.jpg',
@@ -357,7 +346,7 @@ class GameUtils {
             defaultInstallPath: 'mw2r_game_files',
             uiId: 'mw2r',
             client: 'H2-Mod',
-            provider: 'Alice',
+            provider: 'H2-Mod',
             clientKey: 'others',
             hasMultipleModes: false,
             supportedModes: [],
@@ -365,13 +354,12 @@ class GameUtils {
             specialSettings: [],
             codeName: 'H2-Mod',
             version: 'H2',
-            installStateLabel: 'Ready to play',
             description: 'Modern Warfare 2 Campaign Remastered with H2-Mod support. Run the remastered MW2 campaign with stability and quality-of-life patches.',
             credits: 'MW2 Campaign Remastered support is provided by H2-Mod, developed by Alice.',
             accent: '#FBC751',
             assetBase: './assets/img/games/h2-mod',
-            iconPath: './assets/img/games/h2-mod/capsule.png',
-            capsulePath: './assets/img/games/h2-mod/capsule.png',
+            iconPath: './assets/img/games/h2-mod/capsule.jpg',
+            capsulePath: './assets/img/games/h2-mod/capsule.jpg',
             heroImagePath: './assets/img/games/h2-mod/hero.jpg',
             logoPath: './assets/img/games/h2-mod/logo.png'
         },
@@ -389,14 +377,13 @@ class GameUtils {
             specialSettings: [],
             codeName: 'HMW-Mod',
             version: 'HMW',
-            installStateLabel: 'Ready to play',
             description: 'HorizonMW is a faithful community remaster of Modern Warfare 2 multiplayer with additional content inspired by MW3.',
             credits: 'HMW-Mod is a CB Servers fork of the original HorizonMW client.',
             accent: '#97838A',
             assetBase: './assets/img/games/hmw-mod',
-            iconPath: './assets/img/games/hmw-mod/capsule.png',
-            capsulePath: './assets/img/games/hmw-mod/capsule.png',
-            heroImagePath: './assets/img/games/hmw-mod/hero.png',
+            iconPath: './assets/img/games/hmw-mod/capsule.jpg',
+            capsulePath: './assets/img/games/hmw-mod/capsule.jpg',
+            heroImagePath: './assets/img/games/hmw-mod/hero.jpg',
             logoPath: './assets/img/games/hmw-mod/logo.png'
         }
     };
@@ -474,26 +461,6 @@ class GameUtils {
     }
 
     /**
-     * Check if a game supports multiple modes
-     * @param {string} game - The game identifier (backend ID)
-     * @returns {boolean} True if game has multiple modes
-     */
-    static hasMultipleModes(game) {
-        const config = this.getGameConfig(game);
-        return config ? config.hasMultipleModes : false;
-    }
-
-    /**
-     * Get supported modes for a game
-     * @param {string} game - The game identifier (backend ID)
-     * @returns {array} Array of supported mode strings
-     */
-    static getSupportedModes(game) {
-        const config = this.getGameConfig(game);
-        return config ? config.supportedModes : [];
-    }
-
-    /**
      * Get every game config in UI display order.
      * @returns {array} Ordered game configuration objects
      */
@@ -551,26 +518,6 @@ class GameUtils {
     static getHeroImagePath(uiId) {
         const config = this.getGameConfigByUIId(uiId);
         return config ? config.heroImagePath : null;
-    }
-
-    /**
-     * Get capsule path for a UI game ID.
-     * @param {string} uiId - The UI game identifier
-     * @returns {string} Capsule path or null
-     */
-    static getCapsulePath(uiId) {
-        const config = this.getGameConfigByUIId(uiId);
-        return config ? config.capsulePath : null;
-    }
-
-    /**
-     * Get transparent logo path for a UI game ID.
-     * @param {string} uiId - The UI game identifier
-     * @returns {string} Logo path or null
-     */
-    static getLogoPath(uiId) {
-        const config = this.getGameConfigByUIId(uiId);
-        return config ? config.logoPath : null;
     }
 
     /**
@@ -759,6 +706,75 @@ class GameUtils {
         });
     }
 
+    static expandMissingToPackageIds(missingGroups) {
+        const ids = [];
+        for (const g of (missingGroups || [])) {
+            const archs = (g.archs && g.archs.length) ? g.archs : [''];
+            for (const arch of archs) {
+                ids.push(arch ? `${g.group_id}_${arch}` : g.group_id);
+            }
+        }
+        return ids;
+    }
+
+    static computeRedistAggregate(state, scopeIds) {
+        const all = (state && state.packages) || [];
+        const packages = (scopeIds && scopeIds.length) ? all.filter(p => scopeIds.includes(p.id)) : all;
+        if (packages.length === 0) return { percent: 0, currentName: null };
+        const done = packages.filter(p => p.status === 'completed' || p.status === 'installed').length;
+        const current = packages.find(p => p.status === 'downloading' || p.status === 'installing');
+        const currentPct = current ? (current.status === 'installing' ? 100 : (current.progress || 0)) : 0;
+        const percent = Math.min(100, ((done * 100) + currentPct) / packages.length);
+        return { percent, currentName: current ? current.name : null };
+    }
+
+    static async installRedistsWithProgressBar(missingGroups, uiGameId) {
+        const t = (k, vars) => window.LauncherI18n ? window.LauncherI18n.t(k, vars) : k;
+
+        const scopeIds = this.expandMissingToPackageIds(missingGroups);
+
+        let initial;
+        try { initial = await window.executeCommand('get-redist-progress'); }
+        catch (e) { initial = null; }
+
+        const alreadyRunning = !!(initial && initial.running);
+
+        if (!alreadyRunning) {
+            if (scopeIds.length === 0) return true;
+            try { await window.executeCommand('install-redist', { ids: scopeIds }); }
+            catch (e) { console.error('install-redist failed', e); return false; }
+        }
+
+        window.ProgressManager.show(uiGameId, t('installer.installingComponents'), null);
+
+        return new Promise((resolve) => {
+            const finish = (success) => {
+                if (pollId) clearInterval(pollId);
+                window.ProgressManager.hide();
+                resolve(success);
+            };
+
+            const tick = async () => {
+                let state;
+                try { state = await window.executeCommand('get-redist-progress'); }
+                catch (e) { console.error('get-redist-progress failed', e); finish(false); return; }
+                if (!state) return;
+
+                const { percent, currentName } = this.computeRedistAggregate(state, scopeIds);
+                const msg = currentName ? t('installer.installingNamed', { name: currentName }) : t('installer.installingComponents');
+                window.ProgressManager.update(percent, msg);
+
+                if (state.running === false) {
+                    const failed = (state.packages || []).some(p => p.status === 'failed');
+                    finish(!failed);
+                }
+            };
+
+            tick();
+            const pollId = setInterval(tick, 500);
+        });
+    }
+
     /**
      * Launch a game with optional mode, handling path validation and progress
      * @param {string} backendGame - Backend game ID (bo3, ghosts, etc.)
@@ -806,6 +822,27 @@ class GameUtils {
             throw new Error('Installation path not configured');
         }
 
+        let missingResp = null;
+        try { missingResp = await window.executeCommand('get-missing-redists-for-game', { game: backendGame }); }
+        catch (e) { console.error('get-missing-redists-for-game failed', e); }
+
+        const missing = (missingResp && missingResp.missing) || [];
+        if (missing.length > 0) {
+            const proceed = window.LaunchRedistModal
+                ? await window.LaunchRedistModal.show(missing, gameConfig.displayName)
+                : false;
+            if (!proceed) return;
+
+            const ok = await GameUtils.installRedistsWithProgressBar(missing, uiGameId);
+            if (!ok) {
+                const i18n = window.LauncherI18n;
+                if (typeof window.showToast === 'function') {
+                    window.showToast(i18n ? i18n.t('installer.redistInstallFailed') : 'Failed to install required components.', 'error', 6000);
+                }
+                return;
+            }
+        }
+
         // Build command arguments
         const commandArgs = { game: backendGame };
         if (mode) {
@@ -813,7 +850,7 @@ class GameUtils {
         }
 
         // Track launch progress
-        return this.trackCommandProgress({
+        const result = await this.trackCommandProgress({
             gameId: uiGameId,
             command: 'launch-game',
             commandArgs: commandArgs,
@@ -822,6 +859,12 @@ class GameUtils {
                 : `Launching ${gameConfig.displayName}...`,
             completeMessage: window.LauncherI18n ? window.LauncherI18n.t('progress.launchComplete') : 'Launch complete!'
         });
+
+        if (window.GameStateManager && typeof window.GameStateManager.markGameLaunched === 'function') {
+            window.GameStateManager.markGameLaunched(uiGameId);
+        }
+
+        return result;
     }
 }
 

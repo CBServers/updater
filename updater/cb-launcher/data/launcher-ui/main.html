@@ -9,13 +9,16 @@
     <script src="./assets/js/core/utils.js"></script>
     <script src="./assets/js/core/i18n.js"></script>
     <script src="./assets/js/core/command.js"></script>
+    <script src="./assets/js/core/player-counts.js"></script>
     <script src="./assets/js/ui/message-box.js"></script>
     <script src="./assets/js/ui/toast.js"></script>
+    <script src="./assets/js/ui/launch-redist-modal.js"></script>
     <script src="./assets/js/popups/game-mode-popup.js"></script>
     <script src="./assets/js/popups/game-settings-popup.js"></script>
     <script src="./assets/js/popups/setup-flow-popup.js"></script>
     <script src="./assets/js/popups/component-selection-popup.js"></script>
     <script src="./assets/js/popups/custom-server-popup.js"></script>
+    <script src="./assets/js/popups/redist-popup.js"></script>
     <script src="./assets/js/app/views.js"></script>
     <script src="./assets/js/app/main.js"></script>
 </head>
@@ -26,6 +29,7 @@
             <span class="title-text">CB SERVERS LAUNCHER</span>
             <div class="window-controls">
                 <button class="control-btn" id="minimize-button" data-i18n-title="window.minimize" title="Minimize"><span class="control-icon minimize-icon"></span></button>
+                <button class="control-btn" id="maximize-button" data-i18n-title="window.maximize" title="Maximize"><span class="control-icon maximize-icon"></span></button>
                 <button class="control-btn" id="close-button" data-i18n-title="window.close" title="Close"><span class="control-icon close-icon"></span></button>
             </div>
         </div>
@@ -102,7 +106,17 @@
                                 </button>
                             </div>
                         </div>
+                        <button class="hub-hero-arrow prev" id="hub-hero-prev" type="button" data-i18n-title="home.heroPrev" title="Previous"><span class="hub-hero-arrow-icon"></span></button>
+                        <button class="hub-hero-arrow next" id="hub-hero-next" type="button" data-i18n-title="home.heroNext" title="Next"><span class="hub-hero-arrow-icon"></span></button>
+                        <div class="hub-hero-dots" id="hub-hero-dots" role="tablist"></div>
                     </div>
+
+                    <section class="section" id="home-pinned-section" style="display:none;">
+                        <div class="section-head">
+                            <div class="section-title" data-i18n="home.pinnedTitle">Pinned</div>
+                        </div>
+                        <div class="client-row" id="home-pinned-row"></div>
+                    </section>
 
                     <section class="section" id="home-ready-section">
                         <div class="section-head">
@@ -117,7 +131,7 @@
                         </div>
                         <div class="welcome-card">
                             <div class="welcome-body" data-i18n-html="home.welcomeBody">Welcome to CB Servers Launcher! Your one-stop launcher for Call of Duty community clients. Install, update, and play supported clients all from one place. Head to the <strong>Library</strong> tab to browse every available client and start playing. Need a hand? Head over to the <strong>Support</strong> tab or check out our <a href="https://docs.cbservers.xyz/launcher" target="_blank">docs</a>.</div>
-                            <div class="welcome-disclaimer" data-i18n="home.disclaimer">This launcher is not affiliated with or endorsed by IW4x, Plutonium, AlterWare, Aurora, or HorizonMW. Please do not contact the original client maintainers with support requests regarding this launcher.</div>
+                            <div class="welcome-disclaimer" data-i18n="home.disclaimer">This launcher is not affiliated with or endorsed by IW4x, Plutonium, AlterWare, Aurora, HorizonMW, CoD4x Project, IW3SP-Mod, T6SP-Mod, or Project BO4. Please do not contact the original client maintainers with support requests regarding this launcher.</div>
                         </div>
                     </section>
                 </div>
@@ -140,6 +154,7 @@
                         </div>
                         <div class="search-field">
                             <input type="text" id="library-search" data-i18n-placeholder="library.searchPlaceholder" placeholder="Search clients..." />
+                            <button type="button" class="search-clear" id="library-search-clear" data-i18n-title="library.clearSearch" title="Clear search" hidden>&times;</button>
                         </div>
                     </div>
 
@@ -165,21 +180,29 @@
                             <p data-i18n="support.communityBody">Browse the FAQ for quick answers, or hop into the Discord &mdash; the fastest place to get help with launcher setup, client installs and server access.</p>
                             <div class="support-actions">
                                 <a class="support-action faq" href="https://docs.cbservers.xyz/launcher/faq" target="_blank" data-i18n="support.faq">FAQ</a>
-                                <a class="support-action discord" href="https://cbservers.xyz/discord" target="_blank" data-i18n="support.discordServer">Discord Server</a>
+                                <a class="support-action discord" href="https://cbservers.xyz/discord" target="_blank">
+                                    <span data-i18n="support.discordServer">Discord Server</span>
+                                    <span class="discord-online" id="discord-online" hidden></span>
+                                </a>
                             </div>
                         </section>
                         <section class="support-panel">
                             <h2 data-i18n="support.redistTitle">Redistributables</h2>
-                            <p data-i18n-html="support.redistBody">Install the Visual C++ and DirectX runtimes needed by older Call of Duty clients. Tool created by <a href="https://chse.sh" target="_blank">Chase</a>.</p>
-                            <button class="support-action" id="install-redist-btn" onclick="window.executeCommand('install-redist')">
-                                <span data-i18n="support.installRedist">Install Redistributables</span>
-                            </button>
+                            <p data-i18n-html="support.redistBody">Install the Visual C++ and DirectX runtimes needed by older Call of Duty clients.</p>
+                            <div class="redist-summary">
+                                <span class="redist-summary-text" id="redist-summary-text"></span>
+                                <button class="support-action" id="manage-redist-btn" onclick="window.RedistPopup && window.RedistPopup.show()">
+                                    <span data-i18n="support.manageRedist">Manage redistributables</span>
+                                </button>
+                            </div>
                         </section>
-                        <section class="support-panel wide">
-                            <h2 data-i18n="support.noteTitle">Important note</h2>
-                            <p data-i18n="support.noteBody">This launcher is not affiliated with IW4x, Plutonium, AlterWare, Aurora, or HorizonMW. Please use CB Servers support channels for this launcher and its forks.</p>
-                            <a class="support-link" href="https://github.com/CBServers" target="_blank" data-i18n="support.github">CB Servers GitHub</a>
-                        </section>
+                    </div>
+                    <div class="support-footer">
+                        <span data-i18n="support.noteBody">This launcher is not affiliated with IW4x, Plutonium, AlterWare, Aurora, HorizonMW, CoD4x Project, IW3SP-Mod, T6SP-Mod, or Project BO4. Please use CB Servers support channels for this launcher and its forks.</span>
+                        <div class="support-footer-links">
+                            <a href="#" onclick="window.executeCommand('open-url', { url: 'https://github.com/CBServers/cb-launcher/issues/new' }); return false;" data-i18n="support.reportBug">Report a bug</a>
+                            <a href="https://github.com/CBServers/cb-launcher" target="_blank" data-i18n="support.github">CB Servers GitHub</a>
+                        </div>
                     </div>
                 </div>
 
@@ -190,6 +213,19 @@
                     </div>
 
                     <div class="settings-content">
+                        <section class="settings-section">
+                            <h3 data-i18n="settings.player">Player</h3>
+                            <div class="setting-item inline-setting">
+                                <div class="setting-info">
+                                    <label data-i18n="settings.globalPlayerName">Global in-game name</label>
+                                    <span class="setting-description" data-i18n="settings.globalPlayerNameBody">Applied to all clients except Plutonium ones (which use their own auth).</span>
+                                </div>
+                                <div class="cdn-control">
+                                    <input type="text" id="setting-global-player-name" class="setting-text-input" maxlength="16" placeholder="PlayerName" autocomplete="off" spellcheck="false" />
+                                </div>
+                            </div>
+                        </section>
+
                         <section class="settings-section">
                             <h3 data-i18n="settings.launcher">Launcher</h3>
                             <div class="setting-item inline-setting">
@@ -251,19 +287,6 @@
                         </section>
 
                         <section class="settings-section">
-                            <h3 data-i18n="settings.player">Player</h3>
-                            <div class="setting-item inline-setting">
-                                <div class="setting-info">
-                                    <label data-i18n="settings.globalPlayerName">Global in-game name</label>
-                                    <span class="setting-description" data-i18n="settings.globalPlayerNameBody">Applied to all clients except Plutonium ones (which use their own auth).</span>
-                                </div>
-                                <div class="cdn-control">
-                                    <input type="text" id="setting-global-player-name" class="setting-text-input" maxlength="16" placeholder="PlayerName" autocomplete="off" spellcheck="false" />
-                                </div>
-                            </div>
-                        </section>
-
-                        <section class="settings-section">
                             <h3 data-i18n="settings.network">Network</h3>
                             <div class="setting-item inline-setting">
                                 <div class="setting-info">
@@ -297,6 +320,7 @@
                             <div class="settings-actions">
                                 <button class="settings-action-btn reset-btn" id="reset-all-settings-btn" data-i18n="settings.resetAllSettings">Reset All Settings</button>
                                 <button class="settings-action-btn console-btn" id="show-console-btn">Show Console</button>
+                                <button class="settings-action-btn logs-btn" id="open-logs-btn" onclick="window.executeCommand('open-logs')" data-i18n="support.openLogs">Open log folder</button>
                                 <button class="settings-action-btn update-btn" id="check-updates-btn" data-i18n="settings.checkForUpdates">Check for Updates</button>
                             </div>
                         </section>
@@ -307,13 +331,12 @@
                         <div class="footer-version" id="version-footer">Version: Loading...</div>
                         <div class="footer-links">
                             <div class="footer-source"><a href="https://github.com/CBServers/cb-launcher" target="_blank" data-i18n="settings.source">Source</a></div>
-                            <div class="footer-design" data-i18n-html="settings.designBy">Design by <a href="https://github.com/Riiyua" target="_blank">Riyu</a> &amp; <a href="https://github.com/BradsTV" target="_blank">Brad</a></div>
+                            <div class="footer-design" data-i18n-html="settings.designBy">Design by <a href="https://github.com/Riyuachi" target="_blank">Riyu</a> &amp; <a href="https://github.com/BradsTV" target="_blank">Brad</a></div>
                         </div>
                     </div>
                 </div>
 
                 <div id="game-pages"></div>
-                <div class="page-section" id="component-library-page" style="display: none;"></div>
             </main>
         </div>
 

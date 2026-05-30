@@ -48,6 +48,29 @@ function t(key, variables) {
     return window.LauncherI18n ? window.LauncherI18n.t(key, variables) : key;
 }
 
+function busyKindFor(gameId) {
+    const q = window.DownloadQueueManager;
+    if (!q || typeof q.isBusy !== 'function' || !q.isBusy(gameId)) return null;
+    if (q.active && q.active.gameId === gameId && q.active.blocksGameButtons) return 'active';
+    return 'queued';
+}
+
+function busyOpLabel(gameId) {
+    const q = window.DownloadQueueManager;
+    const op = (q && q.active && q.active.gameId === gameId && q.active.blocksGameButtons)
+        ? (q.active.op || 'install')
+        : 'install';
+    if (op === 'verify') return t('common.verifying');
+    if (op === 'uninstall') return t('common.uninstalling');
+    return t('common.installing');
+}
+
+function setupButtonLabel(installStatus, busyKind, gameId) {
+    if (busyKind === 'queued') return t('common.queued');
+    if (busyKind === 'active') return busyOpLabel(gameId);
+    return installStatus === 'partial' ? t('common.finishSetup') : t('common.setup');
+}
+
 async function initializeLanguage() {
     let language = 'en';
 
@@ -229,6 +252,10 @@ async function initialize() {
                 window.GameStateManager.startPolling();
             }
 
+            if (window.PlayerCountManager) {
+                window.PlayerCountManager.start();
+            }
+
             handleStartupLaunchArg();
         });
 
@@ -240,6 +267,14 @@ async function initialize() {
         }
     };
 
+    document.querySelector("#maximize-button").onclick = () => {
+        try {
+            window.executeCommand("toggle-maximize");
+        } catch (error) {
+            console.log("Toggle-maximize command not available:", error);
+        }
+    };
+
     document.querySelector("#close-button").onclick = () => {
         try {
             window.executeCommand("close");
@@ -247,6 +282,35 @@ async function initialize() {
             console.log("Close command not available:", error);
         }
     };
+
+    // Updates the maximize/restore button icon + tooltip. Called by the launcher (C++) whenever the
+    // window's maximized state changes (button, Aero Snap, Win+Up, etc.).
+    window.__setMaximized = (maximized) => {
+        const button = document.querySelector("#maximize-button");
+        if (!button) return;
+
+        const icon = button.querySelector(".control-icon");
+        if (icon) {
+            icon.classList.toggle("maximize-icon", !maximized);
+            icon.classList.toggle("restore-icon", !!maximized);
+        }
+
+        const key = maximized ? "window.restore" : "window.maximize";
+        button.setAttribute("data-i18n-title", key);
+        try {
+            button.title = window.LauncherI18n ? window.LauncherI18n.t(key) : (maximized ? "Restore" : "Maximize");
+        } catch (error) {
+            button.title = maximized ? "Restore" : "Maximize";
+        }
+    };
+
+    try {
+        Promise.resolve(window.executeCommand("is-maximized"))
+            .then((maximized) => window.__setMaximized(!!maximized))
+            .catch(() => {});
+    } catch (error) {
+        console.log("is-maximized command not available:", error);
+    }
 
     // Handle external links on support and game pages - open in default browser
     document.addEventListener('click', function(e) {
@@ -267,9 +331,64 @@ async function initialize() {
     adjustChannelElements();
 }
 
-window.showSettings = function() {
-    document.querySelector("#settings").click();
-}
+window.RedistManager = (function() {
+    async function refresh() {
+        const summaryEl = document.getElementById('redist-summary-text');
+        if (!summaryEl) return;
+        try {
+            await window.executeCommand('refresh-redist');
+            const state = await window.executeCommand('get-redist-progress');
+            const packages = (state && state.packages) || [];
+            const installed = packages.filter(p => p.status === 'installed' || p.status === 'completed').length;
+            summaryEl.textContent = window.LauncherI18n
+                ? window.LauncherI18n.t('support.redistSummary', { installed, total: packages.length })
+                : '';
+        } catch (e) {
+            console.error('refresh-redist failed', e);
+        }
+    }
+
+    return { refresh };
+})();
+
+window.DiscordWidget = (function() {
+    const INVITE_URL = 'https://discord.com/api/v10/invites/WyJQCwCCGW?with_counts=true';
+    let cachedOnline = null;
+    let lastFetch = 0;
+    const TTL_MS = 5 * 60 * 1000;
+
+    function format(count) {
+        if (count >= 1000) return (count / 1000).toFixed(1).replace(/\.0$/, '') + 'k';
+        return String(count);
+    }
+
+    async function refresh() {
+        const el = document.getElementById('discord-online');
+        if (!el) return;
+
+        const now = Date.now();
+        if (cachedOnline === null || (now - lastFetch) > TTL_MS) {
+            try {
+                const res = await fetch(INVITE_URL, { cache: 'no-store' });
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const json = await res.json();
+                if (typeof json.approximate_presence_count === 'number') {
+                    cachedOnline = json.approximate_presence_count;
+                    lastFetch = now;
+                }
+            } catch (e) {
+                console.warn('DiscordWidget: fetch failed, keeping last known count.', e);
+            }
+        }
+
+        if (cachedOnline !== null) {
+            el.textContent = format(cachedOnline);
+            el.hidden = false;
+        }
+    }
+
+    return { refresh };
+})();
 
 async function initializeNavigation() {
     // Handle home navigation
@@ -403,6 +522,9 @@ function handleSupportClick(e) {
     removeActiveNavigation();
     el.classList.add("active");
     loadNavigationPage("support");
+
+    if (window.RedistManager) window.RedistManager.refresh();
+    if (window.DiscordWidget) window.DiscordWidget.refresh();
 }
 
 // setInnerHTML function removed - no longer needed with single page approach
@@ -512,16 +634,6 @@ function loadSidebarIcons() {
 
 // Game Installation Manager
 window.GameInstallationManager = {
-    async checkInstallation(gameId) {
-        const installStatus = await checkGameInstallation(gameId);
-        return installStatus.status === 'installed';
-    },
-
-    getInstallProperty(gameId) {
-        const config = GameUtils.getGameConfigByUIId(gameId);
-        return config ? config.installProperty : null;
-    },
-
     getGameMapping(gameId) {
         return GameUtils.getGameMapping(gameId);
     },
@@ -538,6 +650,18 @@ window.GameStateManager = {
     isPolling: false,
     gameStates: {},
     pollIntervalMs: 500, // Check every half second
+    runningGameId: null, // Single-game tracking: the game launched from the launcher
+    launchGraceUntil: 0, // Ignore "not running" right after launch while the process spins up
+
+    markGameLaunched(gameId) {
+        this.runningGameId = gameId;
+        this.launchGraceUntil = Date.now() + 8000;
+        const state = this.gameStates[gameId] || {};
+        this.gameStates[gameId] = Object.assign({}, state, { isRunning: true });
+        if (window.AppViews && typeof window.AppViews.refreshActionButtons === 'function') {
+            window.AppViews.refreshActionButtons();
+        }
+    },
 
     async checkGameRunning(gameId) {
         // Check if a game is currently running
@@ -590,17 +714,40 @@ window.GameStateManager = {
             }
         }
 
-        // Only poll the visible game page
+        let cardsNeedRefresh = false;
+
+        // Poll the visible game page (drives its play/stop/setup button group)
         if (visibleGameId) {
             const stateChanged = await this.updateGameState(visibleGameId);
-
-            // Update buttons if state changed
             if (stateChanged) {
                 console.log(`${visibleGameId} state changed, updating buttons`);
                 await createGameButtons(visibleGameId);
+                cardsNeedRefresh = true;
+            }
+            const vs = this.gameStates[visibleGameId];
+            if (vs && vs.isRunning) {
+                this.runningGameId = visibleGameId;
+            } else if (this.runningGameId === visibleGameId && Date.now() > this.launchGraceUntil) {
+                this.runningGameId = null;
             }
         }
-        // If no game page is visible (home/settings), skip polling to save resources
+
+        // Single-game tracking: keep polling the launched game even on home/library
+        // (where its detail page isn't visible) so its card can flip to STOP / back.
+        if (this.runningGameId && this.runningGameId !== visibleGameId) {
+            const trackedId = this.runningGameId;
+            const prev = this.gameStates[trackedId] || {};
+            const isRunning = await this.checkGameRunning(trackedId);
+            if (isRunning || Date.now() > this.launchGraceUntil) {
+                if (prev.isRunning !== isRunning) cardsNeedRefresh = true;
+                this.gameStates[trackedId] = Object.assign({}, prev, { isRunning });
+                if (!isRunning) this.runningGameId = null;
+            }
+        }
+
+        if (cardsNeedRefresh && window.AppViews && typeof window.AppViews.refreshActionButtons === 'function') {
+            window.AppViews.refreshActionButtons();
+        }
     },
 
     startPolling() {
@@ -619,15 +766,6 @@ window.GameStateManager = {
         this.pollInterval = setInterval(() => {
             this.updateAllGameStates();
         }, this.pollIntervalMs);
-    },
-
-    stopPolling() {
-        if (this.pollInterval) {
-            clearInterval(this.pollInterval);
-            this.pollInterval = null;
-        }
-        this.isPolling = false;
-        console.log('GameStateManager: Stopped state polling');
     },
 
     getGameState(gameId) {
@@ -795,7 +933,9 @@ window.DownloadQueueManager = {
     queue: [],
 
     enqueue: function(item) {
-        if (item.blocksGameButtons) {
+        // Dedup blocking ops (verify/install/uninstall) and launches so spam-clicking Play
+        // can't queue a second launch behind the one already verifying/running.
+        if (item.blocksGameButtons || item.op === 'launch') {
             const isDup = (this.active && this.active.gameId === item.gameId && this.active.op === item.op)
                 || this.queue.some(q => q.gameId === item.gameId && q.op === item.op);
             if (isDup) {
@@ -974,11 +1114,6 @@ window.DownloadQueueManager = {
         return items;
     },
 
-    hasAnyDownloads: function() {
-        if (this.active && this.active.blocksGameButtons) return true;
-        return this.queue.some(q => q.blocksGameButtons);
-    },
-
     _emit: function() {
         try {
             window.dispatchEvent(new CustomEvent('cb-download-queue-changed'));
@@ -986,27 +1121,41 @@ window.DownloadQueueManager = {
     }
 };
 
-// Apply per-game button disable state across visible game pages.
-// Only ADDS the queue-busy disable; doesn't override install-status disables from createGameButtons.
+// Detail-page button enable/disable; mirrors the context-menu logic.
 function applyDownloadQueueButtonState() {
     const queue = window.DownloadQueueManager;
     if (!queue) return;
 
-    function isInstalled(gameId) {
+    function getStatus(gameId) {
         const state = window.GameStateManager && typeof window.GameStateManager.getGameState === 'function'
             ? window.GameStateManager.getGameState(gameId) : null;
-        if (state) return state.installStatus === 'installed';
+        if (state && state.installStatus) return state.installStatus;
         const card = document.querySelector(`.library-card[data-game="${gameId}"]`);
-        return card ? card.dataset.status === 'installed' : false;
+        return card ? (card.dataset.status || 'not-setup') : 'not-setup';
     }
 
-    document.querySelectorAll('.detail-verify-action, .detail-manage-install-action, .detail-settings-action').forEach(btn => {
+    // Browse — installed/partial; not gated by busy.
+    document.querySelectorAll('.detail-browse-files-action').forEach(btn => {
         const gameId = btn.dataset.game;
         if (!gameId) return;
-        const busy = queue.isBusy(gameId);
-        const installed = isInstalled(gameId);
-        // These actions only make sense when installed; queue-busy further disables them.
-        btn.disabled = busy || !installed;
+        const status = getStatus(gameId);
+        btn.disabled = status !== 'installed' && status !== 'partial';
+    });
+
+    // Verify — installed only.
+    document.querySelectorAll('.detail-verify-action').forEach(btn => {
+        const gameId = btn.dataset.game;
+        if (!gameId) return;
+        const status = getStatus(gameId);
+        btn.disabled = queue.isBusy(gameId) || status !== 'installed';
+    });
+
+    // Settings / Manage Install — installed or partial.
+    document.querySelectorAll('.detail-manage-install-action, .detail-settings-action').forEach(btn => {
+        const gameId = btn.dataset.game;
+        if (!gameId) return;
+        const status = getStatus(gameId);
+        btn.disabled = queue.isBusy(gameId) || (status !== 'installed' && status !== 'partial');
     });
 
     // Play: disabled across all games while any blocking op is running, since
@@ -1036,6 +1185,8 @@ function applyDownloadQueueButtonState() {
         if (!gameId) return;
         btn.disabled = queue.isBusy(gameId);
         btn.removeAttribute('title');
+        const installStatus = btn.dataset.installStatus || 'not-setup';
+        btn.textContent = setupButtonLabel(installStatus, busyKindFor(gameId), gameId);
     });
 
     const downloadsBadge = document.getElementById('downloads-badge');
@@ -1052,6 +1203,9 @@ function applyDownloadQueueButtonState() {
 
 window.addEventListener('cb-download-queue-changed', () => {
     applyDownloadQueueButtonState();
+    if (window.AppViews && typeof window.AppViews.applyDownloadQueueInstallingState === 'function') {
+        window.AppViews.applyDownloadQueueInstallingState();
+    }
     if (window.ProgressManager && typeof window.ProgressManager._updatePauseIcon === 'function') {
         window.ProgressManager._updatePauseIcon();
     }
@@ -1213,25 +1367,17 @@ async function createGameButtons(gameId) {
             document.getElementById(`${gameId}-play-button`).onclick = () => launchGame(gameId);
         }
     } else {
-        const buttonText = gameState.installStatus === 'partial' ? t('common.finishSetup') : t('common.setup');
+        const buttonText = setupButtonLabel(gameState.installStatus, busyKindFor(gameId), gameId);
 
         buttonGroup.innerHTML = `
             <div class="left-buttons">
-                <button class="setup-button" id="${gameId}-setup-button">
+                <button class="setup-button" id="${gameId}-setup-button" data-install-status="${gameState.installStatus}">
                     ${buttonText}
                 </button>
             </div>
         `;
 
         document.getElementById(`${gameId}-setup-button`).onclick = () => showSetupFlow(gameId);
-    }
-
-    // Disable secondary action buttons when game is not fully installed
-    const detailPage = document.getElementById(`${gameId}-page`);
-    if (detailPage) {
-        const secondaryButtons = detailPage.querySelectorAll('.detail-actions-panel .secondary-action');
-        const notInstalled = gameState.installStatus !== 'installed';
-        secondaryButtons.forEach(btn => { btn.disabled = notInstalled; });
     }
 
     applyDownloadQueueButtonState();
@@ -1356,18 +1502,53 @@ function showManageInstall(gameId, options = {}) {
     popups.componentSelectionPopup.show(gameMapping, gameConfig, options);
 }
 
-function verifyGame(gameId, deleteComponents = false) {
-    console.log(`Verify button clicked for ${gameId}, deleteComponents: ${deleteComponents}`);
+async function uninstallGameDirect(gameId) {
+    const config = GameUtils.getGameConfigByUIId(gameId);
+    if (!config) return false;
+    const backendId = GameUtils.getGameMapping(gameId);
+
+    if (typeof window.showMessageBox === 'function') {
+        const result = await window.showMessageBox(
+            t('popup.componentSelection.confirmUninstallTitle'),
+            t('popup.componentSelection.confirmUninstallBody', { game: config.displayName }),
+            [t('common.cancel'), { label: t('popup.componentSelection.uninstall'), danger: true }]
+        );
+        if (result === 0) return false;
+    }
+
+    try {
+        await GameUtils.trackCommandProgress({
+            gameId: gameId,
+            command: 'delete-game',
+            commandArgs: { game: backendId },
+            initialMessage: t('popup.componentSelection.uninstalling', { game: config.displayName }),
+            completeMessage: t('progress.uninstallComplete'),
+            onComplete: () => {
+                window.dispatchEvent(new CustomEvent('gameInstallationUpdated', {
+                    detail: { game: backendId }
+                }));
+            }
+        });
+    } catch (error) {
+        console.error('Failed to uninstall game:', error);
+    }
+    return true;
+}
+
+function verifyGame(gameId, deleteComponents = false, op = 'verify') {
+    console.log(`Verify button clicked for ${gameId}, deleteComponents: ${deleteComponents}, op: ${op}`);
 
     const gameMapping = GameUtils.getGameMapping(gameId);
+    const displayName = window.GameInstallationManager.getGameDisplayName(gameId);
 
     GameUtils.trackCommandProgress({
         gameId: gameId,
         command: 'verify-game',
+        op: op,
         commandArgs: { game: gameMapping, delete_components: deleteComponents },
-        initialMessage: t('progress.verifying', {
-            game: window.GameInstallationManager.getGameDisplayName(gameId)
-        }),
+        initialMessage: op === 'install'
+            ? t('popup.setup.downloading', { game: displayName })
+            : t('progress.verifying', { game: displayName }),
         completeMessage: t('progress.verificationComplete'),
         onComplete: () => {
             // Trigger UI update in case verification installed missing files
