@@ -2,7 +2,7 @@
     [
         "cb-launcher.exe",
         2167808,
-        "96D9B40307345E8671EBB283761D0ADE28B13A08"
+        "E9247F9923843E79CE9BFC9EE7683068F675C16C"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -76,8 +76,8 @@
     ],
     [
         "data/launcher-ui/assets/css/main.css",
-        115301,
-        "EE4EDD871FE515F7C5BCAC97330731F04EA7D2F6"
+        118070,
+        "11B8C3DF756F317E1769F75C41B4A9CCC617EBD6"
     ],
     [
         "data/launcher-ui/assets/img/brand/cb-hero.png",
@@ -115,6 +115,36 @@
         "D87E4014F8BB4644880D4EDDB8ED80E6AD91F6D2"
     ],
     [
+        "data/launcher-ui/assets/img/games/cod1/capsule.jpg",
+        62040,
+        "AA96FA637D78F98BCB746CDC87EF8EA97C6394FC"
+    ],
+    [
+        "data/launcher-ui/assets/img/games/cod1/hero.jpg",
+        925052,
+        "9F6ABD2A1A608DB8B3278141B24EFD7F53281001"
+    ],
+    [
+        "data/launcher-ui/assets/img/games/cod1/logo.png",
+        678931,
+        "BCF4CE3C79182F402C03B4E4DFEEFE92568A623D"
+    ],
+    [
+        "data/launcher-ui/assets/img/games/cod2/capsule.jpg",
+        211757,
+        "AB5AC2D9DDDB891F266042068637C0EBC6A998E5"
+    ],
+    [
+        "data/launcher-ui/assets/img/games/cod2/hero.jpg",
+        1297156,
+        "9EBF1245621AE421556E955B0B6FCB83F9506F8D"
+    ],
+    [
+        "data/launcher-ui/assets/img/games/cod2/logo.png",
+        574899,
+        "873B83764741A30F4827EE41D364A5A874078749"
+    ],
+    [
         "data/launcher-ui/assets/img/games/cod4x/capsule.jpg",
         84054,
         "2B8D3266604555886641FB45454AA7E1C540C7DE"
@@ -128,6 +158,21 @@
         "data/launcher-ui/assets/img/games/cod4x/logo.png",
         69336,
         "91E1F0E5D8E78729CA6CB86F698497C5A38B95D5"
+    ],
+    [
+        "data/launcher-ui/assets/img/games/codu/capsule.png",
+        880657,
+        "DFA991EC4A59C5C3CB581898BBE3B15D1CA1BEB5"
+    ],
+    [
+        "data/launcher-ui/assets/img/games/codu/hero.jpg",
+        644947,
+        "F5DD1446E966EC0B2F0567F4B26145F1A0974037"
+    ],
+    [
+        "data/launcher-ui/assets/img/games/codu/logo.png",
+        192153,
+        "0549BECDDE5421A92130D8C9B698698649BC4FB2"
     ],
     [
         "data/launcher-ui/assets/img/games/h1-mod/capsule.jpg",
@@ -296,13 +341,13 @@
     ],
     [
         "data/launcher-ui/assets/js/app/main.js",
-        82847,
-        "580A399DB523AB2B455C60E715C467620DE9159D"
+        83110,
+        "33C7CDB883A5059476150A493DFDC04A6C5D0A39"
     ],
     [
         "data/launcher-ui/assets/js/app/views.js",
-        53288,
-        "50AFC98950468CEF9129C02E9E58E7057080DF4D"
+        55990,
+        "8047AAC101DD85A6EE3B23B3478403E37B20F167"
     ],
     [
         "data/launcher-ui/assets/js/core/command.js",
@@ -311,8 +356,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        90805,
-        "03E5CB98B1F7485D35CDEECB6652EDE76E42A8C9"
+        91209,
+        "2D6109346A695883667C7599905C6540018518A9"
     ],
     [
         "data/launcher-ui/assets/js/core/player-counts.js",
@@ -321,8 +366,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/utils.js",
-        36586,
-        "676730D42443FE914ADCA635F95AB97DFBB5CE91"
+        39533,
+        "2338581244CD9D98D25E4A973E112595129929B1"
     ],
     [
         "data/launcher-ui/assets/js/popups/component-selection-popup.js",
@@ -371,8 +416,8 @@
     ],
     [
         "data/launcher-ui/main.html",
-        25964,
-        "59DFD5B06217F5E8538DFC8951AE87A9B8C85D95"
+        26274,
+        "182D20E35C9AA7B21B1FD2821F1A47F5BA8DBC99"
     ],
     [
         "manifest/aw.json",
@@ -445,6 +490,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "31F4CC458A3A8B31036FA977802383752336C4F9916F1ACAF543A5F7671E0902"
+        "ManifestHash": "9F843145D895CE77BB56CCB60D168202027F652E4BDDC8E9120E023344DC2CF9"
     }
 ]
