@@ -8,6 +8,31 @@ end
 
 game:addlocalizedstring("LUA_MENU_QUIT_TO_DESKTOP_CAPS", "QUIT TO DESKTOP")
 
+-- Confirmation popup shown after toggling "open to friends"; reads nat_open
+-- (set synchronously by nat_host via ExecNow) to describe the new state.
+local function natFriendsConfirmed( element )
+	-- Close the pause menu so the toggle's button label refreshes on reopen.
+	element:dispatchEventToRoot( { name = "toggle_pause_off" } )
+	LUI.FlowManager.RequestCloseAllMenus( element )
+end
+
+local function popup_nat_friends()
+	local isOpen = Engine.GetDvarBool( "nat_open" )
+	return {
+		type = "generic_confirmation_popup",
+		id = "popup_nat_friends_id",
+		properties = {
+			popup_title = isOpen and "OPEN TO FRIENDS" or "CLOSED TO FRIENDS",
+			message_text = isOpen and "Friends can now join this match." or "Friends can no longer join this match.",
+			confirmation_action = natFriendsConfirmed,
+			dialog_top = -100,
+			dialog_bottom = 100
+		}
+	}
+end
+
+LUI.MenuBuilder.registerDef( "popup_nat_friends", popup_nat_friends )
+
 package.loaded["LUI.mp_hud.OptionsMenu"].options_def = function()
 	local f14_local0 = GameX.GetGameMode()
 	local f14_local1 = Engine.TableLookup( GameTypesTable.File, GameTypesTable.Cols.Ref, f14_local0, GameTypesTable.Cols.ClassChoice ) == "1"
@@ -60,6 +85,23 @@ package.loaded["LUI.mp_hud.OptionsMenu"].options_def = function()
 				childNum = 2,
 				button_text = Engine.Localize( "@LUA_MENU_CHANGE_TEAM_CAPS" ),
 				button_action_func = LUI.mp_hud.OptionsMenu.changeTeamButtonAction
+			}
+		})
+	end
+
+	-- Listen-server host: toggle NAT hole punching so Discord friends can join.
+	if Engine.GetDvarBool( "sv_running" ) then
+		LUI.MenuBuilder.BuildAddChild(self, {
+			type = "UIGenericButton",
+			id = "btn_MPPause_friends",
+			properties = {
+				childNum = 7,
+				button_text = Engine.GetDvarBool( "nat_open" ) and "CLOSE TO FRIENDS" or "OPEN TO FRIENDS",
+				button_action_func = function( element, menuItem )
+					-- ExecNow so nat_open is updated before the popup reads it.
+					Engine.ExecNow( "nat_host" )
+					LUI.FlowManager.RequestPopupMenu( element, "popup_nat_friends", true, menuItem.controller )
+				end
 			}
 		})
 	end
