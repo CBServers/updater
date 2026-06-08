@@ -131,8 +131,8 @@
     ],
     [
         "cdata/ui_scripts/patches/pausequit.lua",
-        964,
-        "C880A0FD052B82906255C783E25B2442C8C45F49"
+        3166,
+        "5FFFEA88DB3FBE8FB2A88C32E03B1EB6457195EA"
     ],
     [
         "cdata/ui_scripts/patches/scoreboard.lua",
@@ -261,7 +261,7 @@
     ],
     [
         "h1-mod.exe",
-        9882112,
-        "F1F19274D9EE0EBA87C2C65A423D6F99C0058217"
+        9911808,
+        "0C9D6D7F5E5CB67B7AC71214F85FAAEF0DB1C0DF"
     ]
 ]
