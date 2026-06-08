@@ -6,13 +6,13 @@
     ],
     [
         "boiii.exe",
-        2668544,
-        "8F7756236A4A8FB51E4DCC17A740F0A39EBEC4AE"
+        2663424,
+        "D2B1300F40F82C694A205838888501AA69877C97"
     ],
     [
         "data/gamesettings/mp/gamesettings_escort.cfg",
-        1205,
-        "6B97D13A010C5413F087411D1439AC6D7E79BF2A"
+        1179,
+        "3004ECA38B6E321A5E76B5F80ECA96C0411CABB2"
     ],
     [
         "data/launcher/bigboiii.jpg",
@@ -21,8 +21,8 @@
     ],
     [
         "data/launcher/main.html",
-        3508,
-        "1ED8D3CBF2B2246B652EEC672FF1125FC51B1C92"
+        3362,
+        "3E8B3F93D20D52851F4DBF1EC8117C646E4A6DDC"
     ],
     [
         "data/launcher/noise.jpg",
@@ -31,8 +31,8 @@
     ],
     [
         "data/lookup_tables/dvar_list.txt",
-        176216,
-        "27376DC7A045696A776B347ED8931603180B66E8"
+        169191,
+        "5F581AB66E36539BB89744806C23CE0035F56BCA"
     ],
     [
         "data/scripts/mp/bots/_bot.gsc",
@@ -41,8 +41,8 @@
     ],
     [
         "data/scripts/mp/bots/_bot.gsc_raw",
-        21784,
-        "0CBD0789E7743EC82748136D08D4F859D3DAFA89"
+        20659,
+        "10E0B569788EFD2BD25BD89349B3C9E553493E54"
     ],
     [
         "data/scripts/mp/bots/_bot_loadout.gsc",
@@ -51,8 +51,8 @@
     ],
     [
         "data/scripts/mp/bots/_bot_loadout.gsc_raw",
-        20784,
-        "B68066D8064A079749F7169BE82F9CE8DC847DB6"
+        19931,
+        "746A13D197F6FD3B6BC9561C4D3F1B1B66994119"
     ],
     [
         "data/scripts/mp/gametypes/_globallogic_player.gsc",
@@ -61,8 +61,8 @@
     ],
     [
         "data/scripts/mp/gametypes/_globallogic_player.gsc_raw",
-        143490,
-        "869C129C269C66022095ED6E042A63FF4CD260A2"
+        138966,
+        "BC310EBED3BAEA7EDCE64AD677AA28171290B200"
     ],
     [
         "data/scripts/mp/gametypes/_serversettings.gsc",
@@ -71,8 +71,8 @@
     ],
     [
         "data/scripts/mp/gametypes/_serversettings.gsc_raw",
-        5143,
-        "10CA7B670C2D049A0DC5B4A2221E67CB6A61DEDD"
+        4935,
+        "28DF623AC5CBA881F58C6ED9A27091BCB37736FC"
     ],
     [
         "data/scripts/mp/teams/_teams.gsc",
@@ -81,98 +81,98 @@
     ],
     [
         "data/scripts/mp/teams/_teams.gsc_raw",
-        15307,
-        "8F48D9FF8CE8423C3313050B996663D0D77F752D"
+        14631,
+        "DACF167E09A01CB92D09DFA5BD6A91CBEFF020CD"
     ],
     [
         "data/ui_scripts/doubleclick_join_server/__init__.lua",
-        3712,
-        "A5DF469722EB0098A6D743CFFFF4E98F02A01379"
+        3595,
+        "2D98026473D0B96E2E0579932E470DDCB7037859"
     ],
     [
         "data/ui_scripts/frontend_menus/datasources_change_map_categories.lua",
-        3560,
-        "62360C76E9B0941657CE56A0F61F7D18B7ACDB28"
+        3464,
+        "E6C6075C5B5185042FC0BC0B5B83626C6C51DE5A"
     ],
     [
         "data/ui_scripts/frontend_menus/datasources_gamesettingsflyout_buttons.lua",
-        8943,
-        "7C0F66275B131E3EA7B33E46DDFD8A529064FCD3"
+        8683,
+        "556037909A07E4D40DE66B111807811E7DC5601D"
     ],
     [
         "data/ui_scripts/frontend_menus/datasources_start_menu_tabs.lua",
-        5723,
-        "E8A05F97D9586744A74AE794D93487F8E6381610"
+        5506,
+        "E7066BC6AC2A81BAB35A7AA0A69FD528F6D210D9"
     ],
     [
         "data/ui_scripts/frontend_menus/utils.lua",
-        4592,
-        "F77CAA4069CA8478BBE7F0C8C36CB7436650FAC1"
+        4432,
+        "9CCA8F19B422D16428C01EC55361A96CF0A8716A"
     ],
     [
         "data/ui_scripts/frontend_menus/__init__.lua",
-        6090,
-        "0549F25BCA8A8E7FE0A15270088475FC72699527"
+        5934,
+        "AF460F55AD38904F43FE308BCCC8FFD648CE08DA"
     ],
     [
         "data/ui_scripts/graphics_settings/__init__.lua",
-        4591,
-        "50381E6D842DF5375A06CE51D1A9122FD51AF4C9"
+        4444,
+        "C0B45859717568760936ABF94D07C2A3822853D5"
     ],
     [
         "data/ui_scripts/lua_fixes/__init__.lua",
-        107,
-        "5176804CFF5A0D94C820E408D2DDBBE1C5AF578A"
+        104,
+        "E1B587FDCD8E58CA4F07C37AF44C5515BF86FAE3"
     ],
     [
         "data/ui_scripts/party/datasources_start_menu_game_options.lua",
-        5373,
-        "A383052F75D2C2EACD714A2ECAF088D22E7BB18B"
+        5277,
+        "EDA2B1C4371AA2C1C642B9F86748E804303517BA"
     ],
     [
         "data/ui_scripts/party/__init__.lua",
-        910,
-        "4E79743A6E955449625F0201B6C762DFE85DFDB7"
+        880,
+        "C44320498F3BD819548C368C0FCCD7F93D5938E3"
     ],
     [
         "data/ui_scripts/playlist/widget_playlist_category_match_settings_info.lua",
-        421,
-        "3E7D9E08311997F743E6E7A63EF444CB7E4D27FD"
+        406,
+        "51AD3FAE05DE8B73F896E45854980F5D85A1DE33"
     ],
     [
         "data/ui_scripts/playlist/widget_playlist_match_settings_info.lua",
-        381,
-        "2ED403F35C8220E918E3F7DFE38403FF0E63E7E4"
+        366,
+        "901C28F36FF4005F1829D3ED4458B23364E09BAF"
     ],
     [
         "data/ui_scripts/playlist/__init__.lua",
-        973,
-        "97BFF0BB26EB65644554F1B18C6DF9F6A2F3D996"
+        939,
+        "FBC0F87748F61E478A0D36A51C1675124D43FC65"
     ],
     [
         "data/ui_scripts/ranked/online_mods_loaded.lua",
-        726,
-        "D136E6D2A817BE4762840F3A7E32774E2AEB2940"
+        703,
+        "8B9590E41002693237D54C19F2316DC46D3E2AD8"
     ],
     [
         "data/ui_scripts/ranked/__init__.lua",
-        31,
-        "AFEA670205AE14B532D377E066208DB3EFB4C823"
+        30,
+        "CA6AA69ABB14EE5D400233F0D51656F185D7CAD8"
     ],
     [
         "data/ui_scripts/server_browser/__init__.lua",
-        13526,
-        "DE7D46A9D2D40E26725B9C3992C039BC44238711"
+        13148,
+        "8F90D89B8622973D99E61F890314DCD613CFC2F3"
     ],
     [
         "data/ui_scripts/server_password/__init__.lua",
-        2174,
-        "D82F87FD4995B5FB6F53A586E77F3B0E74046D29"
+        2100,
+        "5CD2BED4AD7C2E3B7B1C8D624EE3130ED41ED702"
     ],
     [
         "data/ui_scripts/stats/__init__.lua",
-        14845,
-        "A547A53EF10422D16E29309CEC72031D706294A0"
+        14424,
+        "4A4CAA94F77577C57F594156A2F1FFA321F0716D"
     ],
     [
         "ext.dll",
