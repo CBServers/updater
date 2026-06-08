@@ -100,6 +100,11 @@
         "0E78A2BCABB5BE7447EBA5F4EF85B19D106139C0"
     ],
     [
+        "data/ui_scripts/nat_friends/__init__.lua",
+        2342,
+        "4E55E8E39F4CDE6394322CB1B00E4702D4D9A687"
+    ],
+    [
         "data/ui_scripts/patches/__init__.lua",
         579,
         "D32965885920DC41038826F4B385C57157C42A82"
@@ -131,7 +136,7 @@
     ],
     [
         "s1x.exe",
-        7693312,
-        "C957E8F62BAAE4CFDFFCD824C11C59BC15D5EDAE"
+        7723520,
+        "E8E50E960EDC9D3E6E70C5ED3B459F54002C0480"
     ]
 ]
