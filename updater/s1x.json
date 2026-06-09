@@ -41,8 +41,8 @@
     ],
     [
         "data/maps/mp/gametypes/_damage.gsc",
-        119374,
-        "3D0FDF5F055F6CB0C9CA8CB84DD17C22D89F8D0F"
+        119378,
+        "477847A84FA2351339DE60CFB81CF611EF036F4C"
     ],
     [
         "data/maps/mp/gametypes/_gamelogic.gsc",
@@ -137,6 +137,6 @@
     [
         "s1x.exe",
         7723520,
-        "FC911E9D8BC0B7D6A80C00837861422C2A9B03B0"
+        "DA0E8D4779A94C16F2568057CA2730558A1FAE6C"
     ]
 ]
