@@ -42,9 +42,13 @@ ononeleftevent_stub( team )
 
 killcamvalid_stub( victim, attacker, dokillcam )
 {
+	/*
 	return dokillcam && level.killcam &&
 		!( isdefined( victim.cancelkillcam ) && victim.cancelkillcam ) &&
 		game[ "state" ] == "playing" && !victim maps\mp\_utility::isusingremote() &&
 		!level.showingfinalkillcam &&
 		!isai( victim ) && !isai( attacker );
+	*/
+
+	return false;
 }
