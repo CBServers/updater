@@ -235,3 +235,92 @@ end
 MenuBuilder.m_types["popup_end_game"] = EndGamePopup
 MenuBuilder.m_types["popup_leave_game"] = LeaveGamePopup
 MenuBuilder.m_types["PullPartyPopup"] = PullPartyPopup
+
+-- nat_friends: "Open/Close to Friends" toggle injected into the pause button list.
+-- iw7-mod uses the native PauseMenuButtons/CPPauseMenuButtons (not overridden like
+-- h1/iw6x), so we wrap them and append our button. Host-only (sv_running); SP untouched.
+pcall(function()
+	local function friends_button_text()
+		return Engine.GetDvarBool("nat_open") and "CLOSE TO FRIENDS" or "OPEN TO FRIENDS"
+	end
+
+	-- Close the menu so the button label reflects the new state on reopen.
+	local function nat_friends_confirmed(element)
+		pcall(function() element:dispatchEventToRoot({ name = "toggle_pause_off" }) end)
+		pcall(function() LUI.FlowManager.RequestCloseAllMenus(element) end)
+	end
+
+	-- Popup reads nat_open (already flipped by the synchronous ExecNow below).
+	MenuBuilder.m_types["popup_nat_friends"] = function()
+		local is_open = Engine.GetDvarBool("nat_open")
+		local self = LUI.UIElement.new()
+		self.id = "popup_nat_friends_id"
+		self:registerAnimationState("default", {
+			topAnchor = true, leftAnchor = true, bottomAnchor = true, rightAnchor = true,
+			top = -50, left = 0, bottom = 0, right = 0, alpha = 1,
+		})
+		self:animateToState("default", 0)
+		MenuBuilder.BuildAddChild(self, {
+			type = "generic_confirmation_popup",
+			id = "popup_nat_friends_inner",
+			properties = {
+				popup_title = is_open and "OPENED TO FRIENDS" or "CLOSED TO FRIENDS",
+				message_text = is_open and "Friends can now join this match."
+					or "Friends can no longer join this match.",
+				confirmation_action = nat_friends_confirmed,
+			},
+		})
+		return self
+	end
+
+	local function on_toggle_friends(button, event)
+		-- ExecNow so nat_open updates synchronously before the popup reads it.
+		Engine.ExecNow("nat_host")
+		local controller = (event and event.controller) or Engine.GetFirstActiveController()
+		local shown = pcall(function()
+			LUI.FlowManager.RequestPopupMenu(button, "popup_nat_friends", true, controller)
+		end)
+		if not shown then
+			nat_friends_confirmed(button)
+		end
+	end
+
+	local function inject_friends_button(button_type, list, ...)
+		-- sv_running is true only on the listen-server host.
+		if not Engine.GetDvarBool("sv_running") then
+			return
+		end
+
+		local args = { ... }
+		local props = args[2]
+		local controllerIndex = (props and (props.controllerIndex or props.exclusiveController))
+			or Engine.GetFirstActiveController()
+
+		local button = MenuBuilder.BuildRegisteredType(button_type, { controllerIndex = controllerIndex })
+		button.id = "nat_friends_button"
+		if button.Text then
+			button.Text:setText(friends_button_text(), 0)
+		end
+		button:addEventHandler("button_action", on_toggle_friends)
+		list:addElement(button)
+	end
+
+	-- Wrap whichever pause button list the current mode registered, using the same
+	-- button type that list builds natively (GenericButton in MP, MenuButton in Zombies)
+	-- so our button matches the others' width/style.
+	local function wrap_pause_buttons(name, button_type)
+		local original = MenuBuilder.m_types[name]
+		if type(original) == "function" then
+			MenuBuilder.m_types[name] = function(...)
+				local list = original(...)
+				if list then
+					pcall(inject_friends_button, button_type, list, ...)
+				end
+				return list
+			end
+		end
+	end
+
+	wrap_pause_buttons("PauseMenuButtons", "GenericButton")
+	wrap_pause_buttons("CPPauseMenuButtons", "MenuButton")
+end)

@@ -256,8 +256,8 @@
     ],
     [
         "cdata/ui_scripts/EndGame/__init__.lua",
-        6406,
-        "5243F22172B9D0F1F5327F90DAB877E9E4784DAA"
+        9725,
+        "F55251F34259EF5BF036443B530FDB5AAA150623"
     ],
     [
         "cdata/ui_scripts/Lobby/GameSetupButtonsBots.lua",
@@ -416,7 +416,7 @@
     ],
     [
         "iw7-mod.exe",
-        4601856,
-        "A93448ECC506CB3E6F42A508BA3E1856CBF9053B"
+        4633600,
+        "F5B5417F98B27990F1694B23F7CB131679F85B93"
     ]
 ]
