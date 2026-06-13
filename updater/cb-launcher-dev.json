@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        2195968,
-        "21E828963D2E01CCCD7CD35CD4BB311BA0859189"
+        2277376,
+        "9EEE48E2EA69427648C0D4F07D5C5F778884919F"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -75,9 +75,14 @@
         "D31BF003A20C9ACB6776FFEF91BAC6FF28E253A3"
     ],
     [
+        "data/discord/discord_partner_sdk.dll",
+        9817016,
+        "FA1D29A68CCA5074FA25D441B21EA0E64B57CB35"
+    ],
+    [
         "data/launcher-ui/assets/css/main.css",
-        118070,
-        "11B8C3DF756F317E1769F75C41B4A9CCC617EBD6"
+        122875,
+        "E65225384EA2B3619A0E75D1F61AD30C978C7C9F"
     ],
     [
         "data/launcher-ui/assets/img/brand/cb-hero.png",
@@ -341,23 +346,28 @@
     ],
     [
         "data/launcher-ui/assets/js/app/main.js",
-        83110,
-        "33C7CDB883A5059476150A493DFDC04A6C5D0A39"
+        85687,
+        "E76E37A8D171FB7F325503421D8DA2FCBC99509B"
     ],
     [
         "data/launcher-ui/assets/js/app/views.js",
-        55990,
-        "8047AAC101DD85A6EE3B23B3478403E37B20F167"
+        60869,
+        "1A53CA94D53AF093CDAA2D16A9DD7F3A0B1ADE97"
     ],
     [
         "data/launcher-ui/assets/js/core/command.js",
-        2528,
-        "1EC1806ABB84BCD08BB26EC63F835C5D8AF950A2"
+        2841,
+        "2CE7448BC870343498878E7C7FFA7B557E5445D6"
+    ],
+    [
+        "data/launcher-ui/assets/js/core/discord-friends.js",
+        3660,
+        "BB068E9B14126336F219E0888AFE47860B515E17"
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        91209,
-        "2D6109346A695883667C7599905C6540018518A9"
+        95227,
+        "1DCE8E6013076DB95607E22CAD157E73B6358D32"
     ],
     [
         "data/launcher-ui/assets/js/core/player-counts.js",
@@ -416,8 +426,8 @@
     ],
     [
         "data/launcher-ui/main.html",
-        26274,
-        "182D20E35C9AA7B21B1FD2821F1A47F5BA8DBC99"
+        28855,
+        "454A62FC4AC95F65C7CEC3B9FFB199A4D8EDF1DE"
     ],
     [
         "manifest/aw.json",
@@ -490,6 +500,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "4360EC018478C6B46C1398A9C3D42B04E16EE92A8317BA7B19BEA7EF2FBBD919"
+        "ManifestHash": "971BEF52AEEE11A85578AEE80E3C545AD8AE1AA11E7EA1DFD508D357837DC0E4"
     }
 ]
