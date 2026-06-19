@@ -7,7 +7,7 @@
     [
         "boiii.exe",
         2663424,
-        "D2B1300F40F82C694A205838888501AA69877C97"
+        "C0FC8E5F47C04D3A3057E5094CFDE6DB00EDBFE3"
     ],
     [
         "data/gamesettings/mp/gamesettings_escort.cfg",
@@ -126,13 +126,18 @@
     ],
     [
         "data/ui_scripts/party/datasources_start_menu_game_options.lua",
-        5277,
-        "EDA2B1C4371AA2C1C642B9F86748E804303517BA"
+        5421,
+        "929C86E4951F3E543339900F930A548934E3BEEB"
+    ],
+    [
+        "data/ui_scripts/party/zombie_toast.lua",
+        1366,
+        "5B317B2E36F6447AC711E5D68CCCAF05CBC3BECD"
     ],
     [
         "data/ui_scripts/party/__init__.lua",
-        880,
-        "C44320498F3BD819548C368C0FCCD7F93D5938E3"
+        904,
+        "738025AC995C27387D484E02A250A108DBF4810C"
     ],
     [
         "data/ui_scripts/playlist/widget_playlist_category_match_settings_info.lua",
