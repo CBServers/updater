@@ -96,8 +96,8 @@
     ],
     [
         "cdata/ui_scripts/options/pcaudio.lua",
-        5781,
-        "50D2B9C586DDC38C04B927DFD3A10791F67BE360"
+        6362,
+        "20D915CF44CF208C31F26CEB6BD374DD0DA30059"
     ],
     [
         "cdata/ui_scripts/options/__init__.lua",
@@ -262,6 +262,6 @@
     [
         "h1-mod.exe",
         9911808,
-        "0C9D6D7F5E5CB67B7AC71214F85FAAEF0DB1C0DF"
+        "3C57F6219D1A6EF7E55DC7FAEB09F3F3B4E16FB2"
     ]
 ]

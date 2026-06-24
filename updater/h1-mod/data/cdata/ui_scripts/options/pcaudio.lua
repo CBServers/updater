@@ -88,6 +88,17 @@ local function pc_audio(f4_arg0, f4_arg1)
             LUI.Options.ToggleDvarFunc("snd_battleChatterDisabled"))
     end
 
+    if not Engine.IsMultiplayer() and Engine.ShouldShowSubtitlesOption() then
+        LUI.Options.CreateControlProfileDataButton(menu, "subtitles", "profile_toggleSubtitles", nil,
+            "LUA_MENU_SUBTITLES", "PLATFORM_UI_OPTIONS_SUBTITLES_DESC", {{
+                text = "@LUA_MENU_DISABLED",
+                value = false
+            }, {
+                text = "@LUA_MENU_ENABLED",
+                value = true
+            }})
+    end
+
     LUI.Options.AddButtonOptionVariant(menu, GenericButtonSettings.Variants.Select, "@LUA_MENU_HITSOUND",
         "@LUA_MENU_HITSOUND_DESC", LUI.Options.GetDvarEnableTextFunc("snd_hitsoundDisabled", true),
         LUI.Options.ToggleDvarFunc("snd_hitsoundDisabled"), LUI.Options.ToggleDvarFunc("snd_hitsoundDisabled"))
@@ -98,18 +109,20 @@ local function pc_audio(f4_arg0, f4_arg1)
             LUI.Options.ToggleDvarFunc("snd_lowQualityAudio"), LUI.Options.ToggleDvarFunc("snd_lowQualityAudio"))
     end
 
-    -- voice chat options
-    createdivider(menu, Engine.Localize("@LUA_MENU_VOICE_CHAT"))
+    -- voice chat options (multiplayer only; voice dvars are not registered in SP)
+    if Engine.IsMultiplayer() then
+        createdivider(menu, Engine.Localize("@LUA_MENU_VOICE_CHAT"))
 
-    LUI.Options.AddButtonOptionVariant(menu, GenericButtonSettings.Variants.Select, "@LUA_MENU_VOICE_CHAT",
-        "@LUA_MENU_VOICE_CHAT_DESC", LUI.Options.GetDvarEnableTextFunc("cl_voice", false),
-        LUI.Options.ToggleDvarFunc("cl_voice"), LUI.Options.ToggleDvarFunc("cl_voice"))
-    LUI.Options.AddButtonOptionVariant(menu, GenericButtonSettings.Variants.Select, "@LUA_MENU_PUSH_TO_TALK",
-        "@LUA_MENU_PUSH_TO_TALK_DESC", LUI.Options.GetDvarEnableTextFunc("cl_pushToTalk", false),
-        LUI.Options.ToggleDvarFunc("cl_pushToTalk"), LUI.Options.ToggleDvarFunc("cl_pushToTalk"))
+        LUI.Options.AddButtonOptionVariant(menu, GenericButtonSettings.Variants.Select, "@LUA_MENU_VOICE_CHAT",
+            "@LUA_MENU_VOICE_CHAT_DESC", LUI.Options.GetDvarEnableTextFunc("cl_voice", false),
+            LUI.Options.ToggleDvarFunc("cl_voice"), LUI.Options.ToggleDvarFunc("cl_voice"))
+        LUI.Options.AddButtonOptionVariant(menu, GenericButtonSettings.Variants.Select, "@LUA_MENU_PUSH_TO_TALK",
+            "@LUA_MENU_PUSH_TO_TALK_DESC", LUI.Options.GetDvarEnableTextFunc("cl_pushToTalk", false),
+            LUI.Options.ToggleDvarFunc("cl_pushToTalk"), LUI.Options.ToggleDvarFunc("cl_pushToTalk"))
 
-    LUI.Options.AddButtonOptionVariant(menu, GenericButtonSettings.Variants.Slider, "@LUA_MENU_MIC_REC_VOLUME",
-        "@LUA_MENU_MIC_REC_VOLUME_DESC", get_mic_volume, mic_levels_less, mic_levels_more)
+        LUI.Options.AddButtonOptionVariant(menu, GenericButtonSettings.Variants.Slider, "@LUA_MENU_MIC_REC_VOLUME",
+            "@LUA_MENU_MIC_REC_VOLUME_DESC", get_mic_volume, mic_levels_less, mic_levels_more)
+    end
 
     LUI.Options.InitScrollingList(menu.list, nil)
     LUI.Options.AddOptionTextInfo(menu)
