@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        2286592,
-        "68298707336E5FEE27EB37AE90A079E7CB551912"
+        2393600,
+        "98A291CC6C6AF7C502554EBAB39D0E0AAED13EE4"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -81,8 +81,8 @@
     ],
     [
         "data/launcher-ui/assets/css/main.css",
-        122875,
-        "E65225384EA2B3619A0E75D1F61AD30C978C7C9F"
+        123448,
+        "EDBE6EED27F48489E0DE733C10A87005758573CD"
     ],
     [
         "data/launcher-ui/assets/img/brand/cb-hero.png",
@@ -351,8 +351,8 @@
     ],
     [
         "data/launcher-ui/assets/js/app/views.js",
-        61117,
-        "60364795465F55F4A030BD949ED6E37EFF90D133"
+        62329,
+        "0EA975E077F9F7A8C42CB9DC6EB9D64047AB93A7"
     ],
     [
         "data/launcher-ui/assets/js/core/command.js",
@@ -361,13 +361,13 @@
     ],
     [
         "data/launcher-ui/assets/js/core/discord-friends.js",
-        3660,
-        "BB068E9B14126336F219E0888AFE47860B515E17"
+        8203,
+        "365809E12C66DF378B6F3A72217BD09E052BFC10"
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        95227,
-        "1DCE8E6013076DB95607E22CAD157E73B6358D32"
+        97467,
+        "34D26905988900C394521418A514335B4C8E72C7"
     ],
     [
         "data/launcher-ui/assets/js/core/player-counts.js",
@@ -500,6 +500,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "B4B49949EE974F3A98F2C76ACDDA834CDB3A9D3E08AEDC05E792FC917850AB6E"
+        "ManifestHash": "030AA9A97BBE5FF8861459D508515A00FD03543DD4BA026BC66221973757076E"
     }
 ]
