@@ -455,9 +455,24 @@
         "A48EF7B706EDC1CB49584DA6273EDF28B0782AAC"
     ],
     [
+        "manifest/cod1.json",
+        3934,
+        "F66B9A27C150E79AB9DF92BD4441EA093A1E90E2"
+    ],
+    [
+        "manifest/cod2.json",
+        8488,
+        "C146545B63589C449D529C2D848F6375FD454BBC"
+    ],
+    [
         "manifest/cod4.json",
         32325,
         "355548C9DF60462433D79D3A6AF69EF0EE76A561"
+    ],
+    [
+        "manifest/coduo.json",
+        9709,
+        "A278D465756438FEB7B0B41BB034948525E1A064"
     ],
     [
         "manifest/ghosts.json",
@@ -500,6 +515,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "030AA9A97BBE5FF8861459D508515A00FD03543DD4BA026BC66221973757076E"
+        "ManifestHash": "EE580A34207F805D84B1905108764187EE052EDFC8D5F3BF6C637926082DBABD"
     }
 ]
