@@ -1,0 +1,15 @@
+[
+    [
+        "mss32.dll",
+        6206990,
+        "5701D61ABF95042EE93C1EE727F8DB1354C97320"
+    ],
+    [
+        "mss32_original.dll",
+        370688,
+        "1B4C0C4FADDCDAE5B7239CC861A9389D55F38A4E"
+    ],
+    {
+        "ManifestHash": "973F2A9A6E0AB52D5CA81AEDD70D7331FBF24AB34827B82A75101AB8BCB0BAB8"
+    }
+]
