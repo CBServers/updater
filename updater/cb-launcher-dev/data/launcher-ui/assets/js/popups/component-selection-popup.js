@@ -288,7 +288,13 @@ class ComponentSelectionPopup {
 
     getDefaultDownloadPath(folder) {
         const defaultInstallPath = this.gameConfig ? this.gameConfig.defaultInstallPath : '';
-        return defaultInstallPath ? `${folder}\\${defaultInstallPath}` : folder;
+        if (!defaultInstallPath) return folder;
+
+        const lastSegment = folder.replace(/[\\/]+$/, '').split(/[\\/]/).pop();
+        if (lastSegment && lastSegment.toLowerCase() === defaultInstallPath.toLowerCase()) {
+            return folder.replace(/[\\/]+$/, '');
+        }
+        return `${folder}\\${defaultInstallPath}`;
     }
 
     async browseInstallPath() {
@@ -529,6 +535,9 @@ class ComponentSelectionPopup {
                 this.hide();
                 return;
             }
+
+            // Reaching here means a verify/download will run — blocked in offline mode.
+            if (!await window.guardOnline()) return;
 
             // Determine if components are being deselected (potential file deletion)
             const deselectedComponents = this.installedComponents.filter(

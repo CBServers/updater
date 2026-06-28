@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        2404352,
-        "D5BD20C9165B471C4D0284580F78BCE80064B773"
+        2408960,
+        "FFB7035C907716283359896013CCE9669104EC2D"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -81,8 +81,8 @@
     ],
     [
         "data/launcher-ui/assets/css/main.css",
-        123448,
-        "EDBE6EED27F48489E0DE733C10A87005758573CD"
+        123620,
+        "9AD152A5560D274672095CFBB099E956D76770F5"
     ],
     [
         "data/launcher-ui/assets/img/brand/cb-hero.png",
@@ -131,8 +131,8 @@
     ],
     [
         "data/launcher-ui/assets/img/games/cod1/logo.png",
-        678931,
-        "BCF4CE3C79182F402C03B4E4DFEEFE92568A623D"
+        666251,
+        "8B0C1C795106C35ADDBD4084288AFF75F29EEB3E"
     ],
     [
         "data/launcher-ui/assets/img/games/cod2x/capsule.jpg",
@@ -146,8 +146,8 @@
     ],
     [
         "data/launcher-ui/assets/img/games/cod2x/logo.png",
-        574899,
-        "873B83764741A30F4827EE41D364A5A874078749"
+        557830,
+        "DAB62D3182E04CAB1D54B2925D4BD81F142E1940"
     ],
     [
         "data/launcher-ui/assets/img/games/cod4x/capsule.jpg",
@@ -346,8 +346,8 @@
     ],
     [
         "data/launcher-ui/assets/js/app/main.js",
-        85687,
-        "F74477861010F32D8C4883BC45EE1764D3D877B5"
+        86885,
+        "197011EE141CF107558DACFBC5A85A024ECB1D57"
     ],
     [
         "data/launcher-ui/assets/js/app/views.js",
@@ -366,8 +366,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        100904,
-        "AE8833EB208D47858D96FEB7A97CCCD0777B2259"
+        101983,
+        "3965549625ECF5FB13910BF39D1CAA7868577269"
     ],
     [
         "data/launcher-ui/assets/js/core/player-counts.js",
@@ -376,13 +376,13 @@
     ],
     [
         "data/launcher-ui/assets/js/core/utils.js",
-        40188,
-        "612F15C254E7FEDFF7E402165DECA768E965B632"
+        40998,
+        "6DB88C85EE4A5D22DECEAAB643B446494FF7BA01"
     ],
     [
         "data/launcher-ui/assets/js/popups/component-selection-popup.js",
-        26323,
-        "AC89EDB03B0A83F53BA39C221B3C16E235F8852C"
+        26720,
+        "430E67147A32D51E84F788A65DD0426886C0683F"
     ],
     [
         "data/launcher-ui/assets/js/popups/custom-server-popup.js",
@@ -401,13 +401,13 @@
     ],
     [
         "data/launcher-ui/assets/js/popups/redist-popup.js",
-        8083,
-        "268B7F4030DB2ED067F17EE6D7B1CD7B9EDD3ED6"
+        8132,
+        "621989BE25DAB832C62A310759445F18D897CB55"
     ],
     [
         "data/launcher-ui/assets/js/popups/setup-flow-popup.js",
-        7612,
-        "A4A0B97F6B10575BFB2BF143F6944E51D88F0275"
+        7666,
+        "C7CF5A995417FA026AB53D91EDE0AE4B0BEAA4D9"
     ],
     [
         "data/launcher-ui/assets/js/ui/launch-redist-modal.js",
@@ -515,6 +515,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "A8491BA37AA4CD64127E13F3FB28A99CE55E7E2EAEC9CF82ECCF08D6DA23F53A"
+        "ManifestHash": "2C8DC2DA3716EC33E9F3924063648C27AC83D1902F1A06461A55B7771EE239E2"
     }
 ]
