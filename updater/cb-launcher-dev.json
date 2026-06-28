@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        2393600,
-        "98A291CC6C6AF7C502554EBAB39D0E0AAED13EE4"
+        2404352,
+        "D5BD20C9165B471C4D0284580F78BCE80064B773"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -135,17 +135,17 @@
         "BCF4CE3C79182F402C03B4E4DFEEFE92568A623D"
     ],
     [
-        "data/launcher-ui/assets/img/games/cod2/capsule.jpg",
+        "data/launcher-ui/assets/img/games/cod2x/capsule.jpg",
         211757,
         "AB5AC2D9DDDB891F266042068637C0EBC6A998E5"
     ],
     [
-        "data/launcher-ui/assets/img/games/cod2/hero.jpg",
+        "data/launcher-ui/assets/img/games/cod2x/hero.jpg",
         1297156,
         "9EBF1245621AE421556E955B0B6FCB83F9506F8D"
     ],
     [
-        "data/launcher-ui/assets/img/games/cod2/logo.png",
+        "data/launcher-ui/assets/img/games/cod2x/logo.png",
         574899,
         "873B83764741A30F4827EE41D364A5A874078749"
     ],
@@ -165,17 +165,17 @@
         "91E1F0E5D8E78729CA6CB86F698497C5A38B95D5"
     ],
     [
-        "data/launcher-ui/assets/img/games/codu/capsule.png",
+        "data/launcher-ui/assets/img/games/coduo/capsule.png",
         880657,
         "DFA991EC4A59C5C3CB581898BBE3B15D1CA1BEB5"
     ],
     [
-        "data/launcher-ui/assets/img/games/codu/hero.jpg",
+        "data/launcher-ui/assets/img/games/coduo/hero.jpg",
         644947,
         "F5DD1446E966EC0B2F0567F4B26145F1A0974037"
     ],
     [
-        "data/launcher-ui/assets/img/games/codu/logo.png",
+        "data/launcher-ui/assets/img/games/coduo/logo.png",
         192153,
         "0549BECDDE5421A92130D8C9B698698649BC4FB2"
     ],
@@ -347,7 +347,7 @@
     [
         "data/launcher-ui/assets/js/app/main.js",
         85687,
-        "E76E37A8D171FB7F325503421D8DA2FCBC99509B"
+        "F74477861010F32D8C4883BC45EE1764D3D877B5"
     ],
     [
         "data/launcher-ui/assets/js/app/views.js",
@@ -366,18 +366,18 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        97467,
-        "34D26905988900C394521418A514335B4C8E72C7"
+        100904,
+        "AE8833EB208D47858D96FEB7A97CCCD0777B2259"
     ],
     [
         "data/launcher-ui/assets/js/core/player-counts.js",
-        2230,
-        "85CA2692EECC3E4BD6338ED6029EBEBD0315BDB6"
+        2315,
+        "87A5A9FD7355F1CC27BA39AAD93D39E55E8FD722"
     ],
     [
         "data/launcher-ui/assets/js/core/utils.js",
-        39513,
-        "915BCD3453DF00CC9821679C3350DA6E30994FD9"
+        40188,
+        "612F15C254E7FEDFF7E402165DECA768E965B632"
     ],
     [
         "data/launcher-ui/assets/js/popups/component-selection-popup.js",
@@ -426,8 +426,8 @@
     ],
     [
         "data/launcher-ui/main.html",
-        28855,
-        "454A62FC4AC95F65C7CEC3B9FFB199A4D8EDF1DE"
+        28859,
+        "EA4DFB9957415D10482D17F58518A61865B29C7B"
     ],
     [
         "manifest/aw.json",
@@ -515,6 +515,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "EE580A34207F805D84B1905108764187EE052EDFC8D5F3BF6C637926082DBABD"
+        "ManifestHash": "A8491BA37AA4CD64127E13F3FB28A99CE55E7E2EAEC9CF82ECCF08D6DA23F53A"
     }
 ]
