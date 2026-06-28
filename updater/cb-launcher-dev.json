@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        2408960,
-        "FFB7035C907716283359896013CCE9669104EC2D"
+        2409984,
+        "C0A2E79A178E06622C608BA4CB367A93C8931C5D"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -81,8 +81,8 @@
     ],
     [
         "data/launcher-ui/assets/css/main.css",
-        123620,
-        "9AD152A5560D274672095CFBB099E956D76770F5"
+        124136,
+        "765892C0F7EBC535CB7C196A0D75A96D68D84A37"
     ],
     [
         "data/launcher-ui/assets/img/brand/cb-hero.png",
@@ -346,13 +346,13 @@
     ],
     [
         "data/launcher-ui/assets/js/app/main.js",
-        86885,
-        "197011EE141CF107558DACFBC5A85A024ECB1D57"
+        88257,
+        "A37E19B50B60E284C979CB5D5C4A5986389A347A"
     ],
     [
         "data/launcher-ui/assets/js/app/views.js",
-        62329,
-        "0EA975E077F9F7A8C42CB9DC6EB9D64047AB93A7"
+        62623,
+        "4915A2FC76847E7ED4BB6A7D687827EA82D77A47"
     ],
     [
         "data/launcher-ui/assets/js/core/command.js",
@@ -366,8 +366,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        101983,
-        "3965549625ECF5FB13910BF39D1CAA7868577269"
+        102116,
+        "A206830D664EA7FE8A3CD5B79E0B159278CB989D"
     ],
     [
         "data/launcher-ui/assets/js/core/player-counts.js",
@@ -376,8 +376,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/utils.js",
-        40998,
-        "6DB88C85EE4A5D22DECEAAB643B446494FF7BA01"
+        44554,
+        "ACC811F91593E634C374E05DFAFD89A0BC18E6D0"
     ],
     [
         "data/launcher-ui/assets/js/popups/component-selection-popup.js",
@@ -426,8 +426,8 @@
     ],
     [
         "data/launcher-ui/main.html",
-        28859,
-        "EA4DFB9957415D10482D17F58518A61865B29C7B"
+        28926,
+        "8B259A902ED519C9D79AF4CE7A90B3B6AAB66371"
     ],
     [
         "manifest/aw.json",
@@ -515,6 +515,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "6770A329981CE6BCF87C341432683960DD53D2315B0525C1751BE23B17746F55"
+        "ManifestHash": "BCD41FD369B4E6581A0A7838D79384A2A2FB6181BCA4DBB0775E29133FF0A92E"
     }
 ]
