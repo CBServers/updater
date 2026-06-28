@@ -1,12 +1,12 @@
 {
-    "ManifestHash": "C3485D778D07D6041D1389C8200437724A14E49E27AD53D6F50D4B6938D95EA1",
+    "ManifestHash": "72D7460749F78ACD074280D3181C06904E653C31F64C4660A4106D21D57B0EB8",
     "components": {
         "base": {
             "displayName": "Full Game (1.5 + UO)",
             "show": true,
             "required": true,
             "defaultEnabled": true,
-            "totalSize": 2226817239
+            "totalSize": 2225623754
         }
     },
     "files": [
@@ -42,8 +42,8 @@
         ],
         [
             "CoDUOSP.exe",
-            2999821,
-            "9DEFDC0F0EF6C26A",
+            1806336,
+            "12A27E413DABAD84",
             "base"
         ],
         [
