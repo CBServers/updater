@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        2409984,
-        "C0A2E79A178E06622C608BA4CB367A93C8931C5D"
+        2429440,
+        "1A13A9F589EFC3FF8493DB297DD3134BFCE8925E"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -81,8 +81,8 @@
     ],
     [
         "data/launcher-ui/assets/css/main.css",
-        124136,
-        "765892C0F7EBC535CB7C196A0D75A96D68D84A37"
+        124407,
+        "9B80191C259CE97B914C969C6B0FA72B46A6568C"
     ],
     [
         "data/launcher-ui/assets/img/brand/cb-hero.png",
@@ -366,8 +366,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        102116,
-        "A206830D664EA7FE8A3CD5B79E0B159278CB989D"
+        103144,
+        "BB661BC3F6DA498D9F398BFCE1FB009CBB8C65CC"
     ],
     [
         "data/launcher-ui/assets/js/core/player-counts.js",
@@ -376,8 +376,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/utils.js",
-        44554,
-        "ACC811F91593E634C374E05DFAFD89A0BC18E6D0"
+        44740,
+        "63388A49547FA675E504390DBF69AAC732001CFA"
     ],
     [
         "data/launcher-ui/assets/js/popups/component-selection-popup.js",
@@ -396,8 +396,8 @@
     ],
     [
         "data/launcher-ui/assets/js/popups/game-settings-popup.js",
-        23913,
-        "F3FDB157C73B349A06294A32968A382EFEA2E4F0"
+        32807,
+        "6A993F1598E54DF341A9460199DB7FFAC9B95AFE"
     ],
     [
         "data/launcher-ui/assets/js/popups/redist-popup.js",
@@ -515,6 +515,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "BCD41FD369B4E6581A0A7838D79384A2A2FB6181BCA4DBB0775E29133FF0A92E"
+        "ManifestHash": "B4E1380A5B9A3D2B01A1700B18A138109F2BC5ABE850762F050A0A4A6BC9F3BF"
     }
 ]
