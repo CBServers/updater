@@ -7,7 +7,7 @@
     [
         "Launch Project BO4.exe",
         113664,
-        "A24E7D483C4A65EF6FCBF28FF78EDDE893603334"
+        "19A542D9764EEB94F93C0FD72FFFD8D48BD303F2"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/maxrankdata_mp.csv",
@@ -346,18 +346,18 @@
     ],
     [
         "project-bo4/internals/T8ShieldSupport/metadata.json",
-        41278,
-        "6905B73EB9DCAFA056C3CE9CB2913144116938CB"
+        41448,
+        "184F912580238B44FED396DA26E6495F1CA8F60A"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Scripts/SupportCSC.csic",
         2076,
-        "C768DC4122BDEF58E33044246B8F496FF9E72C47"
+        "814CE781B3DD1A401CDA2FA13920751A4E256148"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Scripts/SupportGSC.gsic",
         106364,
-        "2F82A187103335F207F90981E6D7B9EE95980CE8"
+        "8D263AFD65B2C97165A07FDFB8A38EFD7B7A5C9E"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/SupportUtils/SupportErrors.tsv",
@@ -366,8 +366,8 @@
     ],
     [
         "project-bo4/internals/T8ShieldSupport/SupportUtils/SupportHashes.txt",
-        21311,
-        "E80092B7F040D6F5E3EE6BE73CCD36CE29076FD7"
+        21312,
+        "118301EB4DDC4177BD53A4D0EE49C3814E7CAC6B"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/SupportUtils/SupportStrings.txt",
@@ -571,8 +571,8 @@
     ],
     [
         "project-bo4/launcher/mp/XInput9_1_0.dll",
-        3761152,
-        "E8F1A16281C8160257AA75A33F4925606018B1AE"
+        3786240,
+        "7B22A6182C9A926AD6A935DCE77DAA0B5A7ECB41"
     ],
     [
         "project-bo4/launcher/platforms/qwindows.dll",
@@ -612,12 +612,12 @@
     [
         "project-bo4/launcher/Shield_Launcher.exe",
         309760,
-        "037396F07E7F247F536EF488F33AC9812C05D031"
+        "32C6DFA7480BCDE5F4813C0FA6955ED8AA9E6841"
     ],
     [
         "project-bo4/launcher/solo/XInput9_1_0.dll",
-        3936768,
-        "6C1AE160D3813D74A0AF2E01247607D118B5B2C8"
+        3962880,
+        "2CA22C634F21920168E8A2AF8DEF430E3AADB427"
     ],
     [
         "project-bo4/launcher/Sounds/startup_sound.mp3",
@@ -657,12 +657,12 @@
     [
         "project-bo4/plugins/acts-shield-plugin.dll",
         1080832,
-        "0487319648F6CCB8F98D58EAD4E9B4C6D09F2956"
+        "FBC6D69DECB3E1D356C9ED96ED47FB302E33841B"
     ],
     [
         "project-bo4/zone/support.ff",
-        3242148,
-        "4D7BEB06FC53DF1AE5BB4FD9115E7C45DFF4B69F"
+        3273776,
+        "F9D1127E163F73EAA353E29BEE7D14A158B7EFB1"
     ],
     [
         "project-bo4/zone_mods/T8ShieldSupport_FF/config.json",
@@ -670,6 +670,6 @@
         "7BEE5FF8DBD1C98E5A6FAC24B671A1BF95FB9022"
     ],
     {
-        "ManifestHash": "0774ECFC71A78FD42E88924E13C72D97C3B71B7C9AB257C4F1F177D84DACA49A"
+        "ManifestHash": "FAE62866C0CFC7073BFE6C329463F906A518468B2C54343AAE1D26ED3CA31B0D"
     }
 ]
