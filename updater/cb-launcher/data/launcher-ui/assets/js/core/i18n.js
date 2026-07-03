@@ -17,6 +17,7 @@
                 home: 'Home',
                 library: 'Library',
                 downloads: 'Downloads',
+                friends: 'Friends',
                 support: 'Support',
                 settings: 'Settings',
                 myGames: 'My Games'
@@ -33,9 +34,40 @@
                 statusPaused: 'Paused',
                 statusPausedAt: 'Paused — {{percent}}%',
                 pause: 'Pause',
-                resume: 'Resume'
+                resume: 'Resume',
+                etaLeft: '{{time}}'
+            },
+            friends: {
+                title: 'Friends',
+                subtitle: "See who's online and what they're playing.",
+                empty: 'No friends to show yet.',
+                statusOnline: 'Online',
+                statusIdle: 'Idle',
+                statusOffline: 'Offline',
+                linkBody: 'Link the launcher to your Discord account to see which of your friends use CB Launcher.',
+                linkCta: 'Link launcher to Discord account',
+                linking: 'Connecting to Discord...',
+                inLauncher: 'In CB Launcher',
+                degraded: 'Friends service unreachable - showing friends currently in the launcher only.',
+                invite: 'Invite',
+                join: 'Join',
+                askToJoin: 'Ask to Join',
+                inviteTitle: 'Game Invite',
+                inviteBody: '{name} invited you to join their game. Join now?',
+                joinRequestTitle: 'Join Request',
+                joinRequestBody: '{name} wants to join your game. Let them in?',
+                joinAcceptedTitle: 'Request Accepted',
+                joinAcceptedBody: '{name} accepted your request to join. Join now?',
+                accept: 'Join',
+                approve: 'Approve',
+                decline: 'Decline'
             },
             toasts: {
+                discordLinked: 'Discord account linked',
+                discordUnlinked: 'Discord account unlinked',
+                discordLinkFailed: 'Discord link failed or was cancelled',
+                inviteSent: 'Invite sent',
+                joinRequestSent: 'Join request sent',
                 queued: '{{game}} added to queue',
                 queuedVerify: '{{game}} queued for verification/update',
                 queuedInstall: '{{game}} queued for download',
@@ -43,7 +75,19 @@
                 cancelledVerify: '{{game}} verification/update cancelled',
                 cancelledInstall: '{{game}} download cancelled',
                 cancelledUninstall: '{{game}} uninstall cancelled',
-                cancelled: '{{game}} cancelled'
+                cancelled: '{{game}} cancelled',
+                shortcutCreated: 'Shortcut created for {{game}}',
+                shortcutFailed: 'Could not create shortcut for {{game}}'
+            },
+            offline: {
+                titleSuffix: '(OFFLINE)',
+                blockTitle: 'Offline Mode',
+                blockBody: 'The launcher is running in offline mode, so downloads, updates and file verification are disabled. Relaunch online to continue?',
+                relaunchOnline: 'Relaunch Online'
+            },
+            deepLink: {
+                unknownGame: 'Unknown game in link: {{game}}',
+                unknownAction: 'Unknown link action: {{action}}'
             },
             common: {
                 ok: 'OK',
@@ -78,6 +122,7 @@
                 pinToHome: 'Pin to home',
                 unpinFromHome: 'Unpin from home',
                 gameDetails: 'Game details',
+                createShortcut: 'Create shortcut',
                 comingSoon: 'Coming soon'
             },
             home: {
@@ -169,6 +214,12 @@
                 player: 'Player',
                 globalPlayerName: 'Global in-game name',
                 globalPlayerNameBody: 'Used as your in-game name in any game that supports custom names. Can be overridden per-game.',
+                discord: 'Discord account',
+                discordBody: 'Link your Discord account to use the friends list. While linked, Discord friends see you as playing CB Launcher.',
+                discordLink: 'Link',
+                discordUnlink: 'Unlink',
+                discordLinkedAs: 'Linked as {{name}}',
+                discordNotLinked: 'Not linked',
                 about: 'About',
                 maintenance: 'Maintenance',
                 theme: 'Theme',
@@ -246,6 +297,11 @@
                     playerNameOverrideHelp: 'Overrides the global in-game name for this game.',
                     playerNameOverridePlaceholder: 'Leave empty to use global',
                     playerNameOverrideError: 'Name must be 3-16 characters or empty.',
+                    customResolution: 'Custom Resolution',
+                    customResolutionPreset: 'Resolution',
+                    customResolutionDimensions: 'Width × Height',
+                    customResolutionCustomOption: 'Custom',
+                    customResolutionError: 'Width and height must be positive numbers.',
                     advanced: 'Advanced',
                     launchOptions: 'Launch Options:',
                     invalidGamePathTitle: 'Invalid Game Path',
@@ -367,6 +423,18 @@
                 }
             },
             game: {
+                'cod1': {
+                    description: 'Call of Duty (2003) running on the original v1.1 game. Jump straight into the classic World War II campaign and multiplayer from one launcher page.',
+                    credits: 'Game files for the base v1.1 game are provided by <a href="https://cod.pm/" target="_blank">cod.pm</a>.'
+                },
+                'coduo': {
+                    description: 'Call of Duty: United Offensive running on the v1.51 game. The classic UO expansion with new campaigns, weapons and vehicle-based multiplayer, ready to play.',
+                    credits: 'Game files for the base v1.51 game are provided by <a href="https://cod.pm/" target="_blank">cod.pm</a>.'
+                },
+                'cod2x': {
+                    description: 'Call of Duty 2 enhanced with the CoD2x client on top of the v1.3 game. Modern fixes and quality-of-life improvements for classic COD2 multiplayer.',
+                    credits: 'CoD2x is developed by Yctn and eyza. Learn more at <a href="https://cod2x.me/" target="_blank">cod2x.me</a>.'
+                },
                 'cod4x': {
                     description: 'COD4: Modern Warfare enhanced with COD4x multiplayer and IW3SP-Mod for singleplayer. Experience the classic MW1 campaign and online play with modern client maintenance.',
                     credits: 'Multiplayer is provided by the COD4x Client and developed by the <a href="https://cod4x.ovh/" target="_blank">CoD4x Project</a>.<br>Singleplayer is provided by the IW3SP-Mod Client and developed by <a href="https://gitea.com/JerryALT" target="_blank">JerryALT</a>.'
@@ -446,6 +514,7 @@
                 home: 'Accueil',
                 library: 'Bibliotheque',
                 downloads: 'Telechargements',
+                friends: 'Amis',
                 support: 'Support',
                 settings: 'Parametres',
                 myGames: 'Mes Jeux'
@@ -462,9 +531,40 @@
                 statusPaused: 'En pause',
                 statusPausedAt: 'En pause - {{percent}}%',
                 pause: 'Mettre en pause',
-                resume: 'Reprendre'
+                resume: 'Reprendre',
+                etaLeft: '{{time}}'
+            },
+            friends: {
+                title: 'Amis',
+                subtitle: 'Voyez qui est en ligne et a quoi ils jouent.',
+                empty: 'Aucun ami a afficher pour le moment.',
+                statusOnline: 'En ligne',
+                statusIdle: 'Absent',
+                statusOffline: 'Hors ligne',
+                linkBody: 'Liez le launcher a votre compte Discord pour voir quels amis utilisent CB Launcher.',
+                linkCta: 'Lier le launcher au compte Discord',
+                linking: 'Connexion a Discord...',
+                inLauncher: 'Dans CB Launcher',
+                degraded: 'Service amis injoignable - seuls les amis actuellement dans le launcher sont affiches.',
+                invite: 'Inviter',
+                join: 'Rejoindre',
+                askToJoin: 'Demander a rejoindre',
+                inviteTitle: 'Invitation a jouer',
+                inviteBody: '{name} vous invite a rejoindre sa partie. Rejoindre maintenant ?',
+                joinRequestTitle: 'Demande pour rejoindre',
+                joinRequestBody: '{name} veut rejoindre votre partie. L\'autoriser ?',
+                joinAcceptedTitle: 'Demande acceptee',
+                joinAcceptedBody: '{name} a accepte votre demande pour rejoindre. Rejoindre maintenant ?',
+                accept: 'Rejoindre',
+                approve: 'Autoriser',
+                decline: 'Refuser'
             },
             toasts: {
+                discordLinked: 'Compte Discord lie',
+                discordUnlinked: 'Compte Discord delie',
+                inviteSent: 'Invitation envoyee',
+                joinRequestSent: 'Demande envoyee',
+                discordLinkFailed: 'Echec ou annulation de la liaison Discord',
                 queued: '{{game}} ajoute a la file',
                 queuedVerify: '{{game}} en file pour verification/mise a jour',
                 queuedInstall: '{{game}} en file pour telechargement',
@@ -472,7 +572,19 @@
                 cancelledVerify: 'Verification/mise a jour de {{game}} annulee',
                 cancelledInstall: 'Telechargement de {{game}} annule',
                 cancelledUninstall: 'Desinstallation de {{game}} annulee',
-                cancelled: '{{game}} annule'
+                cancelled: '{{game}} annule',
+                shortcutCreated: 'Raccourci cree pour {{game}}',
+                shortcutFailed: 'Impossible de creer le raccourci pour {{game}}'
+            },
+            offline: {
+                titleSuffix: '(HORS LIGNE)',
+                blockTitle: 'Mode hors ligne',
+                blockBody: 'Le lanceur est en mode hors ligne ; les telechargements, mises a jour et la verification des fichiers sont desactives. Relancer en ligne pour continuer ?',
+                relaunchOnline: 'Relancer en ligne'
+            },
+            deepLink: {
+                unknownGame: 'Jeu inconnu dans le lien : {{game}}',
+                unknownAction: 'Action de lien inconnue : {{action}}'
             },
             common: {
                 ok: 'OK',
@@ -507,6 +619,7 @@
                 pinToHome: "Epingler a l'accueil",
                 unpinFromHome: "Detacher de l'accueil",
                 gameDetails: 'Details du jeu',
+                createShortcut: 'Creer un raccourci',
                 comingSoon: 'Bientot disponible'
             },
             home: {
@@ -598,6 +711,12 @@
                 player: 'Joueur',
                 globalPlayerName: 'Nom de joueur global',
                 globalPlayerNameBody: 'Utilise comme votre nom dans tout jeu qui prend en charge les noms personnalises. Peut etre remplace par jeu.',
+                discord: 'Compte Discord',
+                discordBody: 'Liez votre compte Discord pour utiliser la liste d\'amis. Une fois lie, vos amis Discord vous voient comme jouant a CB Launcher.',
+                discordLink: 'Lier',
+                discordUnlink: 'Delier',
+                discordLinkedAs: 'Lie en tant que {{name}}',
+                discordNotLinked: 'Non lie',
                 about: 'A propos',
                 maintenance: 'Maintenance',
                 theme: 'Theme',
@@ -675,6 +794,11 @@
                     playerNameOverrideHelp: 'Remplace le nom global pour ce jeu.',
                     playerNameOverridePlaceholder: 'Laissez vide pour le nom global',
                     playerNameOverrideError: 'Le nom doit contenir entre 3 et 16 caracteres, ou etre vide.',
+                    customResolution: 'Resolution personnalisee',
+                    customResolutionPreset: 'Resolution',
+                    customResolutionDimensions: 'Largeur × Hauteur',
+                    customResolutionCustomOption: 'Personnalisee',
+                    customResolutionError: 'La largeur et la hauteur doivent etre des nombres positifs.',
                     advanced: 'Avance',
                     launchOptions: 'Options de lancement :',
                     invalidGamePathTitle: 'Chemin de jeu invalide',
@@ -796,6 +920,18 @@
                 }
             },
             game: {
+                'cod1': {
+                    description: "Call of Duty (2003) tourne sur le jeu original en v1.1. Lancez-vous directement dans la campagne et le multijoueur classiques de la Seconde Guerre mondiale depuis une seule page.",
+                    credits: 'Les fichiers du jeu de base v1.1 sont fournis par <a href="https://cod.pm/" target="_blank">cod.pm</a>.'
+                },
+                'coduo': {
+                    description: "Call of Duty: United Offensive tourne sur le jeu en v1.51. L'extension UO classique avec de nouvelles campagnes, des armes et du multijoueur en vehicule, prete a jouer.",
+                    credits: 'Les fichiers du jeu de base v1.51 sont fournis par <a href="https://cod.pm/" target="_blank">cod.pm</a>.'
+                },
+                'cod2x': {
+                    description: 'Call of Duty 2 ameliore avec le client CoD2x sur le jeu en v1.3. Corrections modernes et ameliorations de confort pour le multijoueur classique de COD2.',
+                    credits: 'CoD2x est developpe par Yctn et eyza. En savoir plus sur <a href="https://cod2x.me/" target="_blank">cod2x.me</a>.'
+                },
                 'cod4x': {
                     description: 'COD4: Modern Warfare ameliore avec le multijoueur COD4x et IW3SP-Mod pour le solo. Profitez de la campagne MW1 classique et du jeu en ligne avec une maintenance moderne.',
                     credits: 'Le multijoueur est fourni par le client COD4x et developpe par le <a href="https://cod4x.ovh/" target="_blank">Projet CoD4x</a>.<br>Le solo est fourni par le client IW3SP-Mod et developpe par <a href="https://gitea.com/JerryALT" target="_blank">JerryALT</a>.'
@@ -875,6 +1011,7 @@
                 home: 'Inicio',
                 library: 'Biblioteca',
                 downloads: 'Descargas',
+                friends: 'Amigos',
                 support: 'Soporte',
                 settings: 'Ajustes',
                 myGames: 'Mis Juegos'
@@ -891,9 +1028,40 @@
                 statusPaused: 'En pausa',
                 statusPausedAt: 'En pausa - {{percent}}%',
                 pause: 'Pausar',
-                resume: 'Reanudar'
+                resume: 'Reanudar',
+                etaLeft: '{{time}}'
+            },
+            friends: {
+                title: 'Amigos',
+                subtitle: 'Mira quien esta en linea y a que estan jugando.',
+                empty: 'No hay amigos que mostrar todavia.',
+                statusOnline: 'En linea',
+                statusIdle: 'Ausente',
+                statusOffline: 'Desconectado',
+                linkBody: 'Vincula el launcher con tu cuenta de Discord para ver que amigos usan CB Launcher.',
+                linkCta: 'Vincular launcher con Discord',
+                linking: 'Conectando con Discord...',
+                inLauncher: 'En CB Launcher',
+                degraded: 'Servicio de amigos no disponible - solo se muestran los amigos que estan ahora en el launcher.',
+                invite: 'Invitar',
+                join: 'Unirse',
+                askToJoin: 'Pedir unirse',
+                inviteTitle: 'Invitacion de juego',
+                inviteBody: '{name} te invito a unirte a su partida. Unirse ahora?',
+                joinRequestTitle: 'Solicitud para unirse',
+                joinRequestBody: '{name} quiere unirse a tu partida. Permitirlo?',
+                joinAcceptedTitle: 'Solicitud aceptada',
+                joinAcceptedBody: '{name} acepto tu solicitud para unirte. Unirse ahora?',
+                accept: 'Unirse',
+                approve: 'Aprobar',
+                decline: 'Rechazar'
             },
             toasts: {
+                discordLinked: 'Cuenta de Discord vinculada',
+                discordUnlinked: 'Cuenta de Discord desvinculada',
+                inviteSent: 'Invitacion enviada',
+                joinRequestSent: 'Solicitud enviada',
+                discordLinkFailed: 'La vinculacion con Discord fallo o fue cancelada',
                 queued: '{{game}} anadido a la cola',
                 queuedVerify: '{{game}} en cola para verificacion/actualizacion',
                 queuedInstall: '{{game}} en cola para descarga',
@@ -901,7 +1069,19 @@
                 cancelledVerify: 'Verificacion/actualizacion de {{game}} cancelada',
                 cancelledInstall: 'Descarga de {{game}} cancelada',
                 cancelledUninstall: 'Desinstalacion de {{game}} cancelada',
-                cancelled: '{{game}} cancelado'
+                cancelled: '{{game}} cancelado',
+                shortcutCreated: 'Acceso directo creado para {{game}}',
+                shortcutFailed: 'No se pudo crear el acceso directo para {{game}}'
+            },
+            offline: {
+                titleSuffix: '(SIN CONEXION)',
+                blockTitle: 'Modo sin conexion',
+                blockBody: 'El lanzador esta en modo sin conexion, por lo que las descargas, actualizaciones y la verificacion de archivos estan desactivadas. Relanzar en linea para continuar?',
+                relaunchOnline: 'Relanzar en linea'
+            },
+            deepLink: {
+                unknownGame: 'Juego desconocido en el enlace: {{game}}',
+                unknownAction: 'Accion de enlace desconocida: {{action}}'
             },
             common: {
                 ok: 'OK',
@@ -936,6 +1116,7 @@
                 pinToHome: 'Anclar al inicio',
                 unpinFromHome: 'Desanclar del inicio',
                 gameDetails: 'Detalles del juego',
+                createShortcut: 'Crear acceso directo',
                 comingSoon: 'Proximamente'
             },
             home: {
@@ -1027,6 +1208,12 @@
                 player: 'Jugador',
                 globalPlayerName: 'Nombre global en el juego',
                 globalPlayerNameBody: 'Se usa como tu nombre dentro de cualquier juego que admita nombres personalizados. Se puede sobrescribir por juego.',
+                discord: 'Cuenta de Discord',
+                discordBody: 'Vincula tu cuenta de Discord para usar la lista de amigos. Mientras este vinculada, tus amigos de Discord te veran jugando CB Launcher.',
+                discordLink: 'Vincular',
+                discordUnlink: 'Desvincular',
+                discordLinkedAs: 'Vinculado como {{name}}',
+                discordNotLinked: 'Sin vincular',
                 about: 'Acerca de',
                 maintenance: 'Mantenimiento',
                 theme: 'Tema',
@@ -1104,6 +1291,11 @@
                     playerNameOverrideHelp: 'Sobrescribe el nombre global para este juego.',
                     playerNameOverridePlaceholder: 'Dejar vacio para usar el global',
                     playerNameOverrideError: 'El nombre debe tener entre 3 y 16 caracteres, o estar vacio.',
+                    customResolution: 'Resolucion personalizada',
+                    customResolutionPreset: 'Resolucion',
+                    customResolutionDimensions: 'Ancho × Alto',
+                    customResolutionCustomOption: 'Personalizada',
+                    customResolutionError: 'El ancho y el alto deben ser numeros positivos.',
                     advanced: 'Avanzado',
                     launchOptions: 'Opciones de inicio:',
                     invalidGamePathTitle: 'Ruta de juego invalida',
@@ -1225,6 +1417,18 @@
                 }
             },
             game: {
+                'cod1': {
+                    description: 'Call of Duty (2003) ejecutandose sobre el juego original en v1.1. Entra directamente a la campana y el multijugador clasicos de la Segunda Guerra Mundial desde una sola pagina.',
+                    credits: 'Los archivos del juego base v1.1 los proporciona <a href="https://cod.pm/" target="_blank">cod.pm</a>.'
+                },
+                'coduo': {
+                    description: 'Call of Duty: United Offensive ejecutandose sobre el juego en v1.51. La clasica expansion UO con nuevas campanas, armas y multijugador con vehiculos, lista para jugar.',
+                    credits: 'Los archivos del juego base v1.51 los proporciona <a href="https://cod.pm/" target="_blank">cod.pm</a>.'
+                },
+                'cod2x': {
+                    description: 'Call of Duty 2 mejorado con el cliente CoD2x sobre el juego en v1.3. Correcciones modernas y mejoras de calidad de vida para el multijugador clasico de COD2.',
+                    credits: 'CoD2x esta desarrollado por Yctn y eyza. Mas informacion en <a href="https://cod2x.me/" target="_blank">cod2x.me</a>.'
+                },
                 'cod4x': {
                     description: 'COD4: Modern Warfare mejorado con el multijugador de COD4x y IW3SP-Mod para un jugador. Disfruta de la clasica campana de MW1 y del juego en linea con mantenimiento de cliente moderno.',
                     credits: 'El multijugador lo proporciona el cliente COD4x, desarrollado por el <a href="https://cod4x.ovh/" target="_blank">Proyecto CoD4x</a>.<br>El modo un jugador lo proporciona el cliente IW3SP-Mod, desarrollado por <a href="https://gitea.com/JerryALT" target="_blank">JerryALT</a>.'

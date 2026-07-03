@@ -114,6 +114,8 @@ async function refreshLocalizedUI(targetPage) {
         window.LauncherI18n.applyStaticTranslations();
     }
 
+    applyOfflineIndicator();
+
     syncConsoleButtonLabel();
 
     if (window.AppViews) {
@@ -140,13 +142,22 @@ function makeSleep(milliseconds) {
     return () => sleep(milliseconds);
 }
 
-function waitForAllImages() {
+function waitForAllImages(timeoutMs = 5000) {
     return new Promise(resolve => {
+        const deadline = Date.now() + timeoutMs;
+
         function waitForAllImagesInternal() {
+            // Never hold the window hostage: deferred lazy images don't load while hidden.
+            if (Date.now() > deadline) {
+                console.warn('waitForAllImages: timed out; showing anyway');
+                resolve();
+                return;
+            }
+
             const images = document.querySelectorAll('img');
 
             for (var i = 0; i < images.length; ++i) {
-                if (!images[i].complete) {
+                if (!images[i].complete && images[i].loading !== 'lazy') {
                     window.requestAnimationFrame(waitForAllImagesInternal);
                     return;
                 }
@@ -197,7 +208,34 @@ function applyTheme(theme) {
     }
 }
 
+function applyOfflineIndicator() {
+    if (!window.IS_OFFLINE) return;
+    document.body.classList.add('offline-mode');
+
+    const suffix = window.LauncherI18n ? window.LauncherI18n.t('offline.titleSuffix') : '(OFFLINE)';
+    const titleText = document.querySelector('.title-text');
+    if (titleText) {
+        let tag = titleText.querySelector('.title-offline');
+        if (!tag) {
+            tag = document.createElement('span');
+            tag.className = 'title-offline';
+            titleText.appendChild(tag);
+        }
+        tag.textContent = ' ' + suffix;
+    }
+    document.title = 'CB Servers Launcher ' + suffix;
+}
+
 async function initialize() {
+    // Detect offline mode (-offline flag) before anything network-facing starts
+    window.IS_OFFLINE = false;
+    if (typeof window.executeCommand === 'function') {
+        try {
+            const res = await window.executeCommand('get-offline-mode');
+            window.IS_OFFLINE = !!(res && res.offline);
+        } catch (_) {}
+    }
+
     // Apply saved theme before rendering to avoid flash
     if (typeof window.executeCommand === 'function') {
         try {
@@ -211,6 +249,8 @@ async function initialize() {
     if (window.LauncherI18n) {
         window.LauncherI18n.applyStaticTranslations();
     }
+
+    applyOfflineIndicator();
 
     loadRecentGames();
 
@@ -227,8 +267,6 @@ async function initialize() {
     // Preload all game images first
     preloadGameImages().then(() => {
         console.log('All game images preloaded');
-        // Load sidebar icons safely
-        loadSidebarIcons();
     });
 
     initializeNavigation()
@@ -252,11 +290,16 @@ async function initialize() {
                 window.GameStateManager.startPolling();
             }
 
-            if (window.PlayerCountManager) {
+            if (!window.IS_OFFLINE && window.PlayerCountManager) {
                 window.PlayerCountManager.start();
             }
 
+            if (!window.IS_OFFLINE && window.DiscordFriendsManager) {
+                window.DiscordFriendsManager.start();
+            }
+
             handleStartupLaunchArg();
+            handleStartupDeepLink();
         });
 
     document.querySelector("#minimize-button").onclick = () => {
@@ -363,6 +406,7 @@ window.DiscordWidget = (function() {
     }
 
     async function refresh() {
+        if (window.IS_OFFLINE) return;
         const el = document.getElementById('discord-online');
         if (!el) return;
 
@@ -403,6 +447,12 @@ async function initializeNavigation() {
     const downloadsElement = document.querySelector("#downloads");
     if (downloadsElement) {
         downloadsElement.addEventListener("click", handleDownloadsClick);
+    }
+
+    // Handle friends navigation
+    const friendsElement = document.querySelector("#friends");
+    if (friendsElement) {
+        friendsElement.addEventListener("click", handleFriendsClick);
     }
 
     // Handle game navigation
@@ -472,6 +522,17 @@ function handleDownloadsClick(e) {
     removeActiveNavigation();
     el.classList.add("active");
     loadNavigationPage("downloads");
+}
+
+function handleFriendsClick(e) {
+    const el = this;
+    if (el.classList.contains("active")) {
+        return;
+    }
+
+    removeActiveNavigation();
+    el.classList.add("active");
+    loadNavigationPage("friends");
 }
 
 function handleGameClick(e) {
@@ -603,33 +664,6 @@ function preloadGameImages() {
             );
         })
     );
-}
-
-function loadSidebarIcons() {
-    const gameIds = GameUtils.getAllGameIds();
-
-    gameIds.forEach(gameId => {
-        const thumbnail = document.querySelector(`.${gameId}-thumb`);
-        if (!thumbnail) return;
-
-        const imagePath = GameUtils.getIconPath(gameId);
-        if (preloadedImages[imagePath]) {
-            // Image is already preloaded, apply immediately
-            thumbnail.style.backgroundImage = `url('${imagePath}')`;
-            console.log(`Sidebar icon loaded for ${gameId} (from cache)`);
-        } else {
-            // Fallback to loading on demand
-            const img = new Image();
-            img.onload = function() {
-                thumbnail.style.backgroundImage = `url('${imagePath}')`;
-                console.log(`Sidebar icon loaded for ${gameId}`);
-            };
-            img.onerror = function() {
-                console.log(`Sidebar icon failed to load for ${gameId}, using gradient fallback`);
-            };
-            img.src = imagePath;
-        }
-    });
 }
 
 // Game Installation Manager
@@ -778,6 +812,7 @@ window.ProgressManager = {
     isActive: false,
     currentGame: null,
     cancelCallback: null,
+    lastStats: null,
 
     show: function(gameId, message = t('common.loading'), onCancel = null) {
         const progressBar = document.getElementById('global-progress-bar');
@@ -808,7 +843,7 @@ window.ProgressManager = {
         if (gameId) {
             progressGameIcon.classList.add(gameId);
             const imagePath = GameUtils.getIconPath(gameId);
-            if (imagePath && preloadedImages[imagePath]) {
+            if (imagePath) {
                 progressGameIcon.style.backgroundImage = `url('${imagePath}')`;
             }
         }
@@ -826,6 +861,10 @@ window.ProgressManager = {
         progressInfo.textContent = message;
         progressFill.style.width = '0%';
         progressPercent.textContent = '0%';
+
+        this.lastStats = null;
+        const progressStats = document.getElementById('progress-stats');
+        if (progressStats) progressStats.textContent = '';
 
         if (cancelBtn) {
             cancelBtn.onclick = () => this.cancel();
@@ -868,10 +907,11 @@ window.ProgressManager = {
         if (progressBar) progressBar.classList.toggle('paused', isPaused);
     },
 
-    update: function(progress, message = null) {
+    update: function(progress, message = null, stats = null) {
         const progressInfo = document.getElementById('progress-info');
         const progressFill = document.getElementById('global-progress-fill');
         const progressPercent = document.getElementById('global-progress-percent');
+        const progressStats = document.getElementById('progress-stats');
 
         if (message) {
             progressInfo.textContent = message;
@@ -880,11 +920,31 @@ window.ProgressManager = {
         progressFill.style.width = `${progress}%`;
         progressPercent.textContent = `${progress.toFixed(2)}%`;
 
+        this.lastStats = stats;
+        if (progressStats) {
+            progressStats.textContent = this._formatStats(stats);
+        }
+
         try {
             window.dispatchEvent(new CustomEvent('cb-progress-tick', {
-                detail: { progress: progress, message: message }
+                detail: {
+                    progress: progress,
+                    message: message,
+                    speed: stats ? stats.speed : null,
+                    etaSeconds: stats ? stats.etaSeconds : null
+                }
             }));
         } catch (_) {}
+    },
+
+    _formatStats: function(stats) {
+        if (!stats) return '';
+        const speed = GameUtils.formatSpeed(stats.speed);
+        const eta = GameUtils.formatDuration(stats.etaSeconds);
+        const etaLabel = eta
+            ? (window.LauncherI18n ? window.LauncherI18n.t('downloads.etaLeft', { time: eta }) : `${eta} left`)
+            : '';
+        return [speed, etaLabel].filter(Boolean).join(' • ');
     },
 
     cancel: function() {
@@ -909,6 +969,9 @@ window.ProgressManager = {
         this.isActive = false;
         this.currentGame = null;
         this.cancelCallback = null;
+        this.lastStats = null;
+        const progressStats = document.getElementById('progress-stats');
+        if (progressStats) progressStats.textContent = '';
         refreshSidebarMyGames();
     },
 
@@ -954,7 +1017,7 @@ window.DownloadQueueManager = {
                 const cfg = window.GameUtils && typeof window.GameUtils.getGameConfigByUIId === 'function'
                     ? window.GameUtils.getGameConfigByUIId(item.gameId)
                     : null;
-                const gameName = (cfg && (cfg.shortName || cfg.displayName)) || item.gameId;
+                const gameName = (cfg && (cfg.displayName || cfg.shortName)) || item.gameId;
                 const i18n = window.LauncherI18n;
                 let key;
                 if (item.op === 'verify') key = 'toasts.queuedVerify';
@@ -1018,7 +1081,7 @@ window.DownloadQueueManager = {
                 const cfg = window.GameUtils && typeof window.GameUtils.getGameConfigByUIId === 'function'
                     ? window.GameUtils.getGameConfigByUIId(removed.gameId)
                     : null;
-                const gameName = (cfg && (cfg.shortName || cfg.displayName)) || removed.gameId;
+                const gameName = (cfg && (cfg.displayName || cfg.shortName)) || removed.gameId;
                 const i18n = window.LauncherI18n;
                 let key;
                 if (removed.op === 'verify') key = 'toasts.cancelledVerify';
@@ -1233,11 +1296,15 @@ window.addEventListener('cb-progress-tick', (event) => {
     const fill = activeRow.querySelector('.download-progress-fill');
     const percentEl = activeRow.querySelector('.download-progress-percent');
     const messageEl = activeRow.querySelector('.download-progress-message');
+    const statsEl = activeRow.querySelector('.download-progress-stats');
     const percent = Math.max(0, Math.min(100, Number(detail.progress) || 0));
 
     if (fill) fill.style.width = `${percent}%`;
     if (percentEl) percentEl.textContent = `${percent.toFixed(2)}%`;
     if (messageEl && detail.message) messageEl.textContent = detail.message;
+    if (statsEl) {
+        statsEl.textContent = window.ProgressManager ? window.ProgressManager._formatStats(detail) : '';
+    }
 });
 
 function loadNavigationPage(page) {
@@ -1274,6 +1341,11 @@ function loadNavigationPage(page) {
     } else if (page === 'downloads') {
         if (window.AppViews && typeof window.AppViews.renderDownloads === 'function') {
             window.AppViews.renderDownloads();
+        }
+    } else if (page === 'friends') {
+        if (window.AppViews && typeof window.AppViews.refreshFriends === 'function') {
+            window.AppViews.renderFriends();
+            window.AppViews.refreshFriends();
         }
     } else if (GameUtils.getAllGameIds().includes(page)) {
         initializeGamePage(page);
@@ -1391,6 +1463,42 @@ async function createGameButtons(gameId) {
     applyDownloadQueueButtonState();
 }
 
+// Resolve a friendly slug (the -launch CLI arg or a cbservers:// link) to a UI ID, or null if unknown.
+function resolveGameSlug(requested) {
+    requested = String(requested || '').toLowerCase().trim();
+    if (!requested) return null;
+
+    if (Object.prototype.hasOwnProperty.call(GameUtils.UI_TO_BACKEND_MAP, requested)) {
+        return requested;
+    }
+    if (Object.prototype.hasOwnProperty.call(GameUtils.BACKEND_TO_UI_MAP, requested)) {
+        return GameUtils.BACKEND_TO_UI_MAP[requested];
+    }
+    if (GameUtils.LAUNCH_ARG_ALIASES && Object.prototype.hasOwnProperty.call(GameUtils.LAUNCH_ARG_ALIASES, requested)) {
+        return GameUtils.LAUNCH_ARG_ALIASES[requested];
+    }
+    return null;
+}
+
+async function navigateToGamePage(uiId) {
+    const sidebarItem = document.querySelector(`.game-item[data-game="${uiId}"]`);
+    if (sidebarItem) {
+        removeActiveNavigation();
+        sidebarItem.classList.add('active', `${uiId}-active`);
+    }
+    await loadNavigationPage(uiId);
+}
+
+// Opens the setup flow or manage-install popup; shared by -install and install deep links.
+async function openInstallFlow(uiId) {
+    const install = await checkGameInstallation(uiId);
+    if (install.status === 'installed') {
+        showManageInstall(uiId);
+    } else {
+        showSetupFlow(uiId);
+    }
+}
+
 async function handleStartupLaunchArg() {
     let args;
     try {
@@ -1399,31 +1507,36 @@ async function handleStartupLaunchArg() {
         return;
     }
 
-    if (!args || !args.game) return;
+    if (!args) return;
 
-    const requested = String(args.game).toLowerCase().trim();
+    // -install <game>: open the game's page and its setup/manage flow.
+    if (args.install) {
+        const installUiId = resolveGameSlug(args.install);
+        if (!installUiId) {
+            console.warn(`-install: unknown game id "${args.install}"`);
+            return;
+        }
+        try {
+            await navigateToGamePage(installUiId);
+            await openInstallFlow(installUiId);
+        } catch (e) {
+            console.error(`-install: failed for ${installUiId}:`, e);
+        }
+        return;
+    }
+
+    if (!args.game) return;
+
     const mode = args.mode ? String(args.mode).toLowerCase().trim() : null;
 
-    let uiId = null;
-    if (Object.prototype.hasOwnProperty.call(GameUtils.UI_TO_BACKEND_MAP, requested)) {
-        uiId = requested;
-    } else if (Object.prototype.hasOwnProperty.call(GameUtils.BACKEND_TO_UI_MAP, requested)) {
-        uiId = GameUtils.BACKEND_TO_UI_MAP[requested];
-    } else if (GameUtils.LAUNCH_ARG_ALIASES && Object.prototype.hasOwnProperty.call(GameUtils.LAUNCH_ARG_ALIASES, requested)) {
-        uiId = GameUtils.LAUNCH_ARG_ALIASES[requested];
-    } else {
+    const uiId = resolveGameSlug(args.game);
+    if (!uiId) {
         console.warn(`-launch: unknown game id "${args.game}"`);
         return;
     }
 
-    const sidebarItem = document.querySelector(`.game-item[data-game="${uiId}"]`);
-    if (sidebarItem) {
-        removeActiveNavigation();
-        sidebarItem.classList.add('active', `${uiId}-active`);
-    }
-
     try {
-        await loadNavigationPage(uiId);
+        await navigateToGamePage(uiId);
     } catch (e) {
         console.error(`-launch: failed to navigate to ${uiId}:`, e);
         return;
@@ -1451,6 +1564,112 @@ async function handleStartupLaunchArg() {
         console.error(`-launch: launchGame failed:`, e);
     }
 }
+
+async function handleStartupDeepLink() {
+    let res;
+    try {
+        res = await window.executeCommand('get-startup-deeplink');
+    } catch (_) {
+        return;
+    }
+    if (res && res.url) {
+        handleDeepLink(res.url);
+    }
+}
+
+// Routes a cbservers:// URL of the form cbservers://<verb>/<game>[/<mode>].
+async function handleDeepLink(url) {
+    if (!url || typeof url !== 'string') return;
+
+    // Bring the launcher to the foreground; it may be minimized or in the tray.
+    try { window.executeCommand('show'); } catch (_) {}
+
+    const SCHEME = 'cbservers://';
+    if (!url.toLowerCase().startsWith(SCHEME)) return;
+
+    const rest = url.slice(SCHEME.length).split(/[?#]/)[0].replace(/\/+$/, '');
+    const segments = rest.split('/').filter(s => s.length).map(s => {
+        try { return decodeURIComponent(s); } catch (_) { return s; }
+    });
+    if (!segments.length) return;
+
+    const verb = segments[0].toLowerCase();
+    const gameSlug = segments[1];
+    const modeArg = segments[2];
+
+    if (!['play', 'game', 'install'].includes(verb)) {
+        console.warn(`deep link: unknown action "${verb}"`);
+        if (typeof window.showToast === 'function') {
+            window.showToast(t('deepLink.unknownAction', { action: verb }), 'error');
+        }
+        return;
+    }
+
+    if (!gameSlug) {
+        console.warn(`deep link: missing game in "${url}"`);
+        return;
+    }
+
+    const uiId = resolveGameSlug(gameSlug);
+    if (!uiId) {
+        console.warn(`deep link: unknown game "${gameSlug}"`);
+        if (typeof window.showToast === 'function') {
+            window.showToast(t('deepLink.unknownGame', { game: gameSlug }), 'error');
+        }
+        return;
+    }
+
+    try {
+        await navigateToGamePage(uiId);
+    } catch (e) {
+        console.error(`deep link: failed to navigate to ${uiId}:`, e);
+        return;
+    }
+
+    switch (verb) {
+        case 'game':
+            // Navigate only.
+            return;
+
+        case 'install':
+            await openInstallFlow(uiId);
+            return;
+
+        case 'play': {
+            const backendId = GameUtils.getGameMapping(uiId);
+            const gameConfig = GameUtils.getGameConfig(backendId);
+            if (!gameConfig) {
+                console.warn(`deep link: no config for ${uiId}`);
+                return;
+            }
+
+            const install = await checkGameInstallation(uiId);
+            if (install.status !== 'installed') {
+                showSetupFlow(uiId);
+                return;
+            }
+
+            let mode = modeArg ? String(modeArg).toLowerCase().trim() : null;
+            if (mode && !(Array.isArray(gameConfig.supportedModes) && gameConfig.supportedModes.includes(mode))) {
+                console.warn(`deep link: "${mode}" is not a valid mode for ${uiId}; ignoring`);
+                mode = null;
+            }
+
+            try {
+                if (mode) {
+                    await GameUtils.launchGameWithMode(backendId, uiId, mode);
+                } else {
+                    launchGame(uiId);
+                }
+            } catch (e) {
+                console.error(`deep link: launch failed for ${uiId}:`, e);
+            }
+            return;
+        }
+    }
+}
+
+window.handleDeepLink = handleDeepLink;
 
 function launchGame(gameId) {
     console.log(`Play button clicked for ${gameId}`);
@@ -1524,27 +1743,27 @@ async function uninstallGameDirect(gameId) {
         if (result === 0) return false;
     }
 
-    try {
-        await GameUtils.trackCommandProgress({
-            gameId: gameId,
-            command: 'delete-game',
-            commandArgs: { game: backendId },
-            initialMessage: t('popup.componentSelection.uninstalling', { game: config.displayName }),
-            completeMessage: t('progress.uninstallComplete'),
-            onComplete: () => {
-                window.dispatchEvent(new CustomEvent('gameInstallationUpdated', {
-                    detail: { game: backendId }
-                }));
-            }
-        });
-    } catch (error) {
+    GameUtils.trackCommandProgress({
+        gameId: gameId,
+        command: 'delete-game',
+        commandArgs: { game: backendId },
+        initialMessage: t('popup.componentSelection.uninstalling', { game: config.displayName }),
+        completeMessage: t('progress.uninstallComplete'),
+        onComplete: () => {
+            window.dispatchEvent(new CustomEvent('gameInstallationUpdated', {
+                detail: { game: backendId }
+            }));
+        }
+    }).catch(error => {
         console.error('Failed to uninstall game:', error);
-    }
+    });
     return true;
 }
 
-function verifyGame(gameId, deleteComponents = false, op = 'verify') {
+async function verifyGame(gameId, deleteComponents = false, op = 'verify') {
     console.log(`Verify button clicked for ${gameId}, deleteComponents: ${deleteComponents}, op: ${op}`);
+
+    if (!await window.guardOnline()) return false;
 
     const gameMapping = GameUtils.getGameMapping(gameId);
     const displayName = window.GameInstallationManager.getGameDisplayName(gameId);
@@ -2016,6 +2235,8 @@ function setupThemeSelect() {
 }
 
 async function handleCdnTest() {
+    if (!await window.guardOnline()) return;
+
     const cdnTestBtn = document.getElementById('cdn-test-btn');
     const cdnSelect = document.getElementById('cdn-server-select');
 
@@ -2183,6 +2404,8 @@ async function handleToggleConsole() {
 }
 
 async function handleCheckForUpdates() {
+    if (!await window.guardOnline()) return;
+
     const updateBtn = document.getElementById('check-updates-btn');
     if (!updateBtn) return;
 
@@ -2260,6 +2483,61 @@ async function loadVersion() {
     }
 }
 
+async function setupDiscordSettings() {
+    const item = document.getElementById('setting-discord-item');
+    if (!item) return;
+
+    let status = null;
+    try {
+        status = await window.executeCommand('discord-get-status');
+    } catch (error) {
+        console.warn('Failed to query Discord status:', error);
+    }
+
+    const state = (status && status.status) || 'unavailable';
+    if (state === 'unavailable') {
+        item.style.display = 'none';
+        return;
+    }
+    item.style.display = '';
+
+    const account = document.getElementById('setting-discord-account');
+    const linkBtn = document.getElementById('setting-discord-link-btn');
+    const unlinkBtn = document.getElementById('setting-discord-unlink-btn');
+    const linked = state === 'linked';
+    const busy = state === 'linking' || state === 'connecting';
+
+    if (account) {
+        if (linked && status.profile) {
+            account.textContent = t('settings.discordLinkedAs', { name: status.profile.displayName });
+        } else if (busy) {
+            account.textContent = t('friends.linking');
+        } else {
+            account.textContent = t('settings.discordNotLinked');
+        }
+    }
+
+    if (linkBtn) {
+        linkBtn.style.display = (linked || busy) ? 'none' : '';
+        linkBtn.onclick = async () => {
+            if (window.DiscordFriendsManager) {
+                await window.DiscordFriendsManager.beginLink();
+            }
+            setupDiscordSettings();
+        };
+    }
+
+    if (unlinkBtn) {
+        unlinkBtn.style.display = linked ? '' : 'none';
+        unlinkBtn.onclick = async () => {
+            if (window.DiscordFriendsManager) {
+                await window.DiscordFriendsManager.unlink();
+            }
+            setupDiscordSettings();
+        };
+    }
+}
+
 async function initializeSettingsPage() {
     console.log('=== Initializing settings page ===');
     if (window.AppViews) {
@@ -2268,6 +2546,7 @@ async function initializeSettingsPage() {
     await loadLauncherSettings();
     setupLauncherSettingsToggles();
     setupGlobalPlayerNameInput();
+    await setupDiscordSettings();
     await setupLanguageSelect();
     setupThemeSelect();
 

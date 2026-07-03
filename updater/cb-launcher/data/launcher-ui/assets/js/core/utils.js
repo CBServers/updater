@@ -21,13 +21,19 @@ const PROPERTY_KEYS = {
         DISABLE_CB_EXTENSION: 'disable-cb-extension',
         DETECTED_COMPONENTS: 'detected-components',
         SELECTED_COMPONENTS: 'selected-components',
-        PLAYER_NAME_OVERRIDE: 'player-name-override'
+        PLAYER_NAME_OVERRIDE: 'player-name-override',
+        CUSTOM_RESOLUTION_ENABLED: 'custom-resolution-enabled',
+        CUSTOM_RESOLUTION_WIDTH: 'custom-resolution-width',
+        CUSTOM_RESOLUTION_HEIGHT: 'custom-resolution-height'
     }
 };
 
 class GameUtils {
     // Single source of truth for game ID mappings (UI ID -> backend ID)
     static UI_TO_BACKEND_MAP = {
+        'cod1': 'cod1',
+        'coduo': 'coduo',
+        'cod2x': 'cod2x',
         'cod4x': 'cod4x',
         't4': 't4',
         't5': 't5',
@@ -49,7 +55,7 @@ class GameUtils {
         Object.entries(GameUtils.UI_TO_BACKEND_MAP).map(([ui, backend]) => [backend, ui])
     );
 
-    static GAME_ORDER = ['cod1', 'codu', 'cod2', 'cod4x', 't4', 'iw4x', 't5', 'iw5', 't6', 'iw6x', 's1x', 'boiii', 'iw7-mod', 'h1-mod', 'bo4', 'mw2r', 'hmw-mod'];
+    static GAME_ORDER = ['cod1', 'coduo', 'cod2x', 'cod4x', 't4', 'iw4x', 't5', 'iw5', 't6', 'iw6x', 's1x', 'boiii', 'iw7-mod', 'h1-mod', 'bo4', 'mw2r', 'hmw-mod'];
 
     // Friendly aliases accepted by the -launch CLI arg (alias -> UI ID).
     // Covers common CoD names that don't already match a UI ID or backend key.
@@ -59,7 +65,8 @@ class GameUtils {
         'mw2': 'iw4x',
         'bo1': 't5',
         'mw3': 'iw5',
-        'bo2': 't6'
+        'bo2': 't6',
+        'cod2': 'cod2x'
     };
 
     static GAME_CONFIGS = {
@@ -81,7 +88,7 @@ class GameUtils {
             credits: 'Multiplayer is provided by CoD4x. Singleplayer is provided by IW3SP-Mod and developed by JerryALT.',
             accent: '#46D744',
             assetBase: './assets/img/games/cod4x',
-            iconPath: './assets/img/games/cod4x/capsule.jpg',
+            iconPath: './assets/img/games/cod4x/icon.ico',
             capsulePath: './assets/img/games/cod4x/capsule.jpg',
             heroImagePath: './assets/img/games/cod4x/hero.jpg',
             logoPath: './assets/img/games/cod4x/logo.png'
@@ -104,7 +111,7 @@ class GameUtils {
             credits: 'Campaign, Multiplayer, and Zombies are provided by the T4 client and developed by Plutonium.',
             accent: '#B94E14',
             assetBase: './assets/img/games/t4',
-            iconPath: './assets/img/games/t4/capsule.jpg',
+            iconPath: './assets/img/games/t4/icon.ico',
             capsulePath: './assets/img/games/t4/capsule.jpg',
             heroImagePath: './assets/img/games/t4/hero.jpg',
             logoPath: './assets/img/games/t4/logo.png'
@@ -127,7 +134,7 @@ class GameUtils {
             credits: 'Campaign, Multiplayer, and Zombies are provided by the T5 client and developed by Plutonium.',
             accent: '#186AC6',
             assetBase: './assets/img/games/t5',
-            iconPath: './assets/img/games/t5/capsule.jpg',
+            iconPath: './assets/img/games/t5/icon.ico',
             capsulePath: './assets/img/games/t5/capsule.jpg',
             heroImagePath: './assets/img/games/t5/hero.jpg',
             logoPath: './assets/img/games/t5/logo.png'
@@ -150,7 +157,7 @@ class GameUtils {
             credits: 'Multiplayer is provided by IW4x. Singleplayer is provided by IW4-SP and developed by AlterWare.',
             accent: '#FBC751',
             assetBase: './assets/img/games/iw4x',
-            iconPath: './assets/img/games/iw4x/capsule.jpg',
+            iconPath: './assets/img/games/iw4x/icon.ico',
             capsulePath: './assets/img/games/iw4x/capsule.jpg',
             heroImagePath: './assets/img/games/iw4x/hero.jpg',
             logoPath: './assets/img/games/iw4x/logo.png'
@@ -173,7 +180,7 @@ class GameUtils {
             credits: 'Multiplayer is provided by Plutonium. Singleplayer is provided by IW5-Mod and developed by AlterWare.',
             accent: '#09FF00',
             assetBase: './assets/img/games/iw5',
-            iconPath: './assets/img/games/iw5/capsule.jpg',
+            iconPath: './assets/img/games/iw5/icon.ico',
             capsulePath: './assets/img/games/iw5/capsule.jpg',
             heroImagePath: './assets/img/games/iw5/hero.jpg',
             logoPath: './assets/img/games/iw5/logo.png'
@@ -197,7 +204,7 @@ class GameUtils {
             credits: 'Multiplayer and Zombies are provided by the T6 client and developed by Plutonium. Singleplayer is provided by T6SP-Mod and developed by Rattpak.',
             accent: '#FE890A',
             assetBase: './assets/img/games/t6',
-            iconPath: './assets/img/games/t6/capsule.jpg',
+            iconPath: './assets/img/games/t6/icon.ico',
             capsulePath: './assets/img/games/t6/capsule.jpg',
             heroImagePath: './assets/img/games/t6/hero.jpg',
             logoPath: './assets/img/games/t6/logo.png'
@@ -220,7 +227,7 @@ class GameUtils {
             credits: 'BOIII is a CB Servers fork of the original BOIII/T7x client developed by momo5502 and AlterWare.',
             accent: '#F3751B',
             assetBase: './assets/img/games/boiii',
-            iconPath: './assets/img/games/boiii/capsule.jpg',
+            iconPath: './assets/img/games/boiii/icon.ico',
             capsulePath: './assets/img/games/boiii/capsule.jpg',
             heroImagePath: './assets/img/games/boiii/hero.jpg',
             logoPath: './assets/img/games/boiii/logo.png'
@@ -243,7 +250,7 @@ class GameUtils {
             credits: 'IW6x is a CB Servers fork of the original IW6x/iw6-mod client developed by AlterWare.',
             accent: '#3B718C',
             assetBase: './assets/img/games/iw6x',
-            iconPath: './assets/img/games/iw6x/capsule.jpg',
+            iconPath: './assets/img/games/iw6x/icon.ico',
             capsulePath: './assets/img/games/iw6x/capsule.jpg',
             heroImagePath: './assets/img/games/iw6x/hero.jpg',
             logoPath: './assets/img/games/iw6x/logo.png'
@@ -266,7 +273,7 @@ class GameUtils {
             credits: 'S1x is a CB Servers fork of the original S1x/s1-mod client developed by AlterWare.',
             accent: '#F9D406',
             assetBase: './assets/img/games/s1x',
-            iconPath: './assets/img/games/s1x/capsule.jpg',
+            iconPath: './assets/img/games/s1x/icon.ico',
             capsulePath: './assets/img/games/s1x/capsule.jpg',
             heroImagePath: './assets/img/games/s1x/hero.jpg',
             logoPath: './assets/img/games/s1x/logo.png'
@@ -289,7 +296,7 @@ class GameUtils {
             credits: 'H1-Mod is a CB Servers fork of the original H1-Mod client developed by Aurora.',
             accent: '#46D744',
             assetBase: './assets/img/games/h1-mod',
-            iconPath: './assets/img/games/h1-mod/capsule.jpg',
+            iconPath: './assets/img/games/h1-mod/icon.ico',
             capsulePath: './assets/img/games/h1-mod/capsule.jpg',
             heroImagePath: './assets/img/games/h1-mod/hero.jpg',
             logoPath: './assets/img/games/h1-mod/logo.png'
@@ -312,7 +319,7 @@ class GameUtils {
             credits: 'IW7-Mod is a CB Servers fork of the original IW7-Mod client developed by Aurora.',
             accent: '#FFFFFF',
             assetBase: './assets/img/games/iw7-mod',
-            iconPath: './assets/img/games/iw7-mod/capsule.jpg',
+            iconPath: './assets/img/games/iw7-mod/icon.ico',
             capsulePath: './assets/img/games/iw7-mod/capsule.jpg',
             heroImagePath: './assets/img/games/iw7-mod/hero.jpg',
             logoPath: './assets/img/games/iw7-mod/logo.png'
@@ -335,7 +342,7 @@ class GameUtils {
             credits: 'Online and offline play are provided by Project BO4 Launcher, maintained by NotNierPea.',
             accent: '#FE890A',
             assetBase: './assets/img/games/bo4',
-            iconPath: './assets/img/games/bo4/capsule.jpg',
+            iconPath: './assets/img/games/bo4/icon.ico',
             capsulePath: './assets/img/games/bo4/capsule.jpg',
             heroImagePath: './assets/img/games/bo4/hero.jpg',
             logoPath: './assets/img/games/bo4/logo.png'
@@ -358,7 +365,7 @@ class GameUtils {
             credits: 'MW2 Campaign Remastered support is provided by H2-Mod, developed by Alice.',
             accent: '#FBC751',
             assetBase: './assets/img/games/h2-mod',
-            iconPath: './assets/img/games/h2-mod/capsule.jpg',
+            iconPath: './assets/img/games/h2-mod/icon.ico',
             capsulePath: './assets/img/games/h2-mod/capsule.jpg',
             heroImagePath: './assets/img/games/h2-mod/hero.jpg',
             logoPath: './assets/img/games/h2-mod/logo.png'
@@ -381,7 +388,7 @@ class GameUtils {
             credits: 'HMW-Mod is a CB Servers fork of the original HorizonMW client.',
             accent: '#97838A',
             assetBase: './assets/img/games/hmw-mod',
-            iconPath: './assets/img/games/hmw-mod/capsule.jpg',
+            iconPath: './assets/img/games/hmw-mod/icon.ico',
             capsulePath: './assets/img/games/hmw-mod/capsule.jpg',
             heroImagePath: './assets/img/games/hmw-mod/hero.jpg',
             logoPath: './assets/img/games/hmw-mod/logo.png'
@@ -391,72 +398,69 @@ class GameUtils {
             shortName: 'CoD',
             defaultInstallPath: 'cod1_game_files',
             uiId: 'cod1',
-            client: 'TBD',
-            provider: '',
+            client: 'CoD1 v1.1',
+            provider: 'COD.PM',
             clientKey: 'others',
-            hasMultipleModes: false,
-            supportedModes: [],
-            supportsName: false,
+            hasMultipleModes: true,
+            supportedModes: ['sp', 'mp'],
+            supportsName: true,
             specialSettings: [],
-            codeName: 'Call of Duty (2003)',
-            version: 'IDtech3',
-            description: 'Call of Duty is coming soon.',
-            credits: '',
-            accent: '#8B7355',
+            codeName: 'CoD1 v1.1',
+            version: '1.1',
+            description: 'Call of Duty (2003) running on the original v1.1 game. Jump straight into the classic World War II campaign and multiplayer from one launcher page.',
+            credits: 'Game files for the base v1.1 game are provided by <a href="https://cod.pm/" target="_blank">cod.pm</a>.',
+            accent: '#93a8bc',
             assetBase: './assets/img/games/cod1',
-            iconPath: './assets/img/games/cod1/capsule.jpg',
+            iconPath: './assets/img/games/cod1/icon.ico',
             capsulePath: './assets/img/games/cod1/capsule.jpg',
             heroImagePath: './assets/img/games/cod1/hero.jpg',
-            logoPath: './assets/img/games/cod1/logo.png',
-            comingSoon: true
+            logoPath: './assets/img/games/cod1/logo.png'
         },
-        'codu': {
+        'coduo': {
             displayName: 'United Offensive',
             shortName: 'UO',
-            defaultInstallPath: 'codu_game_files',
-            uiId: 'codu',
-            client: 'TBD',
-            provider: '',
+            defaultInstallPath: 'coduo_game_files',
+            uiId: 'coduo',
+            client: 'CoDUO v1.51',
+            provider: 'COD.PM',
             clientKey: 'others',
-            hasMultipleModes: false,
-            supportedModes: [],
-            supportsName: false,
+            hasMultipleModes: true,
+            supportedModes: ['sp', 'mp'],
+            supportsName: true,
             specialSettings: [],
-            codeName: 'United Offensive (2004)',
-            version: 'IDtech3',
-            description: 'Call of Duty: United Offensive is coming soon.',
-            credits: '',
-            accent: '#6B7A3F',
-            assetBase: './assets/img/games/codu',
-            iconPath: './assets/img/games/codu/capsule.png',
-            capsulePath: './assets/img/games/codu/capsule.png',
-            heroImagePath: './assets/img/games/codu/hero.jpg',
-            logoPath: './assets/img/games/codu/logo.png',
-            comingSoon: true
+            codeName: 'CoDUO v1.51',
+            version: '1.51',
+            description: 'Call of Duty: United Offensive running on the v1.51 game. The classic UO expansion with new campaigns, weapons and vehicle-based multiplayer, ready to play.',
+            credits: 'Game files for the base v1.51 game are provided by <a href="https://cod.pm/" target="_blank">cod.pm</a>.',
+            accent: '#ededec',
+            assetBase: './assets/img/games/coduo',
+            iconPath: './assets/img/games/coduo/icon.ico',
+            capsulePath: './assets/img/games/coduo/capsule.png',
+            heroImagePath: './assets/img/games/coduo/hero.jpg',
+            logoPath: './assets/img/games/coduo/logo.png'
         },
-        'cod2': {
+        'cod2x': {
             displayName: 'Call of Duty 2',
             shortName: 'CoD2',
             defaultInstallPath: 'cod2_game_files',
-            uiId: 'cod2',
-            client: 'TBD',
-            provider: '',
+            uiId: 'cod2x',
+            client: 'CoD2x',
+            provider: 'CoD2x',
             clientKey: 'others',
-            hasMultipleModes: false,
-            supportedModes: [],
-            supportsName: false,
+            hasMultipleModes: true,
+            supportedModes: ['sp', 'mp'],
+            supportsName: true,
             specialSettings: [],
-            codeName: 'Call of Duty 2 (2005)',
-            version: 'IW2',
-            description: 'Call of Duty 2 is coming soon.',
-            credits: '',
-            accent: '#A04B2A',
-            assetBase: './assets/img/games/cod2',
-            iconPath: './assets/img/games/cod2/capsule.jpg',
-            capsulePath: './assets/img/games/cod2/capsule.jpg',
-            heroImagePath: './assets/img/games/cod2/hero.jpg',
-            logoPath: './assets/img/games/cod2/logo.png',
-            comingSoon: true
+            codeName: 'CoD2x',
+            version: '1.3',
+            description: 'Call of Duty 2 enhanced with the CoD2x client on top of the v1.3 game. Modern fixes and quality-of-life improvements for classic COD2 multiplayer.',
+            credits: 'CoD2x is developed by Yctn and eyza. Learn more at <a href="https://cod2x.me/" target="_blank">cod2x.me</a>.',
+            accent: '#fadb9f',
+            assetBase: './assets/img/games/cod2x',
+            iconPath: './assets/img/games/cod2x/icon.ico',
+            capsulePath: './assets/img/games/cod2x/capsule.jpg',
+            heroImagePath: './assets/img/games/cod2x/hero.jpg',
+            logoPath: './assets/img/games/cod2x/logo.png'
         }
     };
 
@@ -562,9 +566,9 @@ class GameUtils {
     static getAllGameImages() {
         const images = {};
 
+        // iconPath (.ico) is deliberately excluded: the sidebar <img> tags load those on their own.
         this.getAllGameConfigs().forEach(config => {
             images[config.uiId] = [
-                config.iconPath,
                 config.capsulePath,
                 config.heroImagePath,
                 config.logoPath
@@ -628,6 +632,24 @@ class GameUtils {
         return Math.round(bytes / Math.pow(k, i) * 100) / 100 + ' ' + sizes[i];
     }
 
+    static formatSpeed(bytesPerSec) {
+        if (!Number.isFinite(bytesPerSec) || bytesPerSec <= 0) return '';
+        return GameUtils.formatBytes(bytesPerSec) + '/s';
+    }
+
+    static formatDuration(seconds) {
+        if (!Number.isFinite(seconds) || seconds <= 0) return '';
+
+        const total = Math.round(seconds);
+        const h = Math.floor(total / 3600);
+        const m = Math.floor((total % 3600) / 60);
+        const s = total % 60;
+
+        if (h > 0) return `${h}h ${String(m).padStart(2, '0')}m`;
+        if (m > 0) return `${m}m ${String(s).padStart(2, '0')}s`;
+        return `${s}s`;
+    }
+
     /**
      * Track progress of a backend command with polling
      * @param {object} config - Configuration object
@@ -674,6 +696,8 @@ class GameUtils {
         const runFn = (registerCancel) => new Promise((resolve, reject) => {
             let pollIntervalId;
             let cancelRequested = false;
+            let lastBytes = 0, lastTime = 0, emaSpeed = 0; // bytes, ms, bytes/sec
+            let startTime = 0, startBytes = 0;             // ms, bytes (download-start baseline)
 
             const cancelOperation = async () => {
                 cancelRequested = true;
@@ -726,6 +750,7 @@ class GameUtils {
                             if (!result.active) {
                                 clearInterval(pollIntervalId);
                                 pollIntervalId = null;
+                                emaSpeed = 0;
                                 window.ProgressManager.update(100, completeMessage);
 
                                 if (onComplete) {
@@ -740,15 +765,59 @@ class GameUtils {
                             }
 
                             // Paused: keep the bar alive at the current percent, just relabel.
+                            // Reset the rate so a resumed download re-measures from scratch.
                             if (result.paused) {
+                                emaSpeed = 0;
+                                lastTime = 0;
+                                startTime = 0;
                                 const pausedMsg = window.LauncherI18n
                                     ? window.LauncherI18n.t('downloads.statusPausedAt', { percent: Number(result.progress || 0).toFixed(2) })
                                     : `Paused — ${Number(result.progress || 0).toFixed(2)}%`;
-                                window.ProgressManager.update(result.progress, pausedMsg);
+                                window.ProgressManager.update(result.progress, pausedMsg, null);
                                 return;
                             }
 
-                            window.ProgressManager.update(result.progress, result.message);
+                            // Speed/ETA from byte deltas — only while actually downloading. Verify/delete
+                            // also report byte totals, but their "speed" is disk throughput, not a download.
+                            let stats = null;
+                            const downloaded = Number(result.downloadedBytes) || 0;
+                            const total = Number(result.totalBytes) || 0;
+                            if (total > 0 && result.mode === 'downloading') {
+                                const now = Date.now();
+
+                                // Live, smoothed speed for the MB/s readout.
+                                if (lastTime === 0) {
+                                    lastTime = now;
+                                    lastBytes = downloaded;
+                                } else {
+                                    const dt = (now - lastTime) / 1000;
+                                    if (dt >= 0.25 && downloaded >= lastBytes) {
+                                        const inst = (downloaded - lastBytes) / dt;
+                                        emaSpeed = emaSpeed ? emaSpeed * 0.7 + inst * 0.3 : inst;
+                                        lastBytes = downloaded;
+                                        lastTime = now;
+                                    }
+                                }
+
+                                // Cumulative average (since start) for a smoothly counting-down ETA.
+                                if (startTime === 0) {
+                                    startTime = now;
+                                    startBytes = downloaded;
+                                }
+                                const elapsed = (now - startTime) / 1000;
+                                const avgSpeed = elapsed > 0 ? (downloaded - startBytes) / elapsed : 0;
+                                const etaSeconds = avgSpeed > 0 ? (total - downloaded) / avgSpeed : null;
+
+                                stats = { speed: emaSpeed, etaSeconds };
+                            } else {
+                                // Leaving the download phase (verify/retry) — re-baseline so the next
+                                // download phase measures from scratch instead of a stale offset.
+                                lastTime = 0;
+                                startTime = 0;
+                                emaSpeed = 0;
+                            }
+
+                            window.ProgressManager.update(result.progress, result.message, stats);
                         } catch (error) {
                             console.error('Error polling progress:', error);
                             clearInterval(pollIntervalId);
@@ -807,6 +876,8 @@ class GameUtils {
 
     static async installRedistsWithProgressBar(missingGroups, uiGameId) {
         const t = (k, vars) => window.LauncherI18n ? window.LauncherI18n.t(k, vars) : k;
+
+        if (!await window.guardOnline()) return false;
 
         const scopeIds = this.expandMissingToPackageIds(missingGroups);
 
@@ -947,3 +1018,24 @@ class GameUtils {
 
 // Make GameUtils available globally
 window.GameUtils = GameUtils;
+
+// Offline-mode guard for any network action (verify/download/update).
+// Returns true if the action may proceed; false if blocked. If the user
+// chooses to go online, relaunches the launcher without -offline.
+window.guardOnline = async function guardOnline() {
+    if (!window.IS_OFFLINE) return true;
+
+    const t = (k) => window.LauncherI18n ? window.LauncherI18n.t(k) : k;
+    if (typeof window.showMessageBox !== 'function') return false;
+
+    const choice = await window.showMessageBox(
+        t('offline.blockTitle'),
+        t('offline.blockBody'),
+        [t('offline.relaunchOnline'), t('common.cancel')]
+    );
+
+    if (choice === 0) {
+        try { await window.executeCommand('relaunch-online'); } catch (_) {}
+    }
+    return false;
+};
