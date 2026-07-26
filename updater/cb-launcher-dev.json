@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        2490224,
-        "E0F6F30F87F26F8BD3CD7A14DD349BEEC67EEDDA"
+        2686832,
+        "CA7FD8D1637EA885D3B53D19DE2D50CED5270B38"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -431,13 +431,13 @@
     ],
     [
         "data/launcher-ui/assets/js/app/main.js",
-        91966,
-        "A1FCA08AF2439320302BF8592A773EF691156FB4"
+        93144,
+        "F0DDF7710AB736F03AEDA7250C26DF56EAFD07F2"
     ],
     [
         "data/launcher-ui/assets/js/app/views.js",
-        64152,
-        "60CC160A11C138414DFA60C816684DC0AB90216A"
+        64323,
+        "3C2FC41B18150E5FF7817E767B17F73840C8AD82"
     ],
     [
         "data/launcher-ui/assets/js/core/command.js",
@@ -446,13 +446,13 @@
     ],
     [
         "data/launcher-ui/assets/js/core/discord-friends.js",
-        8203,
-        "365809E12C66DF378B6F3A72217BD09E052BFC10"
+        10903,
+        "A92231265871FA27B917C9D9F58C051E0EC000F8"
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        104471,
-        "264F8E744FEC21B119A3269A442C151A7F76117F"
+        107498,
+        "140C5D54CAA235940F92BC2727866EE4F736D8BF"
     ],
     [
         "data/launcher-ui/assets/js/core/player-counts.js",
@@ -461,8 +461,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/utils.js",
-        44832,
-        "10B4DD63BEAABDE1CEC8277B058083F828D51ADC"
+        44897,
+        "A7B29D08B5D00E15116C22D7B8B0B711A32665B5"
     ],
     [
         "data/launcher-ui/assets/js/popups/component-selection-popup.js",
@@ -511,8 +511,8 @@
     ],
     [
         "data/launcher-ui/main.html",
-        28926,
-        "8B259A902ED519C9D79AF4CE7A90B3B6AAB66371"
+        29791,
+        "2513F12D5EEBEC5F0B1EED0197E976C51F9E2919"
     ],
     [
         "manifest/aw.json",
@@ -600,6 +600,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "45183100300C33F1F963329BF2A35C6D23EB1E042D808C945CB9EB385D6C0A9B"
+        "ManifestHash": "2D2E8CB91AA57DF9FB98CDFCE68854EF8B012440F9A4CDA4B1052411CADE01BB"
     }
 ]
