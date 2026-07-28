@@ -6,8 +6,8 @@
     ],
     [
         "boiii.exe",
-        2740736,
-        "26FAC1A4FA6045050633316801896852FAFB57C8"
+        2764288,
+        "F1C2DB6ACDDDBEADC4CB492E2EAAD9E44AFC15E5"
     ],
     [
         "data/gamesettings/mp/gamesettings_escort.cfg",
@@ -91,8 +91,8 @@
     ],
     [
         "data/ui_scripts/friend_join/__init__.lua",
-        3964,
-        "74ED88E602C03836346F7D8B50F44EF2604818FD"
+        8624,
+        "61F07634E379CD6D9E4D435554CE3211CB547E00"
     ],
     [
         "data/ui_scripts/frontend_menus/datasources_change_map_categories.lua",
@@ -131,13 +131,13 @@
     ],
     [
         "data/ui_scripts/party/datasources_start_menu_game_options.lua",
-        5421,
-        "929C86E4951F3E543339900F930A548934E3BEEB"
+        5408,
+        "83825F7141D7FBDCEEA0FB417AD3C73AFA48E69B"
     ],
     [
         "data/ui_scripts/party/zombie_toast.lua",
-        1366,
-        "5B317B2E36F6447AC711E5D68CCCAF05CBC3BECD"
+        1437,
+        "4E1267BF1DC420AAB49B6036DF1BAC47D4CAEA6B"
     ],
     [
         "data/ui_scripts/party/__init__.lua",
