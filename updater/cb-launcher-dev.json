@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        2686832,
-        "CA7FD8D1637EA885D3B53D19DE2D50CED5270B38"
+        2695024,
+        "941291F401016F349AEB6E496186C3D580D5E4FF"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -81,8 +81,8 @@
     ],
     [
         "data/launcher-ui/assets/css/main.css",
-        124407,
-        "9B80191C259CE97B914C969C6B0FA72B46A6568C"
+        124636,
+        "C87210DD4FBECD1D111C73143B5FA9B8D4C706D8"
     ],
     [
         "data/launcher-ui/assets/img/brand/cb-hero.png",
@@ -436,8 +436,8 @@
     ],
     [
         "data/launcher-ui/assets/js/app/views.js",
-        64323,
-        "3C2FC41B18150E5FF7817E767B17F73840C8AD82"
+        64598,
+        "7C8C433095A25A28557D6E26A8B03C492DDA95AF"
     ],
     [
         "data/launcher-ui/assets/js/core/command.js",
@@ -451,8 +451,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        107498,
-        "140C5D54CAA235940F92BC2727866EE4F736D8BF"
+        107639,
+        "4692D89EB9005EBB54BB2C2FA4CBFC5FA4C23D05"
     ],
     [
         "data/launcher-ui/assets/js/core/player-counts.js",
@@ -600,6 +600,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "2D2E8CB91AA57DF9FB98CDFCE68854EF8B012440F9A4CDA4B1052411CADE01BB"
+        "ManifestHash": "074F2B57CBDCB97B6D777E13EB85E38AF4F3E86F254D1DC8107750DAE288041C"
     }
 ]
