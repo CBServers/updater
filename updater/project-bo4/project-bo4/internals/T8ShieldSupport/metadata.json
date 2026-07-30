@@ -410,6 +410,22 @@
         },
         {
             "type": "luafile",
+            "name": "ui/shield/Reactives",
+            "path": "Lua\\Frontend\\Reactives.luac",
+            "hooks_post": [
+                "x64:4ed0bcba9d999e0f"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/ExtraCamos",
+            "path": "Lua\\Frontend\\ExtraCamos.luac",
+            "hooks_post": [
+                "x64:4ed0bcba9d999e0f"
+            ]
+        },
+        {
+            "type": "luafile",
             "name": "ui/shield/Mastercraft",
             "path": "Lua\\Frontend\\Mastercraft.luac",
             "hooks_post": [
@@ -491,6 +507,15 @@
             "type": "luafile",
             "name": "ui/shield/GameBlackoutStartMatchButton",
             "path": "Lua\\Game\\BlackoutStartMatchButton.luac",
+            "hooks_post": [
+                "x64:46f417a74d9ab424",
+                "x64:57d27ab8e2f7a9d0"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/GameReactiveRequest",
+            "path": "Lua\\Game\\ReactiveRequest.luac",
             "hooks_post": [
                 "x64:46f417a74d9ab424",
                 "x64:57d27ab8e2f7a9d0"
@@ -1305,9 +1330,93 @@
             "type": "localizeentry",
             "name": "shield/fuckshit_desc",
             "value": "in Zombies, die after popping a Perkaholic"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/extra_camos_tab",
+            "value": "Extra Camos"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/reactive_settings_tab",
+            "value": "Reactive Stage"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/reactive_last_setting",
+            "value": "Force Reactive Camo Stage"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/no_stage",
+            "value": "Off"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/stage_1",
+            "value": "Stage 1"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/stage_2",
+            "value": "Stage 2"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/stage_3",
+            "value": "Stage 3"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/stage_4",
+            "value": "Stage 4"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/stage_5",
+            "value": "Stage 5"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/stage_6",
+            "value": "Stage 6"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/stage_7",
+            "value": "Stage 7"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/stage_8",
+            "value": "Last Stage"
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_63da6ea5d502cf7d",
+            "value": "Gamepad aim assist is available in Shield Client."
         }
     ],
-    "cache": [],
+    "cache": [
+        {
+            "type": "menu",
+            "name": "shield_support_menu",
+            "mode": [
+                "wz",
+                "mp",
+                "zm"
+            ]
+        },
+        {
+            "type": "eventstring",
+            "name": "reactive_apply",
+            "mode": [
+                "wz",
+                "mp",
+                "zm"
+            ]
+        }
+    ],
     "redirect": [
         {
             "type": "image",

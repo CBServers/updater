@@ -7,7 +7,7 @@
     [
         "Launch Project BO4.exe",
         112640,
-        "B4A8C88C6B164E507D83A415BA397EE59D29D78C"
+        "F384A265251D346356A1513690BE7D42890F9320"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/maxrankdata_mp.csv",
@@ -92,7 +92,7 @@
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/DirectorCustom.luac",
         52598,
-        "8C4B1689F65CBA6B3E40A8B4DEA3436E9D62971D"
+        "97B60D6DB10176A0EA863B4E0742A0867426DA9F"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/DirectorPregame.luac",
@@ -125,6 +125,11 @@
         "3837F7EDECFE92B66688FE056BBB5417CEBF9B3F"
     ],
     [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ExtraCamos.luac",
+        47572,
+        "4ACF7AA36CF753315FF7016B47FDD94660EB3B47"
+    ],
+    [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/FOVAimAssist.luac",
         9757,
         "F4E0E9FDAC59C95EDCC16B206D869D61E9E7496B"
@@ -147,12 +152,12 @@
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Mastercraft.luac",
         1004,
-        "89B526C700B7DD6FBA91879B40D09D2EBBA289CE"
+        "CB6B6860342AAB5467EA1DD261AF06272355EDDF"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/MatchmakingDvars.luac",
-        782,
-        "18DECB379D3D823D72828785043B6235B96A11D5"
+        1616,
+        "40D491922DB40AB563C945F15F3D17058CE61137"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/MiscSettings.luac",
@@ -171,8 +176,8 @@
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/MultiplayerLobbySettings.luac",
-        48173,
-        "B0DC8B810C76BEB623AF3ADC9310AD7523E0B5C7"
+        47725,
+        "53B1FEB3C076611B42706F4E0036BB143D123AF8"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/MusicManager.luac",
@@ -206,8 +211,8 @@
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ProgressionFixes.luac",
-        2992,
-        "3F8D77E627F4BD4C1CDE10A3DAB67C4DCDD33177"
+        3040,
+        "50AA30DD2E8840F922E624D5F4BD139C2DA6D550"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/RankUtils.luac",
@@ -215,9 +220,14 @@
         "7C650C85F4689282F2C59B4491CAE320BE2A50A7"
     ],
     [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Reactives.luac",
+        21041,
+        "FA6B799787B00F84C65F4428E059AEE3BB2BE6E4"
+    ],
+    [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ReloadOverrides.luac",
-        16460,
-        "DC050995C624C22281B184FF41B34DCECE4FA92A"
+        16504,
+        "844B459D4CE2E742053381341FD21AE804BAA34E"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/RemovePopUps.luac",
@@ -310,9 +320,14 @@
         "ACFBBF3F299F647347D99F2B4C27B5E9C71A3A45"
     ],
     [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/ReactiveRequest.luac",
+        880,
+        "5646B0AAAD796B69CF0B5521306A681AFA2EFE0F"
+    ],
+    [
         "project-bo4/internals/T8ShieldSupport/Lua/Game/ReloadOverrides.luac",
-        1361,
-        "DE9AC1544D482481999AA618B33CB70580F892EC"
+        1729,
+        "054549CD0C2ED23F9BF67B0E9603B9834A81EA63"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Game/RoundPatch255.luac",
@@ -346,18 +361,18 @@
     ],
     [
         "project-bo4/internals/T8ShieldSupport/metadata.json",
-        41448,
-        "184F912580238B44FED396DA26E6495F1CA8F60A"
+        44346,
+        "4C13A5B52E663076AC89999C756F9F0672AD6A7E"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Scripts/SupportCSC.csic",
         2076,
-        "814CE781B3DD1A401CDA2FA13920751A4E256148"
+        "BAC08EBDAB3F4F4A507295385C3E285EB9BC6F58"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Scripts/SupportGSC.gsic",
-        106364,
-        "8D263AFD65B2C97165A07FDFB8A38EFD7B7A5C9E"
+        108804,
+        "FDD8E8A1916574F7210847281EE52602F16C7B99"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/SupportUtils/SupportErrors.tsv",
@@ -366,8 +381,8 @@
     ],
     [
         "project-bo4/internals/T8ShieldSupport/SupportUtils/SupportHashes.txt",
-        21312,
-        "118301EB4DDC4177BD53A4D0EE49C3814E7CAC6B"
+        22351,
+        "7E49F653940744B15C875C51275BB9EDCAADDBAC"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/SupportUtils/SupportStrings.txt",
@@ -571,8 +586,8 @@
     ],
     [
         "project-bo4/launcher/mp/XInput9_1_0.dll",
-        3786240,
-        "7B22A6182C9A926AD6A935DCE77DAA0B5A7ECB41"
+        4039168,
+        "26AA9E36990B484E36D56CA96DF0687E1EF28AE1"
     ],
     [
         "project-bo4/launcher/platforms/qwindows.dll",
@@ -612,12 +627,12 @@
     [
         "project-bo4/launcher/Shield_Launcher.exe",
         307712,
-        "99BDEAD6729010A69D2E35F32967D39124EC4363"
+        "8A658941B39E7E3753C7505E1C9F8BD688FFC94C"
     ],
     [
         "project-bo4/launcher/solo/XInput9_1_0.dll",
-        3962880,
-        "2CA22C634F21920168E8A2AF8DEF430E3AADB427"
+        4214784,
+        "78E9ABF7655CDA296479B4D23BACBDCDFE0C0E25"
     ],
     [
         "project-bo4/launcher/Sounds/startup_sound.mp3",
@@ -661,8 +676,8 @@
     ],
     [
         "project-bo4/zone/support.ff",
-        3273776,
-        "F9D1127E163F73EAA353E29BEE7D14A158B7EFB1"
+        714384,
+        "F252EAB5417573A7062217CD6305B320CDCAF309"
     ],
     [
         "project-bo4/zone_mods/T8ShieldSupport_FF/config.json",
@@ -670,6 +685,6 @@
         "7BEE5FF8DBD1C98E5A6FAC24B671A1BF95FB9022"
     ],
     {
-        "ManifestHash": "76A3E2B02DFF470AF7978FE51474A21A24B80EC69109BB49DBE2757BB819ECA5"
+        "ManifestHash": "0A67F26F225AC81CB8076730583D9D2CF74ED0786C2D11F9A76BA38A283E45A7"
     }
 ]
