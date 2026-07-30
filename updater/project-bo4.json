@@ -1,5 +1,10 @@
 [
     [
+        "BlackOps4.exe",
+        114558448,
+        "CA8452F8A1C3D3CB9F6970F3796D43B9A2A871BF"
+    ],
+    [
         "discord_game_sdk.dll",
         3488768,
         "914E01743C7591BEB79A61417B262CAEB23E2C20"
@@ -7,7 +12,7 @@
     [
         "Launch Project BO4.exe",
         112640,
-        "F384A265251D346356A1513690BE7D42890F9320"
+        "FB5BFFD30CEDFC428ECBF43F056FD807C26AEDF4"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/maxrankdata_mp.csv",
@@ -627,7 +632,7 @@
     [
         "project-bo4/launcher/Shield_Launcher.exe",
         307712,
-        "8A658941B39E7E3753C7505E1C9F8BD688FFC94C"
+        "AB686503BEE4AD59135BD1C2C41C5EEB62EA7274"
     ],
     [
         "project-bo4/launcher/solo/XInput9_1_0.dll",
@@ -685,6 +690,6 @@
         "7BEE5FF8DBD1C98E5A6FAC24B671A1BF95FB9022"
     ],
     {
-        "ManifestHash": "0A67F26F225AC81CB8076730583D9D2CF74ED0786C2D11F9A76BA38A283E45A7"
+        "ManifestHash": "532F019E06CEAB56E87E13DFAF6D6D1318573A4960CA098E521B3E65127EE698"
     }
 ]
