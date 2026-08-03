@@ -1415,11 +1415,16 @@
         // A friend can be both joinable (we ask to join them) and invitable (we're hosting too) —
         // show both buttons side by side rather than letting one override the other.
         const actionBtns = f => {
+            // Already in our match: joining would just reconnect and inviting is a no-op.
+            if (f.sameMatch) {
+                return `<div class="friend-actions"><span class="friend-same-match">${escapeHtml(t('friends.inYourMatch'))}</span></div>`;
+            }
             const btns = [];
-            if (f.joinable) {
-                // Direct/public server => "Join" (no host approval); private host => "Ask to Join".
-                const joinLabel = f.directJoin ? t('friends.join') : t('friends.askToJoin');
-                btns.push(`<button class="friend-join-btn" data-join-user="${escapeHtml(f.id)}" title="${escapeHtml(joinLabel)}">${escapeHtml(joinLabel)}</button>`);
+            if (f.joinable || f.openable) {
+                // Joinable (open match) auto-admits regardless of transport => "Join"; only a closed,
+                // openable match requires a real knock => "Ask to Join".
+                const joinLabel = f.joinable ? t('friends.join') : t('friends.askToJoin');
+                btns.push(`<button class="friend-join-btn" data-join-user="${escapeHtml(f.id)}" data-game-id="${escapeHtml(f.gameId || '')}" data-knock="${f.joinable ? '' : '1'}" title="${escapeHtml(joinLabel)}">${escapeHtml(joinLabel)}</button>`);
             }
             if (canInvite && (f.status === 'online' || f.status === 'idle')) {
                 btns.push(`<button class="friend-invite-btn" data-invite-user="${escapeHtml(f.id)}" title="${escapeHtml(t('friends.invite'))}">${escapeHtml(t('friends.invite'))}</button>`);

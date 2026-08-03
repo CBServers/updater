@@ -3795,6 +3795,7 @@ html[data-theme="dark"] .secondary-action:hover {
     box-shadow: 0 0 6px rgba(59, 165, 93, 0.7);
 }
 .support-action.faq { background: linear-gradient(135deg, #6C63FF 0%, #4B45C7 100%); }
+.support-action.faq-games { background: linear-gradient(135deg, #2FA8A0 0%, #1E6E77 100%); }
 
 .support-action:hover,
 .support-link:hover {
@@ -4648,4 +4649,15 @@ html[data-theme="dark"] .secondary-action:hover {
 .friend-join-btn:hover {
     background: var(--accent, #5865f2);
     color: #fff;
+}
+
+.friend-same-match {
+    flex-shrink: 0;
+    padding: 5px 12px;
+    border: 1px solid var(--border-hi);
+    border-radius: 6px;
+    color: var(--text-muted);
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
 }
