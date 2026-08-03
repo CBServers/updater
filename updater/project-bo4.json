@@ -12,7 +12,7 @@
     [
         "Launch Project BO4.exe",
         112640,
-        "FB5BFFD30CEDFC428ECBF43F056FD807C26AEDF4"
+        "9C417DB50C0EC1C3383E1376486907AEDCC8BA66"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/maxrankdata_mp.csv",
@@ -326,13 +326,13 @@
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Game/ReactiveRequest.luac",
-        880,
-        "5646B0AAAD796B69CF0B5521306A681AFA2EFE0F"
+        850,
+        "691DE88A67A17F6EE75587C4F0FDCE747E9B8C60"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Game/ReloadOverrides.luac",
-        1729,
-        "054549CD0C2ED23F9BF67B0E9603B9834A81EA63"
+        1713,
+        "447E0FC1512C0F4A93C7917CF1A09D51EFA95C5B"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Game/RoundPatch255.luac",
@@ -372,12 +372,12 @@
     [
         "project-bo4/internals/T8ShieldSupport/Scripts/SupportCSC.csic",
         2076,
-        "BAC08EBDAB3F4F4A507295385C3E285EB9BC6F58"
+        "6116A2AF24E1A5D341090FC4E1ECC73C6F8E9940"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Scripts/SupportGSC.gsic",
-        108804,
-        "FDD8E8A1916574F7210847281EE52602F16C7B99"
+        108560,
+        "FA7463E63AD94BCEFDC81F907C2162353F999CF2"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/SupportUtils/SupportErrors.tsv",
@@ -386,8 +386,8 @@
     ],
     [
         "project-bo4/internals/T8ShieldSupport/SupportUtils/SupportHashes.txt",
-        22351,
-        "7E49F653940744B15C875C51275BB9EDCAADDBAC"
+        22036,
+        "B65276AA32196F6812D7D3B75144BDC8D818BE12"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/SupportUtils/SupportStrings.txt",
@@ -591,8 +591,8 @@
     ],
     [
         "project-bo4/launcher/mp/XInput9_1_0.dll",
-        4039168,
-        "26AA9E36990B484E36D56CA96DF0687E1EF28AE1"
+        4039680,
+        "8CC7E54C73A252C3A2061EA6CF5AD0139C6EBB51"
     ],
     [
         "project-bo4/launcher/platforms/qwindows.dll",
@@ -632,12 +632,12 @@
     [
         "project-bo4/launcher/Shield_Launcher.exe",
         307712,
-        "AB686503BEE4AD59135BD1C2C41C5EEB62EA7274"
+        "BAD019E4126310352049BAD7238625403AC60BB0"
     ],
     [
         "project-bo4/launcher/solo/XInput9_1_0.dll",
-        4214784,
-        "78E9ABF7655CDA296479B4D23BACBDCDFE0C0E25"
+        4215296,
+        "A49F9319C77F7A0BD45F4C4A9D251C0DE60F880F"
     ],
     [
         "project-bo4/launcher/Sounds/startup_sound.mp3",
@@ -690,6 +690,6 @@
         "7BEE5FF8DBD1C98E5A6FAC24B671A1BF95FB9022"
     ],
     {
-        "ManifestHash": "532F019E06CEAB56E87E13DFAF6D6D1318573A4960CA098E521B3E65127EE698"
+        "ManifestHash": "5844DB562B875FD03F566138B7342B0BEDA6EFA9A9E9049698F0C1D3BFE9FA48"
     }
 ]
