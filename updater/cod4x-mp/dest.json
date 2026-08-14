@@ -1,0 +1,8 @@
+{
+    "default": "game",
+    "rules": [
+        { "prefix": "bin/", "dest": "appdata" },
+        { "prefix": "main/", "dest": "appdata" },
+        { "prefix": "zone/", "dest": "appdata" }
+    ]
+}
