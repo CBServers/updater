@@ -6,8 +6,8 @@
     ],
     [
         "boiii.exe",
-        2776576,
-        "9FCD6A25813DE430EACA834C679FB25A6A6D04A9"
+        2781696,
+        "3449F98519E332960287DADA562672042D7BB7D4"
     ],
     [
         "data/gamesettings/mp/gamesettings_escort.cfg",
@@ -188,10 +188,5 @@
         "data/ui_scripts/stats/__init__.lua",
         14424,
         "4A4CAA94F77577C57F594156A2F1FFA321F0716D"
-    ],
-    [
-        "ext.dll",
-        610816,
-        "BB24B59DE8DB62BA55FBC789883429708C8ABE3A"
     ]
 ]
