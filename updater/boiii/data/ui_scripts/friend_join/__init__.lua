@@ -210,10 +210,6 @@ pcall( function ()
 	end
 end )
 
-if not ok then
-	tlog( "patch failed: " .. tostring( err ) )
-end
-
 -- toast on INVITE GAME, mirroring the open-to-friends toggle toast; when we're the host of a
 -- closed match, sending the invite auto-opens it (C++ request_invite), so say that too
 pcall( function ()

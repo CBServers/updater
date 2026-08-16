@@ -32,6 +32,15 @@ CoD.LobbyButtons.STATS = {
   customId = "btnMPStats"
 }
 
+CoD.LobbyButtons.MATCH_SETTINGS = {
+  stringRef = "MATCH SETTINGS",
+  action = function(self, element, controller, param, menu)
+    SetPerControllerTableProperty(controller, "disableGameSettingsOptions", true)
+    OpenPopup(menu, "BoiiiLobbySettingsMenu", controller)
+  end,
+  customId = "btnMatchSettings",
+}
+
 CoD.LobbyButtons.MP_START_GAME = {
   stringRef = "MENU_START_GAME_CAPS",
   action = function(self, element, controller, param, menu)
@@ -84,7 +93,51 @@ local lobbyMapVote = function(lobbyMapVoteIsEnabled)
   end
 end
 
+local customGameTargetNames = {
+  "UI_MPLOBBYONLINECUSTOMGAME",
+  "UI_ZMLOBBYONLINECUSTOMGAME",
+  "UI_CPLOBBYONLINECUSTOMGAME",
+  "UI_CP2LOBBYONLINECUSTOMGAME",
+}
+
+local isCustomGameTarget = function(menuId)
+  for _, name in ipairs(customGameTargetNames) do
+    local target = LobbyData.UITargets[name]
+    if target ~= nil and target.id == menuId then
+      return true
+    end
+  end
+  return false
+end
+
+-- Tail of the start/setup group, so the button lands with them regardless of mode.
+local addMatchSettingsButton = function(controller, buttonTable)
+  local groupEnd = nil
+  for id, v in ipairs(buttonTable) do
+    if v.isLastButtonInGroup then
+      groupEnd = id
+      break
+    end
+  end
+
+  if groupEnd == nil then
+    utils.AddSmallButton(controller, buttonTable, CoD.LobbyButtons.MATCH_SETTINGS)
+    return
+  end
+
+  local count = #buttonTable
+  utils.AddSmallButton(controller, buttonTable, CoD.LobbyButtons.MATCH_SETTINGS, groupEnd + 1)
+  if #buttonTable > count then
+    buttonTable[groupEnd].isLastButtonInGroup = false
+    utils.AddSpacer(buttonTable, groupEnd + 1)
+  end
+end
+
 local addCustomButtons = function(controller, menuId, buttonTable, isLeader)
+  if isCustomGameTarget(menuId) and isLeader and isLeader ~= 0 then
+    addMatchSettingsButton(controller, buttonTable)
+  end
+
   if menuId == LobbyData.UITargets.UI_MPLOBBYMAIN.id then
     utils.RemoveSpaces(buttonTable)
     local theaterIndex = utils.GetButtonIndex(buttonTable, CoD.LobbyButtons.THEATER_MP)
