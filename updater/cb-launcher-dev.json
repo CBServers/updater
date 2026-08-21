@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        2917232,
-        "BD520CC3D0FEB87AA1871A53371D0D811CEF6FEC"
+        2942320,
+        "DAB8D0C527FF8B44826BC03DD13D61EF55C4AAA5"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -81,8 +81,8 @@
     ],
     [
         "data/launcher-ui/assets/css/main.css",
-        152056,
-        "7E69F91C4C56F9D69E2D248D332E27A261DAD6F5"
+        153164,
+        "1ABDDECB5CCF0302C5FF95A354CC4F50A7E33D52"
     ],
     [
         "data/launcher-ui/assets/fonts/ibm-plex-mono-400.woff2",
@@ -461,8 +461,8 @@
     ],
     [
         "data/launcher-ui/assets/js/app/main.js",
-        94747,
-        "4CAD0CA8B2F43DCA317D5A3F7B654CBBA18DF8CD"
+        95182,
+        "E56041FDCDE91C7C996C76C9F55BAFA95ABD1EBD"
     ],
     [
         "data/launcher-ui/assets/js/app/views.js",
@@ -481,8 +481,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        160777,
-        "3904E781AFA463ABEA7885BA0DEAE72B704F87B2"
+        162709,
+        "C30B68D9D282D31A5CF296DA68672064DE7EA461"
     ],
     [
         "data/launcher-ui/assets/js/core/player-counts.js",
@@ -491,13 +491,13 @@
     ],
     [
         "data/launcher-ui/assets/js/core/utils.js",
-        46477,
-        "C4431175A831704327F9745560FE9570FBDD8EBB"
+        47915,
+        "7C9B609416F333749B74042888711BF0E9FA79F7"
     ],
     [
         "data/launcher-ui/assets/js/popups/component-selection-popup.js",
-        26720,
-        "430E67147A32D51E84F788A65DD0426886C0683F"
+        28258,
+        "89EAF0142886D79E1DB7AC08668841771E8193EC"
     ],
     [
         "data/launcher-ui/assets/js/popups/custom-server-popup.js",
@@ -506,8 +506,8 @@
     ],
     [
         "data/launcher-ui/assets/js/popups/game-mode-popup.js",
-        9631,
-        "AD450C4925C86DA82B4ED6F3513FBB6AFEB2807F"
+        12403,
+        "C3B60694D7D022CD504471B931DA8885A7CCAA33"
     ],
     [
         "data/launcher-ui/assets/js/popups/game-settings-popup.js",
@@ -521,8 +521,8 @@
     ],
     [
         "data/launcher-ui/assets/js/popups/setup-flow-popup.js",
-        7666,
-        "C7CF5A995417FA026AB53D91EDE0AE4B0BEAA4D9"
+        8029,
+        "B9C2952F5A16586D7AB9FFC76157151F2E4C32D0"
     ],
     [
         "data/launcher-ui/assets/js/ui/launch-redist-modal.js",
@@ -630,6 +630,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "8B4EFEE54989C932E1037E0399CCC182FB434870F0AEBC1F9A8BEA5DDF97FB1F"
+        "ManifestHash": "7150295050F81071EFE20DA48F31A4D7B9C1D4C889404E8F89B436F111213D08"
     }
 ]
