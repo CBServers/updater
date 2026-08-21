@@ -2,7 +2,7 @@
     [
         "cb-launcher.exe",
         2917232,
-        "33E440D38CD60391EA2B79B1393E9DC0C874BD53"
+        "BD520CC3D0FEB87AA1871A53371D0D811CEF6FEC"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -81,8 +81,38 @@
     ],
     [
         "data/launcher-ui/assets/css/main.css",
-        125974,
-        "A77DEE27DC5C828921E021C686C7CE8B5ABF079F"
+        152056,
+        "7E69F91C4C56F9D69E2D248D332E27A261DAD6F5"
+    ],
+    [
+        "data/launcher-ui/assets/fonts/ibm-plex-mono-400.woff2",
+        14708,
+        "BB87500E3204A3A7C65D6633C79C5C840C3BE8D3"
+    ],
+    [
+        "data/launcher-ui/assets/fonts/ibm-plex-mono-500.woff2",
+        14888,
+        "D32F0E0701AC62043840131A800CE717A86E4EE2"
+    ],
+    [
+        "data/launcher-ui/assets/fonts/OFL.txt",
+        4373,
+        "061A0EB53E237388221E0F7B502582E16BD68DD4"
+    ],
+    [
+        "data/launcher-ui/assets/fonts/rajdhani-500.woff2",
+        15084,
+        "E7D0D08B1CED5E6C424AA7EFB0EA5C11276E4CF5"
+    ],
+    [
+        "data/launcher-ui/assets/fonts/rajdhani-600.woff2",
+        15732,
+        "DCD4CF87AE721DD01A6EE29BE033C7D70F9C198D"
+    ],
+    [
+        "data/launcher-ui/assets/fonts/rajdhani-700.woff2",
+        15688,
+        "BE9EAE3D1D9F4FBD2208E0FD3C871B17B65B6516"
     ],
     [
         "data/launcher-ui/assets/img/brand/cb-hero.png",
@@ -431,13 +461,13 @@
     ],
     [
         "data/launcher-ui/assets/js/app/main.js",
-        94356,
-        "2C35B144ED3A3C94A4A3F5B253FF7876C1498528"
+        94747,
+        "4CAD0CA8B2F43DCA317D5A3F7B654CBBA18DF8CD"
     ],
     [
         "data/launcher-ui/assets/js/app/views.js",
-        64598,
-        "7C8C433095A25A28557D6E26A8B03C492DDA95AF"
+        64721,
+        "FDEB61FDDB7339A9119D092AD1A6BFFA4767342A"
     ],
     [
         "data/launcher-ui/assets/js/core/command.js",
@@ -451,8 +481,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        160522,
-        "04B0DB5E7D8BFB91E52619183CB38EBAA7C1E44D"
+        160777,
+        "3904E781AFA463ABEA7885BA0DEAE72B704F87B2"
     ],
     [
         "data/launcher-ui/assets/js/core/player-counts.js",
@@ -511,8 +541,8 @@
     ],
     [
         "data/launcher-ui/main.html",
-        31966,
-        "A1ADAB64363E8A878E12E81861E86CAB17A7C2AE"
+        32516,
+        "452F3026E16733807AAEA843E3B40260A4EE6652"
     ],
     [
         "manifest/aw.json",
@@ -600,6 +630,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "83D0594B2FDD6FA4E315E0E0B1D9BF12F387450DC6A62FCE3B32E1E76E4375A0"
+        "ManifestHash": "8B4EFEE54989C932E1037E0399CCC182FB434870F0AEBC1F9A8BEA5DDF97FB1F"
     }
 ]
