@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        2944368,
-        "45DB93EDE32287908DE107AF0741B213B5AF3661"
+        2945392,
+        "00795AC4C0192CE4D4B557895D07175D80062531"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -81,8 +81,8 @@
     ],
     [
         "data/launcher-ui/assets/css/main.css",
-        153164,
-        "1ABDDECB5CCF0302C5FF95A354CC4F50A7E33D52"
+        153256,
+        "1145A17468DD3249D8338DB3B8DA3A00F82AB3BB"
     ],
     [
         "data/launcher-ui/assets/fonts/ibm-plex-mono-400.woff2",
@@ -461,8 +461,8 @@
     ],
     [
         "data/launcher-ui/assets/js/app/main.js",
-        95182,
-        "E56041FDCDE91C7C996C76C9F55BAFA95ABD1EBD"
+        96906,
+        "3D0EB82C39365381E0B3911F94A07D9CDF8B3249"
     ],
     [
         "data/launcher-ui/assets/js/app/views.js",
@@ -481,8 +481,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        162709,
-        "C30B68D9D282D31A5CF296DA68672064DE7EA461"
+        163400,
+        "04AA0CC07301B86AF0ABE9CAEBF2E20FD19DB3B3"
     ],
     [
         "data/launcher-ui/assets/js/core/player-counts.js",
@@ -491,13 +491,13 @@
     ],
     [
         "data/launcher-ui/assets/js/core/utils.js",
-        47915,
-        "7C9B609416F333749B74042888711BF0E9FA79F7"
+        47964,
+        "9213D126A40210BA0ACB38C9005E218EDB128162"
     ],
     [
         "data/launcher-ui/assets/js/popups/component-selection-popup.js",
-        28258,
-        "89EAF0142886D79E1DB7AC08668841771E8193EC"
+        28759,
+        "52C35AF76925EF1AFF37CE5D062F8626210B2FA5"
     ],
     [
         "data/launcher-ui/assets/js/popups/custom-server-popup.js",
@@ -541,8 +541,8 @@
     ],
     [
         "data/launcher-ui/main.html",
-        32516,
-        "452F3026E16733807AAEA843E3B40260A4EE6652"
+        33326,
+        "DD9E346B9C2F35ACA76D2E24F43A637F055AF78A"
     ],
     [
         "manifest/aw.json",
@@ -630,6 +630,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "1E9E7C888A218BDAF1E4A5E88642484C5455DD5DE28D47F889A7A980946782FC"
+        "ManifestHash": "500D6764271D5031AB189C752B7BB9CBD137D443C51B71FB05DF3D6FB149CA8C"
     }
 ]
