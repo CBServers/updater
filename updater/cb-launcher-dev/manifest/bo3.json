@@ -1,5 +1,5 @@
 {
-    "ManifestHash": "025DD1C45C72016B6C711AB69EB9314D002179FCE9FCB5AEFA2F1C2056A959CB",
+    "ManifestHash": "9A24E7231CD319BEBBEBE1CDE6A88ABC11AC7AF6BA5BB8424AC0C071EE242AC4",
     "components": {
         "redist": {
             "displayName": "redist",
@@ -13,7 +13,7 @@
             "show": true,
             "required": true,
             "defaultEnabled": true,
-            "totalSize": 47301407654
+            "totalSize": 47264267686
         },
         "sp": {
             "displayName": "Campaign",
@@ -40,8 +40,8 @@
     "files": [
         [
             "BlackOps3.exe",
-            143134192,
-            "2F294020B5A65E4B",
+            105994224,
+            "5D527FDFD248F541",
             "base"
         ],
         [
