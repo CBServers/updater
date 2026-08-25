@@ -12,13 +12,15 @@ const PROPERTY_KEYS = {
         GLOBAL_PLAYER_NAME: 'launcher-global-player-name',
         CDN_CUSTOM_URL: 'launcher-cdn-custom-url',
         PINNED_GAMES: 'launcher-pinned-games',
-        DESKTOP_NOTIFICATIONS: 'launcher-desktop-notifications'
+        DESKTOP_NOTIFICATIONS: 'launcher-desktop-notifications',
+        REDUCE_MOTION: 'launcher-reduce-motion'
     },
     GAME: {
         INSTALL: 'install',
         IS_INSTALLED: 'is-installed',
         LAUNCH_OPTIONS: 'launch-options',
         GAME_MODE: 'game-mode',
+        SELECTED_CLIENT_PREFIX: 'selected-client-',
         SKIP_INTRO_CINEMATIC: 'skip-intro-cinematic',
         LAUNCH_ADMIN: 'launch-admin',
         DISABLE_CB_EXTENSION: 'disable-cb-extension',
@@ -78,17 +80,24 @@ class GameUtils {
             shortName: 'COD4',
             defaultInstallPath: 'cod4_game_files',
             uiId: 'cod4x',
-            client: 'COD4x / IW3SP-Mod',
-            provider: 'CoD4x Project / IW3SP-Mod',
+            client: 'IW3x / CoD4x / IW3SP-Mod',
+            provider: 'COD4R Project / CoD4x Project / IW3SP-Mod',
             clientKey: 'others',
             hasMultipleModes: true,
             supportedModes: ['sp', 'mp'],
+            // Modes served by more than one client; first entry is the default when no
+            // selection is saved, and the choice persists via selected-client-<mode>.
+            modeClients: {
+                'mp': [
+                    { id: 'iw3x', name: 'IW3x' },
+                    { id: 'cod4x', name: 'CoD4x' }
+                ]
+            },
             supportsName: true,
             specialSettings: [],
-            codeName: 'COD4x / IW3SP-Mod',
             version: 'IW3',
-            description: 'COD4: Modern Warfare with COD4x multiplayer and IW3SP-Mod for singleplayer. Built for classic MW1 sessions and modern client maintenance.',
-            credits: 'Multiplayer is provided by CoD4x. Singleplayer is provided by IW3SP-Mod and developed by JerryALT.',
+            description: 'COD4: Modern Warfare with a choice of IW3x or COD4x multiplayer and IW3SP-Mod for singleplayer. Built for classic MW1 sessions and modern client maintenance.',
+            credits: 'Multiplayer is provided by <a href="https://iw3x.com/" target="_blank">IW3x</a>, developed by <a href="https://github.com/Divity" target="_blank">Divity</a>, or by CoD4x. Singleplayer is provided by IW3SP-Mod and developed by JerryALT.',
             accent: '#46D744',
             assetBase: './assets/img/games/cod4x',
             iconPath: './assets/img/games/cod4x/icon.ico',
@@ -108,7 +117,6 @@ class GameUtils {
             supportedModes: ['sp', 'mp', 'zm'],
             supportsName: false,
             specialSettings: [],
-            codeName: 'Plutonium T4',
             version: 'T4',
             description: 'World at War enhanced with Plutonium T4. Campaign, multiplayer and zombies stay close to the original game with modern stability patches.',
             credits: 'Campaign, Multiplayer, and Zombies are provided by the T4 client and developed by Plutonium.',
@@ -131,7 +139,6 @@ class GameUtils {
             supportedModes: ['sp', 'mp', 'zm'],
             supportsName: false,
             specialSettings: [],
-            codeName: 'Plutonium T5',
             version: 'T5',
             description: 'Black Ops enhanced with Plutonium T5. Campaign, multiplayer and zombies are grouped in one clean client flow.',
             credits: 'Campaign, Multiplayer, and Zombies are provided by the T5 client and developed by Plutonium.',
@@ -154,7 +161,6 @@ class GameUtils {
             supportedModes: ['sp', 'mp'],
             supportsName: true,
             specialSettings: [],
-            codeName: 'IW4x / IW4-SP',
             version: 'IW4',
             description: 'Modern Warfare 2 with IW4x multiplayer and IW4-SP support. Built for fast access to classic MW2 sessions and client maintenance.',
             credits: 'Multiplayer is provided by IW4x. Singleplayer is provided by IW4-SP and developed by AlterWare.',
@@ -177,7 +183,6 @@ class GameUtils {
             supportedModes: ['sp', 'mp'],
             supportsName: true,
             specialSettings: [],
-            codeName: 'Plutonium IW5 / IW5-Mod',
             version: 'IW5',
             description: 'Modern Warfare 3 with Plutonium multiplayer and IW5-Mod singleplayer support. Pick a mode only when the client actually needs it.',
             credits: 'Multiplayer is provided by Plutonium. Singleplayer is provided by IW5-Mod and developed by AlterWare.',
@@ -200,7 +205,6 @@ class GameUtils {
             supportedModes: ['sp', 'mp', 'zm'],
             supportsName: false,
             specialSettings: [],
-            codeName: 'Plutonium T6',
             version: 'T6',
             featured: true,
             description: 'Black Ops 2 campaign, multiplayer and zombies through Plutonium T6 and T6SP-Mod, with client updates, verification and base-game linking handled from one detail view.',
@@ -224,7 +228,6 @@ class GameUtils {
             supportedModes: [],
             supportsName: true,
             specialSettings: ['skip-intro-cinematic'],
-            codeName: 'BOIII',
             version: 'T7',
             description: 'Black Ops 3 with BOIII client support for campaign, multiplayer and zombies. Includes client-specific settings such as intro-skip behavior.',
             credits: 'BOIII is a CB Servers fork of the original BOIII/T7x client developed by momo5502 and AlterWare.',
@@ -247,7 +250,6 @@ class GameUtils {
             supportedModes: ['sp', 'mp'],
             supportsName: true,
             specialSettings: [],
-            codeName: 'IW6x',
             version: 'IW6',
             description: 'Ghosts with IW6x support for campaign and multiplayer. The launcher keeps install setup and client updates in the same place.',
             credits: 'IW6x is a CB Servers fork of the original IW6x/iw6-mod client developed by AlterWare.',
@@ -270,7 +272,6 @@ class GameUtils {
             supportedModes: ['sp', 'mp', 'zm', 'sv'],
             supportsName: true,
             specialSettings: [],
-            codeName: 'S1x',
             version: 'S1',
             description: 'Advanced Warfare through S1x, with campaign, multiplayer, zombies and survival mode choices presented only when relevant.',
             credits: 'S1x is a CB Servers fork of the original S1x/s1-mod client developed by AlterWare.',
@@ -293,7 +294,6 @@ class GameUtils {
             supportedModes: ['sp', 'mp'],
             supportsName: true,
             specialSettings: [],
-            codeName: 'H1-Mod',
             version: 'H1',
             description: 'Modern Warfare Remastered with H1-Mod support. Campaign and multiplayer launch modes stay behind one focused client page.',
             credits: 'H1-Mod is a CB Servers fork of the original H1-Mod client developed by Aurora.',
@@ -316,7 +316,6 @@ class GameUtils {
             supportedModes: [],
             supportsName: true,
             specialSettings: [],
-            codeName: 'IW7-Mod',
             version: 'IW7',
             description: 'Infinite Warfare with IW7-Mod support for campaign, multiplayer and zombies. Secondary actions stay close to install maintenance.',
             credits: 'IW7-Mod is a CB Servers fork of the original IW7-Mod client developed by Aurora.',
@@ -339,7 +338,6 @@ class GameUtils {
             supportedModes: ['on', 'off'],
             supportsName: true,
             specialSettings: [],
-            codeName: 'Project BO4',
             version: 'T8',
             description: 'Black Ops 4 with Project BO4 Launcher. Includes online and offline modes for multiplayer and zombies.',
             credits: 'Online and offline play are provided by Project BO4 Launcher, maintained by NotNierPea.',
@@ -362,7 +360,6 @@ class GameUtils {
             supportedModes: [],
             supportsName: false,
             specialSettings: [],
-            codeName: 'H2-Mod',
             version: 'H2',
             description: 'Modern Warfare 2 Campaign Remastered with H2-Mod support. Run the remastered MW2 campaign with stability and quality-of-life patches.',
             credits: 'MW2 Campaign Remastered support is provided by H2-Mod, developed by Alice.',
@@ -385,7 +382,6 @@ class GameUtils {
             supportedModes: [],
             supportsName: true,
             specialSettings: [],
-            codeName: 'HMW-Mod',
             version: 'HMW',
             description: 'HorizonMW is a faithful community remaster of Modern Warfare 2 multiplayer with additional content inspired by MW3.',
             credits: 'HMW-Mod is a CB Servers fork of the original HorizonMW client.',
@@ -401,17 +397,22 @@ class GameUtils {
             shortName: 'CoD',
             defaultInstallPath: 'cod1_game_files',
             uiId: 'cod1',
-            client: 'CoD1 v1.1',
-            provider: 'COD.PM',
+            client: 'CoD1 v1.1 / CoD1.1x',
+            provider: 'COD.PM / CoDExtended',
             clientKey: 'others',
             hasMultipleModes: true,
             supportedModes: ['sp', 'mp'],
+            modeClients: {
+                'mp': [
+                    { id: 'cod1', name: 'Vanilla' },
+                    { id: 'cod1x', name: 'CoD1.1x' }
+                ]
+            },
             supportsName: true,
             specialSettings: [],
-            codeName: 'CoD1 v1.1',
             version: '1.1',
-            description: 'Call of Duty (2003) running on the original v1.1 game. Jump straight into the classic World War II campaign and multiplayer from one launcher page.',
-            credits: 'Game files for the base v1.1 game are provided by <a href="https://cod.pm/" target="_blank">cod.pm</a>.',
+            description: 'Call of Duty (2003) running on the original v1.1 game, with a choice of vanilla or CoD1.1x multiplayer. Jump straight into the classic World War II campaign and multiplayer from one launcher page.',
+            credits: 'Game files for the base v1.1 game are provided by <a href="https://cod.pm/" target="_blank">cod.pm</a>. The CoD1.1x multiplayer client is developed by <a href="https://github.com/PrawyCoD1" target="_blank">Prawy</a> (<a href="https://github.com/xtnded/codextended-client" target="_blank">CoDExtended</a>).',
             accent: '#93a8bc',
             assetBase: './assets/img/games/cod1',
             iconPath: './assets/img/games/cod1/icon.ico',
@@ -424,17 +425,22 @@ class GameUtils {
             shortName: 'UO',
             defaultInstallPath: 'coduo_game_files',
             uiId: 'coduo',
-            client: 'CoDUO v1.51',
-            provider: 'COD.PM',
+            client: 'CoDUO v1.51 / CoDUO1.51x',
+            provider: 'COD.PM / CoDExtended',
             clientKey: 'others',
             hasMultipleModes: true,
             supportedModes: ['sp', 'mp'],
+            modeClients: {
+                'mp': [
+                    { id: 'coduo', name: 'Vanilla' },
+                    { id: 'coduox', name: 'CoDUO1.51x' }
+                ]
+            },
             supportsName: true,
             specialSettings: [],
-            codeName: 'CoDUO v1.51',
             version: '1.51',
-            description: 'Call of Duty: United Offensive running on the v1.51 game. The classic UO expansion with new campaigns, weapons and vehicle-based multiplayer, ready to play.',
-            credits: 'Game files for the base v1.51 game are provided by <a href="https://cod.pm/" target="_blank">cod.pm</a>.',
+            description: 'Call of Duty: United Offensive running on the v1.51 game, with a choice of vanilla or CoDUO1.51x multiplayer. The classic UO expansion with new campaigns, weapons and vehicle-based multiplayer, ready to play.',
+            credits: 'Game files for the base v1.51 game are provided by <a href="https://cod.pm/" target="_blank">cod.pm</a>. The CoDUO1.51x multiplayer client is developed by <a href="https://github.com/PrawyCoD1" target="_blank">Prawy</a> (<a href="https://github.com/xtnded/codextended-client-uo" target="_blank">CoDExtended</a>).',
             accent: '#ededec',
             assetBase: './assets/img/games/coduo',
             iconPath: './assets/img/games/coduo/icon.ico',
@@ -455,7 +461,6 @@ class GameUtils {
             supportsName: true,
             requiresElevation: true,
             specialSettings: [],
-            codeName: 'CoD2x',
             version: '1.3',
             description: 'Call of Duty 2 enhanced with the CoD2x client on top of the v1.3 game. Modern fixes and quality-of-life improvements for classic COD2 multiplayer.',
             credits: 'CoD2x is developed by Yctn and eyza. Learn more at <a href="https://cod2x.me/" target="_blank">cod2x.me</a>.',
@@ -626,6 +631,21 @@ class GameUtils {
      * @param {number} bytes - Number of bytes
      * @returns {string} Formatted string (e.g., "1.5 GB")
      */
+    static escapeHtml(value) {
+        return String(value == null ? '' : value)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
+
+    static formatCount(value) {
+        if (value >= 1000000) return (value / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+        if (value >= 1000) return (value / 1000).toFixed(1).replace(/\.0$/, '') + 'k';
+        return String(value);
+    }
+
     static formatBytes(bytes) {
         if (bytes === 0) return '0 Bytes';
 
@@ -972,6 +992,31 @@ class GameUtils {
                 alert(`${gameName} installation path not configured.`);
             }
             throw new Error('Installation path not configured');
+        }
+
+        // Hard mode gate: single choke point for the popup, deep links, -launch and library tiles.
+        // Fails open when no valid detection cache exists.
+        if (mode) {
+            let gate = null;
+            try { gate = await window.executeCommand('get-game-mode-availability', { game: backendGame }); }
+            catch (e) { console.error('get-game-mode-availability failed', e); }
+
+            const modeInfo = gate && gate.gated && gate.modes ? gate.modes[mode] : null;
+            if (modeInfo && modeInfo.available === false) {
+                const i18n = window.LauncherI18n;
+                const tr = (k, vars) => i18n ? i18n.t(k, vars) : k;
+                const modeName = (this.getModeInfo()[mode] || {}).name || mode.toUpperCase();
+                const choice = typeof window.showMessageBox === 'function'
+                    ? await window.showMessageBox(
+                        tr('errors.modeNotInstalledTitle', { mode: modeName }),
+                        tr('errors.modeNotInstalledBody', { game: gameConfig.displayName, mode: modeName }),
+                        [tr('common.install'), tr('common.cancel')])
+                    : 1;
+                if (choice === 0 && typeof window.showManageInstall === 'function') {
+                    window.showManageInstall(uiGameId, { preselectComponents: modeInfo.missingComponents || [] });
+                }
+                return;
+            }
         }
 
         let skipRedistCheck = false;

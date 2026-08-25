@@ -140,13 +140,14 @@
                 installedClients: 'Ready to Play',
                 readyToPlay: 'Ready to Play',
                 pinnedTitle: 'Pinned',
+                heroEyebrow: 'Featured',
                 heroPrev: 'Previous',
                 heroNext: 'Next',
                 notInstalled: 'Not Installed',
                 showInstalled: 'Show installed',
                 welcomeTitle: 'Welcome to CB Launcher',
                 welcomeBody: 'Welcome to CB Servers Launcher! Your one-stop launcher for Call of Duty community clients. Install, update, and play supported clients all from one place. Head to the <strong>Library</strong> tab to browse every available client and start playing. Need a hand? Head over to the <strong>Support</strong> tab or check out our <a href="https://docs.cbservers.xyz/launcher" target="_blank">docs</a>.',
-                disclaimer: 'This launcher is not affiliated with or endorsed by IW4x, Plutonium, AlterWare, Aurora, HorizonMW, CoD4x Project, IW3SP-Mod, T6SP-Mod, H2-Mod, or Project BO4. Please do not contact the original client maintainers with support requests regarding this launcher.'
+                disclaimer: 'This launcher is not affiliated with or endorsed by IW4x, Plutonium, AlterWare, Aurora, HorizonMW, CoD4x Project, IW3x, IW3SP-Mod, CoDExtended, T6SP-Mod, H2-Mod, or Project BO4. Please do not contact the original client maintainers with support requests regarding this launcher.'
             },
             library: {
                 title: 'Library',
@@ -196,7 +197,7 @@
                     reinstallAllTitle: 'Reinstall all redistributables?',
                     reinstallAllBody: 'This reinstalls all {{total}} redistributable packages, including ones already installed. Windows will show a single administrator permission (UAC) prompt. Continue?'
                 },
-                noteBody: 'This launcher is not affiliated with IW4x, Plutonium, AlterWare, Aurora, HorizonMW, CoD4x Project, IW3SP-Mod, T6SP-Mod, H2-Mod, or Project BO4. Please use CB Servers support channels for this launcher and its forks.',
+                noteBody: 'This launcher is not affiliated with IW4x, Plutonium, AlterWare, Aurora, HorizonMW, CoD4x Project, IW3x, IW3SP-Mod, CoDExtended, T6SP-Mod, H2-Mod, or Project BO4. Please use CB Servers support channels for this launcher and its forks.',
                 github: 'CB Servers GitHub'
             },
             installer: {
@@ -224,6 +225,7 @@
                 languageEnglish: 'English',
                 languageFrench: 'French',
                 languageSpanish: 'Spanish',
+                languageRussian: 'Russian',
                 skipHashVerification: 'Skip hash verification',
                 skipHashVerificationBody: 'When enabled, game file verification will skip hash checks for much faster validation at the cost of file integrity.',
                 desktopNotifications: 'Desktop notifications',
@@ -232,6 +234,8 @@
                 closeLauncherAfterLaunchBody: 'When enabled, the launcher will automatically close after launching a game.',
                 skipClientUpdate: 'Skip client update on launch',
                 skipClientUpdateBody: 'When enabled, client updates will be skipped on launch. Useful when troubleshooting, but you may run an outdated client.',
+                reduceMotion: 'Reduce motion',
+                reduceMotionBody: 'When enabled, the launcher disables its animations and transitions.',
                 skipRedistCheck: 'Skip redistributable check on launch',
                 skipRedistCheckBody: 'When enabled, the launcher will not check for missing redistributables before launching a game. Games may fail to start if required components are missing.',
                 player: 'Player',
@@ -246,6 +250,7 @@
                 about: 'About',
                 maintenance: 'Maintenance',
                 theme: 'Theme',
+                themeTactical: 'Tactical',
                 themeNavy: 'Navy Dark',
                 themeDark: 'Dark',
                 themeNavyGradient: 'Navy Gradient',
@@ -254,7 +259,7 @@
                 hideConsole: 'Hide Console',
                 checkForUpdates: 'Check for Updates',
                 source: 'Source',
-                designBy: 'Design by <a href="https://github.com/Riyuachi" target="_blank">Riyu</a> &amp; <a href="https://github.com/BradsTV" target="_blank">Brad</a>',
+                designBy: 'Design by <a href="https://github.com/BradsTV" target="_blank">Brad</a>, <a href="https://github.com/Purdze" target="_blank">Purdze</a> &amp; <a href="https://github.com/Riyuachi" target="_blank">Riyu</a>',
                 versionLoading: 'Version: Loading...',
                 versionUnknown: 'Version: Unknown',
                 versionValue: 'Version: {{version}}',
@@ -297,11 +302,74 @@
                 provider: 'Provider',
                 customClient: 'Custom client'
             },
+            mods: {
+                tab: 'Mods',
+                installed: 'Installed',
+                workshop: 'Workshop',
+                import: 'Import',
+                openFolder: 'Open {{folder}}',
+                openModFolder: 'Open folder',
+                details: 'Details',
+                folderMissing: 'That folder no longer exists.',
+                searchPlaceholder: 'Search the Workshop...',
+                filterAll: 'All',
+                filterMaps: 'Maps',
+                filterMods: 'Mods',
+                sortPopular: 'Most subscribed',
+                sortRecent: 'Recently updated',
+                sortName: 'Name',
+                install: 'Install',
+                installing: 'Installing {{percent}}%',
+                preparing: 'Preparing...',
+                cancel: 'Cancel',
+                cancelledToast: 'Install cancelled',
+                installedLabel: 'Installed',
+                update: 'Update',
+                updateAvailable: 'Update available',
+                uninstall: 'Uninstall',
+                uninstallConfirmTitle: 'Uninstall mod',
+                uninstallConfirmBody: 'Remove <strong>{{name}}</strong>? Its files will be deleted from the {{game}} content folder.',
+                uninstallSteamConfirmBody: 'Remove <strong>{{name}}</strong>? Its files will be deleted from the Steam Workshop folder, and Steam may download it again on its own while you stay subscribed to it.',
+                installedToast: '{{name}} installed',
+                updatedToast: '{{name}} updated',
+                uninstalledToast: '{{name}} removed',
+                importedToast: '{{name}} imported',
+                noInstalled: 'No custom content installed yet. Browse the Workshop or import a map or mod to get started.',
+                noInstalledImportOnly: 'No custom content installed yet. Import a map or mod folder to get started.',
+                noResults: 'No Workshop items match your search.',
+                loading: 'Loading...',
+                kindMap: 'Map',
+                kindMod: 'Mod',
+                subscribers: '{{count}} subscribers',
+                by: 'by {{author}}',
+                version: 'v{{version}}',
+                sourceWorkshop: 'Workshop',
+                sourceImport: 'Imported',
+                sourceSteam: 'Steam',
+                importFolderTitle: 'Install from folder',
+                importFolderBody: 'Pick an extracted map or mod folder. The launcher copies it into the correct content folder for this game.',
+                chooseFolder: 'Choose folder',
+                importZipTitle: 'Install from .zip',
+                importZipBody: 'Pick a downloaded archive and the launcher will extract and place it for you.',
+                chooseZip: 'Choose .zip',
+                importing: 'Copying {{name}}...',
+                extracting: 'Extracting {{name}}...',
+                loadMore: 'Load more ({{shown}} of {{total}})',
+                rating: '{{percent}}% positive ({{votes}} votes)',
+                updatedDate: 'Updated {{date}}',
+                viewOnSteam: 'View on Steam',
+                detailsFailed: 'Could not load the item details. Try again later.',
+                comingSoon: 'Coming soon',
+                foldersHint: 'Content folders used by this client:'
+            },
             popup: {
                 gameMode: {
                     title: 'Select Game Mode',
                     rememberChoice: 'Remember this choice',
-                    playMode: 'Play {{mode}} mode'
+                    playMode: 'Play {{mode}} mode',
+                    notInstalled: 'Not installed',
+                    installAction: 'Install',
+                    installActionSize: 'Install ({{size}})'
                 },
                 gameSettings: {
                     title: 'Game Settings',
@@ -312,6 +380,7 @@
                     playButtonBehavior: 'Play Button Behavior',
                     playButtonBehaviorLabel: 'When the Play button is clicked, launch:',
                     askEveryTime: 'Ask me every time',
+                    modeClientLabel: '{{mode}} client:',
                     gameOptions: 'Game Options',
                     skipIntroCinematic: 'Skip intro cinematic',
                     disableCbExtension: 'Disable CB extension',
@@ -343,6 +412,7 @@
                     title: 'Manage Installation',
                     titleWithGame: 'Manage Installation - {{game}}',
                     installTitleWithGame: 'Installation - {{game}}',
+                    setupTitleWithGame: 'Finish Setup - {{game}}',
                     header: 'Manage Install',
                     refreshTitle: 'Refresh component detection',
                     installLocation: 'Install Location',
@@ -418,7 +488,9 @@
                 gameNotConfiguredTitle: '{{game}} not configured',
                 gameNotConfiguredBody: 'You have not configured your {{game}} installation path.',
                 cannotLaunchTitle: 'Cannot launch right now',
-                cannotLaunchBody: 'Another game is currently updating. Please wait for it to finish or cancel it before launching a different game.'
+                cannotLaunchBody: 'Another game is currently updating. Please wait for it to finish or cancel it before launching a different game.',
+                modeNotInstalledTitle: '{{mode}} not installed',
+                modeNotInstalledBody: '{{game}} is missing the files for {{mode}}. You can install them now from Manage Install.'
             },
             mode: {
                 sp: {
@@ -448,20 +520,20 @@
             },
             game: {
                 'cod1': {
-                    description: 'Call of Duty (2003) running on the original v1.1 game. Jump straight into the classic World War II campaign and multiplayer from one launcher page.',
-                    credits: 'Game files for the base v1.1 game are provided by <a href="https://cod.pm/" target="_blank">cod.pm</a>.'
+                    description: 'Call of Duty (2003) running on the original v1.1 game, with a choice of vanilla or CoD1.1x multiplayer. Jump straight into the classic World War II campaign and multiplayer from one launcher page.',
+                    credits: 'Game files for the base v1.1 game are provided by <a href="https://cod.pm/" target="_blank">cod.pm</a>.<br>The CoD1.1x multiplayer client is developed by <a href="https://github.com/PrawyCoD1" target="_blank">Prawy</a> (<a href="https://github.com/xtnded/codextended-client" target="_blank">CoDExtended</a>).'
                 },
                 'coduo': {
-                    description: 'Call of Duty: United Offensive running on the v1.51 game. The classic UO expansion with new campaigns, weapons and vehicle-based multiplayer, ready to play.',
-                    credits: 'Game files for the base v1.51 game are provided by <a href="https://cod.pm/" target="_blank">cod.pm</a>.'
+                    description: 'Call of Duty: United Offensive running on the v1.51 game, with a choice of vanilla or CoDUO1.51x multiplayer. The classic UO expansion with new campaigns, weapons and vehicle-based multiplayer, ready to play.',
+                    credits: 'Game files for the base v1.51 game are provided by <a href="https://cod.pm/" target="_blank">cod.pm</a>.<br>The CoDUO1.51x multiplayer client is developed by <a href="https://github.com/PrawyCoD1" target="_blank">Prawy</a> (<a href="https://github.com/xtnded/codextended-client-uo" target="_blank">CoDExtended</a>).'
                 },
                 'cod2x': {
                     description: 'Call of Duty 2 enhanced with the CoD2x client on top of the v1.3 game. Modern fixes and quality-of-life improvements for classic COD2 multiplayer.',
                     credits: 'CoD2x is developed by Yctn and eyza. Learn more at <a href="https://cod2x.me/" target="_blank">cod2x.me</a>.'
                 },
                 'cod4x': {
-                    description: 'COD4: Modern Warfare enhanced with COD4x multiplayer and IW3SP-Mod for singleplayer. Experience the classic MW1 campaign and online play with modern client maintenance.',
-                    credits: 'Multiplayer is provided by the COD4x Client and developed by the <a href="https://cod4x.ovh/" target="_blank">CoD4x Project</a>.<br>Singleplayer is provided by the IW3SP-Mod Client and developed by <a href="https://gitea.com/JerryALT" target="_blank">JerryALT</a>.'
+                    description: 'COD4: Modern Warfare with a choice of IW3x or COD4x multiplayer and IW3SP-Mod for singleplayer. Experience the classic MW1 campaign and online play with modern client maintenance.',
+                    credits: 'Multiplayer is provided by the IW3x Client, developed by <a href="https://github.com/Divity" target="_blank">Divity</a> (<a href="https://iw3x.com/" target="_blank">iw3x.com</a>), or the COD4x Client by the <a href="https://cod4x.ovh/" target="_blank">CoD4x Project</a>.<br>Singleplayer is provided by the IW3SP-Mod Client and developed by <a href="https://gitea.com/JerryALT" target="_blank">JerryALT</a>.'
                 },
                 't4': {
                     description: 'Call of Duty: World at War enhanced with Plutonium T4 modifications. Experience the campaign, multiplayer, and zombies modes with improved stability and additional features.',
@@ -661,13 +733,14 @@
                 installedClients: 'Pret a jouer',
                 readyToPlay: 'Pret a jouer',
                 pinnedTitle: 'Epingles',
+                heroEyebrow: 'En vedette',
                 heroPrev: 'Precedent',
                 heroNext: 'Suivant',
                 notInstalled: 'Non installes',
                 showInstalled: 'Voir les installes',
                 welcomeTitle: 'Bienvenue sur CB Launcher',
                 welcomeBody: 'Bienvenue sur CB Servers Launcher&nbsp;! Votre launcher tout-en-un pour les clients communautaires Call of Duty. Installez, mettez a jour et jouez aux clients pris en charge depuis un seul endroit. Rendez-vous dans l\'onglet <strong>Bibliotheque</strong> pour parcourir tous les clients disponibles et commencer a jouer. Besoin d\'aide&nbsp;? Rendez-vous dans l\'onglet <strong>Support</strong> ou consultez notre <a href="https://docs.cbservers.xyz/launcher" target="_blank">documentation</a>.',
-                disclaimer: 'Ce launcher n\'est ni affilie ni approuve par IW4x, Plutonium, AlterWare, Aurora, HorizonMW, CoD4x Project, IW3SP-Mod, T6SP-Mod, H2-Mod ou Project BO4. Merci de ne pas contacter les developpeurs des clients d\'origine pour des questions concernant ce launcher.'
+                disclaimer: 'Ce launcher n\'est ni affilie ni approuve par IW4x, Plutonium, AlterWare, Aurora, HorizonMW, CoD4x Project, IW3x, IW3SP-Mod, CoDExtended, T6SP-Mod, H2-Mod ou Project BO4. Merci de ne pas contacter les developpeurs des clients d\'origine pour des questions concernant ce launcher.'
             },
             library: {
                 title: 'Bibliotheque',
@@ -717,7 +790,7 @@
                     reinstallAllTitle: 'Reinstaller tous les redistribuables ?',
                     reinstallAllBody: 'Cela reinstalle les {{total}} paquets redistribuables, y compris ceux deja installes. Windows affichera une seule invite d\'autorisation administrateur (UAC). Continuer ?'
                 },
-                noteBody: "Ce launcher n'est pas affilie a IW4x, Plutonium, AlterWare, Aurora, HorizonMW, CoD4x Project, IW3SP-Mod, T6SP-Mod, H2-Mod ou Project BO4. Utilisez les canaux de support CB Servers pour ce launcher et ses forks.",
+                noteBody: "Ce launcher n'est pas affilie a IW4x, Plutonium, AlterWare, Aurora, HorizonMW, CoD4x Project, IW3x, IW3SP-Mod, CoDExtended, T6SP-Mod, H2-Mod ou Project BO4. Utilisez les canaux de support CB Servers pour ce launcher et ses forks.",
                 github: 'GitHub CB Servers'
             },
             installer: {
@@ -745,6 +818,7 @@
                 languageEnglish: 'Anglais',
                 languageFrench: 'Francais',
                 languageSpanish: 'Espagnol',
+                languageRussian: 'Russe',
                 skipHashVerification: 'Ignorer la verification des hash',
                 skipHashVerificationBody: "Lorsqu'active, la verification des fichiers du jeu ignorera les controles de hash pour une validation beaucoup plus rapide au prix de l'integrite des fichiers.",
                 desktopNotifications: 'Notifications du bureau',
@@ -753,6 +827,8 @@
                 closeLauncherAfterLaunchBody: "Lorsqu'active, le launcher se fermera automatiquement apres le lancement d'un jeu.",
                 skipClientUpdate: 'Ignorer la mise a jour du client au lancement',
                 skipClientUpdateBody: "Lorsqu'active, les mises a jour du client seront ignorees au lancement. Utile pour le depannage, mais le client peut etre obsolete.",
+                reduceMotion: 'Reduire les animations',
+                reduceMotionBody: "Lorsqu'active, le launcher desactive ses animations et transitions.",
                 skipRedistCheck: 'Ignorer la verification des redistribuables au lancement',
                 skipRedistCheckBody: "Lorsqu'active, le launcher ne verifiera pas les redistribuables manquants avant de lancer un jeu. Les jeux peuvent ne pas demarrer si des composants requis sont manquants.",
                 player: 'Joueur',
@@ -767,6 +843,7 @@
                 about: 'A propos',
                 maintenance: 'Maintenance',
                 theme: 'Theme',
+                themeTactical: 'Tactique',
                 themeNavy: 'Navy Sombre',
                 themeDark: 'Sombre',
                 themeNavyGradient: 'Degrade Marine',
@@ -775,7 +852,7 @@
                 hideConsole: 'Masquer la console',
                 checkForUpdates: 'Verifier les mises a jour',
                 source: 'Source',
-                designBy: 'Design par <a href="https://github.com/Riyuachi" target="_blank">Riyu</a> &amp; <a href="https://github.com/BradsTV" target="_blank">Brad</a>',
+                designBy: 'Design par <a href="https://github.com/BradsTV" target="_blank">Brad</a>, <a href="https://github.com/Purdze" target="_blank">Purdze</a> &amp; <a href="https://github.com/Riyuachi" target="_blank">Riyu</a>',
                 versionLoading: 'Version : Chargement...',
                 versionUnknown: 'Version : Inconnue',
                 versionValue: 'Version : {{version}}',
@@ -818,11 +895,74 @@
                 provider: 'Fournisseur',
                 customClient: 'Client personnalise'
             },
+            mods: {
+                tab: 'Mods',
+                installed: 'Installes',
+                workshop: 'Workshop',
+                import: 'Importer',
+                openFolder: 'Ouvrir {{folder}}',
+                openModFolder: 'Ouvrir le dossier',
+                details: 'Details',
+                folderMissing: "Ce dossier n'existe plus.",
+                searchPlaceholder: 'Rechercher dans le Workshop...',
+                filterAll: 'Tout',
+                filterMaps: 'Cartes',
+                filterMods: 'Mods',
+                sortPopular: 'Plus populaires',
+                sortRecent: 'Mis a jour recemment',
+                sortName: 'Nom',
+                install: 'Installer',
+                installing: 'Installation {{percent}}%',
+                preparing: 'Preparation...',
+                cancel: 'Annuler',
+                cancelledToast: 'Installation annulee',
+                installedLabel: 'Installe',
+                update: 'Mettre a jour',
+                updateAvailable: 'Mise a jour disponible',
+                uninstall: 'Desinstaller',
+                uninstallConfirmTitle: 'Desinstaller le mod',
+                uninstallConfirmBody: 'Supprimer <strong>{{name}}</strong> ? Ses fichiers seront effaces du dossier de contenu de {{game}}.',
+                uninstallSteamConfirmBody: 'Supprimer <strong>{{name}}</strong> ? Ses fichiers seront effaces du dossier Steam Workshop, et Steam peut le retelecharger tout seul tant que vous restez abonne.',
+                installedToast: '{{name}} installe',
+                updatedToast: '{{name}} mis a jour',
+                uninstalledToast: '{{name}} supprime',
+                importedToast: '{{name}} importe',
+                noInstalled: 'Aucun contenu personnalise installe. Parcourez le Workshop ou importez une carte ou un mod pour commencer.',
+                noInstalledImportOnly: 'Aucun contenu personnalise installe. Importez un dossier de carte ou de mod pour commencer.',
+                noResults: 'Aucun element du Workshop ne correspond a votre recherche.',
+                loading: 'Chargement...',
+                kindMap: 'Carte',
+                kindMod: 'Mod',
+                subscribers: '{{count}} abonnes',
+                by: 'par {{author}}',
+                version: 'v{{version}}',
+                sourceWorkshop: 'Workshop',
+                sourceImport: 'Importe',
+                sourceSteam: 'Steam',
+                importFolderTitle: 'Installer depuis un dossier',
+                importFolderBody: 'Choisissez un dossier de carte ou de mod extrait. Le launcher le copie dans le bon dossier de contenu pour ce jeu.',
+                chooseFolder: 'Choisir un dossier',
+                importZipTitle: 'Installer depuis un .zip',
+                importZipBody: "Choisissez une archive telechargee et le launcher l'extraira et la placera pour vous.",
+                chooseZip: 'Choisir un .zip',
+                importing: 'Copie de {{name}}...',
+                extracting: 'Extraction de {{name}}...',
+                loadMore: 'Afficher plus ({{shown}} sur {{total}})',
+                rating: '{{percent}}% positifs ({{votes}} votes)',
+                updatedDate: 'Mis a jour le {{date}}',
+                viewOnSteam: 'Voir sur Steam',
+                detailsFailed: "Impossible de charger les details de l'element. Reessayez plus tard.",
+                comingSoon: 'Bientot disponible',
+                foldersHint: 'Dossiers de contenu utilises par ce client :'
+            },
             popup: {
                 gameMode: {
                     title: 'Choisir le mode de jeu',
                     rememberChoice: 'Memoriser ce choix',
-                    playMode: 'Jouer en mode {{mode}}'
+                    playMode: 'Jouer en mode {{mode}}',
+                    notInstalled: 'Non installe',
+                    installAction: 'Installer',
+                    installActionSize: 'Installer ({{size}})'
                 },
                 gameSettings: {
                     title: 'Parametres du jeu',
@@ -833,6 +973,7 @@
                     playButtonBehavior: 'Comportement du bouton Jouer',
                     playButtonBehaviorLabel: "Quand le bouton Jouer est clique, lancer :",
                     askEveryTime: 'Demander a chaque fois',
+                    modeClientLabel: 'Client {{mode}} :',
                     gameOptions: 'Options du jeu',
                     skipIntroCinematic: "Passer l'intro cinematique",
                     disableCbExtension: "Desactiver l'extension CB",
@@ -864,6 +1005,7 @@
                     title: "Gerer l'installation",
                     titleWithGame: "Gerer l'installation - {{game}}",
                     installTitleWithGame: "Installation - {{game}}",
+                    setupTitleWithGame: "Finaliser la configuration - {{game}}",
                     header: "Gerer l'installation",
                     refreshTitle: 'Relancer la detection des composants',
                     installLocation: "Emplacement d'installation",
@@ -939,7 +1081,9 @@
                 gameNotConfiguredTitle: '{{game}} non configure',
                 gameNotConfiguredBody: "Vous n'avez pas configure le chemin d'installation de {{game}}.",
                 cannotLaunchTitle: 'Lancement impossible pour le moment',
-                cannotLaunchBody: "Un autre jeu est en cours de mise a jour. Veuillez attendre la fin ou annuler avant de lancer un autre jeu."
+                cannotLaunchBody: "Un autre jeu est en cours de mise a jour. Veuillez attendre la fin ou annuler avant de lancer un autre jeu.",
+                modeNotInstalledTitle: '{{mode}} non installe',
+                modeNotInstalledBody: 'Les fichiers du mode {{mode}} de {{game}} sont manquants. Vous pouvez les installer maintenant depuis Gerer l\'installation.'
             },
             mode: {
                 sp: {
@@ -969,20 +1113,20 @@
             },
             game: {
                 'cod1': {
-                    description: "Call of Duty (2003) tourne sur le jeu original en v1.1. Lancez-vous directement dans la campagne et le multijoueur classiques de la Seconde Guerre mondiale depuis une seule page.",
-                    credits: 'Les fichiers du jeu de base v1.1 sont fournis par <a href="https://cod.pm/" target="_blank">cod.pm</a>.'
+                    description: "Call of Duty (2003) tourne sur le jeu original en v1.1, avec au choix le multijoueur vanilla ou CoD1.1x. Lancez-vous directement dans la campagne et le multijoueur classiques de la Seconde Guerre mondiale depuis une seule page.",
+                    credits: 'Les fichiers du jeu de base v1.1 sont fournis par <a href="https://cod.pm/" target="_blank">cod.pm</a>.<br>Le client multijoueur CoD1.1x est developpe par <a href="https://github.com/PrawyCoD1" target="_blank">Prawy</a> (<a href="https://github.com/xtnded/codextended-client" target="_blank">CoDExtended</a>).'
                 },
                 'coduo': {
-                    description: "Call of Duty: United Offensive tourne sur le jeu en v1.51. L'extension UO classique avec de nouvelles campagnes, des armes et du multijoueur en vehicule, prete a jouer.",
-                    credits: 'Les fichiers du jeu de base v1.51 sont fournis par <a href="https://cod.pm/" target="_blank">cod.pm</a>.'
+                    description: "Call of Duty: United Offensive tourne sur le jeu en v1.51, avec au choix le multijoueur vanilla ou CoDUO1.51x. L'extension UO classique avec de nouvelles campagnes, des armes et du multijoueur en vehicule, prete a jouer.",
+                    credits: 'Les fichiers du jeu de base v1.51 sont fournis par <a href="https://cod.pm/" target="_blank">cod.pm</a>.<br>Le client multijoueur CoDUO1.51x est developpe par <a href="https://github.com/PrawyCoD1" target="_blank">Prawy</a> (<a href="https://github.com/xtnded/codextended-client-uo" target="_blank">CoDExtended</a>).'
                 },
                 'cod2x': {
                     description: 'Call of Duty 2 ameliore avec le client CoD2x sur le jeu en v1.3. Corrections modernes et ameliorations de confort pour le multijoueur classique de COD2.',
                     credits: 'CoD2x est developpe par Yctn et eyza. En savoir plus sur <a href="https://cod2x.me/" target="_blank">cod2x.me</a>.'
                 },
                 'cod4x': {
-                    description: 'COD4: Modern Warfare ameliore avec le multijoueur COD4x et IW3SP-Mod pour le solo. Profitez de la campagne MW1 classique et du jeu en ligne avec une maintenance moderne.',
-                    credits: 'Le multijoueur est fourni par le client COD4x et developpe par le <a href="https://cod4x.ovh/" target="_blank">Projet CoD4x</a>.<br>Le solo est fourni par le client IW3SP-Mod et developpe par <a href="https://gitea.com/JerryALT" target="_blank">JerryALT</a>.'
+                    description: 'COD4: Modern Warfare avec au choix le multijoueur IW3x ou COD4x et IW3SP-Mod pour le solo. Profitez de la campagne MW1 classique et du jeu en ligne avec une maintenance moderne.',
+                    credits: 'Le multijoueur est fourni par le client IW3x, developpe par <a href="https://github.com/Divity" target="_blank">Divity</a> (<a href="https://iw3x.com/" target="_blank">iw3x.com</a>), ou par le client COD4x du <a href="https://cod4x.ovh/" target="_blank">Projet CoD4x</a>.<br>Le solo est fourni par le client IW3SP-Mod et developpe par <a href="https://gitea.com/JerryALT" target="_blank">JerryALT</a>.'
                 },
                 't4': {
                     description: 'Call of Duty: World at War ameliore avec les modifications de Plutonium T4. Profitez de la campagne, du multijoueur et des zombies avec une meilleure stabilite et des fonctionnalites supplementaires.',
@@ -1182,13 +1326,14 @@
                 installedClients: 'Listos para jugar',
                 readyToPlay: 'Listo para jugar',
                 pinnedTitle: 'Anclados',
+                heroEyebrow: 'Destacado',
                 heroPrev: 'Anterior',
                 heroNext: 'Siguiente',
                 notInstalled: 'No instalado',
                 showInstalled: 'Mostrar instalados',
                 welcomeTitle: 'Bienvenido a CB Launcher',
                 welcomeBody: 'Bienvenido a CB Servers Launcher! Tu launcher todo-en-uno para los clientes comunitarios de Call of Duty. Instala, actualiza y juega a los clientes compatibles desde un solo lugar. Ve a la pestana <strong>Biblioteca</strong> para explorar todos los clientes disponibles y empezar a jugar. Necesitas ayuda? Pasa por la pestana <strong>Soporte</strong> o consulta nuestra <a href="https://docs.cbservers.xyz/launcher" target="_blank">documentacion</a>.',
-                disclaimer: 'Este launcher no esta afiliado ni respaldado por IW4x, Plutonium, AlterWare, Aurora, HorizonMW, CoD4x Project, IW3SP-Mod, T6SP-Mod, H2-Mod ni Project BO4. Por favor, no contactes a los desarrolladores originales de los clientes con consultas de soporte sobre este launcher.'
+                disclaimer: 'Este launcher no esta afiliado ni respaldado por IW4x, Plutonium, AlterWare, Aurora, HorizonMW, CoD4x Project, IW3x, IW3SP-Mod, CoDExtended, T6SP-Mod, H2-Mod ni Project BO4. Por favor, no contactes a los desarrolladores originales de los clientes con consultas de soporte sobre este launcher.'
             },
             library: {
                 title: 'Biblioteca',
@@ -1238,7 +1383,7 @@
                     reinstallAllTitle: '¿Reinstalar todos los redistribuibles?',
                     reinstallAllBody: 'Esto reinstala los {{total}} paquetes redistribuibles, incluidos los ya instalados. Windows mostrara una sola ventana de permiso de administrador (UAC). ¿Continuar?'
                 },
-                noteBody: 'Este launcher no esta afiliado a IW4x, Plutonium, AlterWare, Aurora, HorizonMW, CoD4x Project, IW3SP-Mod, T6SP-Mod, H2-Mod ni Project BO4. Por favor, usa los canales de soporte de CB Servers para este launcher y sus forks.',
+                noteBody: 'Este launcher no esta afiliado a IW4x, Plutonium, AlterWare, Aurora, HorizonMW, CoD4x Project, IW3x, IW3SP-Mod, CoDExtended, T6SP-Mod, H2-Mod ni Project BO4. Por favor, usa los canales de soporte de CB Servers para este launcher y sus forks.',
                 github: 'GitHub de CB Servers'
             },
             installer: {
@@ -1266,6 +1411,7 @@
                 languageEnglish: 'Ingles',
                 languageFrench: 'Frances',
                 languageSpanish: 'Espanol',
+                languageRussian: 'Ruso',
                 skipHashVerification: 'Omitir verificacion de hash',
                 skipHashVerificationBody: 'Cuando esta activado, la verificacion de archivos del juego omitira las comprobaciones de hash para una validacion mucho mas rapida a costa de la integridad de los archivos.',
                 desktopNotifications: 'Notificaciones de escritorio',
@@ -1274,6 +1420,8 @@
                 closeLauncherAfterLaunchBody: 'Cuando esta activado, el launcher se cerrara automaticamente despues de iniciar un juego.',
                 skipClientUpdate: 'Omitir actualizacion del cliente al iniciar',
                 skipClientUpdateBody: 'Cuando esta activado, las actualizaciones del cliente se omitiran al iniciar. Util para solucionar problemas, pero podrias estar usando un cliente desactualizado.',
+                reduceMotion: 'Reducir movimiento',
+                reduceMotionBody: 'Cuando esta activado, el launcher desactiva sus animaciones y transiciones.',
                 skipRedistCheck: 'Omitir comprobacion de redistribuibles al iniciar',
                 skipRedistCheckBody: 'Cuando esta activado, el launcher no comprobara los redistribuibles faltantes antes de iniciar un juego. Los juegos pueden no iniciarse si faltan componentes requeridos.',
                 player: 'Jugador',
@@ -1288,6 +1436,7 @@
                 about: 'Acerca de',
                 maintenance: 'Mantenimiento',
                 theme: 'Tema',
+                themeTactical: 'Táctico',
                 themeNavy: 'Navy oscuro',
                 themeDark: 'Oscuro',
                 themeNavyGradient: 'Degradado Navy',
@@ -1296,7 +1445,7 @@
                 hideConsole: 'Ocultar consola',
                 checkForUpdates: 'Buscar actualizaciones',
                 source: 'Codigo fuente',
-                designBy: 'Diseno por <a href="https://github.com/Riyuachi" target="_blank">Riyu</a> &amp; <a href="https://github.com/BradsTV" target="_blank">Brad</a>',
+                designBy: 'Diseno por <a href="https://github.com/BradsTV" target="_blank">Brad</a>, <a href="https://github.com/Purdze" target="_blank">Purdze</a> &amp; <a href="https://github.com/Riyuachi" target="_blank">Riyu</a>',
                 versionLoading: 'Version: Cargando...',
                 versionUnknown: 'Version: Desconocida',
                 versionValue: 'Version: {{version}}',
@@ -1339,11 +1488,74 @@
                 provider: 'Proveedor',
                 customClient: 'Cliente personalizado'
             },
+            mods: {
+                tab: 'Mods',
+                installed: 'Instalados',
+                workshop: 'Workshop',
+                import: 'Importar',
+                openFolder: 'Abrir {{folder}}',
+                openModFolder: 'Abrir carpeta',
+                details: 'Detalles',
+                folderMissing: 'Esa carpeta ya no existe.',
+                searchPlaceholder: 'Buscar en el Workshop...',
+                filterAll: 'Todo',
+                filterMaps: 'Mapas',
+                filterMods: 'Mods',
+                sortPopular: 'Mas suscritos',
+                sortRecent: 'Actualizados recientemente',
+                sortName: 'Nombre',
+                install: 'Instalar',
+                installing: 'Instalando {{percent}}%',
+                preparing: 'Preparando...',
+                cancel: 'Cancelar',
+                cancelledToast: 'Instalacion cancelada',
+                installedLabel: 'Instalado',
+                update: 'Actualizar',
+                updateAvailable: 'Actualizacion disponible',
+                uninstall: 'Desinstalar',
+                uninstallConfirmTitle: 'Desinstalar mod',
+                uninstallConfirmBody: 'Eliminar <strong>{{name}}</strong>? Sus archivos se borraran de la carpeta de contenido de {{game}}.',
+                uninstallSteamConfirmBody: 'Eliminar <strong>{{name}}</strong>? Sus archivos se borraran de la carpeta de Steam Workshop, y Steam puede volver a descargarlo por su cuenta mientras sigas suscrito.',
+                installedToast: '{{name}} instalado',
+                updatedToast: '{{name}} actualizado',
+                uninstalledToast: '{{name}} eliminado',
+                importedToast: '{{name}} importado',
+                noInstalled: 'Aun no hay contenido personalizado instalado. Explora el Workshop o importa un mapa o mod para empezar.',
+                noInstalledImportOnly: 'Aun no hay contenido personalizado instalado. Importa una carpeta de mapa o mod para empezar.',
+                noResults: 'Ningun elemento del Workshop coincide con tu busqueda.',
+                loading: 'Cargando...',
+                kindMap: 'Mapa',
+                kindMod: 'Mod',
+                subscribers: '{{count}} suscriptores',
+                by: 'por {{author}}',
+                version: 'v{{version}}',
+                sourceWorkshop: 'Workshop',
+                sourceImport: 'Importado',
+                sourceSteam: 'Steam',
+                importFolderTitle: 'Instalar desde carpeta',
+                importFolderBody: 'Elige una carpeta de mapa o mod extraida. El launcher la copiara a la carpeta de contenido correcta de este juego.',
+                chooseFolder: 'Elegir carpeta',
+                importZipTitle: 'Instalar desde .zip',
+                importZipBody: 'Elige un archivo descargado y el launcher lo extraera y colocara por ti.',
+                chooseZip: 'Elegir .zip',
+                importing: 'Copiando {{name}}...',
+                extracting: 'Extrayendo {{name}}...',
+                loadMore: 'Cargar mas ({{shown}} de {{total}})',
+                rating: '{{percent}}% positivos ({{votes}} votos)',
+                updatedDate: 'Actualizado el {{date}}',
+                viewOnSteam: 'Ver en Steam',
+                detailsFailed: 'No se pudieron cargar los detalles del elemento. Intentalo mas tarde.',
+                comingSoon: 'Proximamente',
+                foldersHint: 'Carpetas de contenido que usa este cliente:'
+            },
             popup: {
                 gameMode: {
                     title: 'Selecciona modo de juego',
                     rememberChoice: 'Recordar esta eleccion',
-                    playMode: 'Jugar en modo {{mode}}'
+                    playMode: 'Jugar en modo {{mode}}',
+                    notInstalled: 'No instalado',
+                    installAction: 'Instalar',
+                    installActionSize: 'Instalar ({{size}})'
                 },
                 gameSettings: {
                     title: 'Ajustes del juego',
@@ -1354,6 +1566,7 @@
                     playButtonBehavior: 'Comportamiento del boton Jugar',
                     playButtonBehaviorLabel: 'Cuando se hace clic en Jugar, iniciar:',
                     askEveryTime: 'Preguntarme cada vez',
+                    modeClientLabel: 'Cliente de {{mode}}:',
                     gameOptions: 'Opciones del juego',
                     skipIntroCinematic: 'Omitir cinematica de introduccion',
                     disableCbExtension: 'Desactivar extension CB',
@@ -1385,6 +1598,7 @@
                     title: 'Gestionar instalacion',
                     titleWithGame: 'Gestionar instalacion - {{game}}',
                     installTitleWithGame: 'Instalacion - {{game}}',
+                    setupTitleWithGame: 'Finalizar configuracion - {{game}}',
                     header: 'Gestionar instalacion',
                     refreshTitle: 'Actualizar deteccion de componentes',
                     installLocation: 'Ubicacion de instalacion',
@@ -1460,7 +1674,9 @@
                 gameNotConfiguredTitle: '{{game}} no configurado',
                 gameNotConfiguredBody: 'No has configurado la ruta de instalacion de {{game}}.',
                 cannotLaunchTitle: 'No se puede iniciar ahora',
-                cannotLaunchBody: 'Otro juego se esta actualizando. Espera a que termine o cancela la operacion antes de iniciar otro juego.'
+                cannotLaunchBody: 'Otro juego se esta actualizando. Espera a que termine o cancela la operacion antes de iniciar otro juego.',
+                modeNotInstalledTitle: '{{mode}} no instalado',
+                modeNotInstalledBody: 'Faltan los archivos del modo {{mode}} de {{game}}. Puedes instalarlos ahora desde Administrar instalacion.'
             },
             mode: {
                 sp: {
@@ -1490,20 +1706,20 @@
             },
             game: {
                 'cod1': {
-                    description: 'Call of Duty (2003) ejecutandose sobre el juego original en v1.1. Entra directamente a la campana y el multijugador clasicos de la Segunda Guerra Mundial desde una sola pagina.',
-                    credits: 'Los archivos del juego base v1.1 los proporciona <a href="https://cod.pm/" target="_blank">cod.pm</a>.'
+                    description: 'Call of Duty (2003) ejecutandose sobre el juego original en v1.1, con multijugador vanilla o CoD1.1x a eleccion. Entra directamente a la campana y el multijugador clasicos de la Segunda Guerra Mundial desde una sola pagina.',
+                    credits: 'Los archivos del juego base v1.1 los proporciona <a href="https://cod.pm/" target="_blank">cod.pm</a>.<br>El cliente multijugador CoD1.1x lo desarrolla <a href="https://github.com/PrawyCoD1" target="_blank">Prawy</a> (<a href="https://github.com/xtnded/codextended-client" target="_blank">CoDExtended</a>).'
                 },
                 'coduo': {
-                    description: 'Call of Duty: United Offensive ejecutandose sobre el juego en v1.51. La clasica expansion UO con nuevas campanas, armas y multijugador con vehiculos, lista para jugar.',
-                    credits: 'Los archivos del juego base v1.51 los proporciona <a href="https://cod.pm/" target="_blank">cod.pm</a>.'
+                    description: 'Call of Duty: United Offensive ejecutandose sobre el juego en v1.51, con multijugador vanilla o CoDUO1.51x a eleccion. La clasica expansion UO con nuevas campanas, armas y multijugador con vehiculos, lista para jugar.',
+                    credits: 'Los archivos del juego base v1.51 los proporciona <a href="https://cod.pm/" target="_blank">cod.pm</a>.<br>El cliente multijugador CoDUO1.51x lo desarrolla <a href="https://github.com/PrawyCoD1" target="_blank">Prawy</a> (<a href="https://github.com/xtnded/codextended-client-uo" target="_blank">CoDExtended</a>).'
                 },
                 'cod2x': {
                     description: 'Call of Duty 2 mejorado con el cliente CoD2x sobre el juego en v1.3. Correcciones modernas y mejoras de calidad de vida para el multijugador clasico de COD2.',
                     credits: 'CoD2x esta desarrollado por Yctn y eyza. Mas informacion en <a href="https://cod2x.me/" target="_blank">cod2x.me</a>.'
                 },
                 'cod4x': {
-                    description: 'COD4: Modern Warfare mejorado con el multijugador de COD4x y IW3SP-Mod para un jugador. Disfruta de la clasica campana de MW1 y del juego en linea con mantenimiento de cliente moderno.',
-                    credits: 'El multijugador lo proporciona el cliente COD4x, desarrollado por el <a href="https://cod4x.ovh/" target="_blank">Proyecto CoD4x</a>.<br>El modo un jugador lo proporciona el cliente IW3SP-Mod, desarrollado por <a href="https://gitea.com/JerryALT" target="_blank">JerryALT</a>.'
+                    description: 'COD4: Modern Warfare con multijugador IW3x o COD4x a eleccion y IW3SP-Mod para un jugador. Disfruta de la clasica campana de MW1 y del juego en linea con mantenimiento de cliente moderno.',
+                    credits: 'El multijugador lo proporciona el cliente IW3x, desarrollado por <a href="https://github.com/Divity" target="_blank">Divity</a> (<a href="https://iw3x.com/" target="_blank">iw3x.com</a>), o el cliente COD4x del <a href="https://cod4x.ovh/" target="_blank">Proyecto CoD4x</a>.<br>El modo un jugador lo proporciona el cliente IW3SP-Mod, desarrollado por <a href="https://gitea.com/JerryALT" target="_blank">JerryALT</a>.'
                 },
                 't4': {
                     description: 'Call of Duty: World at War mejorado con las modificaciones de Plutonium T4. Disfruta de la campana, el multijugador y el modo zombis con mayor estabilidad y funciones adicionales.',
@@ -1560,6 +1776,597 @@
                 'hmw-mod': {
                     description: "HorizonMW. Una remasterizacion comunitaria fiel del multijugador de Modern Warfare 2 con contenido adicional de MW3.",
                     credits: 'Este es un <a href="https://github.com/CBServers/HorizonMW-Client" target="_blank">fork</a> del cliente original HMW-Mod desarrollado por <a href="https://horizonmw.org/" target="_blank">HorizonMW</a> con parches CB anadidos.'
+                }
+            }
+        },
+        ru: {
+            app: {
+                title: 'CB Servers Launcher'
+            },
+            window: {
+                minimize: 'Свернуть',
+                maximize: 'Развернуть',
+                restore: 'Восстановить',
+                close: 'Закрыть'
+            },
+            brand: {
+                launcher: 'Лаунчер'
+            },
+            nav: {
+                home: 'Главная',
+                library: 'Библиотека',
+                downloads: 'Загрузки',
+                friends: 'Друзья',
+                support: 'Поддержка',
+                settings: 'Настройки',
+                myGames: 'Мои игры'
+            },
+            downloads: {
+                title: 'Загрузки',
+                subtitle: 'Активные и ожидающие загрузки игр.',
+                empty: 'Нет активных загрузок.',
+                statusVerifying: 'Проверка',
+                statusInstalling: 'Установка',
+                statusUninstalling: 'Удаление',
+                statusActive: 'Выполняется',
+                statusQueued: 'В очереди — #{{position}}',
+                statusPaused: 'Приостановлено',
+                statusPausedAt: 'Приостановлено — {{percent}}%',
+                pause: 'Пауза',
+                resume: 'Продолжить',
+                etaLeft: '{{time}}'
+            },
+            friends: {
+                title: 'Друзья',
+                subtitle: 'Узнайте, кто в сети и во что играет.',
+                empty: 'Пока нет друзей для отображения.',
+                statusOnline: 'В сети',
+                statusIdle: 'Неактивен',
+                statusOffline: 'Не в сети',
+                linkBody: 'Привяжите лаунчер к вашему аккаунту Discord, чтобы играть с друзьями через CB Launcher. Требуется аккаунт Discord (13+).',
+                linkCta: 'Привязать лаунчер к Discord',
+                linking: 'Подключение к Discord...',
+                inLauncher: 'В CB Launcher',
+                degraded: 'Служба друзей недоступна — отображаются только друзья, которые сейчас в лаунчере.',
+                invite: 'Пригласить',
+                join: 'Присоединиться',
+                askToJoin: 'Попроситься присоединиться',
+                inYourMatch: 'В вашей игре',
+                inviteTitle: 'Приглашение в игру',
+                inviteBody: '{name} пригласил вас присоединиться к его игре. Присоединиться сейчас?',
+                inviteBodyGame: '{name} пригласил вас присоединиться к его игре {game}. Присоединиться сейчас?',
+                joinRequestTitle: 'Запрос на присоединение',
+                joinRequestBody: '{name} хочет присоединиться к вашей игре. Разрешить?',
+                joinRequestBodyGame: '{name} хочет присоединиться к вашей игре {game}. Разрешить?',
+                joinRequestOpenBody: '{name} хочет присоединиться к вашему матчу. Подтверждение откроет ваш матч для друзей.',
+                joinRequestOpenBodyGame: '{name} хочет присоединиться к вашему матчу в {game}. Подтверждение откроет ваш матч для друзей.',
+                joinAcceptedTitle: 'Запрос принят',
+                joinAcceptedBody: '{name} принял ваш запрос на присоединение. Присоединиться сейчас?',
+                joinAcceptedBodyGame: '{name} принял ваш запрос на присоединение к его игре {game}. Присоединиться сейчас?',
+                accept: 'Присоединиться',
+                approve: 'Подтвердить',
+                decline: 'Отклонить',
+                joinLaunchTitle: 'Присоединиться к матчу друга?',
+                joinLaunchBody: 'Игра не запущена. Присоединение запустит её и подключит вас к матчу друга.'
+            },
+            toasts: {
+                discordLinked: 'Аккаунт Discord привязан',
+                discordUnlinked: 'Аккаунт Discord отвязан',
+                discordLinkFailed: 'Привязка Discord не удалась или была отменена',
+                inviteSent: 'Приглашение отправлено',
+                joinRequestSent: 'Запрос на присоединение отправлен',
+                joining: 'Подключение...',
+                inviteRateLimited: 'Discord ограничивает отправку приглашений, попробуйте через {{seconds}}с',
+                inviteFailed: 'Запрос к Discord не удался',
+                queued: '{{game}} добавлена в очередь',
+                queuedVerify: '{{game}} поставлена в очередь на проверку/обновление',
+                queuedInstall: '{{game}} поставлена в очередь на загрузку',
+                queuedUninstall: '{{game}} поставлена в очередь на удаление',
+                cancelledVerify: 'Проверка/обновление {{game}} отменены',
+                cancelledInstall: 'Загрузка {{game}} отменена',
+                cancelledUninstall: 'Удаление {{game}} отменено',
+                cancelled: '{{game}} отменена',
+                shortcutCreated: 'Ярлык создан для {{game}}',
+                shortcutFailed: 'Не удалось создать ярлык для {{game}}'
+            },
+            offline: {
+                titleSuffix: '(ОФЛАЙН)',
+                blockTitle: 'Офлайн-режим',
+                blockBody: 'Лаунчер работает в офлайн-режиме, поэтому загрузки, обновления и проверка файлов отключены. Перезапустить онлайн для продолжения?',
+                relaunchOnline: 'Перезапустить онлайн'
+            },
+            deepLink: {
+                unknownGame: 'Неизвестная игра в ссылке: {{game}}',
+                unknownAction: 'Неизвестное действие ссылки: {{action}}'
+            },
+            common: {
+                ok: 'ОК',
+                cancel: 'Отмена',
+                confirm: 'Подтвердить',
+                save: 'Сохранить',
+                play: 'Играть',
+                verify: 'Проверить файлы',
+                install: 'Установить',
+                installing: 'Установка',
+                verifying: 'Проверка',
+                uninstalling: 'Удаление',
+                queued: 'В очереди',
+                reinstall: 'Переустановить',
+                manage: 'Управление',
+                manageInstall: 'Управление установкой',
+                setup: 'Настройка',
+                finishSetup: 'Завершить настройку',
+                stop: 'Остановить',
+                uninstall: 'Удалить',
+                applyChanges: 'Применить изменения',
+                configure: 'Настроить',
+                browse: 'Обзор',
+                browseLocalFiles: 'Просмотр локальных файлов',
+                saveSettings: 'Сохранить настройки',
+                resetSettings: 'Сбросить настройки',
+                continue: 'Продолжить',
+                disabled: 'Отключено',
+                source: 'Исходный код',
+                loading: 'Загрузка...',
+                error: 'Ошибка',
+                pinToHome: 'Закрепить на главной',
+                unpinFromHome: 'Открепить от главной',
+                gameDetails: 'Подробности игры',
+                createShortcut: 'Создать ярлык',
+                comingSoon: 'Скоро'
+            },
+            home: {
+                installedClients: 'Готово к игре',
+                readyToPlay: 'Готово к игре',
+                pinnedTitle: 'Закреплённое',
+                heroPrev: 'Предыдущий',
+                heroNext: 'Следующий',
+                notInstalled: 'Не установлено',
+                showInstalled: 'Показать установленные',
+                welcomeTitle: 'Добро пожаловать в CB Launcher',
+                welcomeBody: 'Добро пожаловать в CB Servers Launcher! Ваш универсальный лаунчер для клиентов сообщества Call of Duty. Устанавливайте, обновляйте и играйте в поддерживаемые клиенты из одного места. Перейдите на вкладку <strong>Библиотека</strong>, чтобы просмотреть все доступные клиенты и начать играть. Нужна помощь? Посетите вкладку <strong>Поддержка</strong> или ознакомьтесь с нашей <a href="https://docs.cbservers.xyz/launcher" target="_blank">документацией</a>.',
+                disclaimer: 'Этот лаунчер не связан и не одобрен IW4x, Plutonium, AlterWare, Aurora, HorizonMW, CoD4x Project, IW3x, IW3SP-Mod, CoDExtended, T6SP-Mod, H2-Mod или Project BO4. Пожалуйста, не обращайтесь к разработчикам оригинальных клиентов с вопросами поддержки по этому лаунчеру.'
+            },
+            library: {
+                title: 'Библиотека',
+                subtitle: 'Клиенты Call of Duty, доступные через CB Launcher.',
+                comingSoonHint: 'Поддержка клиента в разработке.',
+                filterAll: 'Все',
+                filterInstalled: 'Установленные',
+                filterNotInstalled: 'Не установленные',
+                filterPlutonium: 'Plutonium',
+                filterAlterWare: 'AlterWare',
+                filterAurora: 'Aurora',
+                filterHorizonMW: 'HorizonMW',
+                filterOthers: 'Другие',
+                searchPlaceholder: 'Поиск клиентов...',
+                clearSearch: 'Очистить поиск',
+                noMatches: 'Нет клиентов, соответствующих этому фильтру.'
+            },
+            support: {
+                title: 'Поддержка',
+                subtitle: 'Устранение неполадок, распространяемые компоненты и помощь сообщества.',
+                communityTitle: 'Поддержка сообщества',
+                communityBody: 'Присоединяйтесь к Discord — самому быстрому месту для получения помощи по настройке лаунчера, установке клиентов и доступу к серверам.',
+                discordServer: 'Discord',
+                launcherFaqTitle: 'Часто задаваемые вопросы о лаунчере',
+                launcherFaqBody: 'Застрявшие или медленные загрузки, выбор сервера загрузки, размещение файлов игр, удаление и игры, которые не запускаются.',
+                launcherFaqCta: 'Открыть FAQ лаунчера',
+                gameFaqTitle: 'Часто задаваемые вопросы по игровым клиентам',
+                gameFaqBody: 'Помощь по каждому клиенту: частные матчи с друзьями, смена ника в игре, геймпады, разблокировка предметов и специфические для клиента сбои.',
+                gameFaqCta: 'Открыть FAQ игровых клиентов',
+                reportBug: 'Сообщить об ошибке',
+                openLogs: 'Открыть папку с логами',
+                redistTitle: 'Распространяемые компоненты',
+                redistBody: 'Установите среды выполнения Visual C++ и DirectX, необходимые для старых клиентов Call of Duty.',
+                manageRedist: 'Управление распространяемыми компонентами',
+                redistSummary: '{{installed}} из {{total}} установлено',
+                installAllMissing: 'Установить все недостающие',
+                redistAllInstalled: 'Все установлены',
+                reinstallAll: 'Переустановить всё',
+                redistStatusInstalled: 'Установлено',
+                redistStatusPending: 'Ожидание',
+                redistStatusMissing: 'Отсутствует',
+                redistStatusDownloading: 'Загрузка',
+                redistStatusInstalling: 'Установка',
+                redistStatusFailed: 'Ошибка',
+                popup: {
+                    title: 'Управление распространяемыми компонентами',
+                    reinstallAllTitle: 'Переустановить все распространяемые компоненты?',
+                    reinstallAllBody: 'Это переустановит все {{total}} пакетов распространяемых компонентов, включая уже установленные. Windows покажет один запрос разрешения администратора (UAC). Продолжить?'
+                },
+                noteBody: 'Этот лаунчер не связан с IW4x, Plutonium, AlterWare, Aurora, HorizonMW, CoD4x Project, IW3x, IW3SP-Mod, CoDExtended, T6SP-Mod, H2-Mod или Project BO4. Пожалуйста, используйте каналы поддержки CB Servers для этого лаунчера и его форков.',
+                github: 'CB Servers GitHub'
+            },
+            installer: {
+                missingRedistTitle: 'Отсутствуют необходимые компоненты',
+                missingRedistBody: 'Для {{gameName}} требуются следующие компоненты:',
+                installAndLaunch: 'Установить и запустить',
+                launchAnyway: 'Запустить в любом случае',
+                dontCheckRedistAgain: 'Больше не проверять отсутствующие распространяемые компоненты',
+                installingComponents: 'Установка необходимых компонентов…',
+                installingNamed: 'Установка {{name}}…',
+                redistInstallFailed: 'Не удалось установить необходимые компоненты. Откройте страницу Поддержки и воспользуйтесь пунктом Управление распространяемыми компонентами.'
+            },
+            settings: {
+                title: 'Настройки',
+                subtitle: 'Предпочтения лаунчера и сетевые настройки.',
+                gameDirectories: 'Каталоги игр',
+                gameDirectoriesBody: 'Свяжите каждый пользовательский клиент с каталогом базовой игры Steam.',
+                notConfiguredPath: 'Папка не настроена',
+                network: 'Сеть',
+                downloadServer: 'Сервер загрузки',
+                downloadServerBody: 'Выберите регион CDN или позвольте лаунчеру выбрать самый быстрый.',
+                launcher: 'Лаунчер',
+                language: 'Язык',
+                languageBody: 'Выберите язык интерфейса лаунчера. Эта настройка влияет только на интерфейс лаунчера, а не на язык в игре.',
+                languageEnglish: 'Английский',
+                languageFrench: 'Французский',
+                languageSpanish: 'Испанский',
+                languageRussian: 'Русский',
+                skipHashVerification: 'Пропустить проверку хешей',
+                skipHashVerificationBody: 'При включении проверка файлов игры будет пропускать проверки хешей для более быстрой валидации за счёт целостности файлов.',
+                desktopNotifications: 'Уведомления рабочего стола',
+                desktopNotificationsBody: 'При включении приглашения в игру от друзей также отображаются как уведомления Windows со звуком.',
+                closeLauncherAfterLaunch: 'Закрывать лаунчер после запуска игры',
+                closeLauncherAfterLaunchBody: 'При включении лаунчер будет автоматически закрываться после запуска игры.',
+                skipClientUpdate: 'Пропускать обновление клиента при запуске',
+                skipClientUpdateBody: 'При включении обновления клиента будут пропускаться при запуске. Полезно при устранении неполадок, но вы можете использовать устаревший клиент.',
+                reduceMotion: 'Уменьшить анимацию',
+                reduceMotionBody: 'При включении лаунчер отключает свои анимации и переходы.',
+                skipRedistCheck: 'Пропускать проверку распространяемых компонентов при запуске',
+                skipRedistCheckBody: 'При включении лаунчер не будет проверять наличие недостающих распространяемых компонентов перед запуском игры. Игры могут не запуститься, если отсутствуют необходимые компоненты.',
+                player: 'Игрок',
+                globalPlayerName: 'Глобальное имя в игре',
+                globalPlayerNameBody: 'Используется как ваше имя в игре для всех игр, поддерживающих пользовательские имена. Может быть переопределено для каждой игры.',
+                discord: 'Аккаунт Discord',
+                discordBody: 'Привяжите ваш аккаунт Discord для использования списка друзей. Пока привязано, друзья в Discord видят вас играющим в CB Launcher.',
+                discordLink: 'Привязать',
+                discordUnlink: 'Отвязать',
+                discordLinkedAs: 'Привязан как {{name}}',
+                discordNotLinked: 'Не привязан',
+                about: 'О программе',
+                maintenance: 'Обслуживание',
+                theme: 'Тема',
+                themeNavy: 'Тёмно-синяя',
+                themeDark: 'Тёмная',
+                themeNavyGradient: 'Градиент тёмно-синий',
+                resetAllSettings: 'Сбросить все настройки',
+                showConsole: 'Показать консоль',
+                hideConsole: 'Скрыть консоль',
+                checkForUpdates: 'Проверить обновления',
+                source: 'Исходный код',
+                designBy: 'Дизайн: <a href="https://github.com/BradsTV" target="_blank">Brad</a>, <a href="https://github.com/Purdze" target="_blank">Purdze</a> &amp; <a href="https://github.com/Riyuachi" target="_blank">Riyu</a>',
+                versionLoading: 'Версия: Загрузка...',
+                versionUnknown: 'Версия: Неизвестно',
+                versionValue: 'Версия: {{version}}',
+                themeBody: 'Переключайтесь между доступными цветовыми темами лаунчера.'
+            },
+            cdn: {
+                auto: 'Авто',
+                na: 'Северная Америка',
+                eu: 'Европа',
+                custom: 'Пользовательский',
+                addCustom: 'Добавить пользовательский...',
+                addCustomTitle: 'Добавить или изменить пользовательский сервер',
+                retest: 'Повторно проверить скорость серверов'
+            },
+            progress: {
+                readyToPlay: 'Готово к игре',
+                launching: 'Запуск {{game}}...',
+                verifying: 'Проверка {{game}}...',
+                launchComplete: 'Запуск завершён!',
+                verificationComplete: 'Проверка завершена!',
+                downloadComplete: 'Загрузка завершена!',
+                uninstallComplete: 'Удаление завершено!'
+            },
+            status: {
+                readyToPlay: 'Готово к игре',
+                notInstalled: 'Не установлено',
+                updateClient: 'Обновить клиент',
+                baseGameMissing: 'Базовая игра отсутствует',
+                updateAvailable: 'Доступно обновление'
+            },
+            detail: {
+                overview: 'Обзор',
+                clientSettings: 'Настройки',
+                modsScripts: 'Моды/Скрипты',
+                credits: 'Авторы',
+                note: 'Примечание',
+                noteBody: 'Этот лаунчер не связан и не одобрен {{provider}}. Пожалуйста, не обращайтесь к разработчикам оригинальных клиентов с вопросами поддержки по этому лаунчеру, используйте наш <a href="https://cbservers.xyz/discord" target="_blank">Discord</a>.',
+                verifySteamFiles: 'Проверить файлы Steam',
+                client: 'Клиент',
+                provider: 'Поставщик',
+                customClient: 'Пользовательский клиент'
+            },
+            mods: {
+                tab: 'Моды',
+                installed: 'Установлено',
+                workshop: 'Мастерская',
+                import: 'Импорт',
+                openFolder: 'Открыть {{folder}}',
+                openModFolder: 'Открыть папку',
+                details: 'Подробности',
+                folderMissing: 'Этой папки больше нет.',
+                searchPlaceholder: 'Поиск в Мастерской...',
+                filterAll: 'Все',
+                filterMaps: 'Карты',
+                filterMods: 'Моды',
+                sortPopular: 'По подписчикам',
+                sortRecent: 'Недавно обновлённые',
+                sortName: 'По названию',
+                install: 'Установить',
+                installing: 'Установка {{percent}}%',
+                preparing: 'Подготовка...',
+                cancel: 'Отмена',
+                cancelledToast: 'Установка отменена',
+                installedLabel: 'Установлено',
+                update: 'Обновить',
+                updateAvailable: 'Доступно обновление',
+                uninstall: 'Удалить',
+                uninstallConfirmTitle: 'Удалить мод',
+                uninstallConfirmBody: 'Удалить <strong>{{name}}</strong>? Его файлы будут удалены из папки контента {{game}}.',
+                uninstallSteamConfirmBody: 'Удалить <strong>{{name}}</strong>? Его файлы будут удалены из папки Steam Workshop, и Steam может загрузить его снова, пока вы подписаны на него.',
+                installedToast: '{{name}} установлен',
+                updatedToast: '{{name}} обновлён',
+                uninstalledToast: '{{name}} удалён',
+                importedToast: '{{name}} импортирован',
+                noInstalled: 'Пользовательский контент ещё не установлен. Загляните в Мастерскую или импортируйте карту или мод.',
+                noInstalledImportOnly: 'Пользовательский контент ещё не установлен. Импортируйте папку карты или мода.',
+                noResults: 'В Мастерской ничего не найдено по вашему запросу.',
+                loading: 'Загрузка...',
+                kindMap: 'Карта',
+                kindMod: 'Мод',
+                subscribers: '{{count}} подписчиков',
+                by: 'автор {{author}}',
+                version: 'v{{version}}',
+                sourceWorkshop: 'Мастерская',
+                sourceImport: 'Импорт',
+                sourceSteam: 'Steam',
+                importFolderTitle: 'Установить из папки',
+                importFolderBody: 'Выберите распакованную папку карты или мода. Лаунчер скопирует её в нужную папку контента этой игры.',
+                chooseFolder: 'Выбрать папку',
+                importZipTitle: 'Установить из .zip',
+                importZipBody: 'Выберите скачанный архив - лаунчер распакует и разместит его сам.',
+                chooseZip: 'Выбрать .zip',
+                importing: 'Копирование {{name}}...',
+                extracting: 'Распаковка {{name}}...',
+                loadMore: 'Показать ещё ({{shown}} из {{total}})',
+                rating: '{{percent}}% положительных ({{votes}} голосов)',
+                updatedDate: 'Обновлено {{date}}',
+                viewOnSteam: 'Открыть в Steam',
+                detailsFailed: 'Не удалось загрузить сведения об элементе. Попробуйте позже.',
+                comingSoon: 'Скоро',
+                foldersHint: 'Папки контента этого клиента:'
+            },
+            popup: {
+                gameMode: {
+                    title: 'Выберите режим игры',
+                    rememberChoice: 'Запомнить этот выбор',
+                    playMode: 'Играть в режиме {{mode}}',
+                    notInstalled: 'Не установлено',
+                    installAction: 'Установить',
+                    installActionSize: 'Установить ({{size}})'
+                },
+                gameSettings: {
+                    title: 'Настройки игры',
+                    titleWithGame: 'Настройки {{game}}',
+                    installationPath: 'Путь установки',
+                    installationFolderWithGame: 'Папка установки {{game}}:',
+                    installationPlaceholder: 'Выберите папку установки...',
+                    playButtonBehavior: 'Поведение кнопки "Играть"',
+                    playButtonBehaviorLabel: 'При нажатии кнопки "Играть" запускать:',
+                    askEveryTime: 'Спрашивать каждый раз',
+                    modeClientLabel: 'Клиент для режима "{{mode}}":',
+                    gameOptions: 'Игровые опции',
+                    skipIntroCinematic: 'Пропустить вступительный ролик',
+                    disableCbExtension: 'Отключить расширение CB',
+                    launchAdmin: 'Запускать от имени администратора',
+                    player: 'Игрок',
+                    playerNameOverride: 'Имя для этой игры',
+                    playerNameOverrideHelp: 'Переопределяет глобальное имя для этой игры.',
+                    playerNameOverridePlaceholder: 'Оставьте пустым для глобального',
+                    playerNameOverrideError: 'Имя должно содержать от 3 до 16 символов или быть пустым.',
+                    customResolution: 'Пользовательское разрешение',
+                    customResolutionPreset: 'Разрешение',
+                    customResolutionDimensions: 'Ширина × Высота',
+                    customResolutionCustomOption: 'Пользовательское',
+                    customResolutionError: 'Ширина и высота должны быть положительными числами.',
+                    advanced: 'Дополнительно',
+                    launchOptions: 'Параметры запуска:',
+                    invalidGamePathTitle: 'Неверный путь к игре',
+                    invalidGamePathBody: 'Выбранная папка не содержит действительных файлов игры {{game}}. Пожалуйста, выберите правильную папку установки игры.',
+                    saveFailedTitle: 'Ошибка сохранения',
+                    saveFailedBody: 'Не удалось сохранить настройки. Попробуйте снова.',
+                    resetTitle: 'Сбросить настройки игры',
+                    resetBody: 'Вы уверены, что хотите сбросить все настройки для {{game}}? Это очистит путь установки и игровые предпочтения, но НЕ УДАЛИТ игровые файлы.',
+                    resetDoneTitle: 'Настройки сброшены',
+                    resetDoneBody: 'Настройки {{game}} сброшены к значениям по умолчанию!',
+                    resetFailedTitle: 'Ошибка сброса',
+                    resetFailedBody: 'Не удалось сбросить настройки. Попробуйте снова.'
+                },
+                componentSelection: {
+                    title: 'Управление установкой',
+                    titleWithGame: 'Управление установкой - {{game}}',
+                    installTitleWithGame: 'Установка - {{game}}',
+                    setupTitleWithGame: 'Завершение настройки - {{game}}',
+                    header: 'Управление установкой',
+                    refreshTitle: 'Обновить определение компонентов',
+                    installLocation: 'Расположение установки',
+                    chooseInstallLocation: 'Выберите место установки игры...',
+                    downloadInfo: 'Информация о загрузке',
+                    projectedSize: 'Предполагаемый размер:',
+                    availableSpace: 'Доступное место:',
+                    calculating: 'Расчёт...',
+                    detectingInstalled: 'Определение установленных компонентов...',
+                    detectionCanTakeMinutes: '(Может занять несколько минут)',
+                    uninstall: 'Удалить',
+                    loadError: 'Не удалось загрузить информацию о компонентах. Попробуйте снова.',
+                    refreshError: 'Не удалось обновить определение компонентов. Попробуйте снова.',
+                    required: 'Обязательно',
+                    installed: 'Установлено',
+                    confirmChangesTitle: 'Подтвердить изменения',
+                    confirmChangesBody: 'Вы уверены, что хотите применить изменения? Выбранные компоненты начнут загружаться автоматически.',
+                    confirmChangesWarning: 'ВНИМАНИЕ: Отключённые компоненты будут удалены.',
+                    installPathRequiredBody: 'Выберите расположение установки перед применением изменений.',
+                    installPathSaveFailed: 'Не удалось сохранить путь установки. Попробуйте снова.',
+                    saveFailed: 'Не удалось сохранить выбор компонентов. Попробуйте снова.',
+                    confirmUninstallTitle: 'Подтверждение удаления',
+                    confirmUninstallBody: 'Вы уверены, что хотите удалить {{game}}?\n\nЭто навсегда УДАЛИТ все игровые файлы.',
+                    uninstalling: 'Удаление {{game}}...',
+                    errorTitle: 'Ошибка'
+                },
+                setup: {
+                    title: 'Настройка {{game}}',
+                    alreadyInstalledTitle: 'Игра уже установлена',
+                    alreadyInstalledBody: 'Выберите папку, в которую установлена {{game}} на вашем компьютере.',
+                    downloadTitle: 'Загрузить игру',
+                    downloadBody: 'Загрузите и установите {{game}} автоматически через лаунчер.',
+                    installTitle: 'Установить {{game}}',
+                    installLocation: 'Расположение установки',
+                    selectComponents: 'Выбор компонентов',
+                    loadingComponents: 'Загрузка компонентов...',
+                    downloadInfo: 'Информация о загрузке',
+                    projectedSize: 'Предполагаемый размер:',
+                    availableSpace: 'Доступное место:',
+                    insufficientSpaceTitle: 'Недостаточно места',
+                    insufficientSpaceBody: 'Недостаточно свободного места. Требуется {{size}}, но доступно только {{available}}.',
+                    installationErrorTitle: 'Ошибка установки',
+                    installationErrorSetPath: 'Не удалось установить путь установки для {{game}}.',
+                    installationErrorStart: 'Произошла ошибка при запуске установки: {{error}}',
+                    invalidGamePathTitle: 'Неверный путь к игре',
+                    invalidGamePathBody: 'Выбранная папка не содержит действительных файлов игры {{game}}. Пожалуйста, выберите правильную папку установки игры.',
+                    downloading: 'Загрузка {{game}}...'
+                },
+                customServer: {
+                    title: 'Пользовательский сервер загрузки',
+                    label: 'URL сервера',
+                    placeholder: 'https://мой-зеркало.пример.com/',
+                    invalidUrl: 'URL должен начинаться с http:// или https://',
+                    saveFailed: 'Не удалось сохранить пользовательский сервер. Попробуйте снова.'
+                }
+            },
+            dialog: {
+                resetAllSettingsTitle: 'Сбросить все настройки',
+                resetAllSettingsBody: 'Вы уверены, что хотите сбросить все настройки лаунчера и игр к значениям по умолчанию? Это очистит все настройки, включая пути установки игр.',
+                resetDoneTitle: 'Настройки сброшены',
+                resetDoneBody: 'Все настройки сброшены к значениям по умолчанию!',
+                resetFailedTitle: 'Ошибка сброса',
+                resetFailedBody: 'Не удалось сбросить настройки. Попробуйте снова.',
+                updateTitle: 'Обновление лаунчера',
+                updateChecking: 'Проверка...',
+                updateLatest: 'Лаунчер обновлён до последней версии!',
+                updateCancelled: 'Обновление было отменено или произошла ошибка.',
+                updateFailed: 'Не удалось проверить обновления. Попробуйте позже.',
+                stopGameFailedTitle: 'Ошибка остановки игры',
+                stopGameFailedBody: 'Не удалось остановить {{game}}. Возможно, игра уже закрыта.'
+            },
+            errors: {
+                gameNotConfiguredTitle: '{{game}} не настроена',
+                gameNotConfiguredBody: 'Вы не настроили путь установки для {{game}}.',
+                cannotLaunchTitle: 'Невозможно запустить сейчас',
+                cannotLaunchBody: 'Другая игра обновляется. Пожалуйста, дождитесь завершения или отмените обновление перед запуском другой игры.',
+                modeNotInstalledTitle: '{{mode}} не установлен',
+                modeNotInstalledBody: 'У {{game}} отсутствуют файлы режима {{mode}}. Вы можете установить их сейчас через Управление установкой.'
+            },
+            mode: {
+                sp: {
+                    name: 'Одиночная игра',
+                    description: 'Играть в кампанию'
+                },
+                mp: {
+                    name: 'Мультиплеер',
+                    description: 'Играть онлайн с другими'
+                },
+                sv: {
+                    name: 'Выживание',
+                    description: 'Выживайте против волн врагов'
+                },
+                zm: {
+                    name: 'Зомби',
+                    description: 'Сражайтесь с ордами зомби'
+                },
+                on: {
+                    name: 'Онлайн',
+                    description: 'Играть онлайн с другими'
+                },
+                off: {
+                    name: 'Офлайн',
+                    description: 'Играть офлайн против ботов или в одиночку'
+                }
+            },
+            game: {
+                'cod1': {
+                    description: 'Call of Duty (2003) на оригинальной версии v1.1 с выбором мультиплеера vanilla или CoD1.1x. Погрузитесь в классическую кампанию и мультиплеер Второй мировой войны с одной страницы лаунчера.',
+                    credits: 'Файлы для базовой версии v1.1 предоставлены <a href="https://cod.pm/" target="_blank">cod.pm</a>.<br>Мультиплеерный клиент CoD1.1x разработан <a href="https://github.com/PrawyCoD1" target="_blank">Prawy</a> (<a href="https://github.com/xtnded/codextended-client" target="_blank">CoDExtended</a>).'
+                },
+                'coduo': {
+                    description: 'Call of Duty: United Offensive на версии v1.51 с выбором мультиплеера vanilla или CoDUO1.51x. Классическое дополнение UO с новыми кампаниями, оружием и мультиплеером с техникой, готовое к игре.',
+                    credits: 'Файлы для базовой версии v1.51 предоставлены <a href="https://cod.pm/" target="_blank">cod.pm</a>.<br>Мультиплеерный клиент CoDUO1.51x разработан <a href="https://github.com/PrawyCoD1" target="_blank">Prawy</a> (<a href="https://github.com/xtnded/codextended-client-uo" target="_blank">CoDExtended</a>).'
+                },
+                'cod2x': {
+                    description: 'Call of Duty 2 улучшенный с клиентом CoD2x поверх версии v1.3. Современные исправления и улучшения качества жизни для классического мультиплеера COD2.',
+                    credits: 'CoD2x разработан Yctn и eyza. Узнайте больше на <a href="https://cod2x.me/" target="_blank">cod2x.me</a>.'
+                },
+                'cod4x': {
+                    description: 'COD4: Modern Warfare с мультиплеером IW3x или COD4x на выбор и IW3SP-Mod для одиночной игры. Наслаждайтесь классической кампанией MW1 и онлайн-игрой с современной поддержкой.',
+                    credits: 'Мультиплеер предоставлен клиентом IW3x, разработанным <a href="https://github.com/Divity" target="_blank">Divity</a> (<a href="https://iw3x.com/" target="_blank">iw3x.com</a>), или клиентом COD4x от <a href="https://cod4x.ovh/" target="_blank">Проекта CoD4x</a>.<br>Одиночная игра предоставлена клиентом IW3SP-Mod, разработанным <a href="https://gitea.com/JerryALT" target="_blank">JerryALT</a>.'
+                },
+                't4': {
+                    description: 'Call of Duty: World at War улучшенный модификациями Plutonium T4. Наслаждайтесь кампанией, мультиплеером и зомби-режимом с улучшенной стабильностью и дополнительными функциями.',
+                    descriptionNote: 'Plutonium требует аккаунт. Вы можете создать его по адресу: <a href="https://forum.plutonium.pw/register" target="_blank">https://forum.plutonium.pw/register</a>.',
+                    credits: 'Кампания, мультиплеер и зомби предоставлены клиентом T4, разработанным <a href="https://plutonium.pw/" target="_blank">Plutonium</a>.'
+                },
+                't5': {
+                    description: 'Call of Duty: Black Ops улучшенный модификациями Plutonium T5. Наслаждайтесь кампанией, мультиплеером и зомби-режимом с улучшенной стабильностью и дополнительными функциями.',
+                    descriptionNote: 'Plutonium требует аккаунт. Вы можете создать его по адресу: <a href="https://forum.plutonium.pw/register" target="_blank">https://forum.plutonium.pw/register</a>.',
+                    credits: 'Кампания, мультиплеер и зомби предоставлены клиентом T5, разработанным <a href="https://plutonium.pw/" target="_blank">Plutonium</a>.'
+                },
+                'iw4x': {
+                    description: 'Call of Duty: Modern Warfare 2 улучшенный модификациями IW4X и IW4-SP. Наслаждайтесь классической кампанией и мультиплеером с улучшенной стабильностью и дополнительными функциями.',
+                    credits: 'Мультиплеер предоставлен клиентом IW4x, разработанным <a href="https://iw4x.io/" target="_blank">Проектом IW4x</a>.<br>Одиночная игра предоставлена клиентом IW4-SP, разработанным <a href="https://alterware.dev/" target="_blank">AlterWare</a>.'
+                },
+                'iw5': {
+                    description: 'Call of Duty: Modern Warfare 3 улучшенный модификациями Plutonium и IW5-Mod. Наслаждайтесь кампанией и мультиплеером с улучшенной стабильностью и дополнительными функциями.',
+                    descriptionNote: 'Plutonium требует аккаунт. Вы можете создать его по адресу: <a href="https://forum.plutonium.pw/register" target="_blank">https://forum.plutonium.pw/register</a>.',
+                    credits: 'Мультиплеер предоставлен клиентом IW5, разработанным <a href="https://plutonium.pw/" target="_blank">Plutonium</a>.<br>Одиночная игра предоставлена клиентом IW5-Mod, разработанным <a href="https://alterware.dev/" target="_blank">AlterWare</a>.'
+                },
+                't6': {
+                    description: 'Call of Duty: Black Ops 2 улучшенный модификациями Plutonium T6 и T6SP-Mod. Наслаждайтесь кампанией, мультиплеером и зомби-режимом с улучшенной стабильностью и дополнительными функциями.',
+                    descriptionNote: 'Plutonium требует аккаунт. Вы можете создать его по адресу: <a href="https://forum.plutonium.pw/register" target="_blank">https://forum.plutonium.pw/register</a>.',
+                    credits: 'Мультиплеер и зомби предоставлены клиентом T6, разработанным <a href="https://plutonium.pw/" target="_blank">Plutonium</a>.<br>Кампания предоставлена клиентом T6SP-Mod, разработанным <a href="https://github.com/Rattpak" target="_blank">Rattpak</a>.'
+                },
+                'boiii': {
+                    description: 'Call of Duty: Black Ops 3 улучшенный модификациями BOIII. Наслаждайтесь полной кампанией, мультиплеером и зомби-режимом с улучшенной стабильностью и дополнительными функциями.',
+                    credits: 'Это <a href="https://github.com/CBServers/boiii" target="_blank">форк</a> оригинального клиента BOIII/T7x, разработанного <a href="https://github.com/momo5502" target="_blank">momo5502</a> и <a href="https://alterware.dev" target="_blank">AlterWare</a> с добавленными CB-патчами.'
+                },
+                'iw6x': {
+                    description: 'Call of Duty: Ghosts улучшенный модификациями IW6x. Наслаждайтесь кампанией и мультиплеером с улучшенной стабильностью и дополнительными функциями.',
+                    credits: 'Это <a href="https://github.com/CBServers/iw6-mod" target="_blank">форк</a> оригинального клиента IW6x/iw6-mod, разработанного <a href="https://alterware.dev" target="_blank">AlterWare</a> и <a href="https://xlabs.dev" target="_blank">X Labs</a> с добавленными CB-патчами.'
+                },
+                's1x': {
+                    description: 'Call of Duty: Advanced Warfare улучшенный модификациями S1x. Наслаждайтесь кампанией в футуристической войне и мультиплеером с улучшенной стабильностью и дополнительными функциями.',
+                    credits: 'Это <a href="https://github.com/CBServers/s1-mod" target="_blank">форк</a> оригинального клиента S1x/s1-mod, разработанного <a href="https://alterware.dev" target="_blank">AlterWare</a> и <a href="https://xlabs.dev" target="_blank">X Labs</a> с добавленными CB-патчами.'
+                },
+                'h1-mod': {
+                    description: 'Call of Duty: Modern Warfare Remastered улучшенный функциями H1-Mod. Наслаждайтесь классической кампанией и мультиплеером с улучшенной стабильностью и дополнительными функциями.',
+                    credits: 'Это <a href="https://github.com/CBServers/h1-mod" target="_blank">форк</a> оригинального клиента H1-Mod, разработанного <a href="https://auroramod.dev" target="_blank">Aurora</a> с добавленными CB-патчами.'
+                },
+                'iw7-mod': {
+                    description: 'Call of Duty: Infinite Warfare улучшенный функциями IW7-Mod. Наслаждайтесь кампанией в космической войне, мультиплеером и зомби с улучшенной стабильностью и дополнительными функциями.',
+                    credits: 'Это <a href="https://github.com/CBServers/iw7-mod" target="_blank">форк</a> оригинального клиента IW7-Mod, разработанного <a href="https://auroramod.dev" target="_blank">Aurora</a> с добавленными CB-патчами.'
+                },
+                'bo4': {
+                    description: 'Black Ops 4 улучшенный Project BO4 Launcher. Включает онлайн и офлайн режимы для мультиплеера и зомби с улучшенной стабильностью и дополнительными функциями.',
+                    credits: 'Онлайн и офлайн игра предоставлены <a href="https://github.com/NotNierPea/shield-launcher" target="_blank">Project BO4 Launcher</a>, разработанным <a href="https://github.com/NotNierPea" target="_blank">NotNierPea</a>.'
+                },
+                'mw2r': {
+                    description: 'Modern Warfare 2 Campaign Remastered с поддержкой H2-Mod. Играйте в ремастерированную кампанию MW2 с патчами стабильности и улучшениями качества жизни.',
+                    credits: 'Поддержка MW2 Campaign Remastered предоставлена клиентом <a href="https://github.com/alicealys/h2-mod" target="_blank">H2-Mod</a>, разработанным <a href="https://github.com/alicealys" target="_blank">Alice</a>.'
+                },
+                'hmw-mod': {
+                    description: 'HorizonMW. Добросовестный ремастер мультиплеера Modern Warfare 2 с дополнительным контентом из MW3 от сообщества.',
+                    credits: 'Это <a href="https://github.com/CBServers/HorizonMW-Client" target="_blank">форк</a> оригинального клиента HMW-Mod, разработанного <a href="https://horizonmw.org/" target="_blank">HorizonMW</a> с добавленными CB-патчами.'
                 }
             }
         }

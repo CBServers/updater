@@ -200,10 +200,19 @@ function adjustChannelElements() {
 
 // All game-specific functionality is now handled in individual page files
 
+function applyReduceMotion(enabled) {
+    if (enabled) {
+        document.documentElement.setAttribute('data-reduce-motion', 'true');
+    } else {
+        document.documentElement.removeAttribute('data-reduce-motion');
+    }
+}
+
 function applyTheme(theme) {
-    if (theme === 'dark' || theme === 'navy-gradient') {
+    if (theme === 'dark' || theme === 'navy' || theme === 'navy-gradient') {
         document.documentElement.setAttribute('data-theme', theme);
     } else {
+        // Tactical is the bare :root baseline
         document.documentElement.removeAttribute('data-theme');
     }
 }
@@ -240,7 +249,10 @@ async function initialize() {
     if (typeof window.executeCommand === 'function') {
         try {
             const savedTheme = await window.executeCommand('get-property', PROPERTY_KEYS.LAUNCHER.THEME);
-            applyTheme(savedTheme || 'dark');
+            applyTheme(savedTheme || 'tactical');
+
+            const reduceMotion = await window.executeCommand('get-property', PROPERTY_KEYS.LAUNCHER.REDUCE_MOTION);
+            applyReduceMotion(reduceMotion === 'true');
         } catch (_) {}
     }
 
@@ -834,8 +846,13 @@ window.ProgressManager = {
         this.cancelCallback = onCancel;
 
         progressBar.className = 'global-progress-bar';
+        progressBar.style.removeProperty('--game-accent');
         if (gameId) {
             progressBar.classList.add(gameId);
+            const config = GameUtils.getGameConfigByUIId(gameId);
+            if (config && config.accent) {
+                progressBar.style.setProperty('--game-accent', config.accent);
+            }
         }
 
         progressGameIcon.className = 'progress-game-icon';
@@ -961,6 +978,7 @@ window.ProgressManager = {
         if (progressBar) {
             progressBar.style.display = 'none';
             progressBar.className = 'global-progress-bar';
+            progressBar.style.removeProperty('--game-accent');
         }
         if (windowEl) {
             windowEl.classList.remove('progress-active');
@@ -1495,7 +1513,7 @@ async function openInstallFlow(uiId) {
     if (install.status === 'installed') {
         showManageInstall(uiId);
     } else {
-        showSetupFlow(uiId);
+        await showSetupFlow(uiId);
     }
 }
 
@@ -1577,7 +1595,7 @@ async function handleStartupDeepLink() {
     }
 }
 
-// Routes a cbservers:// URL of the form cbservers://<verb>/<game>[/<mode>].
+// Routes a cbservers:// URL of the form cbservers://<verb>/<game>[/<mode|item id>].
 async function handleDeepLink(url) {
     if (!url || typeof url !== 'string') return;
 
@@ -1597,7 +1615,7 @@ async function handleDeepLink(url) {
     const gameSlug = segments[1];
     const modeArg = segments[2];
 
-    if (!['play', 'game', 'install'].includes(verb)) {
+    if (!['play', 'game', 'install', 'mods'].includes(verb)) {
         console.warn(`deep link: unknown action "${verb}"`);
         if (typeof window.showToast === 'function') {
             window.showToast(t('deepLink.unknownAction', { action: verb }), 'error');
@@ -1631,6 +1649,12 @@ async function handleDeepLink(url) {
             // Navigate only.
             return;
 
+        case 'mods':
+            if (window.ModsView && window.ModsView.supports(uiId)) {
+                await window.ModsView.openDeepLink(uiId, modeArg);
+            }
+            return;
+
         case 'install':
             await openInstallFlow(uiId);
             return;
@@ -1645,7 +1669,7 @@ async function handleDeepLink(url) {
 
             const install = await checkGameInstallation(uiId);
             if (install.status !== 'installed') {
-                showSetupFlow(uiId);
+                await showSetupFlow(uiId);
                 return;
             }
 
@@ -1760,8 +1784,8 @@ async function uninstallGameDirect(gameId) {
     return true;
 }
 
-async function verifyGame(gameId, deleteComponents = false, op = 'verify') {
-    console.log(`Verify button clicked for ${gameId}, deleteComponents: ${deleteComponents}, op: ${op}`);
+async function verifyGame(gameId, deleteComponents = false, op = 'verify', skipHash = false) {
+    console.log(`Verify button clicked for ${gameId}, deleteComponents: ${deleteComponents}, op: ${op}, skipHash: ${skipHash}`);
 
     if (!await window.guardOnline()) return false;
 
@@ -1772,7 +1796,7 @@ async function verifyGame(gameId, deleteComponents = false, op = 'verify') {
         gameId: gameId,
         command: 'verify-game',
         op: op,
-        commandArgs: { game: gameMapping, delete_components: deleteComponents },
+        commandArgs: { game: gameMapping, delete_components: deleteComponents, skip_hash: skipHash },
         initialMessage: op === 'install'
             ? t('popup.setup.downloading', { game: displayName })
             : t('progress.verifying', { game: displayName }),
@@ -1812,8 +1836,18 @@ function stopGame(gameId) {
     }
 }
 
-function showSetupFlow(gameId) {
+async function showSetupFlow(gameId) {
     console.log(`Setup button clicked for ${gameId}`);
+
+    // Both branches of the flow need the network: a download, or client files for an existing install.
+    if (!await window.guardOnline()) return;
+
+    // A partial setup already has a path; resume the pipeline instead of re-picking one
+    const install = await checkGameInstallation(gameId);
+    if (install.status === 'partial') {
+        showManageInstall(gameId, { finishSetup: true });
+        return;
+    }
 
     const popups = ensureGamePopups(gameId);
 
@@ -1956,14 +1990,30 @@ async function loadLauncherSettings() {
             }
         }
 
+        // Load "Reduce Motion" setting
+        const reduceMotion = await window.executeCommand('get-property', PROPERTY_KEYS.LAUNCHER.REDUCE_MOTION);
+        const reduceMotionToggle = document.getElementById('reduce-motion-toggle');
+
+        if (reduceMotionToggle) {
+            const buttons = reduceMotionToggle.querySelectorAll('.toggle-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Default to "false" if not set
+            const targetValue = (reduceMotion === 'true') ? 'true' : 'false';
+            const targetButton = reduceMotionToggle.querySelector(`[data-value="${targetValue}"]`);
+            if (targetButton) {
+                targetButton.classList.add('active');
+            }
+        }
+
         // Load CDN settings
         await initCdnSettings();
 
         // Load theme setting
         const savedTheme = await window.executeCommand('get-property', PROPERTY_KEYS.LAUNCHER.THEME);
         const themeSelect = document.getElementById('theme-select');
-        if (themeSelect && savedTheme) {
-            themeSelect.value = savedTheme;
+        if (themeSelect) {
+            themeSelect.value = savedTheme || 'tactical';
         }
 
         // Load global player name
@@ -2219,7 +2269,7 @@ async function setupLanguageSelect() {
     if (!languageSelect.dataset.bound) {
         languageSelect.dataset.bound = 'true';
         languageSelect.addEventListener('change', async (event) => {
-            const SUPPORTED_LANGUAGES = ['en', 'fr', 'es'];
+            const SUPPORTED_LANGUAGES = ['en', 'fr', 'es', 'ru'];
             const nextLanguage = SUPPORTED_LANGUAGES.includes(event.target.value) ? event.target.value : 'en';
             const previousLanguage = window.LauncherI18n ? window.LauncherI18n.getLanguage() : 'en';
 
@@ -2341,6 +2391,12 @@ function setupLauncherSettingsToggles() {
                             [PROPERTY_KEYS.LAUNCHER.SKIP_REDIST_CHECK]: clickedValue
                         });
                         console.log(`Skip redist check set to: ${clickedValue}`);
+                    } else if (settingId === 'reduce-motion-toggle') {
+                        applyReduceMotion(clickedValue === 'true');
+                        await window.executeCommand('set-property', {
+                            [PROPERTY_KEYS.LAUNCHER.REDUCE_MOTION]: clickedValue
+                        });
+                        console.log(`Reduce motion set to: ${clickedValue}`);
                     } else if (settingId === 'desktop-notifications-toggle') {
                         await window.executeCommand('set-property', {
                             [PROPERTY_KEYS.LAUNCHER.DESKTOP_NOTIFICATIONS]: clickedValue
@@ -2380,6 +2436,7 @@ async function handleResetAllSettings() {
                     [PROPERTY_KEYS.LAUNCHER.CLOSE_ON_LAUNCH]: 'false',
                     [PROPERTY_KEYS.LAUNCHER.SKIP_CLIENT_UPDATE]: 'false',
                     [PROPERTY_KEYS.LAUNCHER.SKIP_REDIST_CHECK]: 'false',
+                    [PROPERTY_KEYS.LAUNCHER.REDUCE_MOTION]: 'false',
                     [PROPERTY_KEYS.LAUNCHER.LANGUAGE]: 'en',
                     [PROPERTY_KEYS.LAUNCHER.THEME]: 'dark',
                     [PROPERTY_KEYS.LAUNCHER.GLOBAL_PLAYER_NAME]: '',
@@ -2412,9 +2469,10 @@ async function handleResetAllSettings() {
                 if (window.LauncherI18n) {
                     window.LauncherI18n.setLanguage('en');
                 }
-                applyTheme('dark');
+                applyTheme('tactical');
+                applyReduceMotion(false);
                 const themeSelect = document.getElementById('theme-select');
-                if (themeSelect) themeSelect.value = 'dark';
+                if (themeSelect) themeSelect.value = 'tactical';
 
                 // Reload settings page to show defaults
                 await refreshLocalizedUI('settings');

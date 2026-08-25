@@ -495,7 +495,7 @@
                 </div>
                 <div class="game-item-copy">
                     <span class="game-item-title">${escapeHtml(config.displayName)}</span>
-                    <small class="game-item-sub">${escapeHtml(config.codeName)}</small>
+                    <small class="game-item-sub">${escapeHtml(config.client)}</small>
                 </div>
                 ${config.comingSoon ? `<span class="game-item-soon-chip">${escapeHtml(t('common.comingSoon'))}</span>` : ''}
             `;
@@ -705,7 +705,7 @@
                        <span data-action-label>${escapeHtml(t('common.install'))}</span>
                    </button>`;
             return `
-            <article class="${cardCls}" data-game="${escapeHtml(config.uiId)}" data-client="${escapeHtml(config.clientKey)}" data-status="not-setup" data-search="${escapeHtml(`${config.displayName} ${config.codeName} ${config.client}`.toLowerCase())}">
+            <article class="${cardCls}" data-game="${escapeHtml(config.uiId)}" data-client="${escapeHtml(config.clientKey)}" data-status="not-setup" data-search="${escapeHtml(`${config.displayName} ${config.client}`.toLowerCase())}">
                 <img class="library-card-art" src="${escapeHtml(config.capsulePath)}" alt="${escapeHtml(config.displayName)}" loading="lazy">
                 ${comingSoon ? `<span class="library-card-soon-badge">${escapeHtml(t('common.comingSoon'))}</span>` : ''}
                 <span class="library-card-player-pill" data-player-badge hidden>
@@ -990,6 +990,20 @@
         renderHomeFromStates(states);
     }
 
+    // Active detail tab per game (uiId -> 'overview' | 'mods'), kept across
+    // language-change re-renders.
+    const detailTabState = {};
+
+    function activateDetailTab(page, gameId, tab) {
+        if (!page) return;
+        detailTabState[gameId] = tab;
+        page.querySelectorAll('.detail-tab').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
+        page.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.dataset.tabPanel === tab));
+        if (tab === 'mods' && window.ModsView) {
+            window.ModsView.render(gameId);
+        }
+    }
+
     function renderGamePages() {
         const host = document.getElementById('game-pages');
         if (!host) return;
@@ -1000,6 +1014,8 @@
             const credits = gameCredits(config);
             const hasCredits = credits && String(credits).trim().length > 0;
             const hasProvider = config.provider && String(config.provider).trim().length > 0;
+            const hasMods = !comingSoon && window.ModsView && window.ModsView.supports(config.uiId);
+            const activeTab = detailTabState[config.uiId] || 'overview';
 
             const descriptionSection = `
                         <section class="description">
@@ -1043,13 +1059,14 @@
                     </aside>`;
 
             return `
-            <div class="${pageCls}" id="${escapeHtml(config.uiId)}-page" style="display: none;">
+            <div class="${pageCls}" id="${escapeHtml(config.uiId)}-page" style="display: none;${config.accent ? ` --game-accent: ${escapeHtml(config.accent)};` : ''}">
                 <div class="hero-section ${escapeHtml(config.uiId)}" style="--hero-image: ${cssUrl(config.heroImagePath)}">
+                    <div class="hud-corners"></div>
                     <div class="hero-bottom-content">
                         <img class="game-logo-img" src="${escapeHtml(config.logoPath)}" alt="${escapeHtml(config.displayName)}">
                         <div class="game-meta-row">
                             <span class="game-meta-player" data-game-player-badge hidden>0</span>
-                            <span>${escapeHtml(config.codeName)}</span>
+                            <span>${escapeHtml(config.client)}</span>
                             <span class="game-meta-size" data-game-size-badge hidden></span>
                         </div>
                     </div>
@@ -1058,14 +1075,39 @@
                 <div class="game-details">
                     <div class="button-group" id="${escapeHtml(config.uiId)}-button-group"></div>
 
+                    ${hasMods ? `
+                    <div class="detail-tabs is-visible" data-game="${escapeHtml(config.uiId)}">
+                        <button class="detail-tab${activeTab === 'overview' ? ' active' : ''}" data-tab="overview">${escapeHtml(t('detail.overview'))}</button>
+                        <button class="detail-tab${activeTab === 'mods' ? ' active' : ''}" data-tab="mods">${escapeHtml(t('mods.tab'))}</button>
+                    </div>
+                    <div class="tab-panel${activeTab === 'overview' ? ' active' : ''}" data-tab-panel="overview">
+                        <div class="detail-panel-grid">
+                            ${descriptionSection}
+                            ${actionsAside}
+                        </div>
+                    </div>
+                    <div class="tab-panel mods-panel${activeTab === 'mods' ? ' active' : ''}" data-tab-panel="mods" id="${escapeHtml(config.uiId)}-mods-panel"></div>
+                    ` : `
                     <div class="detail-panel-grid">
                         ${descriptionSection}
                         ${actionsAside}
                     </div>
+                    `}
                 </div>
             </div>
         `;
         }).join('');
+
+        host.querySelectorAll('.detail-tabs').forEach(tabs => {
+            const page = tabs.closest('.game-page');
+            const gameId = tabs.dataset.game;
+            tabs.querySelectorAll('.detail-tab').forEach(button => {
+                button.addEventListener('click', () => activateDetailTab(page, gameId, button.dataset.tab));
+            });
+            if (detailTabState[gameId] === 'mods' && window.ModsView) {
+                window.ModsView.render(gameId);
+            }
+        });
 
         host.querySelectorAll('.detail-browse-files-action').forEach(button => {
             button.addEventListener('click', async () => {
@@ -1502,6 +1544,7 @@
 
     window.AppViews = {
         renderAll,
+        activateDetailTab,
         renderSidebarGames,
         renderHome,
         renderLibrary,
