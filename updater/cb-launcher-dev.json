@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        2945392,
-        "35B1A20E38FBAF4D4B1D86F4B76076136BAEFFC4"
+        3109744,
+        "326FB262B8876AC33D7D05AEB7D61399A87876BE"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -81,8 +81,8 @@
     ],
     [
         "data/launcher-ui/assets/css/main.css",
-        153256,
-        "1145A17468DD3249D8338DB3B8DA3A00F82AB3BB"
+        167504,
+        "1257E8D5D9206D2A7ACE2409984E9FA774E3728C"
     ],
     [
         "data/launcher-ui/assets/fonts/ibm-plex-mono-400.woff2",
@@ -461,18 +461,23 @@
     ],
     [
         "data/launcher-ui/assets/js/app/main.js",
-        96918,
-        "1F52644CDC84081B38DB0FA486BFF3444AF81E77"
+        97126,
+        "EAE930175A3F917C3D3BDFD6DC6621CB22AAADAD"
+    ],
+    [
+        "data/launcher-ui/assets/js/app/mods-view.js",
+        26233,
+        "8973111741817FFC91538E596AFAC937A91D5F60"
     ],
     [
         "data/launcher-ui/assets/js/app/views.js",
-        64698,
-        "111D092CEAD1DCADE867348430C3B8230A859EC0"
+        67001,
+        "9A69C4A493D1C1400F4613B046179A87F1D62EB7"
     ],
     [
         "data/launcher-ui/assets/js/core/command.js",
-        2841,
-        "2CE7448BC870343498878E7C7FFA7B557E5445D6"
+        6341,
+        "65B2D5AFE18DEC91FD7F797E293361DD2F72EAB3"
     ],
     [
         "data/launcher-ui/assets/js/core/discord-friends.js",
@@ -481,8 +486,13 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        163656,
-        "173753FDE7A5DDAAFC522D66AD6589CEC0FE17FD"
+        178316,
+        "CCF729FD250CD9711879044BC10CFB00F2E6B30F"
+    ],
+    [
+        "data/launcher-ui/assets/js/core/mods.js",
+        10838,
+        "9E4C45C666122C6E5E44FB54695651DD68564608"
     ],
     [
         "data/launcher-ui/assets/js/core/player-counts.js",
@@ -491,8 +501,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/utils.js",
-        47352,
-        "CE94059771B5243B897337996132C21FE17FBAD7"
+        47869,
+        "26DB0A096F5F0DF689CAB08E2E294E95CF6798EC"
     ],
     [
         "data/launcher-ui/assets/js/popups/component-selection-popup.js",
@@ -513,6 +523,11 @@
         "data/launcher-ui/assets/js/popups/game-settings-popup.js",
         37209,
         "316477CE3166164BC97F1511B6343F41CD356EF9"
+    ],
+    [
+        "data/launcher-ui/assets/js/popups/mod-detail-popup.js",
+        8592,
+        "FB53EA587D882DED18793F54A1FA50D04AC47CFA"
     ],
     [
         "data/launcher-ui/assets/js/popups/redist-popup.js",
@@ -541,8 +556,8 @@
     ],
     [
         "data/launcher-ui/main.html",
-        33390,
-        "3330B4F860186A496C32F22BBC9F6EC4584DA9B9"
+        33567,
+        "ADF6A08EBB50E6A6E7433167E5CD725A57D06CE8"
     ],
     [
         "manifest/aw.json",
@@ -630,6 +645,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "BC43B66013F85D36B250CC7347DD79AFA69CB550FDA0AF1343F5F752FCD8C6E6"
+        "ManifestHash": "310BC9565985DF2FA5773084EAB5C82925D94ABC82DD44C75555C4414BE40C7F"
     }
 ]
