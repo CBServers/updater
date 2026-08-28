@@ -309,6 +309,8 @@
                 import: 'Import',
                 openFolder: 'Open {{folder}}',
                 openModFolder: 'Open folder',
+                refresh: 'Refresh',
+                refreshHint: 'Rescan the content folders for maps and mods added or removed outside the launcher',
                 details: 'Details',
                 folderMissing: 'That folder no longer exists.',
                 searchPlaceholder: 'Search the Workshop...',
@@ -360,7 +362,9 @@
                 viewOnSteam: 'View on Steam',
                 detailsFailed: 'Could not load the item details. Try again later.',
                 comingSoon: 'Coming soon',
-                foldersHint: 'Content folders used by this client:'
+                foldersHint: 'Content folders used by this client:',
+                requiredItems: 'Required items',
+                requiredItemsNote: 'These are installed automatically with this item ({{size}} extra).'
             },
             popup: {
                 gameMode: {
@@ -902,6 +906,8 @@
                 import: 'Importer',
                 openFolder: 'Ouvrir {{folder}}',
                 openModFolder: 'Ouvrir le dossier',
+                refresh: 'Actualiser',
+                refreshHint: 'Reanalyser les dossiers de contenu pour les cartes et mods ajoutes ou supprimes hors du launcher',
                 details: 'Details',
                 folderMissing: "Ce dossier n'existe plus.",
                 searchPlaceholder: 'Rechercher dans le Workshop...',
@@ -953,7 +959,9 @@
                 viewOnSteam: 'Voir sur Steam',
                 detailsFailed: "Impossible de charger les details de l'element. Reessayez plus tard.",
                 comingSoon: 'Bientot disponible',
-                foldersHint: 'Dossiers de contenu utilises par ce client :'
+                foldersHint: 'Dossiers de contenu utilises par ce client :',
+                requiredItems: 'Elements requis',
+                requiredItemsNote: 'Ils sont installes automatiquement avec cet element ({{size}} en plus).'
             },
             popup: {
                 gameMode: {
@@ -1495,6 +1503,8 @@
                 import: 'Importar',
                 openFolder: 'Abrir {{folder}}',
                 openModFolder: 'Abrir carpeta',
+                refresh: 'Actualizar',
+                refreshHint: 'Volver a analizar las carpetas de contenido en busca de mapas y mods anadidos o eliminados fuera del launcher',
                 details: 'Detalles',
                 folderMissing: 'Esa carpeta ya no existe.',
                 searchPlaceholder: 'Buscar en el Workshop...',
@@ -1546,7 +1556,9 @@
                 viewOnSteam: 'Ver en Steam',
                 detailsFailed: 'No se pudieron cargar los detalles del elemento. Intentalo mas tarde.',
                 comingSoon: 'Proximamente',
-                foldersHint: 'Carpetas de contenido que usa este cliente:'
+                foldersHint: 'Carpetas de contenido que usa este cliente:',
+                requiredItems: 'Elementos requeridos',
+                requiredItemsNote: 'Se instalan automaticamente junto con este elemento ({{size}} adicionales).'
             },
             popup: {
                 gameMode: {
@@ -2086,6 +2098,8 @@
                 import: 'Импорт',
                 openFolder: 'Открыть {{folder}}',
                 openModFolder: 'Открыть папку',
+                refresh: 'Обновить',
+                refreshHint: 'Пересканировать папки контента на карты и моды, добавленные или удаленные вне лаунчера',
                 details: 'Подробности',
                 folderMissing: 'Этой папки больше нет.',
                 searchPlaceholder: 'Поиск в Мастерской...',
@@ -2137,7 +2151,9 @@
                 viewOnSteam: 'Открыть в Steam',
                 detailsFailed: 'Не удалось загрузить сведения об элементе. Попробуйте позже.',
                 comingSoon: 'Скоро',
-                foldersHint: 'Папки контента этого клиента:'
+                foldersHint: 'Папки контента этого клиента:',
+                requiredItems: 'Обязательные элементы',
+                requiredItemsNote: 'Они устанавливаются автоматически вместе с этим элементом (еще {{size}}).'
             },
             popup: {
                 gameMode: {
