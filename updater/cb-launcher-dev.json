@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        3112816,
-        "47139F000D9C60B1763ED83132E07EB1466A61E5"
+        3108720,
+        "B152DE02FACA04F83EC6C2904E59FD768ABF763E"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -81,8 +81,8 @@
     ],
     [
         "data/launcher-ui/assets/css/main.css",
-        167504,
-        "1257E8D5D9206D2A7ACE2409984E9FA774E3728C"
+        167965,
+        "21EBB84211FA088F7F78037E504AD96E9E4737F0"
     ],
     [
         "data/launcher-ui/assets/fonts/ibm-plex-mono-400.woff2",
@@ -486,13 +486,13 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        180566,
-        "043DCB56B23A8F79147EBC82CE11D1CDF2CE3E8D"
+        181291,
+        "6C4A7EA3C5CAF7813CFC464B7DDB9D759ED5E12B"
     ],
     [
         "data/launcher-ui/assets/js/core/mods.js",
-        10838,
-        "9E4C45C666122C6E5E44FB54695651DD68564608"
+        11644,
+        "AC5B87B034A746F1F62FD792601539FC9F6266BC"
     ],
     [
         "data/launcher-ui/assets/js/core/player-counts.js",
@@ -526,8 +526,8 @@
     ],
     [
         "data/launcher-ui/assets/js/popups/mod-detail-popup.js",
-        8592,
-        "FB53EA587D882DED18793F54A1FA50D04AC47CFA"
+        9219,
+        "962A2B15FB67697B1D0B0143A605C0040A7A5E13"
     ],
     [
         "data/launcher-ui/assets/js/popups/redist-popup.js",
@@ -645,6 +645,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "02BC7EE0C0985ECACC15C9D7F271AA4885FAB12AB2D36C905254894FED548851"
+        "ManifestHash": "6546148AB8F988DA20471436EA3ACE79AF38CBA1142C731503FC2AE3ADE035AE"
     }
 ]
