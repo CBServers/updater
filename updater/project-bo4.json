@@ -12,7 +12,7 @@
     [
         "Launch Project BO4.exe",
         112640,
-        "6BBCF75C4309149A3A0D48F3CDD9B1DC37CE8D64"
+        "463FF327055CC2ED6A333A1C6152D1D069034528"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/maxrankdata_mp.csv",
@@ -337,7 +337,7 @@
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Game/RoundPatch255.luac",
         87179,
-        "3AD0134CFC19E48CD8D6655C59EB7B51406F0E15"
+        "CB8298E1C662AA6B0F9E596F1942A8056A17DC7A"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Game/Social.luac",
@@ -632,7 +632,7 @@
     [
         "project-bo4/launcher/Shield_Launcher.exe",
         308224,
-        "69E7978B76A2BCDFEFC4E7DA7D6D8EBE335BC6D3"
+        "6AD616DD94A8E18D052ACA2CD655248C7F470B09"
     ],
     [
         "project-bo4/launcher/solo/XInput9_1_0.dll",
@@ -690,6 +690,6 @@
         "7BEE5FF8DBD1C98E5A6FAC24B671A1BF95FB9022"
     ],
     {
-        "ManifestHash": "4B83D79E8AC0EADDD977813BF3A4628FB68013AFD4B7C00D278C8F6E41A06FFF"
+        "ManifestHash": "8AF1B26A7D69D0B06092CFEAE82272B2F792D824CE919939696590F46F139EBC"
     }
 ]
