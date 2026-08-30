@@ -143,7 +143,13 @@ end
 
 local AddSpacer = function(options, index)
   if index ~= nil then
-    options[index].isLastButtonInGroup = true
+    -- Callers compute this index arithmetically (`index - 1`, `groupEnd + 1`), so it can fall outside
+    -- the table - notably 0, which is never a valid index in a 1-based table. Indexing nil throws, and
+    -- a Lua error raised while a lobby menu is being built abandons the rest of that menu half-drawn
+    -- (blank map panel, missing buttons). Skip the spacer instead of taking the whole menu down.
+    if options[index] ~= nil then
+      options[index].isLastButtonInGroup = true
+    end
   elseif 0 < #options then
     options[#options].isLastButtonInGroup = true
   end

@@ -110,6 +110,14 @@ local isCustomGameTarget = function(menuId)
   return false
 end
 
+-- A total conversion that replaces CoD.LobbyMenus builds its own button groups. The regrouping
+-- below - RemoveSpaces plus spacers keyed off buttons only we add - assumes the stock layout, so on
+-- such a mod it erases the grouping and leaves the lobby one undivided list. Append instead.
+local modOwnsLobbyMenus = function()
+  return CoD.LobbyButtons.AAE_AAEOPTION ~= nil
+end
+
+
 -- Tail of the start/setup group, so the button lands with them regardless of mode.
 local addMatchSettingsButton = function(controller, buttonTable)
   local groupEnd = nil
@@ -141,7 +149,8 @@ local addCustomButtons = function(controller, menuId, buttonTable, isLeader)
   if menuId == LobbyData.UITargets.UI_MPLOBBYMAIN.id then
     utils.RemoveSpaces(buttonTable)
     local theaterIndex = utils.GetButtonIndex(buttonTable, CoD.LobbyButtons.THEATER_MP)
-    if theaterIndex ~= nil then
+    if theaterIndex ~= nil and theaterIndex > 1 then
+      -- Separates the button ABOVE Theater; there is none when Theater is first (index 0 is nil).
       utils.AddSpacer(buttonTable, theaterIndex - 1)
     end
   end
@@ -177,15 +186,28 @@ local addCustomButtons = function(controller, menuId, buttonTable, isLeader)
 
   if menuId == LobbyData.UITargets.UI_ZMLOBBYONLINE.id then
     utils.RemoveButton(buttonTable, CoD.LobbyButtons.THEATER_ZM)
-    utils.AddLargeButton(controller, buttonTable, CoD.LobbyButtons.THEATER_ZM)
 
-    utils.RemoveSpaces(buttonTable)
-    utils.AddSpacer(buttonTable, utils.GetButtonIndex(buttonTable, CoD.LobbyButtons.SERVER_BROWSER))
-    local bgbIndex = utils.GetButtonIndex(buttonTable, CoD.LobbyButtons.ZM_BUBBLEGUM_BUFFS)
-    if bgbIndex ~= nil then
-      utils.AddSpacer(buttonTable, bgbIndex - 1)
+    if modOwnsLobbyMenus() then
+      -- STATS was appended above and Theater lands after it, so the only break needed is the one
+      -- separating both from the mod's own last group.
+      local statsIndex = utils.GetButtonIndex(buttonTable, CoD.LobbyButtons.STATS)
+      utils.AddLargeButton(controller, buttonTable, CoD.LobbyButtons.THEATER_ZM)
+      if statsIndex ~= nil and statsIndex > 1 then
+        utils.AddSpacer(buttonTable, statsIndex - 1)
+      end
+    else
+      utils.AddLargeButton(controller, buttonTable, CoD.LobbyButtons.THEATER_ZM)
+
+      utils.RemoveSpaces(buttonTable)
+      utils.AddSpacer(buttonTable, utils.GetButtonIndex(buttonTable, CoD.LobbyButtons.SERVER_BROWSER))
+      local bgbIndex = utils.GetButtonIndex(buttonTable, CoD.LobbyButtons.ZM_BUBBLEGUM_BUFFS)
+      if bgbIndex ~= nil and bgbIndex > 1 then
+        -- Separates the button ABOVE GobbleGum; when GobbleGum is first there is none, and index 0
+        -- is nil in a 1-based table (AddSpacer would index nil and throw a UI error).
+        utils.AddSpacer(buttonTable, bgbIndex - 1)
+      end
+      utils.AddSpacer(buttonTable, utils.GetButtonIndex(buttonTable, CoD.LobbyButtons.STATS))
     end
-    utils.AddSpacer(buttonTable, utils.GetButtonIndex(buttonTable, CoD.LobbyButtons.STATS))
   end
 end
 

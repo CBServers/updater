@@ -6,8 +6,8 @@
     ],
     [
         "boiii.exe",
-        2830336,
-        "4B550BB6BAB0B33EF68E3EC680A5D601260C492E"
+        2830848,
+        "84E7ABAE9C380CD63DFDA383E305C9BAF128EC1B"
     ],
     [
         "data/gamesettings/mp/gamesettings_escort.cfg",
@@ -111,23 +111,28 @@
     ],
     [
         "data/ui_scripts/frontend_menus/datasources_start_menu_tabs.lua",
-        5506,
-        "E7066BC6AC2A81BAB35A7AA0A69FD528F6D210D9"
+        6777,
+        "E0A0F9B91E6A841381473D1698FA9EC2E0AB38D3"
     ],
     [
         "data/ui_scripts/frontend_menus/utils.lua",
-        4432,
-        "9CCA8F19B422D16428C01EC55361A96CF0A8716A"
+        4883,
+        "733B45692139906BCCB3AC9AA95FD536B19CD754"
     ],
     [
         "data/ui_scripts/frontend_menus/__init__.lua",
-        7462,
-        "B987C315627E0153F720CE499106CF3FDC4C6B48"
+        8665,
+        "701580AA3DF28CBE883CB674C6037D0A1F521151"
     ],
     [
         "data/ui_scripts/graphics_settings/__init__.lua",
         4444,
         "C0B45859717568760936ABF94D07C2A3822853D5"
+    ],
+    [
+        "data/ui_scripts/gunsmith_attachment_image/__init__.lua",
+        2216,
+        "CDED7BFC59D80413EF9F3D874E0A6455FA1CB5DC"
     ],
     [
         "data/ui_scripts/lobby_settings/__init__.lua",
@@ -195,6 +200,6 @@
         "4A4CAA94F77577C57F594156A2F1FFA321F0716D"
     ],
     {
-        "ManifestHash": "730B14AD5EAB4F582C9CE232BAF985946CE94D789E17E62CFE91875A21782CE4"
+        "ManifestHash": "7D0B51169DFA702479F64516D38B3A9209B0BD3ECFEE35E0171AA2948534A87B"
     }
 ]
