@@ -1,12 +1,12 @@
 {
-    "ManifestHash": "E9A41E5B7E960FC8FAA285F4ABB06EF989FDA7BAAFC30CBE259E7B936C29E732",
+    "ManifestHash": "AE3E68FDBC1FCBF54E4F00E824BA1D4EA45DED3B5345CBCDF03DAD1635CEC377",
     "components": {
         "base": {
             "displayName": "HMW Files",
             "show": true,
             "required": true,
             "defaultEnabled": true,
-            "totalSize": 28341726909
+            "totalSize": 28341760637
         }
     },
     "files": [
@@ -204,8 +204,8 @@
         ],
         [
             "hmw-mod.exe",
-            11627520,
-            "6D7A18A82D259E79",
+            11661248,
+            "418DED74AA9341FB",
             "base"
         ],
         [
