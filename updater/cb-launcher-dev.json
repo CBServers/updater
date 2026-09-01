@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        3487088,
-        "020BCC7962EA1F37AF3A3D7FB664DFBDD8A8024A"
+        3485040,
+        "1B5B70717C02F332AAA542CB4671E82DC5E83122"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -566,8 +566,8 @@
     ],
     [
         "data/launcher-ui/assets/js/popups/game-settings-popup.js",
-        37209,
-        "316477CE3166164BC97F1511B6343F41CD356EF9"
+        34863,
+        "AFF72C487232C6355B1BA047F7917DD774A45023"
     ],
     [
         "data/launcher-ui/assets/js/popups/mod-detail-popup.js",
@@ -695,6 +695,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "281571F8665DA1B1D6F5A614B8B5D3978634C4E7E50B2F0B3F55B3816F6639C3"
+        "ManifestHash": "6F6D00EA07FE21E0027DF9771ECD9AE52B6A00D8C062271E3AB8A95C47FAA198"
     }
 ]
