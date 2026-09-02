@@ -41,8 +41,8 @@
     ],
     [
         "iw4x/iw4x_00.iwd",
-        13768566,
-        "D1801075B1DA9EEC1FDEFD3B258E789BAAB7E70E"
+        13785095,
+        "67ACADDA64D3745C88CDCEA0A6BDF342330A2225"
     ],
     [
         "iw4x/iw4x_01.iwd",
@@ -107,22 +107,22 @@
     [
         "zone/patch/iw4x_localized_english.ff",
         8298,
-        "278CD13D9315DC01752614D948B4D037094A147D"
+        "0ACACCE446F67D902038A92D46CAFF628D8C5A4A"
     ],
     [
         "zone/patch/iw4x_localized_french.ff",
         5214,
-        "EF988A30EF0EF6F947ED78CD8309FBCC6F2F041A"
+        "378BB7B01B39447608AAF805D40060564DE3343D"
     ],
     [
         "zone/patch/iw4x_localized_russian.ff",
         10179,
-        "1A15DF54ADF0DBBA8A3185C9E6477A3EFDB3A99A"
+        "2C8B36AA1F06E1FA15708593B38F5703F7EB8418"
     ],
     [
         "zone/patch/iw4x_localized_spanish.ff",
         5219,
-        "7053543AD76B794B5784659172C6CD7F6DB25003"
+        "DE7409A62417A1B208D49FE12199DDD2EF76CDE4"
     ],
     [
         "zone/patch/iw4x_patch_mp.ff",
@@ -380,6 +380,6 @@
         "BEEBCBDB5F515237E26A87C98F7ED5F0C385778E"
     ],
     {
-        "ManifestHash": "7837EA001DD4988BE1DFD9BE27C0AE761EC98CCFEA5ED0658A9A91BE3695A907"
+        "ManifestHash": "06FD4CFB8F520A479E639D6E7BFDD0E1BD035D52F012191B131BE1E5CE11795D"
     }
 ]
