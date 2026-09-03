@@ -41,8 +41,8 @@
     ],
     [
         "iw4x/iw4x_00.iwd",
-        13785122,
-        "3770E9A751020EC737BDBA48B7CF085DCD3B5E2C"
+        13768566,
+        "D1801075B1DA9EEC1FDEFD3B258E789BAAB7E70E"
     ],
     [
         "iw4x/iw4x_01.iwd",
@@ -81,8 +81,8 @@
     ],
     [
         "iw4x.dll",
-        3725312,
-        "2C25FFA52BCA29D4338AE7ED58A9C56455DF0BCA"
+        3630080,
+        "F5EBC709DDDFED37C6FCF81928A122F95D330F3F"
     ],
     [
         "iw4x.exe",
@@ -106,23 +106,23 @@
     ],
     [
         "zone/patch/iw4x_localized_english.ff",
-        8421,
-        "6FE2E19B32B4DB3793C6C3040F9C12C9B5A36A2C"
+        8298,
+        "278CD13D9315DC01752614D948B4D037094A147D"
     ],
     [
         "zone/patch/iw4x_localized_french.ff",
         5214,
-        "B1FEE617511914DFE6920DCA16B5B99097E7A54E"
+        "EF988A30EF0EF6F947ED78CD8309FBCC6F2F041A"
     ],
     [
         "zone/patch/iw4x_localized_russian.ff",
         10179,
-        "48885C2E63AE4A2572684E4238C5A0C0FDC7F62F"
+        "1A15DF54ADF0DBBA8A3185C9E6477A3EFDB3A99A"
     ],
     [
         "zone/patch/iw4x_localized_spanish.ff",
         5219,
-        "B7C4A22C8AFC04B2FB444715F2485C2983DAF0A1"
+        "7053543AD76B794B5784659172C6CD7F6DB25003"
     ],
     [
         "zone/patch/iw4x_patch_mp.ff",
@@ -380,6 +380,6 @@
         "BEEBCBDB5F515237E26A87C98F7ED5F0C385778E"
     ],
     {
-        "ManifestHash": "9E8B063CE00EDEF51040DD4BEFB37499B8F70FBFC72DFAA6D51DDBAA6796D09C"
+        "ManifestHash": "7837EA001DD4988BE1DFD9BE27C0AE761EC98CCFEA5ED0658A9A91BE3695A907"
     }
 ]
