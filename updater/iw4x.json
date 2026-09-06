@@ -5,6 +5,11 @@
         "C7A08FFB429ECD2780846CC6903DC8FB35C2226E"
     ],
     [
+        "binkw32.dll",
+        167936,
+        "5FBB6886B1A7647A65DA8C926F1A0D921BB9CCC3"
+    ],
+    [
         "iw4x/html/img/background_default.png",
         426091,
         "4AD0FACFB97D529E5AD9848BAB7663A780E3ECFE"
@@ -41,8 +46,8 @@
     ],
     [
         "iw4x/iw4x_00.iwd",
-        13768566,
-        "D1801075B1DA9EEC1FDEFD3B258E789BAAB7E70E"
+        13788039,
+        "888888C464B4F839F5F4E1872E78DF83527EEF08"
     ],
     [
         "iw4x/iw4x_01.iwd",
@@ -81,13 +86,53 @@
     ],
     [
         "iw4x.dll",
-        3630080,
-        "F5EBC709DDDFED37C6FCF81928A122F95D330F3F"
+        3745280,
+        "88E32EC68948C5FC82BEFA5CF2576CF18D0068D8"
     ],
     [
         "iw4x.exe",
         3932160,
         "E1A6FE5B079398116C7937BE323A1472A7C5FC2A"
+    ],
+    [
+        "miles/milesEq.flt",
+        114688,
+        "7FD5835E4BF23AF4FD2C8800A289513E2290A54A"
+    ],
+    [
+        "miles/mssds3d.flt",
+        12288,
+        "B2E5F2577E9C5AD48EA6E3AB88334474C83F50B9"
+    ],
+    [
+        "miles/mssdsp.flt",
+        56832,
+        "ABB09177458A4283E97CA227ECB0BE875503866A"
+    ],
+    [
+        "miles/msseax.flt",
+        58368,
+        "4F093579D7C27744483490C463BA2CF98CC66B1D"
+    ],
+    [
+        "miles/mssmp3.asi",
+        93696,
+        "591990C830EDF21FA5884159B40B28D41089DEAA"
+    ],
+    [
+        "miles/mssvoice.asi",
+        153088,
+        "93256567B5BEC9833A4E0CBD7C1344815E25521C"
+    ],
+    [
+        "mss32.dll",
+        434688,
+        "055DC05A4C175B84DFFB87B2380714128E5B27DD"
+    ],
+    [
+        "Unlinker.exe",
+        7487488,
+        "15797E9CACFF686972EB6477FAC300C2706D5A8E"
     ],
     [
         "zone/patch/co_hunted_load.ff",
@@ -106,23 +151,23 @@
     ],
     [
         "zone/patch/iw4x_localized_english.ff",
-        8298,
-        "278CD13D9315DC01752614D948B4D037094A147D"
+        8421,
+        "7B3C0CFF16BCAD146650F06CD21BD78273CF1677"
     ],
     [
         "zone/patch/iw4x_localized_french.ff",
         5214,
-        "EF988A30EF0EF6F947ED78CD8309FBCC6F2F041A"
+        "DA384A9A1491604F64F9A8F21E960747A12CE0B3"
     ],
     [
         "zone/patch/iw4x_localized_russian.ff",
         10179,
-        "1A15DF54ADF0DBBA8A3185C9E6477A3EFDB3A99A"
+        "FEE0F811F77256DD93D4F0ACB989C02151451FFF"
     ],
     [
         "zone/patch/iw4x_localized_spanish.ff",
         5219,
-        "7053543AD76B794B5784659172C6CD7F6DB25003"
+        "6FD1E948D068527B0C31EC9DB6C52570E7F2B82E"
     ],
     [
         "zone/patch/iw4x_patch_mp.ff",
@@ -380,6 +425,6 @@
         "BEEBCBDB5F515237E26A87C98F7ED5F0C385778E"
     ],
     {
-        "ManifestHash": "7837EA001DD4988BE1DFD9BE27C0AE761EC98CCFEA5ED0658A9A91BE3695A907"
+        "ManifestHash": "F09559DFC5A819C4028F77A9BCFC521B7FE25D0EBE240467918CAFCE37C2F6E2"
     }
 ]
