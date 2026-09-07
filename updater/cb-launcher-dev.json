@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        3494256,
-        "19FE740224E1EEF764395A9086273568DBD78020"
+        3517296,
+        "E20CA012F0A6463688CC5084C7F464809C1ECFCB"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -81,8 +81,8 @@
     ],
     [
         "data/launcher-ui/assets/css/main.css",
-        200878,
-        "3257D071C7AE6C1B105329E570C4F603A0069F07"
+        204576,
+        "E1DC2768F2ABFCF4BC3FB3CB848DCA187D5C271E"
     ],
     [
         "data/launcher-ui/assets/fonts/ibm-plex-mono-400.woff2",
@@ -495,9 +495,14 @@
         "8473A57AFE839815CA778DC6B132CEEDD0903AA3"
     ],
     [
+        "data/launcher-ui/assets/js/app/servers-view.js",
+        16083,
+        "70940D60BF833FED302ACB9631F4E2AE179143E5"
+    ],
+    [
         "data/launcher-ui/assets/js/app/views.js",
-        68925,
-        "8B5AC2CC2AE84843E97CC410CC45183CEE953160"
+        69803,
+        "463117E2B000B1E53C037E4226000A1358CD4351"
     ],
     [
         "data/launcher-ui/assets/js/core/cb-friends.js",
@@ -506,8 +511,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/command.js",
-        16834,
-        "64E100D2D4014D28738F2B0E751C3CE60B8D2C58"
+        17039,
+        "CCA81440B5D8370A4D38DAF4D58201EA4487B4FF"
     ],
     [
         "data/launcher-ui/assets/js/core/community.js",
@@ -526,8 +531,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        192211,
-        "0F6EAA097906CF2AC495B1B0AB37BA967D5BD113"
+        200288,
+        "677A4FC13C4B66F8F5CA473ED19634AF614DAD4C"
     ],
     [
         "data/launcher-ui/assets/js/core/moderation.js",
@@ -543,6 +548,11 @@
         "data/launcher-ui/assets/js/core/player-counts.js",
         2315,
         "87A5A9FD7355F1CC27BA39AAD93D39E55E8FD722"
+    ],
+    [
+        "data/launcher-ui/assets/js/core/servers.js",
+        10411,
+        "AD0E03C0403D8656FF0FBB8AC3B26D2ACE852A59"
     ],
     [
         "data/launcher-ui/assets/js/core/utils.js",
@@ -606,8 +616,8 @@
     ],
     [
         "data/launcher-ui/main.html",
-        37318,
-        "B8EA765BC907BB6E3C7F48FBFF888AEFF9ABACDC"
+        37434,
+        "5A69EAB9550CFB61B055012CE1BA63A11A06D346"
     ],
     [
         "manifest/aw.json",
@@ -695,6 +705,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "FB1F275D3354E8C74C34E84760254BBBAD7E1D73123ADEC527089AD07F4617D9"
+        "ManifestHash": "840FD80EA99859F3A22DE04354193C89F2AF4310C3479DC2FB067BD4895948B6"
     }
 ]
