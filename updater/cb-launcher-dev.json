@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        3517296,
-        "E20CA012F0A6463688CC5084C7F464809C1ECFCB"
+        3528560,
+        "5ABE48A41F1B8E27F60E3B45B45B33189DDD711D"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -81,8 +81,8 @@
     ],
     [
         "data/launcher-ui/assets/css/main.css",
-        204576,
-        "E1DC2768F2ABFCF4BC3FB3CB848DCA187D5C271E"
+        207352,
+        "7FE963413F9B9FD34D9416701B3D642870AD8941"
     ],
     [
         "data/launcher-ui/assets/fonts/ibm-plex-mono-400.woff2",
@@ -281,8 +281,8 @@
     ],
     [
         "data/launcher-ui/assets/img/games/hmw-mod/capsule.jpg",
-        7402,
-        "9FA35952CD6ED22571F87F44E5D0FCFB02653661"
+        279581,
+        "64ED67604C7697AEF7635A98DB6469A60796427C"
     ],
     [
         "data/launcher-ui/assets/img/games/hmw-mod/hero.jpg",
@@ -486,8 +486,8 @@
     ],
     [
         "data/launcher-ui/assets/js/app/main.js",
-        100656,
-        "5BE08E8EA4E74AFEE3417E23AEF2B1DA1DF7BFE6"
+        107376,
+        "17AA0406AABE868474B81AA3636AFBD9E5B834B7"
     ],
     [
         "data/launcher-ui/assets/js/app/mods-view.js",
@@ -501,8 +501,8 @@
     ],
     [
         "data/launcher-ui/assets/js/app/views.js",
-        69803,
-        "463117E2B000B1E53C037E4226000A1358CD4351"
+        73914,
+        "E5C280887D1C9DF1DEA97D546F9F8835C16A8CA5"
     ],
     [
         "data/launcher-ui/assets/js/core/cb-friends.js",
@@ -511,8 +511,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/command.js",
-        17039,
-        "CCA81440B5D8370A4D38DAF4D58201EA4487B4FF"
+        17199,
+        "8BDAE913C079C7FB4DAB50B4F29A1C9166EBA57E"
     ],
     [
         "data/launcher-ui/assets/js/core/community.js",
@@ -531,8 +531,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        200288,
-        "677A4FC13C4B66F8F5CA473ED19634AF614DAD4C"
+        215951,
+        "9BA0F8A5A2EC5F9D06C704C33C1D1BA3ED528EF8"
     ],
     [
         "data/launcher-ui/assets/js/core/moderation.js",
@@ -556,8 +556,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/utils.js",
-        50203,
-        "D1877A88C85F9F1151D2570C19AEC75EEA1845C7"
+        50452,
+        "6B8F0910C6DD9CD90187F28765664BC80538D90F"
     ],
     [
         "data/launcher-ui/assets/js/popups/component-selection-popup.js",
@@ -616,8 +616,8 @@
     ],
     [
         "data/launcher-ui/main.html",
-        37434,
-        "5A69EAB9550CFB61B055012CE1BA63A11A06D346"
+        44344,
+        "252223D456AD07B0516E9ED639742290059B21D7"
     ],
     [
         "manifest/aw.json",
@@ -705,6 +705,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "840FD80EA99859F3A22DE04354193C89F2AF4310C3479DC2FB067BD4895948B6"
+        "ManifestHash": "C53303D82BE6BA464D2882FD409047BB96050DCE94B87E9349CA32BFE6A54D30"
     }
 ]
