@@ -1,8 +1,8 @@
 [
     [
-        "bin/cod4r_022/cod4r_022.dll",
-        3628544,
-        "C7714B527A10E4D71889D2DB380CC591D0BBDD1A",
+        "bin/cod4r_026/cod4r_026.dll",
+        3629056,
+        "AE4597A0A93DC6C003E49F15A11D99085DC7A674",
         "appdata"
     ],
     [
@@ -78,6 +78,6 @@
         "game"
     ],
     {
-        "ManifestHash": "AAFA57D09B8F3924C380A25C43FB37686A73052C5A4355F3F3A55F391ED34F27"
+        "ManifestHash": "F873291ACCBCE75FC05FC60E0C2E8E6699B0FBDFEC793233C426706F8A014EB5"
     }
 ]
