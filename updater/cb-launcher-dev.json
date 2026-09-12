@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        3535728,
-        "9F13F64AFEEE5A8C683D11A23FCC5D148CF831AA"
+        3546480,
+        "A5D7DBEA8E21EF1491D63F8FC47696A0B6669E47"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -501,13 +501,13 @@
     ],
     [
         "data/launcher-ui/assets/js/app/views.js",
-        76009,
-        "92191124A476686677189279A00E12B3C78F1656"
+        76081,
+        "1B8E7FFCC7C0CB173823FB325449D916490F6EE2"
     ],
     [
         "data/launcher-ui/assets/js/core/cb-friends.js",
-        34387,
-        "13731457EED310DAB42127788CD52E61CC60E908"
+        34089,
+        "4133E575220A6635376AC1E5494E25303D585F33"
     ],
     [
         "data/launcher-ui/assets/js/core/command.js",
@@ -521,8 +521,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/discord-friends.js",
-        12913,
-        "9CDBEEFBD01158F95F19E82709CFC0EF05FD6219"
+        9981,
+        "ACC0DDCC1EA53F9ED191849B0DCA4271461F56A2"
     ],
     [
         "data/launcher-ui/assets/js/core/dm.js",
@@ -531,8 +531,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        219044,
-        "4960F8C9EC9C29F6F1D56B142799F1FE09E33B4A"
+        218861,
+        "D9C7367BF1858A7A65C80D15302871C9332D5165"
     ],
     [
         "data/launcher-ui/assets/js/core/moderation.js",
@@ -595,6 +595,11 @@
         "B9C2952F5A16586D7AB9FFC76157151F2E4C32D0"
     ],
     [
+        "data/launcher-ui/assets/js/ui/invite-prompt.js",
+        5958,
+        "F30EC3C53D516536FFA39E0946DC980BEF38B1AB"
+    ],
+    [
         "data/launcher-ui/assets/js/ui/launch-redist-modal.js",
         4284,
         "CF869009F211EB7E7DD2D8D4A1CB7DADFC333325"
@@ -616,8 +621,8 @@
     ],
     [
         "data/launcher-ui/main.html",
-        45629,
-        "4D92C403482639550C19B84DCCA9D5C2D9C29E10"
+        45689,
+        "0E4E8423EA878A16F62140AC199F989465CD013C"
     ],
     [
         "manifest/aw.json",
@@ -705,6 +710,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "4C5ED235FE8BBF8092905BB7FE4A1D59432E9F176E5B3086FD6390CDBA24F972"
+        "ManifestHash": "44FC91C794106024099CB996E94AB04CADA535545FCE3A32B925BFBA27949C2F"
     }
 ]
