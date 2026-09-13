@@ -217,13 +217,6 @@ local main_menu_options_feeder = function( f17_arg0 )
 	return f17_local6
 end
 
--- Remove social button
-LUI.MenuBuilder.m_definitions["online_friends_widget"] = function()
-	return {
-		type = "UIElement"
-	}
-end
-
 f0_local0 = function ()
 	return {
 		type = "UIVerticalList",

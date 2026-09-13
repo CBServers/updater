@@ -75,6 +75,11 @@
         "1B249734B3AF1AE3CAAC9972CCB0E6BB9F53E623"
     ],
     [
+        "data/ui_scripts/cb_toast/__init__.lua",
+        3952,
+        "21510BE69F7A38EA9F2620061E67F4FC0476F8AB"
+    ],
+    [
         "data/ui_scripts/end_game/__init__.lua",
         6536,
         "1229873F29ADE5654BBDDB08031D196280F1B336"
@@ -86,8 +91,13 @@
     ],
     [
         "data/ui_scripts/main_menu/__init__.lua",
-        8391,
-        "FFD01C0DCD1CECCB33FB2B0394F7A929CB131361"
+        8260,
+        "5C6010A5B27FDFB2180658C41559133B20E8291A"
+    ],
+    [
+        "data/ui_scripts/match_settings/__init__.lua",
+        6382,
+        "9FCFCCF6647D99C889840B5D50AED4C39DBDBBB4"
     ],
     [
         "data/ui_scripts/menu_mods/__init__.lua",
@@ -131,10 +141,10 @@
     ],
     [
         "iw6x.exe",
-        7029248,
-        "DBAED9E052DF40584B0DFCFA46AC5DAF906A7797"
+        7081984,
+        "C3F581FE682DDF46EDDF868C34AAC5423309CED0"
     ],
     {
-        "ManifestHash": "B361AB4B5D008589E7E6E6E7506252F742977E4208A057D84B49510CBA2B179F"
+        "ManifestHash": "AA1A627909285E42038FC438F559D7AC4BD7A7166338D1866DB9794FE29E6939"
     }
 ]
