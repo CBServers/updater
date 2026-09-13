@@ -230,6 +230,11 @@
         "65C65F132AFD40EFA57E24A678548EFF4BB4E82A"
     ],
     [
+        "cdata/ui_scripts/CBToast/__init__.lua",
+        2587,
+        "D7E42E43C885BB72F85A29D48B0AA6443F3CC335"
+    ],
+    [
         "cdata/ui_scripts/ClanTags/__init__.lua",
         8045,
         "3CFD289AD9A066A10880B19428CC374A9F0CF7DB"
@@ -301,8 +306,8 @@
     ],
     [
         "cdata/ui_scripts/MainMenu/MPMainMenu.lua",
-        18772,
-        "45D423D375B221CCCEF970500E8A6E22BB4F90AD"
+        18907,
+        "0392A4E462D1E251E8F334D0980F50FE82E4402A"
     ],
     [
         "cdata/ui_scripts/MainMenu/MPMainMenuButtons.lua",
@@ -313,6 +318,11 @@
         "cdata/ui_scripts/MainMenu/__init__.lua",
         205,
         "FCF12AF8AF708FFCBC0A96353ED58B8ADC081F2D"
+    ],
+    [
+        "cdata/ui_scripts/MatchSettings/__init__.lua",
+        5524,
+        "5F278613FDC912215CA5BDFBA22F486A36955113"
     ],
     [
         "cdata/ui_scripts/MissionTeams/__init__.lua",
@@ -341,8 +351,8 @@
     ],
     [
         "cdata/ui_scripts/Patches/__init__.lua",
-        572,
-        "C286F1C70CCD7228A46B011CFFC5C98BB054C1D2"
+        198,
+        "637E243CAD61BDDA95593718C0E7AC8EECF2C0A0"
     ],
     [
         "cdata/ui_scripts/Stats/__init__.lua",
@@ -416,10 +426,10 @@
     ],
     [
         "iw7-mod.exe",
-        4667904,
-        "BEEEDD834176D423D61FA515FA4F9DE02B6AE566"
+        4721152,
+        "D29D612993F73B4B0F51E63858EFEBCA12955ACA"
     ],
     {
-        "ManifestHash": "5863A73509DD88E02CA58074DF618152E002537D479084FEEEAB575FAEFD4421"
+        "ManifestHash": "E9898740657B3F5BE5299F5D86E45009A485F059965470295B36A586A1747A52"
     }
 ]

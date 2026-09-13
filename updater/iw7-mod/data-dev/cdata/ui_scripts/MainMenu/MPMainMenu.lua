@@ -306,6 +306,9 @@ function MPMainMenu(menu, controller)
     end
     assert(controllerIndex)
 
+    -- Stock menu does this on create; the friends widget and list gate on IsOnlineMatch()
+    Engine.SetDvarBool("onlinegame", true)
+
     -- Initialize the main menu
     InitializeMainMenu(self, controllerIndex, controller)
     self:playSound("menu_open")
