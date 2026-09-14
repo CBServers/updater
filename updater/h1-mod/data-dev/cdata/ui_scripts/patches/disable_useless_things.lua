@@ -10,10 +10,3 @@ if Engine.InFrontend() then
         LUI.removemenubutton("pc_controls", 4)
     end
 end
-
--- Remove social button
-LUI.MenuBuilder.m_definitions["online_friends_widget"] = function()
-    return {
-        type = "UIElement"
-    }
-end
