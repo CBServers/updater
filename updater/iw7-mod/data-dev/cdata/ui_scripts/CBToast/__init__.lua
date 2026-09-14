@@ -1,6 +1,6 @@
 -- Non-modal toast on the LUI root, raised from C++ via ui_scripting::notify("cb_toast", { kicker, title, body })
 local TOAST_ID = "CBToast"
-local HOLD_MS = 6000
+local HOLD_MS = 8000
 local FADE_IN_MS = 150
 local FADE_OUT_MS = 300
 
