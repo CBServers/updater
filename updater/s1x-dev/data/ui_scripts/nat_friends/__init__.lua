@@ -64,4 +64,13 @@ if (builders and type(builders["mp_pause_menu"]) == "function") then
 		end
 		return menu
 	end
+elseif (builders and not Engine.InFrontend()) then
+	local candidates = {}
+	for name, builder in pairs(builders) do
+		if (type(name) == "string" and type(builder) == "function" and string.find(string.lower(name), "pause")) then
+			table.insert(candidates, name)
+		end
+	end
+
+	print("[cb_lui] nat_friends: mp_pause_menu builder not found; pause builders: " .. table.concat(candidates, ", "))
 end
