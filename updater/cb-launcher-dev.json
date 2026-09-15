@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        3551600,
-        "560080BC0E1444F436BF9836235DB1891636EA2F"
+        3554160,
+        "8C1F4BDAAFAF83EDDF624CF4694CCD1B62DB6082"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -81,8 +81,8 @@
     ],
     [
         "data/launcher-ui/assets/css/main.css",
-        208224,
-        "967B4D0AE780080F92AE109D689AB9AAAD93AD19"
+        209663,
+        "C4D34749B1F27F1168198F149DEF9552649C7702"
     ],
     [
         "data/launcher-ui/assets/fonts/ibm-plex-mono-400.woff2",
@@ -501,18 +501,18 @@
     ],
     [
         "data/launcher-ui/assets/js/app/views.js",
-        76081,
-        "1B8E7FFCC7C0CB173823FB325449D916490F6EE2"
+        68058,
+        "5DEB3CE299AA80DB5E27D1AC387B017D88AECD45"
     ],
     [
         "data/launcher-ui/assets/js/core/cb-friends.js",
-        34089,
-        "4133E575220A6635376AC1E5494E25303D585F33"
+        53796,
+        "FAEF1080515E951729C24306CE5206DE4DAFEF0F"
     ],
     [
         "data/launcher-ui/assets/js/core/command.js",
-        17389,
-        "0C84D811136E4FB211DD10F2EFC5F66610C23F0B"
+        18308,
+        "3316E217ABF2CEE9ECD75E5AEFCA372553046F4D"
     ],
     [
         "data/launcher-ui/assets/js/core/community.js",
@@ -521,8 +521,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/discord-friends.js",
-        9981,
-        "ACC0DDCC1EA53F9ED191849B0DCA4271461F56A2"
+        8549,
+        "717F9DF2292CA928EAD56AE2FFC1AF5A99C3AA64"
     ],
     [
         "data/launcher-ui/assets/js/core/dm.js",
@@ -531,8 +531,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        218859,
-        "5EBBD557B26CA40D19329ED22F4E377E1D5F07D5"
+        222258,
+        "5B1DD01F7DA6F33638DBDE8FD1A150FCCD4EBB01"
     ],
     [
         "data/launcher-ui/assets/js/core/moderation.js",
@@ -621,8 +621,8 @@
     ],
     [
         "data/launcher-ui/main.html",
-        45688,
-        "54CD09FFAF573FC7082AE9312500A888B62F3FE1"
+        44389,
+        "A5EE68BCE2AED7FDE5FCF2CB64DD6CC2312B69C7"
     ],
     [
         "manifest/aw.json",
@@ -710,6 +710,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "5FCECDDEB8679DD3B55FFBF7B01E9A4FC6C00BBF7CF225671983D4A66CDAEA40"
+        "ManifestHash": "32E12CEBAF7B47ADAEFBE900C4DD035CACFE9EA7A5E55AE66AFCB4C273956791"
     }
 ]
