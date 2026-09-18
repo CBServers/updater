@@ -21,7 +21,8 @@ const PROPERTY_KEYS = {
         CB_CHAT_SEEN: 'launcher-cb-chat-seen',
         DESKTOP_NOTIFICATIONS: 'launcher-desktop-notifications',
         REDUCE_MOTION: 'launcher-reduce-motion',
-        PLAYER_COUNT_MODE: 'launcher-player-count-mode'
+        PLAYER_COUNT_MODE: 'launcher-player-count-mode',
+        GRAYSCALE_UNINSTALLED: 'launcher-grayscale-uninstalled'
     },
     GAME: {
         INSTALL: 'install',
@@ -31,6 +32,7 @@ const PROPERTY_KEYS = {
         SELECTED_CLIENT_PREFIX: 'selected-client-',
         SKIP_INTRO_CINEMATIC: 'skip-intro-cinematic',
         LAUNCH_ADMIN: 'launch-admin',
+        PLUTONIUM_LAN: 'plutonium-lan',
         DISABLE_CB_EXTENSION: 'disable-cb-extension',
         DETECTED_COMPONENTS: 'detected-components',
         SELECTED_COMPONENTS: 'selected-components',
@@ -1147,6 +1149,22 @@ class GameUtils {
 
 // Make GameUtils available globally
 window.GameUtils = GameUtils;
+
+// execCommand first: CEF's HTTP origin has no navigator.clipboard, and the async API can stall.
+window.copyTextToClipboard = function copyTextToClipboard(text) {
+    const area = document.createElement('textarea');
+    area.value = text;
+    area.setAttribute('readonly', '');
+    area.style.position = 'fixed';
+    area.style.opacity = '0';
+    document.body.appendChild(area);
+    area.select();
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch (error) { ok = false; }
+    area.remove();
+    if (ok || !(navigator.clipboard && window.isSecureContext)) return Promise.resolve(ok);
+    return navigator.clipboard.writeText(text).then(() => true, () => false);
+};
 
 // Offline-mode guard for any network action (verify/download/update).
 // Returns true if the action may proceed; false if blocked. If the user
