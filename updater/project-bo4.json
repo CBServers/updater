@@ -12,7 +12,7 @@
     [
         "Launch Project BO4.exe",
         112640,
-        "9C3BACEF4AF4348A888C02164800736304EC0F1D"
+        "FC3A6723E59F009101D9AC4801F813EDCAF8977A"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/maxrankdata_mp.csv",
@@ -631,8 +631,8 @@
     ],
     [
         "project-bo4/launcher/Shield_Launcher.exe",
-        308736,
-        "B31C0779B1AC447439961B6DC1C92F23C9F6C018"
+        326656,
+        "0DAD16379D3AB7321E25AF9E391F63CE4C032F9F"
     ],
     [
         "project-bo4/launcher/solo/XInput9_1_0.dll",
@@ -690,6 +690,6 @@
         "7BEE5FF8DBD1C98E5A6FAC24B671A1BF95FB9022"
     ],
     {
-        "ManifestHash": "24436B3B6F0492751EC065B277AF3182B315D717592CA96D5E2097A5A27B3D0E"
+        "ManifestHash": "7EA76417FA5F051E9E6E168003EF35397F3D9C0DCEC993EC54355EE37DF5BACE"
     }
 ]
