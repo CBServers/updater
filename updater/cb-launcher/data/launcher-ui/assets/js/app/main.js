@@ -200,6 +200,14 @@ function adjustChannelElements() {
 
 // All game-specific functionality is now handled in individual page files
 
+function applyGrayscaleUninstalled(enabled) {
+    if (enabled) {
+        document.documentElement.removeAttribute('data-color-uninstalled');
+    } else {
+        document.documentElement.setAttribute('data-color-uninstalled', 'true');
+    }
+}
+
 function applyReduceMotion(enabled) {
     if (enabled) {
         document.documentElement.setAttribute('data-reduce-motion', 'true');
@@ -209,12 +217,71 @@ function applyReduceMotion(enabled) {
 }
 
 function applyTheme(theme) {
+    const root = document.documentElement;
     if (theme === 'dark' || theme === 'navy' || theme === 'navy-gradient') {
-        document.documentElement.setAttribute('data-theme', theme);
+        root.setAttribute('data-theme', theme);
+        root.removeAttribute('data-accent');
     } else {
-        // Tactical is the bare :root baseline
-        document.documentElement.removeAttribute('data-theme');
+        // Tactical is the bare :root baseline; the MW variant only swaps the accent tokens
+        root.removeAttribute('data-theme');
+        if (theme === 'tactical-mw') root.setAttribute('data-accent', 'mw');
+        else root.removeAttribute('data-accent');
     }
+}
+
+// The restart button only shows when the stored toggle disagrees with the running state.
+function syncOfflineRestartButton(storedValue) {
+    const btn = document.getElementById('offline-restart-btn');
+    if (!btn) return;
+    const wantOffline = storedValue === 'true';
+    const isOffline = !!window.IS_OFFLINE;
+    btn.hidden = wantOffline === isOffline;
+    btn.textContent = t(wantOffline ? 'settings.restartOffline' : 'settings.restartOnline');
+    btn.onclick = async () => {
+        btn.disabled = true;
+        try { await window.executeCommand(wantOffline ? 'relaunch' : 'relaunch-online'); } catch (_) {}
+    };
+}
+
+function anyGameRunning() {
+    const gsm = window.GameStateManager;
+    const states = gsm && gsm.gameStates ? Object.values(gsm.gameStates) : [];
+    return states.some(s => s && s.isRunning);
+}
+
+function syncPortableRestartButton(storedValue) {
+    const btn = document.getElementById('portable-restart-btn');
+    if (!btn) return;
+    const wantPortable = storedValue === 'true';
+    btn.hidden = wantPortable === !!window.IS_PORTABLE;
+    btn.textContent = t(wantPortable ? 'settings.portableMoveAndRestart' : 'settings.portableMoveBackAndRestart');
+    btn.onclick = async () => {
+        if (wantPortable && !window.PORTABLE_WRITABLE) {
+            await window.showMessageBox(t('settings.portableMode'), t('settings.portableNotWritable'), [t('common.ok')]);
+            return;
+        }
+        if ((window.ProgressManager && window.ProgressManager.isActive) || anyGameRunning()) {
+            window.showToast(t('settings.portableBusy'), 'error');
+            return;
+        }
+        const choice = await window.showMessageBox(
+            t('settings.portableConfirmTitle'),
+            t('settings.portableConfirmBody'),
+            [t('common.cancel'), t('common.ok')]
+        );
+        if (choice !== 1) return;
+
+        btn.disabled = true;
+        try {
+            const res = await window.executeCommand('switch-portable', { portable: wantPortable });
+            if (!res || !res.success) {
+                btn.disabled = false;
+                window.showToast(t(res && res.error === 'not-writable' ? 'settings.portableNotWritable' : 'settings.portableFailed'), 'error');
+            }
+        } catch (_) {
+            // The process exits on success, so a dropped reply is the expected outcome.
+        }
+    };
 }
 
 function applyOfflineIndicator() {
@@ -245,6 +312,16 @@ async function initialize() {
         } catch (_) {}
     }
 
+    window.IS_PORTABLE = false;
+    window.PORTABLE_WRITABLE = true;
+    if (typeof window.executeCommand === 'function') {
+        try {
+            const res = await window.executeCommand('get-portable-mode');
+            window.IS_PORTABLE = !!(res && res.portable);
+            window.PORTABLE_WRITABLE = !res || res.writable !== false;
+        } catch (_) {}
+    }
+
     // Apply saved theme before rendering to avoid flash
     if (typeof window.executeCommand === 'function') {
         try {
@@ -253,6 +330,9 @@ async function initialize() {
 
             const reduceMotion = await window.executeCommand('get-property', PROPERTY_KEYS.LAUNCHER.REDUCE_MOTION);
             applyReduceMotion(reduceMotion === 'true');
+
+            const grayscaleUninstalled = await window.executeCommand('get-property', PROPERTY_KEYS.LAUNCHER.GRAYSCALE_UNINSTALLED);
+            applyGrayscaleUninstalled(grayscaleUninstalled !== 'false');
         } catch (_) {}
     }
 
@@ -308,6 +388,22 @@ async function initialize() {
 
             if (!window.IS_OFFLINE && window.DiscordFriendsManager) {
                 window.DiscordFriendsManager.start();
+            }
+
+            if (!window.IS_OFFLINE && window.CbFriendsManager) {
+                window.CbFriendsManager.start();
+            }
+
+            if (!window.IS_OFFLINE && window.CommunityManager) {
+                window.CommunityManager.startBadgePolling();
+            }
+
+            if (!window.IS_OFFLINE && window.ModerationManager) {
+                window.ModerationManager.start();
+            }
+
+            if (!window.IS_OFFLINE && window.DirectMessages) {
+                window.DirectMessages.start();
             }
 
             handleStartupLaunchArg();
@@ -467,6 +563,18 @@ async function initializeNavigation() {
         friendsElement.addEventListener("click", handleFriendsClick);
     }
 
+    // Handle community navigation
+    const communityElement = document.querySelector("#community");
+    if (communityElement) {
+        communityElement.addEventListener("click", handleCommunityClick);
+    }
+
+    // Handle moderation navigation
+    const moderationElement = document.querySelector("#moderation");
+    if (moderationElement) {
+        moderationElement.addEventListener("click", handleModerationClick);
+    }
+
     // Handle game navigation
     const gameElements = document.querySelectorAll(".game-item");
     gameElements.forEach(el => {
@@ -584,6 +692,28 @@ function handleSettingsClick(e) {
     removeActiveNavigation();
     el.classList.add("active");
     loadNavigationPage("settings");
+}
+
+function handleCommunityClick(e) {
+    const el = this;
+    if (el.classList.contains("active")) {
+        return;
+    }
+
+    removeActiveNavigation();
+    el.classList.add("active");
+    loadNavigationPage("community");
+}
+
+function handleModerationClick(e) {
+    const el = this;
+    if (el.classList.contains("active")) {
+        return;
+    }
+
+    removeActiveNavigation();
+    el.classList.add("active");
+    loadNavigationPage("moderation");
 }
 
 function handleSupportClick(e) {
@@ -793,6 +923,15 @@ window.GameStateManager = {
 
         if (cardsNeedRefresh && window.AppViews && typeof window.AppViews.refreshActionButtons === 'function') {
             window.AppViews.refreshActionButtons();
+        }
+
+        // Tell the CB social service what we're playing, only when it changes.
+        const activity = this.runningGameId || '';
+        if (activity !== this._lastCbActivity) {
+            this._lastCbActivity = activity;
+            if (!window.IS_OFFLINE && typeof window.executeCommand === 'function') {
+                window.executeCommand('cbfriends-set-activity', { game: activity }).catch(() => {});
+            }
         }
     },
 
@@ -1325,6 +1464,17 @@ window.addEventListener('cb-progress-tick', (event) => {
     }
 });
 
+// Hides the Community nav item, and leaves it if the user is standing on it.
+function applyCommunityVisible(visible) {
+    const nav = document.getElementById('community');
+    if (!nav) return;
+    nav.style.display = visible ? '' : 'none';
+    if (!visible && nav.classList.contains('active')) {
+        const home = document.getElementById('home');
+        if (home) home.click();
+    }
+}
+
 function loadNavigationPage(page) {
     console.log(`Loading page: ${page}`);
 
@@ -1341,8 +1491,12 @@ function loadNavigationPage(page) {
         return Promise.reject(`Page not found: ${page}-page`);
     }
 
-    // Use flex layout for settings page to anchor footer to bottom
-    targetPage.style.display = (page === 'settings') ? 'flex' : 'block';
+    // Flex for settings (footer anchored to the bottom) and community (chat column fills the height)
+    targetPage.style.display = (page === 'settings' || page === 'community') ? 'flex' : 'block';
+
+    // The community board only polls while its tab is open.
+    if (window.CommunityManager) window.CommunityManager.setActive(page === 'community');
+    if (window.ModerationManager) window.ModerationManager.setActive(page === 'moderation');
 
     // Initialize page-specific functionality
     if (page === 'settings') {
@@ -1635,6 +1789,10 @@ async function handleDeepLink(url) {
             window.showToast(t('deepLink.unknownGame', { game: gameSlug }), 'error');
         }
         return;
+    }
+
+    if (window.AppViews && typeof window.AppViews.unhideGame === 'function') {
+        await window.AppViews.unhideGame(uiId);
     }
 
     try {
@@ -1958,6 +2116,31 @@ async function loadLauncherSettings() {
             }
         }
 
+        // Load "Create launcher shortcuts" setting (default on)
+        const autoShortcuts = await window.executeCommand('get-property', PROPERTY_KEYS.LAUNCHER.AUTO_SHORTCUTS);
+        const autoShortcutsToggle = document.getElementById('auto-shortcuts-toggle');
+        if (autoShortcutsToggle) {
+            autoShortcutsToggle.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.remove('active'));
+            const targetValue = (autoShortcuts === 'false') ? 'false' : 'true';
+            const targetButton = autoShortcutsToggle.querySelector(`[data-value="${targetValue}"]`);
+            if (targetButton) targetButton.classList.add('active');
+        }
+
+        for (const [toggleId, key] of [
+            ['skip-self-update-toggle', PROPERTY_KEYS.LAUNCHER.SKIP_SELF_UPDATE],
+            ['offline-mode-toggle', PROPERTY_KEYS.LAUNCHER.OFFLINE_MODE],
+            ['portable-mode-toggle', PROPERTY_KEYS.LAUNCHER.PORTABLE_MODE]
+        ]) {
+            const group = document.getElementById(toggleId);
+            if (!group) continue;
+            const value = await window.executeCommand('get-property', key);
+            group.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.remove('active'));
+            const targetButton = group.querySelector(`[data-value="${value === 'true' ? 'true' : 'false'}"]`);
+            if (targetButton) targetButton.classList.add('active');
+            if (toggleId === 'offline-mode-toggle') syncOfflineRestartButton(value);
+            if (toggleId === 'portable-mode-toggle') syncPortableRestartButton(value);
+        }
+
         // Load "Skip Redistributable Check" setting
         const skipRedistCheck = await window.executeCommand('get-property', PROPERTY_KEYS.LAUNCHER.SKIP_REDIST_CHECK);
         const skipRedistCheckToggle = document.getElementById('skip-redist-check-toggle');
@@ -1973,6 +2156,17 @@ async function loadLauncherSettings() {
                 targetButton.classList.add('active');
             }
         }
+
+        // Load "Community tab" setting
+        const communityEnabled = await window.executeCommand('get-property', PROPERTY_KEYS.LAUNCHER.CB_COMMUNITY_ENABLED);
+        const communityToggle = document.getElementById('cb-community-toggle');
+        if (communityToggle) {
+            communityToggle.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.remove('active'));
+            const target = (communityEnabled === 'false') ? 'false' : 'true';
+            const btn = communityToggle.querySelector(`[data-value="${target}"]`);
+            if (btn) btn.classList.add('active');
+        }
+        applyCommunityVisible(communityEnabled !== 'false');
 
         // Load "Desktop Notifications" setting
         const desktopNotifications = await window.executeCommand('get-property', PROPERTY_KEYS.LAUNCHER.DESKTOP_NOTIFICATIONS);
@@ -2006,6 +2200,18 @@ async function loadLauncherSettings() {
             }
         }
 
+        // Load "Gray out uninstalled games" setting (defaults to on)
+        const grayscaleUninstalled = await window.executeCommand('get-property', PROPERTY_KEYS.LAUNCHER.GRAYSCALE_UNINSTALLED);
+        const grayscaleToggle = document.getElementById('grayscale-uninstalled-toggle');
+        if (grayscaleToggle) {
+            grayscaleToggle.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.remove('active'));
+            const targetValue = (grayscaleUninstalled === 'false') ? 'false' : 'true';
+            const targetButton = grayscaleToggle.querySelector(`[data-value="${targetValue}"]`);
+            if (targetButton) {
+                targetButton.classList.add('active');
+            }
+        }
+
         // Load CDN settings
         await initCdnSettings();
 
@@ -2014,6 +2220,14 @@ async function loadLauncherSettings() {
         const themeSelect = document.getElementById('theme-select');
         if (themeSelect) {
             themeSelect.value = savedTheme || 'tactical';
+        }
+
+        // Load player count mode
+        const playerCountMode = await window.executeCommand('get-property', PROPERTY_KEYS.LAUNCHER.PLAYER_COUNT_MODE);
+        applyPlayerCountMode(playerCountMode || 'both');
+        const playerCountSelect = document.getElementById('player-count-select');
+        if (playerCountSelect) {
+            playerCountSelect.value = playerCountMode || 'both';
         }
 
         // Load global player name
@@ -2296,6 +2510,32 @@ async function setupLanguageSelect() {
     }
 }
 
+function applyPlayerCountMode(mode) {
+    if (window.PlayerCountManager) {
+        window.PlayerCountManager.setMode(mode);
+    }
+}
+
+function setupPlayerCountSelect() {
+    const select = document.getElementById('player-count-select');
+    if (!select || select.dataset.bound) return;
+
+    select.dataset.bound = 'true';
+    select.addEventListener('change', async (event) => {
+        const mode = event.target.value;
+        applyPlayerCountMode(mode);
+        if (typeof window.executeCommand === 'function') {
+            try {
+                await window.executeCommand('set-property', {
+                    [PROPERTY_KEYS.LAUNCHER.PLAYER_COUNT_MODE]: mode
+                });
+            } catch (error) {
+                console.error('Failed to save player count mode:', error);
+            }
+        }
+    });
+}
+
 function setupThemeSelect() {
     const themeSelect = document.getElementById('theme-select');
     if (!themeSelect || themeSelect.dataset.bound) return;
@@ -2391,12 +2631,41 @@ function setupLauncherSettingsToggles() {
                             [PROPERTY_KEYS.LAUNCHER.SKIP_REDIST_CHECK]: clickedValue
                         });
                         console.log(`Skip redist check set to: ${clickedValue}`);
+                    } else if (settingId === 'skip-self-update-toggle') {
+                        await window.executeCommand('set-property', {
+                            [PROPERTY_KEYS.LAUNCHER.SKIP_SELF_UPDATE]: clickedValue
+                        });
+                    } else if (settingId === 'offline-mode-toggle') {
+                        await window.executeCommand('set-property', {
+                            [PROPERTY_KEYS.LAUNCHER.OFFLINE_MODE]: clickedValue
+                        });
+                        syncOfflineRestartButton(clickedValue);
+                    } else if (settingId === 'portable-mode-toggle') {
+                        await window.executeCommand('set-property', {
+                            [PROPERTY_KEYS.LAUNCHER.PORTABLE_MODE]: clickedValue
+                        });
+                        syncPortableRestartButton(clickedValue);
+                    } else if (settingId === 'auto-shortcuts-toggle') {
+                        await window.executeCommand('set-property', {
+                            [PROPERTY_KEYS.LAUNCHER.AUTO_SHORTCUTS]: clickedValue
+                        });
+                        console.log(`Auto shortcuts set to: ${clickedValue}`);
                     } else if (settingId === 'reduce-motion-toggle') {
                         applyReduceMotion(clickedValue === 'true');
                         await window.executeCommand('set-property', {
                             [PROPERTY_KEYS.LAUNCHER.REDUCE_MOTION]: clickedValue
                         });
                         console.log(`Reduce motion set to: ${clickedValue}`);
+                    } else if (settingId === 'grayscale-uninstalled-toggle') {
+                        applyGrayscaleUninstalled(clickedValue === 'true');
+                        await window.executeCommand('set-property', {
+                            [PROPERTY_KEYS.LAUNCHER.GRAYSCALE_UNINSTALLED]: clickedValue
+                        });
+                    } else if (settingId === 'cb-community-toggle') {
+                        applyCommunityVisible(clickedValue === 'true');
+                        await window.executeCommand('set-property', {
+                            [PROPERTY_KEYS.LAUNCHER.CB_COMMUNITY_ENABLED]: clickedValue
+                        });
                     } else if (settingId === 'desktop-notifications-toggle') {
                         await window.executeCommand('set-property', {
                             [PROPERTY_KEYS.LAUNCHER.DESKTOP_NOTIFICATIONS]: clickedValue
@@ -2437,8 +2706,13 @@ async function handleResetAllSettings() {
                     [PROPERTY_KEYS.LAUNCHER.SKIP_CLIENT_UPDATE]: 'false',
                     [PROPERTY_KEYS.LAUNCHER.SKIP_REDIST_CHECK]: 'false',
                     [PROPERTY_KEYS.LAUNCHER.REDUCE_MOTION]: 'false',
+                    [PROPERTY_KEYS.LAUNCHER.GRAYSCALE_UNINSTALLED]: 'true',
+                    [PROPERTY_KEYS.LAUNCHER.AUTO_SHORTCUTS]: 'true',
+                    [PROPERTY_KEYS.LAUNCHER.SKIP_SELF_UPDATE]: 'false',
+                    [PROPERTY_KEYS.LAUNCHER.OFFLINE_MODE]: 'false',
+                    [PROPERTY_KEYS.LAUNCHER.HIDDEN_GAMES]: '[]',
                     [PROPERTY_KEYS.LAUNCHER.LANGUAGE]: 'en',
-                    [PROPERTY_KEYS.LAUNCHER.THEME]: 'dark',
+                    [PROPERTY_KEYS.LAUNCHER.THEME]: 'tactical',
                     [PROPERTY_KEYS.LAUNCHER.GLOBAL_PLAYER_NAME]: '',
                     [PROPERTY_KEYS.LAUNCHER.CDN_CUSTOM_URL]: ''
                 });
@@ -2471,8 +2745,15 @@ async function handleResetAllSettings() {
                 }
                 applyTheme('tactical');
                 applyReduceMotion(false);
+                applyGrayscaleUninstalled(true);
+                applyPlayerCountMode('both');
                 const themeSelect = document.getElementById('theme-select');
                 if (themeSelect) themeSelect.value = 'tactical';
+                const playerCountSelect = document.getElementById('player-count-select');
+                if (playerCountSelect) playerCountSelect.value = 'both';
+                if (window.AppViews && typeof window.AppViews.setHiddenGames === 'function') {
+                    await window.AppViews.setHiddenGames([]);
+                }
 
                 // Reload settings page to show defaults
                 await refreshLocalizedUI('settings');
@@ -2650,6 +2931,7 @@ async function initializeSettingsPage() {
     await setupDiscordSettings();
     await setupLanguageSelect();
     setupThemeSelect();
+    setupPlayerCountSelect();
 
     // Setup action button listeners
     const resetBtn = document.getElementById('reset-all-settings-btn');
@@ -2665,6 +2947,15 @@ async function initializeSettingsPage() {
     const consoleBtn = document.getElementById('show-console-btn');
     if (consoleBtn) {
         consoleBtn.onclick = handleToggleConsole;
+    }
+
+    const cliBtn = document.getElementById('command-line-toggle-btn');
+    const cliList = document.getElementById('command-line-list');
+    if (cliBtn && cliList) {
+        cliBtn.onclick = () => {
+            cliList.hidden = !cliList.hidden;
+            cliBtn.textContent = t(cliList.hidden ? 'settings.commandLineShow' : 'settings.commandLineHide');
+        };
     }
 
     syncConsoleButtonLabel();

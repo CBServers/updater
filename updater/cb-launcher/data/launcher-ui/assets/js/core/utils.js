@@ -12,8 +12,17 @@ const PROPERTY_KEYS = {
         GLOBAL_PLAYER_NAME: 'launcher-global-player-name',
         CDN_CUSTOM_URL: 'launcher-cdn-custom-url',
         PINNED_GAMES: 'launcher-pinned-games',
+        HIDDEN_GAMES: 'launcher-hidden-games',
+        AUTO_SHORTCUTS: 'launcher-auto-shortcuts',
+        SKIP_SELF_UPDATE: 'launcher-skip-self-update',
+        OFFLINE_MODE: 'launcher-offline-mode',
+        PORTABLE_MODE: 'launcher-portable-mode',
+        CB_COMMUNITY_ENABLED: 'launcher-cb-community-enabled',
+        CB_CHAT_SEEN: 'launcher-cb-chat-seen',
         DESKTOP_NOTIFICATIONS: 'launcher-desktop-notifications',
-        REDUCE_MOTION: 'launcher-reduce-motion'
+        REDUCE_MOTION: 'launcher-reduce-motion',
+        PLAYER_COUNT_MODE: 'launcher-player-count-mode',
+        GRAYSCALE_UNINSTALLED: 'launcher-grayscale-uninstalled'
     },
     GAME: {
         INSTALL: 'install',
@@ -23,6 +32,7 @@ const PROPERTY_KEYS = {
         SELECTED_CLIENT_PREFIX: 'selected-client-',
         SKIP_INTRO_CINEMATIC: 'skip-intro-cinematic',
         LAUNCH_ADMIN: 'launch-admin',
+        PLUTONIUM_LAN: 'plutonium-lan',
         DISABLE_CB_EXTENSION: 'disable-cb-extension',
         DETECTED_COMPONENTS: 'detected-components',
         SELECTED_COMPONENTS: 'selected-components',
@@ -51,6 +61,7 @@ class GameUtils {
         'h1-mod': 'mwr',
         'iw7-mod': 'iw',
         'bo4': 'bo4',
+        's2x': 'ww2',
         'mw2r': 'mw2r',
         'hmw-mod': 'hmw'
     };
@@ -60,7 +71,7 @@ class GameUtils {
         Object.entries(GameUtils.UI_TO_BACKEND_MAP).map(([ui, backend]) => [backend, ui])
     );
 
-    static GAME_ORDER = ['cod1', 'coduo', 'cod2x', 'cod4x', 't4', 'iw4x', 't5', 'iw5', 't6', 'iw6x', 's1x', 'boiii', 'iw7-mod', 'h1-mod', 'bo4', 'mw2r', 'hmw-mod'];
+    static GAME_ORDER = ['cod1', 'coduo', 'cod2x', 'cod4x', 't4', 'iw4x', 't5', 'iw5', 't6', 'iw6x', 's1x', 'boiii', 'iw7-mod', 'h1-mod', 's2x', 'bo4', 'mw2r', 'hmw-mod'];
 
     // Friendly aliases accepted by the -launch CLI arg (alias -> UI ID).
     // Covers common CoD names that don't already match a UI ID or backend key.
@@ -325,6 +336,29 @@ class GameUtils {
             capsulePath: './assets/img/games/iw7-mod/capsule.jpg',
             heroImagePath: './assets/img/games/iw7-mod/hero.jpg',
             logoPath: './assets/img/games/iw7-mod/logo.png'
+        },
+        'ww2': {
+            displayName: 'World War II',
+            shortName: 'WWII',
+            defaultInstallPath: 'ww2_game_files',
+            uiId: 's2x',
+            client: 'S2x',
+            provider: '',
+            clientKey: 'others',
+            comingSoon: true,
+            hasMultipleModes: true,
+            supportedModes: ['mp', 'sp', 'zm'],
+            supportsName: false,
+            specialSettings: [],
+            version: 'S2',
+            description: 'Call of Duty: WWII (2017). Client integration is in the works.',
+            credits: '',
+            accent: '#8C7A4B',
+            assetBase: './assets/img/games/s2x',
+            iconPath: './assets/img/games/s2x/ww2logo.jfif',
+            capsulePath: './assets/img/games/s2x/coverart.jpg',
+            heroImagePath: './assets/img/games/s2x/banner.jfif',
+            logoPath: './assets/img/games/s2x/logo-transparent.png'
         },
         'bo4': {
             displayName: 'Black Ops 4',
@@ -729,6 +763,7 @@ class GameUtils {
             let cancelRequested = false;
             let lastBytes = 0, lastTime = 0, emaSpeed = 0; // bytes, ms, bytes/sec
             let startTime = 0, startBytes = 0;             // ms, bytes (download-start baseline)
+            let lastNoticeSeq = 0;
 
             const cancelOperation = async () => {
                 cancelRequested = true;
@@ -793,6 +828,11 @@ class GameUtils {
                                     resolve();
                                 }, 1000);
                                 return;
+                            }
+
+                            if (result.noticeSeq && result.noticeSeq !== lastNoticeSeq) {
+                                lastNoticeSeq = result.noticeSeq;
+                                GameUtils.showProgressNotice(result.noticeKind, result.noticeDetail);
                             }
 
                             // Paused: keep the bar alive at the current percent, just relabel.
@@ -881,6 +921,19 @@ class GameUtils {
             completeMessage,
             runFn
         });
+    }
+
+    // One toast per backend notice: a retry round or a mirror switch, never one per file
+    static showProgressNotice(kind, detail) {
+        if (typeof window.showToast !== 'function') return;
+        const t = (key, vars) => window.LauncherI18n ? window.LauncherI18n.t(key, vars) : null;
+        if (kind === 'retry') {
+            window.showToast(t('downloads.noticeRetry', { count: detail }) || `${detail} file(s) failed to download, retrying`, 'error', 6000);
+        } else if (kind === 'failover') {
+            let host = detail;
+            try { host = new URL(detail).host; } catch (_) { /* keep raw */ }
+            window.showToast(t('downloads.noticeFailover', { host }) || `Download server unreachable, switching to ${host}`, 'info', 6000);
+        }
     }
 
     static expandMissingToPackageIds(missingGroups) {
@@ -1036,6 +1089,11 @@ class GameUtils {
             try { missingResp = await window.executeCommand('get-missing-redists-for-game', { game: backendGame }); }
             catch (e) { console.error('get-missing-redists-for-game failed', e); }
 
+            // Fails open, but say so: an empty list and a check that never ran look identical otherwise.
+            if (!missingResp || missingResp.checked !== true) {
+                console.error(`Redist check did not run for ${backendGame}, launching without it`, missingResp);
+            }
+
             const missing = (missingResp && missingResp.missing) || [];
             if (missing.length > 0) {
                 const result = window.LaunchRedistModal
@@ -1091,6 +1149,22 @@ class GameUtils {
 
 // Make GameUtils available globally
 window.GameUtils = GameUtils;
+
+// execCommand first: CEF's HTTP origin has no navigator.clipboard, and the async API can stall.
+window.copyTextToClipboard = function copyTextToClipboard(text) {
+    const area = document.createElement('textarea');
+    area.value = text;
+    area.setAttribute('readonly', '');
+    area.style.position = 'fixed';
+    area.style.opacity = '0';
+    document.body.appendChild(area);
+    area.select();
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch (error) { ok = false; }
+    area.remove();
+    if (ok || !(navigator.clipboard && window.isSecureContext)) return Promise.resolve(ok);
+    return navigator.clipboard.writeText(text).then(() => true, () => false);
+};
 
 // Offline-mode guard for any network action (verify/download/update).
 // Returns true if the action may proceed; false if blocked. If the user

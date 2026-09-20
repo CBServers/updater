@@ -20,6 +20,40 @@ const mockMods = {
     job: null
 };
 
+// Static-preview state for the CB Friends sub-tab and Community board.
+const mockCb = {
+    state: 'none', profile: null, recoveryCode: null,
+    friends: { friends: [], incoming: [], outgoing: [] },
+    lfg: [
+        { cbId: 'cb_ally', handle: 'ally', displayName: 'Ally', avatarUrl: '', online: true, game: 'boiii', mode: 'zm', status: '', relation: 'none', note: 'need 2 for EE', slots: 3, joined: 1, iJoined: false, joinable: true, joiners: [{ cbId: 'cb_vex', handle: 'vex', displayName: 'Vex', avatarUrl: '', accent: '' }] },
+        { cbId: 'cb_nova', handle: 'nova', displayName: 'Nova', avatarUrl: '', online: true, game: 'iw4x', mode: '', status: '', relation: 'none', note: '', slots: 0, joined: 0, iJoined: false }
+    ],
+    broadcast: { on: false, game: '', note: '', slots: 0 },
+    chatRoom: '',
+    chat: {
+        all: [{ id: 1, cbId: 'cb_ally', handle: 'ally', displayName: 'Ally', accent: '#F3751B', text: 'anyone on tonight?' }],
+        boiii: [{ id: 1, cbId: 'cb_nova', handle: 'nova', displayName: 'Nova', accent: '', text: 'running EE in 10' }]
+    },
+    viewedProfile: null,
+    blocked: [],
+    securityEvents: [],
+    chatHeads: {},
+    playedWith: [],
+    dmConversations: [],
+    dmMessages: [],
+    dmPeer: '',
+    modRole: '',
+    modReports: [],
+    modLog: [],
+    modLookup: null
+};
+// Discord link state for the preview; flip status from the console to see each Friends card.
+const mockDiscord = { status: 'linked' };
+
+function mockPerson(handle, name, extra) {
+    return Object.assign({ cbId: 'cb_' + handle, handle, displayName: name || handle, avatarUrl: '', online: false, game: '', mode: '', status: '', relation: '', note: '' }, extra || {});
+}
+
 function mockModImport(data) {
     const name = String(data.path).replace(/[\\/]+$/, '').split(/[\\/]/).pop().replace(/\.zip$/i, '');
     const kind = /^(zm_|mp_|nazi_zombie_)/i.test(name) ? 'map' : 'mod';
@@ -38,6 +72,10 @@ function mockCommand(command, data) {
             return 'main';
         case 'get-property':
             return null;
+        case 'get-portable-mode':
+            return { portable: false, writable: true };
+        case 'switch-portable':
+            return { success: true };
         case 'get-game-property':
             return data && data.suffix === PROPERTY_KEYS.GAME.IS_INSTALLED ? 'false' : '';
         case 'is-game-running':
@@ -61,6 +99,12 @@ function mockCommand(command, data) {
                     { region: 'eu', latency: 18 }
                 ]
             };
+        case 'get-service-hosts':
+            return {
+                social: ['https://social.cbservers.dev', 'https://social.cbservers.xyz'],
+                workshop: ['https://workshop.cbservers.dev', 'https://workshop.cbservers.xyz'],
+                servers: ['https://servers.cbservers.dev', 'https://servers.cbservers.xyz']
+            };
         case 'get-version':
             return {
                 version: 'UI preview',
@@ -70,13 +114,193 @@ function mockCommand(command, data) {
             };
         case 'get-update-progress':
             return { active: false, progress: 100, message: 'Complete' };
-        case 'discord-get-status':
-            return { status: 'unlinked', profile: null, error: null };
+        case 'discord-get-status': {
+            const linked = mockDiscord.status === 'linked';
+            return { status: mockDiscord.status, profile: linked ? { id: '1', displayName: 'Preview', avatarUrl: '' } : null, error: null, joinable: linked };
+        }
         case 'discord-get-friends':
-            return { available: false, registryOk: true, friends: [] };
+            if (mockDiscord.status !== 'linked') return { available: false, registryOk: true, friends: [] };
+            return { available: true, registryOk: true, joinable: true, friends: [
+                { id: '2', displayName: 'Rook', avatarUrl: '', status: 'online', inLauncher: true, joinable: true, directJoin: true, openable: false, sameMatch: false, gameId: 'boiii', activityDetails: 'Black Ops 3 - Team Deathmatch on Nuketown', activityState: 'CB TDM 24/7' },
+                { id: '3', displayName: 'Vex', avatarUrl: '', status: 'online', inLauncher: true, joinable: false, directJoin: false, openable: true, sameMatch: false, gameId: 'iw4x', activityDetails: 'Modern Warfare 2', activityState: 'In Menu' },
+                { id: '4', displayName: 'Idle Ike', avatarUrl: '', status: 'idle', inLauncher: true, joinable: false, directJoin: false, openable: false, sameMatch: false, gameId: '', activityDetails: '', activityState: '' },
+                { id: '5', displayName: 'Ghost', avatarUrl: '', status: 'offline', inLauncher: false, joinable: false, directJoin: false, openable: false, sameMatch: false, gameId: '', activityDetails: '', activityState: '' }
+            ] };
         case 'discord-link':
+            mockDiscord.status = 'linked';
+            return { started: true };
         case 'discord-unlink':
+            mockDiscord.status = 'unlinked';
             return { started: false };
+        case 'cbfriends-get-status':
+            return { state: mockCb.state, profile: mockCb.profile, error: null, hasRecoveryCode: !!mockCb.recoveryCode, joinable: !!(mockCb.presence && mockCb.presence.joinable), presence: mockCb.presence || { game: '' } };
+        case 'cbfriends-create-profile':
+            mockCb.state = 'ready';
+            mockCb.profile = { cbId: 'cb_preview', handle: data.handle, displayName: data.displayName || data.handle, avatarUrl: '' };
+            mockCb.recoveryCode = '1A2B-3C4D-5E6F-7A8B-9C0D-1E2F-3A4B-5C6D';
+            mockCb.presence = { game: 'boiii', mode: 'mp', mapDisplay: 'Nuketown', gametype: 'Team Deathmatch', serverName: 'CB TDM 24/7', players: 9, maxPlayers: 18, joinable: true };
+            mockCb.friends.incoming = [mockPerson('reaper', 'Reaper', { online: false, lastSeen: Date.now() - 3 * 3600 * 1000 })];
+            // Ghost, Vex and Idle Ike are also Discord friends (ids 5, 3, 4), so they merge; Rook stays Discord-only.
+            mockCb.friends.friends = [
+                mockPerson('nova', 'Nova', { online: true, game: 'boiii', mode: 'mp', mapDisplay: 'Nuketown', gametype: 'Team Deathmatch', serverName: 'CB TDM 24/7', players: 9, maxPlayers: 18, joinable: true, matchId: 'm1' }),
+                mockPerson('ghost', 'Ghost', { online: false, lastSeen: Date.now() - 2 * 86400 * 1000, discordId: '5' }),
+                mockPerson('vex', 'Vex', { online: true, game: 'iw4x', discordId: '3' }),
+                mockPerson('idle', 'Idle Ike', { online: true, discordId: '4' })
+            ];
+            mockCb.playedWith = [
+                mockPerson('rook', 'Rook', { online: true, game: 'boiii', discordId: '2' }),
+                mockPerson('kilo', 'Kilo', { online: false, lastSeen: Date.now() - 2 * 3600 * 1000 })
+            ];
+            return { started: true };
+        case 'cbfriends-get-recovery-code':
+            return { code: mockCb.recoveryCode || null };
+        case 'cbfriends-update-profile':
+            if (mockCb.profile) {
+                if (data.displayName) mockCb.profile.displayName = data.displayName;
+                if (data.handle) mockCb.profile.handle = data.handle;
+                mockCb.profile.bio = data.bio || '';
+                mockCb.profile.accent = data.accent || '';
+                mockCb.profile.favoriteGame = data.favoriteGame || '';
+                if (typeof data.avatarUrl === 'string') mockCb.profile.avatarUrl = data.avatarUrl;
+            }
+            return { ok: true };
+        case 'cbfriends-request-profile': {
+            const pool = mockCb.lfg.concat(mockCb.friends.friends, mockCb.friends.incoming);
+            const found = pool.find(p => p.cbId === data.cbId);
+            mockCb.viewedProfile = found
+                ? Object.assign({ bio: 'zombies main, EE runs nightly', accent: '#F3751B', favoriteGame: 'boiii', createdAt: 1750000000 }, found)
+                : null;
+            return { ok: true };
+        }
+        case 'cbfriends-get-viewed-profile':
+            return { profile: mockCb.viewedProfile || null };
+        case 'cbfriends-get-chat-heads':
+            return { rooms: mockCb.chatHeads };
+        case 'cbfriends-get-played-with':
+            return { people: mockCb.playedWith };
+        case 'cbfriends-get-dm-list':
+            return { conversations: mockCb.dmConversations, unread: 0 };
+        case 'cbfriends-get-dm':
+            return { peer: mockCb.dmPeer, messages: mockCb.dmMessages };
+        case 'cbfriends-set-dm-peer':
+            mockCb.dmPeer = data && data.cbId;
+            return { ok: true };
+        case 'cbfriends-send-dm':
+            return { ok: true };
+        case 'cbfriends-mod-status':
+            return { role: mockCb.modRole };
+        case 'cbfriends-mod-get-reports':
+            return { reports: mockCb.modReports };
+        case 'cbfriends-mod-get-log':
+            return { entries: mockCb.modLog };
+        case 'cbfriends-mod-get-lookup':
+            return { account: mockCb.modLookup };
+        case 'cbfriends-set-mod-active':
+        case 'cbfriends-mod-lookup':
+        case 'cbfriends-mod-resolve':
+        case 'cbfriends-mod-mute':
+        case 'cbfriends-mod-set-role':
+        case 'cbfriends-set-activity':
+        case 'cbfriends-load-older-chat':
+        case 'cbfriends-report':
+        case 'cbfriends-show-person-notification':
+        case 'cbfriends-show-invite-notification':
+        case 'cbfriends-dismiss-invite-notification':
+            return { ok: true };
+        case 'cbfriends-block':
+            mockCb.blocked.push(mockPerson('blocked' + mockCb.blocked.length, 'Blocked user'));
+            return { ok: true };
+        case 'cbfriends-unblock':
+            mockCb.blocked = mockCb.blocked.filter(p => p.cbId !== data.cbId);
+            return { ok: true };
+        case 'cbfriends-get-blocked':
+            return { blocked: mockCb.blocked };
+        case 'cbfriends-get-security-events':
+            return { events: mockCb.securityEvents };
+        case 'cbfriends-get-invites':
+            return { invites: mockCb.invites || [] };
+        case 'cbfriends-invite-friend':
+        case 'cbfriends-request-join':
+        case 'cbfriends-accept-invite':
+        case 'cbfriends-decline-invite':
+            return { ok: true };
+        case 'cbfriends-get-friends':
+            return { friends: mockCb.friends.friends, incoming: mockCb.friends.incoming, outgoing: mockCb.friends.outgoing };
+        case 'cbfriends-add-friend':
+            mockCb.friends.outgoing.push(mockPerson(data.handle, data.handle));
+            return { ok: true };
+        case 'cbfriends-accept': {
+            const i = mockCb.friends.incoming.findIndex(p => p.cbId === data.cbId);
+            if (i >= 0) { const p = mockCb.friends.incoming.splice(i, 1)[0]; p.online = true; p.game = 'boiii'; mockCb.friends.friends.push(p); }
+            return { ok: true };
+        }
+        case 'cbfriends-decline':
+            mockCb.friends.incoming = mockCb.friends.incoming.filter(p => p.cbId !== data.cbId);
+            return { ok: true };
+        case 'cbfriends-cancel':
+            mockCb.friends.outgoing = mockCb.friends.outgoing.filter(p => p.cbId !== data.cbId);
+            return { ok: true };
+        case 'cbfriends-remove':
+            mockCb.friends.friends = mockCb.friends.friends.filter(p => p.cbId !== data.cbId);
+            return { ok: true };
+        case 'cbfriends-get-lfg':
+            return { posts: mockCb.lfg.filter(p => !mockCb.lfgFilter || p.game === mockCb.lfgFilter) };
+        case 'cbfriends-lfg-join': {
+            const post = mockCb.lfg.find(p => p.cbId === data.cbId);
+            if (post) {
+                post.iJoined = true;
+                post.joiners = (post.joiners || []).concat([mockPerson('divity', 'Divity')]);
+                post.joined = post.joiners.length;
+            }
+            return { ok: true };
+        }
+        case 'cbfriends-lfg-leave':
+            mockCb.lfg.forEach(p => {
+                if (!p.iJoined) return;
+                p.iJoined = false;
+                p.joiners = (p.joiners || []).filter(j => j.cbId !== 'cb_divity');
+                p.joined = p.joiners.length;
+            });
+            return { ok: true };
+        case 'cbfriends-set-lfg-filter':
+            mockCb.lfgFilter = (data && data.game) || '';
+            return { ok: true };
+        case 'cbfriends-set-chat-room':
+            mockCb.chatRoom = (data && data.room) || '';
+            return { ok: true };
+        case 'cbfriends-get-chat':
+            return { messages: mockCb.chat[mockCb.chatRoom] || [], hasMore: false };
+        case 'cbfriends-send-chat': {
+            const list = mockCb.chat[data.room] || (mockCb.chat[data.room] = []);
+            list.push({ id: list.length + 1, cbId: 'cb_preview', handle: 'divity', displayName: 'Divity', text: data.text });
+            return { ok: true };
+        }
+        case 'cbfriends-get-broadcast':
+            return mockCb.broadcast;
+        case 'cbfriends-set-broadcast': {
+            mockCb.broadcast = { on: !!(data && data.on), game: (data && data.game) || '', note: (data && data.note) || '', slots: (data && data.slots) || 0 };
+            mockCb.lfg = mockCb.lfg.filter(p => p.relation !== 'self');
+            if (mockCb.broadcast.on) {
+                mockCb.lfg.push(Object.assign(mockPerson('divity', 'Divity', {
+                    online: true, game: mockCb.broadcast.game, note: mockCb.broadcast.note,
+                    slots: mockCb.broadcast.slots, joined: 0, iJoined: false, joiners: []
+                }), { relation: 'self' }));
+                // Someone turns up a few seconds later, so the host side is visible in the preview.
+                setTimeout(() => {
+                    const mine = mockCb.lfg.find(p => p.relation === 'self');
+                    if (!mine || mine.joiners.length) return;
+                    mine.joiners = [mockPerson('nova', 'Nova')];
+                    mine.joined = 1;
+                }, 6000);
+            }
+            return { ok: true };
+        }
+        case 'cbfriends-post-lfg':
+        case 'cbfriends-set-community-active':
+            return { ok: true };
+        case 'cbfriends-clear-lfg':
+            mockCb.lfg = mockCb.lfg.filter(p => p.relation !== 'self');
+            return { ok: true };
         case 'browse-folder':
             return 'C:\\Users\\preview\\Downloads\\zm_example_map';
         case 'browse-file':
@@ -98,9 +322,17 @@ function mockCommand(command, data) {
             if (index >= 0) list.splice(index, 1);
             return { success: index >= 0 };
         }
+        case 'ping-servers':
+            return { job: 1 };
+        case 'get-ping-results':
+            return { done: true, pings: {} };
+        case 'join-server':
+            return { success: true };
         case 'open-folder':
         case 'open-url':
             return true;
+        case 'get-missing-redists-for-game':
+            return { checked: true, missing: [] };
         default:
             return null;
     }

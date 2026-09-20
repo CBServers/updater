@@ -10,6 +10,8 @@
     let homeHeroControlsBound = false;
     let pinnedGameIds = [];
     let pinnedGamesLoaded = false;
+    let hiddenGameIds = [];
+    let hiddenGamesLoaded = false;
     let latestInstallationStates = [];
 
     function escapeHtml(value) {
@@ -84,6 +86,12 @@
     function gameDescriptionNote(config) {
         return window.LauncherI18n
             ? window.LauncherI18n.getGameText(config.uiId, 'descriptionNote', '')
+            : '';
+    }
+
+    function gameDescriptionWarning(config) {
+        return window.LauncherI18n
+            ? window.LauncherI18n.getGameText(config.uiId, 'descriptionWarning', '')
             : '';
     }
 
@@ -310,7 +318,7 @@
             .map(({ config, status }) => ({ config, status: status || 'not-setup' }));
 
         if (!homeHeroStates.length) {
-            homeHeroStates = GameUtils.getAllGameConfigs().map(config => ({
+            homeHeroStates = GameUtils.getAllGameConfigs().filter(config => !isHidden(config.uiId)).map(config => ({
                 config,
                 status: 'not-setup'
             }));
@@ -330,12 +338,14 @@
         const safeStates = Array.isArray(states) ? states : [];
         latestInstallationStates = safeStates;
 
-        renderHomeClientCards('home-ready-row', safeStates
-            .filter(({ config, status }) => config && status === 'installed')
+        const visibleStates = safeStates.filter(({ config }) => config && !isHidden(config.uiId));
+
+        renderHomeClientCards('home-ready-row', visibleStates
+            .filter(({ status }) => status === 'installed')
             .map(({ config }) => config));
 
         renderHomePinnedRow();
-        setHomeHeroStates(safeStates);
+        setHomeHeroStates(visibleStates);
     }
 
     async function loadPinnedGames() {
@@ -372,6 +382,66 @@
         return pinnedGameIds.includes(gameId);
     }
 
+    async function loadHiddenGames() {
+        if (hiddenGamesLoaded) return hiddenGameIds;
+        hiddenGamesLoaded = true;
+        if (typeof window.executeCommand !== 'function') return hiddenGameIds;
+
+        try {
+            const raw = await window.executeCommand('get-property', PROPERTY_KEYS.LAUNCHER.HIDDEN_GAMES);
+            if (typeof raw === 'string' && raw.trim()) {
+                const parsed = JSON.parse(raw);
+                if (Array.isArray(parsed)) {
+                    hiddenGameIds = parsed.filter(id => GameUtils.getGameConfigByUIId(id));
+                }
+            }
+        } catch (error) {
+            console.warn('Failed to load hidden games:', error);
+        }
+        return hiddenGameIds;
+    }
+
+    async function setHiddenGames(ids) {
+        hiddenGameIds = (ids || []).filter(id => GameUtils.getGameConfigByUIId(id));
+        hiddenGamesLoaded = true;
+        if (typeof window.executeCommand === 'function') {
+            try {
+                await window.executeCommand('set-property', {
+                    [PROPERTY_KEYS.LAUNCHER.HIDDEN_GAMES]: JSON.stringify(hiddenGameIds)
+                });
+            } catch (error) {
+                console.error('Failed to save hidden games:', error);
+            }
+        }
+        applyHiddenGames();
+    }
+
+    function isHidden(gameId) {
+        return hiddenGameIds.includes(gameId);
+    }
+
+    async function toggleHidden(gameId) {
+        if (!GameUtils.getGameConfigByUIId(gameId)) return;
+        await setHiddenGames(isHidden(gameId)
+            ? hiddenGameIds.filter(id => id !== gameId)
+            : [...hiddenGameIds, gameId]);
+    }
+
+    async function unhideGame(gameId) {
+        await loadHiddenGames();
+        if (isHidden(gameId)) await setHiddenGames(hiddenGameIds.filter(id => id !== gameId));
+    }
+
+    // Re-derive every surface that lists games from the current hidden set.
+    function applyHiddenGames() {
+        document.querySelectorAll('#library-grid .library-card[data-game]').forEach(card => {
+            card.dataset.hidden = isHidden(card.dataset.game) ? 'true' : 'false';
+        });
+        renderHomeFromStates(latestInstallationStates);
+        updateSidebarMyGames(window.__recentGamesSnapshot || []);
+        bindLibraryControls();
+    }
+
     async function togglePin(gameId) {
         if (!GameUtils.getGameConfigByUIId(gameId)) return;
 
@@ -391,6 +461,7 @@
         if (!section || !row) return;
 
         const configs = pinnedGameIds
+            .filter(id => !isHidden(id))
             .map(id => GameUtils.getGameConfigByUIId(id))
             .filter(Boolean);
 
@@ -443,7 +514,10 @@
         const orderIndex = new Map(GameUtils.GAME_ORDER.map((id, i) => [id, i]));
         const recencyIndex = new Map((recentIds || []).map((id, i) => [id, i]));
 
-        const installedItems = items.filter(it => installedGameIds.has(it.dataset.game || it.id));
+        const installedItems = items.filter(it => {
+            const id = it.dataset.game || it.id;
+            return installedGameIds.has(id) && !isHidden(id);
+        });
         installedItems.sort((a, b) => {
             const ai = recencyIndex.has(a.dataset.game) ? recencyIndex.get(a.dataset.game) : Infinity;
             const bi = recencyIndex.has(b.dataset.game) ? recencyIndex.get(b.dataset.game) : Infinity;
@@ -476,7 +550,7 @@
             status: 'not-setup'
         })));
 
-        loadPinnedGames().then(() => renderHomePinnedRow());
+        Promise.all([loadPinnedGames(), loadHiddenGames()]).then(() => renderHomePinnedRow());
     }
 
     function renderSidebarGames() {
@@ -628,6 +702,10 @@
             label: isPinned(gameId) ? t('common.unpinFromHome') : t('common.pinToHome'),
             action: () => togglePin(gameId)
         });
+        items.push({
+            label: isHidden(gameId) ? t('common.unhideGame') : t('common.hideFromLibrary'),
+            action: () => toggleHidden(gameId)
+        });
         items.push({ label: t('common.gameDetails'), action: () => navigateTo(gameId) });
         return items;
     }
@@ -692,6 +770,7 @@
     function renderLibrary() {
         const grid = document.getElementById('library-grid');
         if (!grid) return;
+        loadHiddenGames().then(() => applyHiddenGames());
 
         grid.innerHTML = GameUtils.getAllGameConfigs().map(config => {
             const comingSoon = !!config.comingSoon;
@@ -705,12 +784,18 @@
                        <span data-action-label>${escapeHtml(t('common.install'))}</span>
                    </button>`;
             return `
-            <article class="${cardCls}" data-game="${escapeHtml(config.uiId)}" data-client="${escapeHtml(config.clientKey)}" data-status="not-setup" data-search="${escapeHtml(`${config.displayName} ${config.client}`.toLowerCase())}">
+            <article class="${cardCls}" data-game="${escapeHtml(config.uiId)}" data-client="${escapeHtml(config.clientKey)}" data-status="not-setup" data-hidden="${isHidden(config.uiId) ? 'true' : 'false'}" data-search="${escapeHtml(`${config.displayName} ${config.client}`.toLowerCase())}">
                 <img class="library-card-art" src="${escapeHtml(config.capsulePath)}" alt="${escapeHtml(config.displayName)}" loading="lazy">
                 ${comingSoon ? `<span class="library-card-soon-badge">${escapeHtml(t('common.comingSoon'))}</span>` : ''}
                 <span class="library-card-player-pill" data-player-badge hidden>
-                    <span class="library-card-player-dot"></span>
-                    <span data-player-count>0</span>
+                    <span class="library-card-player-seg" data-player-servers hidden>
+                        <span class="library-card-player-dot"></span>
+                        <span data-player-count>0</span>
+                    </span>
+                    <span class="library-card-player-seg" data-player-launcher hidden>
+                        <span class="library-card-player-dot is-launcher"></span>
+                        <span data-player-count>0</span>
+                    </span>
                 </span>
                 <span class="library-card-size-pill" data-size-badge hidden></span>
                 <div class="library-card-progress" aria-hidden="true">
@@ -751,33 +836,62 @@
         bindLibraryControls();
     }
 
-    function updateLibraryCardPlayerCount(gameId, count) {
+    // counts: { servers, launcher }, either null while unknown. A zero hides its segment.
+    function safePlayerCount(value) {
+        return (typeof value === 'number' && value > 0) ? value : 0;
+    }
+
+    function playerCountParts(counts) {
+        const mode = window.PlayerCountManager ? window.PlayerCountManager.getMode() : 'both';
+        const source = counts || {};
+        if (mode === 'off') return { servers: 0, launcher: 0 };
+        return {
+            servers: mode === 'launcher' ? 0 : safePlayerCount(source.servers),
+            launcher: mode === 'servers' ? 0 : safePlayerCount(source.launcher)
+        };
+    }
+
+    function playerCountTooltip(counts) {
+        const source = counts || {};
+        return [
+            `${safePlayerCount(source.servers).toLocaleString()} ${t('common.inServers')}`,
+            `${safePlayerCount(source.launcher).toLocaleString()} ${t('common.inLauncher')}`
+        ].join('\n');
+    }
+
+    function updateLibraryCardPlayerCount(gameId, counts) {
         const card = document.querySelector(`.library-card[data-game="${gameId}"]`);
         if (!card) return;
         const pill = card.querySelector('[data-player-badge]');
-        const label = card.querySelector('[data-player-count]');
-        if (!pill || !label) return;
-        const safe = typeof count === 'number' && count > 0 ? count : 0;
-        if (safe > 0) {
-            label.textContent = safe.toLocaleString();
-            pill.hidden = false;
-        } else {
-            pill.hidden = true;
-        }
+        if (!pill) return;
+        const parts = playerCountParts(counts);
+        const setSegment = (selector, value) => {
+            const seg = pill.querySelector(selector);
+            if (!seg) return;
+            const label = seg.querySelector('[data-player-count]');
+            if (label) label.textContent = value.toLocaleString();
+            seg.hidden = value <= 0;
+        };
+        setSegment('[data-player-servers]', parts.servers);
+        setSegment('[data-player-launcher]', parts.launcher);
+        pill.hidden = parts.servers <= 0 && parts.launcher <= 0;
+        pill.title = playerCountTooltip(counts);
     }
 
-    function updateGamePagePlayerCount(gameId, count) {
+    function updateGamePagePlayerCount(gameId, counts) {
         const page = document.getElementById(`${gameId}-page`);
         if (!page) return;
-        const pill = page.querySelector('[data-game-player-badge]');
-        if (!pill) return;
-        const safe = typeof count === 'number' && count > 0 ? count : 0;
-        if (safe > 0) {
-            pill.textContent = safe.toLocaleString();
-            pill.hidden = false;
-        } else {
-            pill.hidden = true;
-        }
+        const off = window.PlayerCountManager && window.PlayerCountManager.getMode() === 'off';
+        const source = off ? {} : (counts || {});
+        const setChip = (kind, value, labelKey, hintKey) => {
+            const chip = page.querySelector(`[data-game-player-badge="${kind}"]`);
+            if (!chip) return;
+            chip.textContent = `${value.toLocaleString()} ${t(labelKey)}`;
+            chip.title = t(hintKey);
+            chip.hidden = value <= 0;
+        };
+        setChip('servers', safePlayerCount(source.servers), 'common.inServers', 'common.inServersHint');
+        setChip('launcher', safePlayerCount(source.launcher), 'common.inLauncher', 'common.inLauncherHint');
     }
 
     function updateGamePageInstallSize(gameId, bytes) {
@@ -799,6 +913,9 @@
     function cardMatchesFilter(card, filter) {
         const status = card.dataset.status;
         const client = card.dataset.client;
+        const hidden = card.dataset.hidden === 'true';
+        if (filter === 'hidden') return hidden;
+        if (hidden) return false;
         if (filter === 'all') return true;
         if (filter === 'installed') return status === 'installed';
         if (filter === 'not-installed') return status !== 'installed';
@@ -812,10 +929,20 @@
         const searchClear = document.getElementById('library-search-clear');
 
         function applyFilters() {
+            const cards = document.querySelectorAll('#library-grid .library-card:not(.library-card-empty)');
+            const hiddenChip = filters ? filters.querySelector('.chip[data-filter="hidden"]') : null;
+            if (hiddenChip) {
+                const hiddenCount = Array.from(cards).filter(card => card.dataset.hidden === 'true').length;
+                hiddenChip.hidden = hiddenCount === 0;
+                if (hiddenCount === 0 && hiddenChip.classList.contains('active')) {
+                    hiddenChip.classList.remove('active');
+                    const all = filters.querySelector('.chip[data-filter="all"]');
+                    if (all) all.classList.add('active');
+                }
+            }
             const active = filters ? filters.querySelector('.chip.active') : null;
             const filter = active ? active.dataset.filter : 'all';
             const term = search ? search.value.trim().toLowerCase() : '';
-            const cards = document.querySelectorAll('.library-card:not(.library-card-empty)');
             let visibleCount = 0;
 
             cards.forEach(card => {
@@ -879,44 +1006,23 @@
 
     const sizeBadgeFetched = new Set();
 
-    function waitForComponentDetection(backendId, timeoutMs = 30000) {
-        return new Promise(resolve => {
-            const start = Date.now();
-            const poll = setInterval(async () => {
-                if (Date.now() - start > timeoutMs) {
-                    clearInterval(poll);
-                    resolve();
-                    return;
-                }
-                try {
-                    const status = await window.executeCommand('get-component-detection-status', { game: backendId });
-                    if (!status || !status.active) {
-                        clearInterval(poll);
-                        resolve();
-                    }
-                } catch (e) {
-                    clearInterval(poll);
-                    resolve();
-                }
-            }, 300);
-        });
-    }
-
-    async function getDetectedComponentInfo(backendId) {
-        const info = await window.executeCommand('get-game-component-info', { game: backendId, detectExisting: true });
-        if (!info || !info.detectionInProgress) return info;
-        await waitForComponentDetection(backendId);
-        return window.executeCommand('get-game-component-info', { game: backendId, detectExisting: true });
-    }
-
     async function fetchLibraryCardSize(card, gameId) {
         try {
-            const info = await getDetectedComponentInfo(GameUtils.getGameMapping(gameId));
+            // A size badge is not worth a scan of the whole install; take what detection already
+            // knows and let the background sweep fill the rest in.
+            const info = await window.executeCommand('get-game-component-info', {
+                game: GameUtils.getGameMapping(gameId),
+                detectExisting: true,
+                cacheOnly: true
+            });
             if (!info) return;
             const installed = info.installed || [];
             const sizes = info.sizes || {};
             const total = installed.reduce((sum, id) => sum + (sizes[id] || 0), 0);
-            if (total <= 0) return;
+            if (total <= 0) {
+                sizeBadgeFetched.delete(gameId); // nothing cached yet; try again after the sweep
+                return;
+            }
             const sizeEl = card.querySelector('[data-size-badge]');
             if (sizeEl) {
                 sizeEl.textContent = GameUtils.formatBytes(total);
@@ -966,6 +1072,7 @@
 
     async function refreshInstallationStates(checker) {
         const states = await getInstallationStates(checker);
+        await loadHiddenGames();
 
         installedGameIds = new Set(states
             .filter(s => s.status === 'installed')
@@ -990,18 +1097,24 @@
         renderHomeFromStates(states);
     }
 
-    // Active detail tab per game (uiId -> 'overview' | 'mods'), kept across
-    // language-change re-renders.
+    // Active detail tab per game (uiId -> 'overview' | 'mods' | 'servers'), kept
+    // across language-change re-renders.
     const detailTabState = {};
+
+    function renderDetailTabView(gameId, tab) {
+        if (tab === 'mods' && window.ModsView) {
+            window.ModsView.render(gameId);
+        } else if (tab === 'servers' && window.ServersView) {
+            window.ServersView.render(gameId);
+        }
+    }
 
     function activateDetailTab(page, gameId, tab) {
         if (!page) return;
         detailTabState[gameId] = tab;
         page.querySelectorAll('.detail-tab').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
         page.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.dataset.tabPanel === tab));
-        if (tab === 'mods' && window.ModsView) {
-            window.ModsView.render(gameId);
-        }
+        renderDetailTabView(gameId, tab);
     }
 
     function renderGamePages() {
@@ -1015,12 +1128,18 @@
             const hasCredits = credits && String(credits).trim().length > 0;
             const hasProvider = config.provider && String(config.provider).trim().length > 0;
             const hasMods = !comingSoon && window.ModsView && window.ModsView.supports(config.uiId);
-            const activeTab = detailTabState[config.uiId] || 'overview';
+            const hasServers = !comingSoon && window.ServersView && window.ServersView.supports(config.uiId);
+            const hasTabs = hasMods || hasServers;
+            let activeTab = detailTabState[config.uiId] || 'overview';
+            if ((activeTab === 'mods' && !hasMods) || (activeTab === 'servers' && !hasServers)) {
+                activeTab = 'overview';
+            }
 
             const descriptionSection = `
                         <section class="description">
                             <strong>${escapeHtml(config.displayName)}</strong>
                             <p>${escapeHtml(gameDescription(config))}</p>
+                            ${gameDescriptionWarning(config) ? `<p class="description-warning">${escapeHtml(gameDescriptionWarning(config))}</p>` : ''}
                             ${gameDescriptionNote(config) ? `<p>${gameDescriptionNote(config)}</p>` : ''}
                             ${hasCredits ? `<br><strong>${escapeHtml(t('detail.credits'))}</strong><p>${credits}</p>` : ''}
                             ${hasProvider ? `<br><strong>${escapeHtml(t('detail.note'))}</strong><p>${t('detail.noteBody', { provider: escapeHtml(config.provider) })}</p>` : ''}
@@ -1065,7 +1184,8 @@
                     <div class="hero-bottom-content">
                         <img class="game-logo-img" src="${escapeHtml(config.logoPath)}" alt="${escapeHtml(config.displayName)}">
                         <div class="game-meta-row">
-                            <span class="game-meta-player" data-game-player-badge hidden>0</span>
+                            <span class="game-meta-player" data-game-player-badge="servers" hidden>0</span>
+                            <span class="game-meta-player is-launcher" data-game-player-badge="launcher" hidden>0</span>
                             <span>${escapeHtml(config.client)}</span>
                             <span class="game-meta-size" data-game-size-badge hidden></span>
                         </div>
@@ -1075,10 +1195,11 @@
                 <div class="game-details">
                     <div class="button-group" id="${escapeHtml(config.uiId)}-button-group"></div>
 
-                    ${hasMods ? `
+                    ${hasTabs ? `
                     <div class="detail-tabs is-visible" data-game="${escapeHtml(config.uiId)}">
                         <button class="detail-tab${activeTab === 'overview' ? ' active' : ''}" data-tab="overview">${escapeHtml(t('detail.overview'))}</button>
-                        <button class="detail-tab${activeTab === 'mods' ? ' active' : ''}" data-tab="mods">${escapeHtml(t('mods.tab'))}</button>
+                        ${hasMods ? `<button class="detail-tab${activeTab === 'mods' ? ' active' : ''}" data-tab="mods">${escapeHtml(t('mods.tab'))}</button>` : ''}
+                        ${hasServers ? `<button class="detail-tab${activeTab === 'servers' ? ' active' : ''}" data-tab="servers">${escapeHtml(t('servers.tab'))}</button>` : ''}
                     </div>
                     <div class="tab-panel${activeTab === 'overview' ? ' active' : ''}" data-tab-panel="overview">
                         <div class="detail-panel-grid">
@@ -1086,7 +1207,8 @@
                             ${actionsAside}
                         </div>
                     </div>
-                    <div class="tab-panel mods-panel${activeTab === 'mods' ? ' active' : ''}" data-tab-panel="mods" id="${escapeHtml(config.uiId)}-mods-panel"></div>
+                    ${hasMods ? `<div class="tab-panel mods-panel${activeTab === 'mods' ? ' active' : ''}" data-tab-panel="mods" id="${escapeHtml(config.uiId)}-mods-panel"></div>` : ''}
+                    ${hasServers ? `<div class="tab-panel servers-panel${activeTab === 'servers' ? ' active' : ''}" data-tab-panel="servers" id="${escapeHtml(config.uiId)}-servers-panel"></div>` : ''}
                     ` : `
                     <div class="detail-panel-grid">
                         ${descriptionSection}
@@ -1104,9 +1226,7 @@
             tabs.querySelectorAll('.detail-tab').forEach(button => {
                 button.addEventListener('click', () => activateDetailTab(page, gameId, button.dataset.tab));
             });
-            if (detailTabState[gameId] === 'mods' && window.ModsView) {
-                window.ModsView.render(gameId);
-            }
+            renderDetailTabView(gameId, detailTabState[gameId]);
         });
 
         host.querySelectorAll('.detail-browse-files-action').forEach(button => {
@@ -1366,125 +1486,9 @@
         return friendsState;
     }
 
-    function friendStatusLabel(status) {
-        if (status === 'online') return t('friends.statusOnline');
-        if (status === 'idle')   return t('friends.statusIdle');
-        return t('friends.statusOffline');
-    }
-
-    function friendActivityLabel(f) {
-        if (f.activityDetails) {
-            return f.activityState ? `${f.activityDetails} — ${f.activityState}` : f.activityDetails;
-        }
-        if (f.inLauncher) return t('friends.inLauncher');
-        return friendStatusLabel(f.status);
-    }
-
-    function friendInitials(name) {
-        const parts = String(name || '?').trim().split(/\s+/);
-        const first = parts[0] ? parts[0][0] : '?';
-        const second = parts.length > 1 ? parts[parts.length - 1][0] : '';
-        return (first + second).toUpperCase();
-    }
-
-    function friendAvatar(f) {
-        const dot = `<span class="friend-status-dot" data-status="${escapeHtml(f.status)}"></span>`;
-        if (f.avatarUrl) {
-            return `
-                <div class="friend-avatar">
-                    <img class="friend-avatar-img" src="${escapeHtml(f.avatarUrl)}" alt="" loading="lazy" />
-                    ${dot}
-                </div>
-            `;
-        }
-        return `
-            <div class="friend-avatar">
-                <span class="friend-avatar-initials">${escapeHtml(friendInitials(f.displayName))}</span>
-                ${dot}
-            </div>
-        `;
-    }
-
+    // The Friends page merges Discord and CB friends, so one renderer owns it.
     function renderFriends() {
-        const list = document.getElementById('friends-list');
-        const empty = document.getElementById('friends-empty');
-        const cta = document.getElementById('friends-link-cta');
-        const notice = document.getElementById('friends-notice');
-        if (!list) return;
-
-        const status = friendsState.status;
-        const showCta = status === 'unlinked' || status === 'unavailable' || status === 'error';
-
-        if (cta) {
-            cta.style.display = showCta ? '' : 'none';
-            const btn = document.getElementById('friends-link-btn');
-            if (btn) btn.disabled = status === 'unavailable';
-        }
-
-        if (notice) {
-            if (status === 'linking' || status === 'connecting') {
-                notice.textContent = t('friends.linking');
-                notice.style.display = '';
-            } else if (status === 'linked' && !friendsState.registryOk) {
-                notice.textContent = t('friends.degraded');
-                notice.style.display = '';
-            } else {
-                notice.style.display = 'none';
-            }
-        }
-
-        if (status !== 'linked') {
-            list.innerHTML = '';
-            if (empty) empty.style.display = 'none';
-            return;
-        }
-
-        const friends = friendsState.friends;
-        if (friends.length === 0) {
-            list.innerHTML = '';
-            if (empty) empty.style.display = '';
-            return;
-        }
-        if (empty) empty.style.display = 'none';
-
-        const online  = friends.filter(f => f.status === 'online' || f.status === 'idle');
-        const offline = friends.filter(f => f.status !== 'online' && f.status !== 'idle');
-
-        const header = online.length === 0 ? '' : `
-            <div class="friends-group-head">${escapeHtml(t('friends.statusOnline'))} <span class="friends-group-count">${online.length}</span></div>
-        `;
-        const canInvite = friendsState.joinable;
-        // A friend can be both joinable (we ask to join them) and invitable (we're hosting too) —
-        // show both buttons side by side rather than letting one override the other.
-        const actionBtns = f => {
-            // Already in our match: joining would just reconnect and inviting is a no-op.
-            if (f.sameMatch) {
-                return `<div class="friend-actions"><span class="friend-same-match">${escapeHtml(t('friends.inYourMatch'))}</span></div>`;
-            }
-            const btns = [];
-            if (f.joinable || f.openable) {
-                // Joinable (open match) auto-admits regardless of transport => "Join"; only a closed,
-                // openable match requires a real knock => "Ask to Join".
-                const joinLabel = f.joinable ? t('friends.join') : t('friends.askToJoin');
-                btns.push(`<button class="friend-join-btn" data-join-user="${escapeHtml(f.id)}" data-game-id="${escapeHtml(f.gameId || '')}" data-knock="${f.joinable ? '' : '1'}" title="${escapeHtml(joinLabel)}">${escapeHtml(joinLabel)}</button>`);
-            }
-            if (canInvite && (f.status === 'online' || f.status === 'idle')) {
-                btns.push(`<button class="friend-invite-btn" data-invite-user="${escapeHtml(f.id)}" title="${escapeHtml(t('friends.invite'))}">${escapeHtml(t('friends.invite'))}</button>`);
-            }
-            return btns.length ? `<div class="friend-actions">${btns.join('')}</div>` : '';
-        };
-        const rows = online.concat(offline).map(f => `
-            <div class="friend-row" data-status="${escapeHtml(f.status)}">
-                ${friendAvatar(f)}
-                <div class="friend-row-body">
-                    <div class="friend-name">${escapeHtml(f.displayName)}</div>
-                    <div class="friend-activity">${escapeHtml(friendActivityLabel(f))}</div>
-                </div>
-                ${actionBtns(f)}
-            </div>
-        `).join('');
-
-        list.innerHTML = header + rows;
+        if (window.CbFriendsManager) window.CbFriendsManager.renderPage();
     }
 
     function renderAll() {
@@ -1562,6 +1566,9 @@
         updateGamePageInstallSize,
         navigateTo,
         updateSidebarMyGames,
+        isHidden,
+        setHiddenGames,
+        unhideGame,
         applyDownloadQueueInstallingState,
         refreshActionButtons: applyDownloadQueueInstallingState
     };

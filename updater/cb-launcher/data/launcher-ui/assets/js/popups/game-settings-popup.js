@@ -53,16 +53,19 @@ class GameSettingsPopup {
                             <button class="toggle-btn" data-value="true">ON</button>
                         </div>
                     </div>
-                    <div class="setting-item inline-setting" id="disable-cb-extension-row" style="display: none;">
-                        <label>Disable CB Extension</label>
-                        <div class="toggle-group small" id="disable-cb-extension-toggle">
+                    <div class="setting-item inline-setting" id="launch-admin-row">
+                        <label>Launch as Administrator</label>
+                        <div class="toggle-group small" id="launch-admin-toggle">
                             <button class="toggle-btn" data-value="false">OFF</button>
                             <button class="toggle-btn" data-value="true">ON</button>
                         </div>
                     </div>
-                    <div class="setting-item inline-setting" id="launch-admin-row">
-                        <label>Launch as Administrator</label>
-                        <div class="toggle-group small" id="launch-admin-toggle">
+                    <div class="setting-item inline-setting" id="plutonium-lan-row" style="display: none;">
+                        <div class="setting-info">
+                            <label>LAN mode</label>
+                            <span class="setting-description" id="plutonium-lan-help"></span>
+                        </div>
+                        <div class="toggle-group small" id="plutonium-lan-toggle">
                             <button class="toggle-btn" data-value="false">OFF</button>
                             <button class="toggle-btn" data-value="true">ON</button>
                         </div>
@@ -178,6 +181,10 @@ class GameSettingsPopup {
         });
     }
 
+    supportsNameOverride() {
+        return this.gameConfig.supportsName === true || this.gameConfig.clientKey === 'plutonium';
+    }
+
     supportsCustomResolution() {
         return this.currentGame === 'cod1' || this.currentGame === 'coduo' || this.currentGame === 'cod2x';
     }
@@ -205,8 +212,9 @@ class GameSettingsPopup {
         this.popup.querySelector('label[for="play-behavior-select"]').textContent = this.t('popup.gameSettings.playButtonBehaviorLabel');
         this.popup.querySelector('#game-options-section h4').textContent = this.t('popup.gameSettings.gameOptions');
         this.popup.querySelector('#skip-intro-cinematic-row label').textContent = this.t('popup.gameSettings.skipIntroCinematic');
-        this.popup.querySelector('#disable-cb-extension-row label').textContent = this.t('popup.gameSettings.disableCbExtension');
         this.popup.querySelector('#launch-admin-row label').textContent = this.t('popup.gameSettings.launchAdmin');
+        this.popup.querySelector('#plutonium-lan-row label').textContent = this.t('popup.gameSettings.plutoniumLan');
+        this.popup.querySelector('#plutonium-lan-help').textContent = this.t('popup.gameSettings.plutoniumLanHelp');
         this.popup.querySelector('#player-section h4').textContent = this.t('popup.gameSettings.player');
         this.popup.querySelector('#player-name-override-row label').textContent = this.t('popup.gameSettings.playerNameOverride');
         this.popup.querySelector('#player-name-override-help').textContent = this.t('popup.gameSettings.playerNameOverrideHelp');
@@ -240,7 +248,6 @@ class GameSettingsPopup {
         const gameOptionsSection = this.popup.querySelector('#game-options-section');
         const playerSection = this.popup.querySelector('#player-section');
         const skipIntroRow = this.popup.querySelector('#skip-intro-cinematic-row');
-        const disableExtRow = this.popup.querySelector('#disable-cb-extension-row');
         const nameOverrideError = this.popup.querySelector('#player-name-override-error');
 
         if (game === 'bo3' || game === 'hmw') {
@@ -254,10 +261,16 @@ class GameSettingsPopup {
 
         this.populateModeClientRows();
 
-        const supportsName = this.gameConfig.supportsName === true;
+        const isPlutonium = this.gameConfig.clientKey === 'plutonium';
+        // Plutonium games take a name only on the LAN path, so the override shows for them too
+        const supportsName = this.supportsNameOverride();
+        this.popup.querySelector('#plutonium-lan-row').style.display = isPlutonium ? 'flex' : 'none';
+        this.popup.querySelector('#player-name-override-help').textContent = this.t(
+            isPlutonium && this.gameConfig.supportsName !== true
+                ? 'popup.gameSettings.playerNameOverrideHelpLan'
+                : 'popup.gameSettings.playerNameOverrideHelp');
 
         skipIntroRow.style.display = game === 'bo3' ? 'flex' : 'none';
-        disableExtRow.style.display = game === 'hmw' ? 'flex' : 'none';
 
         this.popup.querySelector('#custom-resolution-row').style.display = this.supportsCustomResolution() ? 'flex' : 'none';
         this.popup.querySelector('#custom-resolution-error').classList.remove('visible');
@@ -363,25 +376,7 @@ class GameSettingsPopup {
                     if (targetButton) {
                         targetButton.classList.add('active');
                     }
-                } else if (this.currentGame === 'hmw') {
-                    // Load HMW CB extension setting
-                    const disableExt = await window.executeCommand('get-game-property', {
-                        game: this.currentGame,
-                        suffix: PROPERTY_KEYS.GAME.DISABLE_CB_EXTENSION
-                    });
-                    const toggleGroup = this.popup.querySelector('#disable-cb-extension-toggle');
-                    const buttons = toggleGroup.querySelectorAll('.toggle-btn');
-
-                    // Remove active class from all buttons
-                    buttons.forEach(btn => btn.classList.remove('active'));
-
-                    // Set active button based on saved value
-                    const targetValue = disableExt === 'true' ? 'true' : 'false';
-                    const targetButton = toggleGroup.querySelector(`[data-value="${targetValue}"]`);
-                    if (targetButton) {
-                        targetButton.classList.add('active');
-                    }
-                } else {
+                } else if (this.currentGame !== 'hmw') {
                     // Load play behavior preference for other games
                     const savedBehavior = await window.executeCommand('get-game-property', {
                         game: this.currentGame,
@@ -421,8 +416,18 @@ class GameSettingsPopup {
                 adminToggle.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.remove('active'));
                 adminToggle.querySelector(`[data-value="${adminEnabled ? 'true' : 'false'}"]`).classList.add('active');
 
+                if (this.gameConfig.clientKey === 'plutonium') {
+                    const lan = await window.executeCommand('get-game-property', {
+                        game: this.currentGame,
+                        suffix: PROPERTY_KEYS.GAME.PLUTONIUM_LAN
+                    });
+                    const lanToggle = this.popup.querySelector('#plutonium-lan-toggle');
+                    lanToggle.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.remove('active'));
+                    lanToggle.querySelector(`[data-value="${lan === 'true' ? 'true' : 'false'}"]`).classList.add('active');
+                }
+
                 // Load player-name override (hidden for games whose backend has no name argument)
-                if (this.gameConfig.supportsName === true) {
+                if (this.supportsNameOverride()) {
                     const overrideName = await window.executeCommand('get-game-property', {
                         game: this.currentGame,
                         suffix: PROPERTY_KEYS.GAME.PLAYER_NAME_OVERRIDE
@@ -524,16 +529,7 @@ class GameSettingsPopup {
                         suffix: PROPERTY_KEYS.GAME.SKIP_INTRO_CINEMATIC,
                         value: activeButton ? activeButton.dataset.value : 'false'
                     });
-                } else if (this.currentGame === 'hmw') {
-                    // Save HMW CB extension setting
-                    const toggleGroup = this.popup.querySelector('#disable-cb-extension-toggle');
-                    const activeButton = toggleGroup.querySelector('.toggle-btn.active');
-                    await window.executeCommand('set-game-property', {
-                        game: this.currentGame,
-                        suffix: PROPERTY_KEYS.GAME.DISABLE_CB_EXTENSION,
-                        value: activeButton ? activeButton.dataset.value : 'false'
-                    });
-                } else {
+                } else if (this.currentGame !== 'hmw') {
                     // Save play behavior preference for other games
                     const selectedBehavior = this.popup.querySelector('#play-behavior-select').value;
                     if (selectedBehavior === 'ask') {
@@ -581,8 +577,17 @@ class GameSettingsPopup {
                     value: launchOptions
                 });
 
+                if (this.gameConfig.clientKey === 'plutonium') {
+                    const lanActive = this.popup.querySelector('#plutonium-lan-toggle .toggle-btn.active');
+                    await window.executeCommand('set-game-property', {
+                        game: this.currentGame,
+                        suffix: PROPERTY_KEYS.GAME.PLUTONIUM_LAN,
+                        value: lanActive && lanActive.dataset.value === 'true' ? 'true' : ''
+                    });
+                }
+
                 // Save player-name override (only for games whose backend has a name argument)
-                if (this.gameConfig.supportsName === true) {
+                if (this.supportsNameOverride()) {
                     const overrideInput = this.popup.querySelector('#player-name-override-input');
                     const errorEl = this.popup.querySelector('#player-name-override-error');
                     const overrideValue = overrideInput.value.trim();
