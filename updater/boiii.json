@@ -6,8 +6,8 @@
     ],
     [
         "boiii.exe",
-        2830336,
-        "735D5503B3C4BF94C6C13B3B14FA2CFE781D6151"
+        2843136,
+        "B25B31DCDC79B4147CAF056DF22F0611BEA526E2"
     ],
     [
         "data/gamesettings/mp/gamesettings_escort.cfg",
@@ -111,23 +111,28 @@
     ],
     [
         "data/ui_scripts/frontend_menus/datasources_start_menu_tabs.lua",
-        5506,
-        "E7066BC6AC2A81BAB35A7AA0A69FD528F6D210D9"
+        6777,
+        "E0A0F9B91E6A841381473D1698FA9EC2E0AB38D3"
     ],
     [
         "data/ui_scripts/frontend_menus/utils.lua",
-        4432,
-        "9CCA8F19B422D16428C01EC55361A96CF0A8716A"
+        4883,
+        "733B45692139906BCCB3AC9AA95FD536B19CD754"
     ],
     [
         "data/ui_scripts/frontend_menus/__init__.lua",
-        7462,
-        "B987C315627E0153F720CE499106CF3FDC4C6B48"
+        8665,
+        "701580AA3DF28CBE883CB674C6037D0A1F521151"
     ],
     [
         "data/ui_scripts/graphics_settings/__init__.lua",
         4444,
         "C0B45859717568760936ABF94D07C2A3822853D5"
+    ],
+    [
+        "data/ui_scripts/gunsmith_attachment_image/__init__.lua",
+        2216,
+        "CDED7BFC59D80413EF9F3D874E0A6455FA1CB5DC"
     ],
     [
         "data/ui_scripts/lobby_settings/__init__.lua",
@@ -194,7 +199,12 @@
         14424,
         "4A4CAA94F77577C57F594156A2F1FFA321F0716D"
     ],
+    [
+        "data/ui_scripts/weapon_build_kits/__init__.lua",
+        3498,
+        "BE692175B916BC9A8098835BB1EE5A288B35D1E8"
+    ],
     {
-        "ManifestHash": "37F3F3A8DC75A42933E2D77F316B522DAC355DE71F15A8CDF4C5BFB1B7E64E78"
+        "ManifestHash": "FEC8D84B3AE66BF8AB902DD573FD5C0D6DE374AAB761A72773AB7C3BDAD0AED8"
     }
 ]

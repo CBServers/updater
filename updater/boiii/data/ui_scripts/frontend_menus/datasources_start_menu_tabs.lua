@@ -1,3 +1,22 @@
+-- AAE replaces StartMenuTabs with its own builder and keeps a reference at CoD.AAEStartMenuTabs.
+-- Its lobby OPTIONS button (AAE_AAEOPTION -> OpenAAEOption) does nothing more than open StartMenu_Main,
+-- so the AAE-only tabs that builder adds - CoD.AAEInGameOption, CoD.AAEGunpos and
+-- CoD.StartMenu_GameOptions_ZMAAE - are the entire difference between AAE's options menu and the stock
+-- one. boiii's ui scripts load AFTER the game's LUI init, so assigning below would overwrite AAE's
+-- builder and that button would open the normal options menu. Leave AAE's in place when it is loaded.
+if CoD ~= nil and CoD.AAEStartMenuTabs ~= nil then
+	-- AAE's options list is only given a height inside `if CoD.AAEOptionsFiler ~= nil` (see
+	-- CoD.AAEInGameOption.new), so a nil filter leaves it populated but zero-height - the tab opens blank.
+	-- AAE sets it to 0 ("MENU_ALL") at the very end of its presence chunk, which can be skipped: that
+	-- chunk returns early when CheckVersionisNotSupport() fires, and that check rejects any build other
+	-- than one exact changelist as well as fingerprinting boiii via DataSources.MPStatsSettings.
+	-- Fall back to AAE's own default so the tab renders.
+	if CoD.AAEOptionsFiler == nil then
+		CoD.AAEOptionsFiler = 0
+	end
+	return
+end
+
 DataSources.StartMenuTabs = ListHelper_SetupDataSource("StartMenuTabs", function(f44_arg0)
 	local f44_local0 = {}
 	table.insert(f44_local0, {
