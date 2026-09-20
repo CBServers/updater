@@ -65,6 +65,11 @@
         "38F8C0E3D530C58F1B46B91DF11D2D148792029E"
     ],
     [
+        "data/ui_scripts/cb_toast/__init__.lua",
+        4725,
+        "4660CDAA9DF58F07AB1E9C41773D3538610D95DF"
+    ],
+    [
         "data/ui_scripts/endgame/__init__.lua",
         6259,
         "9E37860EA7B1CCD33B20EA596417A931907719A8"
@@ -100,9 +105,14 @@
         "0E78A2BCABB5BE7447EBA5F4EF85B19D106139C0"
     ],
     [
+        "data/ui_scripts/match_settings/__init__.lua",
+        7780,
+        "CD006ED0C192909924F2CCD48AEAAEFE9CA6FD06"
+    ],
+    [
         "data/ui_scripts/nat_friends/__init__.lua",
-        2342,
-        "4E55E8E39F4CDE6394322CB1B00E4702D4D9A687"
+        2731,
+        "6984CCDDA6467763E0D76650E08075181DA26D40"
     ],
     [
         "data/ui_scripts/patches/__init__.lua",
@@ -136,10 +146,10 @@
     ],
     [
         "s1x.exe",
-        7751680,
-        "60DCEAB41AA83683EF18C17790EEA49F9BBB7801"
+        7802880,
+        "4DE9923DC89FA46834887974FC469A51AB7B44F5"
     ],
     {
-        "ManifestHash": "9EA1B7F4C388F8D551D962CE9C0277A4E8DB118D71420C477536B34CC465B0D7"
+        "ManifestHash": "4F8FFA2C5126A03798388B097F6420FFD1118FE329A6B8401FFDA46494E6B8F2"
     }
 ]
