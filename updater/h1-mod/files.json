@@ -25,6 +25,11 @@
         "9C6A9515DA480993A987025E015920A58E800B5F"
     ],
     [
+        "cdata/ui_scripts/cb_toast/__init__.lua",
+        4517,
+        "25DA9B3F33886CFBA0C40F8E8AA8F744D96C5D15"
+    ],
+    [
         "cdata/ui_scripts/classes/__init__.lua",
         300,
         "2F528435808924109F994FD43F2F5CE9019CDDD0"
@@ -75,6 +80,11 @@
         "387CE9D28DE381FD4CC2D057578F1190664A67E5"
     ],
     [
+        "cdata/ui_scripts/match_settings/__init__.lua",
+        3467,
+        "2503A7B0639E92B364737E562AEB770B9D73826B"
+    ],
+    [
         "cdata/ui_scripts/mods/download.lua",
         838,
         "AC0AE32B598C61F5056EE4A2F89F55B63AB5CE8E"
@@ -111,8 +121,8 @@
     ],
     [
         "cdata/ui_scripts/patches/disable_useless_things.lua",
-        479,
-        "BC87C65D9BDF829F9EA82F62132E339FFF2AE340"
+        336,
+        "483D460199DD69697FD29192EF5CA6D151A9ED70"
     ],
     [
         "cdata/ui_scripts/patches/gamemodes.lua",
@@ -261,10 +271,10 @@
     ],
     [
         "h1-mod.exe",
-        9938944,
-        "99A28CEA4B9D6789F8DE1EDC472D42B3E9323CF9"
+        9980928,
+        "F99F82443D6ECDEA314AFA3E66365455E1CB3B53"
     ],
     {
-        "ManifestHash": "97A79A43F59186A489F30F7522716479754ACE62D999408C16EB20B71881C00A"
+        "ManifestHash": "814E4F5A94C8F5C48685B6FC8415C32F946474D12DC922BCAEE550FEE5FAA3A9"
     }
 ]
