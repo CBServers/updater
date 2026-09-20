@@ -7,7 +7,7 @@
     [
         "boiii.exe",
         2843136,
-        "D86F12A7DE37299CA3BFFDDE6AD6229D59074C92"
+        "4A1142E3FBBB94DC03F798A9C5827992A1671140"
     ],
     [
         "data/gamesettings/mp/gamesettings_escort.cfg",
@@ -201,10 +201,10 @@
     ],
     [
         "data/ui_scripts/weapon_build_kits/__init__.lua",
-        4764,
-        "E212BAB7C88E9ACC473292D7EA4C72B058449CE1"
+        3498,
+        "BE692175B916BC9A8098835BB1EE5A288B35D1E8"
     ],
     {
-        "ManifestHash": "6C502852A616DCA22A35B1AAAA77CD000D7F81F4D14334FE66FF2F1CA2E4E546"
+        "ManifestHash": "655B28A98335E30FC2FECD21889150C29F42C171EE0CFF211EEEDE663BE29A85"
     }
 ]

@@ -4,21 +4,7 @@ end
 
 require("ui.uieditor.actions")
 
--- FocusWeaponBuildKit and SelectWeaponBuildKit (ui/uieditor/actions.lua) both open with:
---
---   local list = CoD.CraftUtility.Gunsmith.GetSortedWeaponVariantList( weaponIndex )
---   local variant = CoD.CraftUtility.Gunsmith.GetVariantByIndex( controller, list[#list].variantIndex )
---
--- GetSortedWeaponVariantList walks CoD.CraftUtility.Gunsmith.CachedVariants and keeps only the
--- entries whose weaponIndex matches this weapon, plus the first free slot; it returns an empty
--- table when the cache holds neither, and ParseDDL leaves the cache empty outright when there is
--- no gunsmith DDL root to read. list[#list] is then list[0], and indexing that nil throws - in the
--- weapon list's focus handler for the first, in the button handler for the second, so a whole
--- Create-A-Class category comes up empty instead of one weapon misbehaving.
---
--- Both are reimplemented below against a shared helper that falls back to the same empty variant
--- GetVariantByIndex itself builds when the DDL is missing, rather than borrowing whatever sits in
--- another weapon's slot. Weapons that do have a variant entry take the stock path unchanged.
+-- stock FocusWeaponBuildKit/SelectWeaponBuildKit index list[#list] on an empty variant cache and throw
 
 local function GetVariantToDisplay(controller, weaponIndex)
   local gunsmith = CoD.CraftUtility.Gunsmith
@@ -43,8 +29,7 @@ local function GetVariantToDisplay(controller, weaponIndex)
   }
 end
 
--- IsVariantIndexOccupied indexes CachedVariants[index + 1] without checking it, which is the same
--- nil once the cache is empty. A slot that is not in the cache is not occupied.
+-- stock IsVariantIndexOccupied indexes an empty cache without checking
 local function IsVariantOccupied(variantIndex)
   local slot = CoD.CraftUtility.Gunsmith.CachedVariants[variantIndex + 1]
   return slot ~= nil and slot.weaponIndex ~= CoD.CraftUtility.Gunsmith.EMPTY_ITEM_INDEX
@@ -98,8 +83,7 @@ function SelectWeaponBuildKit(self, element, controller)
       Engine.SetModelValue(textEntry, "")
       Engine.SetModelValue(
         Engine.CreateModel(Engine.GetModelForController(controller), "Gunsmith.validVariantNameEntered"), true)
-      -- Stock reads textEntry back out here without leaving this branch, so a missing model took
-      -- the same nil into Engine.GetModelValue. Kept inside the check.
+      -- stock reads textEntry back here unguarded
       Engine.SetModelValue(Engine.GetModel(variantModel, "variantName"), Engine.GetModelValue(textEntry))
     end
   end
