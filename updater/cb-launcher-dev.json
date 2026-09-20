@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        3570544,
-        "6395A1D11065914292D5148544EE44752ECE2661"
+        3579248,
+        "7588CEDA6C7459A66EAB1DE0D2F4C0BC70A46A08"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -81,8 +81,8 @@
     ],
     [
         "data/launcher-ui/assets/css/main.css",
-        210007,
-        "46B8B56C4A9342DE38037E6CFD7A7CD3D913D883"
+        210141,
+        "6B3698C5F1994C9466309EA4BDAA685FD72E8A46"
     ],
     [
         "data/launcher-ui/assets/fonts/ibm-plex-mono-400.woff2",
@@ -511,13 +511,13 @@
     ],
     [
         "data/launcher-ui/assets/js/core/command.js",
-        18308,
-        "3316E217ABF2CEE9ECD75E5AEFCA372553046F4D"
+        19549,
+        "64016A43F013EA956471B4CB824401A5521B46B0"
     ],
     [
         "data/launcher-ui/assets/js/core/community.js",
-        27866,
-        "29265E4C9404B62B0BEE6CD3C2F210DA68836DA5"
+        30714,
+        "C57A34FB8B8F0424EC11D9F3B080946103B83F8A"
     ],
     [
         "data/launcher-ui/assets/js/core/discord-friends.js",
@@ -531,8 +531,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        226248,
-        "BE2245C88958A5856DE223A77F150D802B08CFB4"
+        226672,
+        "9AD76E300D04CCF872E8C6082C90A413BECC7214"
     ],
     [
         "data/launcher-ui/assets/js/core/moderation.js",
@@ -541,18 +541,23 @@
     ],
     [
         "data/launcher-ui/assets/js/core/mods.js",
-        12882,
-        "0F3372EBA56F58A3773F07DCAE218B96F60E3362"
+        12942,
+        "350288D7D060E3EE2F9BDA87F2CCF00CA3C67E13"
     ],
     [
         "data/launcher-ui/assets/js/core/player-counts.js",
-        4618,
-        "C6D1894CEAAB9BEF2D7A15B10CA3A44B451CF6B4"
+        4043,
+        "247D08A0B82ED8BCC1A17348CE75DBC6B9C68F76"
     ],
     [
         "data/launcher-ui/assets/js/core/servers.js",
-        10626,
-        "CA353D7EB8DC8E0E27CA4B39B05D2DC1A202B8B6"
+        10685,
+        "3A9EDEFA538146B0B33336065A3765076C7AB05D"
+    ],
+    [
+        "data/launcher-ui/assets/js/core/service-hosts.js",
+        1562,
+        "087E4587C03F95739E2906A049EA69ED8EB4F8D5"
     ],
     [
         "data/launcher-ui/assets/js/core/utils.js",
@@ -621,8 +626,8 @@
     ],
     [
         "data/launcher-ui/main.html",
-        45279,
-        "72AE165403A6483754C6D46C00D65DF87B618F8E"
+        45341,
+        "F7993A0C07F3655CE0F2F01FBB7D836BA64C60F5"
     ],
     [
         "manifest/aw.json",
@@ -710,6 +715,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "485EA3B5AEE2829A24E313C072C21165B928DC588AC54B7E72DA936B472E3C6C"
+        "ManifestHash": "6A7B55943343D620C4BE6E80151BB19EA234467000047D640EA6AAEEC5E94D58"
     }
 ]
