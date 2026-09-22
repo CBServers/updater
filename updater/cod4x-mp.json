@@ -1,8 +1,8 @@
 [
     [
         "bin/cod4x_021/cod4x_021.dll",
-        1980928,
-        "BE40BA0E6F870396156984CD8CC983E343180AFC",
+        2843648,
+        "F26AEA8A0CD234ECEBAA8BB5C91280DB2F73018D",
         "appdata"
     ],
     [
@@ -54,6 +54,6 @@
         "appdata"
     ],
     {
-        "ManifestHash": "36EB4FC8C049E2F44F3AFFEDB9742C910B8A70403FDBA1D72D55FB6851973611"
+        "ManifestHash": "5B12504769D46703FAE4DEE6346A306AA3AE778CEACD40C4A1014C150A8D7178"
     }
 ]
