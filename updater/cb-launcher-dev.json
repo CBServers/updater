@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        3623280,
-        "EDCA97CF051408EEE28E036662ED3342B1122476"
+        3638640,
+        "B306494692CD3F5321298F0C6BBC978AE72008BD"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -81,8 +81,8 @@
     ],
     [
         "data/launcher-ui/assets/css/main.css",
-        211628,
-        "85DB0329A44C2C96A13652DD4B9B83F3D38BA0D3"
+        214908,
+        "BA4B860698E910EED9E72CF6734B19C119820472"
     ],
     [
         "data/launcher-ui/assets/fonts/ibm-plex-mono-400.woff2",
@@ -511,13 +511,13 @@
     ],
     [
         "data/launcher-ui/assets/js/core/command.js",
-        19822,
-        "5582A1B23E40B4A92310DD464B76B7367048FC65"
+        21808,
+        "0CC3D33F8E55DA0064047FFE15EA96ACACEB985B"
     ],
     [
         "data/launcher-ui/assets/js/core/community.js",
-        31872,
-        "24CB96C48EFB7F4689CC9EC8EBB32B92A8206D79"
+        35917,
+        "C1A721D4FE7DF49930A0E1023FF396BEF74F7CA3"
     ],
     [
         "data/launcher-ui/assets/js/core/discord-friends.js",
@@ -526,18 +526,18 @@
     ],
     [
         "data/launcher-ui/assets/js/core/dm.js",
-        10976,
-        "376D9E854B00398D733B12D3B0FAC4C34E7B2152"
+        12352,
+        "0141086962832122C6C6748D730C681AD4F89AE6"
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        227528,
-        "1C519CE963E560BB4CC830084797EDAABE7AAD93"
+        229325,
+        "F5057D636E6D8164F86CFFAD665E3695EEF0FF6C"
     ],
     [
         "data/launcher-ui/assets/js/core/moderation.js",
-        10641,
-        "4AC812B0B1C9AE6B94DFFD30002888ADD0C97856"
+        15507,
+        "D0663CA23165A710D91244A31023110FED9B54FB"
     ],
     [
         "data/launcher-ui/assets/js/core/mods.js",
@@ -616,8 +616,8 @@
     ],
     [
         "data/launcher-ui/assets/js/ui/person-menu.js",
-        16680,
-        "80C97D8462F6486DC09963497948B2511CA2FCCD"
+        19003,
+        "0031E2C3EA93BE7C4BA2C0AC54C276378A594289"
     ],
     [
         "data/launcher-ui/assets/js/ui/toast.js",
@@ -715,6 +715,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "489D20A7BB748F30E855A44691A06D7AD0DA70E83632D41EB9F6E61E0DA7141D"
+        "ManifestHash": "6AE9140D51598F10E6ABCF65B2A3E0E320EB6D3C63899A39F87DFD79D6B17319"
     }
 ]
