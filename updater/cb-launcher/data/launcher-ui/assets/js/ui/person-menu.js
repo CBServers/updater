@@ -6,6 +6,7 @@
     function t(k, v) { return window.LauncherI18n ? window.LauncherI18n.t('cb.' + k, v) : k; }
     let menu = null;
     let card = null;
+    let cardPerson = null; // whoever the open profile card shows, for its own menu button
 
     function escapeHtml(value) {
         return String(value == null ? '' : value)
@@ -182,9 +183,12 @@
         ].filter(Boolean).join('');
         const played = playedRows(p.playtime);
 
+        const more = p.relation === 'self' ? '' :
+            `<button type="button" class="friend-more-btn cb-person-more" data-person-more title="${escapeHtml(t('more'))}" aria-label="${escapeHtml(t('more'))}">&#8943;</button>`;
         return `
             <div class="cb-person-card">
                 <div class="cb-person-banner" ${banner}></div>
+                ${more}
                 <div class="cb-person-avatar" ${accent ? `style="border-color:${accent}"` : ''}>${avatar}</div>
                 <div class="cb-person-body">
                     <div class="cb-person-name">${escapeHtml(p.displayName || p.handle)}</div>
@@ -208,6 +212,7 @@
     async function showCard(person) {
         const el = ensureCard();
         // Render what the caller already knows, then replace it with the full profile.
+        cardPerson = person || null;
         el.innerHTML = cardHtml(person && person.handle ? person : null, !(person && person.handle));
         el.hidden = false;
 
@@ -223,6 +228,7 @@
                 res = await window.executeCommand('cbfriends-get-viewed-profile');
             } catch (error) { break; }
             if (res && res.profile) {
+                cardPerson = res.profile;
                 if (!el.hidden) el.innerHTML = cardHtml(res.profile, false);
                 break;
             }
@@ -231,6 +237,10 @@
 
     function bindCardActions() {
         ensureCard().addEventListener('click', async (event) => {
+            if (event.target.closest('[data-person-more]')) {
+                if (cardPerson) window.PersonMenu.open(event, cardPerson, null, { fromCard: true });
+                return;
+            }
             const add = event.target.closest('[data-person-add]');
             if (add) {
                 const handle = add.getAttribute('data-person-add');
@@ -267,13 +277,55 @@
         }
     }
 
-    async function reportUser(person) {
+    // A name or profile problem is about the account, so a message report does not offer it.
+    const ACCOUNT_CATEGORIES = ['harassment', 'spam', 'cheating', 'profile', 'other'];
+    const MESSAGE_CATEGORIES = ['harassment', 'spam', 'cheating', 'other'];
+
+    function reportFormHtml(message) {
+        const categories = message ? MESSAGE_CATEGORIES : ACCOUNT_CATEGORIES;
+        const quote = message ? `
+            <div class="cb-report-quote">
+                <span class="cb-report-quote-who">${escapeHtml(message.displayName || message.handle || '')}</span>
+                ${escapeHtml(message.text || '')}
+            </div>` : '';
+        return `
+            <div class="cb-report-form">
+                <div>${escapeHtml(message ? t('reportMessageBody') : t('reportBody'))}</div>
+                ${quote}
+                <div class="cb-report-label">${escapeHtml(t('reportWhy'))}</div>
+                <div class="cb-report-options">
+                    ${categories.map(c => `
+                        <label class="cb-report-option">
+                            <input type="radio" name="cb-report-category" value="${c}" />
+                            <span>${escapeHtml(t('reportCategories.' + c))}</span>
+                        </label>`).join('')}
+                </div>
+                <textarea class="cb-create-input cb-report-note" maxlength="300" rows="3"
+                    placeholder="${escapeHtml(t('reportNotePlaceholder'))}"></textarea>
+            </div>`;
+    }
+
+    // message: { id, room, text, handle, displayName } when a chat line is being reported.
+    async function reportUser(person, message) {
         try {
-            const idx = await window.showMessageBox(
-                t('reportTitle', { handle: person.handle }), t('reportBody'),
+            const title = message
+                ? t('reportMessageTitle', { handle: person.handle })
+                : t('reportTitle', { handle: person.handle });
+            const idx = await window.showMessageBox(escapeHtml(title), reportFormHtml(message),
                 [{ label: t('reportConfirm'), danger: true }, t('cancel')]);
             if (idx !== 0) return;
-            await window.executeCommand('cbfriends-report', { cbId: person.cbId, reason: '' });
+
+            // The box keeps its content until the next one opens, so the answers are still readable.
+            const box = document.getElementById('message-box');
+            const picked = box && box.querySelector('input[name="cb-report-category"]:checked');
+            const note = box && box.querySelector('.cb-report-note');
+            await window.executeCommand('cbfriends-report', {
+                cbId: person.cbId,
+                category: picked ? picked.value : 'other',
+                note: note ? note.value.trim() : '',
+                room: message ? message.room : '',
+                messageId: message ? message.id : 0,
+            });
             if (window.showToast) window.showToast(t('reportedToast'), 'success');
         } catch (error) {
             console.warn('Report failed:', error);
@@ -302,8 +354,10 @@
 
     window.PersonMenu = {
         // extra: { top, bottom } item groups or an array (bottom); items may set disabled, danger or separator.
-        open(event, person, extra) {
+        // opts.fromCard: opened from the profile card, so "View profile" is redundant and actions close the card.
+        open(event, person, extra, opts) {
             if (!person || !person.cbId) return;
+            const fromCard = !!(opts && opts.fromCard);
             event.preventDefault();
             // Keep it from reaching the document dismiss handler, which would close it immediately.
             event.stopPropagation();
@@ -312,7 +366,7 @@
             const known = person.relation === 'friend' || person.relation === 'requested' || person.relation === 'incoming';
             const items = [].concat(groups.top || [], [
                 { separator: true },
-                { label: t('viewProfile'), action: () => showCard(person) },
+                { label: t('viewProfile'), hidden: fromCard, action: () => showCard(person) },
                 { label: t('message'), hidden: isSelf || person.relation !== 'friend' || !window.DirectMessages,
                   action: () => window.DirectMessages.open(person.cbId) },
                 { label: t('addFriend'), hidden: isSelf || known || !person.handle, action: () => addFriend(person.handle) },
@@ -322,7 +376,9 @@
                 { label: t('report'), hidden: isSelf, danger: true, action: () => reportUser(person) },
             ]);
             const pos = positionFor(event);
-            showMenu(pos.x, pos.y, items);
+            showMenu(pos.x, pos.y, fromCard
+                ? items.map(i => i.action ? Object.assign({}, i, { action: () => { hideCard(); i.action(); } }) : i)
+                : items);
         },
         // A plain menu at the pointer, for rows that are not CB people (Discord friends).
         showMenuAt(event, items) {
@@ -332,6 +388,7 @@
             showMenu(pos.x, pos.y, items);
         },
         showCard,
+        report: reportUser,
         matchContext,
         formatAgo: ago,
         init() { bindCardActions(); }

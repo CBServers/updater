@@ -1163,7 +1163,7 @@ body.offline-mode #friends {
 
 .library-card-player-seg[hidden] { display: none; }
 
-.library-card-player-seg + .library-card-player-seg:not([hidden]) {
+.library-card-player-seg:not([hidden]) + .library-card-player-seg:not([hidden]) {
     padding-left: 8px;
     border-left: 1px solid rgba(255, 255, 255, 0.22);
 }
@@ -5609,6 +5609,29 @@ select.cb-create-input option { background: #222222; color: #fff; padding: 8px; 
     margin-top: 14px;
 }
 
+.cb-create-link {
+    display: block;
+    margin-top: 12px;
+    padding: 0;
+    border: none;
+    background: none;
+    font-size: 12px;
+    color: var(--text-dim);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+    transition: color 0.2s var(--ease);
+}
+
+.cb-create-link:hover {
+    color: var(--text);
+}
+
+.cb-recover-input {
+    font-family: ui-monospace, Consolas, monospace;
+    letter-spacing: 0.04em;
+}
+
 .cb-create-error {
     padding: 9px 14px;
     margin-bottom: 16px;
@@ -5959,6 +5982,23 @@ select.cb-create-input option { background: #222222; color: #fff; padding: 8px; 
 }
 
 /* The accent is a flat fill, so light-to-dark gives the banner depth without a second colour. */
+/* Always in its hovered look: a plain glyph disappears against a light accent banner. */
+.cb-person-card .cb-person-more {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    opacity: 1;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.35);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.cb-person-card .cb-person-more:hover {
+    background: rgba(0, 0, 0, 0.55);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
 .cb-person-banner {
     height: 84px;
     background-color: var(--card-accent, var(--accent));
@@ -6175,6 +6215,7 @@ select.cb-create-input option { background: #222222; color: #fff; padding: 8px; 
     display: flex;
     align-items: center;
     gap: 14px;
+    flex: 0 0 132px;
     height: 132px;
     padding: 0 22px;
     margin-bottom: 20px;
@@ -6222,6 +6263,8 @@ select.cb-create-input option { background: #222222; color: #fff; padding: 8px; 
        column is not a short box in a sea of empty page. */
     flex: 1 1 auto;
     min-height: 340px;
+    /* An auto row sizes to its content, which is what let a long chat stretch the page. */
+    grid-template-rows: minmax(0, 1fr);
 }
 
 @media (max-width: 1100px) {
@@ -6233,6 +6276,7 @@ select.cb-create-input option { background: #222222; color: #fff; padding: 8px; 
 .community-chat {
     display: flex;
     flex-direction: column;
+    min-height: 0;
     background: var(--surface-lo);
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -6240,6 +6284,7 @@ select.cb-create-input option { background: #222222; color: #fff; padding: 8px; 
 }
 
 .community-chat .cb-section-head {
+    flex-shrink: 0;
     margin-top: 0;
 }
 
@@ -6247,6 +6292,7 @@ select.cb-create-input option { background: #222222; color: #fff; padding: 8px; 
     flex: 1 1 auto;
     min-height: 0;   /* lets the log scroll instead of stretching its parent */
     overflow-y: auto;
+    overflow-x: hidden;   /* the lines' negative side margins would otherwise add a horizontal bar */
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -6300,6 +6346,7 @@ select.cb-create-input option { background: #222222; color: #fff; padding: 8px; 
 
 .community-chat-input {
     display: flex;
+    flex-shrink: 0;
     gap: 8px;
     margin-top: 12px;
 }
@@ -6517,6 +6564,9 @@ select.cb-create-input option { background: #222222; color: #fff; padding: 8px; 
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    /* Room for the name link's underline, which the ellipsis clip would otherwise cut off. */
+    padding-bottom: 3px;
+    margin-bottom: -3px;
 }
 
 .friend-activity {
@@ -7641,6 +7691,180 @@ html:not([data-theme]) .toast {
     color: var(--text-dim);
 }
 
+.mod-report {
+    align-items: flex-start;
+}
+
+.mod-report .mod-row-actions {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    max-width: 300px;
+}
+
+.mod-tag {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--warn);
+    background: var(--warn-soft, rgba(255, 178, 63, 0.12));
+    border-radius: var(--chamfer-sm);
+    vertical-align: middle;
+}
+
+.mod-tag.is-muted {
+    margin-left: 0;
+    color: var(--text-dim);
+    background: var(--surface-lo);
+}
+
+.mod-evidence {
+    margin-top: 10px;
+    padding: 10px 12px;
+    background: var(--surface-lo);
+    border: 1px solid var(--border);
+    border-radius: var(--chamfer-sm);
+}
+
+.mod-evidence-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-dim);
+}
+
+.mod-evidence-actions {
+    display: flex;
+    gap: 6px;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.mod-evidence-line {
+    display: flex;
+    gap: 8px;
+    padding: 3px 6px;
+    font-size: 12.5px;
+    color: var(--text-muted);
+    overflow-wrap: anywhere;
+}
+
+.mod-evidence-line.is-reported {
+    color: var(--text-bright);
+    background: rgba(255, 77, 94, 0.1);
+    border-left: 2px solid var(--danger);
+}
+
+.mod-evidence-who {
+    flex: 0 0 auto;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.mod-evidence-text {
+    min-width: 0;
+}
+
+/* Report dialog, drawn inside the shared message box */
+.cb-report-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cb-report-quote {
+    padding: 8px 10px;
+    font-size: 12.5px;
+    color: var(--text);
+    background: var(--surface-lo);
+    border-left: 2px solid var(--danger);
+    overflow-wrap: anywhere;
+}
+
+.cb-report-quote-who {
+    margin-right: 6px;
+    font-weight: 700;
+    color: var(--text-bright);
+}
+
+.cb-report-label {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.cb-report-options {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cb-report-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+}
+
+.cb-report-option:hover {
+    border-color: var(--border-hi);
+}
+
+.cb-report-option input {
+    accent-color: var(--danger);
+}
+
+.cb-report-note {
+    resize: vertical;
+    font-family: inherit;
+    font-size: 13px;
+}
+
+/* Muted: the input stays readable but inert, with the reason above it */
+.community-mute-banner,
+.dm-mute-banner {
+    padding: 8px 12px;
+    font-size: 12.5px;
+    color: var(--warn);
+    background: var(--warn-soft, rgba(255, 178, 63, 0.12));
+    border: 1px solid var(--warn-border, rgba(255, 178, 63, 0.3));
+    border-radius: var(--radius-sm);
+}
+
+.community-mute-banner {
+    margin-top: 12px;
+}
+
+.dm-mute-banner {
+    margin: 8px 12px 0;
+}
+
+.community-mute-banner[hidden],
+.dm-mute-banner[hidden] {
+    display: none;
+}
+
+#community-chat-text:read-only,
+#dm-text:read-only {
+    opacity: 0.6;
+}
+
+#community-chat-send:disabled,
+.dm-send:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 /* ---- Direct messages: a dock, not a page ---- */
 
 /* Collapsed it is a small bar; toasts sit at bottom 88px so the two never collide. */
@@ -7920,6 +8144,11 @@ html:not([data-theme]) .toast {
 #community-page {
     flex-direction: column;
     min-height: 100%;
+}
+
+/* Inside a room the page is bounded so the chat log and LFG list scroll instead of the page. */
+#community-page.is-room {
+    height: 100%;
 }
 
 #community-body {
