@@ -6,8 +6,8 @@
     ],
     [
         "boiii.exe",
-        3116032,
-        "B6A26E43E3EED293D14973561C8A5C9C44C3703A"
+        3130368,
+        "A67DB0BC81DABAE25AC5EE9C5412CE40C5E5E79F"
     ],
     [
         "data/gamesettings/mp/gamesettings_escort.cfg",
@@ -150,6 +150,11 @@
         "E1B587FDCD8E58CA4F07C37AF44C5515BF86FAE3"
     ],
     [
+        "data/ui_scripts/mod_permission/__init__.lua",
+        3155,
+        "35D70C4ED8778361B979F572BF584678047FBF6E"
+    ],
+    [
         "data/ui_scripts/party/datasources_start_menu_game_options.lua",
         5408,
         "83825F7141D7FBDCEEA0FB417AD3C73AFA48E69B"
@@ -210,6 +215,6 @@
         "BE692175B916BC9A8098835BB1EE5A288B35D1E8"
     ],
     {
-        "ManifestHash": "FAB110E310C60FA3A4992F368CA67404A65D81220CA7E300ECB4B7464072263B"
+        "ManifestHash": "5BB5FE6E2865EF0DA53FE38DB60C6C883168B90D119D6CFF77B94F0888275A72"
     }
 ]
