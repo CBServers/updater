@@ -73,8 +73,8 @@ end
 
 -- Joins the group of the button it follows, taking over that group's trailing spacer
 local addButton = function(controller, buttonTable, after)
-  -- Nothing records with a mod loaded, same as stock
-  if Engine.IsUsingMods() then
+  -- Nothing records with a mod loaded, same as stock, unless demo_allowMods opts in
+  if Engine.IsUsingMods() and not Dvar.demo_allowMods:get() then
     return
   end
 
