@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        3648368,
-        "AB3943DE7055A98E8D2BA551E0E634A41F465737"
+        3655024,
+        "DBF22A88F4074C74F87991577C6E271A5F04BA53"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -81,8 +81,8 @@
     ],
     [
         "data/launcher-ui/assets/css/main.css",
-        214908,
-        "BA4B860698E910EED9E72CF6734B19C119820472"
+        215312,
+        "37828DE4205496BC94B205B06ECC3F0D223925CF"
     ],
     [
         "data/launcher-ui/assets/fonts/ibm-plex-mono-400.woff2",
@@ -516,8 +516,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/community.js",
-        35917,
-        "C1A721D4FE7DF49930A0E1023FF396BEF74F7CA3"
+        36208,
+        "6E1C11A211E9D79794CC6BDBBC0771D19C14A57D"
     ],
     [
         "data/launcher-ui/assets/js/core/discord-friends.js",
@@ -526,8 +526,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/dm.js",
-        12352,
-        "0141086962832122C6C6748D730C681AD4F89AE6"
+        12646,
+        "CA7CCE3DA98054C98AFC3593BCDD276C7ED132B1"
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
@@ -715,6 +715,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "DD7F7BDA8BF0E3D26990A3B585073754575FCCCBF9948B72D5E22741FFC757B9"
+        "ManifestHash": "5D5FAE0C79987F170B0DFC6B4A2B61AC2DED80D9661A089D496C094D31A99E8A"
     }
 ]
