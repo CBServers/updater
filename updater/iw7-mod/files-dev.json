@@ -11,13 +11,13 @@
     ],
     [
         "cdata/custom_scripts/mp/bots.gsc",
-        14640,
-        "4F4A740C0EDDE204C2B5D184DDDF376705F5F785"
+        14976,
+        "0A59D7AB8C6CB564460587ABD46FF176B7C0D973"
     ],
     [
         "cdata/custom_scripts/mp/bots_loadout.gsc",
-        3865,
-        "5925FCF0CE75B7958644EEE2B69FF1EC60D024F9"
+        11068,
+        "F3E8A4B6E36C8E0F2ABD2D3CECAAC52FF7C86CFE"
     ],
     [
         "cdata/custom_scripts/mp/ranked.gsc",
@@ -225,11 +225,6 @@
         "24993D53434FD467A0EFCB988BCECBBEDD029638"
     ],
     [
-        "cdata/start.cfg",
-        80,
-        "65C65F132AFD40EFA57E24A678548EFF4BB4E82A"
-    ],
-    [
         "cdata/ui_scripts/CBToast/__init__.lua",
         2587,
         "4D550A1B3D433C16E555B32AF0937A1E19A429AD"
@@ -266,23 +261,23 @@
     ],
     [
         "cdata/ui_scripts/Lobby/GameSetupButtonsBots.lua",
-        12399,
-        "B4DEA0677B1628E72BD2981EF01891EB646A4470"
+        12702,
+        "C97317809F59F5CBC9855720823F24553DC3DBE7"
     ],
     [
         "cdata/ui_scripts/Lobby/GameSetupOptions.lua",
-        7011,
-        "742285C15E84D8F72AB576E3FD55C2C675DBCCDA"
+        10008,
+        "D0EE5631237669BE9E8622CB4A8CB89913220BA7"
     ],
     [
         "cdata/ui_scripts/Lobby/LobbyMissionButtons.lua",
-        4206,
-        "05A2C860E9BEA3DB4A75512A0E775D3F6ED92C84"
+        4318,
+        "50BB278D251DFD0D7748229AAFE9355B9A3D0D8A"
     ],
     [
         "cdata/ui_scripts/Lobby/__init__.lua",
-        2304,
-        "B26B0E46ED6E7887081A3F4675A7BE132D2686A9"
+        1391,
+        "4B0141D535A280AA31EFF5F906D64034567B4E77"
     ],
     [
         "cdata/ui_scripts/MainMenu/CampaignMenuButtons.lua",
@@ -301,8 +296,8 @@
     ],
     [
         "cdata/ui_scripts/MainMenu/MissionButtons.lua",
-        2171,
-        "7F3FEEA2D05105638D5707B5E7220CE96B3A727B"
+        2259,
+        "61DCA57F8F3B79483D742A7D146ECBC53D93B505"
     ],
     [
         "cdata/ui_scripts/MainMenu/MPMainMenu.lua",
@@ -351,8 +346,8 @@
     ],
     [
         "cdata/ui_scripts/Patches/__init__.lua",
-        198,
-        "637E243CAD61BDDA95593718C0E7AC8EECF2C0A0"
+        562,
+        "FA879EAB64F454019EA9D2E24029AC9B37C6595F"
     ],
     [
         "cdata/ui_scripts/Stats/__init__.lua",
@@ -426,10 +421,10 @@
     ],
     [
         "iw7-mod.exe",
-        4721152,
-        "20965B417FEED4D041AF83D00984E193625B043A"
+        5402624,
+        "7BAF56B34628332127A51191F917D6C37744BF9E"
     ],
     {
-        "ManifestHash": "AF5AF4AAB48D7DECD6F8A6DBD0A7D87AC1D189C40BDE4A7C1494F0FE6A49800A"
+        "ManifestHash": "F52D690018E13AAFDFE9E6178D98F23DC4B8EDB038B7651458F08CBE72D28469"
     }
 ]
