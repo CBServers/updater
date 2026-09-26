@@ -13,19 +13,21 @@ local function VolumeMore(f3_arg0)
         SliderBounds.Volume.Step, "snd_volume")
 end
 
-local function get_mic_volume()
-    return (Engine.GetDvarFloat("winvoice_mic_reclevel") - SliderBounds.VoiceRecord.Min) /
-               (SliderBounds.VoiceRecord.Max - SliderBounds.VoiceRecord.Min)
-end
+if not game:issingleplayer() then
+    local function get_mic_volume()
+        return (Engine.GetDvarFloat("winvoice_mic_reclevel") - SliderBounds.VoiceRecord.Min) /
+                   (SliderBounds.VoiceRecord.Max - SliderBounds.VoiceRecord.Min)
+    end
 
-local function mic_levels_more(index)
-    local current = get_mic_volume() * SliderBounds.VoiceRecord.Max
-    Engine.SetDvarFloat("winvoice_mic_reclevel", current + SliderBounds.VoiceRecord.Step)
-end
+    local function mic_levels_more(index)
+        local current = get_mic_volume() * SliderBounds.VoiceRecord.Max
+        Engine.SetDvarFloat("winvoice_mic_reclevel", current + SliderBounds.VoiceRecord.Step)
+    end
 
-local function mic_levels_less(index)
-    local current = get_mic_volume() * SliderBounds.VoiceRecord.Max
-    Engine.SetDvarFloat("winvoice_mic_reclevel", current - SliderBounds.VoiceRecord.Step)
+    local function mic_levels_less(index)
+        local current = get_mic_volume() * SliderBounds.VoiceRecord.Max
+        Engine.SetDvarFloat("winvoice_mic_reclevel", current - SliderBounds.VoiceRecord.Step)
+    end
 end
 
 local function pc_audio(f4_arg0, f4_arg1)
@@ -109,7 +111,7 @@ local function pc_audio(f4_arg0, f4_arg1)
             LUI.Options.ToggleDvarFunc("snd_lowQualityAudio"), LUI.Options.ToggleDvarFunc("snd_lowQualityAudio"))
     end
 
-    -- voice chat options (multiplayer only; voice dvars are not registered in SP)
+    -- voice chat options
     if Engine.IsMultiplayer() then
         createdivider(menu, Engine.Localize("@LUA_MENU_VOICE_CHAT"))
 

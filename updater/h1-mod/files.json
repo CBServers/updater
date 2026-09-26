@@ -51,8 +51,8 @@
     ],
     [
         "cdata/ui_scripts/custom_depot/__init__.lua",
-        4094,
-        "E9CC5D8326EFC484E7022643A7CA52E09ECFB245"
+        3766,
+        "69F21D5DA8811ACC000FA34DA58B90339CC6B606"
     ],
     [
         "cdata/ui_scripts/custom_weapons/__init__.lua",
@@ -91,8 +91,8 @@
     ],
     [
         "cdata/ui_scripts/mods/loading.lua",
-        3462,
-        "B1A33B6A68A8F1A6241BC187AEA93388FDCBA489"
+        2881,
+        "480755978C90E7EEDF35F092DF8C08966062B017"
     ],
     [
         "cdata/ui_scripts/mods/__init__.lua",
@@ -106,8 +106,8 @@
     ],
     [
         "cdata/ui_scripts/options/pcaudio.lua",
-        6362,
-        "20D915CF44CF208C31F26CEB6BD374DD0DA30059"
+        6391,
+        "B73623395DE723EDB86E935B6BF55485921ADD46"
     ],
     [
         "cdata/ui_scripts/options/__init__.lua",
@@ -131,8 +131,8 @@
     ],
     [
         "cdata/ui_scripts/patches/language.lua",
-        3971,
-        "C3A9794BDC488270656A3FFB6F7B914C5D146CC0"
+        3723,
+        "8AEBCB2647610895356297C2E05F6571736C2C5A"
     ],
     [
         "cdata/ui_scripts/patches/no_mode_switch.lua",
@@ -271,10 +271,10 @@
     ],
     [
         "h1-mod.exe",
-        9980928,
-        "F99F82443D6ECDEA314AFA3E66365455E1CB3B53"
+        10127872,
+        "7E9E9FD2636D0AF071B134AC88BE7B6C8928E03E"
     ],
     {
-        "ManifestHash": "814E4F5A94C8F5C48685B6FC8415C32F946474D12DC922BCAEE550FEE5FAA3A9"
+        "ManifestHash": "E126218468BC99E6B581A7B8D4AEEE75CD684B82094977DF0DA2AF234FF9D067"
     }
 ]
