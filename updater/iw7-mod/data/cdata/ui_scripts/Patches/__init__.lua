@@ -4,3 +4,15 @@ MenuBuilder.m_types["PurchaseCODPointsButton"] = function(menu, controller)
 	self.id = "PurchaseCODPointsButton"
 	return self
 end
+
+if Loot and Loot.IsOwned then
+	local IsOwned = Loot.IsOwned
+	Loot.IsOwned = function(controller, lootId, ...)
+		local count = IsOwned(controller, lootId, ...)
+		-- 30000 (double xp token) crashes, same as stats.cpp item_quantity_stub
+		if lootId ~= 30000 and Engine.GetDvarBool("cg_unlockall_loot") then
+			return math.max(count, 1)
+		end
+		return count
+	end
+end
