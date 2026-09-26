@@ -6,8 +6,8 @@
     ],
     [
         "boiii.exe",
-        2866688,
-        "685645A885650A93270A1EED8B6488008DEF3399"
+        3185152,
+        "59A76F52FB970FF1761854DECEBBFA74EFD6F344"
     ],
     [
         "data/gamesettings/mp/gamesettings_escort.cfg",
@@ -96,8 +96,8 @@
     ],
     [
         "data/ui_scripts/friend_join/__init__.lua",
-        8559,
-        "F21C54B75FEB8E42D3129E2ED1470862FF9D2351"
+        8304,
+        "BB31445292E633157B879EE107FC6EE54FA4DBED"
     ],
     [
         "data/ui_scripts/frontend_menus/datasources_change_map_categories.lua",
@@ -115,14 +115,19 @@
         "E0A0F9B91E6A841381473D1698FA9EC2E0AB38D3"
     ],
     [
+        "data/ui_scripts/frontend_menus/demo_recording.lua",
+        2992,
+        "632A0B09CCF175EB1722AE02B3024DE686924D89"
+    ],
+    [
         "data/ui_scripts/frontend_menus/utils.lua",
         4883,
         "733B45692139906BCCB3AC9AA95FD536B19CD754"
     ],
     [
         "data/ui_scripts/frontend_menus/__init__.lua",
-        8665,
-        "701580AA3DF28CBE883CB674C6037D0A1F521151"
+        9146,
+        "57309E6B71B8A03C48804E7330B721E41A1862E9"
     ],
     [
         "data/ui_scripts/graphics_settings/__init__.lua",
@@ -143,6 +148,11 @@
         "data/ui_scripts/lua_fixes/__init__.lua",
         104,
         "E1B587FDCD8E58CA4F07C37AF44C5515BF86FAE3"
+    ],
+    [
+        "data/ui_scripts/mod_permission/__init__.lua",
+        3155,
+        "35D70C4ED8778361B979F572BF584678047FBF6E"
     ],
     [
         "data/ui_scripts/party/datasources_start_menu_game_options.lua",
@@ -205,6 +215,6 @@
         "BE692175B916BC9A8098835BB1EE5A288B35D1E8"
     ],
     {
-        "ManifestHash": "0B758F183792F947142CF811815886813D78465A2FDE558A1AD9756699A7FE66"
+        "ManifestHash": "99DBD03DE1153BE8F3AFAD900D2E64CC4086BE2526B8959E5FD35CD75BD53852"
     }
 ]

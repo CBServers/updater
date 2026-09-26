@@ -9,6 +9,7 @@ local utils = require("utils")
 require("datasources_start_menu_tabs")
 require("datasources_change_map_categories")
 require("datasources_gamesettingsflyout_buttons")
+local demoRecording = require("demo_recording")
 
 CoD.LobbyButtons.MP_PUBLIC_MATCH = {
   stringRef = "MENU_PLAY_CAPS",
@@ -142,8 +143,15 @@ local addMatchSettingsButton = function(controller, buttonTable)
 end
 
 local addCustomButtons = function(controller, menuId, buttonTable, isLeader)
-  if isCustomGameTarget(menuId) and isLeader and isLeader ~= 0 then
+  local isHost = isLeader and isLeader ~= 0
+
+  if isCustomGameTarget(menuId) and isHost then
     addMatchSettingsButton(controller, buttonTable)
+  end
+
+  -- Only the host records; campaign never does
+  if isHost and (menuId == LobbyData.UITargets.UI_MPLOBBYONLINECUSTOMGAME.id or menuId == LobbyData.UITargets.UI_ZMLOBBYONLINECUSTOMGAME.id) then
+    demoRecording.AddButton(controller, buttonTable, CoD.LobbyButtons.MATCH_SETTINGS)
   end
 
   if menuId == LobbyData.UITargets.UI_MPLOBBYMAIN.id then
@@ -174,6 +182,9 @@ local addCustomButtons = function(controller, menuId, buttonTable, isLeader)
     utils.AddLargeButton(controller, buttonTable, CoD.LobbyButtons.MP_START_GAME, 1)
     utils.AddSmallButton(controller, buttonTable, CoD.LobbyButtons.GameSettingsFlyoutMP, 2)
     utils.AddSpacer(buttonTable, utils.GetButtonIndex(buttonTable, CoD.LobbyButtons.GameSettingsFlyoutMP))
+    if isHost then
+      demoRecording.AddButton(controller, buttonTable, CoD.LobbyButtons.GameSettingsFlyoutMP)
+    end
 
     lobbyMapVote(shouldShowMapVote)
     shouldShowMapVote = false

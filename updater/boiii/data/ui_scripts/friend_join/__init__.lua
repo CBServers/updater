@@ -56,35 +56,6 @@ pcall( function ()
 	end
 end )
 
--- the engine re-reads ISteamFriends only on Engine.UpdateFriends (Social tab open), so while
--- the menu is open, poke it whenever the launcher pushes a new friends snapshot
-pcall( function ()
-	require( "ui.uieditor.menus.Social.Social_Main" )
-
-	if cbSocialRefreshHooked then
-		return
-	end
-
-	local orig_createSocialMain = LUI.createMenu.Social_Main
-	if not ( orig_createSocialMain and game and game.friendsSnapshotVersion ) then
-		return
-	end
-	cbSocialRefreshHooked = true
-
-	LUI.createMenu.Social_Main = function ( controller )
-		local menu = orig_createSocialMain( controller )
-		local lastVersion = game.friendsSnapshotVersion()
-		menu:addElement( LUI.UITimer.newElementTimer( 2000, false, function ()
-			local version = game.friendsSnapshotVersion()
-			if version ~= lastVersion then
-				lastVersion = version
-				Engine.UpdateFriends( controller, Enum.PresenceFilter.PRESENCE_FILTER_ONLINE_AND_IN_TITLE )
-			end
-		end ) )
-		return menu
-	end
-end )
-
 -- INVITE GAME gating. CoD.canInviteToGame demands a real lobby session, which a member who
 -- direct-connected into someone's match never has, so only the host ever saw the button; and it
 -- suppresses "already in my lobby" via LobbyIsPlayerInLobby, which cannot see our synthetic
@@ -136,6 +107,30 @@ pcall( function ()
 		if CoD.Presence.LobbyRecentPlayersJoinableStrings then
 			CoD.Presence.LobbyRecentPlayersJoinableStrings[9] = "In your match"
 		end
+	end
+end )
+
+-- the native activity line needs map/gametype ids that custom maps and CB-rail presence don't carry; C++ writes it
+pcall( function ()
+	require( "ui.uieditor.modifyFunctions_helper" )
+
+	if cbPresenceTextHooked then
+		return
+	end
+
+	local orig_GetPresenceActivityString = GetPresenceActivityString
+	if not ( orig_GetPresenceActivityString and game and game.friendPresenceText ) then
+		return
+	end
+	cbPresenceTextHooked = true
+
+	GetPresenceActivityString = function ( info )
+		local xuid = info and info.xuid
+		local text = xuid and game.friendPresenceText( Engine.UInt64ToString( xuid ) )
+		if text and text ~= "" then
+			return text
+		end
+		return orig_GetPresenceActivityString( info )
 	end
 end )
 
