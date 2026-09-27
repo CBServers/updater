@@ -2,7 +2,7 @@
     [
         "cb-launcher.exe",
         3662192,
-        "2FF48168BB3B29D0DCECCF3E3FCBAD1B3F0DB0C2"
+        "4287E1794CFE1E26291F5570D55FF223E1183ABC"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -81,8 +81,8 @@
     ],
     [
         "data/launcher-ui/assets/css/main.css",
-        215312,
-        "37828DE4205496BC94B205B06ECC3F0D223925CF"
+        215513,
+        "87AA16F519C727FEB7A36A247388A21FE35AA51C"
     ],
     [
         "data/launcher-ui/assets/fonts/ibm-plex-mono-400.woff2",
@@ -531,8 +531,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        230663,
-        "8284EF2F968493AC9C2BE70E82DC66FA4BC3089B"
+        232182,
+        "29011A7EA1C46315A25E9A9C2311F79CBC2147EB"
     ],
     [
         "data/launcher-ui/assets/js/core/moderation.js",
@@ -566,8 +566,8 @@
     ],
     [
         "data/launcher-ui/assets/js/popups/component-selection-popup.js",
-        28704,
-        "2317374F37B1C346804FEFC0FD57973119DDF118"
+        29979,
+        "CB41B21739E7C5B09406E86F4420250735A49FFB"
     ],
     [
         "data/launcher-ui/assets/js/popups/custom-server-popup.js",
@@ -715,6 +715,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "49B90C73EA76ADBC00C082EE27C664368A188248FEA50254B358B8A8DD160B0B"
+        "ManifestHash": "C2E4B2E0B7FEEF6E006E87ECF69D9D99954AE7EB1B58C9786B0271C17404EE97"
     }
 ]
