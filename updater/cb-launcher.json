@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        3641136,
-        "463ABA2B7CF209D4D2F3DFD6C332CE867A2EF7EF"
+        3664688,
+        "EE0AEC8D5D215434EFE78038C87EBF333E82C90D"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -81,8 +81,8 @@
     ],
     [
         "data/launcher-ui/assets/css/main.css",
-        214908,
-        "BA4B860698E910EED9E72CF6734B19C119820472"
+        215513,
+        "87AA16F519C727FEB7A36A247388A21FE35AA51C"
     ],
     [
         "data/launcher-ui/assets/fonts/ibm-plex-mono-400.woff2",
@@ -486,8 +486,8 @@
     ],
     [
         "data/launcher-ui/assets/js/app/main.js",
-        110477,
-        "FBCF48133BB1813B6D130442AF9C9D93DCEE0BBA"
+        111738,
+        "D26DF7F88CEB358DE69F34DBED573F9481F8FA49"
     ],
     [
         "data/launcher-ui/assets/js/app/mods-view.js",
@@ -516,8 +516,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/community.js",
-        35917,
-        "C1A721D4FE7DF49930A0E1023FF396BEF74F7CA3"
+        36208,
+        "6E1C11A211E9D79794CC6BDBBC0771D19C14A57D"
     ],
     [
         "data/launcher-ui/assets/js/core/discord-friends.js",
@@ -526,13 +526,13 @@
     ],
     [
         "data/launcher-ui/assets/js/core/dm.js",
-        12352,
-        "0141086962832122C6C6748D730C681AD4F89AE6"
+        12646,
+        "CA7CCE3DA98054C98AFC3593BCDD276C7ED132B1"
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        229325,
-        "F5057D636E6D8164F86CFFAD665E3695EEF0FF6C"
+        232182,
+        "29011A7EA1C46315A25E9A9C2311F79CBC2147EB"
     ],
     [
         "data/launcher-ui/assets/js/core/moderation.js",
@@ -561,13 +561,13 @@
     ],
     [
         "data/launcher-ui/assets/js/core/utils.js",
-        52701,
-        "87D923095539675D539A0FF95599A1766C98A62B"
+        52760,
+        "9C0B672FB49D09AD2CDF7D3BD639153E1A5F9880"
     ],
     [
         "data/launcher-ui/assets/js/popups/component-selection-popup.js",
-        28704,
-        "2317374F37B1C346804FEFC0FD57973119DDF118"
+        29979,
+        "CB41B21739E7C5B09406E86F4420250735A49FFB"
     ],
     [
         "data/launcher-ui/assets/js/popups/custom-server-popup.js",
@@ -626,8 +626,8 @@
     ],
     [
         "data/launcher-ui/main.html",
-        45341,
-        "F7993A0C07F3655CE0F2F01FBB7D836BA64C60F5"
+        46263,
+        "AECCAFE883E18AA4B181DDC89A5F0403433FB003"
     ],
     [
         "manifest/aw.json",
@@ -715,6 +715,6 @@
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
     {
-        "ManifestHash": "2B4DBB6EEE3C6DE38FBB0531627BEB13E40FF311392AD9ACF2444331F264D3FA"
+        "ManifestHash": "82C8322EDAD2F8C11A12AE4F12662736BE42D0F0DB429FC5DA3B752AE58A2489"
     }
 ]

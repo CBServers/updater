@@ -144,7 +144,11 @@ a:hover { color: var(--link-hover); }
 ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 10px; }
 ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.16); }
 
-::selection { background: var(--accent-soft); color: #fff; }
+/* CEF 113 resolves var() inside ::selection to transparent, so each theme's accent is spelled out. */
+::selection { background: rgba(108, 99, 255, 0.55); color: #fff; }
+html[data-theme="dark"] ::selection { background: rgba(0, 120, 212, 0.55); }
+html:not([data-theme]) ::selection { background: rgba(255, 160, 46, 0.55); }
+html:not([data-theme])[data-accent="mw"] ::selection { background: rgba(164, 210, 51, 0.55); }
 
 .hidden { opacity: 0; }
 body:not(.hidden) { opacity: 1; transition: opacity 0.3s ease; }
@@ -3025,6 +3029,9 @@ html[data-theme="dark"] .game-status-badge.path-set { background: rgba(0,120,212
 }
 
 .component-selection-popup .component-selection-section { margin-bottom: 18px; }
+.component-selection-popup .component-setup-note { margin: 0 0 16px; }
+.component-selection-popup .component-setup-note[hidden],
+.component-selection-popup .install-info-row[hidden] { display: none; }
 
 .component-selection-popup .section-header {
     display: flex;
@@ -6342,6 +6349,7 @@ select.cb-create-input option { background: #222222; color: #fff; padding: 8px; 
 
 .community-chat-text {
     color: var(--text);
+    user-select: text;
 }
 
 .community-chat-input {
@@ -8063,6 +8071,7 @@ html:not([data-theme]) .toast {
 
 .dm-msg-text {
     color: var(--text);
+    user-select: text;
 }
 
 .dm-compose {
