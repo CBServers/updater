@@ -51,8 +51,8 @@
     ],
     [
         "cdata/ui_scripts/custom_depot/__init__.lua",
-        3766,
-        "69F21D5DA8811ACC000FA34DA58B90339CC6B606"
+        4030,
+        "0396102B96467F2A02F5F50CF6883F11CD89A53D"
     ],
     [
         "cdata/ui_scripts/custom_weapons/__init__.lua",
@@ -271,10 +271,10 @@
     ],
     [
         "h1-mod.exe",
-        10127872,
-        "7E9E9FD2636D0AF071B134AC88BE7B6C8928E03E"
+        10129920,
+        "FDB314A8E4A44EB61F9A8426F2F6C3EDBFDE2C0B"
     ],
     {
-        "ManifestHash": "E126218468BC99E6B581A7B8D4AEEE75CD684B82094977DF0DA2AF234FF9D067"
+        "ManifestHash": "3836AD555E99E4C06BEB5877D096AFE13ADF202D9E4215FBF2929DCECE14E599"
     }
 ]
