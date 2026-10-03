@@ -1,105 +1,105 @@
 [
     [
         "data/ui_scripts/mp/custom_match/loadouts.lua",
-        714,
-        "DE9C57FC761AB2E0EF9BB6F50B1466BDD41050AC"
+        688,
+        "48C29CD2033B059DD95A05838B6BCAB036C222F2"
     ],
     [
         "data/ui_scripts/mp/custom_match/progression.lua",
-        5228,
-        "883BF250E7389525C893482D4C325688E10EDD76"
+        5086,
+        "7951C05A5FEEF9FEE509DC78D4E5807A7531739D"
     ],
     [
         "data/ui_scripts/mp/custom_match/ranks.lua",
-        3050,
-        "1D2A9A6EF94EB075A4B414C9F61398E1E97D1C88"
+        2960,
+        "9F3C02097AA567B9C91A4E3F15AAC79473058BD7"
     ],
     [
         "data/ui_scripts/mp/custom_match/setup.lua",
-        11585,
-        "C526596897326795547E2AAE84F4931B8B868C57"
+        11266,
+        "1557422CC46D67A90FAAC1189782249E556316F5"
     ],
     [
         "data/ui_scripts/mp/custom_match/__init__.lua",
-        547,
-        "E3A47BC8F6A8142F581CEDB5AB74EFB758E91546"
+        527,
+        "026C2D5C13D36648560EDD85D42EE1470B6897BD"
     ],
     [
         "data/ui_scripts/mp/find_match/s2x_findgame_menu.lua",
-        8190,
-        "7DF01B9D0C7E6200A14F3EACFD778ED64CEEDA36"
+        7931,
+        "8105334D93BB909FD2D1F6D064F91FF7D4EDDEFA"
     ],
     [
         "data/ui_scripts/mp/find_match/s2x_server_browser.lua",
-        13379,
-        "4E86DECB0279EEE6888F695E548B824B4989BDE5"
+        13016,
+        "E2C6AB428F859C1A8D6565F357685820192AED24"
     ],
     [
         "data/ui_scripts/mp/find_match/s2x_server_browser_row.lua",
-        17291,
-        "B7ED7C8B2AA462B9D7C57E76EA21601E2AC79E6E"
+        16665,
+        "27D019BF72BBBF951444DC0296E3C5DED4E7C5A0"
     ],
     [
         "data/ui_scripts/mp/find_match/s2x_server_browser_row_uc.lua",
-        2236,
-        "B77BA207365CDC911827F6BE679E9BCB0328737F"
+        2149,
+        "A0F7AA92E4C02EDE70F62D901223D93FA46586B6"
     ],
     [
         "data/ui_scripts/mp/find_match/s2x_server_browser_uc.lua",
-        12097,
-        "A005EBF4E35529DC356A8E798979E86AE28A3476"
+        11689,
+        "7617B0D101DFD366A34452C7BA0ED0379B298529"
     ],
     [
         "data/ui_scripts/mp/find_match/__init__.lua",
-        2491,
-        "D857604EE79AFA2247820701DF897E270C6AC33E"
+        2427,
+        "BCCF7063FA1095BC8EFE504F62670E012A14989E"
     ],
     [
         "data/ui_scripts/mp/patches/cb_invites.lua",
-        1168,
-        "FCBC9CC3D2E987BA104D9FD13AF9EF30B7F333A8"
+        1133,
+        "1AE18A2D9ACC526196A3126185758E1B2491D8A1"
     ],
     [
         "data/ui_scripts/mp/patches/dedicated_gametype.lua",
-        2387,
-        "97CBA2D9DDFA8FBDEAC58E5D17DED233FA18D76D"
+        2304,
+        "FD129657B15823738130B6DE9B03F9057973DFD1"
     ],
     [
         "data/ui_scripts/mp/patches/dedicated_lobby.lua",
-        5997,
-        "23943C5BBF1EE892E77136162EC5E98730E0F225"
+        5813,
+        "2DE41B63CDD0D780FBA4107798ECE65BCCAC9CD9"
     ],
     [
         "data/ui_scripts/mp/patches/dedicated_members.lua",
-        5325,
-        "B173B3C402DE7A8FB92EAD1A22F1EB5DF6EEFF15"
+        5163,
+        "5A47993FAE135451DA3C7A52E513D0E7F1FBC47B"
     ],
     [
         "data/ui_scripts/mp/patches/dedicated_party.lua",
-        1047,
-        "E746D2AF7FF602D392A05981945AE3DA408BE41A"
+        996,
+        "C19688964841283A0C0CF49531EE2C810A7C4DA4"
     ],
     [
         "data/ui_scripts/mp/patches/unlocks.lua",
-        12404,
-        "87B89BD6794C5990DDAD482BCFE3422B60C66B4D"
+        12051,
+        "3E20BEC509C7EE7C772D7A620EBC958DA5F5112E"
     ],
     [
         "data/ui_scripts/mp/patches/unlock_overrides.lua",
-        2616,
-        "E7A5D85EAB0A19EC03386F8EE4BFA73AF6586158"
+        2531,
+        "71AFCDC9305095F8F6158705B4BE96D3E66C55E4"
     ],
     [
         "data/ui_scripts/mp/patches/__init__.lua",
-        485,
-        "4855DD9BA491DAD36670792B280C1EE62AE8CEF0"
+        470,
+        "9E639450F1CF8F9C6578083CF562823C110E3A08"
     ],
     [
         "s2x.exe",
-        5539328,
-        "392481D8CCFF012DFB136C14A2909C50074B97ED"
+        5538816,
+        "B10E44AE89BF290BB871C5701403F9508F5D1821"
     ],
     {
-        "ManifestHash": "4E87E391827496224FEDDD3A79E96C10583B2B5B017573301C024800CF950A7B"
+        "ManifestHash": "80B5629DEF348318507822FDCC738F43961D38F6B41964123C61EBD6B39D1346"
     }
 ]
