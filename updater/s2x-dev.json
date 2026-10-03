@@ -1,8 +1,33 @@
 [
     [
+        "data/ui_scripts/mp/custom_match/loadouts.lua",
+        714,
+        "DE9C57FC761AB2E0EF9BB6F50B1466BDD41050AC"
+    ],
+    [
+        "data/ui_scripts/mp/custom_match/progression.lua",
+        5228,
+        "883BF250E7389525C893482D4C325688E10EDD76"
+    ],
+    [
+        "data/ui_scripts/mp/custom_match/ranks.lua",
+        3050,
+        "1D2A9A6EF94EB075A4B414C9F61398E1E97D1C88"
+    ],
+    [
+        "data/ui_scripts/mp/custom_match/setup.lua",
+        11585,
+        "C526596897326795547E2AAE84F4931B8B868C57"
+    ],
+    [
+        "data/ui_scripts/mp/custom_match/__init__.lua",
+        547,
+        "E3A47BC8F6A8142F581CEDB5AB74EFB758E91546"
+    ],
+    [
         "data/ui_scripts/mp/find_match/s2x_findgame_menu.lua",
-        8013,
-        "E4B979ED921C67667A81C3B11976398636A36DE9"
+        8190,
+        "7DF01B9D0C7E6200A14F3EACFD778ED64CEEDA36"
     ],
     [
         "data/ui_scripts/mp/find_match/s2x_server_browser.lua",
@@ -46,13 +71,13 @@
     ],
     [
         "data/ui_scripts/mp/patches/dedicated_members.lua",
-        4789,
-        "7C49ABCDE610B783C7BECFDC075E7947C9243222"
+        5325,
+        "B173B3C402DE7A8FB92EAD1A22F1EB5DF6EEFF15"
     ],
     [
         "data/ui_scripts/mp/patches/dedicated_party.lua",
-        1039,
-        "D245C489BA2325B4F63C995EBB60453CBB952F98"
+        1047,
+        "E746D2AF7FF602D392A05981945AE3DA408BE41A"
     ],
     [
         "data/ui_scripts/mp/patches/unlocks.lua",
@@ -60,16 +85,21 @@
         "87B89BD6794C5990DDAD482BCFE3422B60C66B4D"
     ],
     [
+        "data/ui_scripts/mp/patches/unlock_overrides.lua",
+        2616,
+        "E7A5D85EAB0A19EC03386F8EE4BFA73AF6586158"
+    ],
+    [
         "data/ui_scripts/mp/patches/__init__.lua",
-        412,
-        "B3E0954C2451A9B48D23CBBC23AF338A53421810"
+        485,
+        "4855DD9BA491DAD36670792B280C1EE62AE8CEF0"
     ],
     [
         "s2x.exe",
-        4530176,
-        "E0BF36A97C3D48D8BF6A46C1DE9D966B2F767301"
+        5539328,
+        "392481D8CCFF012DFB136C14A2909C50074B97ED"
     ],
     {
-        "ManifestHash": "1A3144FD13E92DE5F3CE26A5E9B0E883DF539C6F0EC98DAAD0B9425CA0179824"
+        "ManifestHash": "4E87E391827496224FEDDD3A79E96C10583B2B5B017573301C024800CF950A7B"
     }
 ]
