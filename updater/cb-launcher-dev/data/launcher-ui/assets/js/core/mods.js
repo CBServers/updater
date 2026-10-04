@@ -10,10 +10,16 @@
     'use strict';
 
     const CAPABILITIES = {
-        boiii: { workshop: true, import: true, folders: ['usermaps', 'mods'], steamAppId: 311210 },
-        t4:    { workshop: false, import: true, folders: ['mods', 'usermaps'] },
-        t5:    { workshop: false, import: true, folders: ['mods'] },
-        t6:    { workshop: false, import: true, folders: ['mods', 'usermaps'] }
+        boiii:     { workshop: true, import: true, folders: ['usermaps', 'mods'], steamAppId: 311210 },
+        cod4x:     { workshop: false, import: true, folders: ['mods', 'usermaps'] },
+        iw4x:      { workshop: false, import: true, folders: ['mods', 'usermaps'] },
+        'h1-mod':  { workshop: false, import: true, folders: ['mods', 'usermaps'] },
+        'iw7-mod': { workshop: false, import: true, folders: ['mods', 'usermaps'] },
+        mw2r:      { workshop: false, import: true, folders: ['mods', 'usermaps'] },
+        t4:        { workshop: false, import: true, folders: ['mods', 'usermaps'] },
+        t5:        { workshop: false, import: true, folders: ['mods', 'usermaps'] },
+        iw5:       { workshop: false, import: true, folders: ['mods', 'usermaps'] },
+        t6:        { workshop: false, import: true, folders: ['mods', 'usermaps'] }
     };
 
     const MB = 1024 * 1024;
@@ -150,33 +156,40 @@
 
     async function install(game, item, onTick) {
         if (PREVIEW_MODE) {
-            for (let percent = 0; percent <= 100; percent += 25) {
-                if (onTick) onTick({ phase: 'downloading', percent });
-                await delay(200);
+            window.__modsMock.cancelled = false;
+            for (let percent = 0; percent <= 100; percent += 5) {
+                if (onTick) onTick({ phase: percent ? 'downloading' : 'preparing', percent, name: item.id });
+                if (window.__modsMock.cancelled) return { success: false, cancelled: true };
+                await delay(250);
             }
             return { success: true };
         }
 
         // Required items install alongside the item, like Steam's subscribe flow.
         // An unreachable worker degrades to installing the item alone.
-        let children = [];
-        try {
-            const detail = await getDetails(game, item.id);
-            children = (Array.isArray(detail.children) ? detail.children : [])
-                .map(child => ({ id: String(child.id), size: Number(child.size) || 0 }));
-        } catch (error) {
-            console.warn('Could not resolve required items', error);
+        if (!Array.isArray(item.children)) {
+            item.children = [];
+            try {
+                const detail = await getDetails(game, item.id);
+                item.children = (Array.isArray(detail.children) ? detail.children : [])
+                    .map(child => ({ id: String(child.id), size: Number(child.size) || 0 }));
+            } catch (error) {
+                console.warn('Could not resolve required items', error);
+            }
         }
 
-        const started = await window.executeCommand('install-workshop-mod', { game: backendId(game), id: item.id, size: item.size || 0, children });
+        const started = await window.executeCommand('install-workshop-mod', { game: backendId(game), id: item.id, size: item.size || 0, children: item.children });
         if (!started || !started.success) {
-            throw new Error((started && started.error) || 'Failed to start the install.');
+            const error = new Error((started && started.error) || 'Failed to start the install.');
+            error.busy = !!(started && started.busy);
+            throw error;
         }
 
         return pollJob(game, onTick);
     }
 
     function cancelInstall(game) {
+        if (PREVIEW_MODE) window.__modsMock.cancelled = true;
         return window.executeCommand('cancel-mod-install', { game: backendId(game) });
     }
 

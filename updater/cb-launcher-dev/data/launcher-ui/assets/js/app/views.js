@@ -206,7 +206,7 @@
         }
         if (sub) sub.textContent = gameDescription(config);
         if (cta) {
-            if (config.comingSoon) {
+            if (GameUtils.isComingSoon(config.uiId)) {
                 cta.classList.remove('is-installing', 'is-running');
                 cta.classList.add('setup-button', 'is-coming-soon');
                 cta.innerHTML = escapeHtml(t('common.comingSoon'));
@@ -559,8 +559,9 @@
             const config = GameUtils.getGameConfigByUIId(gameId);
             if (!config) return;
 
+            const comingSoon = GameUtils.isComingSoon(gameId);
             item.style.setProperty('--game-accent', config.accent || '#8AA4FF');
-            item.classList.toggle('is-coming-soon', !!config.comingSoon);
+            item.classList.toggle('is-coming-soon', comingSoon);
             const thumbFallback = config.capsulePath || config.logoPath || '';
             item.innerHTML = `
                 <div class="game-item-thumb">
@@ -571,7 +572,7 @@
                     <span class="game-item-title">${escapeHtml(config.displayName)}</span>
                     <small class="game-item-sub">${escapeHtml(config.client)}</small>
                 </div>
-                ${config.comingSoon ? `<span class="game-item-soon-chip">${escapeHtml(t('common.comingSoon'))}</span>` : ''}
+                ${comingSoon ? `<span class="game-item-soon-chip">${escapeHtml(t('common.comingSoon'))}</span>` : ''}
             `;
             item.setAttribute('title', config.displayName);
             item.setAttribute('aria-label', config.displayName);
@@ -773,7 +774,7 @@
         loadHiddenGames().then(() => applyHiddenGames());
 
         grid.innerHTML = GameUtils.getAllGameConfigs().map(config => {
-            const comingSoon = !!config.comingSoon;
+            const comingSoon = GameUtils.isComingSoon(config.uiId);
             const cardCls = `library-card${comingSoon ? ' is-coming-soon' : ''}`;
             const buttonHtml = comingSoon
                 ? `<button class="library-install-btn is-coming-soon" disabled title="${escapeHtml(t('library.comingSoonHint'))}">
@@ -892,6 +893,10 @@
         };
         setChip('servers', safePlayerCount(source.servers), 'common.inServers', 'common.inServersHint');
         setChip('launcher', safePlayerCount(source.launcher), 'common.inLauncher', 'common.inLauncherHint');
+        const inServers = safePlayerCount(source.servers);
+        setShortcutDetail(gameId, 'servers', inServers > 0
+            ? t('hub.serversShortcutCount', { count: inServers.toLocaleString() })
+            : t('hub.serversShortcutIdle'));
     }
 
     function updateGamePageInstallSize(gameId, bytes) {
@@ -1097,24 +1102,35 @@
         renderHomeFromStates(states);
     }
 
-    // Active detail tab per game (uiId -> 'overview' | 'mods' | 'servers'), kept
-    // across language-change re-renders.
-    const detailTabState = {};
-
-    function renderDetailTabView(gameId, tab) {
-        if (tab === 'mods' && window.ModsView) {
-            window.ModsView.render(gameId);
-        } else if (tab === 'servers' && window.ServersView) {
-            window.ServersView.render(gameId);
-        }
+    function shortcutCard(kind, gameId) {
+        return `
+            <button class="game-shortcut" type="button" data-shortcut="${kind}" data-game="${escapeHtml(gameId)}">
+                <span class="game-shortcut-icon ${kind}-icon"></span>
+                <span class="game-shortcut-text">
+                    <strong>${escapeHtml(t(`nav.${kind}`))}</strong>
+                    <small data-shortcut-detail>${escapeHtml(t(`hub.${kind}ShortcutIdle`))}</small>
+                </span>
+                <span class="game-shortcut-arrow"></span>
+            </button>`;
     }
 
-    function activateDetailTab(page, gameId, tab) {
-        if (!page) return;
-        detailTabState[gameId] = tab;
-        page.querySelectorAll('.detail-tab').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
-        page.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.dataset.tabPanel === tab));
-        renderDetailTabView(gameId, tab);
+    function setShortcutDetail(gameId, kind, text) {
+        const detail = document.querySelector(`#${CSS.escape(gameId)}-page .game-shortcut[data-shortcut="${kind}"] [data-shortcut-detail]`);
+        if (detail) detail.textContent = text;
+    }
+
+    // The Mods card counts installed items; updates are only known once the Mods page loaded the list.
+    async function refreshGameShortcuts(gameId) {
+        if (!window.ModsView || !window.ModsView.supports(gameId)) return;
+        try {
+            const summary = await window.ModsView.installedSummary(gameId);
+            let text = t('hub.modsShortcutIdle');
+            if (summary.updates > 0) text = t('hub.modsShortcutUpdates', { count: summary.updates });
+            else if (summary.count > 0) text = t('hub.modsShortcutCount', { count: summary.count });
+            setShortcutDetail(gameId, 'mods', text);
+        } catch (error) {
+            console.error(`Failed to count mods for ${gameId}:`, error);
+        }
     }
 
     function renderGamePages() {
@@ -1122,18 +1138,18 @@
         if (!host) return;
 
         host.innerHTML = GameUtils.getAllGameConfigs().map(config => {
-            const comingSoon = !!config.comingSoon;
+            const comingSoon = GameUtils.isComingSoon(config.uiId);
             const pageCls = `page-section game-page${comingSoon ? ' is-coming-soon' : ''}`;
             const credits = gameCredits(config);
             const hasCredits = credits && String(credits).trim().length > 0;
             const hasProvider = config.provider && String(config.provider).trim().length > 0;
             const hasMods = !comingSoon && window.ModsView && window.ModsView.supports(config.uiId);
             const hasServers = !comingSoon && window.ServersView && window.ServersView.supports(config.uiId);
-            const hasTabs = hasMods || hasServers;
-            let activeTab = detailTabState[config.uiId] || 'overview';
-            if ((activeTab === 'mods' && !hasMods) || (activeTab === 'servers' && !hasServers)) {
-                activeTab = 'overview';
-            }
+            const shortcuts = (hasServers || hasMods) ? `
+                    <div class="game-shortcuts">
+                        ${hasServers ? shortcutCard('servers', config.uiId) : ''}
+                        ${hasMods ? shortcutCard('mods', config.uiId) : ''}
+                    </div>` : '';
 
             const descriptionSection = `
                         <section class="description">
@@ -1194,40 +1210,26 @@
 
                 <div class="game-details">
                     <div class="button-group" id="${escapeHtml(config.uiId)}-button-group"></div>
-
-                    ${hasTabs ? `
-                    <div class="detail-tabs is-visible" data-game="${escapeHtml(config.uiId)}">
-                        <button class="detail-tab${activeTab === 'overview' ? ' active' : ''}" data-tab="overview">${escapeHtml(t('detail.overview'))}</button>
-                        ${hasMods ? `<button class="detail-tab${activeTab === 'mods' ? ' active' : ''}" data-tab="mods">${escapeHtml(t('mods.tab'))}</button>` : ''}
-                        ${hasServers ? `<button class="detail-tab${activeTab === 'servers' ? ' active' : ''}" data-tab="servers">${escapeHtml(t('servers.tab'))}</button>` : ''}
-                    </div>
-                    <div class="tab-panel${activeTab === 'overview' ? ' active' : ''}" data-tab-panel="overview">
-                        <div class="detail-panel-grid">
-                            ${descriptionSection}
-                            ${actionsAside}
-                        </div>
-                    </div>
-                    ${hasMods ? `<div class="tab-panel mods-panel${activeTab === 'mods' ? ' active' : ''}" data-tab-panel="mods" id="${escapeHtml(config.uiId)}-mods-panel"></div>` : ''}
-                    ${hasServers ? `<div class="tab-panel servers-panel${activeTab === 'servers' ? ' active' : ''}" data-tab-panel="servers" id="${escapeHtml(config.uiId)}-servers-panel"></div>` : ''}
-                    ` : `
+                    ${shortcuts}
                     <div class="detail-panel-grid">
                         ${descriptionSection}
                         ${actionsAside}
                     </div>
-                    `}
                 </div>
             </div>
         `;
         }).join('');
 
-        host.querySelectorAll('.detail-tabs').forEach(tabs => {
-            const page = tabs.closest('.game-page');
-            const gameId = tabs.dataset.game;
-            tabs.querySelectorAll('.detail-tab').forEach(button => {
-                button.addEventListener('click', () => activateDetailTab(page, gameId, button.dataset.tab));
+        host.querySelectorAll('.game-shortcut').forEach(button => {
+            button.addEventListener('click', () => {
+                const hub = button.dataset.shortcut === 'mods' ? window.ModsHub : window.ServersHub;
+                if (hub) hub.open(button.dataset.game);
             });
-            renderDetailTabView(gameId, detailTabState[gameId]);
         });
+
+        if (window.PlayerCountManager) {
+            window.PlayerCountManager.applyToVisibleCards();
+        }
 
         host.querySelectorAll('.detail-browse-files-action').forEach(button => {
             button.addEventListener('click', async () => {
@@ -1273,7 +1275,7 @@
         if (!list) return;
 
         const allConfigs = GameUtils.getAllGameConfigs();
-        const playableConfigs = allConfigs.filter(c => !c.comingSoon);
+        const playableConfigs = allConfigs.filter(c => !GameUtils.isComingSoon(c.uiId));
         const installPaths = {};
 
         if (typeof window.executeCommand === 'function') {
@@ -1332,14 +1334,106 @@
         return t('downloads.statusQueued', { position: entry.queuePosition });
     }
 
+    function modDownloadStatus(entry) {
+        if (!entry.isActive) {
+            return entry.waiting ? t('downloads.statusWaiting') : t('downloads.statusQueued', { position: entry.queuePosition });
+        }
+        if (entry.cancelled) return t('downloads.statusCancelling');
+        if (entry.phase === 'downloading') {
+            return entry.detail && entry.detail !== entry.id ? t('downloads.statusRequiredItems') : t('downloads.statusDownloading');
+        }
+        if (entry.phase === 'preparing') return t('downloads.statusPreparing');
+        return t('downloads.statusInstalling');
+    }
+
+    function modDownloadRowHTML(entry) {
+        const config = GameUtils.getGameConfigByUIId(entry.gameId) || {};
+        const key = `${entry.gameId}:${entry.id}`;
+        const meta = [config.displayName || entry.gameId, entry.size ? GameUtils.formatBytes(entry.size) : ''];
+        if (!entry.isActive) meta.push(modDownloadStatus(entry));
+        const badge = window.ModsView ? window.ModsView.kindBadge(entry.kind) : '';
+
+        const progressBlock = entry.isActive ? `
+                <div class="download-progress">
+                    <div class="download-progress-bar">
+                        <div class="download-progress-fill"></div>
+                    </div>
+                    <div class="download-progress-meta">
+                        <span class="download-progress-message">${escapeHtml(modDownloadStatus(entry))}</span>
+                        <span class="download-progress-percent">${entry.percent}%</span>
+                    </div>
+                </div>` : '';
+
+        return `
+                <div class="download-row mod-row ${entry.isActive ? 'active' : 'queued'}" data-game="${escapeHtml(entry.gameId)}" data-mod-key="${escapeHtml(key)}">
+                    <div class="download-row-icon"></div>
+                    <div class="download-row-body">
+                        <div class="download-row-title"><span class="download-row-name">${escapeHtml(entry.title)}</span>${badge}</div>
+                        <div class="download-row-status">${meta.filter(Boolean).map(escapeHtml).join(' · ')}</div>
+                        ${progressBlock}
+                    </div>
+                    <button class="download-row-cancel" title="${escapeHtml(t('common.cancel'))}"${entry.cancelled ? ' disabled' : ''}><span class="control-icon close-icon"></span></button>
+                </div>
+            `;
+    }
+
+    function bindModDownloadRows(list, modEntries) {
+        list.querySelectorAll('.download-row.mod-row').forEach(row => {
+            const entry = modEntries.find(e => `${e.gameId}:${e.id}` === row.dataset.modKey);
+            if (!entry) return;
+            const config = GameUtils.getGameConfigByUIId(entry.gameId) || {};
+            const accent = config.accent || '#6C63FF';
+            const iconEl = row.querySelector('.download-row-icon');
+            if (/^https?:/.test(entry.preview)) {
+                iconEl.style.backgroundImage = cssUrl(entry.preview);
+            } else if (entry.preview) {
+                iconEl.style.background = entry.preview;
+            } else {
+                iconEl.style.backgroundColor = accent;
+                const iconPath = config.iconPath || config.capsulePath || '';
+                if (iconPath) iconEl.style.backgroundImage = cssUrl(iconPath);
+            }
+
+            const fill = row.querySelector('.download-progress-fill');
+            if (fill) {
+                fill.style.width = `${entry.percent}%`;
+                fill.style.background = accent;
+                fill.style.boxShadow = `0 0 12px ${accent}80`;
+            }
+
+            row.querySelector('.download-row-cancel').addEventListener('click', event => {
+                event.stopPropagation();
+                if (window.ModQueue) window.ModQueue.cancel(entry.gameId, entry.id);
+            });
+            row.addEventListener('click', event => {
+                if (event.target.closest('.download-row-cancel')) return;
+                if (window.ModsView) window.ModsView.openTab(entry.gameId, entry.op === 'update' ? 'installed' : 'workshop');
+            });
+        });
+    }
+
+    // In-place progress update for one mod row, so ticks don't rebuild the list.
+    function refreshModDownloadRow(gameId, id) {
+        const row = document.querySelector(`#downloads-list .download-row.mod-row[data-mod-key="${CSS.escape(`${gameId}:${id}`)}"]`);
+        const entry = row && window.ModQueue ? window.ModQueue.get(gameId, id) : null;
+        if (!entry || !entry.isActive) return;
+        const fill = row.querySelector('.download-progress-fill');
+        const percentEl = row.querySelector('.download-progress-percent');
+        const messageEl = row.querySelector('.download-progress-message');
+        if (fill) fill.style.width = `${entry.percent}%`;
+        if (percentEl) percentEl.textContent = `${entry.percent}%`;
+        if (messageEl) messageEl.textContent = modDownloadStatus(entry);
+    }
+
     function renderDownloads() {
         const list = document.getElementById('downloads-list');
         if (!list) return;
 
         const queue = window.DownloadQueueManager;
         const entries = queue ? queue.getDownloadEntries() : [];
+        const modEntries = window.ModQueue ? window.ModQueue.getEntries() : [];
 
-        if (entries.length === 0) {
+        if (entries.length === 0 && modEntries.length === 0) {
             list.innerHTML = `<div class="downloads-empty">${escapeHtml(t('downloads.empty'))}</div>`;
             return;
         }
@@ -1349,7 +1443,8 @@
         const activeMessage = window.ProgressManager && typeof window.ProgressManager.getProgressMessage === 'function'
             ? window.ProgressManager.getProgressMessage() : '';
 
-        list.innerHTML = entries.map(entry => {
+        const sectionTitle = key => `<div class="downloads-section-title">${escapeHtml(t(key))}</div>`;
+        const gameRows = entries.map(entry => {
             const config = GameUtils.getGameConfigByUIId(entry.gameId) || {};
             const displayName = config.displayName || entry.gameId;
             const status = downloadStatusLabel(entry, activePercent);
@@ -1405,8 +1500,14 @@
             `;
         }).join('');
 
+        list.innerHTML = (entries.length && modEntries.length ? sectionTitle('downloads.sectionGames') : '')
+            + gameRows
+            + (modEntries.length ? sectionTitle('downloads.sectionMods') + modEntries.map(modDownloadRowHTML).join('') : '');
+
+        bindModDownloadRows(list, modEntries);
+
         // Set icon and accent backgrounds via JS to avoid HTML attribute quoting issues.
-        list.querySelectorAll('.download-row').forEach(row => {
+        list.querySelectorAll('.download-row:not(.mod-row)').forEach(row => {
             const gameId = row.dataset.game;
             const config = GameUtils.getGameConfigByUIId(gameId) || {};
             const accent = config.accent || '#6C63FF';
@@ -1427,7 +1528,7 @@
             }
         });
 
-        list.querySelectorAll('.download-row-cancel').forEach(btn => {
+        list.querySelectorAll('.download-row:not(.mod-row) .download-row-cancel').forEach(btn => {
             btn.addEventListener('click', (event) => {
                 event.stopPropagation();
                 if (window.DownloadQueueManager) {
@@ -1448,7 +1549,7 @@
             });
         });
 
-        list.querySelectorAll('.download-row').forEach(row => {
+        list.querySelectorAll('.download-row:not(.mod-row)').forEach(row => {
             row.addEventListener('click', (event) => {
                 if (event.target.closest('.download-row-cancel')) return;
                 if (event.target.closest('.download-row-pause')) return;
@@ -1497,6 +1598,8 @@
         renderLibrary();
         renderGamePages();
         renderSettingsDirectories();
+        if (window.ServersHub) window.ServersHub.refresh();
+        if (window.ModsHub) window.ModsHub.refresh();
     }
 
     function applyDownloadQueueInstallingState() {
@@ -1548,13 +1651,14 @@
 
     window.AppViews = {
         renderAll,
-        activateDetailTab,
+        refreshGameShortcuts,
         renderSidebarGames,
         renderHome,
         renderLibrary,
         renderGamePages,
         renderSettingsDirectories,
         renderDownloads,
+        refreshModDownloadRow,
         renderFriends,
         refreshFriends,
         getFriendsState,

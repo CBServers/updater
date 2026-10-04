@@ -20,6 +20,7 @@ const PROPERTY_KEYS = {
         PORTABLE_MODE: 'launcher-portable-mode',
         CB_COMMUNITY_ENABLED: 'launcher-cb-community-enabled',
         CB_CHAT_SEEN: 'launcher-cb-chat-seen',
+        CB_BETA_FEATURES: 'launcher-cb-beta-features',
         DESKTOP_NOTIFICATIONS: 'launcher-desktop-notifications',
         REDUCE_MOTION: 'launcher-reduce-motion',
         PLAYER_COUNT_MODE: 'launcher-player-count-mode',
@@ -347,6 +348,7 @@ class GameUtils {
             provider: '',
             clientKey: 'others',
             comingSoon: true,
+            betaFeature: 'ww2',
             hasMultipleModes: true,
             supportedModes: ['mp', 'sp', 'zm'],
             supportsName: false,
@@ -393,6 +395,7 @@ class GameUtils {
             clientKey: 'others',
             hasMultipleModes: false,
             supportedModes: [],
+            campaignOnly: true,
             supportsName: false,
             specialSettings: [],
             version: 'H2',
@@ -527,9 +530,27 @@ class GameUtils {
         return this.getGameConfig(backendId);
     }
 
+    // Early access granted to this CB account; a coming-soon game naming one of these is playable.
+    static betaFeatures = new Set();
+
+    // Returns whether the set changed, so the caller knows to redraw.
+    static setBetaFeatures(features) {
+        const next = new Set(Array.isArray(features) ? features.filter(f => typeof f === 'string') : []);
+        const changed = next.size !== this.betaFeatures.size || [...next].some(f => !this.betaFeatures.has(f));
+        this.betaFeatures = next;
+        return changed;
+    }
+
     static isComingSoon(uiId) {
         const config = this.getGameConfigByUIId(uiId);
-        return !!(config && config.comingSoon);
+        if (!config || !config.comingSoon) return false;
+        return !(config.betaFeature && this.betaFeatures.has(config.betaFeature));
+    }
+
+    // No online play at all, so nothing social (community rooms) applies to it.
+    static isCampaignOnly(uiId) {
+        const config = this.getGameConfigByUIId(uiId);
+        return !!(config && config.campaignOnly);
     }
 
     /**
@@ -673,6 +694,18 @@ class GameUtils {
             .replace(/>/g, '&gt;')
             .replace(/"/g, '&quot;')
             .replace(/'/g, '&#39;');
+    }
+
+    // A select is as wide as its longest option; fit it to the selected name so the arrow sits beside it.
+    static fitSelectWidth(select) {
+        const probe = document.createElement('span');
+        const style = getComputedStyle(select);
+        probe.style.cssText = `position:absolute;visibility:hidden;white-space:nowrap;font:${style.font};letter-spacing:${style.letterSpacing};text-transform:${style.textTransform}`;
+        probe.textContent = select.options[select.selectedIndex].text;
+        document.body.appendChild(probe);
+        const padding = parseFloat(style.paddingLeft) + parseFloat(style.paddingRight) + parseFloat(style.borderLeftWidth) * 2;
+        select.style.width = `${Math.ceil(probe.getBoundingClientRect().width + padding)}px`;
+        probe.remove();
     }
 
     // CoD engines colour text with ^ followed by 0-9 or : (rainbow); mod titles carry them verbatim.
@@ -1020,6 +1053,9 @@ class GameUtils {
         if (!gameConfig) {
             console.error(`No configuration found for game: ${backendGame}`);
             throw new Error('Game configuration not found');
+        }
+        if (this.isComingSoon(uiGameId)) {
+            throw new Error('Game is not available yet');
         }
 
         // Guard against launching while another game is updating (singleton progress_tracker).

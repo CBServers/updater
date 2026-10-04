@@ -10,7 +10,11 @@ const mockMods = {
             { id: 'mods:ugx_mod', name: 'ugx_mod', kind: 'mod', folder: 'mods', source: 'import', version: '', installedAt: '2026-06-15T10:00:00Z', size: 251658240 }
         ],
         t5: [
-            { id: 'mods:zm_sumpf_remake', name: 'zm_sumpf_remake', kind: 'mod', folder: 'mods', source: 'import', version: '', installedAt: '2026-08-09T10:00:00Z', size: 429916160 }
+            { id: 'mods:zm_sumpf_remake', name: 'zm_sumpf_remake', kind: 'mod', folder: 'mods', source: 'import', version: '', installedAt: '2026-08-09T10:00:00Z', size: 429916160 },
+            { id: 'usermaps:zombie_moon_remix', name: 'zombie_moon_remix', kind: 'map', folder: 'usermaps', source: 'import', version: '', installedAt: '2026-08-11T10:00:00Z', size: 287309824 }
+        ],
+        iw4x: [
+            { id: 'usermaps:mp_bloc', name: 'mp_bloc', kind: 'map', folder: 'usermaps', source: 'import', version: '', installedAt: '2026-09-02T10:00:00Z', size: 96468992 }
         ],
         t6: [
             { id: 'usermaps:zm_buried_lite', name: 'zm_buried_lite', kind: 'map', folder: 'usermaps', source: 'import', version: '', installedAt: '2026-08-14T10:00:00Z', size: 398458880 },
@@ -48,6 +52,8 @@ const mockCb = {
     dmMessages: [],
     dmPeer: '',
     modRole: '',
+    // Set to ['ww2'] from the console to preview early access (picked up on the next status poll).
+    betaFeatures: [],
     modReports: [],
     modLog: [],
     modLookup: null
@@ -198,7 +204,7 @@ function mockCommand(command, data) {
         case 'cbfriends-send-dm':
             return { ok: true };
         case 'cbfriends-mod-status':
-            return { role: mockCb.modRole };
+            return { role: mockCb.modRole, features: mockCb.betaFeatures };
         case 'cbfriends-mod-get-reports':
             return { reports: mockCb.modReports };
         case 'cbfriends-mod-get-log':
@@ -231,6 +237,14 @@ function mockCommand(command, data) {
         case 'cbfriends-mod-resolve':
             mockCb.modReports = mockCb.modReports.filter(r => r.id !== data.id);
             return { ok: true };
+        case 'cbfriends-mod-set-beta': {
+            const apply = list => (list || []).filter(f => f !== data.feature).concat(data.enabled ? [data.feature] : []);
+            if (mockCb.modLookup && mockCb.modLookup.person.cbId === data.cbId) {
+                mockCb.modLookup.features = apply(mockCb.modLookup.features);
+            }
+            if (mockCb.profile && mockCb.profile.cbId === data.cbId) mockCb.betaFeatures = apply(mockCb.betaFeatures);
+            return { ok: true };
+        }
         case 'cbfriends-set-mod-active':
         case 'cbfriends-mod-lookup':
         case 'cbfriends-mod-mute':

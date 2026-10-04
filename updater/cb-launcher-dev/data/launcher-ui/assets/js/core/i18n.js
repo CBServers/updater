@@ -120,6 +120,9 @@
                 unmute: 'Unmute',
                 grantMod: 'Grant mod',
                 revokeMod: 'Revoke mod',
+                grantBeta: 'Grant {{game}} early access',
+                revokeBeta: 'Revoke {{game}} early access',
+                earlyAccess: 'Early access: {{games}}',
                 mutedUntil: 'Muted until {{when}} - {{reason}}',
                 mutedPermanently: 'Muted permanently - {{reason}}',
                 mutePermanent: 'Mute permanently',
@@ -234,6 +237,8 @@
             nav: {
                 home: 'Home',
                 library: 'Library',
+                servers: 'Servers',
+                mods: 'Mods',
                 downloads: 'Downloads',
                 friends: 'Friends',
                 community: 'Community',
@@ -244,13 +249,20 @@
             },
             downloads: {
                 title: 'Downloads',
-                subtitle: 'Active and queued game downloads.',
+                subtitle: 'Active and queued game and mod downloads.',
                 empty: 'No downloads in progress.',
                 statusVerifying: 'Verifying',
                 statusInstalling: 'Installing',
                 statusUninstalling: 'Uninstalling',
                 statusActive: 'In progress',
                 statusQueued: 'Queued — #{{position}}',
+                sectionGames: 'Games',
+                sectionMods: 'Mods and maps',
+                statusPreparing: 'Preparing',
+                statusDownloading: 'Downloading',
+                statusRequiredItems: 'Downloading required items',
+                statusCancelling: 'Cancelling',
+                statusWaiting: 'Waiting for another install to finish',
                 statusPaused: 'Paused',
                 statusPausedAt: 'Paused — {{percent}}%',
                 noticeRetry: '{{count}} file(s) failed to download, retrying',
@@ -386,7 +398,7 @@
                 notInstalled: 'Not Installed',
                 showInstalled: 'Show installed',
                 welcomeTitle: 'Welcome to CB Launcher',
-                welcomeBody: 'Welcome to CB Servers Launcher! Your one-stop launcher for Call of Duty community clients. Install, update, and play supported clients all from one place. Head to the <strong>Library</strong> tab to browse every available client and start playing. Need a hand? Head over to the <strong>Support</strong> tab or check out our <a href="https://docs.cbservers.xyz/launcher" target="_blank">docs</a>.',
+                welcomeBody: 'Welcome to CB Servers Launcher! Your one-stop launcher for Call of Duty community clients. Install, update, and play supported clients all from one place. Head to the <strong>Library</strong> tab to browse every available client and start playing. Need a hand? Click the <strong>?</strong> next to <strong>Settings</strong> at the bottom of the sidebar or check out our <a href="https://docs.cbservers.xyz/launcher" target="_blank">docs</a>.',
                 disclaimer: 'This launcher is not affiliated with or endorsed by IW4x, Plutonium, AlterWare, Aurora, HorizonMW, CoD4x Project, IW3x, IW3SP-Mod, CoDExtended, T6SP-Mod, H2-Mod, or Project BO4. Please do not contact the original client maintainers with support requests regarding this launcher.'
             },
             library: {
@@ -573,7 +585,6 @@
                 updateAvailable: 'Update available'
             },
             detail: {
-                overview: 'Overview',
                 clientSettings: 'Settings',
                 modsScripts: 'Mods/Scripts',
                 credits: 'Credits',
@@ -585,7 +596,6 @@
                 customClient: 'Custom client'
             },
             mods: {
-                tab: 'Mods',
                 installed: 'Installed',
                 workshop: 'Workshop',
                 import: 'Import',
@@ -607,6 +617,8 @@
                 preparing: 'Preparing...',
                 cancel: 'Cancel',
                 cancelledToast: 'Install cancelled',
+                queued: 'Queued',
+                queuedToast: '{{name}} added to the download queue',
                 installedLabel: 'Installed',
                 update: 'Update',
                 updateAvailable: 'Update available',
@@ -620,6 +632,7 @@
                 importedToast: '{{name}} imported',
                 noInstalled: 'No custom content installed yet. Browse the Workshop or import a map or mod to get started.',
                 noInstalledImportOnly: 'No custom content installed yet. Import a map or mod folder to get started.',
+                needsInstall: '{{game}} is not installed. Set it up to add maps and mods for it.',
                 noResults: 'No Workshop items match your search.',
                 loading: 'Loading...',
                 kindMap: 'Map',
@@ -649,7 +662,16 @@
                 requiredItemsNote: 'These are installed automatically with this item ({{size}} extra).'
             },
             servers: {
-                tab: 'Servers',
+                featured: 'Featured',
+                featuredCollapse: 'Hide featured servers',
+                featuredExpand: 'Show featured servers',
+                featuredOfficial: 'Official',
+                featuredOfficialHint: 'Run by the CB Servers team',
+                featuredContributor: 'Contributor',
+                featuredContributorHint: 'Run by a CB Launcher contributor',
+                featuredEvent: 'Event',
+                featuredEventHint: 'A limited-time event server',
+                featuredDiscord: 'Join their Discord',
                 searchPlaceholder: 'Search servers or maps...',
                 filterAll: 'All',
                 favorites: 'Favorites',
@@ -688,6 +710,24 @@
                 loadFailed: 'Could not load the server list.',
                 retry: 'Retry',
                 loading: 'Loading...'
+            },
+            hub: {
+                serversSubtitle: 'Find a server and jump in.',
+                modsSubtitle: 'Install and manage maps and mods.',
+                pickServersGame: 'Pick a game to browse its servers.',
+                pickModsGame: 'Pick a game to manage its mods.',
+                back: 'Back',
+                gamePage: 'Game page',
+                switchGame: 'Switch game',
+                running: 'Running',
+                playersBadge: '{{count}} in servers',
+                modsInstalled: '{{count}} installed',
+                modsUpdates: '{{count}} to update',
+                serversShortcutIdle: 'Browse servers',
+                serversShortcutCount: '{{count}} players in servers',
+                modsShortcutIdle: 'Browse and manage mods',
+                modsShortcutCount: '{{count}} installed',
+                modsShortcutUpdates: 'Updates available: {{count}}'
             },
             popup: {
                 gameMode: {
@@ -945,6 +985,8 @@
             nav: {
                 home: 'Accueil',
                 library: 'Bibliotheque',
+                servers: 'Serveurs',
+                mods: 'Mods',
                 downloads: 'Telechargements',
                 friends: 'Amis',
                 community: 'Communaute',
@@ -955,13 +997,20 @@
             },
             downloads: {
                 title: 'Telechargements',
-                subtitle: 'Telechargements de jeux actifs et en file d\'attente.',
+                subtitle: 'Telechargements de jeux et de mods actifs et en file d\'attente.',
                 empty: 'Aucun telechargement en cours.',
                 statusVerifying: 'Verification',
                 statusInstalling: 'Installation',
                 statusUninstalling: 'Desinstallation',
                 statusActive: 'En cours',
                 statusQueued: 'En file - #{{position}}',
+                sectionGames: 'Jeux',
+                sectionMods: 'Mods et cartes',
+                statusPreparing: 'Preparation',
+                statusDownloading: 'Telechargement',
+                statusRequiredItems: 'Telechargement des elements requis',
+                statusCancelling: 'Annulation',
+                statusWaiting: 'En attente de la fin d\'une autre installation',
                 statusPaused: 'En pause',
                 statusPausedAt: 'En pause - {{percent}}%',
                 noticeRetry: '{{count}} fichier(s) n\'ont pas pu etre telecharges, nouvelle tentative',
@@ -1097,7 +1146,7 @@
                 notInstalled: 'Non installes',
                 showInstalled: 'Voir les installes',
                 welcomeTitle: 'Bienvenue sur CB Launcher',
-                welcomeBody: 'Bienvenue sur CB Servers Launcher&nbsp;! Votre launcher tout-en-un pour les clients communautaires Call of Duty. Installez, mettez a jour et jouez aux clients pris en charge depuis un seul endroit. Rendez-vous dans l\'onglet <strong>Bibliotheque</strong> pour parcourir tous les clients disponibles et commencer a jouer. Besoin d\'aide&nbsp;? Rendez-vous dans l\'onglet <strong>Support</strong> ou consultez notre <a href="https://docs.cbservers.xyz/launcher" target="_blank">documentation</a>.',
+                welcomeBody: 'Bienvenue sur CB Servers Launcher&nbsp;! Votre launcher tout-en-un pour les clients communautaires Call of Duty. Installez, mettez a jour et jouez aux clients pris en charge depuis un seul endroit. Rendez-vous dans l\'onglet <strong>Bibliotheque</strong> pour parcourir tous les clients disponibles et commencer a jouer. Besoin d\'aide&nbsp;? Cliquez sur le <strong>?</strong> a cote de <strong>Parametres</strong> en bas de la barre laterale ou consultez notre <a href="https://docs.cbservers.xyz/launcher" target="_blank">documentation</a>.',
                 disclaimer: 'Ce launcher n\'est ni affilie ni approuve par IW4x, Plutonium, AlterWare, Aurora, HorizonMW, CoD4x Project, IW3x, IW3SP-Mod, CoDExtended, T6SP-Mod, H2-Mod ou Project BO4. Merci de ne pas contacter les developpeurs des clients d\'origine pour des questions concernant ce launcher.'
             },
             library: {
@@ -1284,7 +1333,6 @@
                 updateAvailable: 'Mise a jour disponible'
             },
             detail: {
-                overview: 'Apercu',
                 clientSettings: 'Parametres',
                 modsScripts: 'Mods/Scripts',
                 credits: 'Credits',
@@ -1296,7 +1344,6 @@
                 customClient: 'Client personnalise'
             },
             mods: {
-                tab: 'Mods',
                 installed: 'Installes',
                 workshop: 'Workshop',
                 import: 'Importer',
@@ -1318,6 +1365,8 @@
                 preparing: 'Preparation...',
                 cancel: 'Annuler',
                 cancelledToast: 'Installation annulee',
+                queued: 'En file',
+                queuedToast: '{{name}} ajoute a la file de telechargement',
                 installedLabel: 'Installe',
                 update: 'Mettre a jour',
                 updateAvailable: 'Mise a jour disponible',
@@ -1331,6 +1380,7 @@
                 importedToast: '{{name}} importe',
                 noInstalled: 'Aucun contenu personnalise installe. Parcourez le Workshop ou importez une carte ou un mod pour commencer.',
                 noInstalledImportOnly: 'Aucun contenu personnalise installe. Importez un dossier de carte ou de mod pour commencer.',
+                needsInstall: '{{game}} n\'est pas installe. Installez-le pour ajouter des cartes et des mods.',
                 noResults: 'Aucun element du Workshop ne correspond a votre recherche.',
                 loading: 'Chargement...',
                 kindMap: 'Carte',
@@ -1360,7 +1410,16 @@
                 requiredItemsNote: 'Ils sont installes automatiquement avec cet element ({{size}} en plus).'
             },
             servers: {
-                tab: 'Serveurs',
+                featured: 'En vedette',
+                featuredCollapse: 'Masquer les serveurs en vedette',
+                featuredExpand: 'Afficher les serveurs en vedette',
+                featuredOfficial: 'Officiel',
+                featuredOfficialHint: 'Gere par CB Servers',
+                featuredContributor: 'Contributeur',
+                featuredContributorHint: 'Gere par un contributeur du CB Launcher',
+                featuredEvent: 'Evenement',
+                featuredEventHint: 'Serveur evenement a duree limitee',
+                featuredDiscord: 'Rejoindre leur Discord',
                 searchPlaceholder: 'Rechercher un serveur ou une carte...',
                 filterAll: 'Tous',
                 favorites: 'Favoris',
@@ -1399,6 +1458,24 @@
                 loadFailed: 'Impossible de charger la liste des serveurs.',
                 retry: 'Reessayer',
                 loading: 'Chargement...'
+            },
+            hub: {
+                serversSubtitle: 'Trouvez un serveur et lancez-vous.',
+                modsSubtitle: 'Installez et gerez cartes et mods.',
+                pickServersGame: 'Choisissez un jeu pour parcourir ses serveurs.',
+                pickModsGame: 'Choisissez un jeu pour gerer ses mods.',
+                back: 'Retour',
+                gamePage: 'Page du jeu',
+                switchGame: 'Changer de jeu',
+                running: 'En cours',
+                playersBadge: '{{count}} sur les serveurs',
+                modsInstalled: '{{count}} installe(s)',
+                modsUpdates: '{{count}} a mettre a jour',
+                serversShortcutIdle: 'Parcourir les serveurs',
+                serversShortcutCount: '{{count}} joueurs sur les serveurs',
+                modsShortcutIdle: 'Parcourir et gerer les mods',
+                modsShortcutCount: '{{count}} installe(s)',
+                modsShortcutUpdates: 'Mises a jour disponibles : {{count}}'
             },
             popup: {
                 gameMode: {
@@ -1656,6 +1733,8 @@
             nav: {
                 home: 'Inicio',
                 library: 'Biblioteca',
+                servers: 'Servidores',
+                mods: 'Mods',
                 downloads: 'Descargas',
                 friends: 'Amigos',
                 community: 'Comunidad',
@@ -1666,13 +1745,20 @@
             },
             downloads: {
                 title: 'Descargas',
-                subtitle: 'Descargas de juegos activas y en cola.',
+                subtitle: 'Descargas de juegos y mods activas y en cola.',
                 empty: 'No hay descargas en curso.',
                 statusVerifying: 'Verificando',
                 statusInstalling: 'Instalando',
                 statusUninstalling: 'Desinstalando',
                 statusActive: 'En curso',
                 statusQueued: 'En cola - #{{position}}',
+                sectionGames: 'Juegos',
+                sectionMods: 'Mods y mapas',
+                statusPreparing: 'Preparando',
+                statusDownloading: 'Descargando',
+                statusRequiredItems: 'Descargando elementos requeridos',
+                statusCancelling: 'Cancelando',
+                statusWaiting: 'Esperando a que termine otra instalacion',
                 statusPaused: 'En pausa',
                 statusPausedAt: 'En pausa - {{percent}}%',
                 noticeRetry: '{{count}} archivo(s) no se pudieron descargar, reintentando',
@@ -1808,7 +1894,7 @@
                 notInstalled: 'No instalado',
                 showInstalled: 'Mostrar instalados',
                 welcomeTitle: 'Bienvenido a CB Launcher',
-                welcomeBody: 'Bienvenido a CB Servers Launcher! Tu launcher todo-en-uno para los clientes comunitarios de Call of Duty. Instala, actualiza y juega a los clientes compatibles desde un solo lugar. Ve a la pestana <strong>Biblioteca</strong> para explorar todos los clientes disponibles y empezar a jugar. Necesitas ayuda? Pasa por la pestana <strong>Soporte</strong> o consulta nuestra <a href="https://docs.cbservers.xyz/launcher" target="_blank">documentacion</a>.',
+                welcomeBody: 'Bienvenido a CB Servers Launcher! Tu launcher todo-en-uno para los clientes comunitarios de Call of Duty. Instala, actualiza y juega a los clientes compatibles desde un solo lugar. Ve a la pestana <strong>Biblioteca</strong> para explorar todos los clientes disponibles y empezar a jugar. Necesitas ayuda? Haz clic en el <strong>?</strong> junto a <strong>Ajustes</strong> en la parte inferior de la barra lateral o consulta nuestra <a href="https://docs.cbservers.xyz/launcher" target="_blank">documentacion</a>.',
                 disclaimer: 'Este launcher no esta afiliado ni respaldado por IW4x, Plutonium, AlterWare, Aurora, HorizonMW, CoD4x Project, IW3x, IW3SP-Mod, CoDExtended, T6SP-Mod, H2-Mod ni Project BO4. Por favor, no contactes a los desarrolladores originales de los clientes con consultas de soporte sobre este launcher.'
             },
             library: {
@@ -1995,7 +2081,6 @@
                 updateAvailable: 'Actualizacion disponible'
             },
             detail: {
-                overview: 'Resumen',
                 clientSettings: 'Ajustes',
                 modsScripts: 'Mods/Scripts',
                 credits: 'Creditos',
@@ -2007,7 +2092,6 @@
                 customClient: 'Cliente personalizado'
             },
             mods: {
-                tab: 'Mods',
                 installed: 'Instalados',
                 workshop: 'Workshop',
                 import: 'Importar',
@@ -2029,6 +2113,8 @@
                 preparing: 'Preparando...',
                 cancel: 'Cancelar',
                 cancelledToast: 'Instalacion cancelada',
+                queued: 'En cola',
+                queuedToast: '{{name}} agregado a la cola de descargas',
                 installedLabel: 'Instalado',
                 update: 'Actualizar',
                 updateAvailable: 'Actualizacion disponible',
@@ -2042,6 +2128,7 @@
                 importedToast: '{{name}} importado',
                 noInstalled: 'Aun no hay contenido personalizado instalado. Explora el Workshop o importa un mapa o mod para empezar.',
                 noInstalledImportOnly: 'Aun no hay contenido personalizado instalado. Importa una carpeta de mapa o mod para empezar.',
+                needsInstall: '{{game}} no esta instalado. Instalalo para agregar mapas y mods.',
                 noResults: 'Ningun elemento del Workshop coincide con tu busqueda.',
                 loading: 'Cargando...',
                 kindMap: 'Mapa',
@@ -2071,7 +2158,16 @@
                 requiredItemsNote: 'Se instalan automaticamente junto con este elemento ({{size}} adicionales).'
             },
             servers: {
-                tab: 'Servidores',
+                featured: 'Destacados',
+                featuredCollapse: 'Ocultar servidores destacados',
+                featuredExpand: 'Mostrar servidores destacados',
+                featuredOfficial: 'Oficial',
+                featuredOfficialHint: 'Administrado por el equipo de CB Servers',
+                featuredContributor: 'Colaborador',
+                featuredContributorHint: 'Administrado por un colaborador del CB Launcher',
+                featuredEvent: 'Evento',
+                featuredEventHint: 'Servidor de evento por tiempo limitado',
+                featuredDiscord: 'Unirse a su Discord',
                 searchPlaceholder: 'Buscar servidores o mapas...',
                 filterAll: 'Todos',
                 favorites: 'Favoritos',
@@ -2110,6 +2206,24 @@
                 loadFailed: 'No se pudo cargar la lista de servidores.',
                 retry: 'Reintentar',
                 loading: 'Cargando...'
+            },
+            hub: {
+                serversSubtitle: 'Encuentra un servidor y entra.',
+                modsSubtitle: 'Instala y gestiona mapas y mods.',
+                pickServersGame: 'Elige un juego para ver sus servidores.',
+                pickModsGame: 'Elige un juego para gestionar sus mods.',
+                back: 'Volver',
+                gamePage: 'Pagina del juego',
+                switchGame: 'Cambiar de juego',
+                running: 'En ejecucion',
+                playersBadge: '{{count}} en servidores',
+                modsInstalled: '{{count}} instalados',
+                modsUpdates: '{{count}} por actualizar',
+                serversShortcutIdle: 'Ver servidores',
+                serversShortcutCount: '{{count}} jugadores en servidores',
+                modsShortcutIdle: 'Ver y gestionar mods',
+                modsShortcutCount: '{{count}} instalados',
+                modsShortcutUpdates: 'Actualizaciones disponibles: {{count}}'
             },
             popup: {
                 gameMode: {
@@ -2367,6 +2481,8 @@
             nav: {
                 home: 'Главная',
                 library: 'Библиотека',
+                servers: 'Серверы',
+                mods: 'Моды',
                 downloads: 'Загрузки',
                 friends: 'Друзья',
                 community: 'Сообщество',
@@ -2377,13 +2493,20 @@
             },
             downloads: {
                 title: 'Загрузки',
-                subtitle: 'Активные и ожидающие загрузки игр.',
+                subtitle: 'Активные и ожидающие загрузки игр и модов.',
                 empty: 'Нет активных загрузок.',
                 statusVerifying: 'Проверка',
                 statusInstalling: 'Установка',
                 statusUninstalling: 'Удаление',
                 statusActive: 'Выполняется',
                 statusQueued: 'В очереди — #{{position}}',
+                sectionGames: 'Игры',
+                sectionMods: 'Моды и карты',
+                statusPreparing: 'Подготовка',
+                statusDownloading: 'Загрузка',
+                statusRequiredItems: 'Загрузка необходимых элементов',
+                statusCancelling: 'Отмена',
+                statusWaiting: 'Ожидание завершения другой установки',
                 statusPaused: 'Приостановлено',
                 statusPausedAt: 'Приостановлено — {{percent}}%',
                 noticeRetry: 'Не удалось загрузить файлов: {{count}}, повторная попытка',
@@ -2518,7 +2641,7 @@
                 notInstalled: 'Не установлено',
                 showInstalled: 'Показать установленные',
                 welcomeTitle: 'Добро пожаловать в CB Launcher',
-                welcomeBody: 'Добро пожаловать в CB Servers Launcher! Ваш универсальный лаунчер для клиентов сообщества Call of Duty. Устанавливайте, обновляйте и играйте в поддерживаемые клиенты из одного места. Перейдите на вкладку <strong>Библиотека</strong>, чтобы просмотреть все доступные клиенты и начать играть. Нужна помощь? Посетите вкладку <strong>Поддержка</strong> или ознакомьтесь с нашей <a href="https://docs.cbservers.xyz/launcher" target="_blank">документацией</a>.',
+                welcomeBody: 'Добро пожаловать в CB Servers Launcher! Ваш универсальный лаунчер для клиентов сообщества Call of Duty. Устанавливайте, обновляйте и играйте в поддерживаемые клиенты из одного места. Перейдите на вкладку <strong>Библиотека</strong>, чтобы просмотреть все доступные клиенты и начать играть. Нужна помощь? Нажмите <strong>?</strong> рядом с пунктом <strong>Настройки</strong> внизу боковой панели или ознакомьтесь с нашей <a href="https://docs.cbservers.xyz/launcher" target="_blank">документацией</a>.',
                 disclaimer: 'Этот лаунчер не связан и не одобрен IW4x, Plutonium, AlterWare, Aurora, HorizonMW, CoD4x Project, IW3x, IW3SP-Mod, CoDExtended, T6SP-Mod, H2-Mod или Project BO4. Пожалуйста, не обращайтесь к разработчикам оригинальных клиентов с вопросами поддержки по этому лаунчеру.'
             },
             library: {
@@ -2705,7 +2828,6 @@
                 updateAvailable: 'Доступно обновление'
             },
             detail: {
-                overview: 'Обзор',
                 clientSettings: 'Настройки',
                 modsScripts: 'Моды/Скрипты',
                 credits: 'Авторы',
@@ -2717,7 +2839,6 @@
                 customClient: 'Пользовательский клиент'
             },
             mods: {
-                tab: 'Моды',
                 installed: 'Установлено',
                 workshop: 'Мастерская',
                 import: 'Импорт',
@@ -2739,6 +2860,8 @@
                 preparing: 'Подготовка...',
                 cancel: 'Отмена',
                 cancelledToast: 'Установка отменена',
+                queued: 'В очереди',
+                queuedToast: '{{name}} добавлен в очередь загрузок',
                 installedLabel: 'Установлено',
                 update: 'Обновить',
                 updateAvailable: 'Доступно обновление',
@@ -2752,6 +2875,7 @@
                 importedToast: '{{name}} импортирован',
                 noInstalled: 'Пользовательский контент ещё не установлен. Загляните в Мастерскую или импортируйте карту или мод.',
                 noInstalledImportOnly: 'Пользовательский контент ещё не установлен. Импортируйте папку карты или мода.',
+                needsInstall: 'Игра {{game}} не установлена. Установите её, чтобы добавлять карты и моды.',
                 noResults: 'В Мастерской ничего не найдено по вашему запросу.',
                 loading: 'Загрузка...',
                 kindMap: 'Карта',
@@ -2781,7 +2905,16 @@
                 requiredItemsNote: 'Они устанавливаются автоматически вместе с этим элементом (еще {{size}}).'
             },
             servers: {
-                tab: 'Серверы',
+                featured: 'Рекомендуемые',
+                featuredCollapse: 'Скрыть рекомендуемые серверы',
+                featuredExpand: 'Показать рекомендуемые серверы',
+                featuredOfficial: 'Официальный',
+                featuredOfficialHint: 'Сервер команды CB Servers',
+                featuredContributor: 'Участник',
+                featuredContributorHint: 'Сервер участника разработки CB Launcher',
+                featuredEvent: 'Событие',
+                featuredEventHint: 'Сервер временного события',
+                featuredDiscord: 'Присоединиться к их Discord',
                 searchPlaceholder: 'Поиск серверов или карт...',
                 filterAll: 'Все',
                 favorites: 'Избранное',
@@ -2820,6 +2953,24 @@
                 loadFailed: 'Не удалось загрузить список серверов.',
                 retry: 'Повторить',
                 loading: 'Загрузка...'
+            },
+            hub: {
+                serversSubtitle: 'Найдите сервер и присоединяйтесь.',
+                modsSubtitle: 'Устанавливайте карты и моды и управляйте ими.',
+                pickServersGame: 'Выберите игру, чтобы открыть её серверы.',
+                pickModsGame: 'Выберите игру, чтобы управлять её модами.',
+                back: 'Назад',
+                gamePage: 'Страница игры',
+                switchGame: 'Сменить игру',
+                running: 'Запущена',
+                playersBadge: '{{count}} на серверах',
+                modsInstalled: 'Установлено: {{count}}',
+                modsUpdates: 'Обновить: {{count}}',
+                serversShortcutIdle: 'Открыть серверы',
+                serversShortcutCount: 'На серверах: {{count}}',
+                modsShortcutIdle: 'Просмотр и управление модами',
+                modsShortcutCount: 'Установлено: {{count}}',
+                modsShortcutUpdates: 'Доступны обновления: {{count}}'
             },
             popup: {
                 gameMode: {

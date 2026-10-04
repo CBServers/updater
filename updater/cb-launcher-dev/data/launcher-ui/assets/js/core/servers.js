@@ -13,11 +13,11 @@
         coduo:     { modes: ['mp'] },
         cod2x:     { modes: ['mp'] },
         cod4x:     { modes: ['mp'] },
-        t4:        { modes: ['mp', 'zm'] },
-        t5:        { modes: ['mp', 'zm'] },
+        t4:        { modes: ['mp', 'zm'], join: true },
+        t5:        { modes: ['mp', 'zm'], join: true },
         iw4x:      { modes: ['mp'] },
-        iw5:       { modes: ['mp'] },
-        t6:        { modes: ['mp', 'zm'] },
+        iw5:       { modes: ['mp'], join: true },
+        t6:        { modes: ['mp', 'zm'], join: true },
         boiii:     { modes: ['mp', 'zm'], join: true },
         iw6x:      { modes: ['mp'], join: true },
         s1x:       { modes: ['mp'], join: true },
@@ -137,6 +137,11 @@
         for (let i = 0; i < count; i++) {
             servers.push(buildServer(game, i, mulberry32(hash(`${game}:${i}`))));
         }
+        servers[6].tag = { label: 'official', note: 'Run by CB Servers, 24/7 rotation', discord: 'https://discord.gg/cbservers', featured: 0 };
+        servers[7].tag = { label: 'contributor', note: 'Hosted by a launcher contributor', discord: null, featured: 1 };
+        servers[8].tag = { label: 'contributor', note: null, discord: 'https://discord.gg/example', featured: 2 };
+        servers[10].tag = { label: 'contributor', note: 'Tagged but not featured', discord: 'https://discord.gg/example', featured: null };
+        servers[11].tag = { label: null, note: 'Note only, no label', discord: null, featured: null };
         return servers;
     }
 
@@ -224,7 +229,8 @@
         return window.executeCommand('join-server', {
             game: GameUtils.getGameMapping(game),
             ip: server.id.slice(0, separator),
-            port: Number(server.id.slice(separator + 1))
+            port: Number(server.id.slice(separator + 1)),
+            mode: server.mode
         });
     }
 
