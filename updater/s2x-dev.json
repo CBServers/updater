@@ -80,6 +80,11 @@
         "C19688964841283A0C0CF49531EE2C810A7C4DA4"
     ],
     [
+        "data/ui_scripts/mp/patches/leave_game.lua",
+        1508,
+        "405459499F1E8E68FE39D0FC8DC6616B4D41F11C"
+    ],
+    [
         "data/ui_scripts/mp/patches/unlocks.lua",
         12051,
         "3E20BEC509C7EE7C772D7A620EBC958DA5F5112E"
@@ -91,15 +96,15 @@
     ],
     [
         "data/ui_scripts/mp/patches/__init__.lua",
-        470,
-        "9E639450F1CF8F9C6578083CF562823C110E3A08"
+        529,
+        "F0146DAC8CE6D70C28ACA1A7EB0F2C74F0D88397"
     ],
     [
         "s2x.exe",
-        5538816,
-        "B10E44AE89BF290BB871C5701403F9508F5D1821"
+        5543936,
+        "26995F0972427C62DB36B61F09C655DC9F4189E2"
     ],
     {
-        "ManifestHash": "80B5629DEF348318507822FDCC738F43961D38F6B41964123C61EBD6B39D1346"
+        "ManifestHash": "D88E16731A91E201BF121F67702C94F7F4A6B55C5FEFBB76C4C7A2BE72191722"
     }
 ]
