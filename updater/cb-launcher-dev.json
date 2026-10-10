@@ -2,7 +2,7 @@
     [
         "cb-launcher.exe",
         3736944,
-        "3EE9A6A7B33EE84A83EA3E08A2E0660A5DBDE8DD"
+        "99DD6EAC1911A0051AF7BD8DA365A902C5E6A52D"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -81,8 +81,8 @@
     ],
     [
         "data/launcher-ui/assets/css/main.css",
-        225456,
-        "C3085D07EC2BC36F5DC965A31148EB380C2BC61F"
+        225839,
+        "E4E671BA44519FADB65E71B007C26457D6630B34"
     ],
     [
         "data/launcher-ui/assets/fonts/ibm-plex-mono-400.woff2",
@@ -627,7 +627,7 @@
     [
         "data/launcher-ui/assets/js/ui/person-menu.js",
         19003,
-        "0031E2C3EA93BE7C4BA2C0AC54C276378A594289"
+        "DB6AD6A96389818683A0FFDAE15B33D3A3505A5C"
     ],
     [
         "data/launcher-ui/assets/js/ui/toast.js",
@@ -730,6 +730,6 @@
         "E254FD0A876B793A25FAF4AA16DBA275F6544A5D"
     ],
     {
-        "ManifestHash": "3E2379ECAF14648EFAEAF5C86F9C3DDDA055419709716645F61331F96ECFCF5E"
+        "ManifestHash": "290A8749F46BC4B6C8424D1C47DC4078FDA7A1DA63B965CBE2AB87FB3EFC80F1"
     }
 ]
