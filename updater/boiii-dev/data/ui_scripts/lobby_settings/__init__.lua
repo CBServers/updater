@@ -15,7 +15,7 @@ DataSources.BoiiiLobbySettings = DataSourceHelpers.ListSetup("BoiiiLobbySettings
 
 	table.insert(optionsTable,
 		CoD.OptionsUtility.CreateDvarSettings(controller, "Open To Friends",
-			"Open the match to friends as soon as it starts, instead of opening it from the pause menu. Stays set until you restart the game.",
+			"Open to friends as soon as a match you host starts, instead of opening it from the pause menu. Your lobby stays open after the match. Stays set until you restart the game.",
 			"BoiiiLobbySettings_auto_open", "nat_autoOpen", {
 				{
 					option = "MENU_DISABLED",

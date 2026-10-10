@@ -118,7 +118,6 @@ local modOwnsLobbyMenus = function()
   return CoD.LobbyButtons.AAE_AAEOPTION ~= nil
 end
 
-
 -- Tail of the start/setup group, so the button lands with them regardless of mode.
 local addMatchSettingsButton = function(controller, buttonTable)
   local groupEnd = nil
