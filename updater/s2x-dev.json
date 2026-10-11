@@ -1,5 +1,15 @@
 [
     [
+        "data/ui_scripts/mp/cod_points/__init__.lua",
+        5232,
+        "EA193D90BBE135196FAC7BC891DE4C3B8947D93D"
+    ],
+    [
+        "data/ui_scripts/mp/contracts/__init__.lua",
+        716,
+        "480CE9ABD0B249B81E54034519E436F032F9D5C2"
+    ],
+    [
         "data/ui_scripts/mp/custom_match/loadouts.lua",
         688,
         "48C29CD2033B059DD95A05838B6BCAB036C222F2"
@@ -31,28 +41,38 @@
     ],
     [
         "data/ui_scripts/mp/find_match/s2x_server_browser.lua",
-        13016,
-        "E2C6AB428F859C1A8D6565F357685820192AED24"
+        9177,
+        "08830BCA000491280AFA206A9CD9299E0A8A6A50"
+    ],
+    [
+        "data/ui_scripts/mp/find_match/s2x_server_browser_model.lua",
+        2101,
+        "DF93636AE97E356C36DB201682E256B42481C4D2"
     ],
     [
         "data/ui_scripts/mp/find_match/s2x_server_browser_row.lua",
-        16665,
-        "27D019BF72BBBF951444DC0296E3C5DED4E7C5A0"
+        2543,
+        "1A0C45E79CBF42F11831482BE87D8744BA95959C"
     ],
     [
         "data/ui_scripts/mp/find_match/s2x_server_browser_row_uc.lua",
-        2149,
-        "A0F7AA92E4C02EDE70F62D901223D93FA46586B6"
+        1144,
+        "41C6119E2C8156222D1EF9080E64BF095B353056"
     ],
     [
         "data/ui_scripts/mp/find_match/s2x_server_browser_uc.lua",
-        11689,
-        "7617B0D101DFD366A34452C7BA0ED0379B298529"
+        11484,
+        "5BE24C163C7B262B092E9DC26A56DF5F64776E0F"
     ],
     [
         "data/ui_scripts/mp/find_match/__init__.lua",
-        2427,
-        "BCCF7063FA1095BC8EFE504F62670E012A14989E"
+        2456,
+        "BF9E153B429FBA7C444BE42034A54E1A91266080"
+    ],
+    [
+        "data/ui_scripts/mp/orders/__init__.lua",
+        2681,
+        "98227CD4A6B7F5EE596D7E7B813190D490901407"
     ],
     [
         "data/ui_scripts/mp/patches/cb_invites.lua",
@@ -86,8 +106,8 @@
     ],
     [
         "data/ui_scripts/mp/patches/unlocks.lua",
-        12051,
-        "3E20BEC509C7EE7C772D7A620EBC958DA5F5112E"
+        20948,
+        "E3DE0B519878554B87205412E25F72BB21F2DB31"
     ],
     [
         "data/ui_scripts/mp/patches/unlock_overrides.lua",
@@ -100,11 +120,21 @@
         "F0146DAC8CE6D70C28ACA1A7EB0F2C74F0D88397"
     ],
     [
+        "data/ui_scripts/mp/quartermaster/__init__.lua",
+        3999,
+        "FABA91746DB2FF7FC6BAA7434A2B86E5FC40E067"
+    ],
+    [
+        "data/ui_scripts/mp/zombies_progression/__init__.lua",
+        2971,
+        "9C665600274AE1853400C67AED2D292FCE9DF345"
+    ],
+    [
         "s2x.exe",
-        7672320,
-        "9E61B4B884F265E97E425A506F75BC1EFB879DF0"
+        8457216,
+        "07710A5F1EBCA5F63867EB36E769090310139766"
     ],
     {
-        "ManifestHash": "299BD0E419D52B63E0E26705A129338B8D6E8457F2C966C789BDCBB6C9EA5084"
+        "ManifestHash": "E94AF04BB3518462D860BE1B0B8FABEB759F97BCC4FD1F2F733067591FC7D918"
     }
 ]
