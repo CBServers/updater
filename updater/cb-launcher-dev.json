@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        3743088,
-        "D9BEB329FA57CE2A6B7F3723DD12301AF243DFBD"
+        3743600,
+        "A6FF3328F788CEEF33659D593573454F9DBDD40C"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -491,8 +491,8 @@
     ],
     [
         "data/launcher-ui/assets/js/app/main.js",
-        115288,
-        "7F09B308A394A2BF24541DC654790F76FDB79E91"
+        115790,
+        "BAFF69A8E9475D69428D22D209B14A4916EABF31"
     ],
     [
         "data/launcher-ui/assets/js/app/mods-view.js",
@@ -536,8 +536,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        241699,
-        "B38353EBC632D341A10DA3842106009187B7D052"
+        242410,
+        "CA461CFA2BE44AD68431FF19C96FFD2BBECD2296"
     ],
     [
         "data/launcher-ui/assets/js/core/mod-queue.js",
@@ -636,8 +636,8 @@
     ],
     [
         "data/launcher-ui/main.html",
-        47788,
-        "1D17C1DE7FDE39BF9433AA95F21A4E834FD57D8F"
+        47917,
+        "01BD9A6F4A8A18EEFB12F71871E4EBFE08B4BB48"
     ],
     [
         "manifest/aw.json",
@@ -730,6 +730,6 @@
         "E254FD0A876B793A25FAF4AA16DBA275F6544A5D"
     ],
     {
-        "ManifestHash": "E90605883EF69C82F0FBCC0C12187E31298EDA972ED1E130B95588EDCA2A2D49"
+        "ManifestHash": "A7B5939A78633D66FBDF397875C31D1528A9A01483DEE7F9C8800FF76B0EBA3C"
     }
 ]
