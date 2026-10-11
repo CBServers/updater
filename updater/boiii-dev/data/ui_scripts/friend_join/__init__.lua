@@ -206,7 +206,7 @@ pcall( function ()
 end )
 
 -- toast on INVITE GAME, mirroring the open-to-friends toggle toast; when we're the host of a
--- closed match, sending the invite auto-opens it (C++ request_invite), so say that too
+-- closed match or lobby, sending the invite auto-opens it (C++ request_invite), so say that too
 pcall( function ()
 	require( "ui.uieditor.actions" )
 
@@ -225,8 +225,9 @@ pcall( function ()
 		local willOpen = game and game.friendInviteOpensMatch and game.friendInviteOpensMatch()
 		local ret = orig_LobbyInviteFriendGoBack( menu, element, controller, param, parentMenu )
 		local who = ( param and param.gamertag ) and ( "Invite sent to " .. param.gamertag .. "." ) or "Invite sent."
+		local opened = Engine.IsInGame() and " Match is now invite only." or " Lobby is now invite only."
 		CoD.OverlayUtility.ShowToast( "Invite", "INVITE SENT",
-			willOpen and ( who .. " Match is now open to friends." ) or who,
+			willOpen and ( who .. opened ) or who,
 			"uie_t7_icon_menu_invite_sent" )
 		return ret
 	end
