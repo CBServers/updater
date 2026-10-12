@@ -21,9 +21,8 @@ local function syncPartyLimit(controller)
 end
 
 -- The PC list leaves out INVITE ONLY; boiii supports it (no Join button, friends Ask to Join, invites work)
--- Frontend only: the widget doesn't exist in a match, and a failed require there stops this whole script
-if not Engine.IsInGame() then
-	require("ui.uieditor.widgets.Social.Social_Party_PC")
+-- Frontend only: the widget doesn't exist in a match, and loading into a dedicated server isn't "in game" yet
+if not Engine.IsInGame() and pcall(require, "ui.uieditor.widgets.Social.Social_Party_PC") then
 	DataSources.SocialPartyPrivacyPresets = DataSourceHelpers.ListSetup("PC.SocialPartyPrivacyPresets", function()
 		local presets = {}
 		for _, entry in ipairs({
