@@ -2,7 +2,7 @@
     [
         "cb-launcher.exe",
         3776880,
-        "FC0970BA196CC4459A5B3CEBFCA2B0F94C5DDF05"
+        "10A9EE7E52E1E6A1CEA88ACF18F8212EC74A1DF7"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -81,8 +81,8 @@
     ],
     [
         "data/launcher-ui/assets/css/main.css",
-        226265,
-        "29228A262B5FF92DEB0A0D7F0FFC544F3A04ACC4"
+        227041,
+        "BD93A784665835362742CEDDB97BD877F0D7BC99"
     ],
     [
         "data/launcher-ui/assets/fonts/ibm-plex-mono-400.woff2",
@@ -511,13 +511,13 @@
     ],
     [
         "data/launcher-ui/assets/js/core/cb-friends.js",
-        65358,
-        "87340DC79D3A5C59A23370280436A0D62EAAE890"
+        68282,
+        "8A09D236C89B3ECEBE68DC5BA17B84E04FF7CA25"
     ],
     [
         "data/launcher-ui/assets/js/core/command.js",
-        25230,
-        "72E3200F45D52D4BD4084CAECC2F262B28EF57AC"
+        25983,
+        "C283A263F3E4D7D5F2CFA11C01E1D0789F1B32EE"
     ],
     [
         "data/launcher-ui/assets/js/core/community.js",
@@ -536,8 +536,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        243832,
-        "F67EA1AF0599F23B1DC3D5A3592B738EB059A5AE"
+        243975,
+        "77FB7FC2FE4A56442064C021399AB28E23A43B7A"
     ],
     [
         "data/launcher-ui/assets/js/core/mod-queue.js",
@@ -626,8 +626,8 @@
     ],
     [
         "data/launcher-ui/assets/js/ui/person-menu.js",
-        19003,
-        "DB6AD6A96389818683A0FFDAE15B33D3A3505A5C"
+        20954,
+        "A6FBB15A35ABD6A833B8ABF28CCA9DF0FC001151"
     ],
     [
         "data/launcher-ui/assets/js/ui/toast.js",
@@ -730,6 +730,6 @@
         "E254FD0A876B793A25FAF4AA16DBA275F6544A5D"
     ],
     {
-        "ManifestHash": "3B52381055837E67474A18BB7C6CEAE027BFF93CB96792F4E64E368CF0F08A96"
+        "ManifestHash": "CAFB1FF9A28F63B9C97905C4F299A24D889F5A10E46768C0E676A293D77DD434"
     }
 ]
