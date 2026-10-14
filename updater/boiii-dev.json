@@ -1,13 +1,13 @@
 [
     [
         "BlackOps3.exe",
-        105994224,
-        "08AB18921C0075DDB273E4FB2BEB1ADF3C5C2FA1"
+        106059256,
+        "9D03F81086112113BFB1DD22B8538B9398AC3B9B"
     ],
     [
         "boiii.exe",
-        3518976,
-        "B9E3C920CE16AF3E68A4DE816F99F7902D5EA874"
+        3528704,
+        "894AD146FFFA8AB832CF258470C9A5DCAB2640E4"
     ],
     [
         "data/gamesettings/mp/gamesettings_escort.cfg",
@@ -151,8 +151,8 @@
     ],
     [
         "data/ui_scripts/mod_permission/__init__.lua",
-        3155,
-        "35D70C4ED8778361B979F572BF584678047FBF6E"
+        3999,
+        "FB2F239FAF3CABF6AEF99824C4D5D485F6BFA5A8"
     ],
     [
         "data/ui_scripts/party/datasources_start_menu_game_options.lua",
@@ -220,6 +220,6 @@
         "BE692175B916BC9A8098835BB1EE5A288B35D1E8"
     ],
     {
-        "ManifestHash": "C387A0CF0A85115539BBCFE7932432A5CEFBF02F74934A71C5DD9DB5014A50DA"
+        "ManifestHash": "778F804A73EF0F2AB8691676E604D1828DE19CBD43A7360773CBCC8614A424D1"
     }
 ]

@@ -50,6 +50,37 @@ local function FindHostMenu()
 	return host
 end
 
+-- Main swaps itself for Lobby once the lobby nav moves on and the Spinner closes itself, orphaning an overlay opened on either
+local transientMenus = {
+	Main = true,
+	Spinner = true
+}
+
+local SETTLE_MS = 1500
+
+local function FindSettledHostMenu()
+	local host = FindHostMenu()
+	local name = host and Try(function() return host.menuName end)
+	if name == nil or transientMenus[name] or Try(function() return Engine.IsCinematicPlaying() end) then
+		state.candidate = nil
+		return nil
+	end
+
+	-- The frontend is still being built right after a mod load, so wait for the same menu to stay on top
+	local now = Engine.milliseconds()
+	if state.candidate ~= name then
+		state.candidate = name
+		state.candidateSince = now
+		return nil
+	end
+
+	if now - state.candidateSince < SETTLE_MS then
+		return nil
+	end
+
+	return host
+end
+
 local function Close(menu, controller)
 	state.menu = nil
 	state.allow = nil
@@ -81,7 +112,7 @@ CoD.OverlayUtility.AddSystemOverlay(OVERLAY, {
 				},
 				{
 					models = {
-						displayText = "ALLOW AND RESTART"
+						displayText = "ALLOW AND RELOAD"
 					},
 					properties = {
 						action = function(element, event, controller, param, menu)
@@ -109,11 +140,12 @@ BoiiiModPermission.Show = function(title, description, allow)
 		return true
 	end
 
-	local host = FindHostMenu()
+	local host = FindSettledHostMenu()
 	if host == nil then
 		return false
 	end
 
+	state.candidate = nil
 	state.title = title or ""
 	state.description = description or ""
 	state.allow = allow
