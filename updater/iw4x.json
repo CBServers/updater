@@ -10,6 +10,11 @@
         "5FBB6886B1A7647A65DA8C926F1A0D921BB9CCC3"
     ],
     [
+        "companion64.dll",
+        492544,
+        "DE97C737A3F0FF78E9828395F445EFDA30FF8F84"
+    ],
+    [
         "iw4x/html/img/background_default.png",
         426091,
         "4AD0FACFB97D529E5AD9848BAB7663A780E3ECFE"
@@ -46,8 +51,8 @@
     ],
     [
         "iw4x/iw4x_00.iwd",
-        13799664,
-        "E5AEE1E8BAC315318AEC91047606EF0B8BAD6B73"
+        13799673,
+        "7D22393A5A1CC0F78AE4BBD357DC764A5393B269"
     ],
     [
         "iw4x/iw4x_01.iwd",
@@ -86,13 +91,38 @@
     ],
     [
         "iw4x.dll",
-        3787776,
-        "F7DECBAC032635E74CD9F7DB2CF66FC3B7803FF9"
+        3823616,
+        "478A0DB780363972515750CEF4D285B871E5731A"
     ],
     [
         "iw4x.exe",
         3932160,
         "E1A6FE5B079398116C7937BE323A1472A7C5FC2A"
+    ],
+    [
+        "linux/companion",
+        1729472,
+        "29E43E96C3B84D3BD1BB06505B8FD6AD93638A34"
+    ],
+    [
+        "linux/lib/companion/haswell/libcompanion.so",
+        10168,
+        "DB8EA3BF1BC3FE95DED7E8EF886E59EF7AD6381E"
+    ],
+    [
+        "linux/lib/companion/i686/libcompanion.so",
+        1407636,
+        "A6BF2A81D59AFE7409925BA082E1FF95E332B050"
+    ],
+    [
+        "linux/lib/companion/x86_64/libcompanion.so",
+        10168,
+        "DB8EA3BF1BC3FE95DED7E8EF886E59EF7AD6381E"
+    ],
+    [
+        "linux/lib/companion/xeon_phi/libcompanion.so",
+        10168,
+        "DB8EA3BF1BC3FE95DED7E8EF886E59EF7AD6381E"
     ],
     [
         "miles/milesEq.flt",
@@ -151,23 +181,23 @@
     ],
     [
         "zone/patch/iw4x_localized_english.ff",
-        10454,
-        "74D6FB02A7B533B118EBFA665190DF39B6BDB0DE"
+        10457,
+        "F8CE7BC57CB7803AED5C3B204AC8B053A8BB3351"
     ],
     [
         "zone/patch/iw4x_localized_french.ff",
-        5214,
-        "133C93BDC2E1C1A7A84ADA7C2E06A4C76B6BC921"
+        5220,
+        "E7B404BCC69E762D91F4CBABC9F08DDC678D913E"
     ],
     [
         "zone/patch/iw4x_localized_russian.ff",
-        10179,
-        "F8FCC4DE7BB28F393F39F4777EE0578579008D03"
+        10183,
+        "7F5768097894318792CE2BBBA955647D6B358C30"
     ],
     [
         "zone/patch/iw4x_localized_spanish.ff",
-        5219,
-        "FC3EF453BC6EDC204B1770807A425E26A76E85F0"
+        5223,
+        "95C4E051F7AA1F88554E18300ED62D2E494BCDAC"
     ],
     [
         "zone/patch/iw4x_patch_mp.ff",
@@ -425,6 +455,6 @@
         "BEEBCBDB5F515237E26A87C98F7ED5F0C385778E"
     ],
     {
-        "ManifestHash": "E77DBE9AC0FDEB13B88A125554AF891296ACD164DAB2756BA857DCA11E8735A7"
+        "ManifestHash": "102E7C9C5DE7D6C0419393ECF4448956B2C9D04D5B40F67643EC117234C0B480"
     }
 ]
