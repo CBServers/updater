@@ -71,8 +71,8 @@
     ],
     [
         "data/ui_scripts/mp/orders/__init__.lua",
-        2681,
-        "98227CD4A6B7F5EE596D7E7B813190D490901407"
+        2805,
+        "39DDB547B61ED21FA430167DF9A9F23375DFDCE3"
     ],
     [
         "data/ui_scripts/mp/patches/cb_invites.lua",
@@ -131,10 +131,10 @@
     ],
     [
         "s2x.exe",
-        8457216,
-        "07710A5F1EBCA5F63867EB36E769090310139766"
+        8494592,
+        "860AE3C1CFB096AB739DA0BE1087DF425B52F4B4"
     ],
     {
-        "ManifestHash": "E94AF04BB3518462D860BE1B0B8FABEB759F97BCC4FD1F2F733067591FC7D918"
+        "ManifestHash": "AE32821D8763EFF74EAFB0123871134EF1E1164CF12A9F97D0029E8DED1E4108"
     }
 ]
