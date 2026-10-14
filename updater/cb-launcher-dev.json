@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        3776880,
-        "10A9EE7E52E1E6A1CEA88ACF18F8212EC74A1DF7"
+        3800432,
+        "C3155039271AA26E8220CDD941976086715B8B36"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -81,8 +81,8 @@
     ],
     [
         "data/launcher-ui/assets/css/main.css",
-        227041,
-        "BD93A784665835362742CEDDB97BD877F0D7BC99"
+        227496,
+        "722D98CF0499915998AA84BFD7DF9547BDC96CC4"
     ],
     [
         "data/launcher-ui/assets/fonts/ibm-plex-mono-400.woff2",
@@ -516,8 +516,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/command.js",
-        25983,
-        "C283A263F3E4D7D5F2CFA11C01E1D0789F1B32EE"
+        27112,
+        "14811487FB74F4A58743A087D5552FDF222F4FBA"
     ],
     [
         "data/launcher-ui/assets/js/core/community.js",
@@ -536,8 +536,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        243975,
-        "77FB7FC2FE4A56442064C021399AB28E23A43B7A"
+        255976,
+        "95688D78940C1BCD3DEA066C5314436415106E3F"
     ],
     [
         "data/launcher-ui/assets/js/core/mod-queue.js",
@@ -571,8 +571,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/utils.js",
-        54634,
-        "881C952F18D25C70611FAA992C196F8DA6CDA1FD"
+        54580,
+        "C58988F3F01749DE0208AE0722A85B92BCD1A0F3"
     ],
     [
         "data/launcher-ui/assets/js/popups/component-selection-popup.js",
@@ -591,8 +591,8 @@
     ],
     [
         "data/launcher-ui/assets/js/popups/game-settings-popup.js",
-        37521,
-        "9D643C09DD7B0CA5D4A7D04C288881A7F516B71B"
+        39830,
+        "4EE2FA6E9DE4B0591C5D9605AAE4DD303B0E6DDC"
     ],
     [
         "data/launcher-ui/assets/js/popups/mod-detail-popup.js",
@@ -730,6 +730,6 @@
         "E254FD0A876B793A25FAF4AA16DBA275F6544A5D"
     ],
     {
-        "ManifestHash": "CAFB1FF9A28F63B9C97905C4F299A24D889F5A10E46768C0E676A293D77DD434"
+        "ManifestHash": "4B19EE4508DDF67888796EE88693CE3019860B147552B1C8154F0B4265337C9B"
     }
 ]
