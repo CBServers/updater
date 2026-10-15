@@ -96,16 +96,18 @@ pcall( function ()
 	end
 end )
 
--- a same-match friend is reported as LobbyJoinable 9 (spare slot) rather than plain not-joinable
+-- a same-match friend is reported as LobbyJoinable 9 (spare slot), a party member as 11 (unused), rather than plain not-joinable
 pcall( function ()
 	require( "ui.T6.lobby.presence" )
 
 	if CoD and CoD.Presence then
 		if CoD.Presence.LobbyFriendJoinableStrings then
 			CoD.Presence.LobbyFriendJoinableStrings[9] = "In your match"
+			CoD.Presence.LobbyFriendJoinableStrings[11] = "In your party"
 		end
 		if CoD.Presence.LobbyRecentPlayersJoinableStrings then
 			CoD.Presence.LobbyRecentPlayersJoinableStrings[9] = "In your match"
+			CoD.Presence.LobbyRecentPlayersJoinableStrings[11] = "In your party"
 		end
 	end
 end )
