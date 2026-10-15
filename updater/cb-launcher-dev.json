@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        3800432,
-        "C3155039271AA26E8220CDD941976086715B8B36"
+        3801456,
+        "FEE5323E58C6F72A418DE7B91270639852AB6FF1"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -511,8 +511,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/cb-friends.js",
-        68282,
-        "8A09D236C89B3ECEBE68DC5BA17B84E04FF7CA25"
+        68314,
+        "10DBB898D47B105A4BFD72AF019C3731572F238D"
     ],
     [
         "data/launcher-ui/assets/js/core/command.js",
@@ -536,8 +536,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        255976,
-        "95688D78940C1BCD3DEA066C5314436415106E3F"
+        256221,
+        "7FCEE47B6D7F7B63016CF70BC11B38A13B2256AC"
     ],
     [
         "data/launcher-ui/assets/js/core/mod-queue.js",
@@ -730,6 +730,6 @@
         "E254FD0A876B793A25FAF4AA16DBA275F6544A5D"
     ],
     {
-        "ManifestHash": "4B19EE4508DDF67888796EE88693CE3019860B147552B1C8154F0B4265337C9B"
+        "ManifestHash": "678E5B627925E0015A61B0F4E7260F0ED96D28C35BEE07E7BE76B96476728DDC"
     }
 ]
