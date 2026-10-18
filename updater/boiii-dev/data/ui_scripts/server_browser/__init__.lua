@@ -376,3 +376,23 @@ CoD.ServerBrowserRowInternal.new = function(menu, controller)
 
 	return self
 end
+
+local categories = DataSources.ServerBrowserCategories
+if categories then
+	local originalPrepare = categories.prepare
+	categories.prepare = function(controller, list, filter)
+		originalPrepare(controller, list, filter)
+		if not IsZM() then
+			return
+		end
+
+		for _, item in ipairs(list[list.customDataSourceHelper] or {}) do
+			local serverType = Engine.GetModel(item.model, "serverType")
+			if serverType and Engine.GetModelValue(serverType) == Enum.SteamServerRequestType.STEAM_SERVER_REQUEST_TYPE_ZOMBIES then
+				item.properties = item.properties or {}
+				item.properties.selectIndex = true
+				break
+			end
+		end
+	end
+end

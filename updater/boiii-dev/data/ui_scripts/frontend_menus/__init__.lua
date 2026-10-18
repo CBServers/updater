@@ -195,6 +195,12 @@ local addCustomButtons = function(controller, menuId, buttonTable, isLeader)
   end
 
   if menuId == LobbyData.UITargets.UI_ZMLOBBYONLINE.id then
+    local findMatchIndex = utils.GetButtonIndex(buttonTable, CoD.LobbyButtons.ZM_FIND_MATCH)
+    if findMatchIndex ~= nil then
+      utils.RemoveButton(buttonTable, CoD.LobbyButtons.ZM_FIND_MATCH)
+      utils.AddLargeButton(controller, buttonTable, CoD.LobbyButtons.SERVER_BROWSER, findMatchIndex)
+    end
+
     utils.RemoveButton(buttonTable, CoD.LobbyButtons.THEATER_ZM)
 
     if modOwnsLobbyMenus() then
@@ -209,7 +215,7 @@ local addCustomButtons = function(controller, menuId, buttonTable, isLeader)
       utils.AddLargeButton(controller, buttonTable, CoD.LobbyButtons.THEATER_ZM)
 
       utils.RemoveSpaces(buttonTable)
-      utils.AddSpacer(buttonTable, utils.GetButtonIndex(buttonTable, CoD.LobbyButtons.SERVER_BROWSER))
+      utils.AddSpacer(buttonTable)
       local bgbIndex = utils.GetButtonIndex(buttonTable, CoD.LobbyButtons.ZM_BUBBLEGUM_BUFFS)
       if bgbIndex ~= nil and bgbIndex > 1 then
         -- Separates the button ABOVE GobbleGum; when GobbleGum is first there is none, and index 0
