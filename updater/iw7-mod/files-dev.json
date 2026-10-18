@@ -10,6 +10,11 @@
         "90F83CB020F1ADEF58885144A7C734DB7E235B1D"
     ],
     [
+        "cdata/custom_scripts/frontend/usermaps.gsc",
+        981,
+        "CF76F1773BF8464CE9BD3A07561C9675B0AC3FBC"
+    ],
+    [
         "cdata/custom_scripts/mp/bots.gsc",
         14976,
         "0A59D7AB8C6CB564460587ABD46FF176B7C0D973"
@@ -385,6 +390,11 @@
         "9C0AC5DC6331EDBEC3CBCD59F527AF8A5A951D7E"
     ],
     [
+        "cdata/ui_scripts/Usermaps/__init__.lua",
+        6713,
+        "DDE298F4952F9AB0A590B9AFBF3AB8EB0F6EEA4F"
+    ],
+    [
         "cdata/zone/iw7mod_code_post_gfx.ff",
         488,
         "5333F3ED27B95A976B9AFEE14D62961DE754BCF9"
@@ -421,10 +431,10 @@
     ],
     [
         "iw7-mod.exe",
-        5402624,
-        "BB260E6E774F4F5D74C6292EDE9E24DA073A6FC1"
+        5812224,
+        "9998AB21DFFF3D40895047CAE8CD94F65038FA69"
     ],
     {
-        "ManifestHash": "4186573B8235501801654592626E54EF2B119903B069B98013C22D89B142FE71"
+        "ManifestHash": "037E369A4C1A656BBD135DCFEA858E1E10829C2DA46A58BBD053E69B891E4C13"
     }
 ]
