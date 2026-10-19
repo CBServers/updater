@@ -15,6 +15,16 @@
         "DE97C737A3F0FF78E9828395F445EFDA30FF8F84"
     ],
     [
+        "crash-reporter/Sentry.CrashReporter",
+        62716427,
+        "6D27356D7E6345953B1C6768AB4AAA1A44CDAE1B"
+    ],
+    [
+        "crash-reporter/Sentry.CrashReporter.exe",
+        64992684,
+        "33B29FBA12F5A78DE4A6FFEA93AD43A3D6651931"
+    ],
+    [
         "iw4x/html/img/background_default.png",
         426091,
         "4AD0FACFB97D529E5AD9848BAB7663A780E3ECFE"
@@ -51,8 +61,8 @@
     ],
     [
         "iw4x/iw4x_00.iwd",
-        13799673,
-        "7D22393A5A1CC0F78AE4BBD357DC764A5393B269"
+        13800548,
+        "949CD38EB666958B563EBD6ABD601E18AF3C51B2"
     ],
     [
         "iw4x/iw4x_01.iwd",
@@ -91,8 +101,8 @@
     ],
     [
         "iw4x.dll",
-        3823616,
-        "F5C7D502863CF47B190FA527C41F3AFAEA10C55C"
+        4907008,
+        "6C4B99404653AE82CDCFD473FE142EE6BCB3EAE2"
     ],
     [
         "iw4x.exe",
@@ -103,6 +113,11 @@
         "linux/companion",
         1729472,
         "29E43E96C3B84D3BD1BB06505B8FD6AD93638A34"
+    ],
+    [
+        "linux/crash-reporter",
+        950,
+        "95CA8340B6585E0BB9F89664713AA2C4E210873A"
     ],
     [
         "linux/lib/companion/haswell/libcompanion.so",
@@ -181,23 +196,23 @@
     ],
     [
         "zone/patch/iw4x_localized_english.ff",
-        10457,
-        "F8CE7BC57CB7803AED5C3B204AC8B053A8BB3351"
+        10469,
+        "FF5CE1122462B9B07A9B1D5754B821D20885756F"
     ],
     [
         "zone/patch/iw4x_localized_french.ff",
-        5220,
-        "E7B404BCC69E762D91F4CBABC9F08DDC678D913E"
+        5231,
+        "20B1E7EBCB31C6B7267017504858F4C4D253D730"
     ],
     [
         "zone/patch/iw4x_localized_russian.ff",
-        10183,
-        "7F5768097894318792CE2BBBA955647D6B358C30"
+        10197,
+        "4E26785D046FA25EEDC4FD9F03FBC468258ECEF0"
     ],
     [
         "zone/patch/iw4x_localized_spanish.ff",
-        5223,
-        "95C4E051F7AA1F88554E18300ED62D2E494BCDAC"
+        5230,
+        "941046606D43C2039933593C417156782B39CE80"
     ],
     [
         "zone/patch/iw4x_patch_mp.ff",
@@ -455,6 +470,6 @@
         "BEEBCBDB5F515237E26A87C98F7ED5F0C385778E"
     ],
     {
-        "ManifestHash": "66B3F1C0F09C3BE02E187522F72601A106A7D993682D00CE98B60C968479C74B"
+        "ManifestHash": "B0749FDB9C60E499D2D8E157994DF5C5828472771BA2939940D7E758D3B9E176"
     }
 ]
