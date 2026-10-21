@@ -1,0 +1,19 @@
+{
+  "fingerprint": "22acda20e08c",
+  "sources": [
+    {
+      "name": "alterware/alterware-launcher",
+      "kind": "release",
+      "version": "v0.11.6",
+      "url": "https://github.com/alterware/alterware-launcher/releases/tag/v0.11.6",
+      "key": "ace51032cded338b3bb29cdc83a75be410443d996f1241b04d765ec65829e131"
+    },
+    {
+      "name": "plutonium.exe",
+      "kind": "file",
+      "version": "2023-02-23",
+      "url": "https://cdn.plutonium.pw/updater/plutonium.exe",
+      "key": "82cc1a88470ba4e62fc1ac0f1769c2a3e0486383d607798f567189829326f6ca"
+    }
+  ]
+}

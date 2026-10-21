@@ -1,0 +1,12 @@
+{
+  "fingerprint": "bbed070c0589",
+  "sources": [
+    {
+      "name": "callofduty2x/CoD2x",
+      "kind": "release",
+      "version": "v1.4.6.8",
+      "url": "https://github.com/callofduty2x/CoD2x/releases/tag/v1.4.6.8",
+      "key": "e4dc5b61fd1278ef473567aef37f40ab493147828d76a307fd939680f5a37d7c"
+    }
+  ]
+}

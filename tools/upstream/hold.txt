@@ -1,0 +1,3 @@
+# Clients listed here (one per line) get no update PRs until removed.
+# Use it when upstream keeps shipping broken builds. Example:
+# iw4x

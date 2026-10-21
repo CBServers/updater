@@ -1,0 +1,12 @@
+{
+  "fingerprint": "432ee3d3a5c0",
+  "sources": [
+    {
+      "name": "iw3x manifest",
+      "kind": "release",
+      "version": "client v26",
+      "url": "http://74.208.200.240/manifest.json",
+      "key": "37605f8a5e0b2098d324c18818cab0a55a0fc94251cf1596ebbb462dd4c6c65d"
+    }
+  ]
+}

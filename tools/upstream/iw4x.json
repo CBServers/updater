@@ -1,0 +1,26 @@
+{
+  "fingerprint": "ca4f350ca75b",
+  "sources": [
+    {
+      "name": "iw4x/iw4x-client",
+      "kind": "release",
+      "version": "r5278",
+      "url": "https://github.com/iw4x/iw4x-client/releases/tag/r5278",
+      "key": "e6be2be187fd84783c29a50b56301a199befa9ff59a240bc51b088fcd4b89f7e"
+    },
+    {
+      "name": "iw4x/iw4x-rawfiles",
+      "kind": "release",
+      "version": "v0.2.39",
+      "url": "https://github.com/iw4x/iw4x-rawfiles/releases/tag/v0.2.39",
+      "key": "4d9096ed9814227f3739d133f57ceaabe646f5fb058955485b92bc4c31d4111e"
+    },
+    {
+      "name": "alterware/alterware-launcher",
+      "kind": "release",
+      "version": "v0.11.6",
+      "url": "https://github.com/alterware/alterware-launcher/releases/tag/v0.11.6",
+      "key": "ace51032cded338b3bb29cdc83a75be410443d996f1241b04d765ec65829e131"
+    }
+  ]
+}

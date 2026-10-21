@@ -1,0 +1,26 @@
+{
+  "fingerprint": "e6ed6f725e35",
+  "sources": [
+    {
+      "name": "callofduty4x/CoD4x_Client_pub",
+      "kind": "release",
+      "version": "21.8",
+      "url": "https://github.com/callofduty4x/CoD4x_Client_pub/releases/tag/21.8",
+      "key": "f9cb093079dc4819c56d9f8301162d76c4f765da8a74b0c05559838619f4cefb"
+    },
+    {
+      "name": "callofduty4x/CoD4x-mss",
+      "kind": "release",
+      "version": "1.0.2",
+      "url": "https://github.com/callofduty4x/CoD4x-mss/releases/tag/1.0.2",
+      "key": "a0bc862a42a823de21aa5662d663577b9467a37f191b49ec2f4eca258e43cf15"
+    },
+    {
+      "name": "callofduty4x/CoD4x-launcher",
+      "kind": "release",
+      "version": "1.1.3",
+      "url": "https://github.com/callofduty4x/CoD4x-launcher/releases/tag/1.1.3",
+      "key": "72f95950adef944b34ae207740242cf64588ca9f2503846f41a5b75a8e27e94e"
+    }
+  ]
+}

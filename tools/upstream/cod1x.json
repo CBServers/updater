@@ -1,0 +1,12 @@
+{
+  "fingerprint": "bd0300fcaca8",
+  "sources": [
+    {
+      "name": "xtnded/codextended-client",
+      "kind": "release",
+      "version": "2697",
+      "url": "https://github.com/xtnded/codextended-client/releases/tag/2697",
+      "key": "5976fd4c390eb4a756376b595aa06ed166bb783f39593e14b3350521d0784b85"
+    }
+  ]
+}

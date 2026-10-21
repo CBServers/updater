@@ -1,0 +1,95 @@
+name: Upstream updates
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+    inputs:
+      client:
+        description: Client to check
+        type: choice
+        default: all
+        options:
+          - all
+          - alt-launchers
+          - cod1x
+          - cod2x
+          - cod4x-mp
+          - h2-mod
+          - iw3sp-mod
+          - iw3x
+          - iw4x
+      force:
+        description: Rebuild even if up to date, already proposed, or on hold
+        type: boolean
+        default: false
+
+concurrency:
+  group: upstream-updates
+
+env:
+  REVIEWER: bradstv
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+    outputs:
+      clients: ${{ steps.check.outputs.clients }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          sparse-checkout: tools
+
+      - id: check
+        name: Check upstreams
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ github.token }}
+          CLIENT: ${{ inputs.client || 'all' }}
+          FORCE: ${{ inputs.force || false }}
+        run: ./tools/ci/check-upstreams.ps1 -Client $env:CLIENT -Force:($env:FORCE -eq 'true')
+
+  update:
+    needs: check
+    if: needs.check.outputs.clients != '[]'
+    name: ${{ matrix.client }}
+    runs-on: windows-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+      pull-requests: write
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJSON(needs.check.outputs.clients) }}
+    steps:
+      # Hashes must match the exact bytes players download, so no CRLF conversion
+      - run: git config --global core.autocrlf false
+
+      - uses: actions/checkout@v5
+        with:
+          sparse-checkout: |
+            tools
+            updater/${{ matrix.client }}
+
+      - name: Run ${{ matrix.script }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: ./tools/${{ matrix.script }}
+
+      - name: Open PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CLIENT: ${{ matrix.client }}
+          FINGERPRINT: ${{ matrix.fingerprint }}
+          BRANCH: ${{ matrix.branch }}
+          TITLE: ${{ matrix.title }}
+          SOURCES: ${{ matrix.sources }}
+        run: ./tools/ci/publish-update.ps1 -Client $env:CLIENT -Fingerprint $env:FINGERPRINT -Branch $env:BRANCH -Title $env:TITLE -SourcesJson $env:SOURCES -Reviewer $env:REVIEWER
