@@ -12,7 +12,7 @@
     [
         "Launch Project BO4.exe",
         112640,
-        "95E4E4A0E271A9255727CF4F1BF49E0E5DA4371F"
+        "329433F4880F5A17539DE8E838985D89ECC53DDD"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/maxrankdata_mp.csv",
@@ -607,7 +607,7 @@
     [
         "project-bo4/launcher/project-bo4.json",
         118,
-        "B19E5B4EB24830D0CA3E5992D4789EB55D4E602F"
+        "8E50DCC707D1DB43A841C0CC54C377F3288B2BA2"
     ],
     [
         "project-bo4/launcher/Qt6Core.dll",
@@ -632,7 +632,7 @@
     [
         "project-bo4/launcher/Shield_Launcher.exe",
         326656,
-        "E5683DB73E647B9C20E5EF2F65F863E40F6D3533"
+        "69AF69DD3236CB437805BFD6840DCE5141BEEBD3"
     ],
     [
         "project-bo4/launcher/solo/XInput9_1_0.dll",
@@ -690,6 +690,6 @@
         "7BEE5FF8DBD1C98E5A6FAC24B671A1BF95FB9022"
     ],
     {
-        "ManifestHash": "CE350EE5FF3941087DC544A2A9767212C31632D310F817721DF90E0F619BB078"
+        "ManifestHash": "222CD7B8BCAB23942F03B12201F0E105C0497E49C60D4AEBB6AC7EF966F33D5D"
     }
 ]
