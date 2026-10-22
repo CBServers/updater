@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        3801456,
-        "FEE5323E58C6F72A418DE7B91270639852AB6FF1"
+        3812720,
+        "9E9E51071A3E30E8CFA475EAF1EC99C727D7BF42"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -496,8 +496,8 @@
     ],
     [
         "data/launcher-ui/assets/js/app/mods-view.js",
-        32507,
-        "B1EBB6DEBE5213800481D56A98D488858A5EBAE1"
+        32821,
+        "889F7DCF518CA875E23B4A5464DAF87BDFA55755"
     ],
     [
         "data/launcher-ui/assets/js/app/servers-view.js",
@@ -536,8 +536,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        256221,
-        "7FCEE47B6D7F7B63016CF70BC11B38A13B2256AC"
+        258757,
+        "318B35769442A002383CF309B61DEBC0102B75C9"
     ],
     [
         "data/launcher-ui/assets/js/core/mod-queue.js",
@@ -571,8 +571,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/utils.js",
-        54580,
-        "C58988F3F01749DE0208AE0722A85B92BCD1A0F3"
+        56565,
+        "4C4F95BA3656BB4ABCC338F87D536CDBFBD286FD"
     ],
     [
         "data/launcher-ui/assets/js/popups/component-selection-popup.js",
@@ -601,8 +601,8 @@
     ],
     [
         "data/launcher-ui/assets/js/popups/redist-popup.js",
-        8738,
-        "AB93476DA35350E471A2737E2E91B62D02FEF483"
+        8938,
+        "5E152C2AFF2B07EC63828D67BF4C51D17FA18D82"
     ],
     [
         "data/launcher-ui/assets/js/popups/setup-flow-popup.js",
@@ -730,6 +730,6 @@
         "E254FD0A876B793A25FAF4AA16DBA275F6544A5D"
     ],
     {
-        "ManifestHash": "678E5B627925E0015A61B0F4E7260F0ED96D28C35BEE07E7BE76B96476728DDC"
+        "ManifestHash": "07918B8641891DADDE57E4E375D0CDBDBDDC48C4AD8217CD7934FA2617F9BD7C"
     }
 ]
