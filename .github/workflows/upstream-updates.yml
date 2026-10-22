@@ -58,7 +58,8 @@ jobs:
 
   update:
     needs: check
-    if: needs.check.outputs.clients != '[]'
+    # A failed check still lists the clients it could reach, so update those anyway
+    if: ${{ !cancelled() && needs.check.outputs.clients != '' && needs.check.outputs.clients != '[]' }}
     name: ${{ matrix.client }}
     runs-on: windows-latest
     timeout-minutes: 60
