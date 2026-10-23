@@ -1,6 +1,6 @@
-local function insertFriendsToggle(options)
+local function insertFriendsToggle(options, index)
 	local isOpen = Dvar.nat_open:get()
-	table.insert(options, {models = {
+	table.insert(options, index or #options + 1, {models = {
 		displayText = isOpen and "CLOSE TO FRIENDS" or "OPEN TO FRIENDS",
 		action = function(...)
 			Engine.Exec(nil, "nat_host")
@@ -97,3 +97,25 @@ DataSources.StartMenuGameOptions = ListHelper_SetupDataSource("StartMenuGameOpti
 	table.insert(options, {models = {displayText = "QUIT TO DESKTOP", action = OpenPCQuit}})
 	return options
 end, true)
+
+-- AAE's zombies pause menu builds its own list instead of StartMenuGameOptions; slot the toggle in above END GAME
+local listHelperPrepare = CoD.BoiiiListHelperPrepare or ListHelper_Prepare
+CoD.BoiiiListHelperPrepare = listHelperPrepare
+ListHelper_Prepare = function(list, controller, name, listFunc, ...)
+	if name == "StartMenuGameOptionsELMG" and Dvar.cl_isLobbyHost:get() then
+		local buildOptions = listFunc
+		listFunc = function(...)
+			local options = buildOptions(...)
+			local endGameIndex = nil
+			for index, option in ipairs(options) do
+				if option.models and option.models.action == QuitGame_MP then
+					endGameIndex = index
+					break
+				end
+			end
+			insertFriendsToggle(options, endGameIndex)
+			return options
+		end
+	end
+	return listHelperPrepare(list, controller, name, listFunc, ...)
+end

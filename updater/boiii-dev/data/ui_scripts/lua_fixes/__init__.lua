@@ -17,3 +17,13 @@ if CoDShared and CoDShared._originalTable then
 		return quitGame(controller, unbalancedTeams)
 	end
 end
+
+-- AAE's clock widget fetches weather for boiii's emulated geo (always New York, sent as an unencoded URL); leave it off
+if GetWeatherData ~= nil then
+	GetWeatherData = function() end
+end
+
+-- disable AAE update check
+if AAEOnlineVersion ~= nil then
+	AAEOnlineVersion = function() end
+end
