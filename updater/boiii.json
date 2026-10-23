@@ -1,13 +1,13 @@
 [
     [
         "BlackOps3.exe",
-        105994224,
-        "08AB18921C0075DDB273E4FB2BEB1ADF3C5C2FA1"
+        106059256,
+        "9D03F81086112113BFB1DD22B8538B9398AC3B9B"
     ],
     [
         "boiii.exe",
-        3185152,
-        "965003C41679640CCE2C20E4C015B4FD6D792612"
+        3514368,
+        "EBD4830640225F905456F897EE5405876ECA8DD1"
     ],
     [
         "data/gamesettings/mp/gamesettings_escort.cfg",
@@ -96,8 +96,8 @@
     ],
     [
         "data/ui_scripts/friend_join/__init__.lua",
-        8304,
-        "BB31445292E633157B879EE107FC6EE54FA4DBED"
+        8556,
+        "7229C2FE7D6EE9C00B123CA49DBAFB4338E4C2C8"
     ],
     [
         "data/ui_scripts/frontend_menus/datasources_change_map_categories.lua",
@@ -126,8 +126,8 @@
     ],
     [
         "data/ui_scripts/frontend_menus/__init__.lua",
-        9146,
-        "57309E6B71B8A03C48804E7330B721E41A1862E9"
+        9384,
+        "3E59CBA076FDC9FAB65034345147DC8A2006DDB8"
     ],
     [
         "data/ui_scripts/graphics_settings/__init__.lua",
@@ -141,23 +141,23 @@
     ],
     [
         "data/ui_scripts/lobby_settings/__init__.lua",
-        4425,
-        "CD048F270335668BF6DC2AA51C02BCD8B7D404B3"
+        4497,
+        "1FC6D9054AA679106E16EFD91FA6544A5C372905"
     ],
     [
         "data/ui_scripts/lua_fixes/__init__.lua",
-        104,
-        "E1B587FDCD8E58CA4F07C37AF44C5515BF86FAE3"
+        1034,
+        "CD7B0398937DCA108690DEA914D473C459D82768"
     ],
     [
         "data/ui_scripts/mod_permission/__init__.lua",
-        3155,
-        "35D70C4ED8778361B979F572BF584678047FBF6E"
+        3999,
+        "FB2F239FAF3CABF6AEF99824C4D5D485F6BFA5A8"
     ],
     [
         "data/ui_scripts/party/datasources_start_menu_game_options.lua",
-        5408,
-        "83825F7141D7FBDCEEA0FB417AD3C73AFA48E69B"
+        6248,
+        "356455ABA2D3BBCC7E3D0EAE05AFF6D501FD2BB4"
     ],
     [
         "data/ui_scripts/party/zombie_toast.lua",
@@ -166,8 +166,13 @@
     ],
     [
         "data/ui_scripts/party/__init__.lua",
-        904,
-        "738025AC995C27387D484E02A250A108DBF4810C"
+        2992,
+        "AC4EA5AAFD41C23E814465B29CBBE4A8EC6685D0"
+    ],
+    [
+        "data/ui_scripts/party_follow/__init__.lua",
+        6057,
+        "8EA919C46501E75D730F173B1A010F002949B588"
     ],
     [
         "data/ui_scripts/playlist/widget_playlist_category_match_settings_info.lua",
@@ -196,8 +201,8 @@
     ],
     [
         "data/ui_scripts/server_browser/__init__.lua",
-        13148,
-        "8F90D89B8622973D99E61F890314DCD613CFC2F3"
+        13777,
+        "D22ABDE781DC39F3406948ADC27AD37B4F2624C7"
     ],
     [
         "data/ui_scripts/server_password/__init__.lua",
@@ -215,6 +220,6 @@
         "BE692175B916BC9A8098835BB1EE5A288B35D1E8"
     ],
     {
-        "ManifestHash": "85896D479E326A70051F1BF6C990D21BCF8DF2D53F99AD998954430202FBB6AE"
+        "ManifestHash": "D4E6B1071B6E724AEAED94BBEF1284BBDC89F55EA5555405A41BEB4F4FE0B602"
     }
 ]
