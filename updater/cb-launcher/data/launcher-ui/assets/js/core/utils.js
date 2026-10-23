@@ -20,6 +20,7 @@ const PROPERTY_KEYS = {
         PORTABLE_MODE: 'launcher-portable-mode',
         CB_COMMUNITY_ENABLED: 'launcher-cb-community-enabled',
         CB_CHAT_SEEN: 'launcher-cb-chat-seen',
+        CB_BETA_FEATURES: 'launcher-cb-beta-features',
         DESKTOP_NOTIFICATIONS: 'launcher-desktop-notifications',
         REDUCE_MOTION: 'launcher-reduce-motion',
         PLAYER_COUNT_MODE: 'launcher-player-count-mode',
@@ -31,7 +32,6 @@ const PROPERTY_KEYS = {
         LAUNCH_OPTIONS: 'launch-options',
         GAME_MODE: 'game-mode',
         SELECTED_CLIENT_PREFIX: 'selected-client-',
-        SKIP_INTRO_CINEMATIC: 'skip-intro-cinematic',
         LAUNCH_ADMIN: 'launch-admin',
         PLUTONIUM_LAN: 'plutonium-lan',
         DISABLE_CB_EXTENSION: 'disable-cb-extension',
@@ -347,8 +347,9 @@ class GameUtils {
             provider: '',
             clientKey: 'others',
             comingSoon: true,
+            betaFeature: 'ww2',
             hasMultipleModes: true,
-            supportedModes: ['mp', 'sp', 'zm'],
+            supportedModes: ['sp', 'mp', 'zm'],
             supportsName: false,
             specialSettings: [],
             version: 'S2',
@@ -393,6 +394,7 @@ class GameUtils {
             clientKey: 'others',
             hasMultipleModes: false,
             supportedModes: [],
+            campaignOnly: true,
             supportsName: false,
             specialSettings: [],
             version: 'H2',
@@ -527,9 +529,27 @@ class GameUtils {
         return this.getGameConfig(backendId);
     }
 
+    // Early access granted to this CB account; a coming-soon game naming one of these is playable.
+    static betaFeatures = new Set();
+
+    // Returns whether the set changed, so the caller knows to redraw.
+    static setBetaFeatures(features) {
+        const next = new Set(Array.isArray(features) ? features.filter(f => typeof f === 'string') : []);
+        const changed = next.size !== this.betaFeatures.size || [...next].some(f => !this.betaFeatures.has(f));
+        this.betaFeatures = next;
+        return changed;
+    }
+
     static isComingSoon(uiId) {
         const config = this.getGameConfigByUIId(uiId);
-        return !!(config && config.comingSoon);
+        if (!config || !config.comingSoon) return false;
+        return !(config.betaFeature && this.betaFeatures.has(config.betaFeature));
+    }
+
+    // No online play at all, so nothing social (community rooms) applies to it.
+    static isCampaignOnly(uiId) {
+        const config = this.getGameConfigByUIId(uiId);
+        return !!(config && config.campaignOnly);
     }
 
     /**
@@ -673,6 +693,18 @@ class GameUtils {
             .replace(/>/g, '&gt;')
             .replace(/"/g, '&quot;')
             .replace(/'/g, '&#39;');
+    }
+
+    // A select is as wide as its longest option; fit it to the selected name so the arrow sits beside it.
+    static fitSelectWidth(select) {
+        const probe = document.createElement('span');
+        const style = getComputedStyle(select);
+        probe.style.cssText = `position:absolute;visibility:hidden;white-space:nowrap;font:${style.font};letter-spacing:${style.letterSpacing};text-transform:${style.textTransform}`;
+        probe.textContent = select.options[select.selectedIndex].text;
+        document.body.appendChild(probe);
+        const padding = parseFloat(style.paddingLeft) + parseFloat(style.paddingRight) + parseFloat(style.borderLeftWidth) * 2;
+        select.style.width = `${Math.ceil(probe.getBoundingClientRect().width + padding)}px`;
+        probe.remove();
     }
 
     // CoD engines colour text with ^ followed by 0-9 or : (rainbow); mod titles carry them verbatim.
@@ -959,10 +991,11 @@ class GameUtils {
         return { percent, currentName: current ? current.name : null };
     }
 
+    // Resolves { ok, packages } with the scoped packages so callers can see reboot and capability flags.
     static async installRedistsWithProgressBar(missingGroups, uiGameId) {
         const t = (k, vars) => window.LauncherI18n ? window.LauncherI18n.t(k, vars) : k;
 
-        if (!await window.guardOnline()) return false;
+        if (!await window.guardOnline()) return { ok: false, packages: [] };
 
         const scopeIds = this.expandMissingToPackageIds(missingGroups);
 
@@ -973,18 +1006,18 @@ class GameUtils {
         const alreadyRunning = !!(initial && initial.running);
 
         if (!alreadyRunning) {
-            if (scopeIds.length === 0) return true;
+            if (scopeIds.length === 0) return { ok: true, packages: [] };
             try { await window.executeCommand('install-redist', { ids: scopeIds }); }
-            catch (e) { console.error('install-redist failed', e); return false; }
+            catch (e) { console.error('install-redist failed', e); return { ok: false, packages: [] }; }
         }
 
         window.ProgressManager.show(uiGameId, t('installer.installingComponents'), null);
 
         return new Promise((resolve) => {
-            const finish = (success) => {
+            const finish = (ok, packages = []) => {
                 if (pollId) clearInterval(pollId);
                 window.ProgressManager.hide();
-                resolve(success);
+                resolve({ ok, packages });
             };
 
             const tick = async () => {
@@ -998,14 +1031,45 @@ class GameUtils {
                 window.ProgressManager.update(percent, msg);
 
                 if (state.running === false) {
-                    const failed = (state.packages || []).some(p => p.status === 'failed');
-                    finish(!failed);
+                    const all = state.packages || [];
+                    const failed = all.some(p => p.status === 'failed');
+                    finish(!failed, all.filter(p => scopeIds.includes(p.id)));
                 }
             };
 
             tick();
             const pollId = setInterval(tick, 500);
         });
+    }
+
+    // Windows features that DISM could not add can still be added by hand from Settings. Returns true when shown.
+    static async offerFeatureSettings(packages) {
+        const failed = (packages || []).filter(p => p.capability && p.status === 'failed');
+        if (!failed.length || typeof window.showMessageBox !== 'function') return false;
+
+        const t = (k, vars) => window.LauncherI18n ? window.LauncherI18n.t(k, vars) : k;
+        const p = failed[0];
+        const choice = await window.showMessageBox(
+            t('installer.featureFailedTitle', { name: p.name }),
+            t('installer.featureFailedBody', { name: p.name, error: p.error || '' }),
+            [t('installer.openOptionalFeatures'), t('common.cancel')]);
+        if (choice === 0) window.executeCommand('open-url', { url: 'ms-settings:optionalfeatures' });
+        return true;
+    }
+
+    // Returns true when a just-installed package needs a Windows restart before games can use it.
+    static async warnRestartRequired(packages) {
+        const pending = (packages || []).filter(p => p.reboot);
+        if (!pending.length) return false;
+
+        const t = (k, vars) => window.LauncherI18n ? window.LauncherI18n.t(k, vars) : k;
+        if (typeof window.showMessageBox === 'function') {
+            await window.showMessageBox(
+                t('installer.restartRequiredTitle'),
+                t('installer.restartRequiredBody', { name: pending.map(p => p.name).join(', ') }),
+                [t('common.ok')]);
+        }
+        return true;
     }
 
     /**
@@ -1020,6 +1084,9 @@ class GameUtils {
         if (!gameConfig) {
             console.error(`No configuration found for game: ${backendGame}`);
             throw new Error('Game configuration not found');
+        }
+        if (this.isComingSoon(uiGameId)) {
+            throw new Error('Game is not available yet');
         }
 
         // Guard against launching while another game is updating (singleton progress_tracker).
@@ -1111,14 +1178,16 @@ class GameUtils {
                         } catch (e) { console.error('set-property skip-redist-check failed', e); }
                     }
                 } else {
-                    const ok = await GameUtils.installRedistsWithProgressBar(missing, uiGameId);
+                    const { ok, packages } = await GameUtils.installRedistsWithProgressBar(missing, uiGameId);
                     if (!ok) {
+                        if (await GameUtils.offerFeatureSettings(packages)) return;
                         const i18n = window.LauncherI18n;
                         if (typeof window.showToast === 'function') {
                             window.showToast(i18n ? i18n.t('installer.redistInstallFailed') : 'Failed to install required components.', 'error', 6000);
                         }
                         return;
                     }
+                    if (await GameUtils.warnRestartRequired(packages)) return;
                 }
             }
         }

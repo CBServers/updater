@@ -10,7 +10,11 @@ const mockMods = {
             { id: 'mods:ugx_mod', name: 'ugx_mod', kind: 'mod', folder: 'mods', source: 'import', version: '', installedAt: '2026-06-15T10:00:00Z', size: 251658240 }
         ],
         t5: [
-            { id: 'mods:zm_sumpf_remake', name: 'zm_sumpf_remake', kind: 'mod', folder: 'mods', source: 'import', version: '', installedAt: '2026-08-09T10:00:00Z', size: 429916160 }
+            { id: 'mods:zm_sumpf_remake', name: 'zm_sumpf_remake', kind: 'mod', folder: 'mods', source: 'import', version: '', installedAt: '2026-08-09T10:00:00Z', size: 429916160 },
+            { id: 'usermaps:zombie_moon_remix', name: 'zombie_moon_remix', kind: 'map', folder: 'usermaps', source: 'import', version: '', installedAt: '2026-08-11T10:00:00Z', size: 287309824 }
+        ],
+        iw4x: [
+            { id: 'usermaps:mp_bloc', name: 'mp_bloc', kind: 'map', folder: 'usermaps', source: 'import', version: '', installedAt: '2026-09-02T10:00:00Z', size: 96468992 }
         ],
         t6: [
             { id: 'usermaps:zm_buried_lite', name: 'zm_buried_lite', kind: 'map', folder: 'usermaps', source: 'import', version: '', installedAt: '2026-08-14T10:00:00Z', size: 398458880 },
@@ -22,7 +26,10 @@ const mockMods = {
 
 // Static-preview state for the CB Friends sub-tab and Community board.
 const mockCb = {
-    state: 'none', profile: null, recoveryCode: null,
+    state: 'none', profile: null, recoveryCode: null, error: null,
+    // Handles "clone" and "inuse" at create preview the HWID match card; set discordConflict to preview the switch banner.
+    match: null, pending: null, discordConflict: null,
+    notice: { seq: 0, kind: '', handle: '' },
     friends: { friends: [], incoming: [], outgoing: [] },
     lfg: [
         { cbId: 'cb_ally', handle: 'ally', displayName: 'Ally', avatarUrl: '', online: true, game: 'boiii', mode: 'zm', status: '', relation: 'none', note: 'need 2 for EE', slots: 3, joined: 1, iJoined: false, joinable: true, joiners: [{ cbId: 'cb_vex', handle: 'vex', displayName: 'Vex', avatarUrl: '', accent: '' }] },
@@ -48,9 +55,18 @@ const mockCb = {
     dmMessages: [],
     dmPeer: '',
     modRole: '',
+    // Set to ['ww2'] from the console to preview early access (picked up on the next status poll).
+    betaFeatures: [],
     modReports: [],
     modLog: [],
     modLookup: null
+};
+// Mirrors launch_flags in game_config.cpp: [id, argument, risky, choices?]
+const mockLaunchFlags = {
+    bo3: [['nointro', '-nointro', false], ['unsafe-lua', '-unsafe-lua', true], ['allowproxydlls', '-allowproxydlls', true], ['logfile', '-logfile', false], ['nosteam', '-nosteam', false]],
+    mwr: [['nodriverprofile', '-nodriverprofile', false], ['allow_root_io', '-allow_root_io', true], ['nosteam', '-nosteam', false]],
+    iw: [['nointro', '-nointro', false], ['d3d12', '-d3d12', false], ['allow_root_io', '-allow_root_io', true], ['console', '', false, ['terminal', 'syscon', 'wincon', 'noconsole']]],
+    ww2: [['console', '', false, ['syscon', 'terminal', 'noconsole']]]
 };
 // Discord link state for the preview; flip status from the console to see each Friends card.
 const mockDiscord = { status: 'linked' };
@@ -138,8 +154,37 @@ function mockCommand(command, data) {
             mockDiscord.status = 'unlinked';
             return { started: false };
         case 'cbfriends-get-status':
-            return { state: mockCb.state, profile: mockCb.profile, error: null, hasRecoveryCode: !!mockCb.recoveryCode, joinable: !!(mockCb.presence && mockCb.presence.joinable), presence: mockCb.presence || { game: '' }, mute: mockCb.mute };
+            return { state: mockCb.state, profile: mockCb.profile, error: mockCb.error, hasRecoveryCode: !!mockCb.recoveryCode, joinable: !!(mockCb.presence && mockCb.presence.joinable), presence: mockCb.presence || { game: '' }, mute: mockCb.mute,
+                match: mockCb.state === 'confirm' ? mockCb.match : null, discordConflict: mockCb.state === 'ready' ? mockCb.discordConflict : null,
+                noticeSeq: mockCb.notice.seq, noticeKind: mockCb.notice.kind, noticeHandle: mockCb.notice.handle };
+        case 'cbfriends-confirm-match':
+            if (mockCb.state !== 'confirm') return { started: true };
+            if (!data.adopt) return mockCommand('cbfriends-create-profile', Object.assign({ confirmed: true }, mockCb.pending));
+            if (mockCb.pending.handle === 'inuse') {
+                mockCb.state = 'error';
+                mockCb.error = 'in-use';
+                return { started: true };
+            }
+            mockCb.state = 'ready';
+            mockCb.profile = { cbId: 'cb_ghost', handle: mockCb.match.handle, displayName: mockCb.match.displayName, avatarUrl: '' };
+            mockCb.notice = { seq: mockCb.notice.seq + 1, kind: 'restored', handle: mockCb.match.handle };
+            return { started: true };
+        case 'cbfriends-discord-conflict':
+            if (mockCb.discordConflict && data.action === 'switch') {
+                mockCb.profile = { cbId: 'cb_main', handle: mockCb.discordConflict.handle, displayName: mockCb.discordConflict.displayName, avatarUrl: '' };
+                mockCb.notice = { seq: mockCb.notice.seq + 1, kind: 'restored', handle: mockCb.discordConflict.handle };
+            }
+            mockCb.discordConflict = null;
+            return { started: true };
         case 'cbfriends-create-profile':
+            if (!data.confirmed && (data.handle === 'clone' || data.handle === 'inuse')) {
+                mockCb.state = 'confirm';
+                mockCb.match = { handle: 'ghost_owner', displayName: 'Ghost', avatarUrl: '' };
+                mockCb.pending = { handle: data.handle, displayName: data.displayName };
+                return { started: true };
+            }
+            mockCb.error = null;
+            mockCb.notice = { seq: mockCb.notice.seq + 1, kind: 'created', handle: data.handle };
             mockCb.state = 'ready';
             mockCb.profile = { cbId: 'cb_preview', handle: data.handle, displayName: data.displayName || data.handle, avatarUrl: '' };
             mockCb.recoveryCode = '1A2B-3C4D-5E6F-7A8B-9C0D-1E2F-3A4B-5C6D';
@@ -159,8 +204,10 @@ function mockCommand(command, data) {
             return { started: true };
         case 'cbfriends-recover-code':
             mockCb.state = 'ready';
+            mockCb.error = null;
             mockCb.profile = { cbId: 'cb_preview', handle: 'recovered', displayName: 'Recovered', avatarUrl: '' };
             mockCb.recoveryCode = data.code;
+            mockCb.notice = { seq: mockCb.notice.seq + 1, kind: 'restored', handle: 'recovered' };
             return { started: true };
         case 'cbfriends-get-recovery-code':
             return { code: mockCb.recoveryCode || null };
@@ -198,7 +245,7 @@ function mockCommand(command, data) {
         case 'cbfriends-send-dm':
             return { ok: true };
         case 'cbfriends-mod-status':
-            return { role: mockCb.modRole };
+            return { role: mockCb.modRole, features: mockCb.betaFeatures };
         case 'cbfriends-mod-get-reports':
             return { reports: mockCb.modReports };
         case 'cbfriends-mod-get-log':
@@ -231,6 +278,14 @@ function mockCommand(command, data) {
         case 'cbfriends-mod-resolve':
             mockCb.modReports = mockCb.modReports.filter(r => r.id !== data.id);
             return { ok: true };
+        case 'cbfriends-mod-set-beta': {
+            const apply = list => (list || []).filter(f => f !== data.feature).concat(data.enabled ? [data.feature] : []);
+            if (mockCb.modLookup && mockCb.modLookup.person.cbId === data.cbId) {
+                mockCb.modLookup.features = apply(mockCb.modLookup.features);
+            }
+            if (mockCb.profile && mockCb.profile.cbId === data.cbId) mockCb.betaFeatures = apply(mockCb.betaFeatures);
+            return { ok: true };
+        }
         case 'cbfriends-set-mod-active':
         case 'cbfriends-mod-lookup':
         case 'cbfriends-mod-mute':
@@ -241,9 +296,19 @@ function mockCommand(command, data) {
         case 'cbfriends-show-invite-notification':
         case 'cbfriends-dismiss-invite-notification':
             return { ok: true };
-        case 'cbfriends-block':
-            mockCb.blocked.push(mockPerson('blocked' + mockCb.blocked.length, 'Blocked user'));
+        case 'cbfriends-block': {
+            // Records the actual person and severs the friendship, the way the worker does.
+            const f = mockCb.friends;
+            const pool = mockCb.lfg.concat(f.friends, f.incoming, f.outgoing, mockCb.playedWith, ...Object.values(mockCb.chat));
+            const found = pool.find(p => p.cbId === data.cbId);
+            const person = found
+                ? mockPerson(found.handle, found.displayName, { cbId: found.cbId, avatarUrl: found.avatarUrl || '' })
+                : mockPerson(String(data.cbId).replace(/^cb_/, ''));
+            ['friends', 'incoming', 'outgoing'].forEach(k => { f[k] = f[k].filter(p => p.cbId !== data.cbId); });
+            mockCb.playedWith = mockCb.playedWith.filter(p => p.cbId !== data.cbId);
+            if (!mockCb.blocked.some(p => p.cbId === data.cbId)) mockCb.blocked.push(person);
             return { ok: true };
+        }
         case 'cbfriends-unblock':
             mockCb.blocked = mockCb.blocked.filter(p => p.cbId !== data.cbId);
             return { ok: true };
@@ -365,6 +430,11 @@ function mockCommand(command, data) {
         case 'open-folder':
         case 'open-url':
             return true;
+        case 'get-launch-flags':
+            return (mockLaunchFlags[data && data.game] || []).map(([id, argument, risky, choices]) =>
+                choices ? { id, argument, risky, choices, value: choices[0] } : { id, argument, risky, enabled: false });
+        case 'get-client-channel':
+            return { available: ['bo3', 'ghosts', 'aw', 'mwr', 'iw', 'ww2'].includes(data && data.game), channel: 'release', defaultChannel: 'release' };
         case 'get-missing-redists-for-game':
             return { checked: true, missing: [] };
         default:

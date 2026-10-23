@@ -130,6 +130,12 @@ async function refreshLocalizedUI(targetPage) {
     }
 }
 
+// Early access granted or revoked mid-session; redraws everything that drew the game as coming soon.
+window.applyBetaFeatures = async function (features) {
+    if (!GameUtils.setBetaFeatures(features)) return;
+    await refreshLocalizedUI();
+};
+
 // Game data is now handled individually in each page's HTML file
 
 function sleep(milliseconds) {
@@ -337,6 +343,14 @@ async function initialize() {
     }
 
     await initializeLanguage();
+
+    // Last known early access, so a tester's unlocked game draws unlocked from the first frame, offline too.
+    if (typeof window.executeCommand === 'function') {
+        try {
+            const raw = await window.executeCommand('get-property', PROPERTY_KEYS.LAUNCHER.CB_BETA_FEATURES);
+            if (raw) GameUtils.setBetaFeatures(JSON.parse(raw));
+        } catch (_) {}
+    }
 
     if (window.LauncherI18n) {
         window.LauncherI18n.applyStaticTranslations();
@@ -551,6 +565,10 @@ async function initializeNavigation() {
     const libraryElement = document.querySelector("#library");
     libraryElement.addEventListener("click", handleLibraryClick);
 
+    document.querySelectorAll("#servers, #mods").forEach(el => {
+        el.addEventListener("click", handleGameHubClick);
+    });
+
     // Handle downloads navigation
     const downloadsElement = document.querySelector("#downloads");
     if (downloadsElement) {
@@ -644,6 +662,20 @@ function handleDownloadsClick(e) {
     loadNavigationPage("downloads");
 }
 
+// Servers and Mods; clicking the active item goes back to its game grid.
+function handleGameHubClick(e) {
+    const el = this;
+    const hub = el.id === 'mods' ? window.ModsHub : window.ServersHub;
+    if (el.classList.contains("active")) {
+        if (hub && hub.current()) hub.back();
+        return;
+    }
+
+    removeActiveNavigation();
+    el.classList.add("active");
+    loadNavigationPage(el.id);
+}
+
 function handleFriendsClick(e) {
     const el = this;
     if (el.classList.contains("active")) {
@@ -694,9 +726,11 @@ function handleSettingsClick(e) {
     loadNavigationPage("settings");
 }
 
+// Like Servers and Mods, clicking the active item goes back to the room grid.
 function handleCommunityClick(e) {
     const el = this;
     if (el.classList.contains("active")) {
+        if (window.CommunityManager) window.CommunityManager.backToHub();
         return;
     }
 
@@ -834,6 +868,8 @@ window.GameStateManager = {
         this.launchGraceUntil = Date.now() + 8000;
         const state = this.gameStates[gameId] || {};
         this.gameStates[gameId] = Object.assign({}, state, { isRunning: true });
+        // The poll only redraws on a state change, and the cached state now already says running.
+        createGameButtons(gameId);
         if (window.AppViews && typeof window.AppViews.refreshActionButtons === 'function') {
             window.AppViews.refreshActionButtons();
         }
@@ -858,8 +894,12 @@ window.GameStateManager = {
         // Get current installation status
         const installStatus = await checkGameInstallation(gameId);
 
-        // Check if game is running
-        const isRunning = await this.checkGameRunning(gameId);
+        let isRunning = await this.checkGameRunning(gameId);
+        // Hold a just-launched game as running until its process first shows up, so STOP doesn't flicker back to PLAY.
+        if (gameId === this.runningGameId && Date.now() < this.launchGraceUntil) {
+            if (isRunning) this.launchGraceUntil = 0;
+            else isRunning = true;
+        }
 
         // Store the state
         const previousState = this.gameStates[gameId];
@@ -915,6 +955,7 @@ window.GameStateManager = {
             const trackedId = this.runningGameId;
             const prev = this.gameStates[trackedId] || {};
             const isRunning = await this.checkGameRunning(trackedId);
+            if (isRunning) this.launchGraceUntil = 0;
             if (isRunning || Date.now() > this.launchGraceUntil) {
                 if (prev.isRunning !== isRunning) cardsNeedRefresh = true;
                 this.gameStates[trackedId] = Object.assign({}, prev, { isRunning });
@@ -1193,7 +1234,7 @@ window.DownloadQueueManager = {
 
     _processNext: function() {
         if (this.active) return;
-        const idx = this.queue.findIndex(q => !q.paused);
+        const idx = this.queue.findIndex(q => !q.paused && !this._heldByMods(q));
         if (idx < 0) return;
         const item = this.queue.splice(idx, 1)[0];
         this.active = item;
@@ -1309,6 +1350,11 @@ window.DownloadQueueManager = {
         }
     },
 
+    // File ops wait while a mod is installing into the same game's folders.
+    _heldByMods: function(item) {
+        return !!(item.blocksGameButtons && window.ModQueue && window.ModQueue.isActiveFor(item.gameId));
+    },
+
     isBusy: function(gameId) {
         if (this.active && this.active.gameId === gameId && this.active.blocksGameButtons) return true;
         return this.queue.some(q => q.gameId === gameId && q.blocksGameButtons);
@@ -1410,17 +1456,42 @@ function applyDownloadQueueButtonState() {
         btn.textContent = setupButtonLabel(installStatus, busyKindFor(gameId), gameId);
     });
 
-    const downloadsBadge = document.getElementById('downloads-badge');
-    if (downloadsBadge) {
-        const entries = queue.getDownloadEntries();
-        if (entries.length > 0) {
-            downloadsBadge.textContent = String(entries.length);
-            downloadsBadge.style.display = '';
-        } else {
-            downloadsBadge.style.display = 'none';
-        }
-    }
+    updateDownloadsBadge();
 }
+
+function updateDownloadsBadge() {
+    const downloadsBadge = document.getElementById('downloads-badge');
+    if (!downloadsBadge) return;
+    const games = window.DownloadQueueManager ? window.DownloadQueueManager.getDownloadEntries().length : 0;
+    const mods = window.ModQueue ? window.ModQueue.count() : 0;
+    const count = games + mods;
+    downloadsBadge.textContent = String(count);
+    downloadsBadge.style.display = count > 0 ? '' : 'none';
+    // Only shown while something is active, paused or queued; stays put until the user leaves the page.
+    const nav = document.getElementById('downloads');
+    if (nav) nav.style.display = count > 0 || nav.classList.contains('active') ? '' : 'none';
+}
+
+function isDownloadsPageVisible() {
+    const downloadsPage = document.getElementById('downloads-page');
+    return !!(downloadsPage && downloadsPage.style.display !== 'none');
+}
+
+window.addEventListener('cb-mod-queue-changed', () => {
+    updateDownloadsBadge();
+    // A finished mod job can release a game op it was holding.
+    if (window.DownloadQueueManager) window.DownloadQueueManager._processNext();
+    if (isDownloadsPageVisible() && window.AppViews && typeof window.AppViews.renderDownloads === 'function') {
+        window.AppViews.renderDownloads();
+    }
+});
+
+window.addEventListener('cb-mod-queue-progress', (event) => {
+    const detail = event.detail || {};
+    if (isDownloadsPageVisible() && window.AppViews && typeof window.AppViews.refreshModDownloadRow === 'function') {
+        window.AppViews.refreshModDownloadRow(detail.gameId, detail.id);
+    }
+});
 
 window.addEventListener('cb-download-queue-changed', () => {
     applyDownloadQueueButtonState();
@@ -1447,7 +1518,7 @@ window.addEventListener('cb-progress-tick', (event) => {
     const downloadsPage = document.getElementById('downloads-page');
     if (!downloadsPage || downloadsPage.style.display === 'none') return;
 
-    const activeRow = downloadsPage.querySelector('.download-row.active');
+    const activeRow = downloadsPage.querySelector('.download-row.active:not(.mod-row)');
     if (!activeRow) return;
 
     const detail = event.detail || {};
@@ -1515,6 +1586,10 @@ function loadNavigationPage(page) {
         if (window.AppViews && typeof window.AppViews.renderDownloads === 'function') {
             window.AppViews.renderDownloads();
         }
+    } else if (page === 'servers') {
+        if (window.ServersHub) window.ServersHub.show();
+    } else if (page === 'mods') {
+        if (window.ModsHub) window.ModsHub.show();
     } else if (page === 'friends') {
         if (window.AppViews && typeof window.AppViews.refreshFriends === 'function') {
             window.AppViews.renderFriends();
@@ -1562,6 +1637,8 @@ function initializeGamePage(gameId) {
 
     // Create buttons for the game
     createGameButtons(gameId);
+
+    if (window.AppViews) window.AppViews.refreshGameShortcuts(gameId);
 }
 
 async function createGameButtons(gameId) {
@@ -1770,7 +1847,7 @@ async function handleDeepLink(url) {
     const gameSlug = segments[1];
     const modeArg = segments[2];
 
-    if (!['play', 'game', 'install', 'mods'].includes(verb)) {
+    if (!['play', 'game', 'install', 'mods', 'servers'].includes(verb)) {
         console.warn(`deep link: unknown action "${verb}"`);
         if (typeof window.showToast === 'function') {
             window.showToast(t('deepLink.unknownAction', { action: verb }), 'error');
@@ -1796,6 +1873,15 @@ async function handleDeepLink(url) {
         await window.AppViews.unhideGame(uiId);
     }
 
+    // Mods and servers open their own page; a game without one falls through to its game page.
+    if (verb === 'mods' && window.ModsHub && window.ModsHub.supports(uiId)) {
+        await window.ModsView.openDeepLink(uiId, modeArg);
+        return;
+    }
+    if (verb === 'servers' && window.ServersHub && window.ServersHub.open(uiId)) {
+        return;
+    }
+
     try {
         await navigateToGamePage(uiId);
     } catch (e) {
@@ -1805,13 +1891,9 @@ async function handleDeepLink(url) {
 
     switch (verb) {
         case 'game':
-            // Navigate only.
-            return;
-
         case 'mods':
-            if (window.ModsView && window.ModsView.supports(uiId)) {
-                await window.ModsView.openDeepLink(uiId, modeArg);
-            }
+        case 'servers':
+            // Navigate only.
             return;
 
         case 'install':
@@ -1864,6 +1946,7 @@ function launchGame(gameId) {
         console.error(`No configuration found for game: ${gameId}`);
         return;
     }
+    if (GameUtils.isComingSoon(gameId)) return;
 
     addRecentGame(gameId);
 
@@ -1900,6 +1983,7 @@ function showGameSettings(gameId) {
 
 function showManageInstall(gameId, options = {}) {
     console.log(`Manage install button clicked for ${gameId}`);
+    if (GameUtils.isComingSoon(gameId)) return;
 
     const popups = ensureGamePopups(gameId);
 
@@ -1976,6 +2060,7 @@ function stopGame(gameId) {
 
     const gameMapping = GameUtils.getGameMapping(gameId);
     const gameDisplayName = window.GameInstallationManager.getGameDisplayName(gameId);
+    window.GameStateManager.launchGraceUntil = 0;
 
     // Send command to stop the game
     if (typeof window.executeCommand === 'function') {
@@ -1997,6 +2082,8 @@ function stopGame(gameId) {
 
 async function showSetupFlow(gameId) {
     console.log(`Setup button clicked for ${gameId}`);
+    // -install, -launch and cbservers:// links reach here without passing a coming-soon button.
+    if (GameUtils.isComingSoon(gameId)) return;
 
     // Both branches of the flow need the network: a download, or client files for an existing install.
     if (!await window.guardOnline()) return;
@@ -2029,7 +2116,7 @@ async function checkGameInstallation(gameId) {
     const gameMapping = GameUtils.getGameMapping(gameId);
     const config = GameUtils.getGameConfigByUIId(gameId);
     if (!config) return { hasAnySetup: false, status: 'not-setup' };
-    if (config.comingSoon) return { hasAnySetup: false, status: 'not-setup' };
+    if (GameUtils.isComingSoon(gameId)) return { hasAnySetup: false, status: 'not-setup' };
 
     try {
         if (typeof window.executeCommand === 'function') {

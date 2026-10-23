@@ -29,6 +29,8 @@
     let recoverError = '';        // a local validation or launcher error for the recovery form
     let lastAction = 'create';    // which form a service error belongs to
     let dismissedError = null;    // a service error the user closed the form on
+    let pendingLabel = 'creating'; // what the in-flight create, sign-in or switch says while it runs
+    let lastNoticeSeq = -1;       // -1 until the first status read primes it
     let myJoinable = false; // we're hosting a joinable match => can invite
     let friends = { friends: [], incoming: [], outgoing: [] };
     let playedWith = [];
@@ -38,6 +40,8 @@
     let openRecoveryCode = '';    // the code behind the open recovery dialog, in the DOM only while revealed
     let recoveryBound = false;
     let recoveryCopyTimer = null;
+    const openBlocked = new Map(); // cbId -> person, for the open blocked users dialog
+    let blockedBound = false;
     const announcedRequests = new Set();
     let requestsPrimed = false; // the first pass only records, so a cold start stays quiet
 
@@ -177,15 +181,62 @@
         `;
     }
 
+    function nameOf(p) {
+        return p.handle ? '@' + p.handle : (p.displayName || '');
+    }
+
+    function avatarHtml(p) {
+        return p.avatarUrl
+            ? `<img class="cb-profile-avatar-img" src="${escapeHtml(p.avatarUrl)}" alt="" />`
+            : `<span class="cb-profile-avatar-initials">${escapeHtml(initials(p.displayName || p.handle))}</span>`;
+    }
+
+    // This PC's HWID matches a profile nobody has used lately; only the user knows if it is theirs.
+    function renderMatchCard(match) {
+        const who = match.displayName && match.handle
+            ? `${match.displayName} (@${match.handle})` : nameOf(match);
+        return `
+            <div class="cb-profile-card cb-profile-setup">
+                <div class="cb-profile-avatar">${avatarHtml(match)}</div>
+                <div class="cb-profile-body">
+                    <div class="cb-profile-name">${escapeHtml(t('matchTitle'))}</div>
+                    <div class="cb-profile-handle">${escapeHtml(who)}</div>
+                    <div class="cb-profile-text">${escapeHtml(t('matchBody'))}</div>
+                </div>
+                <div class="cb-profile-actions">
+                    <button class="cb-profile-btn is-primary" id="cb-match-yes" type="button">${escapeHtml(t('matchYes'))}</button>
+                    <button class="cb-profile-btn" id="cb-match-no" type="button">${escapeHtml(t('matchNo'))}</button>
+                </div>
+            </div>
+        `;
+    }
+
+    // Our Discord is linked to a different CB profile than the one this PC is signed in to.
+    function renderConflictBanner(conflict) {
+        if (!conflict) return '';
+        return `
+            <div class="cb-conflict">
+                <div class="cb-conflict-text">${escapeHtml(t('conflictBody', { name: nameOf(conflict) }))}</div>
+                <div class="cb-conflict-actions">
+                    <button class="cb-profile-btn is-primary" id="cb-conflict-switch" type="button">${escapeHtml(t('conflictSwitch'))}</button>
+                    <button class="cb-profile-btn" id="cb-conflict-dismiss" type="button">${escapeHtml(t('conflictDismiss'))}</button>
+                </div>
+            </div>
+        `;
+    }
+
     function profileHtml() {
         const status = lastStatus;
         const state = status ? status.state : 'none';
         if (state === 'ready' && status.profile) {
-            return editingProfile ? renderEditForm(status.profile) : renderProfileCard(status.profile);
+            return editingProfile
+                ? renderEditForm(status.profile)
+                : renderConflictBanner(status.discordConflict) + renderProfileCard(status.profile);
         }
         if (state === 'creating') {
-            return `<div class="cb-create"><div class="cb-create-title">${escapeHtml(t('creating'))}</div></div>`;
+            return `<div class="cb-create"><div class="cb-create-title">${escapeHtml(t(pendingLabel))}</div></div>`;
         }
+        if (state === 'confirm' && status.match) return renderMatchCard(status.match);
         const serviceError = state === 'error' && status.error && status.error !== dismissedError ? friendlyError(status.error) : '';
         if (recoverOpen || (serviceError && lastAction === 'recover')) return renderRecoverForm(recoverError || serviceError);
         if (createOpen || serviceError) return renderCreateForm(createError || serviceError);
@@ -236,6 +287,7 @@
             { separator: true },
             { label: linked ? tf('unlinkDiscord') : tf(busy ? 'linking' : 'linkDiscord'),
               hidden: ds.status === 'unavailable', disabled: busy, action: linked ? unlinkDiscord : linkDiscord },
+            { label: t('blockedUsers'), action: showBlockedUsers },
             { label: t('recoveryCode'), action: showRecoveryCode },
         ]);
     }
@@ -323,6 +375,7 @@
         if (error === 'handle taken') return t('handleTaken');
         if (error === 'no account for this anchor') return t('recoverNoAccount');
         if (error === 'too many recovery attempts') return t('recoverRateLimited');
+        if (error === 'in-use') return t('recoverInUse');
         return error;
     }
 
@@ -361,7 +414,7 @@
 
     // Takes a CB person or a Discord friend; both carry the same join flags.
     function matchChip(src) {
-        if (src.sameMatch) return `<span class="friend-chip" data-kind="same">${escapeHtml(tf('inYourMatch'))}</span>`;
+        if (src.sameMatch) return `<span class="friend-chip" data-kind="same">${escapeHtml(tf(src.sameParty ? 'inYourParty' : 'inYourMatch'))}</span>`;
         if (src.joinable) return `<span class="friend-chip" data-kind="joinable">${escapeHtml(tf('joinable'))}</span>`;
         if (src.openable) return `<span class="friend-chip" data-kind="open">${escapeHtml(tf('openMatch'))}</span>`;
         return '';
@@ -744,6 +797,67 @@
         openRecoveryCode = '';
     }
 
+    function blockedRowHtml(p) {
+        const avatar = p.avatarUrl
+            ? `<img class="friend-avatar-img" src="${escapeHtml(p.avatarUrl)}" alt="" loading="lazy" />`
+            : `<span class="friend-avatar-initials">${escapeHtml(initials(p.displayName || p.handle))}</span>`;
+        return `
+            <div class="cb-blocked-row" data-blocked-id="${escapeHtml(p.cbId)}">
+                <div class="friend-avatar">${avatar}</div>
+                <div class="friend-row-body">
+                    <div class="friend-name">${escapeHtml(p.displayName || p.handle)}</div>
+                    <div class="cb-friend-handle">@${escapeHtml(p.handle)}</div>
+                </div>
+                <button type="button" class="cb-blocked-btn" data-blocked-unblock="${escapeHtml(p.cbId)}">${escapeHtml(t('unblock'))}</button>
+            </div>
+        `;
+    }
+
+    function blockedEmptyHtml() {
+        return `<div class="cb-blocked-empty">${escapeHtml(t('blockedEmpty'))}</div>`;
+    }
+
+    // One delegated listener on the shared message box, like the recovery dialog's.
+    function bindBlockedDialog() {
+        const box = document.getElementById('message-box');
+        if (blockedBound || !box) return;
+        blockedBound = true;
+        box.addEventListener('click', async (event) => {
+            const btn = event.target.closest('[data-blocked-unblock]');
+            const person = btn && openBlocked.get(btn.getAttribute('data-blocked-unblock'));
+            if (!person || btn.disabled) return;
+            btn.disabled = true;
+            if (!(await window.PersonMenu.unblock(person, true))) {
+                btn.disabled = false;
+                return;
+            }
+            openBlocked.delete(person.cbId);
+            const row = btn.closest('.cb-blocked-row');
+            const list = row && row.parentElement;
+            if (row) row.remove();
+            if (list && !list.children.length) list.outerHTML = blockedEmptyHtml();
+        });
+    }
+
+    async function showBlockedUsers() {
+        if (!window.PersonMenu) return;
+        const list = await window.PersonMenu.refreshBlocked();
+        if (!list) return;
+
+        bindBlockedDialog();
+        openBlocked.clear();
+        list.forEach(p => openBlocked.set(p.cbId, p));
+        const body = list.length
+            ? `<div class="cb-blocked-list">${list.map(blockedRowHtml).join('')}</div>`
+            : blockedEmptyHtml();
+        try {
+            await window.showMessageBox(escapeHtml(t('blockedUsers')), body, [t('done')]);
+        } catch (error) {
+            console.warn('Failed to show blocked users:', error);
+        }
+        openBlocked.clear();
+    }
+
     function openCreateForm() {
         createOpen = true;
         createError = '';
@@ -819,6 +933,7 @@
             recoverError = '';
             dismissedError = null;
             lastAction = 'recover';
+            pendingLabel = 'signingIn';
             lastState = 'creating';
             lastStatus = Object.assign({}, lastStatus, { state: 'creating', error: null });
             renderPage(true);
@@ -845,6 +960,7 @@
             createError = '';
             dismissedError = null;
             lastAction = 'create';
+            pendingLabel = 'creating';
             lastState = 'creating';
             lastStatus = Object.assign({}, lastStatus, { state: 'creating', error: null });
             renderPage(true);
@@ -853,6 +969,63 @@
             console.warn('Failed to start profile creation:', error);
             showCreateError('Could not reach the launcher.');
         }
+    }
+
+    // Shows the in-flight label and polls until the service settles.
+    function awaitService(label, action, extra) {
+        dismissedError = null;
+        lastAction = action;
+        pendingLabel = label;
+        lastState = 'creating';
+        lastStatus = Object.assign({}, lastStatus, { state: 'creating', error: null }, extra || {});
+        renderPage(true);
+        startCreatingPoll();
+    }
+
+    async function confirmMatch(adopt) {
+        try {
+            await window.executeCommand('cbfriends-confirm-match', { adopt });
+        } catch (error) {
+            console.warn('Failed to answer the profile match:', error);
+            return;
+        }
+        // A refused sign-in lands in the recovery form, which offers the code route it suggests.
+        awaitService(adopt ? 'signingIn' : 'creating', adopt ? 'recover' : 'create', { match: null });
+    }
+
+    async function switchToConflict() {
+        const conflict = lastStatus && lastStatus.discordConflict;
+        const me = lastStatus && lastStatus.profile;
+        if (!conflict || !me) return;
+        const target = nameOf(conflict);
+        const current = nameOf(me);
+        let choice;
+        try {
+            choice = await window.showMessageBox(t('switchTitle'), escapeHtml(t('switchBody', { target, current })),
+                [t('conflictSwitch'), t('switchViewCode'), { label: t('cancel'), danger: true }]);
+        } catch (error) {
+            return;
+        }
+        if (choice === 1) return showRecoveryCode();
+        if (choice !== 0) return;
+        try {
+            await window.executeCommand('cbfriends-discord-conflict', { action: 'switch' });
+        } catch (error) {
+            console.warn('Failed to switch profiles:', error);
+            return;
+        }
+        awaitService('switching', 'create', { discordConflict: null });
+    }
+
+    async function dismissConflict() {
+        try {
+            await window.executeCommand('cbfriends-discord-conflict', { action: 'dismiss' });
+        } catch (error) {
+            console.warn('Failed to dismiss the Discord conflict:', error);
+            return;
+        }
+        lastStatus = Object.assign({}, lastStatus, { discordConflict: null });
+        renderPage(true);
     }
 
     async function submitEdit() {
@@ -966,6 +1139,7 @@
                     const seen = await window.executeCommand('cbfriends-get-played-with');
                     playedWith = (seen && seen.people) || [];
                 } catch (error) { playedWith = []; }
+                if (window.PersonMenu) window.PersonMenu.refreshBlocked();
                 renderPage();
             }
         } catch (error) { /* offline / preview */ }
@@ -994,17 +1168,38 @@
         lastState = status.state;
         if (status.state !== 'creating') stopCreatingPoll();
 
-        if (previous === 'creating' && status.state === 'ready' && window.showToast) {
-            window.showToast(t('created'), 'success');
-            showRecoveryCode();
-        } else if (previous === 'creating' && status.state === 'error' && window.showToast) {
-            window.showToast(t('createFailed') + (status.error ? ` (${status.error})` : ''), 'error');
+        announceNotice(status);
+        // The form explains errors it knows; only raw ones are worth repeating in the toast.
+        const detail = status.error && friendlyError(status.error) === status.error ? ` (${status.error})` : '';
+        if (previous === 'creating' && status.state === 'error' && window.showToast) {
+            window.showToast(t(pendingLabel === 'signingIn' ? 'signInFailed' : 'createFailed') + detail, 'error');
+        } else if (previous === 'creating' && status.state === 'ready' && status.error && window.showToast) {
+            // A failed switch keeps the old profile and has no form to explain why, so the toast does.
+            const why = status.error === 'no account for this anchor' ? t('switchGone') : friendlyError(status.error);
+            window.showToast(`${t('switchFailed')}: ${why}`, 'error');
         }
 
         if (status.state === 'ready') await fetchFriends();
         announceRequests();
         refreshBadge();
         renderPage();
+    }
+
+    // Each created/restored outcome is announced once; a UI reload does not re-open a new profile's code.
+    function announceNotice(status) {
+        const seq = status.noticeSeq || 0;
+        const primed = lastNoticeSeq >= 0;
+        if (seq <= lastNoticeSeq) return;
+        lastNoticeSeq = seq;
+        if (!seq || !window.showToast) return;
+        if (status.noticeKind === 'created') {
+            if (!primed) return;
+            window.showToast(t('created'), 'success');
+            showRecoveryCode();
+        } else if (status.noticeKind === 'restored') {
+            const name = status.noticeHandle ? '@' + status.noticeHandle : '';
+            window.showToast(name ? t('welcomeBack', { name }) : t('welcomeBackPlain'), 'success');
+        }
     }
 
     // Shows a count on a sidebar item, or hides it when there is nothing waiting.
@@ -1058,6 +1253,10 @@
                     if (target.closest('#friends-recover-open')) return openRecoverForm();
                     if (target.closest('#cb-recover-btn')) return submitRecover();
                     if (target.closest('#cb-recover-cancel')) return closeRecoverForm();
+                    if (target.closest('#cb-match-yes')) return confirmMatch(true);
+                    if (target.closest('#cb-match-no')) return confirmMatch(false);
+                    if (target.closest('#cb-conflict-switch')) return switchToConflict();
+                    if (target.closest('#cb-conflict-dismiss')) return dismissConflict();
                     if (target.closest('#cb-self-more')) return openSelfMenu(event);
                     if (target.closest('[data-cb-view-self]')) return viewOwnProfile();
                     const personLink = target.closest('[data-person-link]');
