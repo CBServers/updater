@@ -2,7 +2,7 @@
     [
         "cb-launcher.exe",
         3812720,
-        "9E9E51071A3E30E8CFA475EAF1EC99C727D7BF42"
+        "E7651E3DEC5289407FA68C22C47C5A15A24A6D76"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -486,8 +486,8 @@
     ],
     [
         "data/launcher-ui/assets/js/app/game-hub.js",
-        10984,
-        "A6569FCA4CB29DBD6DDDCC8AEEDF193CE87AF1AD"
+        12163,
+        "0CD0F3ED383F31BF746C04563A9320D17CEEF97E"
     ],
     [
         "data/launcher-ui/assets/js/app/main.js",
@@ -521,8 +521,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/community.js",
-        36792,
-        "20C08F6F62923EF0F9CC19D100D1071BC3A0159E"
+        37343,
+        "9BAC86335A86C2DF9AA82E15F9327BDB559EBC2C"
     ],
     [
         "data/launcher-ui/assets/js/core/discord-friends.js",
@@ -730,6 +730,6 @@
         "E254FD0A876B793A25FAF4AA16DBA275F6544A5D"
     ],
     {
-        "ManifestHash": "07918B8641891DADDE57E4E375D0CDBDBDDC48C4AD8217CD7934FA2617F9BD7C"
+        "ManifestHash": "63B36CC71B6C54EDFAE52928CDB410B8E7176517933C57A507B670EBCF090D7F"
     }
 ]
