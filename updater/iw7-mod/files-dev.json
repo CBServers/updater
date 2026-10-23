@@ -391,8 +391,8 @@
     ],
     [
         "cdata/ui_scripts/Usermaps/__init__.lua",
-        6713,
-        "DDE298F4952F9AB0A590B9AFBF3AB8EB0F6EEA4F"
+        6846,
+        "D42A111068C357BCC0A4286B9271629414901953"
     ],
     [
         "cdata/zone/iw7mod_code_post_gfx.ff",
@@ -432,9 +432,9 @@
     [
         "iw7-mod.exe",
         5812224,
-        "836CB8046E0B7A2E65E25EE18EB905CE3AFCD9D2"
+        "D7521887E1BA323CB032C7900F30091FAB96F75D"
     ],
     {
-        "ManifestHash": "FD9CECE0E2E76F910ED6755A744F95897FBC74937A643F7CDD74424F62D452BC"
+        "ManifestHash": "6318938F55015B077F0BF40B6A90B148C8DB567825ADA989C0CF909F5D86D162"
     }
 ]

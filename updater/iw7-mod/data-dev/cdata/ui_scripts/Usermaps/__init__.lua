@@ -6,13 +6,19 @@ local function is_usermap(name)
     return type(name) == "string" and io.fileexists("usermaps/" .. name .. "/" .. name .. ".ff")
 end
 
+-- player data keyed by map name, which has no entries for usermaps
+local map_keyed_data = {
+    leaderboarddata = true,
+    duration = true
+}
+
 local GetPlayerDataEx_og = Engine.GetPlayerDataEx
 Engine.GetPlayerDataEx = function(...)
-    local leaderboard = false
+    local map_keyed = false
     for _, arg in ipairs({...}) do
-        if arg == "leaderboarddata" then
-            leaderboard = true
-        elseif leaderboard and is_usermap(arg) then
+        if map_keyed_data[arg] then
+            map_keyed = true
+        elseif map_keyed and is_usermap(arg) then
             return 0
         end
     end
