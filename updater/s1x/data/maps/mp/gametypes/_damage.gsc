@@ -1231,7 +1231,7 @@ getkillcambuffertime()
 
 finalkillcamvalid( victim, attacker, timegameended, timerecorded )
 {
-    valid = isdefined( victim ) && isdefined( attacker ) && !maps\mp\_utility::practiceroundgame() && !isai( attacker ) && isai( victim );
+    valid = isdefined( victim ) && isdefined( attacker ) && !maps\mp\_utility::practiceroundgame() && !( isai( victim ) && isai( attacker ) );
 
     if ( valid )
     {

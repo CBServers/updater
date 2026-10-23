@@ -41,8 +41,8 @@
     ],
     [
         "data/maps/mp/gametypes/_damage.gsc",
-        119378,
-        "477847A84FA2351339DE60CFB81CF611EF036F4C"
+        119382,
+        "70F3C7A8055A74D8A9812868D262DD160F7881A4"
     ],
     [
         "data/maps/mp/gametypes/_gamelogic.gsc",
@@ -56,8 +56,8 @@
     ],
     [
         "data/scripts/mp/_patches.gsc",
-        1346,
-        "96A7557947E6244FCD29BCC21AEF4C2D52A86DBB"
+        1301,
+        "D0996D011DF16BBF75E163B5977BA8EAE51A71CD"
     ],
     [
         "data/scripts/mp/_team_balance.gsc",
@@ -146,10 +146,10 @@
     ],
     [
         "s1x.exe",
-        7802880,
-        "4DE9923DC89FA46834887974FC469A51AB7B44F5"
+        7803904,
+        "FE5B1B018DAD3277D7CB8CF2603F6116C26EA2BB"
     ],
     {
-        "ManifestHash": "4F8FFA2C5126A03798388B097F6420FFD1118FE329A6B8401FFDA46494E6B8F2"
+        "ManifestHash": "E434DE971FF2AEBB30CF3D591F4CCC1529C67ECD617F6D142E22C828DDD4AE7D"
     }
 ]
