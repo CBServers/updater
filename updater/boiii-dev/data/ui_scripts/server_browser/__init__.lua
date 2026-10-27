@@ -42,9 +42,8 @@ DataSources.LobbyServer = {
 				SetModelValue(serverModel, "modName", serverInfo.modName)
 				SetModelValue(serverModel, "mapName", serverInfo.map)
 				SetModelValue(serverModel, "desc", serverInfo.desc)
-				-- Change the client count to be the actual player count
-				local clientCount = serverInfo.playerCount - serverInfo.botCount
-				SetModelValue(serverModel, "clientCount", clientCount)
+				-- playerCount already excludes bots
+				SetModelValue(serverModel, "clientCount", serverInfo.playerCount)
 				SetModelValue(serverModel, "maxClients", serverInfo.maxPlayers)
 				SetModelValue(serverModel, "passwordProtected", serverInfo.password)
 				SetModelValue(serverModel, "secure", serverInfo.secure)
