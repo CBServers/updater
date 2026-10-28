@@ -1,12 +1,12 @@
 {
-  "fingerprint": "1a75716386f0",
+  "fingerprint": "388240b449dd",
   "sources": [
     {
       "name": "h2-mod files-dev.json",
       "kind": "manifest",
-      "version": "16b183b3",
+      "version": "e6deaad0",
       "url": "https://h2-mod.alicent.cat/files-dev.json",
-      "key": "16b183b34ec3cdbf655aff758734a6ca57fffa53bc220408f156d6b5e47c7e8c"
+      "key": "e6deaad01dfc6b7aa445eb0702214400b8c6c785bdcca3f0336003afa13056ea"
     }
   ]
 }
