@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        3815728,
-        "F27DA259C6E09E09F03F4A33E207B888C9FAC8FF"
+        3823920,
+        "11E3720A51124A764EADB6B31413A85D514020DA"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -491,8 +491,8 @@
     ],
     [
         "data/launcher-ui/assets/js/app/main.js",
-        115790,
-        "BAFF69A8E9475D69428D22D209B14A4916EABF31"
+        117842,
+        "7FAA431A230E84AF71743FE9C854A62EF5BE2E0E"
     ],
     [
         "data/launcher-ui/assets/js/app/mods-view.js",
@@ -516,8 +516,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/command.js",
-        27112,
-        "14811487FB74F4A58743A087D5552FDF222F4FBA"
+        27178,
+        "1DC267EA057141BEE771DA14B052AF775E0D69B9"
     ],
     [
         "data/launcher-ui/assets/js/core/community.js",
@@ -536,8 +536,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        258757,
-        "318B35769442A002383CF309B61DEBC0102B75C9"
+        261276,
+        "42A07092DC58DA1B78B7EBBCC8FFB5BD1563092A"
     ],
     [
         "data/launcher-ui/assets/js/core/mod-queue.js",
@@ -571,8 +571,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/utils.js",
-        56565,
-        "4C4F95BA3656BB4ABCC338F87D536CDBFBD286FD"
+        57020,
+        "1777EB4D05E28CFA99F0DEBA68D6893DC3F87411"
     ],
     [
         "data/launcher-ui/assets/js/popups/component-selection-popup.js",
@@ -591,8 +591,8 @@
     ],
     [
         "data/launcher-ui/assets/js/popups/game-settings-popup.js",
-        39830,
-        "4EE2FA6E9DE4B0591C5D9605AAE4DD303B0E6DDC"
+        40137,
+        "CFC057178600D4C08FBA0C3D53E050577ED72520"
     ],
     [
         "data/launcher-ui/assets/js/popups/mod-detail-popup.js",
@@ -656,8 +656,8 @@
     ],
     [
         "manifest/bo3.json",
-        221677,
-        "4AF2C9B7D4C8608C125F56EC834AA2EA8CE72E01"
+        221354,
+        "6902C2857E5697907D7017005BB74E8E79A3B81B"
     ],
     [
         "manifest/bo4.json",
@@ -724,7 +724,12 @@
         41650,
         "90EDE720345D076198A71C0CB557AFA5CAF3036B"
     ],
+    [
+        "manifest/ww2.json",
+        82650,
+        "E254FD0A876B793A25FAF4AA16DBA275F6544A5D"
+    ],
     {
-        "ManifestHash": "B298FC96B98DEAC6D470C2F907792267BF44A229FBC67C942FFDA116CE3A471B"
+        "ManifestHash": "E0F9B0A90C0628D8E387CAB213490400DB71F42D3E294AB8940A96871BBEF87E"
     }
 ]
