@@ -70,8 +70,15 @@ CoD.IsTeamChangeAllowed = function()
 	end
 end
 
--- Set com_maxclients InGame so players can join via direct connect (default from lobbydata)
-Engine.SetDvar("com_maxclients", maxClients)
+-- Set com_maxclients InGame so players can join via direct connect, capped at the live limit like Steam (AAE gums turn off above 5)
+local gameMaxClients = maxClients
+if Engine.IsLobbyActive(Enum.LobbyType.LOBBY_TYPE_GAME) then
+	local lobbyMaxClients = Engine.GetLobbyMaxClients(Enum.LobbyType.LOBBY_TYPE_GAME)
+	if lobbyMaxClients >= 1 then
+		gameMaxClients = math.min(gameMaxClients, lobbyMaxClients)
+	end
+end
+Engine.SetDvar("com_maxclients", gameMaxClients)
 
 require("datasources_start_menu_game_options")
 require("zombie_toast")
