@@ -1,75 +1,155 @@
 [
     [
+        "data/ui_scripts/mp/cod_points/__init__.lua",
+        5232,
+        "EA193D90BBE135196FAC7BC891DE4C3B8947D93D"
+    ],
+    [
+        "data/ui_scripts/mp/contracts/__init__.lua",
+        716,
+        "480CE9ABD0B249B81E54034519E436F032F9D5C2"
+    ],
+    [
+        "data/ui_scripts/mp/custom_match/loadouts.lua",
+        688,
+        "48C29CD2033B059DD95A05838B6BCAB036C222F2"
+    ],
+    [
+        "data/ui_scripts/mp/custom_match/progression.lua",
+        5086,
+        "7951C05A5FEEF9FEE509DC78D4E5807A7531739D"
+    ],
+    [
+        "data/ui_scripts/mp/custom_match/ranks.lua",
+        2960,
+        "9F3C02097AA567B9C91A4E3F15AAC79473058BD7"
+    ],
+    [
+        "data/ui_scripts/mp/custom_match/setup.lua",
+        11266,
+        "1557422CC46D67A90FAAC1189782249E556316F5"
+    ],
+    [
+        "data/ui_scripts/mp/custom_match/__init__.lua",
+        527,
+        "026C2D5C13D36648560EDD85D42EE1470B6897BD"
+    ],
+    [
         "data/ui_scripts/mp/find_match/s2x_findgame_menu.lua",
-        8013,
-        "E4B979ED921C67667A81C3B11976398636A36DE9"
+        8872,
+        "0BC666A61237FB2F0FAAA7DA88A43AA36A00AB1F"
+    ],
+    [
+        "data/ui_scripts/mp/find_match/s2x_headquarters.lua",
+        1939,
+        "D0B37D52235EE53B2D5849012FC7BE39812CA799"
     ],
     [
         "data/ui_scripts/mp/find_match/s2x_server_browser.lua",
-        13379,
-        "4E86DECB0279EEE6888F695E548B824B4989BDE5"
+        10198,
+        "D3854441A18EB6BE934114CC50D65E19217005E1"
+    ],
+    [
+        "data/ui_scripts/mp/find_match/s2x_server_browser_model.lua",
+        2360,
+        "671137B9F020D88E65B9AB0602C0F9D6007E7D7E"
     ],
     [
         "data/ui_scripts/mp/find_match/s2x_server_browser_row.lua",
-        17291,
-        "B7ED7C8B2AA462B9D7C57E76EA21601E2AC79E6E"
+        2723,
+        "00D0CEB2D769149635142D79DFAFEE77B50F50E4"
     ],
     [
         "data/ui_scripts/mp/find_match/s2x_server_browser_row_uc.lua",
-        2236,
-        "B77BA207365CDC911827F6BE679E9BCB0328737F"
+        1186,
+        "56111FB2E6C707CB5CB02F16AD83B810A0769EDB"
     ],
     [
         "data/ui_scripts/mp/find_match/s2x_server_browser_uc.lua",
-        12097,
-        "A005EBF4E35529DC356A8E798979E86AE28A3476"
+        12379,
+        "CAA6BE9F8FB8F56E5D400D1FFCB5D224B463C7B9"
     ],
     [
         "data/ui_scripts/mp/find_match/__init__.lua",
-        2491,
-        "D857604EE79AFA2247820701DF897E270C6AC33E"
+        3373,
+        "07199B3E546584BE0ABF0C5E66802D1BF613AC28"
+    ],
+    [
+        "data/ui_scripts/mp/mods/__init__.lua",
+        9467,
+        "AB52B7872A3EEBA8408CE60DE7EBA2085E7F243C"
+    ],
+    [
+        "data/ui_scripts/mp/orders/__init__.lua",
+        2805,
+        "39DDB547B61ED21FA430167DF9A9F23375DFDCE3"
+    ],
+    [
+        "data/ui_scripts/mp/order_notifications/__init__.lua",
+        2886,
+        "D62D56C337F4B6044FED6D5E1EBBA4382E47756B"
     ],
     [
         "data/ui_scripts/mp/patches/cb_invites.lua",
-        1168,
-        "FCBC9CC3D2E987BA104D9FD13AF9EF30B7F333A8"
+        1133,
+        "1AE18A2D9ACC526196A3126185758E1B2491D8A1"
     ],
     [
         "data/ui_scripts/mp/patches/dedicated_gametype.lua",
-        2387,
-        "97CBA2D9DDFA8FBDEAC58E5D17DED233FA18D76D"
+        2304,
+        "FD129657B15823738130B6DE9B03F9057973DFD1"
     ],
     [
         "data/ui_scripts/mp/patches/dedicated_lobby.lua",
-        5997,
-        "23943C5BBF1EE892E77136162EC5E98730E0F225"
+        5813,
+        "2DE41B63CDD0D780FBA4107798ECE65BCCAC9CD9"
     ],
     [
         "data/ui_scripts/mp/patches/dedicated_members.lua",
-        4789,
-        "7C49ABCDE610B783C7BECFDC075E7947C9243222"
+        5163,
+        "5A47993FAE135451DA3C7A52E513D0E7F1FBC47B"
     ],
     [
         "data/ui_scripts/mp/patches/dedicated_party.lua",
-        1039,
-        "D245C489BA2325B4F63C995EBB60453CBB952F98"
+        996,
+        "C19688964841283A0C0CF49531EE2C810A7C4DA4"
+    ],
+    [
+        "data/ui_scripts/mp/patches/leave_game.lua",
+        1508,
+        "405459499F1E8E68FE39D0FC8DC6616B4D41F11C"
     ],
     [
         "data/ui_scripts/mp/patches/unlocks.lua",
-        12404,
-        "87B89BD6794C5990DDAD482BCFE3422B60C66B4D"
+        20948,
+        "3A5DC13F3B147731DEF24EB6512E03F3BD92F578"
+    ],
+    [
+        "data/ui_scripts/mp/patches/unlock_overrides.lua",
+        2531,
+        "71AFCDC9305095F8F6158705B4BE96D3E66C55E4"
     ],
     [
         "data/ui_scripts/mp/patches/__init__.lua",
-        412,
-        "B3E0954C2451A9B48D23CBBC23AF338A53421810"
+        529,
+        "F0146DAC8CE6D70C28ACA1A7EB0F2C74F0D88397"
+    ],
+    [
+        "data/ui_scripts/mp/quartermaster/__init__.lua",
+        3999,
+        "FABA91746DB2FF7FC6BAA7434A2B86E5FC40E067"
+    ],
+    [
+        "data/ui_scripts/mp/zombies_progression/__init__.lua",
+        2971,
+        "9C665600274AE1853400C67AED2D292FCE9DF345"
     ],
     [
         "s2x.exe",
-        4529664,
-        "BCA48A6CBAF4E5002FD4BCCACA6585AF1B8102B7"
+        9462784,
+        "1BAB06E0FED9044CD4EA7D4EE6533CB1229D7871"
     ],
     {
-        "ManifestHash": "3057E2EBF44E781725EB5497DE68B2ABF2889A26F597B64E1576F18772C7E22C"
+        "ManifestHash": "1F71EE9FCB1C92CB3CD1EEBC115D88C5103DBDB0648BDC69BBE7C68263C65A29"
     }
 ]
