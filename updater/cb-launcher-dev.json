@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        3818864,
-        "96DFB97182E8794F04C68934E91185856E864CFF"
+        3821424,
+        "6BB3C330F17A3E2050D9A5175D60BE353D1862C1"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -491,8 +491,8 @@
     ],
     [
         "data/launcher-ui/assets/js/app/main.js",
-        116127,
-        "94EF50ACFC7EDECBEFFB2C55ADE3C7EC70B23D3A"
+        117842,
+        "7FAA431A230E84AF71743FE9C854A62EF5BE2E0E"
     ],
     [
         "data/launcher-ui/assets/js/app/mods-view.js",
@@ -536,8 +536,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        258757,
-        "318B35769442A002383CF309B61DEBC0102B75C9"
+        261276,
+        "42A07092DC58DA1B78B7EBBCC8FFB5BD1563092A"
     ],
     [
         "data/launcher-ui/assets/js/core/mod-queue.js",
@@ -591,8 +591,8 @@
     ],
     [
         "data/launcher-ui/assets/js/popups/game-settings-popup.js",
-        39830,
-        "4EE2FA6E9DE4B0591C5D9605AAE4DD303B0E6DDC"
+        40137,
+        "CFC057178600D4C08FBA0C3D53E050577ED72520"
     ],
     [
         "data/launcher-ui/assets/js/popups/mod-detail-popup.js",
@@ -730,6 +730,6 @@
         "E254FD0A876B793A25FAF4AA16DBA275F6544A5D"
     ],
     {
-        "ManifestHash": "7AD869643CED4A480DF95885C5887BFED860CBDB184EDE74C43A5E2A2883E485"
+        "ManifestHash": "1BAA6304D559A11758CACC5F96AECE4A75F99CC3CF606DD2E79E349000E7BD10"
     }
 ]
