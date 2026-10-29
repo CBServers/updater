@@ -1,5 +1,5 @@
 {
-    "ManifestHash": "9A24E7231CD319BEBBEBE1CDE6A88ABC11AC7AF6BA5BB8424AC0C071EE242AC4",
+    "ManifestHash": "6597E007067B599AB6C0808C45E27638859437887737988C0EDB4C66021740F0",
     "components": {
         "redist": {
             "displayName": "redist",
@@ -8,12 +8,26 @@
             "defaultEnabled": true,
             "totalSize": 122196239
         },
+        "zm": {
+            "displayName": "Zombies",
+            "show": true,
+            "required": false,
+            "defaultEnabled": true,
+            "totalSize": 3295990375
+        },
+        "mp": {
+            "displayName": "Multiplayer",
+            "show": true,
+            "required": false,
+            "defaultEnabled": true,
+            "totalSize": 12063604011
+        },
         "base": {
-            "displayName": "Base Game (MP/ZM)",
+            "displayName": "Base Game",
             "show": true,
             "required": true,
             "defaultEnabled": true,
-            "totalSize": 47264267686
+            "totalSize": 31904738332
         },
         "sp": {
             "displayName": "Campaign",
@@ -40,8 +54,8 @@
     "files": [
         [
             "BlackOps3.exe",
-            105994224,
-            "5D527FDFD248F541",
+            106059256,
+            "659867B165938816",
             "base"
         ],
         [
@@ -1470,13 +1484,13 @@
             "video/mp_frontend_load_spinner.mkv",
             166232,
             "7DF875C92AB19DC3",
-            "base"
+            "mp"
         ],
         [
             "video/mp_nuketown_fs_endingmovie.mkv",
             2881143,
             "8EFD0A5519E57DD8",
-            "base"
+            "mp"
         ],
         [
             "video/zm_castle_loadingmovie.mkv",
@@ -1494,7 +1508,7 @@
             "video/zm_frontend_load.mkv",
             28815506,
             "C3573B9D6C028A27",
-            "base"
+            "zm"
         ],
         [
             "video/zm_genesis.mkv",
@@ -1554,7 +1568,7 @@
             "video/zm_zod_load_zodloadingmovie.mkv",
             140844473,
             "56ED40A9D6D5C5AD",
-            "base"
+            "zm"
         ],
         [
             "zone/base.xpak",
@@ -3222,13 +3236,13 @@
             "zone/en_mp_apartments.fd",
             1367,
             "1C16DC3E5D43AF23",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_apartments.ff",
             1536,
             "722BCDEA2F6F77AB",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_arena.fd",
@@ -3258,25 +3272,25 @@
             "zone/en_mp_biodome.fd",
             1375,
             "5690AF6ADEFAEE41",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_biodome.ff",
             1536,
             "4A0CC105BE7B5212",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_chinatown.fd",
             1372,
             "C3FA47E323E899FB",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_chinatown.ff",
             1536,
             "8D3BAF4E0AC42B8D",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_city.fd",
@@ -3306,31 +3320,31 @@
             "zone/en_mp_common.fd",
             104163,
             "AC6713524A80E851",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_common.ff",
             387712,
             "8C676F90FDD37E08",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_common.xpak",
             98304,
             "4471B04EF0743CF0",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_common_all.ff",
             704,
             "0D98645B7ADE17BD",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_common_d.xpak",
             98304,
             "4471B04EF0743CF0",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_conduit.fd",
@@ -3372,97 +3386,97 @@
             "zone/en_mp_ethiopia.fd",
             1371,
             "84110832AEAE4EAF",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_ethiopia.ff",
             1536,
             "E1EA268A9AE0503C",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_freerun_01.fd",
             1362,
             "84993BD8BD1ACEBB",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_freerun_01.ff",
             1536,
             "AFE12F7B6375736B",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_freerun_01_patch.ff",
             960,
             "2A46A83A1AA3D142",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_freerun_02.ff",
             1536,
             "5B88533142986AE7",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_freerun_02_patch.ff",
             1664,
             "A26209E697AD49F2",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_freerun_03.ff",
             1536,
             "52DE45580EE5681E",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_freerun_03_patch.ff",
             960,
             "124CEAD7DD3D6041",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_freerun_04.fd",
             1362,
             "E7EC2EEF96850374",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_freerun_04.ff",
             1536,
             "0A8CBA9BD0412E0A",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_freerun_04_patch.ff",
             1664,
             "3E310390F19F6B89",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_havoc.fd",
             1376,
             "F38F5907ACA102A1",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_havoc.ff",
             1536,
             "DDE3F0E42BF9D457",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_infection.fd",
             1362,
             "120631593A5E95DD",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_infection.ff",
             1536,
             "326EC8A45F55B4C5",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_kung_fu.fd",
@@ -3480,13 +3494,13 @@
             "zone/en_mp_metro.fd",
             1362,
             "7E41588F1E7063F4",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_metro.ff",
             1536,
             "DFFD8C98F625A8BE",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_miniature.fd",
@@ -3504,55 +3518,55 @@
             "zone/en_mp_nuketown_x.fd",
             10316,
             "50ACBB9F895058C7",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_nuketown_x.ff",
             2002432,
             "D73051132547B1D9",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_nuketown_x.xpak",
             11206656,
             "D018E31F7FA8D352",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_nuketown_x_d.xpak",
             98304,
             "24E3B50B6BF3A0B8",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_patch.ff",
             73856,
             "09FDC5224C8B69DC",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_redwood.fd",
             1362,
             "BA85C346533D8694",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_redwood.ff",
             1536,
             "C9728F4CC7FB6CD7",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_redwood_ice.fd",
             1304,
             "41118C65F67CAEA4",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_redwood_ice.ff",
             1600,
             "8623A80AFE678E10",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_rise.fd",
@@ -3594,13 +3608,13 @@
             "zone/en_mp_sector.fd",
             1367,
             "0E2A39E991A763E3",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_sector.ff",
             1536,
             "4C98CAA30B8CCE33",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_shrine.fd",
@@ -3630,49 +3644,49 @@
             "zone/en_mp_spire.fd",
             1383,
             "FDB1E3D0C1DBC8C9",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_spire.ff",
             1536,
             "EBC927D0CFC646CE",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_stronghold.fd",
             1362,
             "56CB84F2C88E35FC",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_stronghold.ff",
             1536,
             "05E1251ED4322969",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_veiled.fd",
             1376,
             "038029D0B9F95A31",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_veiled.ff",
             1536,
             "0C7B7F53DB7EE61C",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_veiled_heyday.fd",
             1296,
             "DB884F245409A859",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_veiled_heyday.ff",
             1664,
             "95EDF5EADACEDDE2",
-            "base"
+            "mp"
         ],
         [
             "zone/en_mp_waterpark.fd",
@@ -3774,19 +3788,19 @@
             "zone/en_zm_common.fd",
             1350,
             "38B603083CC348C5",
-            "base"
+            "zm"
         ],
         [
             "zone/en_zm_common.ff",
             148160,
             "7FE2A45A4B88F58C",
-            "base"
+            "zm"
         ],
         [
             "zone/en_zm_common_all.ff",
             704,
             "D4CC52BBA1263710",
-            "base"
+            "zm"
         ],
         [
             "zone/en_zm_cosmodrome.fd",
@@ -3912,13 +3926,13 @@
             "zone/en_zm_levelcommon.ff",
             323200,
             "7C9C6C948B455F55",
-            "base"
+            "zm"
         ],
         [
             "zone/en_zm_levelcommon.xpak",
             98304,
             "3149006808E113D3",
-            "base"
+            "zm"
         ],
         [
             "zone/en_zm_moon.fd",
@@ -3954,7 +3968,7 @@
             "zone/en_zm_patch.ff",
             18752,
             "7E9DE9577DFB080E",
-            "base"
+            "zm"
         ],
         [
             "zone/en_zm_prototype.fd",
@@ -4140,31 +4154,31 @@
             "zone/en_zm_zod.fd",
             40345,
             "BB506D19D56CEC6B",
-            "base"
+            "zm"
         ],
         [
             "zone/en_zm_zod.ff",
             578624,
             "069816A21489067E",
-            "base"
+            "zm"
         ],
         [
             "zone/en_zm_zod.xpak",
             786432,
             "A8B147449FCA04F9",
-            "base"
+            "zm"
         ],
         [
             "zone/en_zm_zod_d.xpak",
             98304,
             "62156481C4E5301F",
-            "base"
+            "zm"
         ],
         [
             "zone/en_zm_zod_patch.ff",
             11904,
             "E7A49C7F3627E76C",
-            "base"
+            "zm"
         ],
         [
             "zone/initial.xpak",
@@ -4200,25 +4214,25 @@
             "zone/mp_apartments.fd",
             14383735,
             "8E9EFA4888E0C8DD",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_apartments.ff",
             62969472,
             "60FF6D00706E8FFC",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_apartments.xpak",
             428343296,
             "816B0DB3DFFE7F5C",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_apartments_d.xpak",
             3112960,
             "66EBD2EACD319B2E",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_arena.fd",
@@ -4272,49 +4286,49 @@
             "zone/mp_biodome.fd",
             19384909,
             "029FF4C8DCDA0916",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_biodome.ff",
             107518592,
             "B911E7A55314BCA7",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_biodome.xpak",
             536084480,
             "0D71BF0EF42CAF9A",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_biodome_d.xpak",
             3571712,
             "CACCB90FD7711451",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_chinatown.fd",
             16554428,
             "5A38BFFEA958098C",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_chinatown.ff",
             87856256,
             "814B4F51DB822610",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_chinatown.xpak",
             430440448,
             "3CA56671D705F853",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_chinatown_d.xpak",
             4325376,
             "0FF02430A2B2B91B",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_city.fd",
@@ -4344,31 +4358,31 @@
             "zone/mp_common.fd",
             37587219,
             "5FE049DBC09C6232",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_common.ff",
             81025408,
             "978E670A92513F63",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_common.xpak",
             1572864,
             "72549FE937805DFA",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_common_all.ff",
             704,
             "A636A26836446DA4",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_common_d.xpak",
             3932160,
             "A6DAEB8310275778",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_conduit.fd",
@@ -4446,175 +4460,175 @@
             "zone/mp_ethiopia.fd",
             10963089,
             "219F1398500D3294",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_ethiopia.ff",
             56150144,
             "97CB415E4426AFC9",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_ethiopia.xpak",
             492306432,
             "CB5C225652113255",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_ethiopia_d.xpak",
             2621440,
             "51DEE6F9C846BE65",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_freerun_01.fd",
             1164139,
             "07A163D265184887",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_freerun_01.ff",
             24135808,
             "8B24ED859B7CC810",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_freerun_01.xpak",
             786432,
             "31EFDE7A64D9D34C",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_freerun_01_d.xpak",
             131072,
             "5191C3D896EA9FB0",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_freerun_01_patch.ff",
             7872,
             "92D9B2FEA1CEE549",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_freerun_02.ff",
             17943488,
             "89CD5E1049D9C793",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_freerun_02.xpak",
             786432,
             "96A7B4C4B70F0A66",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_freerun_02_patch.ff",
             8832,
             "CBC849F872F2C43A",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_freerun_03.ff",
             23649792,
             "0E2082A5F61DEFCE",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_freerun_03.xpak",
             786432,
             "DA3E0180ED9D5D24",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_freerun_03_patch.ff",
             6912,
             "F703581CAC5932E1",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_freerun_04.fd",
             1650439,
             "D61BA0C9D95CF60F",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_freerun_04.ff",
             16977344,
             "0A30600DDA345568",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_freerun_04.xpak",
             786432,
             "D576804968F9B0A9",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_freerun_04_d.xpak",
             131072,
             "2EA78F9535EE2811",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_freerun_04_patch.ff",
             9664,
             "F2066620E69090A1",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_havoc.fd",
             13965919,
             "E8ED00DFDF703944",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_havoc.ff",
             81601920,
             "BC80EB34A3BCFCC2",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_havoc.xpak",
             409993216,
             "D1D5F2C16725DE80",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_havoc_d.xpak",
             1736704,
             "A2F165EBCA0A2022",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_infection.fd",
             6236136,
             "6E5A08FA05A49187",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_infection.ff",
             59635072,
             "8B35A8A930ED3AB0",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_infection.xpak",
             414449664,
             "77739141D931622C",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_infection_d.xpak",
             1998848,
             "D7955A1A55C29AAC",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_initial.xpak",
             654311424,
             "E7A3BFA9F067BB2C",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_kung_fu.fd",
@@ -4644,25 +4658,25 @@
             "zone/mp_metro.fd",
             15708368,
             "A9E36B6EC1BD1420",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_metro.ff",
             66436800,
             "364D7B9DE983B14F",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_metro.xpak",
             366739456,
             "6F8EF0C421C5649C",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_metro_d.xpak",
             2424832,
             "06AE336625990805",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_miniature.fd",
@@ -4692,85 +4706,85 @@
             "zone/mp_nuketown_x.fd",
             7157087,
             "7E555E9C28F8EC21",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_nuketown_x.ff",
             58946944,
             "C6D1BDDDFCA11514",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_nuketown_x.xpak",
             1041629184,
             "ED971C86F316DDDC",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_nuketown_x_d.xpak",
             1343488,
             "5E8E1B658E56FB35",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_patch.ff",
             17236608,
             "0D431E0109412183",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_patch.xpak",
             327680,
             "D6E22C684A443A3F",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_redwood.fd",
             12979773,
             "AF7B10202ADBAAE3",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_redwood.ff",
             50906112,
             "6EF4DAE95AF80AEB",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_redwood.xpak",
             371195904,
             "2C1DF9AD12FFFE2F",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_redwood_d.xpak",
             2064384,
             "5B708C5C82E1BA67",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_redwood_ice.fd",
             4796444,
             "37315DF5A00FF4D1",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_redwood_ice.ff",
             52363200,
             "D76A5CB7DFC308D4",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_redwood_ice.xpak",
             685539328,
             "ECEAFB65491AD850",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_redwood_ice_d.xpak",
             1769472,
             "E859D16C1FDAC7FD",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_rise.fd",
@@ -4848,25 +4862,25 @@
             "zone/mp_sector.fd",
             7677114,
             "0F49D463C2A03D9F",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_sector.ff",
             69276352,
             "E68F411A124AED21",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_sector.xpak",
             314048512,
             "1A4B037D95968A06",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_sector_d.xpak",
             2883584,
             "2FFF1498F4E2CF10",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_shrine.fd",
@@ -4920,97 +4934,97 @@
             "zone/mp_spire.fd",
             12785566,
             "AB5006F22029B30C",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_spire.ff",
             94863488,
             "5AC70FCDADA05745",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_spire.xpak",
             407633920,
             "0A4E4145661715C7",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_spire_d.xpak",
             3112960,
             "6762F1FFAE1E719D",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_stronghold.fd",
             14034654,
             "A5B2D92009CBDC03",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_stronghold.ff",
             75068544,
             "FE384D030D941E6E",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_stronghold.xpak",
             351272960,
             "F4BFB89F631A6A98",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_stronghold_d.xpak",
             3145728,
             "F76F70C9AB660B79",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_veiled.fd",
             14175051,
             "310168C30BF28453",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_veiled.ff",
             84601920,
             "7D111A3BFB9EAEBB",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_veiled.xpak",
             316145664,
             "F4CE90E40873EAF6",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_veiled_d.xpak",
             2883584,
             "965FFB5F495C141F",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_veiled_heyday.fd",
             74056,
             "2D9CA6CA214A4995",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_veiled_heyday.ff",
             62416704,
             "899E2FE376663FB9",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_veiled_heyday.xpak",
             718733312,
             "72893A890915428E",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_veiled_heyday_d.xpak",
             2883584,
             "735AF48AD1C6B178",
-            "base"
+            "mp"
         ],
         [
             "zone/mp_waterpark.fd",
@@ -5736,25 +5750,25 @@
             "zone/snd/all/mp_apartments.all.p.sabl",
             2048,
             "059CD9F53701401B",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_apartments.all.p.sabs",
             2048,
             "059CD9F53701401B",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_apartments.all.sabl",
             59290240,
             "3EF44CDBE2BFEFED",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_apartments.all.sabs",
             2048,
             "5D9A3E0058FBC9C7",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_arena.all.p.sabl",
@@ -5808,49 +5822,49 @@
             "zone/snd/all/mp_biodome.all.p.sabl",
             2048,
             "1ED6585B2937C4D0",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_biodome.all.p.sabs",
             2048,
             "1ED6585B2937C4D0",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_biodome.all.sabl",
             62659584,
             "E0870CB33E357DF5",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_biodome.all.sabs",
             2048,
             "C9367404789BF40F",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_chinatown.all.p.sabl",
             2048,
             "3495D1B77B9B44EC",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_chinatown.all.p.sabs",
             2048,
             "3495D1B77B9B44EC",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_chinatown.all.sabl",
             70634624,
             "6A29B821D7087050",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_chinatown.all.sabs",
             2048,
             "0290C46338041CEE",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_city.all.p.sabl",
@@ -5880,25 +5894,25 @@
             "zone/snd/all/mp_common.all.p.sabl",
             80392832,
             "FD243DF96E2C7248",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_common.all.p.sabs",
             1937408,
             "72C3F8FBBB56F3CE",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_common.all.sabl",
             425581184,
             "93450C50D1F99447",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_common.all.sabs",
             376941312,
             "44596D47131CAB2D",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_conduit.all.p.sabl",
@@ -5976,169 +5990,169 @@
             "zone/snd/all/mp_ethiopia.all.p.sabl",
             2048,
             "819D98F1DFD25687",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_ethiopia.all.p.sabs",
             2048,
             "819D98F1DFD25687",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_ethiopia.all.sabl",
             77866752,
             "07B2E464DC68F07F",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_ethiopia.all.sabs",
             2048,
             "F4B57D43DB5A3A75",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_freerun_01.all.p.sabl",
             2048,
             "2B6448308A17E88B",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_freerun_01.all.p.sabs",
             2048,
             "2B6448308A17E88B",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_freerun_01.all.sabl",
             15470464,
             "B9BE00912F3E3111",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_freerun_01.all.sabs",
             2048,
             "6DFAAA2C9BACD300",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_freerun_02.all.sabl",
             15470464,
             "7FAE2376BC90E67D",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_freerun_02.all.sabs",
             2048,
             "9D4714BA7583B0D3",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_freerun_02_patch.all.sabl",
             2048,
             "C258D307766FEFBC",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_freerun_02_patch.all.sabs",
             2048,
             "C258D307766FEFBC",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_freerun_03.all.sabl",
             22466176,
             "BAB345439C0B3F81",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_freerun_03.all.sabs",
             2048,
             "161D430954F5D30D",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_freerun_04.all.p.sabl",
             2048,
             "E09D617E331E8B9C",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_freerun_04.all.p.sabs",
             2048,
             "E09D617E331E8B9C",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_freerun_04.all.sabl",
             15470464,
             "9B62E5C74F8D020F",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_freerun_04.all.sabs",
             2048,
             "AE4C50D5886CE5B5",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_freerun_04_patch.all.sabl",
             2048,
             "013D4AC9D960D1EF",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_freerun_04_patch.all.sabs",
             2048,
             "013D4AC9D960D1EF",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_havoc.all.p.sabl",
             2048,
             "85827EAB4A76698F",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_havoc.all.p.sabs",
             2048,
             "85827EAB4A76698F",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_havoc.all.sabl",
             56403456,
             "D2929852337896C9",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_havoc.all.sabs",
             2048,
             "F86FC7D658362695",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_infection.all.p.sabl",
             2048,
             "DEACA0D466AA806C",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_infection.all.p.sabs",
             2048,
             "DEACA0D466AA806C",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_infection.all.sabl",
             42375296,
             "3579EC691323AB38",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_infection.all.sabs",
             2048,
             "D9647AB17D9C1688",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_kung_fu.all.p.sabl",
@@ -6168,25 +6182,25 @@
             "zone/snd/all/mp_metro.all.p.sabl",
             2048,
             "08CCD4D2FDCF5B1E",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_metro.all.p.sabs",
             2048,
             "08CCD4D2FDCF5B1E",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_metro.all.sabl",
             49551872,
             "BCD6D7A7CD9FA4F7",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_metro.all.sabs",
             2048,
             "D0FA1AD223A1AFA3",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_miniature.all.p.sabl",
@@ -6216,85 +6230,85 @@
             "zone/snd/all/mp_nuketown_x.all.p.sabl",
             2048,
             "A667CF41FEA695E6",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_nuketown_x.all.p.sabs",
             2048,
             "A667CF41FEA695E6",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_nuketown_x.all.sabl",
             55539200,
             "C5A9C091C177B3A0",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_nuketown_x.all.sabs",
             12065152,
             "5F0BF89F832D42BD",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_patch.all.sabl",
             7527040,
             "174C18EF41037FB1",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_patch.all.sabs",
             17752704,
             "08F5A467E1F6D208",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_redwood.all.p.sabl",
             2048,
             "F43955A54CC0ADC2",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_redwood.all.p.sabs",
             2048,
             "F43955A54CC0ADC2",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_redwood.all.sabl",
             61849856,
             "B305CFA4B72B95C4",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_redwood.all.sabs",
             2048,
             "8626812F3A143857",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_redwood_ice.all.p.sabl",
             2048,
             "020EC6B7C9CE6555",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_redwood_ice.all.p.sabs",
             2048,
             "020EC6B7C9CE6555",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_redwood_ice.all.sabl",
             76209920,
             "B4A66CF9F62F5278",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_redwood_ice.all.sabs",
             6218112,
             "E2C24D41AC8FA25B",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_rise.all.p.sabl",
@@ -6372,25 +6386,25 @@
             "zone/snd/all/mp_sector.all.p.sabl",
             2048,
             "F694615C2D509702",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_sector.all.p.sabs",
             2048,
             "F694615C2D509702",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_sector.all.sabl",
             68343680,
             "8F9B0BBE478A5753",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_sector.all.sabs",
             2048,
             "C423ED97C15831F3",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_shrine.all.p.sabl",
@@ -6444,97 +6458,97 @@
             "zone/snd/all/mp_spire.all.p.sabl",
             2048,
             "6D7ACD00949FF574",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_spire.all.p.sabs",
             2048,
             "6D7ACD00949FF574",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_spire.all.sabl",
             46874368,
             "D6B7A953C7E7DE7B",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_spire.all.sabs",
             2048,
             "8ACF04F561296462",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_stronghold.all.p.sabl",
             2048,
             "1456984C82B70676",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_stronghold.all.p.sabs",
             2048,
             "1456984C82B70676",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_stronghold.all.sabl",
             48736128,
             "FF54EC3EFFD016EA",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_stronghold.all.sabs",
             2048,
             "276B5B02350FF75E",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_veiled.all.p.sabl",
             2048,
             "145C0FCD4DB7C332",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_veiled.all.p.sabs",
             2048,
             "145C0FCD4DB7C332",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_veiled.all.sabl",
             69505024,
             "D9EE29E9DE3F8AA5",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_veiled.all.sabs",
             2048,
             "BD08A669FB8148BB",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_veiled_heyday.all.p.sabl",
             2048,
             "C9BAF80F1A52D86B",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_veiled_heyday.all.p.sabs",
             2048,
             "C9BAF80F1A52D86B",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_veiled_heyday.all.sabl",
             76376576,
             "C5429B0E26C89CCA",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_veiled_heyday.all.sabs",
             20283648,
             "A9185DAD6AEE586D",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/all/mp_waterpark.all.p.sabl",
@@ -6648,25 +6662,25 @@
             "zone/snd/all/zm_common.all.p.sabl",
             39344896,
             "50915B3137A33AF8",
-            "base"
+            "zm"
         ],
         [
             "zone/snd/all/zm_common.all.p.sabs",
             4386944,
             "9273DA21D77A0540",
-            "base"
+            "zm"
         ],
         [
             "zone/snd/all/zm_common.all.sabl",
             264911744,
             "57EE33AEC7046691",
-            "base"
+            "zm"
         ],
         [
             "zone/snd/all/zm_common.all.sabs",
             229540224,
             "A72673AD1C1E414E",
-            "base"
+            "zm"
         ],
         [
             "zone/snd/all/zm_cosmodrome.all.p.sabl",
@@ -6792,13 +6806,13 @@
             "zone/snd/all/zm_levelcommon.all.sabl",
             65064448,
             "41354BEBC74D6E9A",
-            "base"
+            "zm"
         ],
         [
             "zone/snd/all/zm_levelcommon.all.sabs",
             23985408,
             "88162A64D1157EB6",
-            "base"
+            "zm"
         ],
         [
             "zone/snd/all/zm_moon.all.p.sabl",
@@ -6840,13 +6854,13 @@
             "zone/snd/all/zm_patch.all.sabl",
             3465856,
             "53F6D5332BAC98F3",
-            "base"
+            "zm"
         ],
         [
             "zone/snd/all/zm_patch.all.sabs",
             36210816,
             "7E88DDD5D9DA55A6",
-            "base"
+            "zm"
         ],
         [
             "zone/snd/all/zm_prototype.all.p.sabl",
@@ -7068,37 +7082,37 @@
             "zone/snd/all/zm_zod.all.p.sabl",
             2048,
             "FD4B5338F222FBB0",
-            "base"
+            "zm"
         ],
         [
             "zone/snd/all/zm_zod.all.p.sabs",
             2048,
             "FD4B5338F222FBB0",
-            "base"
+            "zm"
         ],
         [
             "zone/snd/all/zm_zod.all.sabl",
             221854208,
             "4156C7E7C9648E56",
-            "base"
+            "zm"
         ],
         [
             "zone/snd/all/zm_zod.all.sabs",
             2048,
             "83BC8953FE9B27C1",
-            "base"
+            "zm"
         ],
         [
             "zone/snd/all/zm_zod_patch.all.sabl",
             2048,
             "586E2CC048560086",
-            "base"
+            "zm"
         ],
         [
             "zone/snd/all/zm_zod_patch.all.sabs",
             2048,
             "586E2CC048560086",
-            "base"
+            "zm"
         ],
         [
             "zone/snd/en/core_frontend.en.p.sabl",
@@ -7776,25 +7790,25 @@
             "zone/snd/en/mp_apartments.en.p.sabl",
             2048,
             "DD9CC38906F02EEE",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_apartments.en.p.sabs",
             2048,
             "DD9CC38906F02EEE",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_apartments.en.sabl",
             2048,
             "7CF3286B9A0E8642",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_apartments.en.sabs",
             2048,
             "7CF3286B9A0E8642",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_arena.en.p.sabl",
@@ -7848,49 +7862,49 @@
             "zone/snd/en/mp_biodome.en.p.sabl",
             2048,
             "55E658DD1F042A5A",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_biodome.en.p.sabs",
             2048,
             "55E658DD1F042A5A",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_biodome.en.sabl",
             2048,
             "263B8FFD2F8CB14E",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_biodome.en.sabs",
             2048,
             "263B8FFD2F8CB14E",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_chinatown.en.p.sabl",
             2048,
             "495A61D3F0C9097C",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_chinatown.en.p.sabs",
             2048,
             "495A61D3F0C9097C",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_chinatown.en.sabl",
             2048,
             "51CD129E83B7AD7A",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_chinatown.en.sabs",
             2048,
             "51CD129E83B7AD7A",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_city.en.p.sabl",
@@ -7920,25 +7934,25 @@
             "zone/snd/en/mp_common.en.p.sabl",
             2048,
             "22AA491F2A73AEEE",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_common.en.p.sabs",
             3948160,
             "36C8478B2E05D5B5",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_common.en.sabl",
             2048,
             "6A7C18D84F32CC6F",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_common.en.sabs",
             584855936,
             "02794B180424EE3B",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_conduit.en.p.sabl",
@@ -8016,169 +8030,169 @@
             "zone/snd/en/mp_ethiopia.en.p.sabl",
             2048,
             "E09D4C30A6A51C6E",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_ethiopia.en.p.sabs",
             2048,
             "E09D4C30A6A51C6E",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_ethiopia.en.sabl",
             2048,
             "5F0DFF48B2D8FEE6",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_ethiopia.en.sabs",
             2048,
             "5F0DFF48B2D8FEE6",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_freerun_01.en.p.sabl",
             2048,
             "2F08BC784F3EE2CB",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_freerun_01.en.p.sabs",
             2048,
             "2F08BC784F3EE2CB",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_freerun_01.en.sabl",
             2048,
             "C90D137B21DA8647",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_freerun_01.en.sabs",
             2048,
             "C90D137B21DA8647",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_freerun_02.en.sabl",
             2048,
             "DF238D93576DFF09",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_freerun_02.en.sabs",
             2048,
             "DF238D93576DFF09",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_freerun_02_patch.en.sabl",
             2048,
             "4DFFA414946D60C0",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_freerun_02_patch.en.sabs",
             2048,
             "4DFFA414946D60C0",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_freerun_03.en.sabl",
             2048,
             "3DACE840C95BA36F",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_freerun_03.en.sabs",
             2048,
             "3DACE840C95BA36F",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_freerun_04.en.p.sabl",
             2048,
             "14F3CA10A3B1D1D2",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_freerun_04.en.p.sabs",
             2048,
             "14F3CA10A3B1D1D2",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_freerun_04.en.sabl",
             2048,
             "04CFC1F1B8F582A1",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_freerun_04.en.sabs",
             2048,
             "04CFC1F1B8F582A1",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_freerun_04_patch.en.sabl",
             2048,
             "15B74FCCE2CAB425",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_freerun_04_patch.en.sabs",
             2048,
             "15B74FCCE2CAB425",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_havoc.en.p.sabl",
             2048,
             "4E71E26F3C5F1D1A",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_havoc.en.p.sabs",
             2048,
             "4E71E26F3C5F1D1A",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_havoc.en.sabl",
             2048,
             "9A520BC710A24A63",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_havoc.en.sabs",
             2048,
             "9A520BC710A24A63",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_infection.en.p.sabl",
             2048,
             "7032345FE78859BF",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_infection.en.p.sabs",
             2048,
             "7032345FE78859BF",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_infection.en.sabl",
             2048,
             "E067E30A23661DBF",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_infection.en.sabs",
             2048,
             "E067E30A23661DBF",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_kung_fu.en.p.sabl",
@@ -8208,25 +8222,25 @@
             "zone/snd/en/mp_metro.en.p.sabl",
             2048,
             "D639FBB83C1650AD",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_metro.en.p.sabs",
             2048,
             "D639FBB83C1650AD",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_metro.en.sabl",
             2048,
             "5AA94A1DEEAB6BE8",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_metro.en.sabs",
             2048,
             "5AA94A1DEEAB6BE8",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_miniature.en.p.sabl",
@@ -8256,85 +8270,85 @@
             "zone/snd/en/mp_nuketown_x.en.p.sabl",
             2048,
             "74D96B3154047413",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_nuketown_x.en.p.sabs",
             2048,
             "74D96B3154047413",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_nuketown_x.en.sabl",
             2048,
             "B0B0C8BA7527FCC6",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_nuketown_x.en.sabs",
             2048,
             "B0B0C8BA7527FCC6",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_patch.en.sabl",
             2048,
             "3E8D6EA6CEC56D96",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_patch.en.sabs",
             66672512,
             "50FF5E1E584D1602",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_redwood.en.p.sabl",
             2048,
             "3D95FF13435A34B2",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_redwood.en.p.sabs",
             2048,
             "3D95FF13435A34B2",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_redwood.en.sabl",
             2048,
             "238236FD5FCB5F5D",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_redwood.en.sabs",
             2048,
             "238236FD5FCB5F5D",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_redwood_ice.en.p.sabl",
             2048,
             "B17AE52C7709F20A",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_redwood_ice.en.p.sabs",
             2048,
             "B17AE52C7709F20A",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_redwood_ice.en.sabl",
             2048,
             "FA9BC1E6656A70D0",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_redwood_ice.en.sabs",
             2048,
             "FA9BC1E6656A70D0",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_rise.en.p.sabl",
@@ -8412,25 +8426,25 @@
             "zone/snd/en/mp_sector.en.p.sabl",
             2048,
             "878A073481CC0F51",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_sector.en.p.sabs",
             2048,
             "878A073481CC0F51",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_sector.en.sabl",
             2048,
             "C0CF0FECCECEBF16",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_sector.en.sabs",
             2048,
             "C0CF0FECCECEBF16",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_shrine.en.p.sabl",
@@ -8484,97 +8498,97 @@
             "zone/snd/en/mp_spire.en.p.sabl",
             2048,
             "7BE7A383F3D73AFC",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_spire.en.p.sabs",
             2048,
             "7BE7A383F3D73AFC",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_spire.en.sabl",
             2048,
             "0FF6F2B7ABBA0C43",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_spire.en.sabs",
             2048,
             "0FF6F2B7ABBA0C43",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_stronghold.en.p.sabl",
             2048,
             "86BC19F86C4B9EB2",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_stronghold.en.p.sabs",
             2048,
             "86BC19F86C4B9EB2",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_stronghold.en.sabl",
             2048,
             "D45EA4D1EAA17CEE",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_stronghold.en.sabs",
             2048,
             "D45EA4D1EAA17CEE",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_veiled.en.p.sabl",
             2048,
             "2BC3EA64A159DC82",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_veiled.en.p.sabs",
             2048,
             "2BC3EA64A159DC82",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_veiled.en.sabl",
             2048,
             "528CFBD7C87D5240",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_veiled.en.sabs",
             2048,
             "528CFBD7C87D5240",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_veiled_heyday.en.p.sabl",
             2048,
             "F5CB9229392674B3",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_veiled_heyday.en.p.sabs",
             2048,
             "F5CB9229392674B3",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_veiled_heyday.en.sabl",
             2048,
             "B26E393A0124E9CF",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_veiled_heyday.en.sabs",
             2048,
             "B26E393A0124E9CF",
-            "base"
+            "mp"
         ],
         [
             "zone/snd/en/mp_waterpark.en.p.sabl",
@@ -8688,25 +8702,25 @@
             "zone/snd/en/zm_common.en.p.sabl",
             2048,
             "31BDBF340E8E90B0",
-            "base"
+            "zm"
         ],
         [
             "zone/snd/en/zm_common.en.p.sabs",
             2048,
             "31BDBF340E8E90B0",
-            "base"
+            "zm"
         ],
         [
             "zone/snd/en/zm_common.en.sabl",
             76288,
             "DCDF7BDDAB1C7F6E",
-            "base"
+            "zm"
         ],
         [
             "zone/snd/en/zm_common.en.sabs",
             346543360,
             "6EA07305107629AC",
-            "base"
+            "zm"
         ],
         [
             "zone/snd/en/zm_cosmodrome.en.p.sabl",
@@ -8832,13 +8846,13 @@
             "zone/snd/en/zm_levelcommon.en.sabl",
             2048,
             "58380EDDD6658C89",
-            "base"
+            "zm"
         ],
         [
             "zone/snd/en/zm_levelcommon.en.sabs",
             2048,
             "58380EDDD6658C89",
-            "base"
+            "zm"
         ],
         [
             "zone/snd/en/zm_moon.en.p.sabl",
@@ -8880,13 +8894,13 @@
             "zone/snd/en/zm_patch.en.sabl",
             2048,
             "D4B306BD7E7F9B1A",
-            "base"
+            "zm"
         ],
         [
             "zone/snd/en/zm_patch.en.sabs",
             2048,
             "D4B306BD7E7F9B1A",
-            "base"
+            "zm"
         ],
         [
             "zone/snd/en/zm_prototype.en.p.sabl",
@@ -9108,37 +9122,37 @@
             "zone/snd/en/zm_zod.en.p.sabl",
             2048,
             "6D843FB9841F0759",
-            "base"
+            "zm"
         ],
         [
             "zone/snd/en/zm_zod.en.p.sabs",
             2048,
             "6D843FB9841F0759",
-            "base"
+            "zm"
         ],
         [
             "zone/snd/en/zm_zod.en.sabl",
             2048,
             "5213FD63D8F48330",
-            "base"
+            "zm"
         ],
         [
             "zone/snd/en/zm_zod.en.sabs",
             2048,
             "5213FD63D8F48330",
-            "base"
+            "zm"
         ],
         [
             "zone/snd/en/zm_zod_patch.en.sabl",
             2048,
             "D3643B4FF13404F2",
-            "base"
+            "zm"
         ],
         [
             "zone/snd/en/zm_zod_patch.en.sabs",
             5883648,
             "27E298D750F790C2",
-            "base"
+            "zm"
         ],
         [
             "zone/zm_asylum.fd",
@@ -9204,31 +9218,31 @@
             "zone/zm_common.fd",
             8870479,
             "BB7236D19EF34348",
-            "base"
+            "zm"
         ],
         [
             "zone/zm_common.ff",
             36332480,
             "5559165E708FECCE",
-            "base"
+            "zm"
         ],
         [
             "zone/zm_common.xpak",
             786432,
             "40086800403BD450",
-            "base"
+            "zm"
         ],
         [
             "zone/zm_common_all.ff",
             704,
             "59689DFA8D9A5D39",
-            "base"
+            "zm"
         ],
         [
             "zone/zm_common_d.xpak",
             131072,
             "A712AB351C2CD935",
-            "base"
+            "zm"
         ],
         [
             "zone/zm_cosmodrome.fd",
@@ -9330,7 +9344,7 @@
             "zone/zm_initial.xpak",
             1272184832,
             "8BCBAC301242E832",
-            "base"
+            "zm"
         ],
         [
             "zone/zm_island.fd",
@@ -9366,13 +9380,13 @@
             "zone/zm_levelcommon.ff",
             61068032,
             "A488E752BF79A3E8",
-            "base"
+            "zm"
         ],
         [
             "zone/zm_levelcommon.xpak",
             184385536,
             "30F2DFACCEA1DF05",
-            "base"
+            "zm"
         ],
         [
             "zone/zm_moon.fd",
@@ -9408,7 +9422,7 @@
             "zone/zm_patch.ff",
             3013504,
             "900A49EE772F06C4",
-            "base"
+            "zm"
         ],
         [
             "zone/zm_prototype.fd",
@@ -9594,37 +9608,37 @@
             "zone/zm_zod.fd",
             76359214,
             "14E01FBA47E24897",
-            "base"
+            "zm"
         ],
         [
             "zone/zm_zod.ff",
             227917760,
             "BC23A000E11BE9B9",
-            "base"
+            "zm"
         ],
         [
             "zone/zm_zod.xpak",
             5505024,
             "BE96AFE49E3761D2",
-            "base"
+            "zm"
         ],
         [
             "zone/zm_zod_d.xpak",
             5177344,
             "58E4FCC663583B2F",
-            "base"
+            "zm"
         ],
         [
             "zone/zm_zod_patch.ff",
             1092992,
             "D9C5AA1DE0D8AEF7",
-            "base"
+            "zm"
         ],
         [
             "zone/zm_zod_patch.xpak",
             98304,
             "D0EC1DAE4DA4C07E",
-            "base"
+            "zm"
         ]
     ]
 }

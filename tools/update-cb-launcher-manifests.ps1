@@ -42,7 +42,7 @@ $games = [ordered]@{
     "cod1"    = "cod1"
     "coduo"    = "coduo"
     "cod2"    = "cod2"
-
+	"ww2"    = "ww2"
 }
 
 $total = $games.Count
