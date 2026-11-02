@@ -12,7 +12,7 @@
     [
         "Launch Project BO4.exe",
         112640,
-        "DC2514C63685FABEE8861940E91AE2125FD3A9AB"
+        "8A03F194C55114ADB6B2BAC229E78D54C41A887C"
     ],
     [
         "LPC/arasafe_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
@@ -896,8 +896,8 @@
     ],
     [
         "project-bo4/launcher/Shield_Launcher.exe",
-        521728,
-        "7F8D5A01AE23D75C6E8821A6A2BE0909FA59F975"
+        523776,
+        "B86564DB55FB55E41997F9BE497C0D41D3A2ED60"
     ],
     [
         "project-bo4/launcher/Sounds/startup_sound.mp3",
@@ -906,8 +906,8 @@
     ],
     [
         "project-bo4/launcher/XInput9_1_0.dll",
-        5210112,
-        "98A0E6844DAC574A4389871A94345740A66B4B72"
+        5211648,
+        "32BFDBBE71BA345FE21255403DD0010E8D172077"
     ],
     [
         "project-bo4/music_manager/music/add your own musics here.txt",
@@ -935,6 +935,6 @@
         "7BEE5FF8DBD1C98E5A6FAC24B671A1BF95FB9022"
     ],
     {
-        "ManifestHash": "FD7962437D002791A47AA5C78FC2473A57F41D2A33945F44A2816A89CF30B5EC"
+        "ManifestHash": "64E1D61FB7B5C6F2467A897AE4B8D5F004BAC7F3FFD83DA5236384A6B7598784"
     }
 ]
