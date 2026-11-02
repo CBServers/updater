@@ -12,7 +12,222 @@
     [
         "Launch Project BO4.exe",
         112640,
-        "329433F4880F5A17539DE8E838985D89ECC53DDD"
+        "DC2514C63685FABEE8861940E91AE2125FD3A9AB"
+    ],
+    [
+        "LPC/arasafe_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
+        2432,
+        "F09FF7A8DE7A99384528BDCE32F9E574A8ECE3CC"
+    ],
+    [
+        "LPC/arasafe_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
+        2432,
+        "CA9E2CF2EBC3EFDE40CF0F8DCE44B8576146E606"
+    ],
+    [
+        "LPC/bp_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
+        40960,
+        "A82268B40AF48B6016DE581264602C3AA36589B7"
+    ],
+    [
+        "LPC/bp_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
+        27200,
+        "713BA093179DDD64152BA3A763517A6AA416CEAD"
+    ],
+    [
+        "LPC/core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
+        10315840,
+        "677913792BDC572783573783F3F5FD6E69A70725"
+    ],
+    [
+        "LPC/core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
+        30912,
+        "9318E917CD2ADF1B158F2CA3DD6BAD8869E8F4DA"
+    ],
+    [
+        "LPC/en_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
+        38784,
+        "EA724E133437D2F425C41000B23E746B828E7E0D"
+    ],
+    [
+        "LPC/en_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
+        25472,
+        "2FDE8A07F5C537081D3678DE0239E7682E26F78F"
+    ],
+    [
+        "LPC/es_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
+        41152,
+        "3C1F584A15ED83C14C6B6C5F65DD38DC6EB6752C"
+    ],
+    [
+        "LPC/es_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
+        26496,
+        "3EABE143798EBF9D908E4413DF92858F7B5C5E35"
+    ],
+    [
+        "LPC/fr_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
+        42112,
+        "1AE58BE2A63A6E95B0A119B2A7B7CF19B3AFCC58"
+    ],
+    [
+        "LPC/fr_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
+        27008,
+        "D157F605CA0A294E63197DA41CAB4199ECEEDD42"
+    ],
+    [
+        "LPC/gersafe_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
+        2432,
+        "DFC5CB341F28867905DF5CC25F250A3110A508BB"
+    ],
+    [
+        "LPC/gersafe_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
+        2432,
+        "9A9FCAAC8BE758A8245D38BF88D5B721EABA7F0A"
+    ],
+    [
+        "LPC/ge_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
+        40896,
+        "15209883B4528B0C95B71584563A7E4EE440C42F"
+    ],
+    [
+        "LPC/ge_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
+        25600,
+        "0060D0D5867CCA28E23F19C0290D544E7EA93DEF"
+    ],
+    [
+        "LPC/it_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
+        40640,
+        "8110A8A3FCE51729F474931497BCA38333A2A225"
+    ],
+    [
+        "LPC/it_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
+        25856,
+        "B3447DA306B95EB1374A77F71B9AA11EFB685CCB"
+    ],
+    [
+        "LPC/jj_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
+        41792,
+        "7F718AB0CD96FD116C64EF977A82497C07E32317"
+    ],
+    [
+        "LPC/jj_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
+        25920,
+        "9B352BD6E6DB92702375016FEF224B69C0626E33"
+    ],
+    [
+        "LPC/jpsafe_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
+        2432,
+        "1A30AF7DB5735B5AE13267FCB7900DCCFDFDCCDF"
+    ],
+    [
+        "LPC/jpsafe_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
+        2432,
+        "025956CE5828FA1FD62C26776B6D3CCC88A62877"
+    ],
+    [
+        "LPC/k15safe_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
+        2432,
+        "1088B16C8A2A9957FAC0D96D6F774991A8AD929C"
+    ],
+    [
+        "LPC/k15safe_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
+        2432,
+        "E1B16D90B8AC66A119B039B01A976CB924AFDFD7"
+    ],
+    [
+        "LPC/ko_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
+        41472,
+        "615AC37F16EC7E52CAE27E98A40FA4BE7B1E5346"
+    ],
+    [
+        "LPC/ko_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
+        28288,
+        "828B1F7FA683168556125A5FAA6356173EE32C40"
+    ],
+    [
+        "LPC/ms_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
+        41536,
+        "1A33EB833CB30D5650BD2300D958748750F507E6"
+    ],
+    [
+        "LPC/ms_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
+        26496,
+        "474E04265E031A4D5100627B4D3FD09B83228C23"
+    ],
+    [
+        "LPC/pp_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
+        41216,
+        "75F2FB19EDAC7FEA50CDDF3DCB7E5BFF41778AE3"
+    ],
+    [
+        "LPC/pp_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
+        27392,
+        "A79014A93F48025B85319E4355502FBAED6A9DD4"
+    ],
+    [
+        "LPC/rr_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
+        48960,
+        "ECE2C47E4C050BB225C5A5F08BC5F5E162CB0116"
+    ],
+    [
+        "LPC/rr_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
+        30272,
+        "D13F54D3349CEA7A7DBFDFB6D5947BEE98DE202B"
+    ],
+    [
+        "LPC/ru_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
+        48960,
+        "1F25ABC705127C556920765721D94A35D0A3F6AF"
+    ],
+    [
+        "LPC/ru_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
+        30272,
+        "8E2138C409B31B182D95A536706840253A769A98"
+    ],
+    [
+        "LPC/tc_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
+        39104,
+        "5A886F646AA54A59C8F29A8E2E1B3E1DBB8720B8"
+    ],
+    [
+        "LPC/tc_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
+        26112,
+        "BEA88C67E83317161D3103FB47C5F53F144718A8"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Data/blackmarket_data.json",
+        16173,
+        "37AB8840A5C22C2A03A56130F38228CAD432717C"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Data/contract_data.json",
+        28544,
+        "773F88BEFC654CAF9A70A54E2DA39930F6C91589"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Data/loot_bundles.csv",
+        200040,
+        "2F8B62D50CE598CA01D7F039A2B0E83120937F17"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Data/loot_contraband.csv",
+        269294,
+        "CDAC20A1EA391C6ACC646243F7D288ACC21FCEC7"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Data/loot_contracts.csv",
+        3078,
+        "742FF344CD938C066C8EF1C61ADB1BD93EDD4BBA"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Data/loot_index.csv",
+        248726,
+        "19D8B0230ACD727D57F251061DD893CDFB2BCF9D"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Data/loot_shop.csv",
+        40079,
+        "9F8AC4E2AC987F372EE20E73E18B2FFF84462AD7"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/maxrankdata_mp.csv",
@@ -40,9 +255,59 @@
         "A076A5C42CF162EABC6AA000611373EE8C8C463B"
     ],
     [
+        "project-bo4/internals/T8ShieldSupport/Data/season_407749.csv",
+        4097,
+        "FBF084367B7AD1DC72694140CD027EBB60B5CE5A"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Data/season_421466.csv",
+        10450,
+        "3EAD6B7286A2D313E4CEB0F93C8AD0F785D374E9"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Data/season_446929.csv",
+        8704,
+        "87C3F8945C1502185D3E77FD21C9DFE18F1411F4"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Data/season_447799.csv",
+        5592,
+        "A840EFCA8C3829FB4AB7FCB81143EFC8CBEA2C04"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Data/season_452985.csv",
+        5072,
+        "221C209CCD76F8AC81949A35B19938FAF363D17C"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Data/season_460119.csv",
+        4765,
+        "8260D40603A496540D4540A1A40C4AC04C4A5C5B"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Data/season_463850.csv",
+        11396,
+        "5612BAAD3E1CFB2630AF3703DC8E3975F23E0487"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Data/season_485074.csv",
+        5062,
+        "44C9F6CCE12AB7F4454CD9D963BE611989796254"
+    ],
+    [
         "project-bo4/internals/T8ShieldSupport/Data/wz_randombots.csv",
         1135,
         "0F2CA0EADCD282F5D63A94852C361E7A8ADDD69D"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/BlackMarketSettings.luac",
+        10773,
+        "14DCE16D77DFEBD6D38CD4946CF1F6D44FBE3DFB"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/BlackoutJoinInProgress.luac",
+        2777,
+        "CD3F163CD2BC382D387D3EBF055B9CEC51B58F97"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/BlackoutRules.luac",
@@ -51,8 +316,8 @@
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/BlackoutSettings.luac",
-        14275,
-        "F6E16E7BDE35E2953ED18A6581D1B9B2E3E360C0"
+        15714,
+        "73579785DFB9D9C1A0AE75A92012ECD3ADFEB20C"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/BlackoutSliderNoLocalize.luac",
@@ -71,8 +336,8 @@
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ChatCommands.luac",
-        6237,
-        "AF5125B034D02913E1FA8FE694C525754EEBF62B"
+        11476,
+        "676B3F980C80DEE34FA466DD28312C6B4CE6BF4A"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ClanTag.luac",
@@ -81,13 +346,28 @@
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Connection.luac",
-        13228,
-        "8042027EACF459F07008F299AFA7BFDECEAD2DF3"
+        17148,
+        "E7EF69B29D3BE6788F44B2260610D2D1743DD784"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Cookbook.luac",
+        41395,
+        "DC49FCABFAEADB3EE989B480F2B4E69AB33E221E"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/CreateClassFix.luac",
         606,
         "48D01DD75FF1DF81F13DB2EE1F7D374C559F9C35"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/CustomCamos.luac",
+        15517,
+        "C6BC8E4B51A2B35664992D7E2DA1F4A62D058BF6"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/CustomMaps.luac",
+        18241,
+        "165F67FF55AD54E3FD8EFC728275C0C68CED30E7"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/CustomSlider.luac",
@@ -121,8 +401,13 @@
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/DiscordRPC.luac",
-        101561,
-        "7B589152FEF2361D2AA481F281B8CFCFF8F0EDB0"
+        101841,
+        "AFAF29A34B3BA3963C173983EFC42FF271228453"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/EarnCodPoints.luac",
+        6658,
+        "8393F05B0D3E4868D021349BC28BE6FAF58BD014"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/EditBoxes.luac",
@@ -131,13 +416,13 @@
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ExtraCamos.luac",
-        47572,
-        "4ACF7AA36CF753315FF7016B47FDD94660EB3B47"
+        50384,
+        "A01B742047AD41E2B5B8084CEA1C263C1C2E50D1"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/FOVAimAssist.luac",
-        9757,
-        "F4E0E9FDAC59C95EDCC16B206D869D61E9E7496B"
+        10293,
+        "159BD23CE92FC30ECAC719019F3851301715AA8F"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Friends.luac",
@@ -145,14 +430,29 @@
         "FF1308A9860E8634C13738E30340D07512A13180"
     ],
     [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/HostLobby.luac",
+        40252,
+        "E4E0C9DCDB37525207414DE61075875BB39454D3"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/HostTeamSwitch.luac",
+        11300,
+        "8FDE897CE841FBE08F0C60A31D7C4718D6E4909E"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/LabOffers.luac",
+        4300,
+        "6C3641314DD5ABF53DBBA06D6D3F86133DFA6E5C"
+    ],
+    [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/LobbyBrowser.luac",
-        42340,
-        "1EBAF2766F6C24414E9D6BE6C636D8EE71CB38ED"
+        39164,
+        "7A60C1AC658501A2E58E95B5D150EE532AE7CDCF"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/MainMenu.luac",
-        109249,
-        "1C54DF8CE73350159570DBB9F96252DEFBF445E7"
+        106252,
+        "D47D479E02C8CB4F94376E31ADF4A528864EFAAB"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Mastercraft.luac",
@@ -161,18 +461,23 @@
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/MatchmakingDvars.luac",
-        1616,
-        "40D491922DB40AB563C945F15F3D17058CE61137"
+        1192,
+        "C024CD0F816153096B005A08FE4AB3653E19FE9E"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/MiscSettings.luac",
-        15276,
-        "5545511FC0F5D307026F8EABEDF0C6328F29AA83"
+        12898,
+        "75E148F19D6A744AA9E6B9F087013596A4AF5398"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ModManager.luac",
-        78438,
-        "5ED9A4256E46592199DF86770E84A251AD7F1998"
+        51250,
+        "48866EE4B4BE58846822554C531C5B660E5AB275"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/MovementSettings.luac",
+        10486,
+        "1CB9F15D90866299BD423B34D926CBE0AE9A9C4A"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/MultiplayerExtraGamemodes.luac",
@@ -186,8 +491,8 @@
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/MusicManager.luac",
-        66599,
-        "FF3D3E608AF2EA2CDEB8C7D8E003F347F98B78FE"
+        37787,
+        "85ABC15A7A14CFBC8B966F2256AAB43CEDB0FAA3"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Overlay.luac",
@@ -201,13 +506,13 @@
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/PatchNotes.luac",
-        15573,
-        "B36DA378E9EF645090B4C643331C7F7FD798627A"
+        14946,
+        "70BECE74893B80B8FB2BCF45C144D7E61E5CBC16"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Playlists.luac",
-        15748,
-        "1277B3B1C0F66967814BE0F616C74D097F2BF2E7"
+        16560,
+        "E047F5D354301C22B60A3725D00737162C6300FF"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/PreGameButtons.luac",
@@ -216,23 +521,23 @@
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ProgressionFixes.luac",
-        3040,
-        "50AA30DD2E8840F922E624D5F4BD139C2DA6D550"
+        3156,
+        "7C7292052E72B54275E6F402C1A53F53A55C88CD"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/RankUtils.luac",
-        3943,
-        "7C650C85F4689282F2C59B4491CAE320BE2A50A7"
+        3597,
+        "3405C6E74622853DD532198E3C25CD93E6948B88"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Reactives.luac",
         21041,
-        "FA6B799787B00F84C65F4428E059AEE3BB2BE6E4"
+        "C5C81279D01E2EAE3266AE03646733043A832200"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ReloadOverrides.luac",
-        16504,
-        "844B459D4CE2E742053381341FD21AE804BAA34E"
+        16740,
+        "C0AB524FB1102FFDD66489338A2362DFCE55E7F5"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/RemovePopUps.luac",
@@ -241,8 +546,8 @@
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/RulesManager.luac",
-        28790,
-        "F57606E0D429FE835B8E1CC9B61F1CA784583258"
+        32259,
+        "FDF743E96AC8E28E03A7EDC879E0269ADC299692"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ServerBrowser.luac",
@@ -255,14 +560,19 @@
         "8744F69311DC31EA64F6EB2B278E7667724A75BE"
     ],
     [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ShieldLoot.luac",
+        5131,
+        "467C4B5534C8B5EF93CD9E77BF6AFEE7476A0287"
+    ],
+    [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ShieldOptions.luac",
-        28416,
-        "52A928D273E668DD0E324E434F619F58BE138534"
+        39881,
+        "B282BA16085F3FF473493E6343566663B9C54513"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Social.luac",
-        576,
-        "EA6439DA5D64F8F984C0EEB65F1349794247F9C9"
+        5122,
+        "AA58452FAF4E57093711B17A8C67AB73E23BA290"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/SystemOverlay.luac",
@@ -271,18 +581,18 @@
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/UnlockAll.luac",
-        49670,
-        "BAE5D2B5BC21F7E2BFA5D2CC78C57FE021E1D474"
+        53310,
+        "2027BB6F3B5B745C5091F1699D5B190DB46AC79A"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Utils.luac",
-        14605,
-        "CC7AA6909585A87946DE66688E16C6EFB17BFFF5"
+        16565,
+        "E801749A5793CA600E893916262C7D69A89FE748"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/WatermarkSettings.luac",
-        9687,
-        "6CADB546AE21A4F478B67E3551AFF89FB9F57B19"
+        10231,
+        "3A86185ECA7D50B4D5BE290FD5986A963BC0B68B"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ZombiesEasterEggChecks.luac",
@@ -301,8 +611,8 @@
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Game/BlackoutStartMatchButton.luac",
-        1727,
-        "3E834CDCB128224ACBDF7271A7F55F0CBE89877B"
+        2454,
+        "95E47A62C3B6E935464E2C73813466EAE1887757"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Game/Chat.luac",
@@ -311,8 +621,8 @@
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Game/ChatCommands.luac",
-        6285,
-        "641DF895E4E27F9C39A3F5D0C0778E14E189A63C"
+        9784,
+        "7EDC683F096BAFEEE06C74E996AD1FAAECDBC0EA"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Game/DiscordRPC.luac",
@@ -341,8 +651,8 @@
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Game/Social.luac",
-        624,
-        "C555602900D26504266D0F17826EE56DC0165C37"
+        3342,
+        "4177B4070CCAB6D73A89EDF972D43801C7869F19"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Game/SubtitleFix.luac",
@@ -356,28 +666,28 @@
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Game/TeamChangeFixes.luac",
-        16246,
-        "129DD929C8C155BEDE075414A4D4DD175972C05B"
+        16250,
+        "4088A2BDCE338306212087ABE3C45C97033C98D5"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Game/Utils.luac",
-        2726,
-        "7CE3FBFDE88071E85DD1412792AB14EE4D3D8C4A"
+        6414,
+        "5E241C18F627EBFA5D66A5DAE32BF3BB6B18EBC4"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/metadata.json",
-        44346,
-        "4C13A5B52E663076AC89999C756F9F0672AD6A7E"
+        58204,
+        "8B1784ABCDA0359084C2A4E8CBBD59A9CF6CC2E6"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Scripts/SupportCSC.csic",
-        2076,
-        "6116A2AF24E1A5D341090FC4E1ECC73C6F8E9940"
+        13600,
+        "23D8F0926688E1FED9C4B8B26CA42FA373A789B0"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Scripts/SupportGSC.gsic",
-        108560,
-        "FA7463E63AD94BCEFDC81F907C2162353F999CF2"
+        134824,
+        "D4FAAB228BBDF0098D56F7E9E2E55C08A6227DE8"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/SupportUtils/SupportErrors.tsv",
@@ -386,8 +696,8 @@
     ],
     [
         "project-bo4/internals/T8ShieldSupport/SupportUtils/SupportHashes.txt",
-        22036,
-        "B65276AA32196F6812D7D3B75144BDC8D818BE12"
+        33415,
+        "933F2B24F5059887F91D34442784AE632CABE96D"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/SupportUtils/SupportStrings.txt",
@@ -403,11 +713,6 @@
         "project-bo4/launcher/images/launcher.png",
         280896,
         "A8F088B0306A22C3EE416C3ED56F5BE389C9704F"
-    ],
-    [
-        "project-bo4/launcher/launcher-config.json",
-        248,
-        "1C09844C7CDDC1ABF1F4674F20DAE868132F4A96"
     ],
     [
         "project-bo4/launcher/LPC/arasafe_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
@@ -590,54 +895,9 @@
         "BEA88C67E83317161D3103FB47C5F53F144718A8"
     ],
     [
-        "project-bo4/launcher/mp/XInput9_1_0.dll",
-        4039680,
-        "8CC7E54C73A252C3A2061EA6CF5AD0139C6EBB51"
-    ],
-    [
-        "project-bo4/launcher/platforms/qwindows.dll",
-        907928,
-        "49FE8B62A9F22FCA19DEC80A77C1E6AA1698E0FC"
-    ],
-    [
-        "project-bo4/launcher/platforms/qwindowsd.dll",
-        3686040,
-        "564B1B9B25C289270FD7628F9C6440BE0DEDE3A8"
-    ],
-    [
-        "project-bo4/launcher/project-bo4.json",
-        118,
-        "8E50DCC707D1DB43A841C0CC54C377F3288B2BA2"
-    ],
-    [
-        "project-bo4/launcher/Qt6Core.dll",
-        6095512,
-        "1C0914DE24F41D80F572D9D8238A11E25DBC0D78"
-    ],
-    [
-        "project-bo4/launcher/Qt6Gui.dll",
-        9247896,
-        "6E76BFFC86743ED979FB0E89AAFB0E03789666DE"
-    ],
-    [
-        "project-bo4/launcher/Qt6Network.dll",
-        1755800,
-        "BE91E80352C58FFF117CBCE22EFCB65AF43B1DF3"
-    ],
-    [
-        "project-bo4/launcher/Qt6Widgets.dll",
-        6496408,
-        "9EA8E49EB7FD8D77AB5B0C4EAB5FFB78A9D11464"
-    ],
-    [
         "project-bo4/launcher/Shield_Launcher.exe",
-        326656,
-        "69AF69DD3236CB437805BFD6840DCE5141BEEBD3"
-    ],
-    [
-        "project-bo4/launcher/solo/XInput9_1_0.dll",
-        4215296,
-        "A49F9319C77F7A0BD45F4C4A9D251C0DE60F880F"
+        521728,
+        "7F8D5A01AE23D75C6E8821A6A2BE0909FA59F975"
     ],
     [
         "project-bo4/launcher/Sounds/startup_sound.mp3",
@@ -645,44 +905,29 @@
         "35C56B44C473AD1BCC66AF22B672E2188D952A51"
     ],
     [
-        "project-bo4/music_manager/music/BO1 - Zombies Theme.mp3",
-        7425078,
-        "03D25E57E4321F719E91B6E43E5E5D3BDDB02005"
+        "project-bo4/launcher/XInput9_1_0.dll",
+        5210112,
+        "98A0E6844DAC574A4389871A94345740A66B4B72"
     ],
     [
-        "project-bo4/music_manager/music/BO2 - Zombies Theme.mp3",
-        11513133,
-        "122FA1AF3B239ADA6184D69FD4F16A59B0D464A3"
+        "project-bo4/music_manager/music/add your own musics here.txt",
+        63,
+        "488B52EE9C27C690291EF96EC2B8D09BB444B972"
     ],
     [
-        "project-bo4/music_manager/music/BO3 - Zombies Theme.mp3",
-        9276637,
-        "9D3D19ADB05BABBF413760E44846C41E5A67E83A"
-    ],
-    [
-        "project-bo4/music_manager/music/BO4 - Early Chaos Theme.mp3",
-        10690215,
-        "FBECB0FACDC42F18169E70B3BEEEBEF7D4CE4C99"
-    ],
-    [
-        "project-bo4/music_manager/music/BO6 - Zombies Theme.mp3",
-        10982955,
-        "D6F30F5703FAD584A5CB7F7FD732D8A2E8CA56D5"
-    ],
-    [
-        "project-bo4/music_manager/music/CW - Zombies Theme.mp3",
-        10879510,
-        "7A348484ACE9FDF4056D04C5E88B0DFDD7A85BB0"
-    ],
-    [
-        "project-bo4/plugins/acts-shield-plugin.dll",
-        1080832,
-        "FBC6D69DECB3E1D356C9ED96ED47FB302E33841B"
+        "project-bo4/zone/snd/all/support.all.sabs",
+        579328,
+        "6A095588443208F6F8E23FC85C55F87BECA7C7F0"
     ],
     [
         "project-bo4/zone/support.ff",
-        714384,
-        "F252EAB5417573A7062217CD6305B320CDCAF309"
+        1930796,
+        "C7B927B19A3B1B51C3F5314DEB2526E49217715B"
+    ],
+    [
+        "project-bo4/zone/support.xpak",
+        65536,
+        "5DAB96E575937CEAB3B81FE1C1B0E8F12D1E11DA"
     ],
     [
         "project-bo4/zone_mods/T8ShieldSupport_FF/config.json",
@@ -690,6 +935,6 @@
         "7BEE5FF8DBD1C98E5A6FAC24B671A1BF95FB9022"
     ],
     {
-        "ManifestHash": "222CD7B8BCAB23942F03B12201F0E105C0497E49C60D4AEBB6AC7EF966F33D5D"
+        "ManifestHash": "FD7962437D002791A47AA5C78FC2473A57F41D2A33945F44A2816A89CF30B5EC"
     }
 ]

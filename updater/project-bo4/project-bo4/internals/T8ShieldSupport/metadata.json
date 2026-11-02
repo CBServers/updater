@@ -282,6 +282,14 @@
         },
         {
             "type": "luafile",
+            "name": "ui/shield/CustomMaps",
+            "path": "Lua\\Frontend\\CustomMaps.luac",
+            "hooks_post": [
+                "x64:4ed0bcba9d999e0f"
+            ]
+        },
+        {
+            "type": "luafile",
             "name": "ui/shield/PatchNotes",
             "path": "Lua\\Frontend\\PatchNotes.luac",
             "hooks_post": [
@@ -302,6 +310,62 @@
             "path": "Lua\\Frontend\\LobbyBrowser.luac",
             "hooks_post": [
                 "x64:4ed0bcba9d999e0f"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/HostLobby",
+            "path": "Lua\\Frontend\\HostLobby.luac",
+            "hooks_post": [
+                "x64:4ed0bcba9d999e0f"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/Cookbook",
+            "path": "Lua\\Frontend\\Cookbook.luac",
+            "hooks_post": [
+                "x64:4ed0bcba9d999e0f"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/LabOffers",
+            "path": "Lua\\Frontend\\LabOffers.luac",
+            "hooks_post": [
+                "x64:4ed0bcba9d999e0f"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/EarnCodPoints",
+            "path": "Lua\\Frontend\\EarnCodPoints.luac",
+            "hooks_post": [
+                "x64:4ed0bcba9d999e0f"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/ShieldLoot",
+            "path": "Lua\\Frontend\\ShieldLoot.luac",
+            "hooks_post": [
+                "x64:4ed0bcba9d999e0f"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/HostTeamSwitch",
+            "path": "Lua\\Frontend\\HostTeamSwitch.luac",
+            "hooks_post": [
+                "x64:0c0cc5d8d2fa7820"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/BlackoutJoinInProgress",
+            "path": "Lua\\Frontend\\BlackoutJoinInProgress.luac",
+            "hooks_post": [
+                "x64:222503cffc39f501"
             ]
         },
         {
@@ -378,6 +442,22 @@
         },
         {
             "type": "luafile",
+            "name": "ui/shield/BlackMarketSettings",
+            "path": "Lua\\Frontend\\BlackMarketSettings.luac",
+            "hooks_post": [
+                "x64:4ed0bcba9d999e0f"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/MovementSettings",
+            "path": "Lua\\Frontend\\MovementSettings.luac",
+            "hooks_post": [
+                "x64:4ed0bcba9d999e0f"
+            ]
+        },
+        {
+            "type": "luafile",
             "name": "ui/shield/RemovePopUps",
             "path": "Lua\\Frontend\\RemovePopUps.luac",
             "hooks_post": [
@@ -420,6 +500,14 @@
             "type": "luafile",
             "name": "ui/shield/ExtraCamos",
             "path": "Lua\\Frontend\\ExtraCamos.luac",
+            "hooks_post": [
+                "x64:4ed0bcba9d999e0f"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/CustomCamos",
+            "path": "Lua\\Frontend\\CustomCamos.luac",
             "hooks_post": [
                 "x64:4ed0bcba9d999e0f"
             ]
@@ -778,12 +866,92 @@
         {
             "type": "localizeentry",
             "name": "shield/alt_movement",
-            "value": "Omni Movement Mode"
+            "value": "Movement Patches"
         },
         {
             "type": "localizeentry",
             "name": "shield/alt_movement_desc",
-            "value": "Enables Alternative Movement Mechanics (Like omni movement, infinite sliding, etc, requires restart and will make the gsc/csc checksum always red!)"
+            "value": "Turns on the movement changes below. Needs a restart, and makes the GSC/CSC checksum always show red. The changes below apply at once while this is on."
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/mv_omni",
+            "value": "Omni Movement"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/mv_omni_desc",
+            "value": "Sprint in any direction you move, not only forward."
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/mv_strafe",
+            "value": "Sideways Sprint Speed"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/mv_strafe_desc",
+            "value": "How fast you sprint sideways and backwards with Omni Movement, as a share of the forward sprint. The original game's is 67%."
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/mv_jump_cooldown",
+            "value": "Jump Cooldown"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/mv_jump_cooldown_desc",
+            "value": "How soon after a jump you can jump again. The original game waits half a second."
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/mv_sprint_ramp",
+            "value": "Sprint Jump Build-up"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/mv_sprint_ramp_desc",
+            "value": "How long you sprint before a jump gets the full boost of the sprint. The original game takes one and a half seconds."
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/mv_instant_slide",
+            "value": "Instant Slide"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/mv_instant_slide_desc",
+            "value": "Slides start at once, without the original game's check before a slide."
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/mv_jump_slowdown",
+            "value": "No Jump Slowdown"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/mv_jump_slowdown_desc",
+            "value": "Jumps keep your speed, instead of the original game slowing you down after each one."
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/mv_landing_friction",
+            "value": "No Landing Friction"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/mv_landing_friction_desc",
+            "value": "Less friction right after you land from a jump."
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/mv_slide_chaining",
+            "value": "Slide Chaining"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/mv_slide_chaining_desc",
+            "value": "Slides in a row keep their speed, with or without the PHD Flopper perk, instead of each one being slower."
         },
         {
             "type": "localizeentry",
@@ -1212,6 +1380,146 @@
         },
         {
             "type": "localizeentry",
+            "name": "shield/bot_skill",
+            "value": "Bot Skill"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/bot_skill_desc",
+            "value": "How good the bots are overall. The settings below follow it unless you set them yourself. Game Default leaves the bots as the game has them. Applies from the next match."
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/bot_aim",
+            "value": "Aim"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/bot_aim_desc",
+            "value": "How exact and how fast bots aim. Aimbot turns a bot onto the nearest enemy it has a clear line to, whichever way it looks, and fires at once."
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/bot_reaction",
+            "value": "Reaction"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/bot_reaction_desc",
+            "value": "How soon bots stop what they are doing to deal with an enemy, and how long snipers wait before the shot. The two fastest also aim, reload and come out of a sprint faster, and the fastest fires while sprinting."
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/bot_awareness",
+            "value": "Awareness"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/bot_awareness_desc",
+            "value": "How wide bots see and how close an enemy has to come to be noticed whichever way they look."
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/bot_headshots",
+            "value": "Headshots"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/bot_headshots_desc",
+            "value": "How often bots go for the head. With Aimbot they only do so once they aim down the sights, and go for the chest from the hip, where a head is too small to hit."
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/bot_objectives",
+            "value": "Play The Objective"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/bot_objectives_desc",
+            "value": "Gives bots an objective plan in every variant of Domination, Hardpoint, Control and Search and Destroy, and sends a bot into the objective itself as soon as the plan does not get it there."
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/bm_rewards",
+            "value": "Rewards for Playing"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/bm_rewards_desc",
+            "value": "Earn Reserve Cases and season tiers by playing matches. Off turns off all of the earning below."
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/bm_case_minutes",
+            "value": "Case Every"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/bm_case_minutes_desc",
+            "value": "Time played in matches, of any mode, for one Reserve Case. The original game filled a bar with time played, about one case an hour."
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/bm_cases_per_match",
+            "value": "Cases per Match"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/bm_cases_per_match_desc",
+            "value": "Extra Reserve Cases at the end of every match, on top of the time. Not in the original game."
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/bm_tier_per_match",
+            "value": "Tier per Match"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/bm_tier_per_match_desc",
+            "value": "The season pass and the active contract go up one tier at the end of every match."
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/bm_season",
+            "value": "Active Season"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/bm_season_desc",
+            "value": "Which season the black market and its pass show. Each season keeps its own tier. (Restart Required)"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/bm_season_rewards",
+            "value": "Season Pass Rewards"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/bm_season_rewards_desc",
+            "value": "Reaching a tier of the season pass gives its reward. Off lets you look through the pass without being given anything."
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/bm_consume",
+            "value": "Purchases Cost"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/bm_consume_desc",
+            "value": "Openings and bribes take their price in COD Points, cases or crates. Free opens them without taking anything."
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/bm_bribe_crates",
+            "value": "Crates with Bribes"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/bm_bribe_crates_desc",
+            "value": "Duplicate Protected Crates given with every weapon bribe. The original game gave 5."
+        },
+        {
+            "type": "localizeentry",
             "name": "shield/fov_wrong",
             "value": "^1Invalid FOV scale"
         },
@@ -1338,6 +1646,16 @@
         },
         {
             "type": "localizeentry",
+            "name": "shield/custom_camos_tab",
+            "value": "Custom Camos"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/shield_camos_tab",
+            "value": "Shield"
+        },
+        {
+            "type": "localizeentry",
             "name": "shield/reactive_settings_tab",
             "value": "Reactive Stage"
         },
@@ -1373,6 +1691,56 @@
         },
         {
             "type": "localizeentry",
+            "name": "shield/lab_beryllium_bundle",
+            "value": "Beryllium Bundle"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/lab_beryllium_bundle_desc",
+            "value": "Get 3 random Elixirs."
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/lab_titanium_treble",
+            "value": "Titanium Treble"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/lab_titanium_treble_desc",
+            "value": "Get 3 Elixirs, 3 of each. At least one is Rare or better."
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/lab_selenium_selection",
+            "value": "Selenium Selection"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/lab_selenium_selection_desc",
+            "value": "Get 3 Elixirs: 2 Rare or better and 1 Legendary or better. A chance of a Talisman."
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/lab_rhodium_roundup",
+            "value": "Rhodium Roundup"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/lab_rhodium_roundup_desc",
+            "value": "Get 3 random Elixirs and a Talisman."
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/lab_tungsten_tripler",
+            "value": "Tungsten Tripler"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/lab_tungsten_tripler_desc",
+            "value": "Get 3 Elixirs that are Rare or better, 3 of each, and 3 of a Talisman."
+        },
+        {
+            "type": "localizeentry",
             "name": "shield/stage_5",
             "value": "Stage 5"
         },
@@ -1395,6 +1763,26 @@
             "type": "localizeentry",
             "name": "hash_63da6ea5d502cf7d",
             "value": "Gamepad aim assist is available in Shield Client."
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_73cc5f13bc30a489",
+            "value": "Enter a username"
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_5329cec2eabe8884",
+            "value": "Username"
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_4e3c597d83bc0cfa",
+            "value": "Send a friend request by entering a player's username. If several players share that name, add # and the last digits of their XUID, like Name#1234. They don't have to be online right now, but must have been online on Shield at least once."
+        },
+        {
+            "type": "localizeentry",
+            "name": "platform/missingmap",
+            "value": "You do not have this custom map. You can try downloading it from Mod Manager in Main Menu.."
         }
     ],
     "cache": [
