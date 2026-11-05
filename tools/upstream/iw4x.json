@@ -1,19 +1,19 @@
 {
-  "fingerprint": "f8ac8dab2c01",
+  "fingerprint": "56b2e3a2d1cc",
   "sources": [
     {
       "name": "iw4x/iw4x-client",
       "kind": "release",
-      "version": "r5292",
-      "url": "https://github.com/iw4x/iw4x-client/releases/tag/r5292",
-      "key": "131bda4d6bb7afa5238103d22416e6c2e4d51b9a86a571ed265ff8c94d211d8d"
+      "version": "r5318",
+      "url": "https://github.com/iw4x/iw4x-client/releases/tag/r5318",
+      "key": "b333a7be4fce4b4603b0e39ab2148ec87cd0e5e9322be1f81ffb311a712c24c2"
     },
     {
       "name": "iw4x/iw4x-rawfiles",
       "kind": "release",
-      "version": "v0.2.40",
-      "url": "https://github.com/iw4x/iw4x-rawfiles/releases/tag/v0.2.40",
-      "key": "abbb87d77dbe3497d0181013a6a89272f6244e750ffe6bb44acba31126848443"
+      "version": "v0.2.41",
+      "url": "https://github.com/iw4x/iw4x-rawfiles/releases/tag/v0.2.41",
+      "key": "551025873d6bcfd83d8ad39980758ae9e72fe771dae0ea6c308f2ef49a5fb17b"
     },
     {
       "name": "alterware/alterware-launcher",

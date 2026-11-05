@@ -61,8 +61,8 @@
     ],
     [
         "iw4x/iw4x_00.iwd",
-        13800499,
-        "7538FCF55E428F6FB9E2F80921DCF2C222E84D71"
+        13811394,
+        "0003DFE48E7D042F36FD05BF0CF755BB0157906A"
     ],
     [
         "iw4x/iw4x_01.iwd",
@@ -101,8 +101,8 @@
     ],
     [
         "iw4x.dll",
-        4911616,
-        "3A7684A00A017130803A0FB96C749C003FEBA897"
+        4933120,
+        "9D400B3D83095B750F7659164352DFE4DD9C1002"
     ],
     [
         "iw4x.exe",
@@ -197,37 +197,37 @@
     [
         "zone/patch/iw4x_localized_english.ff",
         10879,
-        "7709F87B00BC9853F0867F77061A1C5F3C9C6B5A"
+        "B143FCD4E03F8BDB61F4FB8EBEE4EA3C12751BBE"
     ],
     [
         "zone/patch/iw4x_localized_french.ff",
         12102,
-        "F5D3FABFD3124F0B8E454E3C475752206817620D"
+        "AC48312B64495A2965E1FB56B03C6981AAA38E7E"
     ],
     [
         "zone/patch/iw4x_localized_german.ff",
         11395,
-        "92B2810D1C42F11B61D1C65BEE0B85F7E00E65AF"
+        "AD9A5FCEC44620A9770962DC624F69612676A47B"
     ],
     [
         "zone/patch/iw4x_localized_italian.ff",
         11372,
-        "9F8831B22659BD9F93531A134D9FC3117C99FAED"
+        "F0CBBEC094175674FFD1CFD8F8945170EDEE6B4C"
     ],
     [
         "zone/patch/iw4x_localized_polish.ff",
         11782,
-        "059B762C6EB83549D50C4BB19361AB00EBF5BCBA"
+        "0BC774D753AFBDCEE38AA71835F18ABE052C8E3B"
     ],
     [
         "zone/patch/iw4x_localized_russian.ff",
         12588,
-        "78DACF5DD587279DAC8161034884A0BFBCCB2AFA"
+        "68DC8B18E4B1A8C1C6ABD5C15B08C092300E2E53"
     ],
     [
         "zone/patch/iw4x_localized_spanish.ff",
         11855,
-        "930F135AF5AE56C8EFB2AC049A19345300C4A81E"
+        "98950275A121868E34165138604C5DEDD7C0530D"
     ],
     [
         "zone/patch/iw4x_patch_mp.ff",
@@ -485,6 +485,6 @@
         "BEEBCBDB5F515237E26A87C98F7ED5F0C385778E"
     ],
     {
-        "ManifestHash": "8CAEF35CC25A762E5695A2FD002BF9C8A63F2859D5B5F8659E5A15D90ADE5B87"
+        "ManifestHash": "8D396E6E3215B6064C21DC343FA4832EC92A8A4E74A61F6CD57A6014BA1017F2"
     }
 ]
