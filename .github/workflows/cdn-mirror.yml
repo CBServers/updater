@@ -69,7 +69,7 @@ jobs:
           sudo install -m 755 "rclone-${PINNED_RCLONE}-linux-amd64/rclone" /usr/local/bin/rclone
           rclone version
 
-      # Files first, manifests second, deletions last, so the CDN never serves a manifest naming files it lacks
+      # Files first, then manifests (top level, plus the forks' own files*.json), deletions last
       - name: Sync to R2
         env:
           RCLONE_CONFIG_R2_TYPE: s3
@@ -89,11 +89,11 @@ jobs:
           for bucket in $BUCKETS; do
             dest="r2:${bucket}/${PREFIX}"
             echo "::group::${bucket}: files"
-            rclone copy updater "$dest" "${flags[@]}" --exclude "/*.json"
+            rclone copy updater "$dest" "${flags[@]}" --exclude "/*.json" --exclude "/*/files*.json"
             echo "::endgroup::"
 
             echo "::group::${bucket}: manifests"
-            rclone copy updater "$dest" "${flags[@]}" --include "/*.json"
+            rclone copy updater "$dest" "${flags[@]}" --include "/*.json" --include "/*/files*.json"
             echo "::endgroup::"
 
             echo "::group::${bucket}: deletions"
