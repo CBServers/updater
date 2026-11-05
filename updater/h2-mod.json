@@ -156,8 +156,8 @@
     ],
     [
         "cdata/ui_scripts/wordle/__init__.lua",
-        21281,
-        "1937A511D2F7D0A608275D6C409F967D205E7A02"
+        21827,
+        "4F5DA17745DCD9A4528B0B47F2932754423FA7A9"
     ],
     [
         "cdata/zone/arabic/ara_h2_mod_common.ff",
@@ -341,10 +341,10 @@
     ],
     [
         "h2-mod.exe",
-        7784448,
-        "7005A338D68E9EF58306EA96871E7F0F22126BF1"
+        8764928,
+        "C94BEB5433E64B5D34752877A2318C80F2DDEB47"
     ],
     {
-        "ManifestHash": "75DDED298EE064191A7DC9B15C4341CB6E4BC4265E567DF148975988F382FBAC"
+        "ManifestHash": "90D96F2420B8EB30A6A4AF9A84F3FC0D7E3FC68D6AB36CCE99C08D8BE8C6CEE4"
     }
 ]
