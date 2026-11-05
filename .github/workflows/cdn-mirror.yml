@@ -1,0 +1,102 @@
+name: CDN mirror
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "updater/**"
+      - "tools/ci/verify-manifests.ps1"
+      - ".github/workflows/cdn-mirror.yml"
+  schedule:
+    - cron: "41 6 * * 1"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Show what would change without uploading or deleting
+        type: boolean
+        default: false
+      max_delete:
+        description: Abort the delete pass if it would remove more files than this
+        type: number
+        default: 200
+
+concurrency:
+  group: cdn-mirror
+  cancel-in-progress: false
+
+env:
+  RCLONE_VERSION: v1.71.0
+  BUCKETS: cbservers-storage cbservers-storage-eu
+  PREFIX: updater
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          lfs: false
+
+      # Keyed on the LFS object list so unchanged objects come from the cache, not LFS bandwidth
+      - name: List LFS objects
+        run: git lfs ls-files --long | cut -d ' ' -f1 | sort -u > .lfs-assets-id
+
+      - uses: actions/cache@v4
+        with:
+          path: .git/lfs/objects
+          key: lfs-${{ hashFiles('.lfs-assets-id') }}
+          restore-keys: lfs-
+
+      - name: Pull LFS objects
+        run: |
+          git lfs pull
+          if git lfs ls-files | grep -v ' \* '; then
+            echo "::error::LFS objects above are still pointer files"
+            exit 1
+          fi
+
+      - name: Verify manifests against files
+        shell: pwsh
+        run: ./tools/ci/verify-manifests.ps1 -Root updater
+
+      - name: Install rclone
+        run: |
+          curl -fsSL -o rclone.zip "https://downloads.rclone.org/${RCLONE_VERSION}/rclone-${RCLONE_VERSION}-linux-amd64.zip"
+          unzip -q rclone.zip
+          sudo install -m 755 "rclone-${RCLONE_VERSION}-linux-amd64/rclone" /usr/local/bin/rclone
+          rclone version
+
+      # Files first, manifests second, deletions last, so the CDN never serves a manifest naming files it lacks
+      - name: Sync to R2
+        env:
+          RCLONE_CONFIG_R2_TYPE: s3
+          RCLONE_CONFIG_R2_PROVIDER: Cloudflare
+          RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          RCLONE_CONFIG_R2_ENDPOINT: https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com
+          RCLONE_CONFIG_R2_ACL: private
+          RCLONE_CONFIG_R2_NO_CHECK_BUCKET: "true"
+          DRY_RUN: ${{ inputs.dry_run || false }}
+          MAX_DELETE: ${{ inputs.max_delete || 200 }}
+        run: |
+          set -euo pipefail
+          flags=(--checksum --fast-list --transfers 16 --checkers 32 --stats 30s --stats-one-line -v)
+          if [ "$DRY_RUN" = "true" ]; then flags+=(--dry-run); fi
+
+          for bucket in $BUCKETS; do
+            dest="r2:${bucket}/${PREFIX}"
+            echo "::group::${bucket}: files"
+            rclone copy updater "$dest" "${flags[@]}" --exclude "/*.json"
+            echo "::endgroup::"
+
+            echo "::group::${bucket}: manifests"
+            rclone copy updater "$dest" "${flags[@]}" --include "/*.json"
+            echo "::endgroup::"
+
+            echo "::group::${bucket}: deletions"
+            rclone sync updater "$dest" "${flags[@]}" --max-delete "$MAX_DELETE"
+            echo "::endgroup::"
+          done
