@@ -25,7 +25,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  RCLONE_VERSION: v1.71.0
+  PINNED_RCLONE: v1.71.0
   BUCKETS: cbservers-storage cbservers-storage-eu
   PREFIX: updater
 
@@ -64,9 +64,9 @@ jobs:
 
       - name: Install rclone
         run: |
-          curl -fsSL -o rclone.zip "https://downloads.rclone.org/${RCLONE_VERSION}/rclone-${RCLONE_VERSION}-linux-amd64.zip"
+          curl -fsSL -o rclone.zip "https://downloads.rclone.org/${PINNED_RCLONE}/rclone-${PINNED_RCLONE}-linux-amd64.zip"
           unzip -q rclone.zip
-          sudo install -m 755 "rclone-${RCLONE_VERSION}-linux-amd64/rclone" /usr/local/bin/rclone
+          sudo install -m 755 "rclone-${PINNED_RCLONE}-linux-amd64/rclone" /usr/local/bin/rclone
           rclone version
 
       # Files first, manifests second, deletions last, so the CDN never serves a manifest naming files it lacks
