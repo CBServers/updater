@@ -1,5 +1,5 @@
 {
-  "fingerprint": "56b2e3a2d1cc",
+  "fingerprint": "3e2523c6cadf",
   "sources": [
     {
       "name": "iw4x/iw4x-client",
@@ -11,9 +11,9 @@
     {
       "name": "iw4x/iw4x-rawfiles",
       "kind": "release",
-      "version": "v0.2.41",
-      "url": "https://github.com/iw4x/iw4x-rawfiles/releases/tag/v0.2.41",
-      "key": "551025873d6bcfd83d8ad39980758ae9e72fe771dae0ea6c308f2ef49a5fb17b"
+      "version": "v0.2.42",
+      "url": "https://github.com/iw4x/iw4x-rawfiles/releases/tag/v0.2.42",
+      "key": "243c48541f326b982ae1709742dbf3d321a784e1c82cf80903d6df8878e5acd5"
     },
     {
       "name": "alterware/alterware-launcher",
