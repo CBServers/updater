@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        3955568,
-        "7EFDF58B9C1A4105ACC75DCC6F39AA3B65CFD8B1"
+        3956080,
+        "A85E3AB9B808401BE2C9E47E6AC46404AE106546"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -496,8 +496,8 @@
     ],
     [
         "data/launcher-ui/assets/js/app/mods-view.js",
-        39444,
-        "8CF9106334C572AA564327BC37E68ED5F336AD30"
+        39496,
+        "1C52A68B7BF2E46A1B72DB1058ED760D1551A958"
     ],
     [
         "data/launcher-ui/assets/js/app/servers-view.js",
@@ -536,8 +536,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        267535,
-        "3A72369A2349ED1A94E8C33BE90FDD1C1D6D6ABC"
+        268240,
+        "C102DF594391D8951F64635F478F6B17E25CCE9B"
     ],
     [
         "data/launcher-ui/assets/js/core/mod-queue.js",
@@ -551,8 +551,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/mods.js",
-        16328,
-        "8CC5A9B10DBBD6A92CB6148A177F46405A045770"
+        16958,
+        "DFC3E1C5EDC918125013321DE9D724BD1BD8A944"
     ],
     [
         "data/launcher-ui/assets/js/core/player-counts.js",
@@ -730,6 +730,6 @@
         "E254FD0A876B793A25FAF4AA16DBA275F6544A5D"
     ],
     {
-        "ManifestHash": "9CB079272355242593318B11775CE659B55795C42ADB06B973BA44639E39905E"
+        "ManifestHash": "E51B97C20F2FE7A493FA05A234AF21D85862E82EAE525F062541DB08D7329616"
     }
 ]
