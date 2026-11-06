@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        3925872,
-        "0EECE056E09E340297F66D2CFE81E87B5C6499BD"
+        3955568,
+        "7EFDF58B9C1A4105ACC75DCC6F39AA3B65CFD8B1"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -81,8 +81,8 @@
     ],
     [
         "data/launcher-ui/assets/css/main.css",
-        228289,
-        "73BD2278A10597C4F39DECAE0C37A2BCC3151BEF"
+        228917,
+        "3F60E823C3F65CAE630A90F2A04C93F39A6971F0"
     ],
     [
         "data/launcher-ui/assets/fonts/ibm-plex-mono-400.woff2",
@@ -496,8 +496,8 @@
     ],
     [
         "data/launcher-ui/assets/js/app/mods-view.js",
-        36416,
-        "CDCE8218177D46EF589F5629A1E1556CB597819E"
+        39444,
+        "8CF9106334C572AA564327BC37E68ED5F336AD30"
     ],
     [
         "data/launcher-ui/assets/js/app/servers-view.js",
@@ -516,8 +516,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/command.js",
-        27763,
-        "BE5EBC355FBA82C79CCA89242E23E3F7CE09B687"
+        28383,
+        "37143524AE4261A2AA26B9630A937A65BACD88E0"
     ],
     [
         "data/launcher-ui/assets/js/core/community.js",
@@ -536,8 +536,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        265648,
-        "A87E9B46383A6AF2681D81DA011E77D7C8BCE6E0"
+        267535,
+        "3A72369A2349ED1A94E8C33BE90FDD1C1D6D6ABC"
     ],
     [
         "data/launcher-ui/assets/js/core/mod-queue.js",
@@ -551,8 +551,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/mods.js",
-        16227,
-        "0D47FDB36229B60FB12D01985FF1807AA6F83269"
+        16328,
+        "8CC5A9B10DBBD6A92CB6148A177F46405A045770"
     ],
     [
         "data/launcher-ui/assets/js/core/player-counts.js",
@@ -596,8 +596,8 @@
     ],
     [
         "data/launcher-ui/assets/js/popups/mod-detail-popup.js",
-        10735,
-        "21D18F5794EABA95A4249319873F8754DC7A70D5"
+        11582,
+        "B45C4A7B49850E4DAA7BD4106B781619344EE5D5"
     ],
     [
         "data/launcher-ui/assets/js/popups/redist-popup.js",
@@ -730,6 +730,6 @@
         "E254FD0A876B793A25FAF4AA16DBA275F6544A5D"
     ],
     {
-        "ManifestHash": "D71D7947D19D1BA2E28FA8C81453208DFC949EA6D7A04CC364815189D623F1CD"
+        "ManifestHash": "9CB079272355242593318B11775CE659B55795C42ADB06B973BA44639E39905E"
     }
 ]
