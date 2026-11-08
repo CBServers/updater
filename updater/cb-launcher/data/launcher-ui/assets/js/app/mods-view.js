@@ -4,6 +4,8 @@
     const state = {};
     const escapeHtml = value => GameUtils.escapeHtml(value);
     let searchTimer = null;
+    const MOD_INDEX_GUIDE_URL = 'https://github.com/CBServers/mods-index/blob/main/CONTRIBUTING.md';
+    const MOD_REQUEST_URL = 'https://github.com/CBServers/mods-index/issues/new?template=mod-request.yml';
 
     function t(key, variables) {
         return window.LauncherI18n ? window.LauncherI18n.t(key, variables) : key;
@@ -13,10 +15,11 @@
         if (!state[gameId]) {
             const caps = window.ModsService.supports(gameId) || {};
             state[gameId] = {
-                view: caps.workshop ? 'workshop' : 'installed',
+                view: caps.catalog ? 'workshop' : 'installed',
                 query: '',
                 kind: 'all',
-                sort: 'popular',
+                // Mod index entries have no subscriber counts, so there is no popularity to sort by.
+                sort: caps.steam ? 'popular' : 'recent',
                 page: 1,
                 installed: null,
                 results: null,
@@ -43,6 +46,16 @@
         return `<span class="badge mods-type-badge is-${escapeHtml(kind)}">${escapeHtml(t(kind === 'map' ? 'mods.kindMap' : 'mods.kindMod'))}</span>`;
     }
 
+    // Index versions are free text ("beta2"); only numbered ones get the "v" prefix.
+    function versionLabel(version) {
+        if (!version || version === '—') return '';
+        return /^\d/.test(version) ? t('mods.version', { version }) : version;
+    }
+
+    function changesGameFilesTag() {
+        return `<span class="badge status-partial mods-files-tag" title="${escapeHtml(t('mods.changesGameFilesHint'))}">${escapeHtml(t('mods.changesGameFiles'))}</span>`;
+    }
+
     function reportError(error) {
         console.error(error);
         window.showToast(String(error.message || error), 'error');
@@ -50,6 +63,30 @@
 
     function loadingHTML() {
         return `<div class="mods-loading"><div class="spinner"></div><span>${escapeHtml(t('mods.loading'))}</span></div>`;
+    }
+
+    function emptyCatalogHTML(gameId) {
+        return `
+            <div class="mods-empty mods-catalog-empty">
+                <strong>${escapeHtml(t('mods.catalogEmptyTitle', { game: gameName(gameId) }))}</strong>
+                <span>${escapeHtml(t('mods.catalogEmptyBody'))}</span>
+                <div class="mods-catalog-empty-actions">
+                    <button class="game-hub-action" type="button">${escapeHtml(t('mods.catalogEmptyAction'))}</button>
+                    ${requestButtonHTML()}
+                </div>
+            </div>`;
+    }
+
+    function requestButtonHTML() {
+        return `<button class="mods-btn mods-request-btn" type="button" title="${escapeHtml(t('mods.requestModHint'))}">${escapeHtml(t('mods.requestMod'))}</button>`;
+    }
+
+    function bindRequestButton(gameId, host) {
+        const button = host.querySelector('.mods-request-btn');
+        if (!button) return;
+        button.addEventListener('click', () => {
+            window.executeCommand('open-url', { url: `${MOD_REQUEST_URL}&game=${encodeURIComponent(gameName(gameId))}` });
+        });
     }
 
     function emptyHTML(key) {
@@ -67,7 +104,7 @@
         panel.innerHTML = `
             <div class="mods-toolbar">
                 <div class="mods-subnav">
-                    ${caps.workshop ? subtab('workshop', escapeHtml(t('mods.workshop'))) : ''}
+                    ${caps.catalog ? subtab('workshop', escapeHtml(t('mods.workshop'))) : ''}
                     ${subtab('installed', `${escapeHtml(t('mods.installed'))} <span class="badge mods-count" hidden></span>`)}
                     ${caps.import ? subtab('import', escapeHtml(t('mods.import'))) : ''}
                 </div>
@@ -83,7 +120,7 @@
                     </button>`).join('')}
                 </div>
             </div>
-            ${caps.workshop ? viewHost('workshop') : ''}
+            ${caps.catalog ? viewHost('workshop') : ''}
             ${viewHost('installed')}
             ${caps.import ? viewHost('import') : ''}
         `;
@@ -97,12 +134,12 @@
         panel.querySelector('.mods-refresh').addEventListener('click', () => refreshInstalled(gameId));
 
         renderInstalled(gameId);
-        if (caps.workshop) renderWorkshop(gameId);
+        if (caps.catalog) renderWorkshop(gameId);
         if (caps.import) renderImport(gameId);
 
         loadInstalled(gameId);
         loadInstallStatus(gameId);
-        if (caps.workshop && s.results === null) runSearch(gameId);
+        if (caps.catalog && s.results === null) runSearch(gameId);
     }
 
     function isInstalled(s) {
@@ -184,26 +221,42 @@
             const installed = installedFor(s, item.id);
             item.installed = !!installed;
             item.updateAvailable = !!(installed && installed.updateAvailable);
+            item.repairOnly = !!(installed && installed.repairOnly);
+        });
+    }
+
+    async function markSteamUpdates(gameId, s) {
+        const installed = s.installed;
+        const overrides = await window.ModsService.getOverrides(gameId);
+        // Overridden ids compare against the hosted version; Steam's updated time is irrelevant for them.
+        const steamIds = [...new Set(installed.filter(mod => mod.workshopId && !overrides[mod.workshopId]).map(mod => mod.workshopId))];
+        const times = await window.ModsService.getUpdatedTimes(gameId, steamIds);
+        installed.forEach(mod => {
+            const override = overrides[mod.workshopId];
+            mod.updateAvailable = installedFor(s, mod.workshopId) === mod && (override
+                ? override.version !== (mod.version || '')
+                : !!(times[mod.workshopId] && times[mod.workshopId] > Date.parse(mod.installedAt) / 1000));
+        });
+    }
+
+    // Mod index installs update when the listed version differs, and repair when a recorded file is gone.
+    // An entry no longer listed has no version here, so its install is left as it is.
+    async function markCatalogUpdates(gameId, s) {
+        const catalogMods = s.installed.filter(mod => mod.source === 'catalog' && mod.workshopId);
+        const versions = await window.ModsService.getVersions(gameId, [...new Set(catalogMods.map(mod => mod.workshopId))]);
+        s.installed.forEach(mod => {
+            const listed = mod.source === 'catalog' ? versions[mod.workshopId] : undefined;
+            const outdated = listed !== undefined && listed !== (mod.version || '');
+            mod.updateAvailable = listed !== undefined && (outdated || !!mod.missingFiles);
+            mod.repairOnly = mod.updateAvailable && !outdated;
         });
     }
 
     async function loadInstalled(gameId) {
         const s = getState(gameId);
         try {
-            const [installed, overrides] = await Promise.all([
-                window.ModsService.getInstalled(gameId),
-                window.ModsService.getOverrides(gameId)
-            ]);
-            s.installed = installed;
-            // Overridden ids compare against the hosted version; Steam's updated time is irrelevant for them.
-            const steamIds = [...new Set(installed.filter(mod => mod.workshopId && !overrides[mod.workshopId]).map(mod => mod.workshopId))];
-            const times = await window.ModsService.getUpdatedTimes(gameId, steamIds);
-            s.installed.forEach(mod => {
-                const override = overrides[mod.workshopId];
-                mod.updateAvailable = installedFor(s, mod.workshopId) === mod && (override
-                    ? override.version !== (mod.version || '')
-                    : !!(times[mod.workshopId] && times[mod.workshopId] > Date.parse(mod.installedAt) / 1000));
-            });
+            s.installed = await window.ModsService.getInstalled(gameId);
+            await (s.caps.steam ? markSteamUpdates(gameId, s) : markCatalogUpdates(gameId, s));
         } catch (error) {
             console.error(error);
             s.installed = [];
@@ -232,7 +285,7 @@
             return;
         }
         if (!s.installed.length) {
-            host.innerHTML = emptyHTML(s.caps.workshop ? 'mods.noInstalled' : 'mods.noInstalledImportOnly');
+            host.innerHTML = emptyHTML(!s.caps.import ? 'mods.noInstalledWorkshopOnly' : (!s.caps.catalog || s.catalogEmpty ? 'mods.noInstalledImportOnly' : (s.caps.steam ? 'mods.noInstalled' : 'mods.noInstalledCatalog')));
             return;
         }
 
@@ -272,21 +325,44 @@
 
     function sourceLabel(source) {
         if (source === 'steam') return t('mods.sourceSteam');
+        if (source === 'catalog') return t('mods.sourceCatalog');
         return t(source === 'workshop' ? 'mods.sourceWorkshop' : 'mods.sourceImport');
+    }
+
+    // Steam items have details by workshop id; on mod index games only the index's own installs do.
+    function hasCatalogDetails(s, mod) {
+        if (!s.caps.catalog || !mod.workshopId) return false;
+        return s.caps.steam || mod.source === 'catalog';
+    }
+
+    // Folder rows have ids like "mods:mp_stank_v3"; the folder is what servers load, and two mods can share a name.
+    function folderPathOf(mod) {
+        if (mod.workshopId || mod.source === 'catalog' || !mod.id.startsWith(`${mod.folder}:`)) return '';
+        const dirname = mod.id.slice(mod.folder.length + 1);
+        return dirname !== mod.name ? `${mod.folder}/${dirname}` : '';
+    }
+
+    function metaSpanHTML([text, className]) {
+        return className
+            ? `<span class="${className}" title="${escapeHtml(text)}">${escapeHtml(text)}</span>`
+            : `<span>${escapeHtml(text)}</span>`;
     }
 
     function installedRowHTML(gameId, s, mod) {
         const job = installedFor(s, mod.workshopId) === mod ? jobFor(gameId, mod.workshopId) : null;
         const meta = [
-            mod.version && mod.version !== '—' ? t('mods.version', { version: mod.version }) : null,
-            GameUtils.formatBytes(mod.size || 0),
-            sourceLabel(mod.source)
-        ].filter(Boolean);
+            [versionLabel(mod.version)],
+            [mod.author ? t('mods.by', { author: mod.author }) : '', 'mods-row-shrink'],
+            [GameUtils.formatBytes(mod.size || 0)],
+            [sourceLabel(mod.source)],
+            [folderPathOf(mod), 'mods-row-shrink']
+        ].filter(([text]) => text);
+        const updateLabel = t(mod.repairOnly ? 'mods.repair' : 'mods.update');
         const actions = job
             ? `<span class="mods-row-progress">${escapeHtml(jobLabel(job))}</span>
                <button class="mods-btn is-danger mods-cancel-btn" data-id="${escapeHtml(mod.workshopId)}">${escapeHtml(t('mods.cancel'))}</button>`
-            : `${mod.updateAvailable ? `<button class="mods-btn mods-update-btn" data-id="${escapeHtml(mod.id)}">${escapeHtml(t('mods.update'))}</button>` : ''}
-               ${mod.workshopId && s.caps.workshop ? iconButtonHTML(mod.id, 'mods-details-btn', 'info-icon', t('mods.details')) : ''}
+            : `${mod.updateAvailable ? `<button class="mods-btn mods-update-btn" data-id="${escapeHtml(mod.id)}">${escapeHtml(updateLabel)}</button>` : ''}
+               ${hasCatalogDetails(s, mod) || mod.description ? iconButtonHTML(mod.id, 'mods-details-btn', 'info-icon', t('mods.details')) : ''}
                ${iconButtonHTML(mod.id, 'mods-row-folder-btn', 'folder-icon', t('mods.openModFolder'))}
                ${iconButtonHTML(mod.id, 'mods-uninstall-btn is-danger', 'trash-icon', t('mods.uninstall'))}`;
 
@@ -295,9 +371,9 @@
                 <div class="mods-row-main">
                     ${kindBadge(mod.kind)}
                     <strong class="mods-row-name">${escapeHtml(mod.name)}</strong>
-                    ${mod.updateAvailable ? `<span class="badge status-partial mods-update-badge">${escapeHtml(t('mods.updateAvailable'))}</span>` : ''}
+                    ${mod.updateAvailable ? `<span class="badge status-partial mods-update-badge">${escapeHtml(t(mod.repairOnly ? 'mods.filesMissing' : 'mods.updateAvailable'))}</span>` : ''}
                 </div>
-                <div class="mods-row-meta">${meta.map(m => `<span>${escapeHtml(m)}</span>`).join('')}</div>
+                <div class="mods-row-meta">${meta.map(metaSpanHTML).join('')}</div>
                 <div class="mods-row-actions">${actions}</div>
                 <div class="mods-progress"><div class="mods-progress-bar" style="width:${job && job.isActive ? job.percent : 0}%"></div></div>
             </div>`;
@@ -392,9 +468,8 @@
         const mod = (getState(gameId).installed || []).find(m => m.id === id);
         if (!mod) return;
 
-        const body = mod.source === 'steam'
-            ? t('mods.uninstallSteamConfirmBody', { name: escapeHtml(mod.name) })
-            : t('mods.uninstallConfirmBody', { name: escapeHtml(mod.name), game: escapeHtml(gameName(gameId)) });
+        const bodyKey = { steam: 'mods.uninstallSteamConfirmBody', catalog: 'mods.uninstallCatalogConfirmBody' }[mod.source] || 'mods.uninstallConfirmBody';
+        const body = t(bodyKey, { name: escapeHtml(mod.name), game: escapeHtml(gameName(gameId)) });
         const choice = await window.showMessageBox(
             t('mods.uninstallConfirmTitle'),
             body,
@@ -424,6 +499,8 @@
             } else {
                 s.results = result;
             }
+            // An unfiltered search with no hits means this game has no index entries yet.
+            s.catalogEmpty = !s.caps.steam && !result.failed && !s.query && s.kind === 'all' && !s.results.total;
         } catch (error) {
             console.error(error);
             if (!append) s.results = { items: [], total: 0 };
@@ -431,6 +508,7 @@
         s.searching = false;
         syncInstalledFlags(s);
         renderWorkshopGrid(gameId);
+        if (s.catalogEmpty) renderInstalled(gameId);
     }
 
     function renderWorkshop(gameId) {
@@ -444,7 +522,7 @@
         host.innerHTML = `
             <div class="mods-workshop-controls">
                 <div class="search-field">
-                    <input type="text" class="mods-search" placeholder="${escapeHtml(t('mods.searchPlaceholder'))}" value="${escapeHtml(s.query)}" />
+                    <input type="text" class="mods-search" placeholder="${escapeHtml(t(s.caps.steam ? 'mods.searchPlaceholder' : 'mods.searchPlaceholderCatalog'))}" value="${escapeHtml(s.query)}" />
                     <button type="button" class="search-clear mods-search-clear"${s.query ? '' : ' hidden'}>&times;</button>
                 </div>
                 <div class="filter-chips">
@@ -453,13 +531,15 @@
                     ${chip('mod', t('mods.filterMods'))}
                 </div>
                 <select class="cdn-select mods-sort">
-                    ${option('popular', t('mods.sortPopular'))}
+                    ${s.caps.steam ? option('popular', t('mods.sortPopular')) : ''}
                     ${option('recent', t('mods.sortRecent'))}
                     ${option('name', t('mods.sortName'))}
                 </select>
+                ${s.caps.steam ? '' : requestButtonHTML()}
             </div>
             <div class="mods-grid-host"></div>
         `;
+        bindRequestButton(gameId, host.querySelector('.mods-workshop-controls'));
 
         const input = host.querySelector('.mods-search');
         const clear = host.querySelector('.mods-search-clear');
@@ -498,12 +578,21 @@
         const host = query(gameId, '.mods-grid-host');
         if (!host) return;
 
+        query(gameId, '.mods-workshop-controls').hidden = !!s.catalogEmpty;
         if (s.searching || s.results === null) {
             host.innerHTML = loadingHTML();
             return;
         }
+        if (s.catalogEmpty) {
+            host.innerHTML = emptyCatalogHTML(gameId);
+            host.querySelector('.game-hub-action').addEventListener('click', () => {
+                window.executeCommand('open-url', { url: MOD_INDEX_GUIDE_URL });
+            });
+            bindRequestButton(gameId, host);
+            return;
+        }
         if (!s.results.items.length) {
-            host.innerHTML = emptyHTML('mods.noResults');
+            host.innerHTML = emptyHTML(s.caps.steam ? 'mods.noResults' : 'mods.noResultsCatalog');
             return;
         }
 
@@ -540,36 +629,58 @@
         const job = jobFor(gameId, item.id);
         let stateName = 'idle';
         if (job) stateName = job.isActive ? 'installing' : 'queued';
-        else if (item.installed && item.updateAvailable) stateName = 'update';
+        else if (item.installed && item.updateAvailable) stateName = item.repairOnly ? 'repair' : 'update';
         else if (item.installed) stateName = 'installed';
+        else if (item.comingSoon) stateName = 'soon';
 
         const labels = {
             installed: t('mods.installedLabel'),
             update: t('mods.update'),
+            repair: t('mods.repair'),
+            soon: t('mods.comingSoon'),
             idle: t('mods.install')
         };
         return {
             stateName,
             percent: job && job.isActive ? job.percent : 0,
             label: job ? jobLabel(job) : labels[stateName],
-            disabled: stateName === 'installed' || !!(job && job.cancelled)
+            disabled: stateName === 'installed' || stateName === 'soon' || !!(job && job.cancelled)
         };
+    }
+
+    function cardMetaHTML(gameId, item) {
+        const s = getState(gameId);
+        const parts = s.caps.steam
+            ? [t('mods.subscribers', { count: GameUtils.formatCount(item.subscribers) }), GameUtils.formatBytes(item.size)]
+            : [versionLabel(item.version), item.comingSoon ? '' : GameUtils.formatBytes(item.size)];
+        return parts.map(part => `<span>${escapeHtml(part)}</span>`).join('');
+    }
+
+    // Game art stands in for index entries without images.
+    function fallbackArtHTML(gameId) {
+        const config = GameUtils.getGameConfigByUIId(gameId);
+        if (!config) return '';
+        return [
+            config.heroImagePath && `<img class="mods-art-fallback" src="${escapeHtml(config.heroImagePath)}" alt="" loading="lazy">`,
+            config.logoPath && `<img class="mods-art-fallback-logo" src="${escapeHtml(config.logoPath)}" alt="" loading="lazy">`
+        ].filter(Boolean).join('');
     }
 
     function workshopCardHTML(gameId, item) {
         const button = cardButton(gameId, item);
         const previewIsUrl = /^https?:/.test(item.preview);
         const preview = escapeHtml(item.preview);
+        const art = previewIsUrl
+            ? `<img class="mods-card-art-bg" src="${preview}" alt="" loading="lazy"><img src="${preview}" alt="" loading="lazy">`
+            : (item.preview ? '' : fallbackArtHTML(gameId));
         return `
-            <article class="mods-card" data-id="${escapeHtml(item.id)}">
-                <div class="mods-card-art"${previewIsUrl ? '' : ` style="--art: ${preview}"`}>${previewIsUrl ? `<img class="mods-card-art-bg" src="${preview}" alt="" loading="lazy"><img src="${preview}" alt="" loading="lazy">` : ''}${kindBadge(item.kind)}</div>
+            <article class="mods-card${item.comingSoon ? ' is-coming-soon' : ''}" data-id="${escapeHtml(item.id)}">
+                <div class="mods-card-art"${previewIsUrl ? '' : ` style="--art: ${preview}"`}>${art}${kindBadge(item.kind)}${item.comingSoon ? `<span class="badge mods-soon-badge">${escapeHtml(t('mods.comingSoon'))}</span>` : ''}</div>
                 <div class="mods-card-body">
                     <div class="mods-card-title" title="${escapeHtml(item.title)}">${escapeHtml(item.title)}</div>
                     <div class="mods-card-author">${escapeHtml(t('mods.by', { author: item.author }))}</div>
-                    <div class="mods-card-meta">
-                        <span>${escapeHtml(t('mods.subscribers', { count: GameUtils.formatCount(item.subscribers) }))}</span>
-                        <span>${escapeHtml(GameUtils.formatBytes(item.size))}</span>
-                    </div>
+                    ${item.changesGameFiles ? `<div class="mods-card-tags">${changesGameFilesTag()}</div>` : ''}
+                    <div class="mods-card-meta">${cardMetaHTML(gameId, item)}</div>
                     <button class="mods-install-btn" data-id="${escapeHtml(item.id)}" data-state="${button.stateName}"${button.disabled ? ' disabled' : ''}>
                         <span class="mods-install-label">${escapeHtml(button.label)}</span><span class="mods-cancel-label">${escapeHtml(t('mods.cancel'))}</span>
                     </button>
@@ -604,6 +715,7 @@
         if (!item) {
             return installed && installed.updateAvailable ? updateMod(gameId, installed.id) : undefined;
         }
+        if (item.comingSoon && !installed) return;
 
         const isUpdate = !!installed;
         return runTransfer(gameId, {
@@ -688,9 +800,14 @@
     }
 
     function openModDetails(gameId, id) {
-        const mod = (getState(gameId).installed || []).find(entry => entry.id === id);
-        if (!mod || !mod.workshopId || !window.ModDetailPopup) return;
-        window.ModDetailPopup.show(gameId, { id: mod.workshopId, title: mod.name, author: '', size: mod.size });
+        const s = getState(gameId);
+        const mod = (s.installed || []).find(entry => entry.id === id);
+        if (!mod || !window.ModDetailPopup) return;
+        if (hasCatalogDetails(s, mod)) {
+            window.ModDetailPopup.show(gameId, { id: mod.workshopId, title: mod.name, author: '', size: mod.size });
+        } else {
+            window.ModDetailPopup.showInstalled(gameId, mod);
+        }
     }
 
     async function openModFolder(gameId, id) {
@@ -721,7 +838,7 @@
         // search results may not hold this item.
         const installed = installedFor(s, id);
         const item = (s.results && s.results.items.find(entry => entry.id === id))
-            || { id, installed: !!installed, updateAvailable: !!(installed && installed.updateAvailable) };
+            || { id, installed: !!installed, updateAvailable: !!(installed && installed.updateAvailable), repairOnly: !!(installed && installed.repairOnly) };
         return cardButton(gameId, item);
     }
 
@@ -732,7 +849,7 @@
 
     async function openDeepLink(gameId, id) {
         if (!window.ModsHub || !window.ModsHub.open(gameId)) return;
-        if (!getState(gameId).caps.workshop) return;
+        if (!getState(gameId).caps.catalog) return;
         switchView(gameId, 'workshop');
         if (!id) return;
         try {
@@ -762,6 +879,8 @@
         openTab,
         cardButtonFor,
         kindBadge,
+        versionLabel,
+        changesGameFilesTag,
         supports: gameId => !!(window.ModsService && window.ModsService.supports(gameId))
     };
 })();

@@ -1,8 +1,8 @@
 [
     [
         "cb-launcher.exe",
-        3823920,
-        "11E3720A51124A764EADB6B31413A85D514020DA"
+        3968816,
+        "15D04DFCF0EABA985F74A5B464287D0D5C19FC4A"
     ],
     [
         "data/cef/release/chrome_100_percent.pak",
@@ -81,8 +81,8 @@
     ],
     [
         "data/launcher-ui/assets/css/main.css",
-        227496,
-        "722D98CF0499915998AA84BFD7DF9547BDC96CC4"
+        228917,
+        "3F60E823C3F65CAE630A90F2A04C93F39A6971F0"
     ],
     [
         "data/launcher-ui/assets/fonts/ibm-plex-mono-400.woff2",
@@ -496,8 +496,8 @@
     ],
     [
         "data/launcher-ui/assets/js/app/mods-view.js",
-        32821,
-        "889F7DCF518CA875E23B4A5464DAF87BDFA55755"
+        39496,
+        "1C52A68B7BF2E46A1B72DB1058ED760D1551A958"
     ],
     [
         "data/launcher-ui/assets/js/app/servers-view.js",
@@ -511,13 +511,13 @@
     ],
     [
         "data/launcher-ui/assets/js/core/cb-friends.js",
-        68314,
-        "10DBB898D47B105A4BFD72AF019C3731572F238D"
+        70076,
+        "CAA8AB0EFB396ABA1584D52A9D65FA178B934E79"
     ],
     [
         "data/launcher-ui/assets/js/core/command.js",
-        27178,
-        "1DC267EA057141BEE771DA14B052AF775E0D69B9"
+        28638,
+        "1187BAC025DBA003622EF77691042EDB154C35D8"
     ],
     [
         "data/launcher-ui/assets/js/core/community.js",
@@ -536,8 +536,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/i18n.js",
-        261276,
-        "42A07092DC58DA1B78B7EBBCC8FFB5BD1563092A"
+        269066,
+        "6C406229A2FD5F18725EC1090E5D83A6668295E0"
     ],
     [
         "data/launcher-ui/assets/js/core/mod-queue.js",
@@ -551,8 +551,8 @@
     ],
     [
         "data/launcher-ui/assets/js/core/mods.js",
-        13917,
-        "A01A1E62713D92955F0EE50016E909E598D25096"
+        16958,
+        "DFC3E1C5EDC918125013321DE9D724BD1BD8A944"
     ],
     [
         "data/launcher-ui/assets/js/core/player-counts.js",
@@ -596,8 +596,8 @@
     ],
     [
         "data/launcher-ui/assets/js/popups/mod-detail-popup.js",
-        9286,
-        "67257711179FC78E04648967131D14AD124487AD"
+        11582,
+        "B45C4A7B49850E4DAA7BD4106B781619344EE5D5"
     ],
     [
         "data/launcher-ui/assets/js/popups/redist-popup.js",
@@ -706,8 +706,8 @@
     ],
     [
         "manifest/mw2r.json",
-        112234,
-        "85D7DE1DBDF2B52FADD568B7EDA1A09D14A1AA89"
+        24995,
+        "DDE26736C061B642C6FDC71F12E7F06A692536A9"
     ],
     [
         "manifest/mw3.json",
@@ -730,6 +730,6 @@
         "E254FD0A876B793A25FAF4AA16DBA275F6544A5D"
     ],
     {
-        "ManifestHash": "E0F9B0A90C0628D8E387CAB213490400DB71F42D3E294AB8940A96871BBEF87E"
+        "ManifestHash": "C6B6D6F71733FF1F6AC0A1CA21A7B0CAAD505F69E0506E86D17EB0F13609BC09"
     }
 ]
