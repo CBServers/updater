@@ -17,15 +17,15 @@ if (-not (Test-Path $h2ModDir)) {
 }
 
 # 1. Fetch manifest
-Write-Host "Fetching files-dev.json manifest..."
-$manifestUrl = "https://h2-mod.alicent.cat/files-dev.json"
+Write-Host "Fetching files.json manifest..."
+$manifestUrl = "https://h2-mod.alicent.cat/files.json"
 $manifest = Invoke-RestMethod -Uri $manifestUrl
 
 $total = $manifest.Count
 Write-Host "Manifest contains $total file(s)."
 
 # 2. Download each file and verify size
-$baseUrl = "https://h2-mod.alicent.cat/data-dev/"
+$baseUrl = "https://h2-mod.alicent.cat/data/"
 for ($i = 0; $i -lt $total; $i++) {
     $entry = $manifest[$i]
     $relPath = $entry[0]

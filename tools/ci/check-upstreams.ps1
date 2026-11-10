@@ -102,7 +102,7 @@ $clients = [ordered]@{
         Get-ReleaseSource "callofduty4x/CoD4x-mss"
         Get-ReleaseSource "callofduty4x/CoD4x-launcher" } }
     "h2-mod" = @{ Script = "update-h2-mod.ps1"; Sources = {
-        Get-ManifestSource "h2-mod files-dev.json" "https://h2-mod.alicent.cat/files-dev.json" } }
+        Get-ManifestSource "h2-mod files.json" "https://h2-mod.alicent.cat/files.json" } }
     "iw3sp-mod" = @{ Script = "update-iw3sp-mod.ps1"; Sources = {
         Get-ManifestSource "iw3sp-mod files.json" "https://jerryalt.codeberg.page/files.json"
         Get-ReleaseSource "callofduty4x/CoD4x_Client_pub"
