@@ -1,5 +1,15 @@
 [
     [
+        "data/scripts/mp/gun/bot_costumes.gsc",
+        1326,
+        "DD0BC9ABEACC3B0C02A82FAA9E4769BC34A57C0B"
+    ],
+    [
+        "data/scripts/mp/tesla_class_guard.gsc",
+        4406,
+        "1F6A36E200455B756C548D87175014C97D039C0E"
+    ],
+    [
         "data/ui_scripts/mp/cod_points/__init__.lua",
         5232,
         "EA193D90BBE135196FAC7BC891DE4C3B8947D93D"
@@ -90,6 +100,11 @@
         "D62D56C337F4B6044FED6D5E1EBBA4382E47756B"
     ],
     [
+        "data/ui_scripts/mp/paintjobs/__init__.lua",
+        2602,
+        "046C05B475BC80856799B840F2CAD901870F3DC8"
+    ],
+    [
         "data/ui_scripts/mp/patches/cb_invites.lua",
         1133,
         "1AE18A2D9ACC526196A3126185758E1B2491D8A1"
@@ -146,10 +161,10 @@
     ],
     [
         "s2x.exe",
-        9462784,
-        "1BAB06E0FED9044CD4EA7D4EE6533CB1229D7871"
+        9670144,
+        "0F7B0C68225667A47A180CCCE41813C1944FB6FA"
     ],
     {
-        "ManifestHash": "1F71EE9FCB1C92CB3CD1EEBC115D88C5103DBDB0648BDC69BBE7C68263C65A29"
+        "ManifestHash": "FC34616A5DFF4090A5C9B245EF70BEED6908C2CF303DC02AB7D5B28689808CFD"
     }
 ]
