@@ -1,0 +1,543 @@
+1373576334,0,@Lua\Frontend Side\Camos\Mastercraft.lua,7,(main chunk)
+1373576334,1,@Lua\Frontend Side\Camos\Mastercraft.lua,7,(main chunk)
+1373576334,2,@Lua\Frontend Side\Camos\Mastercraft.lua,7,(main chunk)
+1373576334,3,@Lua\Frontend Side\Camos\Mastercraft.lua,7,(main chunk)
+1373576334,4,@Lua\Frontend Side\Camos\Mastercraft.lua,7,(main chunk)
+1373576334,5,@Lua\Frontend Side\Camos\Mastercraft.lua,12,(main chunk)
+1373576334,6,@Lua\Frontend Side\Camos\Mastercraft.lua,12,(main chunk)
+1373576334,7,@Lua\Frontend Side\Camos\Mastercraft.lua,12,(main chunk)
+1373576334,8,@Lua\Frontend Side\Camos\Mastercraft.lua,12,(main chunk)
+1373576334,9,@Lua\Frontend Side\Camos\Mastercraft.lua,18,(main chunk)
+1373576334,10,@Lua\Frontend Side\Camos\Mastercraft.lua,18,(main chunk)
+1373576334,11,@Lua\Frontend Side\Camos\Mastercraft.lua,27,(main chunk)
+1373576334,12,@Lua\Frontend Side\Camos\Mastercraft.lua,27,(main chunk)
+1373576334,13,@Lua\Frontend Side\Camos\Mastercraft.lua,27,(main chunk)
+1373576334,14,@Lua\Frontend Side\Camos\Mastercraft.lua,27,(main chunk)
+1373576334,15,@Lua\Frontend Side\Camos\Mastercraft.lua,27,(main chunk)
+1373576334,16,@Lua\Frontend Side\Camos\Mastercraft.lua,27,(main chunk)
+1373576334,17,@Lua\Frontend Side\Camos\Mastercraft.lua,27,(main chunk)
+1373576334,18,@Lua\Frontend Side\Camos\Mastercraft.lua,28,(main chunk)
+1373576334,19,@Lua\Frontend Side\Camos\Mastercraft.lua,29,(main chunk)
+1373576334,20,@Lua\Frontend Side\Camos\Mastercraft.lua,33,(main chunk)
+1373576334,21,@Lua\Frontend Side\Camos\Mastercraft.lua,33,(main chunk)
+1373576334,22,@Lua\Frontend Side\Camos\Mastercraft.lua,38,(main chunk)
+1373576334,23,@Lua\Frontend Side\Camos\Mastercraft.lua,60,(main chunk)
+1373576334,24,@Lua\Frontend Side\Camos\Mastercraft.lua,60,(main chunk)
+1373576334,25,@Lua\Frontend Side\Camos\Mastercraft.lua,60,(main chunk)
+1373576334,26,@Lua\Frontend Side\Camos\Mastercraft.lua,60,(main chunk)
+1373576334,27,@Lua\Frontend Side\Camos\Mastercraft.lua,84,(main chunk)
+1373576334,28,@Lua\Frontend Side\Camos\Mastercraft.lua,84,(main chunk)
+1373576334,29,@Lua\Frontend Side\Camos\Mastercraft.lua,122,(main chunk)
+1373576334,30,@Lua\Frontend Side\Camos\Mastercraft.lua,122,(main chunk)
+1373576334,31,@Lua\Frontend Side\Camos\Mastercraft.lua,122,(main chunk)
+1373576334,32,@Lua\Frontend Side\Camos\Mastercraft.lua,129,(main chunk)
+1373576334,33,@Lua\Frontend Side\Camos\Mastercraft.lua,130,(main chunk)
+1373576334,34,@Lua\Frontend Side\Camos\Mastercraft.lua,154,(main chunk)
+1373576334,35,@Lua\Frontend Side\Camos\Mastercraft.lua,154,(main chunk)
+1373576334,36,@Lua\Frontend Side\Camos\Mastercraft.lua,154,(main chunk)
+1373576334,37,@Lua\Frontend Side\Camos\Mastercraft.lua,170,(main chunk)
+1373576334,38,@Lua\Frontend Side\Camos\Mastercraft.lua,170,(main chunk)
+1373576334,39,@Lua\Frontend Side\Camos\Mastercraft.lua,170,(main chunk)
+1373576334,40,@Lua\Frontend Side\Camos\Mastercraft.lua,197,(main chunk)
+1373576334,41,@Lua\Frontend Side\Camos\Mastercraft.lua,197,(main chunk)
+1373576334,42,@Lua\Frontend Side\Camos\Mastercraft.lua,197,(main chunk)
+1373576334,43,@Lua\Frontend Side\Camos\Mastercraft.lua,197,(main chunk)
+1373576334,44,@Lua\Frontend Side\Camos\Mastercraft.lua,197,(main chunk)
+1373576334,45,@Lua\Frontend Side\Camos\Mastercraft.lua,197,(main chunk)
+1373576334,46,@Lua\Frontend Side\Camos\Mastercraft.lua,199,(main chunk)
+1373576334,47,@Lua\Frontend Side\Camos\Mastercraft.lua,199,(main chunk)
+1373576334,48,@Lua\Frontend Side\Camos\Mastercraft.lua,201,(main chunk)
+1373576334,49,@Lua\Frontend Side\Camos\Mastercraft.lua,211,(main chunk)
+1373576334,50,@Lua\Frontend Side\Camos\Mastercraft.lua,211,(main chunk)
+1373576334,51,@Lua\Frontend Side\Camos\Mastercraft.lua,211,(main chunk)
+1373576334,52,@Lua\Frontend Side\Camos\Mastercraft.lua,211,(main chunk)
+768202143,0,@Lua\Frontend Side\Camos\Mastercraft.lua,13,
+768202143,1,@Lua\Frontend Side\Camos\Mastercraft.lua,17,
+768202143,2,@Lua\Frontend Side\Camos\Mastercraft.lua,17,
+768202143,3,@Lua\Frontend Side\Camos\Mastercraft.lua,17,
+768202143,4,@Lua\Frontend Side\Camos\Mastercraft.lua,17,
+768202143,5,@Lua\Frontend Side\Camos\Mastercraft.lua,17,
+768202143,6,@Lua\Frontend Side\Camos\Mastercraft.lua,17,
+768202143,7,@Lua\Frontend Side\Camos\Mastercraft.lua,17,
+768202143,8,@Lua\Frontend Side\Camos\Mastercraft.lua,17,
+768202143,9,@Lua\Frontend Side\Camos\Mastercraft.lua,17,
+768202143,10,@Lua\Frontend Side\Camos\Mastercraft.lua,17,
+768202143,11,@Lua\Frontend Side\Camos\Mastercraft.lua,17,
+768202143,12,@Lua\Frontend Side\Camos\Mastercraft.lua,17,
+768202143,13,@Lua\Frontend Side\Camos\Mastercraft.lua,17,
+768202143,14,@Lua\Frontend Side\Camos\Mastercraft.lua,17,
+768202143,15,@Lua\Frontend Side\Camos\Mastercraft.lua,18,
+2690239822,0,@Lua\Frontend Side\Camos\Mastercraft.lua,32,IsWrapped
+2690239822,1,@Lua\Frontend Side\Camos\Mastercraft.lua,32,IsWrapped
+2690239822,2,@Lua\Frontend Side\Camos\Mastercraft.lua,32,IsWrapped
+2690239822,3,@Lua\Frontend Side\Camos\Mastercraft.lua,32,IsWrapped
+2690239822,4,@Lua\Frontend Side\Camos\Mastercraft.lua,32,IsWrapped
+2690239822,5,@Lua\Frontend Side\Camos\Mastercraft.lua,32,IsWrapped
+2690239822,6,@Lua\Frontend Side\Camos\Mastercraft.lua,32,IsWrapped
+2690239822,7,@Lua\Frontend Side\Camos\Mastercraft.lua,32,IsWrapped
+2690239822,8,@Lua\Frontend Side\Camos\Mastercraft.lua,32,IsWrapped
+2690239822,9,@Lua\Frontend Side\Camos\Mastercraft.lua,32,IsWrapped
+2690239822,10,@Lua\Frontend Side\Camos\Mastercraft.lua,32,IsWrapped
+2690239822,11,@Lua\Frontend Side\Camos\Mastercraft.lua,33,IsWrapped
+1007703071,0,@Lua\Frontend Side\Camos\Mastercraft.lua,36,CurrentWeaponModelSlot
+1007703071,1,@Lua\Frontend Side\Camos\Mastercraft.lua,36,CurrentWeaponModelSlot
+1007703071,2,@Lua\Frontend Side\Camos\Mastercraft.lua,36,CurrentWeaponModelSlot
+1007703071,3,@Lua\Frontend Side\Camos\Mastercraft.lua,36,CurrentWeaponModelSlot
+1007703071,4,@Lua\Frontend Side\Camos\Mastercraft.lua,36,CurrentWeaponModelSlot
+1007703071,5,@Lua\Frontend Side\Camos\Mastercraft.lua,36,CurrentWeaponModelSlot
+1007703071,6,@Lua\Frontend Side\Camos\Mastercraft.lua,36,CurrentWeaponModelSlot
+1007703071,7,@Lua\Frontend Side\Camos\Mastercraft.lua,36,CurrentWeaponModelSlot
+1007703071,8,@Lua\Frontend Side\Camos\Mastercraft.lua,36,CurrentWeaponModelSlot
+1007703071,9,@Lua\Frontend Side\Camos\Mastercraft.lua,37,CurrentWeaponModelSlot
+1007703071,10,@Lua\Frontend Side\Camos\Mastercraft.lua,37,CurrentWeaponModelSlot
+1007703071,11,@Lua\Frontend Side\Camos\Mastercraft.lua,37,CurrentWeaponModelSlot
+1007703071,12,@Lua\Frontend Side\Camos\Mastercraft.lua,37,CurrentWeaponModelSlot
+1007703071,13,@Lua\Frontend Side\Camos\Mastercraft.lua,37,CurrentWeaponModelSlot
+1007703071,14,@Lua\Frontend Side\Camos\Mastercraft.lua,38,CurrentWeaponModelSlot
+3437674061,0,@Lua\Frontend Side\Camos\Mastercraft.lua,56,WrapOptionsTable
+3437674061,1,@Lua\Frontend Side\Camos\Mastercraft.lua,56,WrapOptionsTable
+3437674061,2,@Lua\Frontend Side\Camos\Mastercraft.lua,56,WrapOptionsTable
+3437674061,3,@Lua\Frontend Side\Camos\Mastercraft.lua,56,WrapOptionsTable
+3437674061,4,@Lua\Frontend Side\Camos\Mastercraft.lua,58,WrapOptionsTable
+3437674061,5,@Lua\Frontend Side\Camos\Mastercraft.lua,58,WrapOptionsTable
+3437674061,6,@Lua\Frontend Side\Camos\Mastercraft.lua,59,WrapOptionsTable
+3437674061,7,@Lua\Frontend Side\Camos\Mastercraft.lua,60,WrapOptionsTable
+768202143,0,@Lua\Frontend Side\Camos\Mastercraft.lua,43,
+768202143,1,@Lua\Frontend Side\Camos\Mastercraft.lua,43,
+768202143,2,@Lua\Frontend Side\Camos\Mastercraft.lua,45,
+768202143,3,@Lua\Frontend Side\Camos\Mastercraft.lua,45,
+768202143,4,@Lua\Frontend Side\Camos\Mastercraft.lua,45,
+768202143,5,@Lua\Frontend Side\Camos\Mastercraft.lua,45,
+768202143,6,@Lua\Frontend Side\Camos\Mastercraft.lua,45,
+768202143,7,@Lua\Frontend Side\Camos\Mastercraft.lua,45,
+768202143,8,@Lua\Frontend Side\Camos\Mastercraft.lua,45,
+768202143,9,@Lua\Frontend Side\Camos\Mastercraft.lua,45,
+768202143,10,@Lua\Frontend Side\Camos\Mastercraft.lua,48,
+768202143,11,@Lua\Frontend Side\Camos\Mastercraft.lua,48,
+768202143,12,@Lua\Frontend Side\Camos\Mastercraft.lua,48,
+768202143,13,@Lua\Frontend Side\Camos\Mastercraft.lua,48,
+768202143,14,@Lua\Frontend Side\Camos\Mastercraft.lua,50,
+768202143,15,@Lua\Frontend Side\Camos\Mastercraft.lua,50,
+768202143,16,@Lua\Frontend Side\Camos\Mastercraft.lua,50,
+768202143,17,@Lua\Frontend Side\Camos\Mastercraft.lua,50,
+768202143,18,@Lua\Frontend Side\Camos\Mastercraft.lua,51,
+768202143,19,@Lua\Frontend Side\Camos\Mastercraft.lua,51,
+768202143,20,@Lua\Frontend Side\Camos\Mastercraft.lua,51,
+768202143,21,@Lua\Frontend Side\Camos\Mastercraft.lua,51,
+768202143,22,@Lua\Frontend Side\Camos\Mastercraft.lua,52,
+768202143,23,@Lua\Frontend Side\Camos\Mastercraft.lua,55,
+768202143,24,@Lua\Frontend Side\Camos\Mastercraft.lua,56,
+4182365164,0,@Lua\Frontend Side\Camos\Mastercraft.lua,80,WrapClearOptions
+4182365164,1,@Lua\Frontend Side\Camos\Mastercraft.lua,80,WrapClearOptions
+4182365164,2,@Lua\Frontend Side\Camos\Mastercraft.lua,82,WrapClearOptions
+4182365164,3,@Lua\Frontend Side\Camos\Mastercraft.lua,82,WrapClearOptions
+4182365164,4,@Lua\Frontend Side\Camos\Mastercraft.lua,83,WrapClearOptions
+4182365164,5,@Lua\Frontend Side\Camos\Mastercraft.lua,84,WrapClearOptions
+768202143,0,@Lua\Frontend Side\Camos\Mastercraft.lua,64,
+768202143,1,@Lua\Frontend Side\Camos\Mastercraft.lua,64,
+768202143,2,@Lua\Frontend Side\Camos\Mastercraft.lua,64,
+768202143,3,@Lua\Frontend Side\Camos\Mastercraft.lua,64,
+768202143,4,@Lua\Frontend Side\Camos\Mastercraft.lua,64,
+768202143,5,@Lua\Frontend Side\Camos\Mastercraft.lua,64,
+768202143,6,@Lua\Frontend Side\Camos\Mastercraft.lua,64,
+768202143,7,@Lua\Frontend Side\Camos\Mastercraft.lua,64,
+768202143,8,@Lua\Frontend Side\Camos\Mastercraft.lua,64,
+768202143,9,@Lua\Frontend Side\Camos\Mastercraft.lua,64,
+768202143,10,@Lua\Frontend Side\Camos\Mastercraft.lua,67,
+768202143,11,@Lua\Frontend Side\Camos\Mastercraft.lua,67,
+768202143,12,@Lua\Frontend Side\Camos\Mastercraft.lua,67,
+768202143,13,@Lua\Frontend Side\Camos\Mastercraft.lua,67,
+768202143,14,@Lua\Frontend Side\Camos\Mastercraft.lua,68,
+768202143,15,@Lua\Frontend Side\Camos\Mastercraft.lua,68,
+768202143,16,@Lua\Frontend Side\Camos\Mastercraft.lua,68,
+768202143,17,@Lua\Frontend Side\Camos\Mastercraft.lua,69,
+768202143,18,@Lua\Frontend Side\Camos\Mastercraft.lua,69,
+768202143,19,@Lua\Frontend Side\Camos\Mastercraft.lua,69,
+768202143,20,@Lua\Frontend Side\Camos\Mastercraft.lua,69,
+768202143,21,@Lua\Frontend Side\Camos\Mastercraft.lua,70,
+768202143,22,@Lua\Frontend Side\Camos\Mastercraft.lua,70,
+768202143,23,@Lua\Frontend Side\Camos\Mastercraft.lua,70,
+768202143,24,@Lua\Frontend Side\Camos\Mastercraft.lua,70,
+768202143,25,@Lua\Frontend Side\Camos\Mastercraft.lua,70,
+768202143,26,@Lua\Frontend Side\Camos\Mastercraft.lua,70,
+768202143,27,@Lua\Frontend Side\Camos\Mastercraft.lua,71,
+768202143,28,@Lua\Frontend Side\Camos\Mastercraft.lua,73,
+768202143,29,@Lua\Frontend Side\Camos\Mastercraft.lua,73,
+768202143,30,@Lua\Frontend Side\Camos\Mastercraft.lua,74,
+768202143,31,@Lua\Frontend Side\Camos\Mastercraft.lua,74,
+768202143,32,@Lua\Frontend Side\Camos\Mastercraft.lua,74,
+768202143,33,@Lua\Frontend Side\Camos\Mastercraft.lua,76,
+768202143,34,@Lua\Frontend Side\Camos\Mastercraft.lua,79,
+768202143,35,@Lua\Frontend Side\Camos\Mastercraft.lua,79,
+768202143,36,@Lua\Frontend Side\Camos\Mastercraft.lua,79,
+768202143,37,@Lua\Frontend Side\Camos\Mastercraft.lua,79,
+768202143,38,@Lua\Frontend Side\Camos\Mastercraft.lua,79,
+768202143,39,@Lua\Frontend Side\Camos\Mastercraft.lua,79,
+768202143,40,@Lua\Frontend Side\Camos\Mastercraft.lua,80,
+3302860718,0,@Lua\Frontend Side\Camos\Mastercraft.lua,118,WrapVariantCamo
+3302860718,1,@Lua\Frontend Side\Camos\Mastercraft.lua,118,WrapVariantCamo
+3302860718,2,@Lua\Frontend Side\Camos\Mastercraft.lua,118,WrapVariantCamo
+3302860718,3,@Lua\Frontend Side\Camos\Mastercraft.lua,118,WrapVariantCamo
+3302860718,4,@Lua\Frontend Side\Camos\Mastercraft.lua,120,WrapVariantCamo
+3302860718,5,@Lua\Frontend Side\Camos\Mastercraft.lua,120,WrapVariantCamo
+3302860718,6,@Lua\Frontend Side\Camos\Mastercraft.lua,121,WrapVariantCamo
+3302860718,7,@Lua\Frontend Side\Camos\Mastercraft.lua,122,WrapVariantCamo
+768202143,0,@Lua\Frontend Side\Camos\Mastercraft.lua,89,
+768202143,1,@Lua\Frontend Side\Camos\Mastercraft.lua,89,
+768202143,2,@Lua\Frontend Side\Camos\Mastercraft.lua,89,
+768202143,3,@Lua\Frontend Side\Camos\Mastercraft.lua,89,
+768202143,4,@Lua\Frontend Side\Camos\Mastercraft.lua,89,
+768202143,5,@Lua\Frontend Side\Camos\Mastercraft.lua,89,
+768202143,6,@Lua\Frontend Side\Camos\Mastercraft.lua,90,
+768202143,7,@Lua\Frontend Side\Camos\Mastercraft.lua,90,
+768202143,8,@Lua\Frontend Side\Camos\Mastercraft.lua,90,
+768202143,9,@Lua\Frontend Side\Camos\Mastercraft.lua,90,
+768202143,10,@Lua\Frontend Side\Camos\Mastercraft.lua,90,
+768202143,11,@Lua\Frontend Side\Camos\Mastercraft.lua,90,
+768202143,12,@Lua\Frontend Side\Camos\Mastercraft.lua,90,
+768202143,13,@Lua\Frontend Side\Camos\Mastercraft.lua,90,
+768202143,14,@Lua\Frontend Side\Camos\Mastercraft.lua,90,
+768202143,15,@Lua\Frontend Side\Camos\Mastercraft.lua,90,
+768202143,16,@Lua\Frontend Side\Camos\Mastercraft.lua,90,
+768202143,17,@Lua\Frontend Side\Camos\Mastercraft.lua,90,
+768202143,18,@Lua\Frontend Side\Camos\Mastercraft.lua,90,
+768202143,19,@Lua\Frontend Side\Camos\Mastercraft.lua,90,
+768202143,20,@Lua\Frontend Side\Camos\Mastercraft.lua,90,
+768202143,21,@Lua\Frontend Side\Camos\Mastercraft.lua,90,
+768202143,22,@Lua\Frontend Side\Camos\Mastercraft.lua,90,
+768202143,23,@Lua\Frontend Side\Camos\Mastercraft.lua,90,
+768202143,24,@Lua\Frontend Side\Camos\Mastercraft.lua,90,
+768202143,25,@Lua\Frontend Side\Camos\Mastercraft.lua,90,
+768202143,26,@Lua\Frontend Side\Camos\Mastercraft.lua,90,
+768202143,27,@Lua\Frontend Side\Camos\Mastercraft.lua,90,
+768202143,28,@Lua\Frontend Side\Camos\Mastercraft.lua,90,
+768202143,29,@Lua\Frontend Side\Camos\Mastercraft.lua,92,
+768202143,30,@Lua\Frontend Side\Camos\Mastercraft.lua,92,
+768202143,31,@Lua\Frontend Side\Camos\Mastercraft.lua,92,
+768202143,32,@Lua\Frontend Side\Camos\Mastercraft.lua,92,
+768202143,33,@Lua\Frontend Side\Camos\Mastercraft.lua,92,
+768202143,34,@Lua\Frontend Side\Camos\Mastercraft.lua,92,
+768202143,35,@Lua\Frontend Side\Camos\Mastercraft.lua,92,
+768202143,36,@Lua\Frontend Side\Camos\Mastercraft.lua,92,
+768202143,37,@Lua\Frontend Side\Camos\Mastercraft.lua,92,
+768202143,38,@Lua\Frontend Side\Camos\Mastercraft.lua,93,
+768202143,39,@Lua\Frontend Side\Camos\Mastercraft.lua,93,
+768202143,40,@Lua\Frontend Side\Camos\Mastercraft.lua,93,
+768202143,41,@Lua\Frontend Side\Camos\Mastercraft.lua,93,
+768202143,42,@Lua\Frontend Side\Camos\Mastercraft.lua,93,
+768202143,43,@Lua\Frontend Side\Camos\Mastercraft.lua,93,
+768202143,44,@Lua\Frontend Side\Camos\Mastercraft.lua,93,
+768202143,45,@Lua\Frontend Side\Camos\Mastercraft.lua,96,
+768202143,46,@Lua\Frontend Side\Camos\Mastercraft.lua,96,
+768202143,47,@Lua\Frontend Side\Camos\Mastercraft.lua,96,
+768202143,48,@Lua\Frontend Side\Camos\Mastercraft.lua,96,
+768202143,49,@Lua\Frontend Side\Camos\Mastercraft.lua,96,
+768202143,50,@Lua\Frontend Side\Camos\Mastercraft.lua,96,
+768202143,51,@Lua\Frontend Side\Camos\Mastercraft.lua,96,
+768202143,52,@Lua\Frontend Side\Camos\Mastercraft.lua,96,
+768202143,53,@Lua\Frontend Side\Camos\Mastercraft.lua,97,
+768202143,54,@Lua\Frontend Side\Camos\Mastercraft.lua,97,
+768202143,55,@Lua\Frontend Side\Camos\Mastercraft.lua,97,
+768202143,56,@Lua\Frontend Side\Camos\Mastercraft.lua,97,
+768202143,57,@Lua\Frontend Side\Camos\Mastercraft.lua,97,
+768202143,58,@Lua\Frontend Side\Camos\Mastercraft.lua,97,
+768202143,59,@Lua\Frontend Side\Camos\Mastercraft.lua,97,
+768202143,60,@Lua\Frontend Side\Camos\Mastercraft.lua,97,
+768202143,61,@Lua\Frontend Side\Camos\Mastercraft.lua,97,
+768202143,62,@Lua\Frontend Side\Camos\Mastercraft.lua,97,
+768202143,63,@Lua\Frontend Side\Camos\Mastercraft.lua,97,
+768202143,64,@Lua\Frontend Side\Camos\Mastercraft.lua,97,
+768202143,65,@Lua\Frontend Side\Camos\Mastercraft.lua,98,
+768202143,66,@Lua\Frontend Side\Camos\Mastercraft.lua,98,
+768202143,67,@Lua\Frontend Side\Camos\Mastercraft.lua,98,
+768202143,68,@Lua\Frontend Side\Camos\Mastercraft.lua,98,
+768202143,69,@Lua\Frontend Side\Camos\Mastercraft.lua,98,
+768202143,70,@Lua\Frontend Side\Camos\Mastercraft.lua,98,
+768202143,71,@Lua\Frontend Side\Camos\Mastercraft.lua,99,
+768202143,72,@Lua\Frontend Side\Camos\Mastercraft.lua,99,
+768202143,73,@Lua\Frontend Side\Camos\Mastercraft.lua,99,
+768202143,74,@Lua\Frontend Side\Camos\Mastercraft.lua,99,
+768202143,75,@Lua\Frontend Side\Camos\Mastercraft.lua,101,
+768202143,76,@Lua\Frontend Side\Camos\Mastercraft.lua,101,
+768202143,77,@Lua\Frontend Side\Camos\Mastercraft.lua,101,
+768202143,78,@Lua\Frontend Side\Camos\Mastercraft.lua,101,
+768202143,79,@Lua\Frontend Side\Camos\Mastercraft.lua,101,
+768202143,80,@Lua\Frontend Side\Camos\Mastercraft.lua,101,
+768202143,81,@Lua\Frontend Side\Camos\Mastercraft.lua,103,
+768202143,82,@Lua\Frontend Side\Camos\Mastercraft.lua,105,
+768202143,83,@Lua\Frontend Side\Camos\Mastercraft.lua,105,
+768202143,84,@Lua\Frontend Side\Camos\Mastercraft.lua,105,
+768202143,85,@Lua\Frontend Side\Camos\Mastercraft.lua,105,
+768202143,86,@Lua\Frontend Side\Camos\Mastercraft.lua,105,
+768202143,87,@Lua\Frontend Side\Camos\Mastercraft.lua,105,
+768202143,88,@Lua\Frontend Side\Camos\Mastercraft.lua,105,
+768202143,89,@Lua\Frontend Side\Camos\Mastercraft.lua,105,
+768202143,90,@Lua\Frontend Side\Camos\Mastercraft.lua,105,
+768202143,91,@Lua\Frontend Side\Camos\Mastercraft.lua,106,
+768202143,92,@Lua\Frontend Side\Camos\Mastercraft.lua,106,
+768202143,93,@Lua\Frontend Side\Camos\Mastercraft.lua,106,
+768202143,94,@Lua\Frontend Side\Camos\Mastercraft.lua,106,
+768202143,95,@Lua\Frontend Side\Camos\Mastercraft.lua,106,
+768202143,96,@Lua\Frontend Side\Camos\Mastercraft.lua,106,
+768202143,97,@Lua\Frontend Side\Camos\Mastercraft.lua,107,
+768202143,98,@Lua\Frontend Side\Camos\Mastercraft.lua,110,
+768202143,99,@Lua\Frontend Side\Camos\Mastercraft.lua,110,
+768202143,100,@Lua\Frontend Side\Camos\Mastercraft.lua,110,
+768202143,101,@Lua\Frontend Side\Camos\Mastercraft.lua,110,
+768202143,102,@Lua\Frontend Side\Camos\Mastercraft.lua,110,
+768202143,103,@Lua\Frontend Side\Camos\Mastercraft.lua,110,
+768202143,104,@Lua\Frontend Side\Camos\Mastercraft.lua,111,
+768202143,105,@Lua\Frontend Side\Camos\Mastercraft.lua,111,
+768202143,106,@Lua\Frontend Side\Camos\Mastercraft.lua,111,
+768202143,107,@Lua\Frontend Side\Camos\Mastercraft.lua,112,
+768202143,108,@Lua\Frontend Side\Camos\Mastercraft.lua,115,
+768202143,109,@Lua\Frontend Side\Camos\Mastercraft.lua,115,
+768202143,110,@Lua\Frontend Side\Camos\Mastercraft.lua,116,
+768202143,111,@Lua\Frontend Side\Camos\Mastercraft.lua,116,
+768202143,112,@Lua\Frontend Side\Camos\Mastercraft.lua,116,
+768202143,113,@Lua\Frontend Side\Camos\Mastercraft.lua,116,
+768202143,114,@Lua\Frontend Side\Camos\Mastercraft.lua,116,
+768202143,115,@Lua\Frontend Side\Camos\Mastercraft.lua,116,
+768202143,116,@Lua\Frontend Side\Camos\Mastercraft.lua,116,
+768202143,117,@Lua\Frontend Side\Camos\Mastercraft.lua,116,
+768202143,118,@Lua\Frontend Side\Camos\Mastercraft.lua,116,
+768202143,119,@Lua\Frontend Side\Camos\Mastercraft.lua,116,
+768202143,120,@Lua\Frontend Side\Camos\Mastercraft.lua,118,
+1004100080,0,@Lua\Frontend Side\Camos\Mastercraft.lua,133,IsShieldMastercraft
+1004100080,1,@Lua\Frontend Side\Camos\Mastercraft.lua,133,IsShieldMastercraft
+1004100080,2,@Lua\Frontend Side\Camos\Mastercraft.lua,133,IsShieldMastercraft
+1004100080,3,@Lua\Frontend Side\Camos\Mastercraft.lua,134,IsShieldMastercraft
+1004100080,4,@Lua\Frontend Side\Camos\Mastercraft.lua,134,IsShieldMastercraft
+1004100080,5,@Lua\Frontend Side\Camos\Mastercraft.lua,134,IsShieldMastercraft
+1004100080,6,@Lua\Frontend Side\Camos\Mastercraft.lua,134,IsShieldMastercraft
+1004100080,7,@Lua\Frontend Side\Camos\Mastercraft.lua,134,IsShieldMastercraft
+1004100080,8,@Lua\Frontend Side\Camos\Mastercraft.lua,134,IsShieldMastercraft
+1004100080,9,@Lua\Frontend Side\Camos\Mastercraft.lua,134,IsShieldMastercraft
+1004100080,10,@Lua\Frontend Side\Camos\Mastercraft.lua,134,IsShieldMastercraft
+1004100080,11,@Lua\Frontend Side\Camos\Mastercraft.lua,134,IsShieldMastercraft
+1004100080,12,@Lua\Frontend Side\Camos\Mastercraft.lua,134,IsShieldMastercraft
+1004100080,13,@Lua\Frontend Side\Camos\Mastercraft.lua,134,IsShieldMastercraft
+1004100080,14,@Lua\Frontend Side\Camos\Mastercraft.lua,135,IsShieldMastercraft
+1004100080,15,@Lua\Frontend Side\Camos\Mastercraft.lua,135,IsShieldMastercraft
+1004100080,16,@Lua\Frontend Side\Camos\Mastercraft.lua,136,IsShieldMastercraft
+1004100080,17,@Lua\Frontend Side\Camos\Mastercraft.lua,136,IsShieldMastercraft
+1004100080,18,@Lua\Frontend Side\Camos\Mastercraft.lua,139,IsShieldMastercraft
+1004100080,19,@Lua\Frontend Side\Camos\Mastercraft.lua,139,IsShieldMastercraft
+1004100080,20,@Lua\Frontend Side\Camos\Mastercraft.lua,140,IsShieldMastercraft
+1004100080,21,@Lua\Frontend Side\Camos\Mastercraft.lua,140,IsShieldMastercraft
+1004100080,22,@Lua\Frontend Side\Camos\Mastercraft.lua,140,IsShieldMastercraft
+1004100080,23,@Lua\Frontend Side\Camos\Mastercraft.lua,140,IsShieldMastercraft
+1004100080,24,@Lua\Frontend Side\Camos\Mastercraft.lua,141,IsShieldMastercraft
+1004100080,25,@Lua\Frontend Side\Camos\Mastercraft.lua,141,IsShieldMastercraft
+1004100080,26,@Lua\Frontend Side\Camos\Mastercraft.lua,141,IsShieldMastercraft
+1004100080,27,@Lua\Frontend Side\Camos\Mastercraft.lua,141,IsShieldMastercraft
+1004100080,28,@Lua\Frontend Side\Camos\Mastercraft.lua,141,IsShieldMastercraft
+1004100080,29,@Lua\Frontend Side\Camos\Mastercraft.lua,141,IsShieldMastercraft
+1004100080,30,@Lua\Frontend Side\Camos\Mastercraft.lua,141,IsShieldMastercraft
+1004100080,31,@Lua\Frontend Side\Camos\Mastercraft.lua,141,IsShieldMastercraft
+1004100080,32,@Lua\Frontend Side\Camos\Mastercraft.lua,142,IsShieldMastercraft
+1004100080,33,@Lua\Frontend Side\Camos\Mastercraft.lua,142,IsShieldMastercraft
+1004100080,34,@Lua\Frontend Side\Camos\Mastercraft.lua,142,IsShieldMastercraft
+1004100080,35,@Lua\Frontend Side\Camos\Mastercraft.lua,142,IsShieldMastercraft
+1004100080,36,@Lua\Frontend Side\Camos\Mastercraft.lua,143,IsShieldMastercraft
+1004100080,37,@Lua\Frontend Side\Camos\Mastercraft.lua,143,IsShieldMastercraft
+1004100080,38,@Lua\Frontend Side\Camos\Mastercraft.lua,143,IsShieldMastercraft
+1004100080,39,@Lua\Frontend Side\Camos\Mastercraft.lua,143,IsShieldMastercraft
+1004100080,40,@Lua\Frontend Side\Camos\Mastercraft.lua,143,IsShieldMastercraft
+1004100080,41,@Lua\Frontend Side\Camos\Mastercraft.lua,143,IsShieldMastercraft
+1004100080,42,@Lua\Frontend Side\Camos\Mastercraft.lua,143,IsShieldMastercraft
+1004100080,43,@Lua\Frontend Side\Camos\Mastercraft.lua,143,IsShieldMastercraft
+1004100080,44,@Lua\Frontend Side\Camos\Mastercraft.lua,140,IsShieldMastercraft
+1004100080,45,@Lua\Frontend Side\Camos\Mastercraft.lua,148,IsShieldMastercraft
+1004100080,46,@Lua\Frontend Side\Camos\Mastercraft.lua,148,IsShieldMastercraft
+1004100080,47,@Lua\Frontend Side\Camos\Mastercraft.lua,148,IsShieldMastercraft
+1004100080,48,@Lua\Frontend Side\Camos\Mastercraft.lua,148,IsShieldMastercraft
+1004100080,49,@Lua\Frontend Side\Camos\Mastercraft.lua,148,IsShieldMastercraft
+1004100080,50,@Lua\Frontend Side\Camos\Mastercraft.lua,149,IsShieldMastercraft
+1004100080,51,@Lua\Frontend Side\Camos\Mastercraft.lua,149,IsShieldMastercraft
+1004100080,52,@Lua\Frontend Side\Camos\Mastercraft.lua,149,IsShieldMastercraft
+1004100080,53,@Lua\Frontend Side\Camos\Mastercraft.lua,149,IsShieldMastercraft
+1004100080,54,@Lua\Frontend Side\Camos\Mastercraft.lua,150,IsShieldMastercraft
+1004100080,55,@Lua\Frontend Side\Camos\Mastercraft.lua,150,IsShieldMastercraft
+1004100080,56,@Lua\Frontend Side\Camos\Mastercraft.lua,153,IsShieldMastercraft
+1004100080,57,@Lua\Frontend Side\Camos\Mastercraft.lua,153,IsShieldMastercraft
+1004100080,58,@Lua\Frontend Side\Camos\Mastercraft.lua,153,IsShieldMastercraft
+1004100080,59,@Lua\Frontend Side\Camos\Mastercraft.lua,153,IsShieldMastercraft
+1004100080,60,@Lua\Frontend Side\Camos\Mastercraft.lua,153,IsShieldMastercraft
+1004100080,61,@Lua\Frontend Side\Camos\Mastercraft.lua,153,IsShieldMastercraft
+1004100080,62,@Lua\Frontend Side\Camos\Mastercraft.lua,153,IsShieldMastercraft
+1004100080,63,@Lua\Frontend Side\Camos\Mastercraft.lua,153,IsShieldMastercraft
+1004100080,64,@Lua\Frontend Side\Camos\Mastercraft.lua,153,IsShieldMastercraft
+1004100080,65,@Lua\Frontend Side\Camos\Mastercraft.lua,153,IsShieldMastercraft
+1004100080,66,@Lua\Frontend Side\Camos\Mastercraft.lua,153,IsShieldMastercraft
+1004100080,67,@Lua\Frontend Side\Camos\Mastercraft.lua,153,IsShieldMastercraft
+1004100080,68,@Lua\Frontend Side\Camos\Mastercraft.lua,153,IsShieldMastercraft
+1004100080,69,@Lua\Frontend Side\Camos\Mastercraft.lua,153,IsShieldMastercraft
+1004100080,70,@Lua\Frontend Side\Camos\Mastercraft.lua,153,IsShieldMastercraft
+1004100080,71,@Lua\Frontend Side\Camos\Mastercraft.lua,154,IsShieldMastercraft
+944204987,0,@Lua\Frontend Side\Camos\Mastercraft.lua,166,WrapFilterSignatureWeapon
+944204987,1,@Lua\Frontend Side\Camos\Mastercraft.lua,166,WrapFilterSignatureWeapon
+944204987,2,@Lua\Frontend Side\Camos\Mastercraft.lua,166,WrapFilterSignatureWeapon
+944204987,3,@Lua\Frontend Side\Camos\Mastercraft.lua,168,WrapFilterSignatureWeapon
+944204987,4,@Lua\Frontend Side\Camos\Mastercraft.lua,168,WrapFilterSignatureWeapon
+944204987,5,@Lua\Frontend Side\Camos\Mastercraft.lua,169,WrapFilterSignatureWeapon
+944204987,6,@Lua\Frontend Side\Camos\Mastercraft.lua,170,WrapFilterSignatureWeapon
+768202143,0,@Lua\Frontend Side\Camos\Mastercraft.lua,158,
+768202143,1,@Lua\Frontend Side\Camos\Mastercraft.lua,158,
+768202143,2,@Lua\Frontend Side\Camos\Mastercraft.lua,159,
+768202143,3,@Lua\Frontend Side\Camos\Mastercraft.lua,159,
+768202143,4,@Lua\Frontend Side\Camos\Mastercraft.lua,159,
+768202143,5,@Lua\Frontend Side\Camos\Mastercraft.lua,159,
+768202143,6,@Lua\Frontend Side\Camos\Mastercraft.lua,160,
+768202143,7,@Lua\Frontend Side\Camos\Mastercraft.lua,160,
+768202143,8,@Lua\Frontend Side\Camos\Mastercraft.lua,160,
+768202143,9,@Lua\Frontend Side\Camos\Mastercraft.lua,160,
+768202143,10,@Lua\Frontend Side\Camos\Mastercraft.lua,161,
+768202143,11,@Lua\Frontend Side\Camos\Mastercraft.lua,161,
+768202143,12,@Lua\Frontend Side\Camos\Mastercraft.lua,165,
+768202143,13,@Lua\Frontend Side\Camos\Mastercraft.lua,165,
+768202143,14,@Lua\Frontend Side\Camos\Mastercraft.lua,165,
+768202143,15,@Lua\Frontend Side\Camos\Mastercraft.lua,165,
+768202143,16,@Lua\Frontend Side\Camos\Mastercraft.lua,165,
+768202143,17,@Lua\Frontend Side\Camos\Mastercraft.lua,165,
+768202143,18,@Lua\Frontend Side\Camos\Mastercraft.lua,165,
+768202143,19,@Lua\Frontend Side\Camos\Mastercraft.lua,166,
+768202143,0,@Lua\Frontend Side\Camos\Mastercraft.lua,174,
+768202143,1,@Lua\Frontend Side\Camos\Mastercraft.lua,174,
+768202143,2,@Lua\Frontend Side\Camos\Mastercraft.lua,174,
+768202143,3,@Lua\Frontend Side\Camos\Mastercraft.lua,174,
+768202143,4,@Lua\Frontend Side\Camos\Mastercraft.lua,176,
+768202143,5,@Lua\Frontend Side\Camos\Mastercraft.lua,176,
+768202143,6,@Lua\Frontend Side\Camos\Mastercraft.lua,176,
+768202143,7,@Lua\Frontend Side\Camos\Mastercraft.lua,176,
+768202143,8,@Lua\Frontend Side\Camos\Mastercraft.lua,176,
+768202143,9,@Lua\Frontend Side\Camos\Mastercraft.lua,176,
+768202143,10,@Lua\Frontend Side\Camos\Mastercraft.lua,176,
+768202143,11,@Lua\Frontend Side\Camos\Mastercraft.lua,176,
+768202143,12,@Lua\Frontend Side\Camos\Mastercraft.lua,176,
+768202143,13,@Lua\Frontend Side\Camos\Mastercraft.lua,176,
+768202143,14,@Lua\Frontend Side\Camos\Mastercraft.lua,176,
+768202143,15,@Lua\Frontend Side\Camos\Mastercraft.lua,176,
+768202143,16,@Lua\Frontend Side\Camos\Mastercraft.lua,176,
+768202143,17,@Lua\Frontend Side\Camos\Mastercraft.lua,176,
+768202143,18,@Lua\Frontend Side\Camos\Mastercraft.lua,177,
+768202143,19,@Lua\Frontend Side\Camos\Mastercraft.lua,177,
+768202143,20,@Lua\Frontend Side\Camos\Mastercraft.lua,177,
+768202143,21,@Lua\Frontend Side\Camos\Mastercraft.lua,177,
+768202143,22,@Lua\Frontend Side\Camos\Mastercraft.lua,177,
+768202143,23,@Lua\Frontend Side\Camos\Mastercraft.lua,177,
+768202143,24,@Lua\Frontend Side\Camos\Mastercraft.lua,180,
+768202143,25,@Lua\Frontend Side\Camos\Mastercraft.lua,180,
+768202143,26,@Lua\Frontend Side\Camos\Mastercraft.lua,180,
+768202143,27,@Lua\Frontend Side\Camos\Mastercraft.lua,180,
+768202143,28,@Lua\Frontend Side\Camos\Mastercraft.lua,182,
+768202143,29,@Lua\Frontend Side\Camos\Mastercraft.lua,182,
+768202143,30,@Lua\Frontend Side\Camos\Mastercraft.lua,183,
+768202143,31,@Lua\Frontend Side\Camos\Mastercraft.lua,183,
+768202143,32,@Lua\Frontend Side\Camos\Mastercraft.lua,183,
+768202143,33,@Lua\Frontend Side\Camos\Mastercraft.lua,183,
+768202143,34,@Lua\Frontend Side\Camos\Mastercraft.lua,183,
+768202143,35,@Lua\Frontend Side\Camos\Mastercraft.lua,183,
+768202143,36,@Lua\Frontend Side\Camos\Mastercraft.lua,183,
+768202143,37,@Lua\Frontend Side\Camos\Mastercraft.lua,183,
+768202143,38,@Lua\Frontend Side\Camos\Mastercraft.lua,183,
+768202143,39,@Lua\Frontend Side\Camos\Mastercraft.lua,183,
+768202143,40,@Lua\Frontend Side\Camos\Mastercraft.lua,183,
+768202143,41,@Lua\Frontend Side\Camos\Mastercraft.lua,183,
+768202143,42,@Lua\Frontend Side\Camos\Mastercraft.lua,184,
+768202143,43,@Lua\Frontend Side\Camos\Mastercraft.lua,184,
+768202143,44,@Lua\Frontend Side\Camos\Mastercraft.lua,184,
+768202143,45,@Lua\Frontend Side\Camos\Mastercraft.lua,184,
+768202143,46,@Lua\Frontend Side\Camos\Mastercraft.lua,184,
+768202143,47,@Lua\Frontend Side\Camos\Mastercraft.lua,184,
+768202143,48,@Lua\Frontend Side\Camos\Mastercraft.lua,187,
+768202143,49,@Lua\Frontend Side\Camos\Mastercraft.lua,187,
+768202143,50,@Lua\Frontend Side\Camos\Mastercraft.lua,187,
+768202143,51,@Lua\Frontend Side\Camos\Mastercraft.lua,187,
+768202143,52,@Lua\Frontend Side\Camos\Mastercraft.lua,187,
+768202143,53,@Lua\Frontend Side\Camos\Mastercraft.lua,187,
+768202143,54,@Lua\Frontend Side\Camos\Mastercraft.lua,187,
+768202143,55,@Lua\Frontend Side\Camos\Mastercraft.lua,187,
+768202143,56,@Lua\Frontend Side\Camos\Mastercraft.lua,187,
+768202143,57,@Lua\Frontend Side\Camos\Mastercraft.lua,187,
+768202143,58,@Lua\Frontend Side\Camos\Mastercraft.lua,187,
+768202143,59,@Lua\Frontend Side\Camos\Mastercraft.lua,187,
+768202143,60,@Lua\Frontend Side\Camos\Mastercraft.lua,188,
+768202143,61,@Lua\Frontend Side\Camos\Mastercraft.lua,188,
+768202143,62,@Lua\Frontend Side\Camos\Mastercraft.lua,188,
+768202143,63,@Lua\Frontend Side\Camos\Mastercraft.lua,188,
+768202143,64,@Lua\Frontend Side\Camos\Mastercraft.lua,188,
+768202143,65,@Lua\Frontend Side\Camos\Mastercraft.lua,188,
+768202143,66,@Lua\Frontend Side\Camos\Mastercraft.lua,192,
+768202143,67,@Lua\Frontend Side\Camos\Mastercraft.lua,192,
+768202143,68,@Lua\Frontend Side\Camos\Mastercraft.lua,192,
+768202143,69,@Lua\Frontend Side\Camos\Mastercraft.lua,192,
+768202143,70,@Lua\Frontend Side\Camos\Mastercraft.lua,192,
+768202143,71,@Lua\Frontend Side\Camos\Mastercraft.lua,192,
+768202143,72,@Lua\Frontend Side\Camos\Mastercraft.lua,192,
+768202143,73,@Lua\Frontend Side\Camos\Mastercraft.lua,192,
+768202143,74,@Lua\Frontend Side\Camos\Mastercraft.lua,192,
+768202143,75,@Lua\Frontend Side\Camos\Mastercraft.lua,192,
+768202143,76,@Lua\Frontend Side\Camos\Mastercraft.lua,192,
+768202143,77,@Lua\Frontend Side\Camos\Mastercraft.lua,192,
+768202143,78,@Lua\Frontend Side\Camos\Mastercraft.lua,192,
+768202143,79,@Lua\Frontend Side\Camos\Mastercraft.lua,192,
+768202143,80,@Lua\Frontend Side\Camos\Mastercraft.lua,192,
+768202143,81,@Lua\Frontend Side\Camos\Mastercraft.lua,192,
+768202143,82,@Lua\Frontend Side\Camos\Mastercraft.lua,192,
+768202143,83,@Lua\Frontend Side\Camos\Mastercraft.lua,192,
+768202143,84,@Lua\Frontend Side\Camos\Mastercraft.lua,192,
+768202143,85,@Lua\Frontend Side\Camos\Mastercraft.lua,193,
+768202143,86,@Lua\Frontend Side\Camos\Mastercraft.lua,193,
+768202143,87,@Lua\Frontend Side\Camos\Mastercraft.lua,193,
+768202143,88,@Lua\Frontend Side\Camos\Mastercraft.lua,193,
+768202143,89,@Lua\Frontend Side\Camos\Mastercraft.lua,193,
+768202143,90,@Lua\Frontend Side\Camos\Mastercraft.lua,193,
+768202143,91,@Lua\Frontend Side\Camos\Mastercraft.lua,193,
+768202143,92,@Lua\Frontend Side\Camos\Mastercraft.lua,193,
+768202143,93,@Lua\Frontend Side\Camos\Mastercraft.lua,193,
+768202143,94,@Lua\Frontend Side\Camos\Mastercraft.lua,193,
+768202143,95,@Lua\Frontend Side\Camos\Mastercraft.lua,193,
+768202143,96,@Lua\Frontend Side\Camos\Mastercraft.lua,193,
+768202143,97,@Lua\Frontend Side\Camos\Mastercraft.lua,193,
+768202143,98,@Lua\Frontend Side\Camos\Mastercraft.lua,193,
+768202143,99,@Lua\Frontend Side\Camos\Mastercraft.lua,193,
+768202143,100,@Lua\Frontend Side\Camos\Mastercraft.lua,193,
+768202143,101,@Lua\Frontend Side\Camos\Mastercraft.lua,193,
+768202143,102,@Lua\Frontend Side\Camos\Mastercraft.lua,193,
+768202143,103,@Lua\Frontend Side\Camos\Mastercraft.lua,193,
+768202143,104,@Lua\Frontend Side\Camos\Mastercraft.lua,194,
+768202143,105,@Lua\Frontend Side\Camos\Mastercraft.lua,194,
+768202143,106,@Lua\Frontend Side\Camos\Mastercraft.lua,194,
+768202143,107,@Lua\Frontend Side\Camos\Mastercraft.lua,194,
+768202143,108,@Lua\Frontend Side\Camos\Mastercraft.lua,194,
+768202143,109,@Lua\Frontend Side\Camos\Mastercraft.lua,194,
+768202143,110,@Lua\Frontend Side\Camos\Mastercraft.lua,194,
+768202143,111,@Lua\Frontend Side\Camos\Mastercraft.lua,192,
+768202143,112,@Lua\Frontend Side\Camos\Mastercraft.lua,195,
+768202143,113,@Lua\Frontend Side\Camos\Mastercraft.lua,197,
+768202143,0,@Lua\Frontend Side\Camos\Mastercraft.lua,202,
+768202143,1,@Lua\Frontend Side\Camos\Mastercraft.lua,202,
+768202143,2,@Lua\Frontend Side\Camos\Mastercraft.lua,202,
+768202143,3,@Lua\Frontend Side\Camos\Mastercraft.lua,202,
+768202143,4,@Lua\Frontend Side\Camos\Mastercraft.lua,208,
+768202143,5,@Lua\Frontend Side\Camos\Mastercraft.lua,208,
+768202143,6,@Lua\Frontend Side\Camos\Mastercraft.lua,210,
+768202143,7,@Lua\Frontend Side\Camos\Mastercraft.lua,210,
+768202143,8,@Lua\Frontend Side\Camos\Mastercraft.lua,211,
+768202143,0,@Lua\Frontend Side\Camos\Mastercraft.lua,203,
+768202143,1,@Lua\Frontend Side\Camos\Mastercraft.lua,207,
+768202143,2,@Lua\Frontend Side\Camos\Mastercraft.lua,207,
+768202143,3,@Lua\Frontend Side\Camos\Mastercraft.lua,207,
+768202143,4,@Lua\Frontend Side\Camos\Mastercraft.lua,207,
+768202143,5,@Lua\Frontend Side\Camos\Mastercraft.lua,207,
+768202143,6,@Lua\Frontend Side\Camos\Mastercraft.lua,207,
+768202143,7,@Lua\Frontend Side\Camos\Mastercraft.lua,207,
+768202143,8,@Lua\Frontend Side\Camos\Mastercraft.lua,207,
+768202143,9,@Lua\Frontend Side\Camos\Mastercraft.lua,207,
+768202143,10,@Lua\Frontend Side\Camos\Mastercraft.lua,207,
+768202143,11,@Lua\Frontend Side\Camos\Mastercraft.lua,207,
+768202143,12,@Lua\Frontend Side\Camos\Mastercraft.lua,207,
+768202143,13,@Lua\Frontend Side\Camos\Mastercraft.lua,207,
+768202143,14,@Lua\Frontend Side\Camos\Mastercraft.lua,207,
+768202143,15,@Lua\Frontend Side\Camos\Mastercraft.lua,208,

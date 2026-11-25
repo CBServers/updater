@@ -1,0 +1,25 @@
+{
+    "modid": "mp_targetrange",
+    "hashes": [
+        "mp_targetrange_hashes.txt",
+        "gdb"
+    ],
+    "fastfiles": {
+        "mp_targetrange_ui": {
+            "hook": "core_common",
+            "type": "common"
+        },
+        "mp_targetrange": {
+            "map_info": "mp_frenetic",
+            "loading_movie": "core_frontend_loadingmovie",
+            "gametypes": [
+                "dm",
+                "tdm"
+            ],
+            "name": "Target Range",
+            "description": "Test your loadout on still targets.",
+            "image": "mp_targetrange_preview",
+            "playlist": false
+        }
+    }
+}
