@@ -19,6 +19,7 @@ on:
           - iw3sp-mod
           - iw3x
           - iw4x
+          - project-bo4
       force:
         description: Rebuild even if up to date, already proposed, or on hold
         type: boolean

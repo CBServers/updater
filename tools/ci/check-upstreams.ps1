@@ -88,6 +88,14 @@ function Get-Iw3xSource {
     [ordered]@{ name = "iw3x manifest"; kind = "release"; version = "client v$($manifest.client.version)"; url = $url; key = Get-Sha256 $mirrored }
 }
 
+function Get-ShieldContentSource {
+    $url = "https://github.com/NotNierPea/shield-launcher/releases/download/content/manifest.json"
+    $manifest = Invoke-WithRetry { Invoke-RestMethod -Uri $url -Headers @{ "User-Agent" = "PowerShell" } }
+    # Only the files are mirrored; the version stamp and upstream's own launcher entry would cause empty rebuilds
+    $mirrored = [ordered]@{ files = @($manifest.files | ForEach-Object { "$($_.path)=$($_.sha256)" } | Sort-Object); remove = @($manifest.remove) } | ConvertTo-Json -Compress
+    [ordered]@{ name = "Shield game content"; kind = "manifest"; version = "$($manifest.version)"; url = $url; key = Get-Sha256 $mirrored }
+}
+
 # Client name = updater/<client> folder = updater/<client>.json. The first source names the PR.
 $clients = [ordered]@{
     "alt-launchers" = @{ Script = "update-alt-launchers.ps1"; Sources = {
@@ -114,6 +122,9 @@ $clients = [ordered]@{
         Get-ReleaseSource "iw4x/iw4x-client"
         Get-ReleaseSource "iw4x/iw4x-rawfiles"
         Get-ReleaseSource "alterware/alterware-launcher" } }
+    "project-bo4" = @{ Script = "update-project-bo4.ps1"; Sources = {
+        Get-ReleaseSource "CBServers/shield-launcher"
+        Get-ShieldContentSource } }
 }
 
 $holds = @()
