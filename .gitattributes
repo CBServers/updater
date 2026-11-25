@@ -10,3 +10,5 @@ updater/iw4x/iw4x/iw4x_03.iwd filter=lfs diff=lfs merge=lfs -text
 updater/iw4x/iw4x/iw4x_05.iwd filter=lfs diff=lfs merge=lfs -text
 updater/h2-mod/** -text
 BlackOps4.exe filter=lfs diff=lfs merge=lfs -text
+updater/project-bo4/**/*.xpak filter=lfs diff=lfs merge=lfs -text
+updater/project-bo4/**/*.ff filter=lfs diff=lfs merge=lfs -text
