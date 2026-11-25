@@ -27,7 +27,7 @@ foreach ($manifest in Get-ChildItem -Path $Root -Filter *.json -File) {
             continue
         }
 
-        $file = Get-Item -LiteralPath $path
+        $file = Get-Item -LiteralPath $path -Force
         if ($file.Length -ne $size) {
             $failures.Add("$($manifest.Name): $name is $($file.Length) bytes, manifest says $size")
             continue
