@@ -44,7 +44,7 @@ function Get-ManifestEntries {
 }
 
 # 1. CI checks out LFS files as pointers; one surviving means the hasher hashed the pointer
-$pointers = Get-ChildItem $folder -File -Recurse | Where-Object {
+$pointers = Get-ChildItem $folder -File -Recurse -Force | Where-Object {
     $_.Length -lt 1024 -and [System.IO.File]::ReadAllText($_.FullName).StartsWith("version https://git-lfs.github.com/spec/v1")
 }
 if ($pointers) {
