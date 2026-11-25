@@ -51,6 +51,12 @@ if ($pointers) {
     throw "LFS pointer files were not replaced by the update script: $($pointers.FullName -join ', ')"
 }
 
+# The hasher writes the empty-input SHA-1 when libtomcrypt rejects a large file's size
+$emptyHashed = @(Get-Content -Raw $manifestPath | ConvertFrom-Json | Where-Object { $_ -is [array] -and [int64]$_[1] -gt 0 -and $_[2] -eq "DA39A3EE5E6B4B0D3255BFEF95601890AFD80709" })
+if ($emptyHashed) {
+    throw "The hasher wrote an empty-file hash for: $(($emptyHashed | ForEach-Object { $_[0] }) -join ', ')"
+}
+
 # 2. Record the new upstream state
 $sources = @($SourcesJson | ConvertFrom-Json)
 $oldState = if (Test-Path $statePath) { Get-Content -Raw $statePath | ConvertFrom-Json } else { $null }
