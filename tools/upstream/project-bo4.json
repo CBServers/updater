@@ -1,0 +1,19 @@
+{
+  "fingerprint": "2970276e5a43",
+  "sources": [
+    {
+      "name": "CBServers/shield-launcher",
+      "kind": "release",
+      "version": "v1.1.4-cb.26",
+      "url": "https://github.com/CBServers/shield-launcher/releases/tag/v1.1.4-cb.26",
+      "key": "4b315e92f2d1ee5093b4c377f5ad591b0945fd3a827361b5005cf726308f7d83"
+    },
+    {
+      "name": "Shield game content",
+      "kind": "manifest",
+      "version": "2026.11.25-0503",
+      "url": "https://github.com/NotNierPea/shield-launcher/releases/download/content/manifest.json",
+      "key": "307c7e912cd3470759ce3633c60056bb4ed999e7096341d2c58d99e4f690b048"
+    }
+  ]
+}

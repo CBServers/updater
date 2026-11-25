@@ -47,7 +47,6 @@
                 "scripts/core_common/load_shared.csc"
             ]
         },
-
         {
             "type": "luafile",
             "name": "ui/shield/Utils",
@@ -68,6 +67,22 @@
             "type": "luafile",
             "name": "ui/shield/PreGameButtons",
             "path": "Lua\\Frontend\\PreGameButtons.luac",
+            "hooks_post": [
+                "x64:4ed0bcba9d999e0f"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/ZombiesExtras",
+            "path": "Lua\\Frontend\\ZombiesExtras.luac",
+            "hooks_post": [
+                "x64:4ed0bcba9d999e0f"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/ZMLobbyGestures",
+            "path": "Lua\\Frontend\\ZMLobbyGestures.luac",
             "hooks_post": [
                 "x64:4ed0bcba9d999e0f"
             ]
@@ -140,6 +155,30 @@
             "type": "luafile",
             "name": "ui/shield/MusicManager",
             "path": "Lua\\Frontend\\MusicManager.luac",
+            "hooks_post": [
+                "x64:4ed0bcba9d999e0f"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/Freerun",
+            "path": "Lua\\Frontend\\Freerun.luac",
+            "hooks_post": [
+                "x64:4ed0bcba9d999e0f"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/TargetRange",
+            "path": "Lua\\Frontend\\TargetRange.luac",
+            "hooks_post": [
+                "x64:4ed0bcba9d999e0f"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/StateLoopWatch",
+            "path": "Lua\\Frontend\\StateLoopWatch.luac",
             "hooks_post": [
                 "x64:4ed0bcba9d999e0f"
             ]
@@ -322,6 +361,14 @@
         },
         {
             "type": "luafile",
+            "name": "ui/shield/Splitscreen",
+            "path": "Lua\\Frontend\\Splitscreen.luac",
+            "hooks_post": [
+                "x64:4ed0bcba9d999e0f"
+            ]
+        },
+        {
+            "type": "luafile",
             "name": "ui/shield/Cookbook",
             "path": "Lua\\Frontend\\Cookbook.luac",
             "hooks_post": [
@@ -346,8 +393,24 @@
         },
         {
             "type": "luafile",
+            "name": "ui/shield/StoreUnavailable",
+            "path": "Lua\\Frontend\\StoreUnavailable.luac",
+            "hooks_post": [
+                "x64:4ed0bcba9d999e0f"
+            ]
+        },
+        {
+            "type": "luafile",
             "name": "ui/shield/ShieldLoot",
             "path": "Lua\\Frontend\\ShieldLoot.luac",
+            "hooks_post": [
+                "x64:4ed0bcba9d999e0f"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/CustomChallenges",
+            "path": "Lua\\Frontend\\CustomChallenges.luac",
             "hooks_post": [
                 "x64:4ed0bcba9d999e0f"
             ]
@@ -506,8 +569,48 @@
         },
         {
             "type": "luafile",
+            "name": "ui/shield/Outfits",
+            "path": "Lua\\Frontend\\Outfits.luac",
+            "hooks_post": [
+                "x64:4ed0bcba9d999e0f"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/ZMForcedCharacter",
+            "path": "Lua\\Frontend\\ZMForcedCharacter.luac",
+            "hooks_post": [
+                "x64:4ed0bcba9d999e0f"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/CharacterCategories",
+            "path": "Lua\\Frontend\\CharacterCategories.luac",
+            "hooks_post": [
+                "x64:4ed0bcba9d999e0f"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/SpecialistWeapons",
+            "path": "Lua\\Frontend\\SpecialistWeapons.luac",
+            "hooks_post": [
+                "x64:4ed0bcba9d999e0f"
+            ]
+        },
+        {
+            "type": "luafile",
             "name": "ui/shield/CustomCamos",
             "path": "Lua\\Frontend\\CustomCamos.luac",
+            "hooks_post": [
+                "x64:4ed0bcba9d999e0f"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/CommunityAd",
+            "path": "Lua\\Frontend\\CommunityAd.luac",
             "hooks_post": [
                 "x64:4ed0bcba9d999e0f"
             ]
@@ -536,7 +639,6 @@
                 "x64:4ed0bcba9d999e0f"
             ]
         },
-
         {
             "type": "luafile",
             "name": "ui/shield/GameUtils",
@@ -647,6 +749,68 @@
         },
         {
             "type": "luafile",
+            "name": "ui/shield/GameCallingCardToast",
+            "path": "Lua\\Game\\CallingCardToast.luac",
+            "hooks_post": [
+                "x64:46f417a74d9ab424",
+                "x64:57d27ab8e2f7a9d0"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/GameCalloutWheel",
+            "path": "Lua\\Game\\CalloutWheel.luac",
+            "hooks_post": [
+                "x64:46f417a74d9ab424",
+                "x64:57d27ab8e2f7a9d0"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/GameSprayGestureWheel",
+            "path": "Lua\\Game\\SprayGestureWheel.luac",
+            "hooks_post": [
+                "x64:46f417a74d9ab424",
+                "x64:57d27ab8e2f7a9d0"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/GameSpecialistWeapons",
+            "path": "Lua\\Game\\SpecialistWeapons.luac",
+            "hooks_post": [
+                "x64:46f417a74d9ab424",
+                "x64:57d27ab8e2f7a9d0"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/DraftArrows",
+            "path": "Lua\\Frontend\\DraftArrows.luac",
+            "hooks_post": [
+                "x64:4ed0bcba9d999e0f"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/GameDraftArrows",
+            "path": "Lua\\Game\\DraftArrows.luac",
+            "hooks_post": [
+                "x64:46f417a74d9ab424",
+                "x64:57d27ab8e2f7a9d0"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/OutfitPortraits",
+            "path": "Lua\\Game\\OutfitPortraits.luac",
+            "hooks_post": [
+                "x64:46f417a74d9ab424",
+                "x64:57d27ab8e2f7a9d0"
+            ]
+        },
+        {
+            "type": "luafile",
             "name": "ui/shield/GameReloadOverrides",
             "path": "Lua\\Game\\ReloadOverrides.luac",
             "hooks_post": [
@@ -654,7 +818,777 @@
                 "x64:57d27ab8e2f7a9d0"
             ]
         },
-
+        {
+            "type": "luafile",
+            "name": "ui/shield/GameClassEdit",
+            "path": "Lua\\Game\\ClassEdit.luac",
+            "hooks_post": [
+                "x64:46f417a74d9ab424",
+                "x64:57d27ab8e2f7a9d0"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/GameCustomMapHud",
+            "path": "Lua\\Game\\CustomMapHud.luac",
+            "hooks_post": [
+                "x64:46f417a74d9ab424",
+                "x64:57d27ab8e2f7a9d0"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/GameFreerunHud",
+            "path": "Lua\\Game\\FreerunHud.luac",
+            "hooks_post": [
+                "x64:46f417a74d9ab424",
+                "x64:57d27ab8e2f7a9d0"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/GameTargetRangeHud",
+            "path": "Lua\\Game\\TargetRangeHud.luac",
+            "hooks_post": [
+                "x64:46f417a74d9ab424",
+                "x64:57d27ab8e2f7a9d0"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/GamePodiumHud",
+            "path": "Lua\\Game\\PodiumHud.luac",
+            "hooks_post": [
+                "x64:46f417a74d9ab424",
+                "x64:57d27ab8e2f7a9d0"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/GameInspectHud",
+            "path": "Lua\\Game\\InspectHud.luac",
+            "hooks_post": [
+                "x64:46f417a74d9ab424",
+                "x64:57d27ab8e2f7a9d0"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/shield/GameSplitscreenInput",
+            "path": "Lua\\Game\\SplitscreenInput.luac",
+            "hooks_post": [
+                "x64:46f417a74d9ab424",
+                "x64:57d27ab8e2f7a9d0"
+            ]
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/menus/cac/equipmentselect",
+            "path": "Lua\\Game\\CAC\\047ad39cd4644bf9.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/menus/cac/mpcustomizeclassmenu",
+            "path": "Lua\\Game\\CAC\\0377c0d4608a84b8.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/menus/cac/overcapacity",
+            "path": "Lua\\Game\\CAC\\0e8a5b0fdbf13dc9.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/menus/cac/perktalentselect",
+            "path": "Lua\\Game\\CAC\\3b919c70385143f1.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/menus/cac/popups/classoptions",
+            "path": "Lua\\Game\\CAC\\281ac291832d1223.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/menus/cac/specialistequipmentselect",
+            "path": "Lua\\Game\\CAC\\2de4ec6a53c872c2.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/menus/cac/weaponattachmentselect",
+            "path": "Lua\\Game\\CAC\\55377a3310b451ba.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/menus/cac/weaponselectflyout",
+            "path": "Lua\\Game\\CAC\\71242c51f913d99c.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/menus/cac/wildcardcapacity",
+            "path": "Lua\\Game\\CAC\\50e292dbaeebdb61.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/menus/cac/wildcardselect",
+            "path": "Lua\\Game\\CAC\\1c60fd8929dc5f5d.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/widgets/backgroundframes/cacfullpopupbackground",
+            "path": "Lua\\Game\\CAC\\352c2c362293dae3.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/widgets/cac/cac_background_slide_panel",
+            "path": "Lua\\Game\\CAC\\6ee191186621ccf9.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/widgets/cac/cac_background_slide_panel_short",
+            "path": "Lua\\Game\\CAC\\75a3aec96eff6c90.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/widgets/cac/cacbackgroundslidepanelwildcards",
+            "path": "Lua\\Game\\CAC\\5d613352c9a43403.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/widgets/cac/cacheader",
+            "path": "Lua\\Game\\CAC\\4f18bd7b416c6194.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/widgets/cac/classoptionswidget",
+            "path": "Lua\\Game\\CAC\\2c9344a01be53af6.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/widgets/cac/customclasstabs",
+            "path": "Lua\\Game\\CAC\\68e7d1dd5b99e669.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/widgets/cac/equipmentselect/equipmentlistwidget",
+            "path": "Lua\\Game\\CAC\\2639aafab244b60f.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/widgets/cac/itemnamedescunlocktext",
+            "path": "Lua\\Game\\CAC\\63604ff12ef30ae2.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/widgets/cac/menuchooseclass/chooseclassoverlay",
+            "path": "Lua\\Game\\CAC\\5c17be2f019c8296.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/widgets/cac/menuchooseclass/itemwidgets/itemweaponlevel",
+            "path": "Lua\\Game\\CAC\\22c1aebbe0e7caf5.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/widgets/cac/menuchooseclass/itemwidgets/weaponlevelmeter",
+            "path": "Lua\\Game\\CAC\\765051a095634171.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/widgets/cac/menuselectscreen/itemgridbutton",
+            "path": "Lua\\Game\\CAC\\0ef2fa741c9b3bd7.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/widgets/cac/overcapacityitem",
+            "path": "Lua\\Game\\CAC\\14dfb9797230ff69.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/widgets/cac/overcapacitylist",
+            "path": "Lua\\Game\\CAC\\766893131e5a15ae.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/widgets/cac/talentselect/talentslotcontainer",
+            "path": "Lua\\Game\\CAC\\28e2961782b5dd4c.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/widgets/cac/weaponattachmentselect/attachmentflyoutcontainer",
+            "path": "Lua\\Game\\CAC\\6d684cd1c9bf004f.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/widgets/cac/weaponattachmentselect/attachmentslotcontainer",
+            "path": "Lua\\Game\\CAC\\78a2b1d87a23607a.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/widgets/cac/weaponattachmentselect/generalattachmentcontainer",
+            "path": "Lua\\Game\\CAC\\3e6d609c18f5305e.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/widgets/cac/wildcardselect/wildcardselectionwidget",
+            "path": "Lua\\Game\\CAC\\7c39eebb81a25371.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/widgets/cac/wildcardselect/wildcardslotcontainer",
+            "path": "Lua\\Game\\CAC\\79951b2fc3d97e5c.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/widgets/lobby/common/fe_buttonpanelshader",
+            "path": "Lua\\Game\\CAC\\50178930888d0d72.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:3a60f9dd8c2d255e",
+            "path": "Lua\\Game\\CAC\\178d85d989d4b856.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:180e4f83e25db76c",
+            "path": "Lua\\Game\\CAC\\1d5c67f7d717f8b0.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:6103d565b59f1a18",
+            "path": "Lua\\Game\\CAC\\25bbd76ae603fde4.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:278eb499a96d6585",
+            "path": "Lua\\Game\\CAC\\27476f9cdcf1d235.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:3bc87ac3fc76bb82",
+            "path": "Lua\\Game\\CAC\\27e95469491a7102.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:a22e4c82c4ffe1a",
+            "path": "Lua\\Game\\CAC\\2a2d9c8019d7741a.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:6cc9ca892a619096",
+            "path": "Lua\\Game\\CAC\\419f6661f83d4cce.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:4ca1dc89b2aa714c",
+            "path": "Lua\\Game\\CAC\\449944a5ae95c690.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:3db0d043e3841f5c",
+            "path": "Lua\\Game\\CAC\\51e4bb0463370c80.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:3c0cb09f85132dc0",
+            "path": "Lua\\Game\\CAC\\5294f6e9017b280c.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:53096a20718bc809",
+            "path": "Lua\\Game\\CAC\\0533db27f86fa0a1.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:369fdc75e3255cd7",
+            "path": "Lua\\Game\\CAC\\5802b056c17c9893.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:230f6657af27fb76",
+            "path": "Lua\\Game\\CAC\\5dbcc9c3ede1372e.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:21744d99b88fcb45",
+            "path": "Lua\\Game\\CAC\\60ad020dd057d975.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:37113d6053cc9f6",
+            "path": "Lua\\Game\\CAC\\60f01937b7d02dae.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:1c4df7352304aecf",
+            "path": "Lua\\Game\\CAC\\6a04278fafbdb4cb.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:5fba429cdc7392ca",
+            "path": "Lua\\Game\\CAC\\70f6c421adfbccaa.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:76b510bc5f01b8c5",
+            "path": "Lua\\Game\\CAC\\71e12248ecc95ef5.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:1d1b72c431d2cbb7",
+            "path": "Lua\\Game\\CAC\\78c55686a8cff7f3.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:262dfb7afe71b40",
+            "path": "Lua\\Game\\CAC\\7b90deb6116ead8c.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:6458166a08ee8cce",
+            "path": "Lua\\Game\\CAC\\07e3a55581543326.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:77198f4a2c6418a6",
+            "path": "Lua\\Game\\CAC\\7e5317d52f1af8fe.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:4ec07622a7f2e74e",
+            "path": "Lua\\Game\\CAC\\0fe2a7fc81c175a6.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:e8da4b07a87fbd2",
+            "path": "Lua\\Game\\CAC\\27e6a79fc92fc6b2.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/widgets/cac/weaponattachmentselect/attachmentdescriptionheader",
+            "path": "Lua\\Game\\CAC\\6be2e311a92b8846.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:6a49999b54fd0d2b",
+            "path": "Lua\\Game\\CAC\\1311014e46e7712f.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:5bfdb5df2cebf5b2",
+            "path": "Lua\\Game\\CAC\\1c80ffa3e5176312.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:d9c47b606eb32d9",
+            "path": "Lua\\Game\\CAC\\1d1487b7dc9f92d1.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:7895a9e2a5208f5",
+            "path": "Lua\\Game\\CAC\\201d1e7875956145.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:2a3846462620f671",
+            "path": "Lua\\Game\\CAC\\23e61f48a79b1a49.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:28a564360a773656",
+            "path": "Lua\\Game\\CAC\\25073e0425876b0e.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:5d6dc417b7bcb1f0",
+            "path": "Lua\\Game\\CAC\\2540121f956e70dc.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:d1729e9d65fd99a",
+            "path": "Lua\\Game\\CAC\\2b5fe27a8384c79a.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:8904074a6536944",
+            "path": "Lua\\Game\\CAC\\2dcb8d3781df6e28.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:1b62ba0298ebda7a",
+            "path": "Lua\\Game\\CAC\\315703929e3aa7fa.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:2b178a9bdf017263",
+            "path": "Lua\\Game\\CAC\\31a32f285e2db127.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:14875c56ab1b9ca8",
+            "path": "Lua\\Game\\CAC\\3c33333c7570ac54.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:453aa92712af1594",
+            "path": "Lua\\Game\\CAC\\3e943f37c1fb8a18.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:53d51e4fea9ed71c",
+            "path": "Lua\\Game\\CAC\\4366f54c207d38c0.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:368bcc307dcc87ad",
+            "path": "Lua\\Game\\CAC\\486e7bd1479f7d1d.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:4031a96cffe9fd2d",
+            "path": "Lua\\Game\\CAC\\49f3bc36f0190a9d.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:789ba7fe93e9e723",
+            "path": "Lua\\Game\\CAC\\4ce78246acc69567.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:14bb610f0602df09",
+            "path": "Lua\\Game\\CAC\\4ec963b347c7a7a1.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:1f88675da04d26fd",
+            "path": "Lua\\Game\\CAC\\4fdbda5e241da8cd.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:317e754536a5528",
+            "path": "Lua\\Game\\CAC\\529e42c9cc052cd4.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:16c41982b9414c12",
+            "path": "Lua\\Game\\CAC\\5ce7f8160ee52a72.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:6e6316db56ce8fb5",
+            "path": "Lua\\Game\\CAC\\602cead40e45cc85.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:32136d2b295cb55e",
+            "path": "Lua\\Game\\CAC\\6069d9774f854856.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:1604be692d92c68c",
+            "path": "Lua\\Game\\CAC\\64a37b379b98ff50.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:61bb87fb6a851b76",
+            "path": "Lua\\Game\\CAC\\6a3028211120572e.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:20fe1a52f98d23d",
+            "path": "Lua\\Game\\CAC\\6ed41a515e8ae48d.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:526078f55c3a4c45",
+            "path": "Lua\\Game\\CAC\\6f3d0ec96fa6ea75.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:78085f9873d6d33b",
+            "path": "Lua\\Game\\CAC\\731b847682a7bd5f.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:2dbb73fb8fe6a257",
+            "path": "Lua\\Game\\CAC\\785b8b47ed7ef613.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:5b3df56b6d23c7ac",
+            "path": "Lua\\Game\\CAC\\7be9307b4d061c70.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:61a4e34b4805b325",
+            "path": "Lua\\Game\\CAC\\7edbbd3497126cd5.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:310483efa771121d",
+            "path": "Lua\\Game\\CAC\\00902cd35077986d.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:52213f4cb2c008",
+            "path": "Lua\\Game\\CAC\\0b3ae8ee550e3bb4.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:189be53e08699ecd",
+            "path": "Lua\\Game\\CAC\\0b75d1a703eb58bd.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:d4955d888afd063",
+            "path": "Lua\\Game\\CAC\\16427dcdfcf8ef27.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:4b1b346e32476a2e",
+            "path": "Lua\\Game\\CAC\\1f0406bdf165d406.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:97d06fc9c1fdcaa",
+            "path": "Lua\\Game\\CAC\\1fa12b87fa98b90a.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:c5d63f9418f07c5",
+            "path": "Lua\\Game\\CAC\\2e8dd5f05fd71df5.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:7ec85b8e81fc1c0e",
+            "path": "Lua\\Game\\CAC\\3833afcfba0392e6.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:7aa18a2396b77054",
+            "path": "Lua\\Game\\CAC\\3a01196981abe058.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:2dbbe35720247c09",
+            "path": "Lua\\Game\\CAC\\41fdbd6e451d94a1.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:49da7aea289e304f",
+            "path": "Lua\\Game\\CAC\\427d777d664a0e4b.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:2a87c597c639d707",
+            "path": "Lua\\Game\\CAC\\478955139c1d5b63.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:7fbffc86e9a93477",
+            "path": "Lua\\Game\\CAC\\47d2b968e07b3433.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:1edc2e1aae07ab05",
+            "path": "Lua\\Game\\CAC\\4929f45b26dd2fb5.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:3e2c12f88c203134",
+            "path": "Lua\\Game\\CAC\\4aa702a84b4f5cb8.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:70ee455bcbe1a7e9",
+            "path": "Lua\\Game\\CAC\\4add28057a25ac01.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:c6dd2c6b206676f",
+            "path": "Lua\\Game\\CAC\\4ef25c512446746b.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:17b5952c3bc0ee42",
+            "path": "Lua\\Game\\CAC\\4fcc755b16964042.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:6884fad5277b3107",
+            "path": "Lua\\Game\\CAC\\51f1770752395563.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:22f62ad5c139b24f",
+            "path": "Lua\\Game\\CAC\\559c05def3d6b04b.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:45f03a7cad3f6de0",
+            "path": "Lua\\Game\\CAC\\574ba44f68199f2c.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:449a95828346bc1b",
+            "path": "Lua\\Game\\CAC\\5cc204dcae972a3f.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:2116c2065cc3ac5e",
+            "path": "Lua\\Game\\CAC\\676fd6aa2d3b2f56.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:740aa7774ab8472c",
+            "path": "Lua\\Game\\CAC\\68cd7e80414453f0.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:6fb1f8e518ebb17d",
+            "path": "Lua\\Game\\CAC\\6cda540790201b4d.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:3a4c60719b1e8805",
+            "path": "Lua\\Game\\CAC\\6f85f9adfc1c5cb5.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:605f4d99916f6c43",
+            "path": "Lua\\Game\\CAC\\70e7a3aff580bf07.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:7d87d8c56a6a0017",
+            "path": "Lua\\Game\\CAC\\007f2ac39e0fff53.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "x64:16a177adf215eab",
+            "path": "Lua\\Game\\CAC\\7f7ccf4410d39aaf.luac",
+            "fallback": true
+        },
+        {
+            "type": "luafile",
+            "name": "ui/uieditor/widgets/blackmarket/bm_goldbarmed",
+            "path": "Lua\\Game\\CAC\\05d32bf1798e8717.luac",
+            "fallback": true
+        },
         {
             "type": "stringtable",
             "name": "gamedata/shield/support_errors.csv",
@@ -672,6 +1606,11 @@
             "path": "SupportUtils\\SupportHashes.txt",
             "format": "serious_compiler",
             "ignore_error": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/mastercraft/strife_ferris",
+            "value": "Ferris Wheel"
         },
         {
             "type": "localizeentry",
@@ -702,6 +1641,26 @@
             "type": "localizeentry",
             "name": "shield/disconnect",
             "value": "Disconnect from current server"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/splitscreen_signout_title",
+            "value": "Sign Out Player 2?"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/splitscreen_signout_desc",
+            "value": "Player 2 leaves the lobby and signs out. Everyone else stays."
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/splitscreen_signout",
+            "value": "Sign Out"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/splitscreen_cancel",
+            "value": "Cancel"
         },
         {
             "type": "localizeentry",
@@ -1072,6 +2031,51 @@
             "type": "localizeentry",
             "name": "shield/serverbrowser",
             "value": "Server Browser"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/freerun",
+            "value": "Freerun"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/freerun_race_starting",
+            "value": "RACE STARTING IN"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/gametype/freerun",
+            "value": "Freerun"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/gametype/freerun_caps",
+            "value": "FREERUN"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/gametype/freerun_desc",
+            "value": "Race the checkpoints of a course with the grapple. No damage, no time limit: just you and the clock."
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/targetrange",
+            "value": "Target Range"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/gametype/targetrange",
+            "value": "Target Range"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/gametype/targetrange_caps",
+            "value": "TARGET RANGE"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/gametype/targetrange_desc",
+            "value": "Test your loadout on bots that stand still. No time limit, no score limit."
         },
         {
             "type": "localizeentry",
@@ -1573,7 +2577,6 @@
             "name": "shield/gun_fov_set",
             "value": "^2Gun scale has been set!"
         },
-        
         {
             "type": "localizeentry",
             "name": "shield/achv",
@@ -1761,6 +2764,290 @@
         },
         {
             "type": "localizeentry",
+            "name": "shield/edit_class",
+            "value": "Edit Class"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/force_character",
+            "value": "Force Character"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/unforce_character",
+            "value": "Clear Forced Character"
+        },
+        {
+            "type": "localizeentry",
+            "name": "shield/character_category_custom",
+            "value": "Custom"
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_10757e50cc35560c",
+            "value": "You already have the maximum number of 10 items. Choose an item to remove, it will be replaced with your selected item.",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_1fe4770705278297",
+            "value": "Create a Class",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_227f19ff8ef11a44",
+            "value": "Class Options",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_237fd8baf8499f87",
+            "value": "Details",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_2a83310b9f003575",
+            "value": "Choose a Wildcard to remove.",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_3d087e4011d7527c",
+            "value": "^BBUTTON_LUI_ALT2^ DETAILS",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_4418acae8409a0b8",
+            "value": "+50% EXTRA XP PER KILL",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_4583f36db1309a6e",
+            "value": "Perk Gluttony",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_493ce015442d7e04",
+            "value": "SELECT WEAPON",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_496cbf472b3593bb",
+            "value": "Remove Item",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_4a2f52a674ad0e03",
+            "value": "&&1 Variations",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_5e9ced3392b6716c",
+            "value": "CLEAR ALL",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_6d8f445ca5bd1b0e",
+            "value": "Weapon Level &&1",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_6dd163b6b797ab91",
+            "value": "Class name",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_7560ecca7484f00e",
+            "value": "Select Attachments",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_7dc436dd31790e72",
+            "value": "Prestige",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_bbad8a3af74f8f6",
+            "value": "+25% EXTRA XP PER KILL",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_cbf3641ab9dbf81",
+            "value": "Perk Greed",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_e2c3ae1d6f2a2a3",
+            "value": "Too Many Wildcards",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "menu/details",
+            "value": "Details",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_1efe5d00336839fb",
+            "value": "Visual Stages",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_213d359fe54dc768",
+            "value": "Reticles will appear here when acquired",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_2708a65be0d25597",
+            "value": "Cycle Color",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_3df564f24968e2db",
+            "value": "Redeem ^BBUTTON_PAINT_CAN^ &&1",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_40f549344c4d372c",
+            "value": "Accessories: &&1",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_447c91925d0a93e6",
+            "value": "Select Reticle",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_49fe863e6425c8ce",
+            "value": "PAINT CANS",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_4f3d13cf35dd7b2a",
+            "value": "MAX CAPACITY",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_5693fa85e8e2e0de",
+            "value": "Not enough Paint Cans.",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_5f5d230dcf3311cc",
+            "value": "Personalize &&1",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_6e44add3e8da4e08",
+            "value": "Reticles",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_16a9947db03d188f",
+            "value": "Death Effects: &&1",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_1c6d71184390addc",
+            "value": "Unlock Camo?",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_29636bd50cd0dc6c",
+            "value": "Technical",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_3f602f1bafc731b5",
+            "value": "Camo",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_447fec1c323b4f6b",
+            "value": "Redeem Paint Cans to Unlock?",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_57a8bc9cb373e4c6",
+            "value": "Reactive",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_6369b657962e04da",
+            "value": "Mastery",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_65f5e0c5965105b7",
+            "value": "Redeeming Tiers... $(tiersLeft) remaining",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_6f11efca50b790eb",
+            "value": "Charms will appear here when acquired.",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_79b15b2a5e21491c",
+            "value": "Reactive Camos will appear here when acquired",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_e28a07e0c69e9e9",
+            "value": "Performance",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "menu/preview",
+            "value": "Preview",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
+            "name": "menu/unlock",
+            "value": "Unlock",
+            "fallback": true
+        },
+        {
+            "type": "localizeentry",
             "name": "hash_63da6ea5d502cf7d",
             "value": "Gamepad aim assist is available in Shield Client."
         },
@@ -1783,6 +3070,56 @@
             "type": "localizeentry",
             "name": "platform/missingmap",
             "value": "You do not have this custom map. You can try downloading it from Mod Manager in Main Menu.."
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_750100d161c4d583",
+            "value": "Hello"
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_7382718d1bea375c",
+            "value": "Nice Work"
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_ec2bd11204d4811",
+            "value": "Need Help"
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_5dd4de4914a2964b",
+            "value": "Need Revive"
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_1e993a7261c62997",
+            "value": "Cover Me"
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_176dcb27e4a0b1f4",
+            "value": "Group Up"
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_6101245aedfeb933",
+            "value": "Flanking"
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_1cf45eadd754592b",
+            "value": "Acknowledged"
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_2323687d4a52a88",
+            "value": "Thanks"
+        },
+        {
+            "type": "localizeentry",
+            "name": "hash_4b446844ff94c9eb",
+            "value": "Taunt"
         }
     ],
     "cache": [
@@ -1802,6 +3139,92 @@
                 "wz",
                 "mp",
                 "zm"
+            ]
+        },
+        {
+            "type": "eventstring",
+            "name": "spray_gesture",
+            "mode": [
+                "zm"
+            ]
+        },
+        {
+            "type": "eventstring",
+            "name": "callout",
+            "mode": [
+                "zm"
+            ]
+        },
+        {
+            "type": "eventstring",
+            "name": "shield_callout",
+            "mode": [
+                "zm"
+            ]
+        },
+        {
+            "type": "eventstring",
+            "name": "mp_custom",
+            "mode": [
+                "mp"
+            ]
+        },
+        {
+            "type": "eventstring",
+            "name": "shield_custom_request",
+            "mode": [
+                "mp"
+            ]
+        },
+        {
+            "type": "eventstring",
+            "name": "zm_outfit",
+            "mode": [
+                "zm"
+            ]
+        },
+        {
+            "type": "eventstring",
+            "name": "zm_character",
+            "mode": [
+                "zm"
+            ]
+        },
+        {
+            "type": "eventstring",
+            "name": "shield_outfit",
+            "mode": [
+                "zm",
+                "mp",
+                "wz"
+            ]
+        },
+        {
+            "type": "eventstring",
+            "name": "shield_podium",
+            "mode": [
+                "mp"
+            ]
+        },
+        {
+            "type": "eventstring",
+            "name": "podium_gesture",
+            "mode": [
+                "mp"
+            ]
+        },
+        {
+            "type": "eventstring",
+            "name": "shield_targetrange_hit",
+            "mode": [
+                "mp"
+            ]
+        },
+        {
+            "type": "eventstring",
+            "name": "shield_targetrange_kill",
+            "mode": [
+                "mp"
             ]
         }
     ],

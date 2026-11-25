@@ -1,9 +1,3397 @@
 {
     "modid": "support_ff_main",
-    "fastfiles" : {
+    "fastfiles": {
         "support": {
             "hook": "core_common",
-            "type": "common"
+            "type": "common",
+            "characters": [
+                {
+                    "name": "wesker",
+                    "mode": "mp",
+                    "base_role": 8,
+                    "role_slot": 0,
+                    "display_name": "Wesker",
+                    "title": "Frontal Assault",
+                    "description": "Albert Wesker brings a god complex and a body rebuilt by the virus: crush the battlefield with the Grav Slam and reach any vantage with the Grapple Gun.",
+                    "body": "c_t8_wesker",
+                    "head": "c_t8_wesker_face",
+                    "arms": "c_t8_wesker_arms",
+                    "legs": "c_t8_wesker_legs",
+                    "portrait": "wesker_portrait",
+                    "icon": "wesker_icon",
+                    "dialog": "wesker",
+                    "images": {
+                        "0x50": "",
+                        "0x58": "wesker_render",
+                        "0x60": "wesker_action"
+                    },
+                    "bundle": {
+                        "hash_215ac9daad709de1": "wesker_bio_header",
+                        "hash_38ea74cad0150cdf": "wesker_card",
+                        "hash_39baaa080c62d5e5": "wesker_story",
+                        "hash_5b2781a0b1bf2b7a": "wesker_emblem",
+                        "hash_32ca7e775f99d218": "wesker",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "texts": {
+                        "hash_10cb98543e7ec137": "WESKER",
+                        "hash_13c8379c2b98a9c6": "WESKER - Frontal Assault",
+                        "hash_16d4e2fc988858de": "Albert Wesker",
+                        "hash_541919134fdff1": "Wesker's Bio",
+                        "hash_438e8b2f52f5538b": "Former S.T.A.R.S. captain and Umbrella researcher, reborn by the virus he carries…",
+                        "hash_2299bc20d2a6cd8": "Albert Wesker was raised by Umbrella as one of the Wesker Children, a project to breed the next generation of humanity.\n\nAs captain of the S.T.A.R.S. Alpha Team he led his own men into the Arklay mansion as test subjects, and was killed by the Tyrant he set loose. The prototype virus he had injected brought him back stronger, faster and colder than any man.\n\nWorking in the shadows of Tricell, he now pursues Uroboros: a virus to winnow mankind down to the few he deems worthy. To him the battlefield is a test, and few pass it."
+                    },
+                    "outfits": [
+                        {
+                            "index": 0,
+                            "name": "Albert Wesker",
+                            "icon": "wesker_outfit_default"
+                        },
+                        {
+                            "index": 1,
+                            "body": "c_t8_wesker_red",
+                            "arms": "c_t8_wesker_red_arms",
+                            "legs": "c_t8_wesker_red_legs",
+                            "name": "Crimson",
+                            "icon": "wesker_outfit_red",
+                            "loot": "shield_wesker_red"
+                        },
+                        {
+                            "index": 2,
+                            "body": "c_t8_wesker_blue",
+                            "arms": "c_t8_wesker_blue_arms",
+                            "legs": "c_t8_wesker_blue_legs",
+                            "name": "Midnight",
+                            "icon": "wesker_outfit_blue",
+                            "loot": "shield_wesker_blue"
+                        }
+                    ],
+                    "outfit_count": 3,
+                    "role_bundle": {
+                        "characterint4": 0,
+                        "characterint5": 0,
+                        "characterint6": 0,
+                        "characterint7": 0,
+                        "characterint8": 0,
+                        "hash_41d6157dba773da3:hash_86b663f1": "shield_wesker"
+                    },
+                    "role_index": 16,
+                    "specialist_weapon": "wesker_samurai_edge"
+                },
+                {
+                    "name": "wesker",
+                    "mode": "wz",
+                    "base_role": 5,
+                    "role_slot": 0,
+                    "display_name": "Wesker",
+                    "title": "Frontal Assault",
+                    "description": "Albert Wesker brings a god complex and a body rebuilt by the virus: crush the battlefield with the Grav Slam and reach any vantage with the Grapple Gun.",
+                    "body": "c_t8_wesker",
+                    "head": "c_t8_wesker_face",
+                    "arms": "c_t8_wesker_arms",
+                    "legs": "c_t8_wesker_legs",
+                    "portrait": "wesker_portrait",
+                    "icon": "wesker_icon",
+                    "dialog": "wesker",
+                    "images": {
+                        "0x50": "",
+                        "0x58": "wesker_render",
+                        "0x60": "wesker_action"
+                    },
+                    "bundle": {
+                        "hash_215ac9daad709de1": "wesker_bio_header",
+                        "hash_38ea74cad0150cdf": "wesker_card",
+                        "hash_39baaa080c62d5e5": "wesker_story",
+                        "hash_5b2781a0b1bf2b7a": "wesker_emblem",
+                        "hash_32ca7e775f99d218": "wesker",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "texts": {
+                        "hash_10cb98543e7ec137": "WESKER",
+                        "hash_13c8379c2b98a9c6": "WESKER - Frontal Assault",
+                        "hash_16d4e2fc988858de": "Albert Wesker",
+                        "hash_541919134fdff1": "Wesker's Bio",
+                        "hash_438e8b2f52f5538b": "Former S.T.A.R.S. captain and Umbrella researcher, reborn by the virus he carries…",
+                        "hash_2299bc20d2a6cd8": "Albert Wesker was raised by Umbrella as one of the Wesker Children, a project to breed the next generation of humanity.\n\nAs captain of the S.T.A.R.S. Alpha Team he led his own men into the Arklay mansion as test subjects, and was killed by the Tyrant he set loose. The prototype virus he had injected brought him back stronger, faster and colder than any man.\n\nWorking in the shadows of Tricell, he now pursues Uroboros: a virus to winnow mankind down to the few he deems worthy. To him the battlefield is a test, and few pass it."
+                    },
+                    "outfits": [
+                        {
+                            "index": 0,
+                            "name": "Albert Wesker",
+                            "icon": "wesker_outfit_default"
+                        },
+                        {
+                            "index": 1,
+                            "body": "c_t8_wesker_red",
+                            "arms": "c_t8_wesker_red_arms",
+                            "legs": "c_t8_wesker_red_legs",
+                            "name": "Crimson",
+                            "icon": "wesker_outfit_red",
+                            "loot": "shield_wesker_red"
+                        },
+                        {
+                            "index": 2,
+                            "body": "c_t8_wesker_blue",
+                            "arms": "c_t8_wesker_blue_arms",
+                            "legs": "c_t8_wesker_blue_legs",
+                            "name": "Midnight",
+                            "icon": "wesker_outfit_blue",
+                            "loot": "shield_wesker_blue"
+                        }
+                    ],
+                    "outfit_count": 3,
+                    "role_bundle": {
+                        "characterint4": 0,
+                        "characterint5": 0,
+                        "characterint6": 0,
+                        "characterint7": 0,
+                        "characterint8": 0,
+                        "hash_41d6157dba773da3:hash_86b663f1": "shield_wesker"
+                    }
+                },
+                {
+                    "name": "jacket",
+                    "mode": "mp",
+                    "base_role": 13,
+                    "role_slot": 73,
+                    "display_name": "Jacket",
+                    "title": "Midnight Animal",
+                    "description": "Jacket never says a word of his own: strike unseen with Active Camo and carve through the fight with the Ripper.",
+                    "body": "c_t8_jacket",
+                    "head": "c_t8_jacket_head",
+                    "arms": "c_t8_jacket_arms",
+                    "legs": "c_t8_jacket_legs",
+                    "portrait": "jacket_portrait",
+                    "icon": "jacket_icon",
+                    "dialog": "jacket",
+                    "images": {
+                        "0x50": "",
+                        "0x58": "jacket_render",
+                        "0x60": "jacket_action"
+                    },
+                    "bundle": {
+                        "hash_215ac9daad709de1": "jacket_bio_header",
+                        "hash_38ea74cad0150cdf": "jacket_card",
+                        "hash_39baaa080c62d5e5": "jacket_story",
+                        "hash_5b2781a0b1bf2b7a": "jacket_emblem",
+                        "hash_32ca7e775f99d218": "jacket",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "texts": {
+                        "hash_10cb98543e7ec137": "JACKET",
+                        "hash_13c8379c2b98a9c6": "JACKET - Midnight Animal",
+                        "hash_16d4e2fc988858de": "Jacket",
+                        "hash_541919134fdff1": "Jacket's Bio",
+                        "hash_438e8b2f52f5538b": "A silent killer in a rooster mask, speaking only through his tapes.",
+                        "hash_2299bc20d2a6cd8": "Nobody knows his name. In Miami, 1989, the phone rang with a message on the machine, and a man in a letterman jacket put on a rooster mask and went to work.\n\nYears later he turned up with the Payday crew: he never says a word of his own, only what his cassette tapes say for him - ads, nature shows, self-help, airline greetings. The crew stopped asking. The job always gets done."
+                    },
+                    "outfits": [
+                        {
+                            "index": 0,
+                            "name": "Jacket",
+                            "icon": "jacket_outfit_default"
+                        }
+                    ],
+                    "outfit_count": 1,
+                    "role_bundle": {
+                        "characterint4": 0,
+                        "characterint5": 0,
+                        "characterint6": 0,
+                        "characterint7": 0,
+                        "characterint8": 0
+                    },
+                    "specialist_weapon": "jacket_the_punch",
+                    "lend_war_paints": true
+                },
+                {
+                    "name": "jacket",
+                    "mode": "wz",
+                    "base_role": 9,
+                    "role_slot": 6,
+                    "display_name": "Jacket",
+                    "title": "Midnight Animal",
+                    "description": "Jacket never says a word of his own: strike unseen with Active Camo and carve through the fight with the Ripper.",
+                    "body": "c_t8_jacket",
+                    "head": "c_t8_jacket_head",
+                    "arms": "c_t8_jacket_arms",
+                    "legs": "c_t8_jacket_legs",
+                    "portrait": "jacket_portrait",
+                    "icon": "jacket_icon",
+                    "dialog": "jacket",
+                    "images": {
+                        "0x50": "",
+                        "0x58": "jacket_render",
+                        "0x60": "jacket_action"
+                    },
+                    "bundle": {
+                        "hash_215ac9daad709de1": "jacket_bio_header",
+                        "hash_38ea74cad0150cdf": "jacket_card",
+                        "hash_39baaa080c62d5e5": "jacket_story",
+                        "hash_5b2781a0b1bf2b7a": "jacket_emblem",
+                        "hash_32ca7e775f99d218": "jacket",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "texts": {
+                        "hash_10cb98543e7ec137": "JACKET",
+                        "hash_13c8379c2b98a9c6": "JACKET - Midnight Animal",
+                        "hash_16d4e2fc988858de": "Jacket",
+                        "hash_541919134fdff1": "Jacket's Bio",
+                        "hash_438e8b2f52f5538b": "A silent killer in a rooster mask, speaking only through his tapes.",
+                        "hash_2299bc20d2a6cd8": "Nobody knows his name. In Miami, 1989, the phone rang with a message on the machine, and a man in a letterman jacket put on a rooster mask and went to work.\n\nYears later he turned up with the Payday crew: he never says a word of his own, only what his cassette tapes say for him - ads, nature shows, self-help, airline greetings. The crew stopped asking. The job always gets done."
+                    },
+                    "outfits": [
+                        {
+                            "index": 0,
+                            "name": "Jacket",
+                            "icon": "jacket_outfit_default"
+                        }
+                    ],
+                    "outfit_count": 1,
+                    "role_bundle": {
+                        "characterint4": 0,
+                        "characterint5": 0,
+                        "characterint6": 0,
+                        "characterint7": 0,
+                        "characterint8": 0
+                    },
+                    "lend_war_paints": true
+                },
+                {
+                    "name": "crew_scarlett",
+                    "mode": "mp",
+                    "base_role": 1,
+                    "outfits_from": "hash_11c7674684cf9ef2",
+                    "dialog": "crew_scarlett",
+                    "description": "Daughter of a powerful family, Scarlett leads her crew against the forces of Chaos.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "SCARLETT",
+                        "hash_13c8379c2b98a9c6": "SCARLETT RHODES",
+                        "hash_16d4e2fc988858de": "Scarlett Rhodes",
+                        "hash_541919134fdff1": "Scarlett's Bio",
+                        "hash_438e8b2f52f5538b": "Daughter of a powerful family, Scarlett leads her crew against the forces of Chaos.",
+                        "hash_2299bc20d2a6cd8": "Daughter of a powerful family, Scarlett leads her crew against the forces of Chaos."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_scarlett",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "role_index": 15
+                },
+                {
+                    "name": "crew_bruno",
+                    "mode": "mp",
+                    "base_role": 2,
+                    "outfits_from": "hash_23c080b015ea47a0",
+                    "dialog": "crew_bruno",
+                    "description": "A former soldier and the muscle of the crew, Bruno fights first and asks questions later.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "BRUNO",
+                        "hash_13c8379c2b98a9c6": "BRUNO DELACROIX",
+                        "hash_16d4e2fc988858de": "Bruno Delacroix",
+                        "hash_541919134fdff1": "Bruno's Bio",
+                        "hash_438e8b2f52f5538b": "A former soldier and the muscle of the crew, Bruno fights first and asks questions later.",
+                        "hash_2299bc20d2a6cd8": "A former soldier and the muscle of the crew, Bruno fights first and asks questions later."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bruno",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "role_slot": 0
+                },
+                {
+                    "name": "crew_diego",
+                    "mode": "mp",
+                    "base_role": 3,
+                    "outfits_from": "hash_5617f5786f6b4d9c",
+                    "dialog": "crew_diego",
+                    "description": "Diego carries the weight of his people's history, and a blade to match it.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "DIEGO",
+                        "hash_13c8379c2b98a9c6": "DIEGO NECALLI",
+                        "hash_16d4e2fc988858de": "Diego Necalli",
+                        "hash_541919134fdff1": "Diego's Bio",
+                        "hash_438e8b2f52f5538b": "Diego carries the weight of his people's history, and a blade to match it.",
+                        "hash_2299bc20d2a6cd8": "Diego carries the weight of his people's history, and a blade to match it."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_diego",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "role_slot": 1
+                },
+                {
+                    "name": "crew_stanton",
+                    "mode": "mp",
+                    "base_role": 4,
+                    "outfits_from": "hash_44f43e2a67686d39",
+                    "dialog": "crew_stanton",
+                    "description": "A disgraced Texan who turned to the occult, Stanton knows more about the darkness than he admits.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "STANTON",
+                        "hash_13c8379c2b98a9c6": "STANTON SHAW",
+                        "hash_16d4e2fc988858de": "Stanton Shaw",
+                        "hash_541919134fdff1": "Stanton's Bio",
+                        "hash_438e8b2f52f5538b": "A disgraced Texan who turned to the occult, Stanton knows more about the darkness than he admits.",
+                        "hash_2299bc20d2a6cd8": "A disgraced Texan who turned to the occult, Stanton knows more about the darkness than he admits."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_stanton",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "role_slot": 2
+                },
+                {
+                    "name": "crew_scarlett_ix",
+                    "mode": "mp",
+                    "base_role": 7,
+                    "outfits_from": "hash_691b38344e00a93",
+                    "dialog": "crew_scarlett_ix",
+                    "description": "Scarlett in the arena of IX, where she fights for her life before a crowd of the dead.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "SCARLETT",
+                        "hash_13c8379c2b98a9c6": "SCARLETT (IX)",
+                        "hash_16d4e2fc988858de": "Scarlett Rhodes",
+                        "hash_541919134fdff1": "Scarlett's Bio",
+                        "hash_438e8b2f52f5538b": "Scarlett in the arena of IX, where she fights for her life before a crowd of the dead.",
+                        "hash_2299bc20d2a6cd8": "Scarlett in the arena of IX, where she fights for her life before a crowd of the dead."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_scarlett_ix",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "display_name": "Scarlett (IX)",
+                    "role_slot": 3
+                },
+                {
+                    "name": "crew_bruno_ix",
+                    "mode": "mp",
+                    "base_role": 8,
+                    "outfits_from": "hash_253c65b5254c2343",
+                    "dialog": "crew_bruno_ix",
+                    "description": "Bruno in the arena of IX, as ready for a brawl as he has ever been.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "BRUNO",
+                        "hash_13c8379c2b98a9c6": "BRUNO (IX)",
+                        "hash_16d4e2fc988858de": "Bruno Delacroix",
+                        "hash_541919134fdff1": "Bruno's Bio",
+                        "hash_438e8b2f52f5538b": "Bruno in the arena of IX, as ready for a brawl as he has ever been.",
+                        "hash_2299bc20d2a6cd8": "Bruno in the arena of IX, as ready for a brawl as he has ever been."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bruno_ix",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "display_name": "Bruno (IX)",
+                    "role_slot": 4
+                },
+                {
+                    "name": "crew_diego_ix",
+                    "mode": "mp",
+                    "base_role": 9,
+                    "outfits_from": "hash_4d5edad18bf7d543",
+                    "dialog": "crew_diego_ix",
+                    "description": "Diego in the arena of IX, carrying the hopes of his ancestors into every fight.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "DIEGO",
+                        "hash_13c8379c2b98a9c6": "DIEGO (IX)",
+                        "hash_16d4e2fc988858de": "Diego Necalli",
+                        "hash_541919134fdff1": "Diego's Bio",
+                        "hash_438e8b2f52f5538b": "Diego in the arena of IX, carrying the hopes of his ancestors into every fight.",
+                        "hash_2299bc20d2a6cd8": "Diego in the arena of IX, carrying the hopes of his ancestors into every fight."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_diego_ix",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "display_name": "Diego (IX)",
+                    "role_slot": 5
+                },
+                {
+                    "name": "crew_stanton_ix",
+                    "mode": "mp",
+                    "base_role": 10,
+                    "outfits_from": "hash_2d020f0df0ecb942",
+                    "dialog": "crew_stanton_ix",
+                    "description": "Stanton in the arena of IX, his knowledge of the occult as dangerous as any weapon.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "STANTON",
+                        "hash_13c8379c2b98a9c6": "STANTON (IX)",
+                        "hash_16d4e2fc988858de": "Stanton Shaw",
+                        "hash_541919134fdff1": "Stanton's Bio",
+                        "hash_438e8b2f52f5538b": "Stanton in the arena of IX, his knowledge of the occult as dangerous as any weapon.",
+                        "hash_2299bc20d2a6cd8": "Stanton in the arena of IX, his knowledge of the occult as dangerous as any weapon."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_stanton_ix",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "display_name": "Stanton (IX)",
+                    "role_slot": 6
+                },
+                {
+                    "name": "crew_richtofen",
+                    "mode": "mp",
+                    "base_role": 5,
+                    "outfits_from": "hash_41a971269e056be8",
+                    "dialog": "crew_richtofen",
+                    "description": "A scientist of Group 935 and Primis' mastermind, set on ending the cycle of the Aether.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "RICHTOFEN",
+                        "hash_13c8379c2b98a9c6": "EDWARD RICHTOFEN",
+                        "hash_16d4e2fc988858de": "Edward Richtofen",
+                        "hash_541919134fdff1": "Richtofen's Bio",
+                        "hash_438e8b2f52f5538b": "A scientist of Group 935 and Primis' mastermind, set on ending the cycle of the Aether.",
+                        "hash_2299bc20d2a6cd8": "A scientist of Group 935 and Primis' mastermind, set on ending the cycle of the Aether."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_richtofen",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "role_slot": 7
+                },
+                {
+                    "name": "crew_dempsey",
+                    "mode": "mp",
+                    "base_role": 6,
+                    "outfits_from": "hash_34112f9c0a28c55",
+                    "dialog": "crew_dempsey",
+                    "description": "A U.S. Marine of Primis: loud, reckless and always ready for a fight.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "DEMPSEY",
+                        "hash_13c8379c2b98a9c6": "TANK DEMPSEY",
+                        "hash_16d4e2fc988858de": "Tank Dempsey",
+                        "hash_541919134fdff1": "Dempsey's Bio",
+                        "hash_438e8b2f52f5538b": "A U.S. Marine of Primis: loud, reckless and always ready for a fight.",
+                        "hash_2299bc20d2a6cd8": "A U.S. Marine of Primis: loud, reckless and always ready for a fight."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_dempsey",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "role_slot": 8
+                },
+                {
+                    "name": "crew_nikolai",
+                    "mode": "mp",
+                    "base_role": 7,
+                    "outfits_from": "hash_29bca68cb10dea7f",
+                    "dialog": "crew_nikolai",
+                    "description": "A Soviet soldier of Primis, fond of vodka and of putting the undead back in the ground.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "NIKOLAI",
+                        "hash_13c8379c2b98a9c6": "NIKOLAI BELINSKI",
+                        "hash_16d4e2fc988858de": "Nikolai Belinski",
+                        "hash_541919134fdff1": "Nikolai's Bio",
+                        "hash_438e8b2f52f5538b": "A Soviet soldier of Primis, fond of vodka and of putting the undead back in the ground.",
+                        "hash_2299bc20d2a6cd8": "A Soviet soldier of Primis, fond of vodka and of putting the undead back in the ground."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_nikolai",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "role_slot": 9
+                },
+                {
+                    "name": "crew_takeo",
+                    "mode": "mp",
+                    "base_role": 8,
+                    "outfits_from": "hash_9050f26947c89e4",
+                    "dialog": "crew_takeo",
+                    "description": "A samurai of the Imperial Army and the voice of honour among Primis.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "TAKEO",
+                        "hash_13c8379c2b98a9c6": "TAKEO MASAKI",
+                        "hash_16d4e2fc988858de": "Takeo Masaki",
+                        "hash_541919134fdff1": "Takeo's Bio",
+                        "hash_438e8b2f52f5538b": "A samurai of the Imperial Army and the voice of honour among Primis.",
+                        "hash_2299bc20d2a6cd8": "A samurai of the Imperial Army and the voice of honour among Primis."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_takeo",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "role_slot": 10
+                },
+                {
+                    "name": "crew_richtofen_u",
+                    "mode": "mp",
+                    "base_role": 9,
+                    "outfits_from": "hash_15fe6bca9dbc4f0c",
+                    "dialog": "crew_richtofen_u",
+                    "description": "The original Richtofen of Ultimis, a scientist as brilliant as he is mad.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "RICHTOFEN",
+                        "hash_13c8379c2b98a9c6": "RICHTOFEN (ULTIMIS)",
+                        "hash_16d4e2fc988858de": "Edward Richtofen",
+                        "hash_541919134fdff1": "Richtofen's Bio",
+                        "hash_438e8b2f52f5538b": "The original Richtofen of Ultimis, a scientist as brilliant as he is mad.",
+                        "hash_2299bc20d2a6cd8": "The original Richtofen of Ultimis, a scientist as brilliant as he is mad."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_richtofen_u",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "display_name": "Richtofen (Ultimis)",
+                    "role_slot": 11
+                },
+                {
+                    "name": "crew_dempsey_u",
+                    "mode": "mp",
+                    "base_role": 10,
+                    "outfits_from": "hash_383ab3e383852691",
+                    "dialog": "crew_dempsey_u",
+                    "description": "The original Dempsey of Ultimis, a Marine who never backs down.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "DEMPSEY",
+                        "hash_13c8379c2b98a9c6": "DEMPSEY (ULTIMIS)",
+                        "hash_16d4e2fc988858de": "Tank Dempsey",
+                        "hash_541919134fdff1": "Dempsey's Bio",
+                        "hash_438e8b2f52f5538b": "The original Dempsey of Ultimis, a Marine who never backs down.",
+                        "hash_2299bc20d2a6cd8": "The original Dempsey of Ultimis, a Marine who never backs down."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_dempsey_u",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "display_name": "Dempsey (Ultimis)"
+                },
+                {
+                    "name": "crew_nikolai_u",
+                    "mode": "mp",
+                    "base_role": 11,
+                    "outfits_from": "hash_237595894d39c8a3",
+                    "dialog": "crew_nikolai_u",
+                    "description": "The original Nikolai of Ultimis, as tough as the vodka he drinks.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "NIKOLAI",
+                        "hash_13c8379c2b98a9c6": "NIKOLAI (ULTIMIS)",
+                        "hash_16d4e2fc988858de": "Nikolai Belinski",
+                        "hash_541919134fdff1": "Nikolai's Bio",
+                        "hash_438e8b2f52f5538b": "The original Nikolai of Ultimis, as tough as the vodka he drinks.",
+                        "hash_2299bc20d2a6cd8": "The original Nikolai of Ultimis, as tough as the vodka he drinks."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_nikolai_u",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "display_name": "Nikolai (Ultimis)"
+                },
+                {
+                    "name": "crew_takeo_u",
+                    "mode": "mp",
+                    "base_role": 12,
+                    "outfits_from": "hash_6f0e5c370e2ec0c8",
+                    "dialog": "crew_takeo_u",
+                    "description": "The original Takeo of Ultimis, an Imperial soldier who fights with honour.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "TAKEO",
+                        "hash_13c8379c2b98a9c6": "TAKEO (ULTIMIS)",
+                        "hash_16d4e2fc988858de": "Takeo Masaki",
+                        "hash_541919134fdff1": "Takeo's Bio",
+                        "hash_438e8b2f52f5538b": "The original Takeo of Ultimis, an Imperial soldier who fights with honour.",
+                        "hash_2299bc20d2a6cd8": "The original Takeo of Ultimis, an Imperial soldier who fights with honour."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_takeo_u",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "display_name": "Takeo (Ultimis)"
+                },
+                {
+                    "name": "crew_mirela",
+                    "mode": "mp",
+                    "base_role": 13,
+                    "outfits_from": "hash_3bf34c69c202c907",
+                    "dialog": "crew_mirela",
+                    "description": "A medium who hears what the dead have to say, and was invited to the mansion the night they rose.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "MIRELA",
+                        "hash_13c8379c2b98a9c6": "MADAME MIRELA",
+                        "hash_16d4e2fc988858de": "Madame Mirela",
+                        "hash_541919134fdff1": "Mirela's Bio",
+                        "hash_438e8b2f52f5538b": "A medium who hears what the dead have to say, and was invited to the mansion the night they rose.",
+                        "hash_2299bc20d2a6cd8": "A medium who hears what the dead have to say, and was invited to the mansion the night they rose."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_mirela",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "display_name": "Madame Mirela"
+                },
+                {
+                    "name": "crew_mirela",
+                    "mode": "wz",
+                    "base_role": 22,
+                    "role_slot": 1,
+                    "outfits_from": "hash_3bf34c69c202c907",
+                    "dialog": "crew_mirela_wz",
+                    "display_name": "Madame Mirela",
+                    "description": "A medium who hears what the dead have to say, and was invited to the mansion the night they rose.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "Madame Mirela"
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_mirela_wz"
+                    }
+                },
+                {
+                    "name": "crew_warwick",
+                    "mode": "mp",
+                    "base_role": 14,
+                    "outfits_from": "hash_6b5c057f2fa03fb",
+                    "dialog": "crew_warwick",
+                    "description": "A towering brute of a man who settles every argument with his fists, the undead included.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "WARWICK",
+                        "hash_13c8379c2b98a9c6": "JONATHAN WARWICK",
+                        "hash_16d4e2fc988858de": "Jonathan Warwick",
+                        "hash_541919134fdff1": "Warwick's Bio",
+                        "hash_438e8b2f52f5538b": "A towering brute of a man who settles every argument with his fists, the undead included.",
+                        "hash_2299bc20d2a6cd8": "A towering brute of a man who settles every argument with his fists, the undead included."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_warwick",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "display_name": "Jonathan Warwick"
+                },
+                {
+                    "name": "crew_warwick",
+                    "mode": "wz",
+                    "base_role": 20,
+                    "role_slot": 2,
+                    "outfits_from": "hash_6b5c057f2fa03fb",
+                    "dialog": "crew_warwick_wz",
+                    "display_name": "Jonathan Warwick",
+                    "description": "A towering brute of a man who settles every argument with his fists, the undead included.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "Jonathan Warwick"
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_warwick_wz"
+                    }
+                },
+                {
+                    "name": "crew_gideon",
+                    "mode": "mp",
+                    "base_role": 1,
+                    "outfits_from": "hash_1916deee2ac05058",
+                    "dialog": "crew_gideon",
+                    "description": "A gunslinger from the American frontier, quick on the draw and slow to trust.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "GIDEON",
+                        "hash_13c8379c2b98a9c6": "GIDEON JONES",
+                        "hash_16d4e2fc988858de": "Gideon Jones",
+                        "hash_541919134fdff1": "Gideon's Bio",
+                        "hash_438e8b2f52f5538b": "A gunslinger from the American frontier, quick on the draw and slow to trust.",
+                        "hash_2299bc20d2a6cd8": "A gunslinger from the American frontier, quick on the draw and slow to trust."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_gideon",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "display_name": "Gideon Jones"
+                },
+                {
+                    "name": "crew_gideon",
+                    "mode": "wz",
+                    "base_role": 21,
+                    "role_slot": 3,
+                    "outfits_from": "hash_1916deee2ac05058",
+                    "dialog": "crew_gideon_wz",
+                    "display_name": "Gideon Jones",
+                    "description": "A gunslinger from the American frontier, quick on the draw and slow to trust.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "Gideon Jones"
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_gideon_wz"
+                    }
+                },
+                {
+                    "name": "crew_godfrey",
+                    "mode": "mp",
+                    "base_role": 2,
+                    "outfits_from": "hash_41748e70e3d2766a",
+                    "dialog": "crew_godfrey",
+                    "description": "The mansion's loyal butler, who knows every corridor of the house and every secret it keeps.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "GODFREY",
+                        "hash_13c8379c2b98a9c6": "GODFREY",
+                        "hash_16d4e2fc988858de": "Godfrey",
+                        "hash_541919134fdff1": "Godfrey's Bio",
+                        "hash_438e8b2f52f5538b": "The mansion's loyal butler, who knows every corridor of the house and every secret it keeps.",
+                        "hash_2299bc20d2a6cd8": "The mansion's loyal butler, who knows every corridor of the house and every secret it keeps."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_godfrey",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "display_name": "Godfrey"
+                },
+                {
+                    "name": "crew_godfrey",
+                    "mode": "wz",
+                    "base_role": 23,
+                    "role_slot": 4,
+                    "outfits_from": "hash_41748e70e3d2766a",
+                    "dialog": "crew_godfrey_wz",
+                    "display_name": "Godfrey",
+                    "description": "The mansion's loyal butler, who knows every corridor of the house and every secret it keeps.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "Godfrey"
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_godfrey_wz"
+                    }
+                },
+                {
+                    "name": "crew_russman",
+                    "mode": "mp",
+                    "base_role": 3,
+                    "outfits_from": "hash_bb2838bfca441c8",
+                    "dialog": "crew_russman",
+                    "description": "An old survivor of the Victis crew who has seen the end of the world more than once.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "RUSSMAN",
+                        "hash_13c8379c2b98a9c6": "RUSSMAN",
+                        "hash_16d4e2fc988858de": "Russman",
+                        "hash_541919134fdff1": "Russman's Bio",
+                        "hash_438e8b2f52f5538b": "An old survivor of the Victis crew who has seen the end of the world more than once.",
+                        "hash_2299bc20d2a6cd8": "An old survivor of the Victis crew who has seen the end of the world more than once."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_russman",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_misty",
+                    "mode": "mp",
+                    "base_role": 4,
+                    "outfits_from": "hash_166b175bf80dcb41",
+                    "dialog": "crew_misty",
+                    "description": "A tough survivor of the Victis crew, quick with a gun and quicker with a comeback.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "MISTY",
+                        "hash_13c8379c2b98a9c6": "MISTY",
+                        "hash_16d4e2fc988858de": "Misty",
+                        "hash_541919134fdff1": "Misty's Bio",
+                        "hash_438e8b2f52f5538b": "A tough survivor of the Victis crew, quick with a gun and quicker with a comeback.",
+                        "hash_2299bc20d2a6cd8": "A tough survivor of the Victis crew, quick with a gun and quicker with a comeback."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_misty",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_marlton",
+                    "mode": "mp",
+                    "base_role": 5,
+                    "outfits_from": "hash_4bffa831ee9c53c0",
+                    "dialog": "crew_marlton",
+                    "description": "The Victis crew's engineer, who has a plan and a gadget for everything.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "MARLTON",
+                        "hash_13c8379c2b98a9c6": "MARLTON JOHNSON",
+                        "hash_16d4e2fc988858de": "Marlton Johnson",
+                        "hash_541919134fdff1": "Marlton's Bio",
+                        "hash_438e8b2f52f5538b": "The Victis crew's engineer, who has a plan and a gadget for everything.",
+                        "hash_2299bc20d2a6cd8": "The Victis crew's engineer, who has a plan and a gadget for everything."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_marlton",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_stuhlinger",
+                    "mode": "mp",
+                    "base_role": 6,
+                    "outfits_from": "hash_3977545a07f094c6",
+                    "dialog": "crew_stuhlinger",
+                    "description": "A Victis survivor and former Group 935 scientist who hears voices nobody else does.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "STUHLINGER",
+                        "hash_13c8379c2b98a9c6": "SAMUEL STUHLINGER",
+                        "hash_16d4e2fc988858de": "Samuel Stuhlinger",
+                        "hash_541919134fdff1": "Stuhlinger's Bio",
+                        "hash_438e8b2f52f5538b": "A Victis survivor and former Group 935 scientist who hears voices nobody else does.",
+                        "hash_2299bc20d2a6cd8": "A Victis survivor and former Group 935 scientist who hears voices nobody else does."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_stuhlinger",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_reznov",
+                    "mode": "mp",
+                    "base_role": 10,
+                    "role_slot": 33,
+                    "outfits_from": "hash_44b9da8cc11837e7",
+                    "dialog": "crew_bo_reznov",
+                    "display_name": "Reznov",
+                    "description": "A hardened Red Army sergeant who fought his way from Stalingrad to Berlin and never forgot a betrayal.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "REZNOV",
+                        "hash_13c8379c2b98a9c6": "REZNOV",
+                        "hash_16d4e2fc988858de": "Viktor Reznov",
+                        "hash_541919134fdff1": "Reznov's Bio",
+                        "hash_438e8b2f52f5538b": "A hardened Red Army sergeant who fought his way from Stalingrad to Berlin and never forgot a betrayal.",
+                        "hash_2299bc20d2a6cd8": "A hardened Red Army sergeant who fought his way from Stalingrad to Berlin and never forgot a betrayal."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_reznov",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_mason",
+                    "mode": "mp",
+                    "base_role": 8,
+                    "role_slot": 34,
+                    "outfits_from": "hash_662fd88c102b2c53",
+                    "dialog": "crew_bo_mason",
+                    "display_name": "Mason",
+                    "description": "A CIA operative whose mind was turned into a weapon, and who fought his way back from it.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "MASON",
+                        "hash_13c8379c2b98a9c6": "MASON",
+                        "hash_16d4e2fc988858de": "Alex Mason",
+                        "hash_541919134fdff1": "Mason's Bio",
+                        "hash_438e8b2f52f5538b": "A CIA operative whose mind was turned into a weapon, and who fought his way back from it.",
+                        "hash_2299bc20d2a6cd8": "A CIA operative whose mind was turned into a weapon, and who fought his way back from it."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_mason",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_woods",
+                    "mode": "mp",
+                    "base_role": 3,
+                    "role_slot": 35,
+                    "outfits_from": "hash_58931ed6882dd5cf",
+                    "dialog": "crew_bo_woods",
+                    "display_name": "Woods",
+                    "description": "A Marine and Mason's closest friend: loud, fearless and never far from a fight.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "WOODS",
+                        "hash_13c8379c2b98a9c6": "WOODS",
+                        "hash_16d4e2fc988858de": "Frank Woods",
+                        "hash_541919134fdff1": "Woods's Bio",
+                        "hash_438e8b2f52f5538b": "A Marine and Mason's closest friend: loud, fearless and never far from a fight.",
+                        "hash_2299bc20d2a6cd8": "A Marine and Mason's closest friend: loud, fearless and never far from a fight."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_woods",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_menendez",
+                    "mode": "mp",
+                    "base_role": 5,
+                    "role_slot": 36,
+                    "outfits_from": "hash_1e33a457906c16ed",
+                    "dialog": "crew_bo_menendez",
+                    "display_name": "Menendez",
+                    "description": "A Nicaraguan cartel lord and revolutionary whose hatred shaped a war decades long.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "MENENDEZ",
+                        "hash_13c8379c2b98a9c6": "MENENDEZ",
+                        "hash_16d4e2fc988858de": "Raul Menendez",
+                        "hash_541919134fdff1": "Menendez's Bio",
+                        "hash_438e8b2f52f5538b": "A Nicaraguan cartel lord and revolutionary whose hatred shaped a war decades long.",
+                        "hash_2299bc20d2a6cd8": "A Nicaraguan cartel lord and revolutionary whose hatred shaped a war decades long."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_menendez",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_hudson",
+                    "mode": "mp",
+                    "base_role": 6,
+                    "role_slot": 37,
+                    "outfits_from": "hash_1e938a005e7ba090",
+                    "dialog": "crew_bo_hudson",
+                    "display_name": "Hudson",
+                    "description": "A CIA handler who keeps his agents on mission, whatever it takes.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "HUDSON",
+                        "hash_13c8379c2b98a9c6": "HUDSON",
+                        "hash_16d4e2fc988858de": "Jason Hudson",
+                        "hash_541919134fdff1": "Hudson's Bio",
+                        "hash_438e8b2f52f5538b": "A CIA handler who keeps his agents on mission, whatever it takes.",
+                        "hash_2299bc20d2a6cd8": "A CIA handler who keeps his agents on mission, whatever it takes."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_hudson",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_weaver",
+                    "mode": "mp",
+                    "base_role": 13,
+                    "role_slot": 38,
+                    "outfits_from": "hash_3000a2309c9f2903",
+                    "dialog": "crew_bo_weaver",
+                    "display_name": "Grigori Weaver",
+                    "description": "A Soviet defector turned CIA operative, cool under pressure and quick to act.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "GRIGORI WEAVER",
+                        "hash_13c8379c2b98a9c6": "GRIGORI WEAVER",
+                        "hash_16d4e2fc988858de": "Grigori Weaver",
+                        "hash_541919134fdff1": "Grigori Weaver's Bio",
+                        "hash_438e8b2f52f5538b": "A Soviet defector turned CIA operative, cool under pressure and quick to act.",
+                        "hash_2299bc20d2a6cd8": "A Soviet defector turned CIA operative, cool under pressure and quick to act."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_weaver",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_price",
+                    "mode": "mp",
+                    "base_role": 7,
+                    "role_slot": 39,
+                    "outfits_from": "hash_2e611c081f273de3",
+                    "dialog": "crew_bo_price",
+                    "display_name": "Classic Price",
+                    "description": "The SAS captain behind more covert operations than anyone will ever admit to.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "CLASSIC PRICE",
+                        "hash_13c8379c2b98a9c6": "CLASSIC PRICE",
+                        "hash_16d4e2fc988858de": "Captain John Price",
+                        "hash_541919134fdff1": "Classic Price's Bio",
+                        "hash_438e8b2f52f5538b": "The SAS captain behind more covert operations than anyone will ever admit to.",
+                        "hash_2299bc20d2a6cd8": "The SAS captain behind more covert operations than anyone will ever admit to."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_price",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_david_mason",
+                    "mode": "mp",
+                    "base_role": 13,
+                    "role_slot": 40,
+                    "outfits_from": "hash_3f378ef89d512016",
+                    "dialog": "crew_bo_david_mason",
+                    "display_name": "David Mason",
+                    "description": "Alex Mason's son, a JSOC commander who inherited his father's fight.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "DAVID MASON",
+                        "hash_13c8379c2b98a9c6": "DAVID MASON",
+                        "hash_16d4e2fc988858de": "David Mason",
+                        "hash_541919134fdff1": "David Mason's Bio",
+                        "hash_438e8b2f52f5538b": "Alex Mason's son, a JSOC commander who inherited his father's fight.",
+                        "hash_2299bc20d2a6cd8": "Alex Mason's son, a JSOC commander who inherited his father's fight."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_david_mason",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_sarah_hall",
+                    "mode": "mp",
+                    "base_role": 2,
+                    "role_slot": 41,
+                    "outfits_from": "hash_42cdb2b6724ac170",
+                    "dialog": "crew_bo_sarah_hall",
+                    "display_name": "Sarah Hall",
+                    "description": "A Winslow Accord commander, the first woman to lead her own special operations team.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "SARAH HALL",
+                        "hash_13c8379c2b98a9c6": "SARAH HALL",
+                        "hash_16d4e2fc988858de": "Sarah Hall",
+                        "hash_541919134fdff1": "Sarah Hall's Bio",
+                        "hash_438e8b2f52f5538b": "A Winslow Accord commander, the first woman to lead her own special operations team.",
+                        "hash_2299bc20d2a6cd8": "A Winslow Accord commander, the first woman to lead her own special operations team."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_sarah_hall",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_sergei",
+                    "mode": "mp",
+                    "base_role": 4,
+                    "role_slot": 42,
+                    "outfits_from": "hash_5ee15059027bd9ee",
+                    "dialog": "crew_bo_sergei",
+                    "display_name": "Sergei",
+                    "description": "A Soviet soldier broken and rebuilt by the Nova 6 experiments, unstoppable once he is set loose.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "SERGEI",
+                        "hash_13c8379c2b98a9c6": "SERGEI",
+                        "hash_16d4e2fc988858de": "Sergei Ravenov",
+                        "hash_541919134fdff1": "Sergei's Bio",
+                        "hash_438e8b2f52f5538b": "A Soviet soldier broken and rebuilt by the Nova 6 experiments, unstoppable once he is set loose.",
+                        "hash_2299bc20d2a6cd8": "A Soviet soldier broken and rebuilt by the Nova 6 experiments, unstoppable once he is set loose."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_sergei",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_replacer",
+                    "mode": "mp",
+                    "base_role": 5,
+                    "role_slot": 43,
+                    "outfits_from": "hash_15db91b18278dea9",
+                    "dialog": "crew_bo_replacer",
+                    "display_name": "The Replacer",
+                    "description": "He shows up wherever someone would rather be somewhere else, and does the job for them.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "THE REPLACER",
+                        "hash_13c8379c2b98a9c6": "THE REPLACER",
+                        "hash_16d4e2fc988858de": "The Replacer",
+                        "hash_541919134fdff1": "The Replacer's Bio",
+                        "hash_438e8b2f52f5538b": "He shows up wherever someone would rather be somewhere else, and does the job for them.",
+                        "hash_2299bc20d2a6cd8": "He shows up wherever someone would rather be somewhere else, and does the job for them."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_replacer",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_liquidator",
+                    "mode": "mp",
+                    "base_role": 7,
+                    "role_slot": 44,
+                    "outfits_from": "hash_688b96101e8f6881",
+                    "dialog": "crew_bo_liquidator",
+                    "display_name": "The Liquidator",
+                    "description": "The Replacer in a suit, ready to take any problem off your hands.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "THE LIQUIDATOR",
+                        "hash_13c8379c2b98a9c6": "THE LIQUIDATOR",
+                        "hash_16d4e2fc988858de": "The Replacer",
+                        "hash_541919134fdff1": "The Liquidator's Bio",
+                        "hash_438e8b2f52f5538b": "The Replacer in a suit, ready to take any problem off your hands.",
+                        "hash_2299bc20d2a6cd8": "The Replacer in a suit, ready to take any problem off your hands."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_liquidator",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_uncle_frank",
+                    "mode": "mp",
+                    "base_role": 3,
+                    "role_slot": 45,
+                    "outfits_from": "hash_4b5db84146fbdfd5",
+                    "dialog": "crew_bo_uncle_frank",
+                    "display_name": "Uncle Frank",
+                    "description": "Frank Woods years later, older, louder and as tough as ever.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "UNCLE FRANK",
+                        "hash_13c8379c2b98a9c6": "UNCLE FRANK",
+                        "hash_16d4e2fc988858de": "Frank Woods",
+                        "hash_541919134fdff1": "Uncle Frank's Bio",
+                        "hash_438e8b2f52f5538b": "Frank Woods years later, older, louder and as tough as ever.",
+                        "hash_2299bc20d2a6cd8": "Frank Woods years later, older, louder and as tough as ever."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_uncle_frank",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_ladies_man",
+                    "mode": "mp",
+                    "base_role": 5,
+                    "role_slot": 46,
+                    "outfits_from": "hash_647886f45b4cfdbd",
+                    "dialog": "crew_bo_ladies_man",
+                    "display_name": "Ladies' Man",
+                    "description": "Raul Menendez dressed for a night out, as dangerous as he is charming.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "LADIES' MAN",
+                        "hash_13c8379c2b98a9c6": "LADIES' MAN",
+                        "hash_16d4e2fc988858de": "Raul Menendez",
+                        "hash_541919134fdff1": "Ladies' Man's Bio",
+                        "hash_438e8b2f52f5538b": "Raul Menendez dressed for a night out, as dangerous as he is charming.",
+                        "hash_2299bc20d2a6cd8": "Raul Menendez dressed for a night out, as dangerous as he is charming."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_ladies_man",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_vacation_hudson",
+                    "mode": "mp",
+                    "base_role": 6,
+                    "role_slot": 47,
+                    "outfits_from": "hash_3166198354eac54f",
+                    "dialog": "crew_bo_vacation_hudson",
+                    "display_name": "Vacation Hudson",
+                    "description": "Hudson on vacation, which for him still means carrying a gun.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "VACATION HUDSON",
+                        "hash_13c8379c2b98a9c6": "VACATION HUDSON",
+                        "hash_16d4e2fc988858de": "Jason Hudson",
+                        "hash_541919134fdff1": "Vacation Hudson's Bio",
+                        "hash_438e8b2f52f5538b": "Hudson on vacation, which for him still means carrying a gun.",
+                        "hash_2299bc20d2a6cd8": "Hudson on vacation, which for him still means carrying a gun."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_vacation_hudson",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_shadows",
+                    "mode": "mp",
+                    "base_role": 1,
+                    "role_slot": 48,
+                    "outfits_from": "hash_5dc990d930487f8f",
+                    "dialog": "crew_bo_shadows",
+                    "display_name": "M. Shadows",
+                    "description": "The lead singer of Avenged Sevenfold, as at home on a battlefield as on a stage.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "M. SHADOWS",
+                        "hash_13c8379c2b98a9c6": "M. SHADOWS",
+                        "hash_16d4e2fc988858de": "M. Shadows",
+                        "hash_541919134fdff1": "M. Shadows's Bio",
+                        "hash_438e8b2f52f5538b": "The lead singer of Avenged Sevenfold, as at home on a battlefield as on a stage.",
+                        "hash_2299bc20d2a6cd8": "The lead singer of Avenged Sevenfold, as at home on a battlefield as on a stage."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_shadows",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_ranger",
+                    "mode": "mp",
+                    "base_role": 1,
+                    "role_slot": 49,
+                    "outfits_from": "hash_c0e368ab90b1e3b",
+                    "dialog": "crew_bo_ranger",
+                    "display_name": "Ranger",
+                    "description": "A Ranger trained to lead the way in, on land, wherever the fight is.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "RANGER",
+                        "hash_13c8379c2b98a9c6": "RANGER",
+                        "hash_16d4e2fc988858de": "Ranger",
+                        "hash_541919134fdff1": "Ranger's Bio",
+                        "hash_438e8b2f52f5538b": "A Ranger trained to lead the way in, on land, wherever the fight is.",
+                        "hash_2299bc20d2a6cd8": "A Ranger trained to lead the way in, on land, wherever the fight is."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_ranger",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_frogman",
+                    "mode": "mp",
+                    "base_role": 7,
+                    "role_slot": 50,
+                    "outfits_from": "hash_612c6639ac9bce8d",
+                    "dialog": "crew_bo_frogman",
+                    "display_name": "Frogman",
+                    "description": "A combat diver who comes out of the water before anyone knows he was there.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "FROGMAN",
+                        "hash_13c8379c2b98a9c6": "FROGMAN",
+                        "hash_16d4e2fc988858de": "Frogman",
+                        "hash_541919134fdff1": "Frogman's Bio",
+                        "hash_438e8b2f52f5538b": "A combat diver who comes out of the water before anyone knows he was there.",
+                        "hash_2299bc20d2a6cd8": "A combat diver who comes out of the water before anyone knows he was there."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_frogman",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_airborne",
+                    "mode": "mp",
+                    "base_role": 9,
+                    "role_slot": 51,
+                    "outfits_from": "hash_729c9111f563591d",
+                    "dialog": "crew_bo_airborne",
+                    "display_name": "Airborne",
+                    "description": "A paratrooper who drops in behind the lines and holds them.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "AIRBORNE",
+                        "hash_13c8379c2b98a9c6": "AIRBORNE",
+                        "hash_16d4e2fc988858de": "Airborne",
+                        "hash_541919134fdff1": "Airborne's Bio",
+                        "hash_438e8b2f52f5538b": "A paratrooper who drops in behind the lines and holds them.",
+                        "hash_2299bc20d2a6cd8": "A paratrooper who drops in behind the lines and holds them."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_airborne",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_seal",
+                    "mode": "mp",
+                    "base_role": 11,
+                    "role_slot": 52,
+                    "outfits_from": "hash_129b8d5110f6cffe",
+                    "dialog": "crew_bo_seal",
+                    "display_name": "SEAL",
+                    "description": "A Navy SEAL at home on sea, air and land.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "SEAL",
+                        "hash_13c8379c2b98a9c6": "SEAL",
+                        "hash_16d4e2fc988858de": "SEAL",
+                        "hash_541919134fdff1": "SEAL's Bio",
+                        "hash_438e8b2f52f5538b": "A Navy SEAL at home on sea, air and land.",
+                        "hash_2299bc20d2a6cd8": "A Navy SEAL at home on sea, air and land."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_seal",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_battle_hardened",
+                    "mode": "mp",
+                    "base_role": 4,
+                    "role_slot": 53,
+                    "outfits_from": "hash_4903d1b3c4b6f5e9",
+                    "dialog": "crew_bo_battle_hardened",
+                    "display_name": "Battle Hardened",
+                    "description": "A veteran of more battles than they can count, and still standing.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "BATTLE HARDENED",
+                        "hash_13c8379c2b98a9c6": "BATTLE HARDENED",
+                        "hash_16d4e2fc988858de": "Battle Hardened",
+                        "hash_541919134fdff1": "Battle Hardened's Bio",
+                        "hash_438e8b2f52f5538b": "A veteran of more battles than they can count, and still standing.",
+                        "hash_2299bc20d2a6cd8": "A veteran of more battles than they can count, and still standing."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_battle_hardened",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_merc_m1",
+                    "mode": "mp",
+                    "base_role": 1,
+                    "role_slot": 54,
+                    "outfits_from": "hash_493be910509f8bc2",
+                    "dialog": "crew_bo_merc_m1",
+                    "display_name": "Mercenary 1",
+                    "description": "A mercenary who fights for whoever pays, in Blackout and now here.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "MERCENARY 1",
+                        "hash_13c8379c2b98a9c6": "MERCENARY 1",
+                        "hash_16d4e2fc988858de": "Mercenary",
+                        "hash_541919134fdff1": "Mercenary 1's Bio",
+                        "hash_438e8b2f52f5538b": "A mercenary who fights for whoever pays, in Blackout and now here.",
+                        "hash_2299bc20d2a6cd8": "A mercenary who fights for whoever pays, in Blackout and now here."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_merc_m1",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_merc_m2",
+                    "mode": "mp",
+                    "base_role": 3,
+                    "role_slot": 55,
+                    "outfits_from": "hash_493be810509f8a0f",
+                    "dialog": "crew_bo_merc_m2",
+                    "display_name": "Mercenary 2",
+                    "description": "A mercenary who fights for whoever pays, in Blackout and now here.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "MERCENARY 2",
+                        "hash_13c8379c2b98a9c6": "MERCENARY 2",
+                        "hash_16d4e2fc988858de": "Mercenary",
+                        "hash_541919134fdff1": "Mercenary 2's Bio",
+                        "hash_438e8b2f52f5538b": "A mercenary who fights for whoever pays, in Blackout and now here.",
+                        "hash_2299bc20d2a6cd8": "A mercenary who fights for whoever pays, in Blackout and now here."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_merc_m2",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_merc_m3",
+                    "mode": "mp",
+                    "base_role": 8,
+                    "role_slot": 56,
+                    "outfits_from": "hash_493be710509f885c",
+                    "dialog": "crew_bo_merc_m3",
+                    "display_name": "Mercenary 3",
+                    "description": "A mercenary who fights for whoever pays, in Blackout and now here.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "MERCENARY 3",
+                        "hash_13c8379c2b98a9c6": "MERCENARY 3",
+                        "hash_16d4e2fc988858de": "Mercenary",
+                        "hash_541919134fdff1": "Mercenary 3's Bio",
+                        "hash_438e8b2f52f5538b": "A mercenary who fights for whoever pays, in Blackout and now here.",
+                        "hash_2299bc20d2a6cd8": "A mercenary who fights for whoever pays, in Blackout and now here."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_merc_m3",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_merc_m4",
+                    "mode": "mp",
+                    "base_role": 10,
+                    "role_slot": 57,
+                    "outfits_from": "hash_493be610509f86a9",
+                    "dialog": "crew_bo_merc_m4",
+                    "display_name": "Mercenary 4",
+                    "description": "A mercenary who fights for whoever pays, in Blackout and now here.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "MERCENARY 4",
+                        "hash_13c8379c2b98a9c6": "MERCENARY 4",
+                        "hash_16d4e2fc988858de": "Mercenary",
+                        "hash_541919134fdff1": "Mercenary 4's Bio",
+                        "hash_438e8b2f52f5538b": "A mercenary who fights for whoever pays, in Blackout and now here.",
+                        "hash_2299bc20d2a6cd8": "A mercenary who fights for whoever pays, in Blackout and now here."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_merc_m4",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_merc_f1",
+                    "mode": "mp",
+                    "base_role": 2,
+                    "role_slot": 58,
+                    "outfits_from": "hash_4e35610d649eb30b",
+                    "dialog": "crew_bo_merc_f1",
+                    "display_name": "Mercenary 5",
+                    "description": "A mercenary who fights for whoever pays, in Blackout and now here.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "MERCENARY 5",
+                        "hash_13c8379c2b98a9c6": "MERCENARY 5",
+                        "hash_16d4e2fc988858de": "Mercenary",
+                        "hash_541919134fdff1": "Mercenary 5's Bio",
+                        "hash_438e8b2f52f5538b": "A mercenary who fights for whoever pays, in Blackout and now here.",
+                        "hash_2299bc20d2a6cd8": "A mercenary who fights for whoever pays, in Blackout and now here."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_merc_f1",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_merc_f2",
+                    "mode": "mp",
+                    "base_role": 9,
+                    "role_slot": 59,
+                    "outfits_from": "hash_4e35620d649eb4be",
+                    "dialog": "crew_bo_merc_f2",
+                    "display_name": "Mercenary 6",
+                    "description": "A mercenary who fights for whoever pays, in Blackout and now here.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "MERCENARY 6",
+                        "hash_13c8379c2b98a9c6": "MERCENARY 6",
+                        "hash_16d4e2fc988858de": "Mercenary",
+                        "hash_541919134fdff1": "Mercenary 6's Bio",
+                        "hash_438e8b2f52f5538b": "A mercenary who fights for whoever pays, in Blackout and now here.",
+                        "hash_2299bc20d2a6cd8": "A mercenary who fights for whoever pays, in Blackout and now here."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_merc_f2",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_merc_f3",
+                    "mode": "mp",
+                    "base_role": 11,
+                    "role_slot": 60,
+                    "outfits_from": "hash_4e35630d649eb671",
+                    "dialog": "crew_bo_merc_f3",
+                    "display_name": "Mercenary 7",
+                    "description": "A mercenary who fights for whoever pays, in Blackout and now here.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "MERCENARY 7",
+                        "hash_13c8379c2b98a9c6": "MERCENARY 7",
+                        "hash_16d4e2fc988858de": "Mercenary",
+                        "hash_541919134fdff1": "Mercenary 7's Bio",
+                        "hash_438e8b2f52f5538b": "A mercenary who fights for whoever pays, in Blackout and now here.",
+                        "hash_2299bc20d2a6cd8": "A mercenary who fights for whoever pays, in Blackout and now here."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_merc_f3",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_merc_f4",
+                    "mode": "mp",
+                    "base_role": 12,
+                    "role_slot": 61,
+                    "outfits_from": "hash_4e35640d649eb824",
+                    "dialog": "crew_bo_merc_f4",
+                    "display_name": "Mercenary 8",
+                    "description": "A mercenary who fights for whoever pays, in Blackout and now here.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "MERCENARY 8",
+                        "hash_13c8379c2b98a9c6": "MERCENARY 8",
+                        "hash_16d4e2fc988858de": "Mercenary",
+                        "hash_541919134fdff1": "Mercenary 8's Bio",
+                        "hash_438e8b2f52f5538b": "A mercenary who fights for whoever pays, in Blackout and now here.",
+                        "hash_2299bc20d2a6cd8": "A mercenary who fights for whoever pays, in Blackout and now here."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_merc_f4",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_brutus",
+                    "mode": "mp",
+                    "base_role": 3,
+                    "role_slot": 62,
+                    "outfits_from": "hash_9df6eb3d41a867e",
+                    "dialog": "crew_bo_brutus",
+                    "display_name": "Brutus",
+                    "description": "The warden of Alcatraz, still keeping order among the dead with a baton and a bad temper.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "BRUTUS",
+                        "hash_13c8379c2b98a9c6": "BRUTUS",
+                        "hash_16d4e2fc988858de": "Brutus, the Warden",
+                        "hash_541919134fdff1": "Brutus's Bio",
+                        "hash_438e8b2f52f5538b": "The warden of Alcatraz, still keeping order among the dead with a baton and a bad temper.",
+                        "hash_2299bc20d2a6cd8": "The warden of Alcatraz, still keeping order among the dead with a baton and a bad temper."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_brutus",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_trejo",
+                    "mode": "mp",
+                    "base_role": 5,
+                    "role_slot": 63,
+                    "outfits_from": "hash_585374560a87b1e7",
+                    "dialog": "crew_bo_trejo",
+                    "display_name": "Trejo",
+                    "description": "Danny Trejo: actor, tough guy and now one more thing the undead should be afraid of.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "TREJO",
+                        "hash_13c8379c2b98a9c6": "TREJO",
+                        "hash_16d4e2fc988858de": "Danny Trejo",
+                        "hash_541919134fdff1": "Trejo's Bio",
+                        "hash_438e8b2f52f5538b": "Danny Trejo: actor, tough guy and now one more thing the undead should be afraid of.",
+                        "hash_2299bc20d2a6cd8": "Danny Trejo: actor, tough guy and now one more thing the undead should be afraid of."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_trejo",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_tedd",
+                    "mode": "mp",
+                    "base_role": 10,
+                    "role_slot": 64,
+                    "outfits_from": "hash_37ba0afa9d0cb4ec",
+                    "dialog": "crew_bo_tedd",
+                    "display_name": "T.E.D.D.",
+                    "description": "The Tranzit bus driver robot, who never misses a stop and never lets anyone off without a fare.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "T.E.D.D.",
+                        "hash_13c8379c2b98a9c6": "T.E.D.D.",
+                        "hash_16d4e2fc988858de": "Bus Driver T.E.D.D.",
+                        "hash_541919134fdff1": "T.E.D.D.'s Bio",
+                        "hash_438e8b2f52f5538b": "The Tranzit bus driver robot, who never misses a stop and never lets anyone off without a fare.",
+                        "hash_2299bc20d2a6cd8": "The Tranzit bus driver robot, who never misses a stop and never lets anyone off without a fare."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_tedd",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_silverback",
+                    "mode": "mp",
+                    "base_role": 4,
+                    "role_slot": 65,
+                    "outfits_from": "hash_14796dcba6b7fbf0",
+                    "dialog": "crew_bo_silverback",
+                    "display_name": "Cosmic Silverback",
+                    "description": "A gorilla from beyond the stars, as strong as he is strange.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "COSMIC SILVERBACK",
+                        "hash_13c8379c2b98a9c6": "COSMIC SILVERBACK",
+                        "hash_16d4e2fc988858de": "Cosmic Silverback",
+                        "hash_541919134fdff1": "Cosmic Silverback's Bio",
+                        "hash_438e8b2f52f5538b": "A gorilla from beyond the stars, as strong as he is strange.",
+                        "hash_2299bc20d2a6cd8": "A gorilla from beyond the stars, as strong as he is strange."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_silverback",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_yuri",
+                    "mode": "mp",
+                    "base_role": 7,
+                    "role_slot": 66,
+                    "outfits_from": "hash_1fc16c59bcb84b1c",
+                    "dialog": "crew_bo_yuri",
+                    "display_name": "Pentagon Thief",
+                    "description": "A Soviet scientist who broke into the Pentagon with secrets of his own to steal.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "PENTAGON THIEF",
+                        "hash_13c8379c2b98a9c6": "PENTAGON THIEF",
+                        "hash_16d4e2fc988858de": "Yuri Zavoyski",
+                        "hash_541919134fdff1": "Pentagon Thief's Bio",
+                        "hash_438e8b2f52f5538b": "A Soviet scientist who broke into the Pentagon with secrets of his own to steal.",
+                        "hash_2299bc20d2a6cd8": "A Soviet scientist who broke into the Pentagon with secrets of his own to steal."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_yuri",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_shadow_man",
+                    "mode": "mp",
+                    "base_role": 13,
+                    "role_slot": 67,
+                    "outfits_from": "hash_59123583d56c5d91",
+                    "dialog": "crew_bo_shadow_man",
+                    "display_name": "Shadow Man",
+                    "description": "The mysterious figure behind the Apothicons, playing every side for his own ends.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "SHADOW MAN",
+                        "hash_13c8379c2b98a9c6": "SHADOW MAN",
+                        "hash_16d4e2fc988858de": "The Shadow Man",
+                        "hash_541919134fdff1": "Shadow Man's Bio",
+                        "hash_438e8b2f52f5538b": "The mysterious figure behind the Apothicons, playing every side for his own ends.",
+                        "hash_2299bc20d2a6cd8": "The mysterious figure behind the Apothicons, playing every side for his own ends."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_shadow_man",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_john_doe",
+                    "mode": "mp",
+                    "base_role": 8,
+                    "role_slot": 68,
+                    "outfits_from": "hash_2a1f6a1bf1d96a13",
+                    "dialog": "crew_bo_john_doe",
+                    "display_name": "John Doe",
+                    "description": "One of the walking dead, back on his feet and looking for a fight.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "JOHN DOE",
+                        "hash_13c8379c2b98a9c6": "JOHN DOE",
+                        "hash_16d4e2fc988858de": "John Doe",
+                        "hash_541919134fdff1": "John Doe's Bio",
+                        "hash_438e8b2f52f5538b": "One of the walking dead, back on his feet and looking for a fight.",
+                        "hash_2299bc20d2a6cd8": "One of the walking dead, back on his feet and looking for a fight."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_john_doe",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_jane_doe",
+                    "mode": "mp",
+                    "base_role": 9,
+                    "role_slot": 69,
+                    "outfits_from": "hash_73b44776d80297ea",
+                    "dialog": "crew_bo_jane_doe",
+                    "display_name": "Jane Doe",
+                    "description": "One of the walking dead, back on her feet and looking for a fight.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "JANE DOE",
+                        "hash_13c8379c2b98a9c6": "JANE DOE",
+                        "hash_16d4e2fc988858de": "Jane Doe",
+                        "hash_541919134fdff1": "Jane Doe's Bio",
+                        "hash_438e8b2f52f5538b": "One of the walking dead, back on her feet and looking for a fight.",
+                        "hash_2299bc20d2a6cd8": "One of the walking dead, back on her feet and looking for a fight."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_jane_doe",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_blackjack",
+                    "mode": "mp",
+                    "base_role": 6,
+                    "role_slot": 70,
+                    "outfits_from": "hash_6d469d29378b96bf",
+                    "dialog": "crew_bo_blackjack",
+                    "display_name": "Blackjack",
+                    "description": "The Black Market dealer himself, a mercenary who always gets his cut.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "BLACKJACK",
+                        "hash_13c8379c2b98a9c6": "BLACKJACK",
+                        "hash_16d4e2fc988858de": "Blackjack",
+                        "hash_541919134fdff1": "Blackjack's Bio",
+                        "hash_438e8b2f52f5538b": "The Black Market dealer himself, a mercenary who always gets his cut.",
+                        "hash_2299bc20d2a6cd8": "The Black Market dealer himself, a mercenary who always gets his cut."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "crew_bo_blackjack",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "crew_bo_reaper_classic",
+                    "mode": "mp",
+                    "base_role": 14,
+                    "role_slot": 71,
+                    "outfits_from": "hash_2d933d6a6e214818",
+                    "dialog": "reaper",
+                    "display_name": "Reaper Classic",
+                    "description": "Reaper in his original armour, the war machine that started it all.",
+                    "texts": {
+                        "hash_10cb98543e7ec137": "REAPER CLASSIC",
+                        "hash_13c8379c2b98a9c6": "REAPER CLASSIC",
+                        "hash_16d4e2fc988858de": "Reaper",
+                        "hash_541919134fdff1": "Reaper Classic's Bio",
+                        "hash_438e8b2f52f5538b": "Reaper in his original armour, the war machine that started it all.",
+                        "hash_2299bc20d2a6cd8": "Reaper in his original armour, the war machine that started it all."
+                    },
+                    "bundle": {
+                        "hash_32ca7e775f99d218": "reaper",
+                        "hash_3db969b978e2aba8": 0
+                    }
+                },
+                {
+                    "name": "homelander",
+                    "mode": "mp",
+                    "base_role": 8,
+                    "role_slot": 74,
+                    "display_name": "Homelander",
+                    "title": "The Seven",
+                    "description": "Vought's greatest hero answers to no one: he drops out of the sky with the Grav Slam and closes any distance with the Grapple Gun.",
+                    "body": "c_t8_homelander",
+                    "head": "c_t8_homelander_head",
+                    "arms": "c_t8_homelander_arms",
+                    "legs": "c_t8_homelander_legs",
+                    "portrait": "homelander_portrait",
+                    "icon": "homelander_icon",
+                    "dialog": "homelander",
+                    "images": {
+                        "0x50": "",
+                        "0x58": "homelander_render",
+                        "0x60": "homelander_action"
+                    },
+                    "bundle": {
+                        "hash_215ac9daad709de1": "homelander_bio_header",
+                        "hash_38ea74cad0150cdf": "homelander_card",
+                        "hash_39baaa080c62d5e5": "homelander_story",
+                        "hash_5b2781a0b1bf2b7a": "homelander_emblem",
+                        "hash_32ca7e775f99d218": "homelander",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "texts": {
+                        "hash_10cb98543e7ec137": "HOMELANDER",
+                        "hash_13c8379c2b98a9c6": "HOMELANDER - The Seven",
+                        "hash_16d4e2fc988858de": "Homelander",
+                        "hash_541919134fdff1": "Homelander's Bio",
+                        "hash_438e8b2f52f5538b": "Vought's greatest hero, and the one thing no one can stop.",
+                        "hash_2299bc20d2a6cd8": "The face of Vought International and the leader of The Seven: the strongest man alive, and the most dangerous. He flies, he sees through walls, and his eyes burn through steel.\n\nThe public sees a hero. Everyone who has stood close to him knows the smile is a mask, and that he needs to be loved almost as much as he needs to win."
+                    },
+                    "outfits": [
+                        {
+                            "index": 0,
+                            "name": "Homelander",
+                            "icon": "homelander_outfit_default"
+                        }
+                    ],
+                    "outfit_count": 1,
+                    "war_paints": {
+                        "face": "homelander_face_paint_mat",
+                        "over": "hash_5ddabd25dfe13d0a"
+                    },
+                    "role_bundle": {
+                        "characterint4": 0,
+                        "characterint5": 0,
+                        "characterint6": 0,
+                        "characterint7": 0,
+                        "characterint8": 0
+                    }
+                },
+                {
+                    "name": "homelander",
+                    "mode": "wz",
+                    "base_role": 5,
+                    "role_slot": 7,
+                    "display_name": "Homelander",
+                    "title": "The Seven",
+                    "description": "Vought's greatest hero answers to no one: he drops out of the sky with the Grav Slam and closes any distance with the Grapple Gun.",
+                    "body": "c_t8_homelander",
+                    "head": "c_t8_homelander_head",
+                    "arms": "c_t8_homelander_arms",
+                    "legs": "c_t8_homelander_legs",
+                    "portrait": "homelander_portrait",
+                    "icon": "homelander_icon",
+                    "dialog": "homelander",
+                    "images": {
+                        "0x50": "",
+                        "0x58": "homelander_render",
+                        "0x60": "homelander_action"
+                    },
+                    "bundle": {
+                        "hash_215ac9daad709de1": "homelander_bio_header",
+                        "hash_38ea74cad0150cdf": "homelander_card",
+                        "hash_39baaa080c62d5e5": "homelander_story",
+                        "hash_5b2781a0b1bf2b7a": "homelander_emblem",
+                        "hash_32ca7e775f99d218": "homelander",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "texts": {
+                        "hash_10cb98543e7ec137": "HOMELANDER",
+                        "hash_13c8379c2b98a9c6": "HOMELANDER - The Seven",
+                        "hash_16d4e2fc988858de": "Homelander",
+                        "hash_541919134fdff1": "Homelander's Bio",
+                        "hash_438e8b2f52f5538b": "Vought's greatest hero, and the one thing no one can stop.",
+                        "hash_2299bc20d2a6cd8": "The face of Vought International and the leader of The Seven: the strongest man alive, and the most dangerous. He flies, he sees through walls, and his eyes burn through steel.\n\nThe public sees a hero. Everyone who has stood close to him knows the smile is a mask, and that he needs to be loved almost as much as he needs to win."
+                    },
+                    "outfits": [
+                        {
+                            "index": 0,
+                            "name": "Homelander",
+                            "icon": "homelander_outfit_default"
+                        }
+                    ],
+                    "outfit_count": 1,
+                    "war_paints": {
+                        "face": "homelander_face_paint_mat",
+                        "over": "hash_5ddabd25dfe13d0a"
+                    },
+                    "role_bundle": {
+                        "characterint4": 0,
+                        "characterint5": 0,
+                        "characterint6": 0,
+                        "characterint7": 0,
+                        "characterint8": 0
+                    }
+                },
+                {
+                    "name": "starlight",
+                    "mode": "mp",
+                    "base_role": 2,
+                    "role_slot": 75,
+                    "display_name": "Starlight",
+                    "title": "The Seven",
+                    "description": "The one real hero in The Seven: she lights up the enemy with the War Machine and flushes cover with the Cluster Grenade.",
+                    "body": "c_t8_starlight",
+                    "head": "c_t8_starlight_head",
+                    "arms": "c_t8_starlight_arms",
+                    "legs": "c_t8_starlight_legs",
+                    "portrait": "starlight_portrait",
+                    "icon": "starlight_icon",
+                    "dialog": "starlight",
+                    "images": {
+                        "0x50": "",
+                        "0x58": "starlight_render",
+                        "0x60": "starlight_action"
+                    },
+                    "bundle": {
+                        "hash_215ac9daad709de1": "starlight_bio_header",
+                        "hash_38ea74cad0150cdf": "starlight_card",
+                        "hash_39baaa080c62d5e5": "starlight_story",
+                        "hash_5b2781a0b1bf2b7a": "starlight_emblem",
+                        "hash_32ca7e775f99d218": "starlight",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "texts": {
+                        "hash_10cb98543e7ec137": "STARLIGHT",
+                        "hash_13c8379c2b98a9c6": "STARLIGHT - The Seven",
+                        "hash_16d4e2fc988858de": "Starlight",
+                        "hash_541919134fdff1": "Starlight's Bio",
+                        "hash_438e8b2f52f5538b": "A real hero in a team of frauds: she burns bright for the ones who need it.",
+                        "hash_2299bc20d2a6cd8": "Annie January grew up in pageants and church halls with one dream: to join The Seven. She got her wish, and found out what Vought's heroes really are.\n\nShe soaks up light and throws it back as blinding, burning blasts, and she stays in the fight for the people the others forgot."
+                    },
+                    "outfits": [
+                        {
+                            "index": 0,
+                            "name": "Starlight",
+                            "icon": "starlight_outfit_default"
+                        }
+                    ],
+                    "outfit_count": 1,
+                    "war_paints": {
+                        "face": "starlight_face_paint_mat",
+                        "over": "hash_5005645bad4e94b3"
+                    },
+                    "role_bundle": {
+                        "characterint4": 0,
+                        "characterint5": 0,
+                        "characterint6": 0,
+                        "characterint7": 0,
+                        "characterint8": 0
+                    }
+                },
+                {
+                    "name": "starlight",
+                    "mode": "wz",
+                    "base_role": 1,
+                    "role_slot": 8,
+                    "display_name": "Starlight",
+                    "title": "The Seven",
+                    "description": "The one real hero in The Seven: she lights up the enemy with the War Machine and flushes cover with the Cluster Grenade.",
+                    "body": "c_t8_starlight",
+                    "head": "c_t8_starlight_head",
+                    "arms": "c_t8_starlight_arms",
+                    "legs": "c_t8_starlight_legs",
+                    "portrait": "starlight_portrait",
+                    "icon": "starlight_icon",
+                    "dialog": "starlight",
+                    "images": {
+                        "0x50": "",
+                        "0x58": "starlight_render",
+                        "0x60": "starlight_action"
+                    },
+                    "bundle": {
+                        "hash_215ac9daad709de1": "starlight_bio_header",
+                        "hash_38ea74cad0150cdf": "starlight_card",
+                        "hash_39baaa080c62d5e5": "starlight_story",
+                        "hash_5b2781a0b1bf2b7a": "starlight_emblem",
+                        "hash_32ca7e775f99d218": "starlight",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "texts": {
+                        "hash_10cb98543e7ec137": "STARLIGHT",
+                        "hash_13c8379c2b98a9c6": "STARLIGHT - The Seven",
+                        "hash_16d4e2fc988858de": "Starlight",
+                        "hash_541919134fdff1": "Starlight's Bio",
+                        "hash_438e8b2f52f5538b": "A real hero in a team of frauds: she burns bright for the ones who need it.",
+                        "hash_2299bc20d2a6cd8": "Annie January grew up in pageants and church halls with one dream: to join The Seven. She got her wish, and found out what Vought's heroes really are.\n\nShe soaks up light and throws it back as blinding, burning blasts, and she stays in the fight for the people the others forgot."
+                    },
+                    "outfits": [
+                        {
+                            "index": 0,
+                            "name": "Starlight",
+                            "icon": "starlight_outfit_default"
+                        }
+                    ],
+                    "outfit_count": 1,
+                    "war_paints": {
+                        "face": "starlight_face_paint_mat",
+                        "over": "hash_5005645bad4e94b3"
+                    },
+                    "role_bundle": {
+                        "characterint4": 0,
+                        "characterint5": 0,
+                        "characterint6": 0,
+                        "characterint7": 0,
+                        "characterint8": 0
+                    }
+                },
+                {
+                    "name": "blacknoir",
+                    "mode": "mp",
+                    "base_role": 13,
+                    "role_slot": 76,
+                    "display_name": "Black Noir",
+                    "title": "The Seven",
+                    "description": "The Seven's silent killer: he cuts through anyone in his way with the Ripper and vanishes with Active Camo.",
+                    "body": "c_t8_blacknoir",
+                    "head": "c_t8_blacknoir_head",
+                    "arms": "c_t8_blacknoir_arms",
+                    "legs": "c_t8_blacknoir_legs",
+                    "portrait": "blacknoir_portrait",
+                    "icon": "blacknoir_icon",
+                    "dialog": "blacknoir",
+                    "images": {
+                        "0x50": "",
+                        "0x58": "blacknoir_render",
+                        "0x60": "blacknoir_action"
+                    },
+                    "bundle": {
+                        "hash_215ac9daad709de1": "blacknoir_bio_header",
+                        "hash_38ea74cad0150cdf": "blacknoir_card",
+                        "hash_39baaa080c62d5e5": "blacknoir_story",
+                        "hash_5b2781a0b1bf2b7a": "blacknoir_emblem",
+                        "hash_32ca7e775f99d218": "blacknoir",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "texts": {
+                        "hash_10cb98543e7ec137": "BLACK NOIR",
+                        "hash_13c8379c2b98a9c6": "BLACK NOIR - The Seven",
+                        "hash_16d4e2fc988858de": "Black Noir",
+                        "hash_541919134fdff1": "Black Noir's Bio",
+                        "hash_438e8b2f52f5538b": "Silent, masked and always the first one in.",
+                        "hash_2299bc20d2a6cd8": "The Seven's silent killer. Nobody has seen his face or heard his voice, and nobody who got in his way lived to tell what they saw.\n\nVought points him at a problem and the problem goes away: fast, quiet and with a blade."
+                    },
+                    "outfits": [
+                        {
+                            "index": 0,
+                            "name": "Black Noir",
+                            "icon": "blacknoir_outfit_default"
+                        }
+                    ],
+                    "outfit_count": 1,
+                    "role_bundle": {
+                        "characterint4": 0,
+                        "characterint5": 0,
+                        "characterint6": 0,
+                        "characterint7": 0,
+                        "characterint8": 0
+                    },
+                    "war_paints": {
+                        "face": "blacknoir_mask_paint_mat",
+                        "over": "hash_1a62d466d08a6f03"
+                    }
+                },
+                {
+                    "name": "blacknoir",
+                    "mode": "wz",
+                    "base_role": 57,
+                    "role_slot": 9,
+                    "display_name": "Black Noir",
+                    "title": "The Seven",
+                    "description": "The Seven's silent killer, masked and never heard.",
+                    "body": "c_t8_blacknoir",
+                    "head": "c_t8_blacknoir_head",
+                    "arms": "c_t8_blacknoir_arms",
+                    "legs": "c_t8_blacknoir_legs",
+                    "portrait": "blacknoir_portrait",
+                    "icon": "blacknoir_icon",
+                    "dialog": "blacknoir",
+                    "images": {
+                        "0x50": "",
+                        "0x58": "blacknoir_render",
+                        "0x60": "blacknoir_action"
+                    },
+                    "bundle": {
+                        "hash_215ac9daad709de1": "blacknoir_bio_header",
+                        "hash_38ea74cad0150cdf": "blacknoir_card",
+                        "hash_39baaa080c62d5e5": "blacknoir_story",
+                        "hash_5b2781a0b1bf2b7a": "blacknoir_emblem",
+                        "hash_32ca7e775f99d218": "blacknoir",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "texts": {
+                        "hash_10cb98543e7ec137": "BLACK NOIR",
+                        "hash_13c8379c2b98a9c6": "BLACK NOIR - The Seven",
+                        "hash_16d4e2fc988858de": "Black Noir",
+                        "hash_541919134fdff1": "Black Noir's Bio",
+                        "hash_438e8b2f52f5538b": "Silent, masked and always the first one in.",
+                        "hash_2299bc20d2a6cd8": "The Seven's silent killer. Nobody has seen his face or heard his voice, and nobody who got in his way lived to tell what they saw.\n\nVought points him at a problem and the problem goes away: fast, quiet and with a blade."
+                    },
+                    "outfits": [
+                        {
+                            "index": 0,
+                            "name": "Black Noir",
+                            "icon": "blacknoir_outfit_default"
+                        }
+                    ],
+                    "outfit_count": 1,
+                    "role_bundle": {
+                        "characterint4": 0,
+                        "characterint5": 0,
+                        "characterint6": 0,
+                        "characterint7": 0,
+                        "characterint8": 0
+                    },
+                    "war_paints": {
+                        "face": "blacknoir_mask_paint_mat",
+                        "over": "hash_1a62d466d08a6f03"
+                    }
+                },
+                {
+                    "name": "kagan",
+                    "mode": "mp",
+                    "base_role": 2,
+                    "role_slot": 72,
+                    "display_name": "Kagan",
+                    "title": "The Guild",
+                    "description": "Emma Kagan, head of The Guild, turns every fight into a market she owns: flatten positions with the War Machine and flush cover with the Cluster Grenade.",
+                    "body": "c_t8_kagan",
+                    "head": "c_t8_kagan_head",
+                    "arms": "c_t8_kagan_arms",
+                    "legs": "c_t8_kagan_legs",
+                    "portrait": "kagan_portrait",
+                    "icon": "kagan_icon",
+                    "dialog": "kagan",
+                    "images": {
+                        "0x50": "",
+                        "0x58": "kagan_render",
+                        "0x60": "kagan_action"
+                    },
+                    "bundle": {
+                        "hash_215ac9daad709de1": "kagan_bio_header",
+                        "hash_38ea74cad0150cdf": "kagan_card",
+                        "hash_39baaa080c62d5e5": "kagan_story",
+                        "hash_5b2781a0b1bf2b7a": "kagan_emblem",
+                        "hash_32ca7e775f99d218": "kagan",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "texts": {
+                        "hash_10cb98543e7ec137": "KAGAN",
+                        "hash_13c8379c2b98a9c6": "KAGAN - The Guild",
+                        "hash_16d4e2fc988858de": "Emma Kagan",
+                        "hash_541919134fdff1": "Kagan's Bio",
+                        "hash_438e8b2f52f5538b": "The head of The Guild: a market in every war, a lesson in every fight.",
+                        "hash_2299bc20d2a6cd8": "Emma Kagan runs The Guild, a private defense giant whose technology reaches every battlefield. She does not ask for loyalty; she buys it, and she collects on every debt.\n\nWhere others see a war, she sees a market and a test of who is worth keeping. Every operator who stands against her is a lesson, and every lesson has a cost."
+                    },
+                    "outfits": [
+                        {
+                            "index": 0,
+                            "name": "Emma Kagan",
+                            "icon": "kagan_outfit_default"
+                        },
+                        {
+                            "index": 1,
+                            "body": "c_t8_kagan_jsoc",
+                            "arms": "c_t8_kagan_jsoc_arms",
+                            "legs": "c_t8_kagan_jsoc_legs",
+                            "name": "JSOC",
+                            "icon": "kagan_outfit_jsoc"
+                        },
+                        {
+                            "index": 2,
+                            "body": "c_t8_kagan_beta",
+                            "head": "c_t8_kagan_beta_head",
+                            "arms": "c_t8_kagan_beta_arms",
+                            "legs": "c_t8_kagan_beta_legs",
+                            "name": "Speedrun",
+                            "icon": "kagan_outfit_beta",
+                            "loot": "shield_kagan_speedrun"
+                        }
+                    ],
+                    "outfit_count": 3,
+                    "war_paints": {
+                        "face": "kagan_7445742a_paint_mat",
+                        "over": "hash_5005645bad4e94b3"
+                    },
+                    "role_bundle": {
+                        "characterint4": 0,
+                        "characterint5": 0,
+                        "characterint6": 0,
+                        "characterint7": 0,
+                        "characterint8": 0
+                    }
+                },
+                {
+                    "name": "kagan",
+                    "mode": "wz",
+                    "base_role": 1,
+                    "role_slot": 5,
+                    "display_name": "Kagan",
+                    "title": "The Guild",
+                    "description": "Emma Kagan, head of The Guild, turns every fight into a market she owns: flatten positions with the War Machine and flush cover with the Cluster Grenade.",
+                    "body": "c_t8_kagan",
+                    "head": "c_t8_kagan_head",
+                    "arms": "c_t8_kagan_arms",
+                    "legs": "c_t8_kagan_legs",
+                    "portrait": "kagan_portrait",
+                    "icon": "kagan_icon",
+                    "dialog": "kagan",
+                    "images": {
+                        "0x50": "",
+                        "0x58": "kagan_render",
+                        "0x60": "kagan_action"
+                    },
+                    "bundle": {
+                        "hash_215ac9daad709de1": "kagan_bio_header",
+                        "hash_38ea74cad0150cdf": "kagan_card",
+                        "hash_39baaa080c62d5e5": "kagan_story",
+                        "hash_5b2781a0b1bf2b7a": "kagan_emblem",
+                        "hash_32ca7e775f99d218": "kagan",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "texts": {
+                        "hash_10cb98543e7ec137": "KAGAN",
+                        "hash_13c8379c2b98a9c6": "KAGAN - The Guild",
+                        "hash_16d4e2fc988858de": "Emma Kagan",
+                        "hash_541919134fdff1": "Kagan's Bio",
+                        "hash_438e8b2f52f5538b": "The head of The Guild: a market in every war, a lesson in every fight.",
+                        "hash_2299bc20d2a6cd8": "Emma Kagan runs The Guild, a private defense giant whose technology reaches every battlefield. She does not ask for loyalty; she buys it, and she collects on every debt.\n\nWhere others see a war, she sees a market and a test of who is worth keeping. Every operator who stands against her is a lesson, and every lesson has a cost."
+                    },
+                    "outfits": [
+                        {
+                            "index": 0,
+                            "name": "Emma Kagan",
+                            "icon": "kagan_outfit_default"
+                        },
+                        {
+                            "index": 1,
+                            "body": "c_t8_kagan_jsoc",
+                            "arms": "c_t8_kagan_jsoc_arms",
+                            "legs": "c_t8_kagan_jsoc_legs",
+                            "name": "JSOC",
+                            "icon": "kagan_outfit_jsoc"
+                        },
+                        {
+                            "index": 2,
+                            "body": "c_t8_kagan_beta",
+                            "head": "c_t8_kagan_beta_head",
+                            "arms": "c_t8_kagan_beta_arms",
+                            "legs": "c_t8_kagan_beta_legs",
+                            "name": "Speedrun",
+                            "icon": "kagan_outfit_beta",
+                            "loot": "shield_kagan_speedrun"
+                        }
+                    ],
+                    "outfit_count": 3,
+                    "war_paints": {
+                        "face": "kagan_7445742a_paint_mat",
+                        "over": "hash_5005645bad4e94b3"
+                    },
+                    "role_bundle": {
+                        "characterint4": 0,
+                        "characterint5": 0,
+                        "characterint6": 0,
+                        "characterint7": 0,
+                        "characterint8": 0
+                    }
+                },
+                {
+                    "name": "warden",
+                    "mode": "mp",
+                    "base_role": 4,
+                    "role_slot": 77,
+                    "display_name": "The Warden",
+                    "title": "Zombies",
+                    "description": "The cursed keeper of the Dark Aether burns through the living with the Purifier and poisons the ground around him with the Reactor Core.",
+                    "body": "c_t8_warden",
+                    "head": "c_t8_warden_head",
+                    "arms": "c_t8_warden_arms",
+                    "legs": "c_t8_warden_legs",
+                    "portrait": "warden_portrait",
+                    "icon": "warden_icon",
+                    "dialog": "warden",
+                    "images": {
+                        "0x50": "",
+                        "0x58": "warden_render",
+                        "0x60": "warden_action"
+                    },
+                    "bundle": {
+                        "hash_215ac9daad709de1": "warden_bio_header",
+                        "hash_38ea74cad0150cdf": "warden_card",
+                        "hash_39baaa080c62d5e5": "warden_story",
+                        "hash_5b2781a0b1bf2b7a": "warden_emblem",
+                        "hash_32ca7e775f99d218": "warden",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "texts": {
+                        "hash_10cb98543e7ec137": "THE WARDEN",
+                        "hash_13c8379c2b98a9c6": "THE WARDEN - Zombies",
+                        "hash_16d4e2fc988858de": "The Warden",
+                        "hash_541919134fdff1": "The Warden's Bio",
+                        "hash_438e8b2f52f5538b": "The cursed keeper of the Dark Aether, back from the grave.",
+                        "hash_2299bc20d2a6cd8": "Once he kept the condemned behind bars. Now something older keeps him: a curse that will not let him die, and a hunger to drag the living into the dark with him.\n\nHe walks the Dark Aether in a dead man's coat, a lantern cage in his hand, and whatever he locks inside it never gets out."
+                    },
+                    "outfits": [
+                        {
+                            "index": 0,
+                            "name": "The Warden",
+                            "icon": "warden_outfit_default"
+                        },
+                        {
+                            "index": 1,
+                            "body": "c_t8_warden_west",
+                            "head": "c_t8_warden_west_head",
+                            "arms": "c_t8_warden_west_arms",
+                            "legs": "c_t8_warden_west_legs",
+                            "name": "Western",
+                            "icon": "warden_outfit_western",
+                            "war_paint_face": "warden_west_face_paint_mat"
+                        }
+                    ],
+                    "outfit_count": 2,
+                    "war_paints": {
+                        "face": "warden_face_paint_mat",
+                        "over": "hash_5ddabd25dfe13d0a",
+                        "from": "hash_215efce6af8d9a10"
+                    },
+                    "role_bundle": {
+                        "characterint4": 0,
+                        "characterint5": 0,
+                        "characterint6": 0,
+                        "characterint7": 0,
+                        "characterint8": 0
+                    }
+                },
+                {
+                    "name": "warden",
+                    "mode": "wz",
+                    "base_role": 2,
+                    "role_slot": 10,
+                    "display_name": "The Warden",
+                    "title": "Zombies",
+                    "description": "The cursed keeper of the Dark Aether.",
+                    "body": "c_t8_warden",
+                    "head": "c_t8_warden_head",
+                    "arms": "c_t8_warden_arms",
+                    "legs": "c_t8_warden_legs",
+                    "portrait": "warden_portrait",
+                    "icon": "warden_icon",
+                    "dialog": "warden",
+                    "images": {
+                        "0x50": "",
+                        "0x58": "warden_render",
+                        "0x60": "warden_action"
+                    },
+                    "bundle": {
+                        "hash_215ac9daad709de1": "warden_bio_header",
+                        "hash_38ea74cad0150cdf": "warden_card",
+                        "hash_39baaa080c62d5e5": "warden_story",
+                        "hash_5b2781a0b1bf2b7a": "warden_emblem",
+                        "hash_32ca7e775f99d218": "warden",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "texts": {
+                        "hash_10cb98543e7ec137": "THE WARDEN",
+                        "hash_13c8379c2b98a9c6": "THE WARDEN - Zombies",
+                        "hash_16d4e2fc988858de": "The Warden",
+                        "hash_541919134fdff1": "The Warden's Bio",
+                        "hash_438e8b2f52f5538b": "The cursed keeper of the Dark Aether, back from the grave.",
+                        "hash_2299bc20d2a6cd8": "Once he kept the condemned behind bars. Now something older keeps him: a curse that will not let him die, and a hunger to drag the living into the dark with him.\n\nHe walks the Dark Aether in a dead man's coat, a lantern cage in his hand, and whatever he locks inside it never gets out."
+                    },
+                    "outfits": [
+                        {
+                            "index": 0,
+                            "name": "The Warden",
+                            "icon": "warden_outfit_default"
+                        },
+                        {
+                            "index": 1,
+                            "body": "c_t8_warden_west",
+                            "head": "c_t8_warden_west_head",
+                            "arms": "c_t8_warden_west_arms",
+                            "legs": "c_t8_warden_west_legs",
+                            "name": "Western",
+                            "icon": "warden_outfit_western",
+                            "war_paint_face": "warden_west_face_paint_mat"
+                        }
+                    ],
+                    "outfit_count": 2,
+                    "war_paints": {
+                        "face": "warden_face_paint_mat",
+                        "over": "hash_5ddabd25dfe13d0a",
+                        "from": "hash_215efce6af8d9a10"
+                    },
+                    "role_bundle": {
+                        "characterint4": 0,
+                        "characterint5": 0,
+                        "characterint6": 0,
+                        "characterint7": 0,
+                        "characterint8": 0
+                    }
+                },
+                {
+                    "name": "zm_wesker",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Wesker",
+                    "description": "Albert Wesker brings a god complex and a body rebuilt by the virus: crush the battlefield with the Grav Slam and reach any vantage with the Grapple Gun.",
+                    "body": "c_t8_wesker",
+                    "head": "c_t8_wesker_face",
+                    "arms": "c_t8_wesker_arms",
+                    "legs": "c_t8_wesker_legs",
+                    "portrait": "wesker_portrait",
+                    "icon": "wesker_icon",
+                    "outfits": [
+                        {
+                            "index": 0,
+                            "name": "Albert Wesker",
+                            "icon": "wesker_outfit_default"
+                        },
+                        {
+                            "index": 1,
+                            "body": "c_t8_wesker_red",
+                            "arms": "c_t8_wesker_red_arms",
+                            "legs": "c_t8_wesker_red_legs",
+                            "name": "Crimson",
+                            "icon": "wesker_outfit_red",
+                            "loot": "shield_wesker_red"
+                        },
+                        {
+                            "index": 2,
+                            "body": "c_t8_wesker_blue",
+                            "arms": "c_t8_wesker_blue_arms",
+                            "legs": "c_t8_wesker_blue_legs",
+                            "name": "Midnight",
+                            "icon": "wesker_outfit_blue",
+                            "loot": "shield_wesker_blue"
+                        }
+                    ],
+                    "outfit_count": 3,
+                    "voice": 40,
+                    "role_slot": 3
+                },
+                {
+                    "name": "zm_kagan",
+                    "mode": "zm",
+                    "base_role": 15,
+                    "display_name": "Kagan",
+                    "description": "Emma Kagan, head of The Guild, turns every fight into a market she owns: flatten positions with the War Machine and flush cover with the Cluster Grenade.",
+                    "body": "c_t8_kagan",
+                    "head": "c_t8_kagan_head",
+                    "arms": "c_t8_kagan_arms",
+                    "legs": "c_t8_kagan_legs",
+                    "portrait": "kagan_portrait",
+                    "icon": "kagan_icon",
+                    "outfits": [
+                        {
+                            "index": 0,
+                            "name": "Emma Kagan",
+                            "icon": "kagan_outfit_default"
+                        },
+                        {
+                            "index": 1,
+                            "body": "c_t8_kagan_jsoc",
+                            "arms": "c_t8_kagan_jsoc_arms",
+                            "legs": "c_t8_kagan_jsoc_legs",
+                            "name": "JSOC",
+                            "icon": "kagan_outfit_jsoc"
+                        },
+                        {
+                            "index": 2,
+                            "body": "c_t8_kagan_beta",
+                            "head": "c_t8_kagan_beta_head",
+                            "arms": "c_t8_kagan_beta_arms",
+                            "legs": "c_t8_kagan_beta_legs",
+                            "name": "Speedrun",
+                            "icon": "kagan_outfit_beta",
+                            "loot": "shield_kagan_speedrun"
+                        }
+                    ],
+                    "outfit_count": 3,
+                    "war_paints": {
+                        "face": "kagan_7445742a_paint_mat"
+                    },
+                    "voice": 41,
+                    "role_slot": 4
+                },
+                {
+                    "name": "zm_ajax",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Ajax",
+                    "outfits_from": "hash_641d42086962443d",
+                    "description": "A former SWAT team leader who breaches first, behind a ballistic shield and a 9-Bang.",
+                    "voice": 42,
+                    "role_slot": 5
+                },
+                {
+                    "name": "zm_battery",
+                    "mode": "zm",
+                    "base_role": 15,
+                    "display_name": "Battery",
+                    "outfits_from": "hash_25d901b2845affb5",
+                    "description": "A demolitions expert who solves every problem with a Cluster Grenade and a War Machine.",
+                    "voice": 43,
+                    "role_slot": 6
+                },
+                {
+                    "name": "zm_crash",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Crash",
+                    "outfits_from": "hash_271546989f2b39c0",
+                    "description": "A former SAS medic who keeps his squad in the fight with Assault Packs and a Tak-5.",
+                    "voice": 44,
+                    "role_slot": 7
+                },
+                {
+                    "name": "zm_firebreak",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Firebreak",
+                    "outfits_from": "hash_17c8471ad085983b",
+                    "description": "A nuclear plant engineer who survived a meltdown, now armed with a Purifier and a Reactor Core.",
+                    "voice": 45,
+                    "role_slot": 8
+                },
+                {
+                    "name": "zm_nomad",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Nomad",
+                    "outfits_from": "hash_bac19a8a93f750a",
+                    "description": "A survivalist and hunter who fights alongside his loyal dog K9 Unit.",
+                    "voice": 46,
+                    "role_slot": 9
+                },
+                {
+                    "name": "zm_prophet",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Prophet",
+                    "outfits_from": "hash_74a7b1f09eb77129",
+                    "description": "A former Ethiopian special forces officer, his body upgraded to read the battlefield.",
+                    "voice": 47,
+                    "role_slot": 10
+                },
+                {
+                    "name": "zm_recon",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Recon",
+                    "outfits_from": "hash_265a8bfe9e6a3a8f",
+                    "description": "An intelligence expert who sees through walls and strikes from the shadows.",
+                    "voice": 48,
+                    "role_slot": 11
+                },
+                {
+                    "name": "zm_ruin",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Ruin",
+                    "outfits_from": "hash_215efce6af8d9a10",
+                    "description": "A bullet-proof veteran who tears into the fight with the Grav Slam and the Grapple Gun.",
+                    "voice": 49,
+                    "role_slot": 33
+                },
+                {
+                    "name": "zm_seraph",
+                    "mode": "zm",
+                    "base_role": 15,
+                    "display_name": "Seraph",
+                    "outfits_from": "hash_35abb557417d97bc",
+                    "description": "A Chinese crime syndicate enforcer who settles every score with the Annihilator.",
+                    "voice": 50,
+                    "role_slot": 34
+                },
+                {
+                    "name": "zm_torque",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Torque",
+                    "outfits_from": "hash_34c5e1c04823489d",
+                    "description": "A barricade specialist who locks down ground with Razor Wire and the Barricade.",
+                    "voice": 51,
+                    "role_slot": 35
+                },
+                {
+                    "name": "zm_zero",
+                    "mode": "zm",
+                    "base_role": 15,
+                    "display_name": "Zero",
+                    "outfits_from": "hash_4ae753fd800cb78a",
+                    "description": "A hacker who turns the enemy's own technology against them.",
+                    "voice": 52,
+                    "role_slot": 36
+                },
+                {
+                    "name": "zm_outrider",
+                    "mode": "zm",
+                    "base_role": 15,
+                    "display_name": "Outrider",
+                    "outfits_from": "hash_6b10c47c814fffcc",
+                    "description": "A tracker and hunter who strikes from afar with the Sparrow bow.",
+                    "voice": 53,
+                    "role_slot": 37
+                },
+                {
+                    "name": "zm_spectre",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Spectre",
+                    "outfits_from": "hash_4c0746fa548d2220",
+                    "description": "A mysterious operative who strikes unseen with the Ripper blades.",
+                    "voice": 54,
+                    "role_slot": 38
+                },
+                {
+                    "name": "zm_reaper",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Reaper",
+                    "outfits_from": "hash_906e794ec705237",
+                    "description": "A war machine that rebuilt itself, its arm turned into the Scythe minigun.",
+                    "voice": 55,
+                    "role_slot": 39
+                },
+                {
+                    "name": "zm_reznov",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Reznov",
+                    "outfits_from": "hash_44b9da8cc11837e7",
+                    "description": "A hardened Red Army sergeant who fought his way from Stalingrad to Berlin and never forgot a betrayal.",
+                    "voice": 56,
+                    "role_slot": 40
+                },
+                {
+                    "name": "zm_mason",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Mason",
+                    "outfits_from": "hash_662fd88c102b2c53",
+                    "description": "A CIA operative whose mind was turned into a weapon, and who fought his way back from it.",
+                    "voice": 57,
+                    "role_slot": 41
+                },
+                {
+                    "name": "zm_woods",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Woods",
+                    "outfits_from": "hash_58931ed6882dd5cf",
+                    "description": "A Marine and Mason's closest friend: loud, fearless and never far from a fight.",
+                    "voice": 58,
+                    "role_slot": 42
+                },
+                {
+                    "name": "zm_menendez",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Menendez",
+                    "outfits_from": "hash_1e33a457906c16ed",
+                    "description": "A Nicaraguan cartel lord and revolutionary whose hatred shaped a war decades long.",
+                    "voice": 59,
+                    "role_slot": 43
+                },
+                {
+                    "name": "zm_hudson",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Hudson",
+                    "outfits_from": "hash_1e938a005e7ba090",
+                    "description": "A CIA handler who keeps his agents on mission, whatever it takes.",
+                    "voice": 60,
+                    "role_slot": 44
+                },
+                {
+                    "name": "zm_weaver",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Grigori Weaver",
+                    "outfits_from": "hash_3000a2309c9f2903",
+                    "description": "A Soviet defector turned CIA operative, cool under pressure and quick to act.",
+                    "voice": 61,
+                    "role_slot": 45
+                },
+                {
+                    "name": "zm_price",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Classic Price",
+                    "outfits_from": "hash_2e611c081f273de3",
+                    "description": "The SAS captain behind more covert operations than anyone will ever admit to.",
+                    "voice": 62,
+                    "role_slot": 46
+                },
+                {
+                    "name": "zm_david_mason",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "David Mason",
+                    "outfits_from": "hash_3f378ef89d512016",
+                    "description": "Alex Mason's son, a JSOC commander who inherited his father's fight.",
+                    "voice": 63,
+                    "role_slot": 47
+                },
+                {
+                    "name": "zm_sarah_hall",
+                    "mode": "zm",
+                    "base_role": 15,
+                    "display_name": "Sarah Hall",
+                    "outfits_from": "hash_42cdb2b6724ac170",
+                    "description": "A Winslow Accord commander, the first woman to lead her own special operations team.",
+                    "voice": 64,
+                    "role_slot": 48
+                },
+                {
+                    "name": "zm_sergei",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Sergei",
+                    "outfits_from": "hash_5ee15059027bd9ee",
+                    "description": "A Soviet soldier broken and rebuilt by the Nova 6 experiments, unstoppable once he is set loose.",
+                    "voice": 65,
+                    "role_slot": 49
+                },
+                {
+                    "name": "zm_replacer",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "The Replacer",
+                    "outfits_from": "hash_15db91b18278dea9",
+                    "description": "He shows up wherever someone would rather be somewhere else, and does the job for them.",
+                    "voice": 66,
+                    "role_slot": 50
+                },
+                {
+                    "name": "zm_liquidator",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "The Liquidator",
+                    "outfits_from": "hash_688b96101e8f6881",
+                    "description": "The Replacer in a suit, ready to take any problem off your hands.",
+                    "voice": 67,
+                    "role_slot": 51
+                },
+                {
+                    "name": "zm_uncle_frank",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Uncle Frank",
+                    "outfits_from": "hash_4b5db84146fbdfd5",
+                    "description": "Frank Woods years later, older, louder and as tough as ever.",
+                    "voice": 68,
+                    "role_slot": 52
+                },
+                {
+                    "name": "zm_ladies_man",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Ladies' Man",
+                    "outfits_from": "hash_647886f45b4cfdbd",
+                    "description": "Raul Menendez dressed for a night out, as dangerous as he is charming.",
+                    "voice": 69,
+                    "role_slot": 53
+                },
+                {
+                    "name": "zm_vacation_hudson",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Vacation Hudson",
+                    "outfits_from": "hash_3166198354eac54f",
+                    "description": "Hudson on vacation, which for him still means carrying a gun.",
+                    "voice": 70,
+                    "role_slot": 54
+                },
+                {
+                    "name": "zm_shadows",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "M. Shadows",
+                    "outfits_from": "hash_5dc990d930487f8f",
+                    "description": "The lead singer of Avenged Sevenfold, as at home on a battlefield as on a stage.",
+                    "voice": 71,
+                    "role_slot": 55
+                },
+                {
+                    "name": "zm_ranger",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Ranger",
+                    "outfits_from": "hash_c0e368ab90b1e3b",
+                    "description": "A Ranger trained to lead the way in, on land, wherever the fight is.",
+                    "voice": 72,
+                    "role_slot": 56
+                },
+                {
+                    "name": "zm_frogman",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Frogman",
+                    "outfits_from": "hash_612c6639ac9bce8d",
+                    "description": "A combat diver who comes out of the water before anyone knows he was there.",
+                    "voice": 73,
+                    "role_slot": 57
+                },
+                {
+                    "name": "zm_airborne",
+                    "mode": "zm",
+                    "base_role": 15,
+                    "display_name": "Airborne",
+                    "outfits_from": "hash_729c9111f563591d",
+                    "description": "A paratrooper who drops in behind the lines and holds them.",
+                    "voice": 74,
+                    "role_slot": 58
+                },
+                {
+                    "name": "zm_seal",
+                    "mode": "zm",
+                    "base_role": 15,
+                    "display_name": "SEAL",
+                    "outfits_from": "hash_129b8d5110f6cffe",
+                    "description": "A Navy SEAL at home on sea, air and land.",
+                    "voice": 75,
+                    "role_slot": 59
+                },
+                {
+                    "name": "zm_battle_hardened",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Battle Hardened",
+                    "outfits_from": "hash_4903d1b3c4b6f5e9",
+                    "description": "A veteran of more battles than they can count, and still standing.",
+                    "voice": 76,
+                    "role_slot": 60
+                },
+                {
+                    "name": "zm_merc_m1",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Mercenary 1",
+                    "outfits_from": "hash_493be910509f8bc2",
+                    "description": "A mercenary who fights for whoever pays, in Blackout and now here.",
+                    "voice": 77,
+                    "role_slot": 61
+                },
+                {
+                    "name": "zm_merc_m2",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Mercenary 2",
+                    "outfits_from": "hash_493be810509f8a0f",
+                    "description": "A mercenary who fights for whoever pays, in Blackout and now here.",
+                    "voice": 78,
+                    "role_slot": 62
+                },
+                {
+                    "name": "zm_merc_m3",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Mercenary 3",
+                    "outfits_from": "hash_493be710509f885c",
+                    "description": "A mercenary who fights for whoever pays, in Blackout and now here.",
+                    "voice": 79,
+                    "role_slot": 63
+                },
+                {
+                    "name": "zm_merc_m4",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Mercenary 4",
+                    "outfits_from": "hash_493be610509f86a9",
+                    "description": "A mercenary who fights for whoever pays, in Blackout and now here.",
+                    "voice": 80,
+                    "role_slot": 64
+                },
+                {
+                    "name": "zm_merc_f1",
+                    "mode": "zm",
+                    "base_role": 15,
+                    "display_name": "Mercenary 5",
+                    "outfits_from": "hash_4e35610d649eb30b",
+                    "description": "A mercenary who fights for whoever pays, in Blackout and now here.",
+                    "voice": 81,
+                    "role_slot": 65
+                },
+                {
+                    "name": "zm_merc_f2",
+                    "mode": "zm",
+                    "base_role": 15,
+                    "display_name": "Mercenary 6",
+                    "outfits_from": "hash_4e35620d649eb4be",
+                    "description": "A mercenary who fights for whoever pays, in Blackout and now here.",
+                    "voice": 82,
+                    "role_slot": 66
+                },
+                {
+                    "name": "zm_merc_f3",
+                    "mode": "zm",
+                    "base_role": 15,
+                    "display_name": "Mercenary 7",
+                    "outfits_from": "hash_4e35630d649eb671",
+                    "description": "A mercenary who fights for whoever pays, in Blackout and now here.",
+                    "voice": 83,
+                    "role_slot": 67
+                },
+                {
+                    "name": "zm_merc_f4",
+                    "mode": "zm",
+                    "base_role": 15,
+                    "display_name": "Mercenary 8",
+                    "outfits_from": "hash_4e35640d649eb824",
+                    "description": "A mercenary who fights for whoever pays, in Blackout and now here.",
+                    "voice": 84,
+                    "role_slot": 68
+                },
+                {
+                    "name": "zm_brutus",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Brutus",
+                    "outfits_from": "hash_9df6eb3d41a867e",
+                    "description": "The warden of Alcatraz, still keeping order among the dead with a baton and a bad temper.",
+                    "voice": 85,
+                    "role_slot": 69
+                },
+                {
+                    "name": "zm_trejo",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Trejo",
+                    "outfits_from": "hash_585374560a87b1e7",
+                    "description": "Danny Trejo: actor, tough guy and now one more thing the undead should be afraid of.",
+                    "voice": 86,
+                    "role_slot": 70
+                },
+                {
+                    "name": "zm_tedd",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "T.E.D.D.",
+                    "outfits_from": "hash_37ba0afa9d0cb4ec",
+                    "description": "The Tranzit bus driver robot, who never misses a stop and never lets anyone off without a fare.",
+                    "voice": 87,
+                    "role_slot": 71
+                },
+                {
+                    "name": "zm_silverback",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Cosmic Silverback",
+                    "outfits_from": "hash_14796dcba6b7fbf0",
+                    "description": "A gorilla from beyond the stars, as strong as he is strange.",
+                    "voice": 88,
+                    "role_slot": 72
+                },
+                {
+                    "name": "zm_yuri",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Pentagon Thief",
+                    "outfits_from": "hash_1fc16c59bcb84b1c",
+                    "description": "A Soviet scientist who broke into the Pentagon with secrets of his own to steal.",
+                    "voice": 89,
+                    "role_slot": 73
+                },
+                {
+                    "name": "zm_shadow_man",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Shadow Man",
+                    "outfits_from": "hash_59123583d56c5d91",
+                    "description": "The mysterious figure behind the Apothicons, playing every side for his own ends.",
+                    "voice": 90,
+                    "role_slot": 74
+                },
+                {
+                    "name": "zm_john_doe",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "John Doe",
+                    "outfits_from": "hash_2a1f6a1bf1d96a13",
+                    "description": "One of the walking dead, back on his feet and looking for a fight.",
+                    "voice": 91,
+                    "role_slot": 75
+                },
+                {
+                    "name": "zm_jane_doe",
+                    "mode": "zm",
+                    "base_role": 15,
+                    "display_name": "Jane Doe",
+                    "outfits_from": "hash_73b44776d80297ea",
+                    "description": "One of the walking dead, back on her feet and looking for a fight.",
+                    "voice": 92,
+                    "role_slot": 76
+                },
+                {
+                    "name": "zm_blackjack",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Blackjack",
+                    "outfits_from": "hash_6d469d29378b96bf",
+                    "description": "The Black Market dealer himself, a mercenary who always gets his cut.",
+                    "voice": 93,
+                    "role_slot": 77
+                },
+                {
+                    "name": "zm_reaper_classic",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Reaper Classic",
+                    "outfits_from": "hash_2d933d6a6e214818",
+                    "description": "Reaper in his original armour, the war machine that started it all.",
+                    "voice": 94,
+                    "role_slot": 78
+                },
+                {
+                    "name": "zm_jacket",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Jacket",
+                    "description": "Jacket never says a word of his own: strike unseen with Active Camo and carve through the fight with the Ripper.",
+                    "body": "c_t8_jacket",
+                    "head": "c_t8_jacket_head",
+                    "arms": "c_t8_jacket_arms",
+                    "legs": "c_t8_jacket_legs",
+                    "portrait": "jacket_portrait",
+                    "icon": "jacket_icon",
+                    "outfits": [
+                        {
+                            "index": 0,
+                            "name": "Jacket",
+                            "icon": "jacket_outfit_default"
+                        }
+                    ],
+                    "outfit_count": 1,
+                    "voice": 95,
+                    "role_slot": 79
+                },
+                {
+                    "name": "zm_homelander",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Homelander",
+                    "description": "Vought's greatest hero answers to no one: he drops out of the sky with the Grav Slam and closes any distance with the Grapple Gun.",
+                    "body": "c_t8_homelander",
+                    "head": "c_t8_homelander_head",
+                    "arms": "c_t8_homelander_arms",
+                    "legs": "c_t8_homelander_legs",
+                    "portrait": "homelander_portrait",
+                    "icon": "homelander_icon",
+                    "outfits": [
+                        {
+                            "index": 0,
+                            "name": "Homelander",
+                            "icon": "homelander_outfit_default"
+                        }
+                    ],
+                    "outfit_count": 1,
+                    "war_paints": {
+                        "face": "homelander_face_paint_mat"
+                    },
+                    "voice": 96,
+                    "role_slot": 80
+                },
+                {
+                    "name": "zm_starlight",
+                    "mode": "zm",
+                    "base_role": 15,
+                    "display_name": "Starlight",
+                    "description": "The one real hero in The Seven: she lights up the enemy with the War Machine and flushes cover with the Cluster Grenade.",
+                    "body": "c_t8_starlight",
+                    "head": "c_t8_starlight_head",
+                    "arms": "c_t8_starlight_arms",
+                    "legs": "c_t8_starlight_legs",
+                    "portrait": "starlight_portrait",
+                    "icon": "starlight_icon",
+                    "outfits": [
+                        {
+                            "index": 0,
+                            "name": "Starlight",
+                            "icon": "starlight_outfit_default"
+                        }
+                    ],
+                    "outfit_count": 1,
+                    "war_paints": {
+                        "face": "starlight_face_paint_mat"
+                    },
+                    "voice": 97,
+                    "role_slot": 81
+                },
+                {
+                    "name": "zm_blacknoir",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Black Noir",
+                    "description": "The Seven's silent killer: he cuts through anyone in his way with the Ripper and vanishes with Active Camo.",
+                    "body": "c_t8_blacknoir",
+                    "head": "c_t8_blacknoir_head",
+                    "arms": "c_t8_blacknoir_arms",
+                    "legs": "c_t8_blacknoir_legs",
+                    "portrait": "blacknoir_portrait",
+                    "icon": "blacknoir_icon",
+                    "outfits": [
+                        {
+                            "index": 0,
+                            "name": "Black Noir",
+                            "icon": "blacknoir_outfit_default"
+                        }
+                    ],
+                    "outfit_count": 1,
+                    "war_paints": {
+                        "face": "blacknoir_mask_paint_mat",
+                        "over": "hash_1a62d466d08a6f03",
+                        "from": "hash_4c0746fa548d2220"
+                    },
+                    "voice": 98,
+                    "role_slot": 82
+                },
+                {
+                    "name": "zm_warden",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "The Warden",
+                    "description": "The cursed keeper of the Dark Aether burns through the living with the Purifier and poisons the ground around him with the Reactor Core.",
+                    "body": "c_t8_warden",
+                    "head": "c_t8_warden_head",
+                    "arms": "c_t8_warden_arms",
+                    "legs": "c_t8_warden_legs",
+                    "portrait": "warden_portrait",
+                    "icon": "warden_icon",
+                    "outfits": [
+                        {
+                            "index": 0,
+                            "name": "The Warden",
+                            "icon": "warden_outfit_default"
+                        },
+                        {
+                            "index": 1,
+                            "body": "c_t8_warden_west",
+                            "head": "c_t8_warden_west_head",
+                            "arms": "c_t8_warden_west_arms",
+                            "legs": "c_t8_warden_west_legs",
+                            "name": "Western",
+                            "icon": "warden_outfit_western",
+                            "war_paint_face": "warden_west_face_paint_mat"
+                        }
+                    ],
+                    "outfit_count": 2,
+                    "war_paints": {
+                        "face": "warden_face_paint_mat",
+                        "over": "hash_5ddabd25dfe13d0a",
+                        "from": "hash_215efce6af8d9a10"
+                    },
+                    "voice": 99,
+                    "role_slot": 83
+                },
+                {
+                    "name": "zm_stan",
+                    "mode": "zm",
+                    "base_role": 13,
+                    "display_name": "Stan Smith",
+                    "description": "Langley Falls' finest CIA agent pushes forward behind a ballistic shield and clears rooms with the 9-Bang.",
+                    "body": "c_t8_stan",
+                    "head": "c_t8_stan_head",
+                    "arms": "c_t8_stan_arms",
+                    "legs": "c_t8_stan_legs",
+                    "portrait": "stan_portrait",
+                    "icon": "stan_icon",
+                    "outfits": [
+                        {
+                            "index": 0,
+                            "name": "Stan Smith",
+                            "icon": "stan_outfit_default"
+                        }
+                    ],
+                    "outfit_count": 1,
+                    "voice": 100,
+                    "role_slot": 84
+                },
+                {
+                    "name": "stan",
+                    "mode": "mp",
+                    "base_role": 1,
+                    "role_slot": 78,
+                    "display_name": "Stan Smith",
+                    "title": "CIA",
+                    "description": "Langley Falls' finest CIA agent pushes forward behind a ballistic shield and clears rooms with the 9-Bang.",
+                    "body": "c_t8_stan",
+                    "head": "c_t8_stan_head",
+                    "arms": "c_t8_stan_arms",
+                    "legs": "c_t8_stan_legs",
+                    "portrait": "stan_portrait",
+                    "icon": "stan_icon",
+                    "dialog": "stan",
+                    "images": {
+                        "0x50": "",
+                        "0x58": "stan_render",
+                        "0x60": "stan_action"
+                    },
+                    "bundle": {
+                        "hash_215ac9daad709de1": "stan_bio_header",
+                        "hash_38ea74cad0150cdf": "stan_card",
+                        "hash_39baaa080c62d5e5": "stan_story",
+                        "hash_5b2781a0b1bf2b7a": "stan_emblem",
+                        "hash_32ca7e775f99d218": "stan",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "texts": {
+                        "hash_10cb98543e7ec137": "STAN SMITH",
+                        "hash_13c8379c2b98a9c6": "STAN SMITH - CIA",
+                        "hash_16d4e2fc988858de": "Stan Smith",
+                        "hash_541919134fdff1": "Stan Smith's Bio",
+                        "hash_438e8b2f52f5538b": "A CIA agent who never met a problem he couldn't shoot.",
+                        "hash_2299bc20d2a6cd8": "CIA agent, proud patriot and the most dangerous father in Langley Falls. Stan Smith keeps his family safe, his country free and his chin pointed at the enemy.\n\nHe'll defend the American way with any weapon he can carry, and a few he probably shouldn't."
+                    },
+                    "outfits": [
+                        {
+                            "index": 0,
+                            "name": "Stan Smith",
+                            "icon": "stan_outfit_default"
+                        }
+                    ],
+                    "outfit_count": 1,
+                    "role_bundle": {
+                        "characterint4": 0,
+                        "characterint5": 0,
+                        "characterint6": 0,
+                        "characterint7": 0,
+                        "characterint8": 0
+                    }
+                },
+                {
+                    "name": "stan",
+                    "mode": "wz",
+                    "base_role": 7,
+                    "role_slot": 11,
+                    "display_name": "Stan Smith",
+                    "title": "CIA",
+                    "description": "Langley Falls' finest CIA agent.",
+                    "body": "c_t8_stan",
+                    "head": "c_t8_stan_head",
+                    "arms": "c_t8_stan_arms",
+                    "legs": "c_t8_stan_legs",
+                    "portrait": "stan_portrait",
+                    "icon": "stan_icon",
+                    "dialog": "stan",
+                    "images": {
+                        "0x50": "",
+                        "0x58": "stan_render",
+                        "0x60": "stan_action"
+                    },
+                    "bundle": {
+                        "hash_215ac9daad709de1": "stan_bio_header",
+                        "hash_38ea74cad0150cdf": "stan_card",
+                        "hash_39baaa080c62d5e5": "stan_story",
+                        "hash_5b2781a0b1bf2b7a": "stan_emblem",
+                        "hash_32ca7e775f99d218": "stan",
+                        "hash_3db969b978e2aba8": 0
+                    },
+                    "texts": {
+                        "hash_10cb98543e7ec137": "STAN SMITH",
+                        "hash_13c8379c2b98a9c6": "STAN SMITH - CIA",
+                        "hash_16d4e2fc988858de": "Stan Smith",
+                        "hash_541919134fdff1": "Stan Smith's Bio",
+                        "hash_438e8b2f52f5538b": "A CIA agent who never met a problem he couldn't shoot.",
+                        "hash_2299bc20d2a6cd8": "CIA agent, proud patriot and the most dangerous father in Langley Falls. Stan Smith keeps his family safe, his country free and his chin pointed at the enemy.\n\nHe'll defend the American way with any weapon he can carry, and a few he probably shouldn't."
+                    },
+                    "outfits": [
+                        {
+                            "index": 0,
+                            "name": "Stan Smith",
+                            "icon": "stan_outfit_default"
+                        }
+                    ],
+                    "outfit_count": 1,
+                    "role_bundle": {
+                        "characterint4": 0,
+                        "characterint5": 0,
+                        "characterint6": 0,
+                        "characterint7": 0,
+                        "characterint8": 0
+                    }
+                }
+            ],
+            "outfit_adds": [
+                {
+                    "mode": "zm",
+                    "role": 1,
+                    "name": "Peeks",
+                    "default_name": "Default",
+                    "icon": "peaks_outfit",
+                    "body": "c_t8_peaks",
+                    "head": "c_t8_peaks_head",
+                    "arms": "c_t8_peaks_arms",
+                    "legs": "c_t8_peaks_legs",
+                    "loot": "shield_peeks"
+                },
+                {
+                    "mode": "zm",
+                    "role": 15,
+                    "name": "Peeks",
+                    "default_name": "Default",
+                    "icon": "peaks_outfit",
+                    "body": "c_t8_peaks",
+                    "head": "c_t8_peaks_head",
+                    "arms": "c_t8_peaks_arms",
+                    "legs": "c_t8_peaks_legs",
+                    "loot": "shield_peeks"
+                },
+                {
+                    "mode": "wz",
+                    "role": 22,
+                    "name": "Peeks",
+                    "default_name": "Default",
+                    "icon": "peaks_outfit",
+                    "body": "c_t8_peaks",
+                    "head": "c_t8_peaks_head",
+                    "arms": "c_t8_peaks_arms",
+                    "legs": "c_t8_peaks_legs",
+                    "loot": "shield_peeks"
+                },
+                {
+                    "mode": "wz",
+                    "role": 26,
+                    "name": "Peeks",
+                    "default_name": "Default",
+                    "icon": "peaks_outfit",
+                    "body": "c_t8_peaks",
+                    "head": "c_t8_peaks_head",
+                    "arms": "c_t8_peaks_arms",
+                    "legs": "c_t8_peaks_legs",
+                    "loot": "shield_peeks"
+                },
+                {
+                    "mode": "mp",
+                    "role": 13,
+                    "name": "School Mascot",
+                    "icon": "mascot_outfit",
+                    "body": "c_t8_mascot",
+                    "head": "c_t8_wesker_head",
+                    "arms": "c_t8_mascot_arms",
+                    "legs": "c_t8_mascot_legs",
+                    "loot": "shield_mascot",
+                    "clothes": "c_t8_wesker_head"
+                },
+                {
+                    "mode": "wz",
+                    "role": 57,
+                    "name": "School Mascot",
+                    "icon": "mascot_outfit",
+                    "body": "c_t8_mascot",
+                    "head": "c_t8_wesker_head",
+                    "arms": "c_t8_mascot_arms",
+                    "legs": "c_t8_mascot_legs",
+                    "loot": "shield_mascot",
+                    "clothes": "c_t8_wesker_head"
+                },
+                {
+                    "mode": "zm",
+                    "role": 26,
+                    "name": "Black Ops II",
+                    "default_name": "Default",
+                    "icon": "misty_outfit",
+                    "body": "c_t8_misty_bo2",
+                    "head": "c_t8_misty_bo2_head",
+                    "arms": "c_t8_misty_bo2_arms",
+                    "legs": "c_t8_misty_bo2_legs",
+                    "clothes": "c_t8_wesker_head",
+                    "war_paints": {
+                        "face": "misty_head_paint_mat"
+                    }
+                },
+                {
+                    "mode": "wz",
+                    "role": 49,
+                    "name": "Black Ops II",
+                    "default_name": "Default",
+                    "icon": "misty_outfit",
+                    "body": "c_t8_misty_bo2",
+                    "head": "c_t8_misty_bo2_head",
+                    "arms": "c_t8_misty_bo2_arms",
+                    "legs": "c_t8_misty_bo2_legs",
+                    "clothes": "c_t8_wesker_head",
+                    "war_paints": {
+                        "face": "misty_head_paint_mat"
+                    }
+                }
+            ],
+            "outfit_shows": [
+                {
+                    "mode": "zm",
+                    "role": 5,
+                    "outfit": 2,
+                    "name": "Great War",
+                    "default_name": "Default",
+                    "icon": "richtofen_greatwar_outfit"
+                },
+                {
+                    "mode": "zm",
+                    "role": 29,
+                    "outfit": 2,
+                    "name": "Great War",
+                    "default_name": "Default",
+                    "icon": "richtofen_greatwar_outfit"
+                },
+                {
+                    "mode": "wz",
+                    "role": 17,
+                    "outfit": 2,
+                    "name": "Great War",
+                    "default_name": "Default",
+                    "icon": "richtofen_greatwar_outfit"
+                }
+            ],
+            "role_names": [
+                {
+                    "mode": "zm",
+                    "role": 9,
+                    "name": "Madame Mirela"
+                },
+                {
+                    "mode": "zm",
+                    "role": 10,
+                    "name": "Jonathan Warwick"
+                },
+                {
+                    "mode": "zm",
+                    "role": 11,
+                    "name": "Gideon Jones"
+                },
+                {
+                    "mode": "zm",
+                    "role": 12,
+                    "name": "Godfrey"
+                },
+                {
+                    "mode": "zm",
+                    "role": 17,
+                    "name": "Dempsey (Classified)"
+                },
+                {
+                    "mode": "zm",
+                    "role": 18,
+                    "name": "Nikolai (Classified)"
+                },
+                {
+                    "mode": "zm",
+                    "role": 19,
+                    "name": "Richtofen (Classified)"
+                },
+                {
+                    "mode": "zm",
+                    "role": 20,
+                    "name": "Takeo (Classified)"
+                },
+                {
+                    "mode": "zm",
+                    "role": 21,
+                    "name": "Dempsey (Ultimis)"
+                },
+                {
+                    "mode": "zm",
+                    "role": 22,
+                    "name": "Nikolai (Ultimis)"
+                },
+                {
+                    "mode": "zm",
+                    "role": 23,
+                    "name": "Richtofen (Ultimis)"
+                },
+                {
+                    "mode": "zm",
+                    "role": 24,
+                    "name": "Takeo (Ultimis)"
+                },
+                {
+                    "mode": "zm",
+                    "role": 29,
+                    "name": "Richtofen (No Vials)"
+                }
+            ],
+            "override": true
+        },
+        "support_mp": {
+            "hook": "mp_common",
+            "type": "mode_common"
+        },
+        "support_zm": {
+            "hook": "zm_common",
+            "type": "mode_common",
+            "freerun_only": true
         }
     }
 }

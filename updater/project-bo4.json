@@ -12,187 +12,7 @@
     [
         "Launch Project BO4.exe",
         112640,
-        "8A03F194C55114ADB6B2BAC229E78D54C41A887C"
-    ],
-    [
-        "LPC/arasafe_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
-        2432,
-        "F09FF7A8DE7A99384528BDCE32F9E574A8ECE3CC"
-    ],
-    [
-        "LPC/arasafe_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
-        2432,
-        "CA9E2CF2EBC3EFDE40CF0F8DCE44B8576146E606"
-    ],
-    [
-        "LPC/bp_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
-        40960,
-        "A82268B40AF48B6016DE581264602C3AA36589B7"
-    ],
-    [
-        "LPC/bp_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
-        27200,
-        "713BA093179DDD64152BA3A763517A6AA416CEAD"
-    ],
-    [
-        "LPC/core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
-        10315840,
-        "677913792BDC572783573783F3F5FD6E69A70725"
-    ],
-    [
-        "LPC/core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
-        30912,
-        "9318E917CD2ADF1B158F2CA3DD6BAD8869E8F4DA"
-    ],
-    [
-        "LPC/en_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
-        38784,
-        "EA724E133437D2F425C41000B23E746B828E7E0D"
-    ],
-    [
-        "LPC/en_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
-        25472,
-        "2FDE8A07F5C537081D3678DE0239E7682E26F78F"
-    ],
-    [
-        "LPC/es_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
-        41152,
-        "3C1F584A15ED83C14C6B6C5F65DD38DC6EB6752C"
-    ],
-    [
-        "LPC/es_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
-        26496,
-        "3EABE143798EBF9D908E4413DF92858F7B5C5E35"
-    ],
-    [
-        "LPC/fr_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
-        42112,
-        "1AE58BE2A63A6E95B0A119B2A7B7CF19B3AFCC58"
-    ],
-    [
-        "LPC/fr_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
-        27008,
-        "D157F605CA0A294E63197DA41CAB4199ECEEDD42"
-    ],
-    [
-        "LPC/gersafe_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
-        2432,
-        "DFC5CB341F28867905DF5CC25F250A3110A508BB"
-    ],
-    [
-        "LPC/gersafe_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
-        2432,
-        "9A9FCAAC8BE758A8245D38BF88D5B721EABA7F0A"
-    ],
-    [
-        "LPC/ge_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
-        40896,
-        "15209883B4528B0C95B71584563A7E4EE440C42F"
-    ],
-    [
-        "LPC/ge_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
-        25600,
-        "0060D0D5867CCA28E23F19C0290D544E7EA93DEF"
-    ],
-    [
-        "LPC/it_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
-        40640,
-        "8110A8A3FCE51729F474931497BCA38333A2A225"
-    ],
-    [
-        "LPC/it_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
-        25856,
-        "B3447DA306B95EB1374A77F71B9AA11EFB685CCB"
-    ],
-    [
-        "LPC/jj_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
-        41792,
-        "7F718AB0CD96FD116C64EF977A82497C07E32317"
-    ],
-    [
-        "LPC/jj_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
-        25920,
-        "9B352BD6E6DB92702375016FEF224B69C0626E33"
-    ],
-    [
-        "LPC/jpsafe_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
-        2432,
-        "1A30AF7DB5735B5AE13267FCB7900DCCFDFDCCDF"
-    ],
-    [
-        "LPC/jpsafe_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
-        2432,
-        "025956CE5828FA1FD62C26776B6D3CCC88A62877"
-    ],
-    [
-        "LPC/k15safe_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
-        2432,
-        "1088B16C8A2A9957FAC0D96D6F774991A8AD929C"
-    ],
-    [
-        "LPC/k15safe_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
-        2432,
-        "E1B16D90B8AC66A119B039B01A976CB924AFDFD7"
-    ],
-    [
-        "LPC/ko_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
-        41472,
-        "615AC37F16EC7E52CAE27E98A40FA4BE7B1E5346"
-    ],
-    [
-        "LPC/ko_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
-        28288,
-        "828B1F7FA683168556125A5FAA6356173EE32C40"
-    ],
-    [
-        "LPC/ms_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
-        41536,
-        "1A33EB833CB30D5650BD2300D958748750F507E6"
-    ],
-    [
-        "LPC/ms_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
-        26496,
-        "474E04265E031A4D5100627B4D3FD09B83228C23"
-    ],
-    [
-        "LPC/pp_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
-        41216,
-        "75F2FB19EDAC7FEA50CDDF3DCB7E5BFF41778AE3"
-    ],
-    [
-        "LPC/pp_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
-        27392,
-        "A79014A93F48025B85319E4355502FBAED6A9DD4"
-    ],
-    [
-        "LPC/rr_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
-        48960,
-        "ECE2C47E4C050BB225C5A5F08BC5F5E162CB0116"
-    ],
-    [
-        "LPC/rr_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
-        30272,
-        "D13F54D3349CEA7A7DBFDFB6D5947BEE98DE202B"
-    ],
-    [
-        "LPC/ru_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
-        48960,
-        "1F25ABC705127C556920765721D94A35D0A3F6AF"
-    ],
-    [
-        "LPC/ru_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
-        30272,
-        "8E2138C409B31B182D95A536706840253A769A98"
-    ],
-    [
-        "LPC/tc_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
-        39104,
-        "5A886F646AA54A59C8F29A8E2E1B3E1DBB8720B8"
-    ],
-    [
-        "LPC/tc_core_playlists_tu23_639_cf92ecf4a75d3f79.ff",
-        26112,
-        "BEA88C67E83317161D3103FB47C5F53F144718A8"
+        "31DD5C84C006D6B7775FAD637FA5E78D200B672F"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/blackmarket_data.json",
@@ -201,13 +21,13 @@
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/contract_data.json",
-        28544,
-        "773F88BEFC654CAF9A70A54E2DA39930F6C91589"
+        28940,
+        "4DADC27817A0F772A1075755DB407850C9C732E2"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/loot_bundles.csv",
-        200040,
-        "2F8B62D50CE598CA01D7F039A2B0E83120937F17"
+        201553,
+        "D72F14E965667B7605A96079BB06F4AAD491DA9B"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/loot_contraband.csv",
@@ -216,478 +36,1713 @@
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/loot_contracts.csv",
-        3078,
-        "742FF344CD938C066C8EF1C61ADB1BD93EDD4BBA"
+        3127,
+        "70747E20965279ACB88CE25F7E50E79D2D496FF4"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/loot_index.csv",
-        248726,
-        "19D8B0230ACD727D57F251061DD893CDFB2BCF9D"
+        252205,
+        "9F78B40106974A3279C895E9DCA46D5649D5BF66"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/loot_shop.csv",
-        40079,
-        "9F8AC4E2AC987F372EE20E73E18B2FFF84462AD7"
+        40642,
+        "7111F05A5ED745B620AD10FAD99C00033772E8EF"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/maxrankdata_mp.csv",
-        385,
-        "B7B33CB84C9DEB0711496FDB5A425A7687A6E6BF"
+        441,
+        "F56B9FCC26CDA4BE281EB029B1C15508F5D4247F"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/maxrankdata_wz.csv",
-        537,
-        "B4142401DD90ADCCB4FF6E692C1B7104D33012AB"
+        619,
+        "6A29BDBB50E1722645020F086A5512886C4711CC"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/maxrankdata_zm.csv",
-        381,
-        "7DC66833912C2C8DD284A077790F05172A2E48AD"
+        437,
+        "96F5009742DA8CD25624F87AD556E29CA109535E"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/mp_randombots.csv",
-        949,
-        "C588E139620B6B21A102F600776092E2AA02505B"
+        1082,
+        "A27E1DCEBDABAA5F84B1D3579FD873755222E337"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/mp_randombots_camos.csv",
-        306,
-        "A076A5C42CF162EABC6AA000611373EE8C8C463B"
+        393,
+        "C71CF5AE8879E59FEC836F23C19F282998E5C1B2"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/season_407749.csv",
-        4097,
-        "FBF084367B7AD1DC72694140CD027EBB60B5CE5A"
+        4137,
+        "E5C8CD87B098466AF27A88917BBC302A76A51C73"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/season_421466.csv",
-        10450,
-        "3EAD6B7286A2D313E4CEB0F93C8AD0F785D374E9"
+        10550,
+        "4A6240891572FE3733FD03020325BBC378477080"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/season_446929.csv",
-        8704,
-        "87C3F8945C1502185D3E77FD21C9DFE18F1411F4"
+        8804,
+        "B870D5ECE3D8C22E4B63C1BE6D6AE27924032B39"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/season_447799.csv",
-        5592,
-        "A840EFCA8C3829FB4AB7FCB81143EFC8CBEA2C04"
+        5652,
+        "7CDB04D8208CE45EA3D88202973197C771DE1FFE"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/season_452985.csv",
-        5072,
-        "221C209CCD76F8AC81949A35B19938FAF363D17C"
+        5122,
+        "108AAF09963CE6AE66449F150FCB3E51372176BD"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/season_460119.csv",
-        4765,
-        "8260D40603A496540D4540A1A40C4AC04C4A5C5B"
+        4815,
+        "F1FCFF8C628220DE20453CDB72FADE266A8F6B2A"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/season_463850.csv",
-        11396,
-        "5612BAAD3E1CFB2630AF3703DC8E3975F23E0487"
+        11596,
+        "D6587AF5719051A7A303E4FFD21961492D4B6976"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/season_485074.csv",
-        5062,
-        "44C9F6CCE12AB7F4454CD9D963BE611989796254"
+        5112,
+        "FAB936B25207C1565DD952CE48036F1FABE81D05"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Data/wz_randombots.csv",
-        1135,
-        "0F2CA0EADCD282F5D63A94852C361E7A8ADDD69D"
+        1297,
+        "B23C28B027418A47944A91759FDF332F5F6C5AFF"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/freerun/mp_bully_vale.json",
+        6712,
+        "6091299729416C705BD82E80A5E9794A00DB20D0"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/freerun/mp_firingrange2_alt_1.json",
+        4708,
+        "532A234D18F0559F1C3124EE6CE41A485106B8A7"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/BlackMarketSettings.luac",
-        10773,
-        "14DCE16D77DFEBD6D38CD4946CF1F6D44FBE3DFB"
+        11337,
+        "D85EDC30E61204FDB2274147BCB30D2D1463232B"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/BlackMarketSettings.luacallstackdb",
+        93690,
+        "3335DA38DAB50D61A706E7DBBCC43C9B723971AA"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/BlackoutJoinInProgress.luac",
         2777,
-        "CD3F163CD2BC382D387D3EBF055B9CEC51B58F97"
+        "1F1923740A7D2DFD7CFB762E5F8D0F06966D1C0B"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/BlackoutJoinInProgress.luacallstackdb",
+        21802,
+        "AD2C15EB8CCB4A7AC567C09AA2009CF9A6532898"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/BlackoutRules.luac",
         108876,
-        "68D6453E3E386FE58CBD81C77619D12F9654F1FC"
+        "A963BB609AF72FD23F6E8ABD3FB9FEE38C41E0DF"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/BlackoutRules.luacallstackdb",
+        1300193,
+        "76B6F2AC8A8418BF262D7E9F5A6BBFA690B4D4A1"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/BlackoutSettings.luac",
-        15714,
-        "73579785DFB9D9C1A0AE75A92012ECD3ADFEB20C"
+        18926,
+        "DDCDD889180E89650764934282904FAB47BBB4BC"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/BlackoutSettings.luacallstackdb",
+        174464,
+        "6BFAE30559CFDF7F2D7CE76C174D388BCB60A05B"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/BlackoutSliderNoLocalize.luac",
         51545,
-        "2A48A72D8971777B4F49ADCAF073E964B6B0096B"
+        "1E06E4D68588BC6798680324A21C9FC982A4E389"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/BlackoutSliderNoLocalize.luacallstackdb",
+        464876,
+        "FFBC240AFCF7C91230DD81925D9E940E6FF9B07C"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/BlackoutWinIcons.luac",
         2595,
-        "28F4DB05E56E1D6222159F7F194662F7D035ABC5"
+        "90C469C3AA107B8236DC3C28702DF2DF36DC45B3"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/BlackoutWinIcons.luacallstackdb",
+        20978,
+        "3B813C64FBEFC6A614C2869B96EEB26DC60BE146"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/CharacterCategories.luac",
+        11996,
+        "23469C625F2D045194454F6935284BCF285D60EF"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/CharacterCategories.luacallstackdb",
+        127233,
+        "57AAD1EB3D5C9C88A950BFB0DD435740A0C8856D"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Chat.luac",
         37208,
-        "9998BBACF00A9E8B530553B0D2BF169DC42D49F6"
+        "91A5AC078E49600CB9D39E504EBEDC80E5A0BCDB"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Chat.luacallstackdb",
+        215137,
+        "80661177D10A4EBE6A3E3ABBBD12877D98DB7034"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ChatCommands.luac",
         11476,
-        "676B3F980C80DEE34FA466DD28312C6B4CE6BF4A"
+        "51DDAC8C07AB0923F4050B22DD8AF141D83B8BC1"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ChatCommands.luacallstackdb",
+        98079,
+        "A6644E97F8204C752A697EF226D30D132A3525FF"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ClanTag.luac",
         1188,
-        "FD337577BAEDAB799CCD3F4FE474A846E9DDEB72"
+        "D81C042A3607A6B9DBE040B2627A2DF4D2E7C3E0"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ClanTag.luacallstackdb",
+        6251,
+        "C8605DB780255176105DFC3097D8E6A902AD5634"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/CommunityAd.luac",
+        5790,
+        "007E39B0B096F24C6EB4E1490E3D6FCC5185AF03"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Connection.luac",
         17148,
-        "E7EF69B29D3BE6788F44B2260610D2D1743DD784"
+        "B2FD22DA5A328EC63B1F34686B21E1C64D97324C"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Connection.luacallstackdb",
+        125880,
+        "57A19F9E15D723DC99F8813C94778B4B3389B839"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Cookbook.luac",
         41395,
-        "DC49FCABFAEADB3EE989B480F2B4E69AB33E221E"
+        "AF0AC5046AE95CA75BF5119FDCB8BC3BF53A4C46"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Cookbook.luacallstackdb",
+        368273,
+        "656924F09B3ECEBE9F4AE9D9C720C8A7631F126A"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/CreateClassFix.luac",
         606,
-        "48D01DD75FF1DF81F13DB2EE1F7D374C559F9C35"
+        "45E21F687C6D039699E417ACD0F10EA78A6ADB19"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/CreateClassFix.luacallstackdb",
+        1866,
+        "4BF99F8096CE3CAF47EDAB9CC1F43B048974A630"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/CustomCamos.luac",
-        15517,
-        "C6BC8E4B51A2B35664992D7E2DA1F4A62D058BF6"
+        18893,
+        "41C6FDCCBE93AD4E2D587BE872DD18D6653186EE"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/CustomCamos.luacallstackdb",
+        115823,
+        "BA5AB29CD98D50FE012B23024FEA897753E7C10C"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/CustomChallenges.luac",
+        16092,
+        "AF0F465442CDCE8C76C2EA228798E587D3D80662"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/CustomChallenges.luacallstackdb",
+        126194,
+        "51A057003CC01F64698E477D5EC55066BCECF75F"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/CustomMaps.luac",
         18241,
-        "165F67FF55AD54E3FD8EFC728275C0C68CED30E7"
+        "411D4C620350509CDDCA4636B144A3CE33A29615"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/CustomMaps.luacallstackdb",
+        156629,
+        "03B21CFC44F5BAFC1B1780264A5D2028DE8CBF20"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/CustomSlider.luac",
         9497,
-        "1C5681814BC7BF03F536F3D0F70EB2E3AFD3B606"
+        "FCCD3ED3CDF40B7E8D6FB65E09515801723A3309"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/CustomSlider.luacallstackdb",
+        63965,
+        "5AD02856D2707E8757FEC4F725EBFE2D8A6FC67B"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/DirectorCustom.luac",
         52598,
-        "97B60D6DB10176A0EA863B4E0742A0867426DA9F"
+        "D4752906F9103C3E080BEA041FD6369325E023F7"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/DirectorCustom.luacallstackdb",
+        435283,
+        "BD80286F7F867E68AF3FFB2284295A204BDA070F"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/DirectorPregame.luac",
         356,
-        "E24E16850619322896C4D61375010F5479235E4F"
+        "C51237859D60F9CE87DA962A0661D01677656A8D"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/DirectorPregame.luacallstackdb",
+        462,
+        "C31E3A1701EB3C8F6AF5407BD74AE625A222187D"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/DirectorPregameArena.luac",
         49271,
-        "4652BBF4C491D8C53FEC650DF3630575B74B800D"
+        "8C6B62C39CEFA6A1FDE5B8B8E544B985BEEC0614"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/DirectorPregameArena.luacallstackdb",
+        418426,
+        "6F9D38A217C4BC55055AB36BDB827A1AEB428814"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/DirectorPrivate.luac",
         14578,
-        "FBD144C79A16B05BB625760C7B1290DDE87908DA"
+        "BF6A15828C972B98B9ED00AEADB555B62F802D74"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/DirectorPrivate.luacallstackdb",
+        104026,
+        "95B1CEA2C43E6E29F119630212D66A327A6669DC"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/DirectorPublic.luac",
         40149,
-        "F619C954C46C6A808555E9A0463C3A41AF32E38D"
+        "5170D12507C6C1E0A9F71C58F61B8D6F8A478459"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/DirectorPublic.luacallstackdb",
+        324142,
+        "004CC872E7E9EEFF9A1BCFC7AC363A270749A80C"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/DiscordRPC.luac",
         101841,
-        "AFAF29A34B3BA3963C173983EFC42FF271228453"
+        "8AB3669882CCDC8BF5082EA09EE3174B6F829999"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/DiscordRPC.luacallstackdb",
+        660302,
+        "59F0CB2FC9A6CFC32D805EE082E44CBB9C157993"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/DraftArrows.luac",
+        6203,
+        "9DD7DFC2D0DC914A4DC6D13CA99B44309E7C6304"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/EarnCodPoints.luac",
         6658,
-        "8393F05B0D3E4868D021349BC28BE6FAF58BD014"
+        "3B54AC4219FC88EE52512CBF868695EA8D1B5FE9"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/EarnCodPoints.luacallstackdb",
+        44255,
+        "DB25FD2A133924304C18B2C85B69F9105E73E08F"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/EditBoxes.luac",
         21571,
-        "3837F7EDECFE92B66688FE056BBB5417CEBF9B3F"
+        "37730618D39C0D45FF29FBA6E762A51EC7081DA4"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/EditBoxes.luacallstackdb",
+        139660,
+        "105DA162C8535D5126D636B858120C230AD0A713"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ExtraCamos.luac",
         50384,
-        "A01B742047AD41E2B5B8084CEA1C263C1C2E50D1"
+        "7625F9FE3040A30F9BF46111C0709FD18ADF804F"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ExtraCamos.luacallstackdb",
+        347754,
+        "578B0DF8A7B73220F55BDAE743F42B83E301FDF0"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/FOVAimAssist.luac",
         10293,
-        "159BD23CE92FC30ECAC719019F3851301715AA8F"
+        "A0AF68C96300EAFF2D6D2506C34FC7E33E430E1F"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/FOVAimAssist.luacallstackdb",
+        82369,
+        "A7B5796DAAEC9C21B3B2D7A436F556A9017B4E84"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Freerun.luac",
+        38176,
+        "34B6F4452B52A4ACB6113F1F9F2D0EDA4EE9DF3B"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Freerun.luacallstackdb",
+        299901,
+        "FF32EE9586765AB5E0F8D549C93AEAC395EBE922"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Friends.luac",
         46041,
-        "FF1308A9860E8634C13738E30340D07512A13180"
+        "EAA83D7E277F9E3E6EAA316E1618A42FF165FA73"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Friends.luacallstackdb",
+        330307,
+        "457F8CDD0193DB9312103E04A934190C7C40BF6F"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/HostLobby.luac",
-        40252,
-        "E4E0C9DCDB37525207414DE61075875BB39454D3"
+        40104,
+        "B32997391CA753C2FDB0198C1F8B78E064D39C13"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/HostLobby.luacallstackdb",
+        343592,
+        "181C15D42D10683AD1AD8829950CEABD36B1899E"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/HostTeamSwitch.luac",
-        11300,
-        "8FDE897CE841FBE08F0C60A31D7C4718D6E4909E"
+        17468,
+        "D70E85F2B1F33A33A17CAF892F6E33A9F7E3593F"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/HostTeamSwitch.luacallstackdb",
+        169979,
+        "156B04563788B51748E82F671C1AB5776F8E2C4E"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/LabOffers.luac",
         4300,
-        "6C3641314DD5ABF53DBBA06D6D3F86133DFA6E5C"
+        "A94D0F216EF949A44871C1514DB9F54B92CE7BC2"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/LabOffers.luacallstackdb",
+        32595,
+        "F3F6F7FEA2869671A48F51FF7E21D99717155C90"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/LobbyBrowser.luac",
-        39164,
-        "7A60C1AC658501A2E58E95B5D150EE532AE7CDCF"
+        40652,
+        "5CE3435CDA0CDD1F8D51A6202CC7572B911524B5"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/LobbyBrowser.luacallstackdb",
+        335648,
+        "073241731C5A799390E5C7DA80EA096DD8818009"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/MainMenu.luac",
-        106252,
-        "D47D479E02C8CB4F94376E31ADF4A528864EFAAB"
+        107741,
+        "722011B7D2CC8684566C7C795995BFE8832DF305"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/MainMenu.luacallstackdb",
+        827530,
+        "863277F2FC6B75574D47C7D607C569A71B04572E"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Mastercraft.luac",
-        1004,
-        "CB6B6860342AAB5467EA1DD261AF06272355EDDF"
+        4496,
+        "51C2F48D77354BBA15C8ACC621261D7752F5C7B1"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Mastercraft.luacallstackdb",
+        35370,
+        "8371BE098B7BE9EF06213E427AD6E406F15EDDDC"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/MatchmakingDvars.luac",
         1192,
-        "C024CD0F816153096B005A08FE4AB3653E19FE9E"
+        "6BFF79D1A2341BD2C15486F6EA1F770D68A2A5CA"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/MatchmakingDvars.luacallstackdb",
+        6242,
+        "E7871BB2E5E11907D5880D70BE1C93F0F409797F"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/MiscSettings.luac",
         12898,
-        "75E148F19D6A744AA9E6B9F087013596A4AF5398"
+        "0C023C328BE532F48D60AD51F5D0665E63F322CC"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/MiscSettings.luacallstackdb",
+        109311,
+        "38D08F23E06CE8595FC08D64A07FD05B3FEABD62"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ModManager.luac",
-        51250,
-        "48866EE4B4BE58846822554C531C5B660E5AB275"
+        54782,
+        "16B73B925C69980E59B6D4AD24E00F5AA112B990"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ModManager.luacallstackdb",
+        456869,
+        "22672374E9661B1DC4C33C7EE496C93555B48521"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/MovementSettings.luac",
         10486,
-        "1CB9F15D90866299BD423B34D926CBE0AE9A9C4A"
+        "5BCEEC72F1D383C44D673E01068A532D891F2349"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/MovementSettings.luacallstackdb",
+        84822,
+        "432747CE578C320B964EFDD61D2B7B8B7913AB07"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/MultiplayerExtraGamemodes.luac",
-        12819,
-        "0AD58B9DD83F5A3B6392C562FC2BC822064898F5"
+        13103,
+        "BBD35B9D8851883C441C557D0C137A08C9D64288"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/MultiplayerExtraGamemodes.luacallstackdb",
+        120443,
+        "FBE7EE1E9530F061D62B8AF7E60CC800E636A3AE"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/MultiplayerLobbySettings.luac",
         47725,
-        "53B1FEB3C076611B42706F4E0036BB143D123AF8"
+        "8D371384984B6E2E75E40A5D9224019EAF636718"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/MultiplayerLobbySettings.luacallstackdb",
+        468416,
+        "60311A3DF894C587E432F3D3B90218E80ACD8603"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/MusicManager.luac",
         37787,
-        "85ABC15A7A14CFBC8B966F2256AAB43CEDB0FAA3"
+        "87D98C8CA971375B16C9B60605AAAC2E11CC35CD"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/MusicManager.luacallstackdb",
+        314673,
+        "B4059E7103AF84C2D28629758F356A27C13186F4"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Outfits.luac",
+        6616,
+        "8155008AD732097ACC71CE6A1E8666C631B5864D"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Outfits.luacallstackdb",
+        46565,
+        "7FC6303A4A0E3CB5CBD14F5713FD15E6294E5414"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Overlay.luac",
         10346,
-        "ED0DBCE13A474790CE1E2B8C0EECE74AFDA4B2FD"
+        "AC8B0C56DE9D348FE623B382CB661F881D6DE680"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Overlay.luacallstackdb",
+        68578,
+        "400153C3B5CC8BB7C67A589B713FB30628876A6F"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Party.luac",
         20808,
-        "B002EC49260584C6C725248BCF35FA9585952539"
+        "EE4F25CA49125D7E4F41A01B0F85604BE3BE9C99"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Party.luacallstackdb",
+        142669,
+        "7C62D4F345D4D1DE113E85CBAE2C315BBCD158DD"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/PatchNotes.luac",
         14946,
-        "70BECE74893B80B8FB2BCF45C144D7E61E5CBC16"
+        "8B0A7B917C4479AC481B0D9708819AC9076D82C8"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/PatchNotes.luacallstackdb",
+        113808,
+        "651666E8663C866C51C06E881501834785A9CC2B"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Playlists.luac",
         16560,
-        "E047F5D354301C22B60A3725D00737162C6300FF"
+        "8BD77B30D467FE7B8B8C33D3AE22C16BE2FE7E25"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Playlists.luacallstackdb",
+        161848,
+        "F7EC1DD33F8086667A70107F36ADB891610085D1"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/PreGameButtons.luac",
-        19691,
-        "7D526C39D358073686373C96041CB45AE92B3C6A"
+        21327,
+        "0729C84E70D4AF2228C04FE2297D8D4D7A3B7C23"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/PreGameButtons.luacallstackdb",
+        164679,
+        "F0EDEB91F83AD463C5260D87E307E56C349C64A1"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ProgressionFixes.luac",
         3156,
-        "7C7292052E72B54275E6F402C1A53F53A55C88CD"
+        "10218C6E88DC6C514E3F1D690973EDE61A859554"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ProgressionFixes.luacallstackdb",
+        25352,
+        "488632C750DBCBE560C1C851E16ABB49D6E8318B"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/RankUtils.luac",
         3597,
-        "3405C6E74622853DD532198E3C25CD93E6948B88"
+        "C9A582377DB526B0BE6E83E0682A5CA6EE6AD19C"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/RankUtils.luacallstackdb",
+        24611,
+        "4465C3F586E02584A510EB0EDEFFE17DB21B98C5"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Reactives.luac",
         21041,
-        "C5C81279D01E2EAE3266AE03646733043A832200"
+        "7A259127AB10A9B43E2233A3E4A7497C54D6274E"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Reactives.luacallstackdb",
+        144350,
+        "B287A9A13C01013AD02BF9A3ED16886325C722BE"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ReloadOverrides.luac",
-        16740,
-        "C0AB524FB1102FFDD66489338A2362DFCE55E7F5"
+        17056,
+        "B493A8A8F2D9111FFE5166C93A26AC0F13C473A7"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ReloadOverrides.luacallstackdb",
+        168454,
+        "DCE5CDD649BA4E05F969F6E022C3059056955268"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/RemovePopUps.luac",
         1045,
-        "397D924DF1DB639AB43C114069DA0FB300DFF62A"
+        "DFF01CAF5FA90E060F85B5074E2F7B2C2406A8AB"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/RemovePopUps.luacallstackdb",
+        4275,
+        "B27C6124728305CAA217881D603E90361127D3C9"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/RulesManager.luac",
         32259,
-        "FDF743E96AC8E28E03A7EDC879E0269ADC299692"
+        "208221530C14AADFCAE432361E11A67D58005D3D"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/RulesManager.luacallstackdb",
+        266164,
+        "45672F1285086A3174630AE7E6EA85926275F586"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ServerBrowser.luac",
         23678,
-        "41D209996689EA549CDA52A2F24DA626A1D8DD55"
+        "B288F3E1C611E5DC39A8A103031B9916314990EC"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ServerBrowser.luacallstackdb",
+        179957,
+        "EA0C7E31E1E1DA99C663F1E3054A4C78DBE062B6"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ServerORLobbyBrowserSelect.luac",
         5714,
-        "8744F69311DC31EA64F6EB2B278E7667724A75BE"
+        "F1A916D188468E7906F50B48DD3D54CC9149DBDA"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ServerORLobbyBrowserSelect.luacallstackdb",
+        43938,
+        "3B001159B9FDFFD64A41FEB91375A06E98CEB20D"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ShieldLoot.luac",
-        5131,
-        "467C4B5534C8B5EF93CD9E77BF6AFEE7476A0287"
+        7067,
+        "F7E2BA2DB2820D594D04544C257B9C2285480275"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ShieldLoot.luacallstackdb",
+        55971,
+        "A008A3FEAD3673322302B56AE8BB812F998EE71D"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ShieldOptions.luac",
         39881,
-        "B282BA16085F3FF473493E6343566663B9C54513"
+        "0C1D935F44AF9F0442877EC899E180F7CD63B5A9"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ShieldOptions.luacallstackdb",
+        324782,
+        "97667DD48CF0620A58B9894E91F2C578BF12623E"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Social.luac",
         5122,
-        "AA58452FAF4E57093711B17A8C67AB73E23BA290"
+        "A114376544EE6AEF766F3B9EAD0B3F438A4E1BC5"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Social.luacallstackdb",
+        45912,
+        "12E46EBC7095E6902044ACE9494CC99412598A41"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/SpecialistWeapons.luac",
+        2844,
+        "C238FF55117CE39818F89AD92A4309A0BEA863C6"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/SpecialistWeapons.luacallstackdb",
+        25433,
+        "9334699CBA5FFABA7E8E646DF559B7015B623810"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Splitscreen.luac",
+        9024,
+        "7D083AEECC7DEDF817514AD8777A83B3D0C547F1"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Splitscreen.luacallstackdb",
+        73600,
+        "251C06F24D0410D6557042F1B024E51DE639C597"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/StateLoopWatch.luac",
+        2652,
+        "BF7F58104CF609A31B6C52AC58399C5FEB517220"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/StateLoopWatch.luacallstackdb",
+        21016,
+        "135667EF061E33DCE6AB0AC184D56B64C4188E23"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/StoreUnavailable.luac",
+        6108,
+        "CBFAF3BC34CD9799D7177984F5D131ABB426FC81"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/StoreUnavailable.luacallstackdb",
+        42902,
+        "1517619545A1B68EEDE20018D3D256AD238AF352"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/SystemOverlay.luac",
         39839,
-        "51FC24C2EDEDBA6AE132EC6423572E9127A55945"
+        "73835594A844FABABAE5D66C968719D140508FFA"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/SystemOverlay.luacallstackdb",
+        295894,
+        "D6878DBA7E8BCAB76CA9E545D7C4076DABD2C097"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/TargetRange.luac",
+        9209,
+        "60242F6BA01DAFBC7A771D0CA0F3539AF72E9B55"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/TargetRange.luacallstackdb",
+        80266,
+        "B09E934401B34FF89018C13F322BDCCFA6DBAE50"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/UnlockAll.luac",
-        53310,
-        "2027BB6F3B5B745C5091F1699D5B190DB46AC79A"
+        55134,
+        "1087AA27EB22B74610B86E2397E94AE42524FBBF"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/UnlockAll.luacallstackdb",
+        505102,
+        "98ED94DDA9F5BCECABE715E5F723F0E3DDEA4309"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Utils.luac",
-        16565,
-        "E801749A5793CA600E893916262C7D69A89FE748"
+        17161,
+        "FCA0991C59D0E2E6CACC80A4873E856D0F27390B"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/Utils.luacallstackdb",
+        72910,
+        "2B8267B8FB2D040147C72DD2B35636DE434CD6DA"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/WatermarkSettings.luac",
         10231,
-        "3A86185ECA7D50B4D5BE290FD5986A963BC0B68B"
+        "15B45DE7350155EC0BEC4CD1083095B86689C5BA"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/WatermarkSettings.luacallstackdb",
+        82026,
+        "2EB0025D691AF596C0C3AE28E5B1A0F8F4E4E1ED"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ZMForcedCharacter.luac",
+        19800,
+        "A072622598527D2713D57D8AAB0B26C5C5A3D6D9"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ZMForcedCharacter.luacallstackdb",
+        193338,
+        "01CDA1F536C4B1467CF55DF7C0F9D82B7D5E2E3D"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ZMLobbyGestures.luac",
+        5528,
+        "72A0B6326E2E7668FECD8FF86393ACFB3A99B906"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ZMLobbyGestures.luacallstackdb",
+        48188,
+        "11FB6D6A8F20E226E0CF362AF9E12A764B4E77FE"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ZombiesEasterEggChecks.luac",
         952,
-        "3CDECB86265883AB3C9BD8141357C103BCBD0AB1"
+        "3B762D5C588611200FDFE8F6EBBCFADB2B2D3D35"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ZombiesEasterEggChecks.luacallstackdb",
+        7605,
+        "ECFF57649A7D2DC1BCE84E2114617D22B5A6A614"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ZombiesExtras.luac",
+        22993,
+        "CED57848E78F6DE72722B6C7EB3E5B6BCFE499D3"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ZombiesExtras.luacallstackdb",
+        204000,
+        "25E1D880CE0C9842FFD0E632625EE7128A533970"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ZombiesLobbySettings.luac",
         114657,
-        "ACD9A8AC60F1A2B4B1B6F5C5FA93E98315F4D461"
+        "F00234CFA9D0964DD1A7E2C4766F5CFD79DE53A4"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ZombiesLobbySettings.luacallstackdb",
+        1329323,
+        "C9EE8DA57EFF43B260AD2DAD507AB355EDEE322B"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ZombiesPublicMatches.luac",
-        12262,
-        "1F671FC068EC0E41450D0C35714558D672E633A8"
+        12890,
+        "9D44341036B32F5BAA27FC451CB81E5D422E54AD"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend/ZombiesPublicMatches.luacallstackdb",
+        124833,
+        "266A2B8CB06C685E08513118B57FD622AEB98A3E"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend$f.luac",
+        14492,
+        "D82E68E1C9E09C721FE1AE23053F12D8B66091A9"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Frontend$f.luacallstackdb",
+        140976,
+        "20ABD6950485F35D19E54495973E7CB6221FE9B8"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Game/BlackoutStartMatchButton.luac",
         2454,
-        "95E47A62C3B6E935464E2C73813466EAE1887757"
+        "552BEA18CDDFC3173E60B9A0103DB5ED6F9CC806"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/BlackoutStartMatchButton.luacallstackdb",
+        17418,
+        "FCA73C6DC62146C23878D49F287EA28A6C2B41C9"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/007f2ac39e0fff53.luac",
+        20700,
+        "EBB6BF73120E6D3DB7ED0002A2E443E3DE9849B4"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/00902cd35077986d.luac",
+        4755,
+        "8AB4E0CAD2690107B8305FBF9DDC65FE123F1A7A"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/0377c0d4608a84b8.luac",
+        8653,
+        "CD5EEA8D936AE07F645041A192856DA298EE5EFF"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/047ad39cd4644bf9.luac",
+        14302,
+        "21785A2556BD4F9D37CDFA610AEC4CF6E6F2069E"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/0533db27f86fa0a1.luac",
+        5009,
+        "DD276C19574A2AB60C6567A39C2CBD7E4ADA6B70"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/05d32bf1798e8717.luac",
+        1464,
+        "B1D8712BA01AE8E58EDACA2B6551979EDCEE71A1"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/07e3a55581543326.luac",
+        9761,
+        "6C9517DC735120A27B601AA2D6D3EB1FF74706B2"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/0b3ae8ee550e3bb4.luac",
+        4320,
+        "503D2F971ABA8EDDB2DC57FADDA62693E4F64E2D"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/0b75d1a703eb58bd.luac",
+        10685,
+        "DCA2296AC11EF69D36475B0CEB154C1B081C7FF3"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/0e8a5b0fdbf13dc9.luac",
+        7866,
+        "70E5634C7A3C867B73D757B6CC4B35536E48A2C2"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/0ef2fa741c9b3bd7.luac",
+        8403,
+        "1A7B6EC6BFFE73DAD2F2F29D07D19D440DA7D194"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/0fe2a7fc81c175a6.luac",
+        2467,
+        "D432BC73F45B6C4BA208EB3BD121D5EBC146FFF2"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/1311014e46e7712f.luac",
+        3237,
+        "5BB324D2A6927AA39DAE6BA42D3F40FBABEBFD1F"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/14dfb9797230ff69.luac",
+        26579,
+        "272D17594E66667B4956A6BD10915E153566D3E1"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/16427dcdfcf8ef27.luac",
+        14202,
+        "80C960F2EAB00E44464731B130414CB066AB0912"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/178d85d989d4b856.luac",
+        9217,
+        "EE1A9E64EAAE470306A08E9FD5ADF2B262A5D77A"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/1c60fd8929dc5f5d.luac",
+        13578,
+        "56A1A81BFD1FAC7392B3B9BFBF1D5810BA3D1475"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/1c80ffa3e5176312.luac",
+        3167,
+        "6DB545FCB38C84DD9E75A808C0A7F6C2A6A3F89C"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/1d1487b7dc9f92d1.luac",
+        13092,
+        "0F2F07CF2C3BAF56E63B8A034C03216EC3605212"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/1d5c67f7d717f8b0.luac",
+        1842,
+        "61FBE42C5F78CF8C7BF8AC2B412C4BA749321EEA"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/1f0406bdf165d406.luac",
+        13656,
+        "3396C37F34E11E731F061F02544E9D5FBB741658"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/1fa12b87fa98b90a.luac",
+        7243,
+        "7EE96A5386A8AC2AB2A2C9E848E92A29FF60EEC6"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/201d1e7875956145.luac",
+        17106,
+        "BCDF0CDF930D2066F279F1A363CB3A0040DAACA4"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/22c1aebbe0e7caf5.luac",
+        12050,
+        "E44F8DF7258B208B578697E0BC6235861FD0C919"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/23e61f48a79b1a49.luac",
+        15042,
+        "EDF25817871AF837ED28E851478E10A3FF42D9D5"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/25073e0425876b0e.luac",
+        9638,
+        "33E1878CEBC1C0A8922CB476A16FC7CD8753F317"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/2540121f956e70dc.luac",
+        12933,
+        "3DF6CF8C4E5BFD2768EECF6CFFDA4AE42CC1CA5E"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/25bbd76ae603fde4.luac",
+        4969,
+        "616FCD3EF6C4F18FDCFB11E608044B81030AEE82"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/2639aafab244b60f.luac",
+        5321,
+        "E2EEE4CAAE217EAA5E4B5B0A5F61B4BE131AE9E7"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/27476f9cdcf1d235.luac",
+        5901,
+        "0088BBD1DAD50AD1F5B6B2A682FC90FB7EC9BC7A"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/27e6a79fc92fc6b2.luac",
+        5075,
+        "A5D86E86F3DF34305C10BDFFE68B08DCE2E5E77A"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/27e95469491a7102.luac",
+        5967,
+        "E9C805CCD8581A23EE9678872F6CF503A0354F4E"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/281ac291832d1223.luac",
+        3843,
+        "01A782A580728582B6A517AD2A4F57846749EAEF"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/28e2961782b5dd4c.luac",
+        9747,
+        "A5C825BF73E8450F223FAE5D5CC346AE615C46EF"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/2a2d9c8019d7741a.luac",
+        2029,
+        "4AB16A4E10E00434BC5E36F1E889B2D3CB4014C1"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/2b5fe27a8384c79a.luac",
+        3954,
+        "280C0442C2C6949B742C17E91E37516E92D37AD4"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/2c9344a01be53af6.luac",
+        23816,
+        "63C45EF15F0C1E33578F4F9D97052325F138C090"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/2dcb8d3781df6e28.luac",
+        3786,
+        "A15FA25866BAACF55F5EC683415DBF0B86F398D5"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/2de4ec6a53c872c2.luac",
+        16483,
+        "319CFC117DB80A363F07B8C938F1A31A1982C9E4"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/2e8dd5f05fd71df5.luac",
+        3883,
+        "5934CAEE0DA136A562D2B864F52B98FF21C629E4"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/315703929e3aa7fa.luac",
+        8130,
+        "87BA9006D027DEC3E62D18A405C543A84AB819B9"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/31a32f285e2db127.luac",
+        5067,
+        "5D8BB6FDCEC035DE5B33DB7B17FF524CDAE18D52"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/352c2c362293dae3.luac",
+        5338,
+        "D661E29CDD256E9271E725FFBC93D5B192BA3942"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/3833afcfba0392e6.luac",
+        4142,
+        "CFFCC937720563FA401A3F177711BC5B028AB317"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/3a01196981abe058.luac",
+        11942,
+        "4130920E3B47CB46D46ECA78A6F07B3B6DE194F7"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/3b919c70385143f1.luac",
+        15204,
+        "A2293A488986EC21DE35A38A78BE8C5368022119"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/3c33333c7570ac54.luac",
+        3860,
+        "6A3F06CB1BC53A8BD1DABEF509A1D02BEADE58C6"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/3e6d609c18f5305e.luac",
+        6723,
+        "47356F7C57FEEFB4ADB5E69ADD38DEB0392C0941"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/3e943f37c1fb8a18.luac",
+        5274,
+        "F45A768397C10143A716560F84E52CB7E3CE4047"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/419f6661f83d4cce.luac",
+        7928,
+        "64783D7EF6EFBDD9FCF789CAE0AAFE8AAB0FD51F"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/41fdbd6e451d94a1.luac",
+        10171,
+        "062977AC170E9A5898B0F64F834508FAC7CF4C39"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/427d777d664a0e4b.luac",
+        22871,
+        "3732758ECB5C24AD987043886971AB8642AFC554"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/4366f54c207d38c0.luac",
+        8889,
+        "A65AA3D1856C009CE62FF8985B9827481C84D71A"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/449944a5ae95c690.luac",
+        8407,
+        "FBB01FC97E1FA4D5361CE47984393CE7BF198321"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/478955139c1d5b63.luac",
+        1819,
+        "0B511F9955CB73F595F66C68E5E39C15FFAACF0C"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/47d2b968e07b3433.luac",
+        12667,
+        "28F605A29B73BA210810ECCC4CE380DA7CD2B01C"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/486e7bd1479f7d1d.luac",
+        21548,
+        "184B9D24E34EE685C375C4DCBF3A7C8FC9714C2C"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/4929f45b26dd2fb5.luac",
+        12570,
+        "5377D5A0106C913F0E32BC31544E5CC3F9E0F8AC"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/49f3bc36f0190a9d.luac",
+        5107,
+        "62362052030479440C69B518B6C44A44404D7E65"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/4aa702a84b4f5cb8.luac",
+        11119,
+        "D5BDEEC0D8BD5F976388A656FADE91D501701A7F"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/4add28057a25ac01.luac",
+        2662,
+        "2942160C3940B66B85D8CE8233CFBC127C006936"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/4ce78246acc69567.luac",
+        24895,
+        "B9B993E3DD92CE3D10A74EEB053225D102783A8D"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/4ec963b347c7a7a1.luac",
+        10027,
+        "FC5D0F8E69EAD74C8080184B875DB497EC1A3AB2"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/4ef25c512446746b.luac",
+        13212,
+        "21C8C5BE1B7D01D0591037B3713CB17F479BB845"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/4f18bd7b416c6194.luac",
+        9790,
+        "5AD9D894432D0BCCF6C1391CF53FE2D02EBE7BF2"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/4fcc755b16964042.luac",
+        4019,
+        "C4E22448E1BCC49E19A522A9BDBA0504F192F7F5"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/4fdbda5e241da8cd.luac",
+        4490,
+        "1670568224FCA157A529FD148B379A793357AA3A"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/50178930888d0d72.luac",
+        1375,
+        "CC23202A9B75CAEB97C2ECF97550822C6E29F5CC"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/50e292dbaeebdb61.luac",
+        7184,
+        "C1287CC1CB7C67615A9583B08772E62844FAFF0B"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/51e4bb0463370c80.luac",
+        2491,
+        "87510A92E0BDB768517D9A8DCF08063AD7833DF3"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/51f1770752395563.luac",
+        17851,
+        "DF3C70807363DF71C2B2DCAD13145E47C0DAF0E5"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/5294f6e9017b280c.luac",
+        13481,
+        "FBB71C20B57E6D0E2E924BC7C8F2372E1DB64259"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/529e42c9cc052cd4.luac",
+        14979,
+        "4AE058B4A0A45C8ABF51454A6163898CBC27C935"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/55377a3310b451ba.luac",
+        21394,
+        "F586DAF1BFA948C4663E79419D70023CE1323DD0"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/559c05def3d6b04b.luac",
+        3527,
+        "6C8A6A8AE50C922D482A08DD23EC89A35B5CEF15"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/574ba44f68199f2c.luac",
+        20028,
+        "8A09DEA304B91704C4B2C017258885EBD781A020"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/5802b056c17c9893.luac",
+        3909,
+        "4557CE6D6EF3BFAC4DBFBD5D7BFE415A41A9489E"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/5c17be2f019c8296.luac",
+        12658,
+        "4775C028802B75585CB7E502A9746A4CA5A9BBA6"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/5cc204dcae972a3f.luac",
+        15266,
+        "B4634561E787C8097D6511677EAC7EB20886A148"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/5ce7f8160ee52a72.luac",
+        6581,
+        "F6AC9C8A4FEEA0E43C072D6F893A5D477868F9BF"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/5d613352c9a43403.luac",
+        2851,
+        "CE739AF0359A9B9A16D5F3460E97D25DEC33A643"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/5dbcc9c3ede1372e.luac",
+        12250,
+        "A2F3BA2034382F658265C75D4DABDC22F0AEE84E"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/602cead40e45cc85.luac",
+        11172,
+        "C6BFB0E561C1130034E0B5AAA0D3681D2C73A344"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/6069d9774f854856.luac",
+        7849,
+        "B722B7C708C3FEDC9603B10685AA2276E0510A8B"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/60ad020dd057d975.luac",
+        4159,
+        "07CF08CDFA1B3904C78C91B99B4E9AB25A30701B"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/60f01937b7d02dae.luac",
+        6078,
+        "9E0004E6138C4260F77CD4FFA90501EADB2738EC"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/63604ff12ef30ae2.luac",
+        12915,
+        "BD07D4AD28BA6F6E6AE8C93F4527AD79662DBF03"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/64a37b379b98ff50.luac",
+        4238,
+        "B790B5A76757891ED472AAC6AA7EFD33B4783EF6"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/676fd6aa2d3b2f56.luac",
+        11869,
+        "0DCB63D33004BEFEDE7CD99F531A57A1A1851BA5"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/68cd7e80414453f0.luac",
+        12604,
+        "ABB7D0EB8451ADDE34113F60674D29D59A152396"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/68e7d1dd5b99e669.luac",
+        9946,
+        "9F486998E23008F6404A1A4CA3052CA7B9D6C6AF"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/6a04278fafbdb4cb.luac",
+        4335,
+        "D947B41B36C049FFEFA8B7A8CB29F27EEBFE0BE3"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/6a3028211120572e.luac",
+        1901,
+        "2FDFF1B9D1734A31C64C5A5BCCA2D00462AA1C8A"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/6be2e311a92b8846.luac",
+        4619,
+        "8C1C5C4EF04E53CC05714973A33E92D90A0E1D9C"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/6cda540790201b4d.luac",
+        8738,
+        "0E3D9C8E68678A5480887B023F4A1396330078AE"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/6d684cd1c9bf004f.luac",
+        917,
+        "B15238D2D9547B76F2637439E350A3DC6E46CBD1"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/6ed41a515e8ae48d.luac",
+        5636,
+        "F954B86BE11D3454E976265ED10DCB9802FE5448"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/6ee191186621ccf9.luac",
+        3149,
+        "84174FB86C6C3581436EDA53407F48E9FA0CFA63"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/6f3d0ec96fa6ea75.luac",
+        9859,
+        "7D58A6FB1A3FD1AC8E519A64F653C2A621C9301A"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/6f85f9adfc1c5cb5.luac",
+        13128,
+        "A6DD2BEA746B9289C004D4F97ECA512E229CD864"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/70e7a3aff580bf07.luac",
+        2463,
+        "FD9BCC8EE20C4EFDC71C2251E9DA0B34E1133F24"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/70f6c421adfbccaa.luac",
+        13684,
+        "ACCA778ECF0A109EFBBA1E45A64828B702086EBD"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/71242c51f913d99c.luac",
+        18127,
+        "C2711D02DAD868E7CEF64EF6A65946781D6726AB"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/71e12248ecc95ef5.luac",
+        23168,
+        "7AFE2F4276ABC05F6BA464D09C93CCE50FE1E253"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/731b847682a7bd5f.luac",
+        16345,
+        "27D0B6DCC0C6069516B2361B8081D180A215811E"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/75a3aec96eff6c90.luac",
+        2738,
+        "48B4B18C9348FA5BE9B8FC7E1A465BDE69DC9CDA"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/765051a095634171.luac",
+        3569,
+        "789B1E7DC452BA85957B9C657E5A72905CE4445A"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/766893131e5a15ae.luac",
+        5145,
+        "2E56AA28B39816F51AD2A2BC03FC13F688C5AE69"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/785b8b47ed7ef613.luac",
+        40963,
+        "9A38BE11FF7880ACA9449B8F408211279962E746"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/78a2b1d87a23607a.luac",
+        11386,
+        "439AFD1B5B6ABF7D8262AFD1728E6037AE08EB29"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/78c55686a8cff7f3.luac",
+        11813,
+        "EA408C4146FB5D036B833BA300648171DD5D56AF"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/79951b2fc3d97e5c.luac",
+        7141,
+        "BF27334B2A36B0CFA3038AB15EF50076281E6091"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/7b90deb6116ead8c.luac",
+        5559,
+        "6BB81C3F440DAE8E09CACEAA28751096802EE2E8"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/7be9307b4d061c70.luac",
+        3217,
+        "DCFC9F910C2BB12DE901902661D102C49B2BA7ED"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/7c39eebb81a25371.luac",
+        14896,
+        "E42B44CEA4ED6C94FA6CC78C0AF3C10AE4391527"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/7e5317d52f1af8fe.luac",
+        2763,
+        "5C2267C3526EE862F4647992C4F76B0B933412ED"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/7edbbd3497126cd5.luac",
+        5282,
+        "1F5FFC9A4F15EEA009CC75C5B0BBF8EB048DF3D9"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CAC/7f7ccf4410d39aaf.luac",
+        11049,
+        "A8FF2F6B8FCDDD5E54D53C0B83F67C803B67B69A"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CallingCardToast.luac",
+        2656,
+        "23BC0CA5EDAC92D5F9B024830170E055DB2C9389"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CallingCardToast.luacallstackdb",
+        18249,
+        "628F3730651E68AEFEEC14E64A8950EA1835803C"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CalloutWheel.luac",
+        44793,
+        "92877256B48469F8FBC2B7E5D43DCFE44057A271"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CalloutWheel.luacallstackdb",
+        311088,
+        "B9716426297F10DA3992B580802C03EAEFC91334"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Game/Chat.luac",
         29060,
-        "071A691A3E62D5F372332867C2CFC663E3E6C103"
+        "C688834701017D5D72EAD88C1F59F49DADCE7DDC"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/Chat.luacallstackdb",
+        167246,
+        "8993249B1FB6205C4C0EADF1248A1786E53D560F"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Game/ChatCommands.luac",
         9784,
-        "7EDC683F096BAFEEE06C74E996AD1FAAECDBC0EA"
+        "9584CE995F4AF38F846F928C1D6C719F1FF770ED"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/ChatCommands.luacallstackdb",
+        81412,
+        "CC3E9482781266B45EA93C1AFC0F766FA736794D"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/ClassEdit.luac",
+        13311,
+        "E64468329DCEFA2C0FC07028B002BA989087E41C"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/ClassEdit.luacallstackdb",
+        73986,
+        "1FD8F78682070702412C35DA28F7CE1AB8F51340"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CustomMapHud.luac",
+        2768,
+        "8E702754515A6E0A8CBE37EC766AE32C6857B76F"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/CustomMapHud.luacallstackdb",
+        21638,
+        "2F2F4BD942BB3EBA430B91F99276BC0DC232D5C0"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Game/DiscordRPC.luac",
         756,
-        "8B2E6842AD25C5FE2A83C3AACF37CC619E8BE9F6"
+        "6366B42E1E137FB66AA490C089995730DD045C84"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/DiscordRPC.luacallstackdb",
+        2715,
+        "3DC217C8BF41CFF5CA631EB2F6F033CE310753CC"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/DraftArrows.luac",
+        6203,
+        "9DD7DFC2D0DC914A4DC6D13CA99B44309E7C6304"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/FreerunHud.luac",
+        16551,
+        "88086C2C6ACA04CFE332C5EF5D9EEEC891B06FC4"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/FreerunHud.luacallstackdb",
+        142420,
+        "D4AA8C7715E5D86ABBADFDEA990C8A293651424C"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Game/HashesFlash.luac",
         595,
-        "ACFBBF3F299F647347D99F2B4C27B5E9C71A3A45"
+        "4653460EA01A76B92D8B2100A4A2FB661DB798CE"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/HashesFlash.luacallstackdb",
+        1845,
+        "922FA523C8BF24F5203239EB8CD3CD67597A0030"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/InspectHud.luac",
+        2892,
+        "C75DA41861EA3B124925E124C12F89E7D56CE040"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/InspectHud.luacallstackdb",
+        22737,
+        "31DB069B994B205966C4B092B9A744C43E0DF872"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/OutfitPortraits.luac",
+        5072,
+        "AE55D25B9D7DB187FC7B837E5861F4BE348FCB89"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/PodiumHud.luac",
+        21668,
+        "EBC39104A7B2226F639291C244B3AB8807B92013"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/PodiumHud.luacallstackdb",
+        179357,
+        "DBAF7AC2321609A693CC4C51BED837F4FE47C344"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Game/ReactiveRequest.luac",
         850,
-        "691DE88A67A17F6EE75587C4F0FDCE747E9B8C60"
+        "6FC3C3FB7C397B988D64B66465C02A558DF45B71"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/ReactiveRequest.luacallstackdb",
+        3095,
+        "8F95BC9CC2E52EFEB4718B3EDD2005DB59C53884"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Game/ReloadOverrides.luac",
         1713,
-        "447E0FC1512C0F4A93C7917CF1A09D51EFA95C5B"
+        "1622807C0DA8E66DE03700858D69BB17F954F337"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/ReloadOverrides.luacallstackdb",
+        10929,
+        "79CBC19ECC280B3E4B3EB823295FD87252566FFB"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Game/RoundPatch255.luac",
         87179,
-        "CB8298E1C662AA6B0F9E596F1942A8056A17DC7A"
+        "7BC03ABD0E21C19AA49386541CE27DECBD16ADEC"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/RoundPatch255.luacallstackdb",
+        786361,
+        "79266B8B85F6650E1A7BC46DE3B4D3BA2E729D4C"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Game/Social.luac",
         3342,
-        "4177B4070CCAB6D73A89EDF972D43801C7869F19"
+        "822F192C317E77EBF3B9087D98EBBF28D960F990"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/Social.luacallstackdb",
+        27315,
+        "D6B5A64C0F2000535ACBB7EE8072E2312E240950"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/SpecialistWeapons.luac",
+        2844,
+        "C238FF55117CE39818F89AD92A4309A0BEA863C6"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/SpecialistWeapons.luacallstackdb",
+        25433,
+        "9334699CBA5FFABA7E8E646DF559B7015B623810"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/SplitscreenInput.luac",
+        4024,
+        "506BE706E23F7CC306DA50C5D3049C1FAE97286A"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/SplitscreenInput.luacallstackdb",
+        40707,
+        "40DCEA2EF9E5B8B06A3285011A035C6164D8C9DE"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/SprayGestureWheel.luac",
+        85074,
+        "8BCBD1841B437407BFA00E4CC950A471ABDAD9F8"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/SprayGestureWheel.luacallstackdb",
+        693831,
+        "DB590CC8E111F6340DF9E6EC2975E8E9A0563F1D"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Game/SubtitleFix.luac",
         583,
-        "1487D85D3AD832FF05B1F1050FCE880D8AAB7B3A"
+        "3926E54D3BA564EB1FD83FF0AE0B17EA415C6FD8"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/SubtitleFix.luacallstackdb",
+        1725,
+        "9A424E2013EC750FF81ABEBA1DE2C58E9AFA1C97"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Game/SystemOverlay.luac",
         39887,
-        "198C77A10B31D145EB89E824723E7618A43EAC84"
+        "8C64AA64F29EB902AAC6321CA295C8B8374967E3"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/SystemOverlay.luacallstackdb",
+        296288,
+        "260A7C2ADFB6141AEECA8820109BC8AE4451CF6F"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/TargetRangeHud.luac",
+        9979,
+        "F4BA3DE19E6504CD8F6FDCC4EAEF22980635F1A7"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/TargetRangeHud.luacallstackdb",
+        91084,
+        "E40B28453DE2A96A91C3FC84A5790906500357AE"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Game/TeamChangeFixes.luac",
         16250,
-        "4088A2BDCE338306212087ABE3C45C97033C98D5"
+        "9769BBAEF2996FA93CE9204F724D3B7E1FC94ECA"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/TeamChangeFixes.luacallstackdb",
+        137501,
+        "01495BDFE2DDE31740B3AB389C08E6A2872BB57E"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Lua/Game/Utils.luac",
-        6414,
-        "5E241C18F627EBFA5D66A5DAE32BF3BB6B18EBC4"
+        9378,
+        "94F45ADA8E93085B1DF0428054CFE4908075E67B"
+    ],
+    [
+        "project-bo4/internals/T8ShieldSupport/Lua/Game/Utils.luacallstackdb",
+        56827,
+        "A59E18479E0662F67CA1ADA94892061DC0797764"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/metadata.json",
-        58204,
-        "8B1784ABCDA0359084C2A4E8CBBD59A9CF6CC2E6"
+        105021,
+        "38E5D677623D692EBE97B794B656BEC283801A4A"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Scripts/SupportCSC.csic",
-        13600,
-        "23D8F0926688E1FED9C4B8B26CA42FA373A789B0"
+        39320,
+        "AA70A79695837E3D83795AD91B7EB049FCAEBE77"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/Scripts/SupportGSC.gsic",
-        134824,
-        "D4FAAB228BBDF0098D56F7E9E2E55C08A6227DE8"
+        363860,
+        "C3DFF46DBFEDEEE5D771E850526252B4CEB348B9"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/SupportUtils/SupportErrors.tsv",
@@ -696,13 +1751,13 @@
     ],
     [
         "project-bo4/internals/T8ShieldSupport/SupportUtils/SupportHashes.txt",
-        33415,
-        "933F2B24F5059887F91D34442784AE632CABE96D"
+        67066,
+        "5A54FD571742771DAB334AB35D77CD2591D40ED5"
     ],
     [
         "project-bo4/internals/T8ShieldSupport/SupportUtils/SupportStrings.txt",
-        2839188,
-        "8404A0B09CC2302DF5627D807F9B435429C4F503"
+        2972875,
+        "07B375907537E5AEFDA1B9328C94DCD89011CEB3"
     ],
     [
         "project-bo4/launcher/images/launcher.jpg",
@@ -713,6 +1768,11 @@
         "project-bo4/launcher/images/launcher.png",
         280896,
         "A8F088B0306A22C3EE416C3ED56F5BE389C9704F"
+    ],
+    [
+        "project-bo4/launcher/LPC/.manifest",
+        1540,
+        "253F39033EDF923F334C4EECDB4DDCA72B7C4B92"
     ],
     [
         "project-bo4/launcher/LPC/arasafe_core_ffotd_tu23_639_cf92ecf4a75d3f79.ff",
@@ -896,8 +1956,8 @@
     ],
     [
         "project-bo4/launcher/Shield_Launcher.exe",
-        523776,
-        "B86564DB55FB55E41997F9BE497C0D41D3A2ED60"
+        667136,
+        "FD209ADF95CA70591979DEBF1FB508FFD304E5DA"
     ],
     [
         "project-bo4/launcher/Sounds/startup_sound.mp3",
@@ -906,35 +1966,110 @@
     ],
     [
         "project-bo4/launcher/XInput9_1_0.dll",
-        5211648,
-        "32BFDBBE71BA345FE21255403DD0010E8D172077"
+        5676032,
+        "9338CF51AE7FA4ABDBAE1634D90F321EC51EAF33"
     ],
     [
         "project-bo4/music_manager/music/add your own musics here.txt",
-        63,
-        "488B52EE9C27C690291EF96EC2B8D09BB444B972"
+        64,
+        "0E896153E01A6C324B143618B2E18DE805D2016D"
+    ],
+    [
+        "project-bo4/package_index/mp_targetrange.wni",
+        26108,
+        "03DA579C09D60A7B8E0940B05FDD166EA323DA99"
+    ],
+    [
+        "project-bo4/package_index/mp_targetrange_ui.wni",
+        68,
+        "DA51155872DD34233D209E74CFD8F32F1A990FD1"
+    ],
+    [
+        "project-bo4/package_index/support.wni",
+        154216,
+        "06DAA8CC4925172A121C9B25153DE752674F14A6"
+    ],
+    [
+        "project-bo4/package_index/support_mp.wni",
+        389,
+        "C28EF4EA1695B5D90A148754FD7932144519E844"
+    ],
+    [
+        "project-bo4/package_index/support_zm.wni",
+        957,
+        "BE875B01EEA50890B7A667B9AF591CB15577D51B"
+    ],
+    [
+        "project-bo4/zone/mp_targetrange.ff",
+        195989368,
+        "FA634FE4EA7212E14ECBDD1DC9FC13DB554060E4"
+    ],
+    [
+        "project-bo4/zone/mp_targetrange.xpak",
+        63635456,
+        "DBE02B9895C1041F7F4B4FE423689485F7D8ABCC"
+    ],
+    [
+        "project-bo4/zone/mp_targetrange_ui.ff",
+        585884,
+        "FBE5B33D9C57F18A6F0FBEE1C9436EB75DE9B5F3"
     ],
     [
         "project-bo4/zone/snd/all/support.all.sabs",
-        579328,
-        "6A095588443208F6F8E23FC85C55F87BECA7C7F0"
+        809468800,
+        "1A0E7E1544002C599311015F2FFAA2F3183C1C54"
     ],
     [
         "project-bo4/zone/support.ff",
-        1930796,
-        "C7B927B19A3B1B51C3F5314DEB2526E49217715B"
+        66790860,
+        "D4DBA79632A351588374B3C4F4A72DE9CA425AE8"
     ],
     [
         "project-bo4/zone/support.xpak",
-        65536,
-        "5DAB96E575937CEAB3B81FE1C1B0E8F12D1E11DA"
+        1085669376,
+        "DA39A3EE5E6B4B0D3255BFEF95601890AFD80709"
+    ],
+    [
+        "project-bo4/zone/support_mp.ff",
+        27120,
+        "439FEC2E861F509C0DBFD2041C8E29C51132FEEB"
+    ],
+    [
+        "project-bo4/zone/support_zm.ff",
+        403856,
+        "A1F566FB7EE121F01EEB770EBECA5CB1DD072ED3"
+    ],
+    [
+        "project-bo4/zone/support_zm.xpak",
+        2981888,
+        "B56667587C8918F42188F2E45166472D442B9082"
+    ],
+    [
+        "project-bo4/zone_mods/mp_targetrange/config.json",
+        641,
+        "867C6ABB60D33FBB57316025BA67E15CC961B87A"
+    ],
+    [
+        "project-bo4/zone_mods/mp_targetrange/gdb/mp_targetrange.csc.gdb",
+        418,
+        "D59FE41EB6B7F7012FBDFCD1C8FC88AA315B43C8"
+    ],
+    [
+        "project-bo4/zone_mods/mp_targetrange/gdb/mp_targetrange.gsc.gdb",
+        370,
+        "1FD80C94C22C32AA7C2840E1CC7EB7B564517FB3"
+    ],
+    [
+        "project-bo4/zone_mods/mp_targetrange/mp_targetrange_hashes.txt",
+        501,
+        "A38FE757DDF5ABF016FF6E2A03E59602B7B17A43"
     ],
     [
         "project-bo4/zone_mods/T8ShieldSupport_FF/config.json",
-        156,
-        "7BEE5FF8DBD1C98E5A6FAC24B671A1BF95FB9022"
+        170554,
+        "F96941D9F472F26D105A44D09ECFD565DF771561"
     ],
     {
-        "ManifestHash": "64E1D61FB7B5C6F2467A897AE4B8D5F004BAC7F3FFD83DA5236384A6B7598784"
+        "ManifestHash": "9DC2E3E2F13C1A3DC3EF3F3A20F37DE06CD28B5BA31FA73BB4A5BDD59CDE22CD"
     }
 ]
